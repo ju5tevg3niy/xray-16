@@ -59,47 +59,6 @@ void xrMemory::_destroy()
     xr_delete(g_pStringContainer);
 }
 
-XRCORE_API void vminfo(size_t* _free, size_t* reserved, size_t* committed)
-{
-#if defined(XR_PLATFORM_WINDOWS)
-    MEMORY_BASIC_INFORMATION memory_info;
-    memory_info.BaseAddress = nullptr;
-    *_free = *reserved = *committed = 0;
-    while (VirtualQuery(memory_info.BaseAddress, &memory_info, sizeof(memory_info))) //-V575
-    {
-        switch (memory_info.State)
-        {
-        case MEM_FREE: *_free += memory_info.RegionSize; break;
-        case MEM_RESERVE: *reserved += memory_info.RegionSize; break;
-        case MEM_COMMIT: *committed += memory_info.RegionSize; break;
-        }
-        memory_info.BaseAddress = (char*)memory_info.BaseAddress + memory_info.RegionSize;
-    }
-#elif defined(XR_PLATFORM_LINUX)
-    struct sysinfo si;
-    sysinfo(&si);
-    *_free = si.freeram * si.mem_unit;
-    *reserved = si.bufferram * si.mem_unit;
-    *committed = (si.totalram - si.freeram + si.totalswap - si.freeswap) * si.mem_unit;
-#elif defined(XR_PLATFORM_HAIKU)
-    *_free = *reserved = *committed = 0;
-    system_info info;
-    if (get_system_info(&info) == B_OK)
-    {
-        *_free = B_PAGE_SIZE * (uint64)(info.max_pages - info.used_pages);
-        *reserved = B_PAGE_SIZE * (uint64)info.cached_pages;
-        *committed = B_PAGE_SIZE * (uint64)info.used_pages;
-    }
-#endif
-}
-
-XRCORE_API void log_vminfo()
-{
-    size_t w_free, w_reserved, w_committed;
-    vminfo(&w_free, &w_reserved, &w_committed);
-    Msg("* [ %s ]: free[%zu K], reserved[%zu K], committed[%zu K]", SDL_GetPlatform(), w_free / 1024, w_reserved / 1024, w_committed / 1024);
-}
-
 size_t xrMemory::mem_usage()
 {
 #if defined(XR_PLATFORM_WINDOWS)

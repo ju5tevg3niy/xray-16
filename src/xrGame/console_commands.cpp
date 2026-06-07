@@ -166,7 +166,6 @@ static void full_memory_stats()
     Memory.mem_compact();
     u32 m_base = 0, c_base = 0, m_lmaps = 0, c_lmaps = 0;
     GEnv.Render->ResourcesGetMemoryUsage(m_base, c_base, m_lmaps, c_lmaps);
-    log_vminfo();
     size_t _process_heap = ::Memory.mem_usage();
     const auto [_eco_strings_bytes, _eco_strings_count] = g_pStringContainer->stat_economy();
     int _eco_smem = (int)g_pSharedMemoryContainer->stat_economy();
