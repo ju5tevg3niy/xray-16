@@ -2,6 +2,12 @@ add_library(xrCore)
 
 target_sources_grouped(
     TARGET xrCore
+    NAME "JJ fork"
+    timestamp.cpp
+)
+
+target_sources_grouped(
+    TARGET xrCore
     NAME "Animation"
     FILES
     Animation/Bone.cpp
@@ -288,7 +294,6 @@ target_sources_grouped(
     FILES
     #ChooseTypes.H
     #client_id.h
-    _std_extensions.cpp
     _std_extensions.h
     _stl_extensions.h
     clsid.cpp

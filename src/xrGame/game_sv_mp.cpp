@@ -24,6 +24,7 @@
 
 #include "game_sv_mp_vote_flags.h"
 #include "player_name_modifyer.h"
+#include "xrCore/timestamp.hpp"
 
 u32 g_dwMaxCorpses = 10;
 //-----------------------------------------------------------------

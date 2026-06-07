@@ -1,6 +1,4 @@
 #pragma once
-#ifndef _STD_EXT_internal
-#define _STD_EXT_internal
 
 #include <math.h>
 #include <float.h>
@@ -243,10 +241,6 @@ constexpr u32 strhash(const std::string_view data) noexcept
 
 constexpr u32 operator""_hash(char const* p, size_t size) { return strhash({ p, size }); }
 
-XRCORE_API char* timestamp(string64& dest);
-
 extern XRCORE_API u32 crc32(const void* P, u32 len);
 extern XRCORE_API u32 crc32(const void* P, u32 len, u32 starting_crc);
 extern XRCORE_API u32 path_crc32(const char* path, u32 len); // ignores '/' and '\'
-
-#endif // _STD_EXT_internal

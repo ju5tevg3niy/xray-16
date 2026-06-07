@@ -1,7 +1,6 @@
-#include "stdafx.h"
-#pragma hdrstop
+#include <ctime>
 
-#include <time.h>
+#include "xrCore/xr_types.h"
 
 char* timestamp(string64& dest)
 {

@@ -3,6 +3,7 @@
 //#include "xr_effgamma.h"
 #include "xrCore/Media/Image.hpp"
 #include "xrEngine/xrImage_Resampler.h"
+#include "xrCore/timestamp.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {
