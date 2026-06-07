@@ -22,3 +22,5 @@
 
 # exclude doxygen output
 doc/doxygen/html/*
+
+/compile_commands.json
