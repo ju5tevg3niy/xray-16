@@ -1,11 +1,9 @@
 #pragma once
-#ifndef _CPS_Instance_H_
-#define _CPS_Instance_H_
 
 #include "xrCDB/ISpatial.h"
 #include "ISheduled.h"
 #include "IRenderable.h"
-#include "xrCore/_bitwise.h"
+#include "xrCore/Math/bitwise.hpp"
 
 class ENGINE_API CPS_Instance : public SpatialBase, public ScheduledBase, public RenderableBase
 {
@@ -37,5 +35,3 @@ public:
     virtual void shedule_Update(u32 dt);
     virtual IRenderable* dcast_Renderable() { return this; }
 };
-
-#endif

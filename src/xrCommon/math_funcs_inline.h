@@ -1,7 +1,9 @@
 #pragma once
-#include <math.h>
+
+#include <cmath>
+
 #include "xrCore/math_constants.h"
-#include "xrCore/_bitwise.h" // iFloor
+#include "xrCore/Math/bitwise.hpp"
 
 inline float _abs(float x) noexcept { return fabsf(x); }
 inline float _sqrt(float x) noexcept { return sqrtf(x); }

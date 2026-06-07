@@ -3,6 +3,8 @@
 #include <cstdint>
 #include <limits>
 
+#include "Common/Platform.hpp"
+
 // Type defs
 using s8 = std::int8_t;
 using u8 = std::uint8_t;

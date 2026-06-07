@@ -250,7 +250,7 @@ target_sources_grouped(
     TARGET xrCore
     NAME "Math"
     FILES
-    _bitwise.h
+    Math/bitwise.hpp
     _color.h
     _compressed_normal.cpp
     _compressed_normal.h

@@ -3,10 +3,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#ifndef fsH
-#define fsH
 #include "xr_types.h"
-#include "_bitwise.h"
+#include "xrCore/Math/bitwise.hpp"
 #include "_compressed_normal.h"
 #include "_vector2.h"
 #include "_vector3d.h"
@@ -437,5 +435,3 @@ public:
     CVirtualFileRW(pcstr cFileName);
     ~CVirtualFileRW() override;
 };
-
-#endif // fsH
