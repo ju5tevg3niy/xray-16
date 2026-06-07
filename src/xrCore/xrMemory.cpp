@@ -41,46 +41,6 @@
 #define xr_internal_free_size_aligned(ptr, size, alignment) free(ptr)
 
 xrMemory Memory;
-// Also used in src\xrCore\xrDebug.cpp to prevent use of g_pStringContainer before it initialized
-bool shared_str_initialized = false;
-
-void xrMemory::_initialize()
-{
-    ZoneScoped;
-    g_pStringContainer = xr_new<str_container>();
-    shared_str_initialized = true;
-    g_pSharedMemoryContainer = xr_new<smem_container>();
-}
-
-void xrMemory::_destroy()
-{
-    ZoneScoped;
-    xr_delete(g_pSharedMemoryContainer);
-    xr_delete(g_pStringContainer);
-}
-
-size_t xrMemory::mem_usage()
-{
-#if defined(XR_PLATFORM_WINDOWS)
-    PROCESS_MEMORY_COUNTERS pmc = {};
-    if (HANDLE h = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, GetCurrentProcessId()))
-    {
-        GetProcessMemoryInfo(h, &pmc, sizeof(pmc));
-        CloseHandle(h);
-    }
-    return pmc.PagefileUsage;
-#elif defined(XR_PLATFORM_LINUX) || defined(XR_PLATFORM_BSD) || defined(XR_PLATFORM_APPLE)
-    struct rusage ru;
-    getrusage(RUSAGE_SELF, &ru);
-    return (size_t)ru.ru_maxrss;
-#elif defined(XR_PLATFORM_HAIKU)
-    system_info info;
-    get_system_info(&info);
-    return B_PAGE_SIZE * (uint64)info.used_pages;
-#else
-    return 0;
-#endif
-}
 
 void xrMemory::mem_compact()
 {

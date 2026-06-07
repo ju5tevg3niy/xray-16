@@ -166,11 +166,9 @@ static void full_memory_stats()
     Memory.mem_compact();
     u32 m_base = 0, c_base = 0, m_lmaps = 0, c_lmaps = 0;
     GEnv.Render->ResourcesGetMemoryUsage(m_base, c_base, m_lmaps, c_lmaps);
-    size_t _process_heap = ::Memory.mem_usage();
     const auto [_eco_strings_bytes, _eco_strings_count] = g_pStringContainer->stat_economy();
     int _eco_smem = (int)g_pSharedMemoryContainer->stat_economy();
     Msg("* [ render ]: textures[%d K]", (m_base + m_lmaps) / 1024);
-    Msg("* [ x-ray  ]: process heap[%u K]", _process_heap / 1024);
     Msg("* [ x-ray  ]: shared strings: memory[%ld K], count[%lu]", _eco_strings_bytes / 1024, _eco_strings_count);
     Msg("* [ x-ray  ]: shared memory[%ld K]", _eco_smem);
 #ifdef FS_DEBUG

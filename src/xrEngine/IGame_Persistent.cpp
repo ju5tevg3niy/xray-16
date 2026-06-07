@@ -391,7 +391,6 @@ void IGame_Persistent::Prefetch()
     // prefetch game objects & models
     CTimer timer;
     timer.Start();
-    const auto memoryBefore = Memory.mem_usage();
 
     Log("Loading objects...");
     ObjectPool.prefetch();
@@ -402,10 +401,7 @@ void IGame_Persistent::Prefetch()
     Log("Loading textures...");
     GEnv.Render->ResourcesDeferredUpload();
 
-    const auto memoryAfter = Memory.mem_usage() - memoryBefore;
-
     Msg("* [prefetch] time:   %d ms", timer.GetElapsed_ms());
-    Msg("* [prefetch] memory: %d Kb", memoryAfter / 1024);
 }
 #endif
 
@@ -436,7 +432,6 @@ void IGame_Persistent::LoadEnd()
     if (0 == ll_dwReference)
     {
         Msg("* phase time: %d ms", phase_timer.GetElapsed_ms());
-        Msg("* phase cmem: %d K", Memory.mem_usage() / 1024);
         Console->Execute("stat_memory");
         loaded = true;
     }
@@ -503,7 +498,6 @@ void IGame_Persistent::LoadStage(bool draw /*= true*/)
     if (!load_screen_renderer.IsActive())
     {
         Msg("* phase time: %d ms", phase_timer.GetElapsed_ms());
-        Msg("* phase cmem: %d K", Memory.mem_usage() / 1024);
         phase_timer.Start();
     }
 

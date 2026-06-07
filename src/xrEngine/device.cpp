@@ -82,7 +82,6 @@ void CRenderDevice::RenderEnd(void)
             GEnv.Sound->set_master_volume(1.f);
             GEnv.Render->ResourcesDestroyNecessaryTextures();
             Memory.mem_compact();
-            Msg("* MEMORY USAGE: %d K", Memory.mem_usage() / 1024);
             Msg("* End of synchronization A[%d] R[%d]", b_is_Active, b_is_Ready);
             FIND_CHUNK_COUNTER_FLUSH();
             if (g_pGamePersistent->GameType() == 1 && !psDeviceFlags.test(rsAlwaysActive)) // haCk

@@ -947,7 +947,6 @@ void CLocatorAPI::_initialize(u32 flags, pcstr target_folder, pcstr fs_name)
     CTimer t;
     t.Start();
     Log("Initializing File System...");
-    const size_t M1 = Memory.mem_usage();
 
     m_Flags.set(flags, true);
 
@@ -1031,8 +1030,7 @@ void CLocatorAPI::_initialize(u32 flags, pcstr target_folder, pcstr fs_name)
         R_ASSERT(path_exist("$app_data_root$"));
     };
 
-    const size_t M2 = Memory.mem_usage();
-    Msg("FS: %zu files cached %zu archives, %zuKb memory used.", m_files.size(), m_archives.size(), (M2 - M1) / 1024);
+    Msg("FS: %zu files cached %zu archives.", m_files.size(), m_archives.size());
 
     m_Flags.set(flReady, true);
 

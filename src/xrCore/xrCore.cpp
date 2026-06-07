@@ -19,6 +19,10 @@
 
 #include <SDL.h>
 
+#include "xrMemory.h"
+#include "xrsharedmem.h"
+#include "xrstring.h"
+
 #if __has_include(".GitInfo.hpp")
 #include ".GitInfo.hpp"
 #endif
@@ -269,7 +273,8 @@ void xrCore::Initialize(pcstr _ApplicationName, pcstr commandLine, bool init_fs,
         Msg("ComputerName: %s", CompName);
 #endif
 
-        Memory._initialize();
+        g_pStringContainer = xr_new<str_container>();
+        g_pSharedMemoryContainer = xr_new<smem_container>();
 
         SDL_LogSetOutputFunction(SDLLogOutput, nullptr);
         Msg("\ncommand line %s\n", Params);
@@ -339,7 +344,10 @@ void xrCore::_destroy()
         }
         TaskScheduler = nullptr;
         xr_free(Params);
-        Memory._destroy();
+
+        xr_delete(g_pSharedMemoryContainer);
+        xr_delete(g_pStringContainer);
+
 #ifdef XR_PLATFORM_WINDOWS
         CoUninitialize();
         timeEndPeriod(1);

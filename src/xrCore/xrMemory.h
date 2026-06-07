@@ -11,10 +11,6 @@ public:
 
 public:
     xrMemory() = default;
-    void _initialize();
-    void _destroy();
-
-    size_t mem_usage();
 
     void mem_compact();
 
