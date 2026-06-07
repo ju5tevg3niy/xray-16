@@ -449,7 +449,6 @@ target_include_directories(xrCore
     "${CMAKE_CURRENT_SOURCE_DIR}"
     "${CMAKE_SOURCE_DIR}/src"
     "${CMAKE_SOURCE_DIR}/Externals"
-    "${CMAKE_SOURCE_DIR}/Externals/mimalloc/include"
 )
 
 target_link_libraries(xrCore
@@ -460,7 +459,6 @@ target_link_libraries(xrCore
 
     PRIVATE
     xrMiscMath
-    $<$<STREQUAL:${MEMORY_ALLOCATOR},mimalloc>:mimalloc>
     $<$<BOOL:${JPEG_FOUND}>:JPEG::JPEG>
     LZO::LZO
 )
@@ -486,12 +484,6 @@ target_compile_definitions(xrCore
     GIT_INFO_CURRENT_BRANCH=\"${XRAY_GIT_BRANCH}\"
     OPENSSL_NO_DEPRECATED
 )
-
-if (MEMORY_ALLOCATOR STREQUAL "mimalloc")
-    target_compile_definitions(xrCore PRIVATE USE_MIMALLOC)
-else()
-    target_compile_definitions(xrCore PRIVATE USE_PURE_ALLOC)
-endif()
 
 set_target_properties(xrCore PROPERTIES
     PREFIX ""
