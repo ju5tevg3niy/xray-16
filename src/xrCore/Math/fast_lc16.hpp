@@ -7,6 +7,12 @@
 ///////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <cstdint>
+#include <limits>
+
+#include "Common/types.hpp"
+#include "xrDebug_macros.h"
+
 //! A fast random number generator.
 /** Uses linear congruential method. */
 class fast_lc16 final

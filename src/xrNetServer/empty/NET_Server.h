@@ -4,6 +4,7 @@
 #include "../NET_PlayersMonitor.h"
 #include "../NET_Shared.h"
 #include "../ip_filter.h"
+#include "xrCore/xr_ini.h"
 
 struct SClientConnectData {
     ClientID clientID;

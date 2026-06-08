@@ -7,6 +7,7 @@
 #include "_random.h"
 #include "math_constants.h"
 #include "xrCommon/math_funcs_inline.h"
+#include "_std_extensions.h"
 
 template <class T>
 struct _vector3

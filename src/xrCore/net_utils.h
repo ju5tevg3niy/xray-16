@@ -4,6 +4,7 @@
 #include "Common/types.hpp"
 #include "client_id.h"
 #include "xrCommon/xr_string.h"
+#include "xrCore/_matrix.h"
 
 // fwd. decl.
 template <class T> struct _vector3;

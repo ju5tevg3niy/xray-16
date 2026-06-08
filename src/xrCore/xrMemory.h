@@ -1,8 +1,21 @@
 #pragma once
 
-#include "Common/types.hpp"
-
+#include <cstddef>
 #include <new>
+
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
+
+#ifdef XRAY_STATIC_BUILD
+#   define XRCORE_API
+#else
+#   ifdef XRCORE_EXPORTS
+#      define XRCORE_API XR_EXPORT
+#   else
+#      define XRCORE_API XR_IMPORT
+#      define TRACY_IMPORTS
+#   endif
+#endif
 
 class XRCORE_API xrMemory
 {

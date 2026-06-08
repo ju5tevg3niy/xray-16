@@ -1,6 +1,6 @@
 #pragma once
-#ifndef NET_PLAYERS_MONITOR
-#define NET_PLAYERS_MONITOR
+
+#include <thread>
 
 #include "NET_Shared.h"
 #include "NET_Common.h"
@@ -266,5 +266,3 @@ public:
     }
     */
 }; // class PlayersMonitor
-
-#endif //#ifndef NET_PLAYERS_MONITOR
