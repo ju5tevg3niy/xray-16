@@ -1,8 +1,7 @@
 #pragma once
-#ifndef _INCDEF_NETUTILS_H_
-#define _INCDEF_NETUTILS_H_
+
 #include <string.h>
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 #include "client_id.h"
 #include "xrCommon/xr_string.h"
 
@@ -270,5 +269,3 @@ public:
 };
 
 #pragma pack(pop)
-
-#endif /*_INCDEF_NETUTILS_H_*/

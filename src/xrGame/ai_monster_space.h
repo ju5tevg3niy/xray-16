@@ -7,7 +7,8 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "xrCore/xr_types.h"
+
+#include "Common/types.hpp"
 #include "xrCommon/misc_math_types.h"
 
 namespace MonsterSpace

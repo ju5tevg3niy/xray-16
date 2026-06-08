@@ -1,5 +1,7 @@
 #pragma once
-#include "xrCore/xr_types.h"
+
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
 #include "xrCommon/xr_string.h"
 #include "xrCommon/xr_vector.h"
 #include "Threading/Lock.hpp"

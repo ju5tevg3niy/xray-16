@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xr_types.h"
+#include "Common/types.hpp"
 #include "_rect.h"
 #include "_plane.h"
 #include "_vector2.h"

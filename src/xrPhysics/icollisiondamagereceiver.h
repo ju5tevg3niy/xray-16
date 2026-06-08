@@ -1,6 +1,7 @@
 #pragma once
+
 #include "xrPhysics.h"
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 
 // fwd. decl.
 template <class T> struct _vector3;

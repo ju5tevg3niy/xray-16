@@ -4,7 +4,7 @@
 
 #include "Common/Platform.hpp"
 #include "xrCore/math_constants.h"
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 
 // float values defines
 #define fdSGN 0x080000000 // mask for sign bit

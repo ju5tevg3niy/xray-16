@@ -1,7 +1,6 @@
 #pragma once
-#ifndef ShapeDataH
-#define ShapeDataH
-#include "xrCore/xr_types.h"
+
+#include "Common/types.hpp"
 #include "xrCore/_sphere.h"
 #include "xrCore/_matrix.h"
 #include "xrCommon/xr_vector.h"
@@ -28,5 +27,3 @@ struct CShapeData
     using ShapeVec = xr_vector<shape_def>;
     ShapeVec shapes;
 };
-
-#endif

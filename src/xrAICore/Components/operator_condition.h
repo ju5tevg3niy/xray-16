@@ -7,7 +7,8 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "xrCore/xr_types.h"
+
+#include "Common/types.hpp"
 
 template <typename _condition_type, typename _value_type>
 class COperatorConditionAbstract

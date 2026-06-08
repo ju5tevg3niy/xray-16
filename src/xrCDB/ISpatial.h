@@ -4,7 +4,7 @@
 
 #include "xrCore/xrPool.h"
 //#include "xr_collide_defs.h"
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 #include "xrCore/_vector3d.h"
 #include "xrCore/_sphere.h"
 #include "xrCore/FTimer.h"

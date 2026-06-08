@@ -2,7 +2,8 @@
 
 #include <algorithm>
 #include <cmath>
-#include "xr_types.h"
+
+#include "Common/types.hpp"
 #include "_random.h"
 #include "math_constants.h"
 #include "xrCommon/math_funcs_inline.h"

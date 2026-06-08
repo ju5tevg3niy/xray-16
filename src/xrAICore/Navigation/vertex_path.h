@@ -7,7 +7,8 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "xrCore/xr_types.h"
+
+#include "Common/types.hpp"
 #include "xrCommon/xr_vector.h"
 
 template <bool EuclidianHeuristics = true>

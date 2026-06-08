@@ -1,7 +1,6 @@
 #pragma once
-#ifndef _COMPR_NORMAL_
-#define _COMPR_NORMAL_
-#include "xrCore/xr_types.h"
+
+#include "Common/types.hpp"
 
 // fwd. decl.
 template <class T> struct _vector3; typedef _vector3<float> Fvector;
@@ -17,5 +16,3 @@ template <class T> struct _vector3; typedef _vector3<float> Fvector;
 XRCORE_API u16 pvCompress(const Fvector& vec);
 XRCORE_API void pvDecompress(Fvector& vec, u16 mVec);
 XRCORE_API void pvInitializeStatics(void);
-
-#endif

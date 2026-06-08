@@ -1,5 +1,6 @@
 #pragma once
-#include "xrCore/xr_types.h"
+
+#include "Common/types.hpp"
 #include "xrCore/xrDebug_macros.h"
 
 // deprecated, use xr_array instead

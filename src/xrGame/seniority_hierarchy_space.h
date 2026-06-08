@@ -7,7 +7,8 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "xrCore/xr_types.h"
+
+#include "Common/types.hpp"
 #include "Common/Platform.hpp" // xr_itoa
 #include "xrCore/xrstring.h"
 

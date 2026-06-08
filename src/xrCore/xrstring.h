@@ -2,7 +2,7 @@
 
 #include <cstdio>
 
-#include "xr_types.h"
+#include "Common/types.hpp"
 #include "xrMemory.h"
 
 #include <cstring>

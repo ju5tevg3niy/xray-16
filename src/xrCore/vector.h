@@ -4,7 +4,7 @@
 
 #include "math_constants.h"
 // Define types and namespaces (CPU & FPU)
-#include "xr_types.h"
+#include "Common/types.hpp"
 #include "_math.h"
 #include "xrCore/Math/bitwise.hpp"
 #include "_std_extensions.h"

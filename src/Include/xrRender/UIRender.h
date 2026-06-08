@@ -1,7 +1,6 @@
-#ifndef UIRender_included
-#define UIRender_included
 #pragma once
-#include "xrCore/xr_types.h"
+
+#include "Common/types.hpp"
 
 // fwd. decl.
 class IUIShader;
@@ -71,5 +70,3 @@ public:
     virtual void CacheSetXformWorld(const Fmatrix& M) = 0;
     virtual void CacheSetCullMode(CullMode) = 0;
 };
-
-#endif //	UIRender_included

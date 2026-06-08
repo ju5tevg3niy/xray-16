@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 // tamlin WIP
 //#include "xrCore/_vector3d.h"
 

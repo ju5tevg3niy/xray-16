@@ -1,6 +1,6 @@
 #pragma once
 
-#include"xrCore/xr_types.h"
+#include"Common/types.hpp"
 //#include"xrCore/_stl_extensions.h"
 
 namespace xray::render::RENDER_NAMESPACE

@@ -1,6 +1,6 @@
-#ifndef _LOCAL_RAND
-#define _LOCAL_RAND
-#include "xr_types.h"
+#pragma once
+
+#include "Common/types.hpp"
 #include "xrCore/xrDebug.h"
 
 /*
@@ -44,5 +44,3 @@ public:
 };
 
 XRCORE_API extern CRandom Random;
-
-#endif

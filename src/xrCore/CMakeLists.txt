@@ -3,6 +3,7 @@ add_library(xrCore)
 target_sources_grouped(
     TARGET xrCore
     NAME "JJ fork"
+    FILES
     timestamp.cpp
 )
 
@@ -282,10 +283,6 @@ target_sources_grouped(
     _vector3d_ext.h
     _vector4.h
     dump_string.cpp
-    dump_string.h
-    math_constants.h
-    vector.h
-    xr_types.h
 )
 
 target_sources_grouped(

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xr_types.h"
+#include "Common/types.hpp"
 #include "_std_extensions.h"
 #include "math_constants.h"
 

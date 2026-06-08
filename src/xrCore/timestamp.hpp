@@ -1,5 +1,5 @@
 #pragma once
 
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 
 char* timestamp(string64& dest);

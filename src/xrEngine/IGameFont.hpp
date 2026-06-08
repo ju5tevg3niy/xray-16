@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 #include "xrCore/_vector2.h"
 #include "xrCore/Text/StringConversion.hpp"
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Common/Noncopyable.hpp"
-#include "xr_types.h"
+#include "Common/types.hpp"
 #include "xrCommon/xr_vector.h"
 #include "_math.h"
 #include "log.h"

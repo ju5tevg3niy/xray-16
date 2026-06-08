@@ -1,7 +1,7 @@
 #pragma once
 
 #include "xrPhysics/xrPhysics.h"
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 #include "xrCore/_matrix.h"
 #include "MathUtils.h"
 

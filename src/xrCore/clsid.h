@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xr_types.h"
+#include "Common/types.hpp"
 
 //***** CLASS ID type
 using CLASS_ID = u64;

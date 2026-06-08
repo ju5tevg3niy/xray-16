@@ -3,8 +3,6 @@
 #include <cstdint>
 #include <limits>
 
-#include "Common/Platform.hpp"
-
 // Type defs
 using s8 = std::int8_t;
 using u8 = std::uint8_t;
@@ -58,14 +56,6 @@ constexpr double dbl_min = type_min<double>;
 constexpr double dbl_zero = type_zero<double>;
 constexpr double dbl_eps = type_epsilon<double>;
 
-#if defined(XR_PLATFORM_WINDOWS)
-constexpr size_t max_path = MAX_PATH;
-#elif defined(XR_PLATFORM_POSIX)
-constexpr size_t max_path = PATH_MAX;
-#else
-#error Define here lenght of the file paths strings for your platform
-#endif
-
 using string16 = char[16];
 using string32 = char[32];
 using string64 = char[64];
@@ -75,5 +65,3 @@ using string512 = char[512];
 using string1024 = char[1024];
 using string2048 = char[2048];
 using string4096 = char[4096];
-
-using string_path = char[2 * max_path];

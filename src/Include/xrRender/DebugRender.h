@@ -2,7 +2,7 @@
 
 #ifdef DEBUG
 
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 #include "DebugShader.h"
 
 // fwd. decl.

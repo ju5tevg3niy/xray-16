@@ -1,6 +1,8 @@
 #pragma once
-#include <math.h>
-#include "xrCore/xr_types.h"
+
+#include <cmath>
+
+#include "Common/types.hpp"
 #include "xrCore/math_constants.h"
 #include "xrCommon/math_funcs_inline.h"
 

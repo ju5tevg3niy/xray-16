@@ -3,7 +3,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "xr_types.h"
+#include "Common/types.hpp"
 #include "xrCore/Math/bitwise.hpp"
 #include "_compressed_normal.h"
 #include "_vector2.h"

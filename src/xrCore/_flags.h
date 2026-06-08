@@ -1,7 +1,6 @@
 #pragma once
-#ifndef __FLAGS_H__
-#define __FLAGS_H__
-#include "xr_types.h"
+
+#include "Common/types.hpp"
 
 template <class T>
 struct _flags
@@ -106,5 +105,3 @@ using Flags32 = _flags<u32>;
 using flags32 = _flags<u32>;
 using Flags64 = _flags<u64>;
 using flags64 = _flags<u64>;
-
-#endif //__FLAGS_H__

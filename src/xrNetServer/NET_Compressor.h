@@ -1,9 +1,7 @@
 #pragma once
-#if !defined(AFX_NET_COMPRESSOR_H__21E1ED1C_BF92_4BF0_94A8_18A27486EBFD__INCLUDED_)
-#define AFX_NET_COMPRESSOR_H__21E1ED1C_BF92_4BF0_94A8_18A27486EBFD__INCLUDED_
 
 #include "Common/Noncopyable.hpp"
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 #include "xrCommon/xr_map.h"
 
 class Lock;
@@ -40,5 +38,3 @@ public:
     u16 Decompress(u8* dest, const u32& dest_size, u8* src, const u32& count); // return size of compressed
     void DumpStats(bool brief) const;
 };
-
-#endif // !defined(AFX_NET_COMPRESSOR_H__21E1ED1C_BF92_4BF0_94A8_18A27486EBFD__INCLUDED_)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xr_types.h"
+#include "Common/types.hpp"
 
 namespace CPU
 {

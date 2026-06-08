@@ -1,8 +1,6 @@
 #pragma once
-#ifndef _VECTOR4_H
-#define _VECTOR4_H
 
-#include "xr_types.h"
+#include "Common/types.hpp"
 
 template <class T>
 struct _vector4
@@ -210,5 +208,3 @@ bool _valid(const _vector4<T>& v)
 {
     return _valid((T)v.x) && _valid((T)v.y) && _valid((T)v.z) && _valid((T)v.w);
 }
-
-#endif

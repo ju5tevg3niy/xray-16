@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCore/xr_types.h"
+#include "Common/types.hpp"
 #include "xrCore/_flags.h"
 #include "xrCore/xr_resource.h"
 #include "xrCore/_vector3d.h"
