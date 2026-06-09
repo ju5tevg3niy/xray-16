@@ -110,7 +110,6 @@ int main(int argc, char *argv[])
     }
     catch (const std::overflow_error& e)
     {
-        _resetstkoflw();
         FATAL_F("stack overflow: %s", e.what());
     }
     catch (const std::runtime_error& e)

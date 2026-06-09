@@ -5,8 +5,6 @@
 #define EXCEPTION_STACK_OVERFLOW ((u32) 0xC00000FD)
 #define EXCEPTION_EXECUTE_HANDLER 1
 #define EXCEPTION_CONTINUE_SEARCH 0
-
-int _cdecl XRCORE_API _resetstkoflw(void);
 #endif
 
 // Tries to match C11 strcpy_s behaviour

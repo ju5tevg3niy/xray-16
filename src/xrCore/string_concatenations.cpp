@@ -1,13 +1,6 @@
 #include "stdafx.h"
 #include "string_concatenations.h"
 
-#if !defined(XR_PLATFORM_WINDOWS) // XXX: remove or cleanup
-int _cdecl _resetstkoflw(void)
-{
-    return 0;
-}
-#endif
-
 namespace xray
 {
 namespace core
