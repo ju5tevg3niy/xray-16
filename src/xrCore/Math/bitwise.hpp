@@ -3,8 +3,8 @@
 #include <cmath>
 
 #include "Common/Platform.hpp"
-#include "xrCore/math_constants.h"
 #include "Common/types.hpp"
+#include "xrCore/Math/constants.hpp"
 
 // float values defines
 #define fdSGN 0x080000000 // mask for sign bit

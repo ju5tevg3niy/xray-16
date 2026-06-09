@@ -1,6 +1,7 @@
 #pragma once
-#include "xrCore/_vector3d.h"
-#include "xrCommon/math_funcs.h"
+
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/math_funcs.hpp"
 #include "xrCore/xrDebug_macros.h"
 #include "xrCore/xr_ini.h"
 #include "xrCore/xr_trims.h"

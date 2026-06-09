@@ -127,7 +127,6 @@ target_include_directories(xrSound
 target_link_libraries(xrSound
     PRIVATE
     xrCore
-    xrMiscMath
     xrAPI
     xrCDB
     xrMaterialSystem

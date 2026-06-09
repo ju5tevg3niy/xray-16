@@ -5,15 +5,14 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Attachable item
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
 #include "Common/types.hpp"
-#include "xrCore/_matrix.h"
+#include "xrCore/Math/matrix.hpp"
 #include "xrCore/xrstring.h"
 #ifdef DEBUG
 #include "xrCore/log.h"
-#include "xrCore/_vector3d.h"
+#include "xrCore/Math/vector3.hpp"
 #endif
 
 class CPhysicsShellHolder;

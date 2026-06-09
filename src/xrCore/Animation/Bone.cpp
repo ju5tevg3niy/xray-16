@@ -3,7 +3,7 @@
 
 #include "Bone.hpp"
 #include "xrCore/xrDebug_macros.h"
-#include "xrCommon/math_funcs_inline.h"
+#include "xrCore/Math/math_funcs_inline.hpp"
 
 #define BONE_VERSION 0x0002
 //------------------------------------------------------------------------------

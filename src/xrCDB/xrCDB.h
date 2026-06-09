@@ -2,8 +2,8 @@
 
 #include "xrCore/Threading/Lock.hpp" // XXX: Remove from header. Put in .cpp.
 #include "Common/Noncopyable.hpp"
-#include "xrCore/math_constants.h"
-#include "xrCore/_vector3d.h"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/vector3.hpp"
 #include "xrCommon/xr_vector.h"
 
 #ifdef XRAY_STATIC_BUILD

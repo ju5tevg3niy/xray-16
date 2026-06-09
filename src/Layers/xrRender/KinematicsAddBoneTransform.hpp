@@ -1,6 +1,6 @@
 #pragma once //--#SM+#--
 
-#include "xrCore/_quaternion.h"
+#include "xrCore/Math/quaternion.hpp"
 
 namespace KinematicsABT
 {

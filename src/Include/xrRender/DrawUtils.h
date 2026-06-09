@@ -2,7 +2,7 @@
 
 #include "Common/types.hpp"
 // tamlin WIP
-//#include "xrCore/_vector3d.h"
+//#include "xrCore/Math/vector3.hpp"
 
 #ifndef ECORE_API
 #pragma message("ECORE_API not defined. Invoking ugly hack to enable compilation.")

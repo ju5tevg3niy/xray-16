@@ -1,7 +1,8 @@
 #pragma once
+
 #ifdef DEBUG
 #include "xrPhysics.h"
-#include "xrCore/_flags.h"
+#include "xrCore/Math/flags.hpp"
 #include "xrCore/xrDebug_macros.h"
 
 // fwd. decl.

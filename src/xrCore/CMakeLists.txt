@@ -4,6 +4,15 @@ target_sources_grouped(
     TARGET xrCore
     NAME "JJ fork"
     FILES
+    cpu.cpp
+    Math/compressed_normal.cpp
+    Math/cylinder.cpp
+    Math/math_funcs.cpp
+    Math/matrix.cpp
+    Math/quaternion.cpp
+    Math/sphere.cpp
+    Math/vector.cpp
+    Math/vector3_ext.cpp
     timestamp.cpp
 )
 
@@ -257,31 +266,6 @@ target_sources_grouped(
     TARGET xrCore
     NAME "Math"
     FILES
-    Math/bitwise.hpp
-    _color.h
-    _compressed_normal.cpp
-    _compressed_normal.h
-    _cylinder.cpp
-    _cylinder.h
-    _fbox.h
-    _fbox2.h
-    _flags.h
-    _math.cpp
-    _math.h
-    _matrix.h
-    _matrix33.h
-    _obb.h
-    _plane.h
-    _plane2.h
-    _quaternion.h
-    _random.h
-    _rect.h
-    _sphere.cpp
-    _sphere.h
-    _vector2.h
-    _vector3d.h
-    _vector3d_ext.h
-    _vector4.h
     dump_string.cpp
 )
 
@@ -291,8 +275,6 @@ target_sources_grouped(
     FILES
     #ChooseTypes.H
     #client_id.h
-    _std_extensions.h
-    _stl_extensions.h
     clsid.cpp
     clsid.h
     fastdelegate.h
@@ -460,7 +442,6 @@ target_link_libraries(xrCore
     SDL2::SDL2
 
     PRIVATE
-    xrMiscMath
     $<$<BOOL:${JPEG_FOUND}>:JPEG::JPEG>
     LZO::LZO
 )

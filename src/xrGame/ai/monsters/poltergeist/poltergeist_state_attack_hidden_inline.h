@@ -1,7 +1,7 @@
 #pragma once
 
 #include "sound_player.h"
-#include "xrCore/_vector3d_ext.h"
+#include "xrCore/Math/vector3_ext.hpp"
 
 #define TEMPLATE_SPECIALIZATION \
     template <typename _Object\

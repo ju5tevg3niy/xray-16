@@ -2,7 +2,7 @@
 
 #include "xrPhysics/xrPhysics.h"
 #include "Common/types.hpp"
-#include "xrCore/_matrix.h"
+#include "xrCore/Math/matrix.hpp"
 #include "MathUtils.h"
 
 struct dContactGeom;

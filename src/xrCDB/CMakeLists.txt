@@ -46,7 +46,6 @@ target_include_directories(xrCDB
 target_link_libraries(xrCDB
     PRIVATE
     xrCore
-    xrMiscMath
     xrOPCODE
     xrAPI
 )

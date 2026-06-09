@@ -7,7 +7,6 @@ add_compile_definitions(
 
 add_compile_options(${XRAY_ENABLE_WARNINGS})
 
-add_subdirectory(utils)
 add_subdirectory(Layers)
 add_subdirectory(xr_3da)
 add_subdirectory(xrAICore)

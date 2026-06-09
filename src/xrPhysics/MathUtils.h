@@ -1,8 +1,7 @@
 #pragma once
-#ifndef MATH_UTILS_H
-#define MATH_UTILS_H
-#include "xrCore/_fbox.h"
-#include "xrCore/_obb.h"
+
+#include "xrCore/Math/fbox.hpp"
+#include "xrCore/Math/obb.hpp"
 #include "xrPhysics.h"
 #include "xrCore/_std_extensions.h"
 #ifdef DEBUG
@@ -476,5 +475,3 @@ const float DET_CHECK_FATAL_EPS = 0.8f; // scale -35%  !? ;)
 #else
 #define VERIFY_RMATRIX(M)
 #endif
-
-#endif // include guard

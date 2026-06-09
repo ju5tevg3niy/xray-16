@@ -3,9 +3,9 @@
 #include "Include/xrRender/FactoryPtr.h"
 #include "Include/xrRender/UIRender.h"
 #include "Include/xrRender/UIShader.h"
-#include "xrCore/_plane2.h"
-#include "xrCore/_vector2.h"
-#include "xrCore/_rect.h"
+#include "xrCore/Math/plane2.hpp"
+#include "xrCore/Math/vector2.hpp"
+#include "xrCore/Math/rect.hpp"
 #include "xrCore/FixedVector.h"
 #include "xrCDB/Frustum.h"
 

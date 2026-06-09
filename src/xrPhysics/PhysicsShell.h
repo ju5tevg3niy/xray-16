@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCore/_flags.h"
+#include "xrCore/Math/flags.hpp"
 #include "xrEngine/IPhysicsShell.h"
 
 #include "PHDefs.h"

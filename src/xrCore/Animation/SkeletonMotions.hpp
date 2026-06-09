@@ -1,11 +1,9 @@
-//---------------------------------------------------------------------------
-#ifndef SkeletonMotionsH
-#define SkeletonMotionsH
+#pragma once
 
 #include "Bone.hpp"
 #include "SkeletonMotionDefs.hpp"
-#include "xrCore/_quaternion.h"
-#include "xrCore/_vector3d.h"
+#include "xrCore/Math/quaternion.hpp"
+#include "xrCore/Math/vector3.hpp"
 
 // fwd. decl.
 class CKinematicsAnimated;
@@ -333,5 +331,3 @@ public:
         return p_->m_id;
     }
 };
-//---------------------------------------------------------------------------
-#endif

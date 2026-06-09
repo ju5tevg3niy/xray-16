@@ -2,8 +2,8 @@
 
 #include "Include/xrRender/FactoryPtr.h"
 #include "Include/xrRender/EnvironmentRender.h"
-#include "xrCore/_vector3d.h"
-#include "xrCore/_quaternion.h"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/quaternion.hpp"
 #include "xrCommon/xr_vector.h"
 #include "xrCommon/xr_map.h"
 #include "xrSound/Sound.h"

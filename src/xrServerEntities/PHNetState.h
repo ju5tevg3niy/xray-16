@@ -1,7 +1,7 @@
 #pragma once
 
-#include "xrCore/_vector3d.h"
-#include "xrCore/_quaternion.h"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/quaternion.hpp"
 #include "xrCommon/xr_vector.h"
 
 class NET_Packet;

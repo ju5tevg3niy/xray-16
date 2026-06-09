@@ -11,7 +11,7 @@
 #include <limits>
 
 #include "Common/types.hpp"
-#include "xrDebug_macros.h"
+#include "xrCore/xrDebug_macros.h"
 
 //! A fast random number generator.
 /** Uses linear congruential method. */

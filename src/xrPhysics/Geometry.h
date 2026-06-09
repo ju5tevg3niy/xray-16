@@ -4,7 +4,7 @@
 #include "ExtendedGeom.h"
 #include "MathUtilsOde.h"
 #include "xrEngine/IPhysicsGeometry.h"
-#include "xrCore/_cylinder.h"
+#include "xrCore/Math/cylinder.hpp"
 
 // this is equivalent dMULTIPLYOP0_333 whith consequent transposion of A
 #define dMULTIPLYOP3_333(A, op, B, C)   \

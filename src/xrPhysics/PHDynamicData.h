@@ -1,12 +1,11 @@
 // PHDynamicData.h: interface for the PHDynamicData class.
 //
 //////////////////////////////////////////////////////////////////////
-
 #pragma once
 
 #include "PHInterpolation.h"
 #include "MathUtilsOde.h"
-#include "xrCore/_matrix33.h"
+#include "xrCore/Math/matrix33.hpp"
 
 class PHDynamicData
 {

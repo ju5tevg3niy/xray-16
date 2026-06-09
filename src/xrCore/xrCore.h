@@ -43,8 +43,8 @@
 
 //#include "_stl_extensions.h"
 #include "_std_extensions.h"
-#include "_rect.h"
-#include "_matrix.h"
+#include "xrCore/Math/rect.hpp"
+#include "xrCore/Math/matrix.hpp"
 #include "xrCommon/xr_vector.h"
 #include "xrCommon/xr_set.h"
 #include "xrsharedmem.h"
@@ -53,7 +53,7 @@
 #include "Compression/rt_compressor.h"
 #include "xr_shared.h"
 #include "string_concatenations.h"
-#include "_flags.h"
+#include "xrCore/Math/flags.hpp"
 
 // stl ext
 struct XRCORE_API xr_rtoken

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "xrCommon/xr_vector.h"
-#include "xrCore/_flags.h"
+#include "xrCore/Math/flags.hpp"
 #include "xrEngine/pure.h"
 #include "xrUICore/ui_debug.h"
 

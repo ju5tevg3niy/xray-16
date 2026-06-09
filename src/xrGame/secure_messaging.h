@@ -1,8 +1,7 @@
-#ifndef SECRET_KEY_GENERATOR_INCLUDED
-#define SECRET_KEY_GENERATOR_INCLUDED
+#pragma once
 
 #include "Common/Noncopyable.hpp"
-#include "xrCore/_random.h"
+#include "xrCore/Math/random.hpp"
 
 namespace secure_messaging
 {
@@ -34,5 +33,3 @@ u32 encrypt(void* buffer, u32 buffer_size, key_t const& sec_key);
 u32 decrypt(void* buffer, u32 buffer_size, key_t const& sec_key);
 
 } // namespace secure_messaging
-
-#endif //#ifndef SECRET_KEY_GENERATOR_INCLUDED

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Common/types.hpp"
-#include "xrCore/_vector2.h"
+#include "xrCore/Math/vector2.hpp"
 #include "xrCore/Text/StringConversion.hpp"
 
 class XR_NOVTABLE IGameFont

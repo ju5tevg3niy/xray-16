@@ -2,8 +2,8 @@
 
 #include "CycleConstStorage.h"
 #include <ode/common.h>
-#include "xrCore/_vector3d.h"
-#include "xrCore/_quaternion.h"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/quaternion.hpp"
 
 class CPHInterpolation
 {

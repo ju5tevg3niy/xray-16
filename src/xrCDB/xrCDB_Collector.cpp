@@ -3,7 +3,7 @@
 #pragma hdrstop // ???
 
 #include "xrCDB.h"
-#include "xrCore/_fbox.h"
+#include "xrCore/Math/fbox.hpp"
 
 namespace CDB
 {

@@ -1,6 +1,7 @@
 #pragma once
+
 #include "Include/xrRender/FactoryPtr.h"
-#include "xrCore/_vector3d.h"
+#include "xrCore/Math/vector3.hpp"
 
 class IGameObject;
 

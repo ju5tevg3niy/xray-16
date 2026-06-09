@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Common/types.hpp"
-#include "xrCore/_flags.h"
+#include "xrCore/Math/flags.hpp"
 #include "xrCore/client_id.h"
 #include "xrCore/FTimer.h"
 

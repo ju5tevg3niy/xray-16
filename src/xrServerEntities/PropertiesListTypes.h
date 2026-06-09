@@ -5,7 +5,7 @@
 #include "gametype_chooser.h"
 #include "xrCommon/xr_string.h"
 #include "xrCommon/xr_vector.h"
-#include "xrCore/_rect.h"
+#include "xrCore/Math/rect.hpp"
 #include "xrCore/xr_trims.h"
 #include "xrCore/xr_shortcut.h"
 #include "xrCore/xr_token.h"

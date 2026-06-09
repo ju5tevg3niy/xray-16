@@ -1,14 +1,12 @@
 #pragma once
-#ifndef xr_iniH
-#define xr_iniH
 
 #include "fastdelegate.h"
 #include "xrCore/xrstring.h"
-#include "xrCore/_flags.h"
-#include "xrCore/_color.h"
-#include "xrCore/_vector2.h"
-#include "xrCore/_vector3d.h"
-#include "xrCore/_vector4.h"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/Math/color.hpp"
+#include "xrCore/Math/vector2.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/vector4.hpp"
 #include "xrCore/clsid.h"
 #include "xrCommon/xr_vector.h"
 
@@ -270,5 +268,3 @@ public:
 extern XRCORE_API CInifile const* pSettings;
 extern XRCORE_API CInifile const* pSettingsAuth;
 extern XRCORE_API CInifile const* pSettingsOpenXRay;
-
-#endif //__XR_INI_H__

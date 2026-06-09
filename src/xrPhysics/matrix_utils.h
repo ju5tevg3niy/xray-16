@@ -1,6 +1,7 @@
 #pragma once
-#include "xrCore/_vector3d.h"
-#include "xrCore/_quaternion.h"
+
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/quaternion.hpp"
 
 IC float clamp_rotation(Fquaternion& q, float v)
 {

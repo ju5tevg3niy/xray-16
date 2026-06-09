@@ -3,7 +3,7 @@
 #include "Common/Noncopyable.hpp"
 #include "Common/types.hpp"
 #include "xrCommon/xr_vector.h"
-#include "_math.h"
+#include "xrCore/cpu.hpp"
 #include "log.h"
 #include "Threading/ScopeLock.hpp"
 

@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #pragma hdrstop
+
 #include "net_utils.h"
-#include "xrCommon/math_funcs.h"
-#include "xrCore/_compressed_normal.h"
+#include "xrCore/Math/math_funcs.hpp"
+#include "xrCore/Math/compressed_normal.hpp"
 
 // ---NET_Packet
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCore/_flags.h"
+#include "xrCore/Math/flags.hpp"
 
 #pragma warning(push)
 #pragma warning(disable : 4995)

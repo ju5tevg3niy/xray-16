@@ -5,9 +5,9 @@
 //	Author		: Oles Shihkovtsov, Dmitriy Iassenev
 //	Description : Level graph inline functions
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
-#include "xrCore/_fbox2.h"
+
+#include "xrCore/Math/fbox2.hpp"
 
 IC CLevelGraph::const_vertex_iterator CLevelGraph::begin() const { return (m_nodes->begin()); }
 IC CLevelGraph::const_vertex_iterator CLevelGraph::end() const { return (m_nodes->end()); }

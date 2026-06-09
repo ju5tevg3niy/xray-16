@@ -3,8 +3,8 @@
 #include <cmath>
 
 #include "Common/types.hpp"
-#include "xrCore/math_constants.h"
-#include "xrCommon/math_funcs_inline.h"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
 
 #pragma pack(push, 4)
 struct WaveForm

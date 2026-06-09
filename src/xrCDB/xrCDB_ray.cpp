@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #pragma hdrstop // ???
 
-#include "xrCore/_fbox.h"
+#include "xrCore/Math/fbox.hpp"
 #include "xrCDB.h"
 
 #if defined(XR_ARCHITECTURE_X86) || defined(XR_ARCHITECTURE_X64) || defined(XR_ARCHITECTURE_E2K) || defined(XR_ARCHITECTURE_PPC64)

@@ -2,7 +2,7 @@
 
 #ifdef DEBUG
 #include "dump_string.h"
-#include "_fbox.h"
+#include "xrCore/Math/fbox.hpp"
 
 std::string get_string(const Fvector& v)
 {

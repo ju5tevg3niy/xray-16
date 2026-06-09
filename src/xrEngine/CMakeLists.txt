@@ -416,9 +416,6 @@ target_include_directories(xrEngine
 )
 
 target_link_libraries(xrEngine
-    PUBLIC
-    xrMiscMath
-
     PRIVATE
     xrAPI
     xrCDB

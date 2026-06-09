@@ -1,11 +1,9 @@
 #pragma once
-#ifndef BoneH
-#define BoneH
 
-#include "xrCore/_obb.h"
-#include "xrCore/_sphere.h"
-#include "xrCore/_cylinder.h"
-#include "xrCore/_flags.h"
+#include "xrCore/Math/obb.hpp"
+#include "xrCore/Math/sphere.hpp"
+#include "xrCore/Math/cylinder.hpp"
+#include "xrCore/Math/flags.hpp"
 #include "xrCore/FixedVector.h"
 #include "xrCore/xrstring.h"
 #include "xrCommon/xr_vector.h"
@@ -516,5 +514,3 @@ IC void CBoneInstance::construct()
 
     ZeroMemory(&param, sizeof(param));
 }
-
-#endif

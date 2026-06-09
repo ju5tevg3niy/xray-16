@@ -1,5 +1,6 @@
 #pragma once
-#include "_flags.h"
+
+#include "xrCore/Math/flags.hpp"
 
 #pragma pack(push, 1)
 struct XRCORE_API xr_shortcut

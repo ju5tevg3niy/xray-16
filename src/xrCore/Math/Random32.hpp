@@ -7,7 +7,8 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "xrCore/xrCore.h"
+
+#include "Common/types.hpp"
 
 class CRandom32
 {

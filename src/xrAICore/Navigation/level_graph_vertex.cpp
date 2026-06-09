@@ -9,7 +9,7 @@
 #include "pch.hpp"
 #include "level_graph.h"
 #include "game_level_cross_table.h"
-#include "xrCore/_fbox2.h"
+#include "xrCore/Math/fbox2.hpp"
 
 float CLevelGraph::distance(const Fvector& position, const CLevelGraph::CLevelVertex* vertex) const
 {

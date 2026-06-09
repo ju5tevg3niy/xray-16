@@ -1,9 +1,8 @@
-#ifndef MONSTER_STATE_ATTACK_ON_RUN_INLINE_H
-#define MONSTER_STATE_ATTACK_ON_RUN_INLINE_H
+#pragma once
 
 #include "ai/monsters/monster_velocity_space.h"
 
-#include "xrCore/_vector3d_ext.h"
+#include "xrCore/Math/vector3_ext.hpp"
 #include "xrAICore/Navigation/level_graph.h"
 #include "xrGame/ai_space.h"
 
@@ -638,5 +637,3 @@ void ATTACK_ON_RUN_STATE::remove_links(IGameObject* object)
 
 #undef TEMPLATE_SIGNATURE
 #undef ATTACK_ON_RUN_STATE
-
-#endif // MONSTER_STATE_ATTACK_ON_RUN_INLINE_H

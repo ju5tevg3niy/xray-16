@@ -1,5 +1,6 @@
 #pragma once
-#include "xrCore/_fbox.h"
+
+#include "xrCore/Math/fbox.hpp"
 
 class ik_foot_geom
 {

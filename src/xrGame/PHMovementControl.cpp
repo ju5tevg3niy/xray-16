@@ -258,7 +258,7 @@ void CPHMovementControl::UpdateCollisionDamage()
 
 #include <ai/monsters/basemonster/base_monster.h>
 #include "xrAICore/Navigation/ai_object_location.h"
-#include "xrCore/_vector3d_ext.h"
+#include "xrCore/Math/vector3_ext.hpp"
 
 bool CPHMovementControl::MakeJumpPath(
     xr_vector<DetailPathManager::STravelPathPoint>& out_path, u32& travel_point, Fvector& out_deviation)

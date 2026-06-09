@@ -1,9 +1,9 @@
 // Portal.h: interface for the CPortal class.
 //
 //////////////////////////////////////////////////////////////////////
-
 #pragma once
-#include "xrCore/_fbox2.h"
+
+#include "xrCore/Math/fbox2.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {

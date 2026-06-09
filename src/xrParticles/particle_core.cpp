@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "particle_core.h"
-#include "xrCore/_fbox.h"
+#include "xrCore/Math/fbox.hpp"
 
 using namespace PAPI;
 

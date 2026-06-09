@@ -1,7 +1,8 @@
 #pragma once
+
 #include "xrUICore/ui_defs.h"
-#include "xrCore/_flags.h"
-#include "xrCore/_vector2.h"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/Math/vector2.hpp"
 #ifdef DEBUG
 #include "xrCore/xrstring.h"
 #endif

@@ -2486,7 +2486,6 @@ target_link_libraries(xrGame
     xrCore
     xrEngine
     xrMaterialSystem
-    xrMiscMath
     xrImGui
     xrAPI
     xrAICore

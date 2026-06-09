@@ -3,9 +3,9 @@
 #include <algorithm>
 
 #include "xrCDB.h"
-#include "xrCore/_vector3d.h"
-#include "xrCore/_matrix.h"
-#include "xrCommon/math_funcs_inline.h"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
 
 class IGameObject;
 namespace collide

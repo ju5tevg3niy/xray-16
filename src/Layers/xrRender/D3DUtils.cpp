@@ -8,7 +8,7 @@
 #include "du_sphere_part.h"
 #include "du_cone.h"
 #include "du_cylinder.h"
-#include "xrCore/_obb.h"
+#include "xrCore/Math/obb.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {

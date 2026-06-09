@@ -1,10 +1,9 @@
 // IInputReceiver.h: interface for the IInputReceiver class.
 //
 //////////////////////////////////////////////////////////////////////
-
 #pragma once
 
-#include "xrCore/_flags.h"
+#include "xrCore/Math/flags.hpp"
 
 // despite being unused in this file, it's almost always used in IR_* functions
 // so it's logically correct to include it

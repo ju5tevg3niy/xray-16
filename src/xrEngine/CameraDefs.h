@@ -1,7 +1,7 @@
 #pragma once
 
 #include "xrCore/fastdelegate.h"
-#include "xrCore/_vector3d.h"
+#include "xrCore/Math/vector3.hpp"
 
 #include "device.h"
 

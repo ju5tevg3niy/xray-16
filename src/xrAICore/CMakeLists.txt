@@ -294,7 +294,6 @@ target_link_libraries(xrAICore
     PRIVATE
     xrCore
     xrEngine
-    xrMiscMath
     xrAPI
     xrScriptEngine
 )

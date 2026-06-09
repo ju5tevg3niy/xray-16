@@ -42,7 +42,7 @@
 #include "Include/xrRender/RenderVisual.h" // ~370
 #include "Include/xrRender/UIRender.h" // ~450
 #include "Include/xrRender/UIShader.h" // ~490
-#include "xrCore/_plane2.h" // ~450
+#include "xrCore/Math/plane2.hpp" // ~450
 #include "xrAICore/AISpaceBase.hpp" // ~650
 #include "xrAICore/Navigation/game_graph.h" // ~600
 #include "xrPhysics/xrPhysics.h" // ~400
@@ -92,8 +92,8 @@
 #include "xrEngine/CameraManager.h" // ~190
 #include "xrCore/PostProcess/PPInfo.hpp" // ~190
 #include "xrScriptEngine/script_engine.hpp" // only ~200, VERY heavy! // XXX: See to it this goes to pch_script
-#include "xrCore/_fbox2.h" // ~155
-#include "xrCore/_vector3d_ext.h"
+#include "xrCore/Math/fbox2.hpp" // ~155
+#include "xrCore/Math/vector3_ext.hpp"
 #include "xrCore/buffer_vector.h"
 #include "xrCore/Crypto/xr_dsa_signer.h" // ~70, very heavy to compile
 #include "xrCore/Crypto/xr_dsa_verifyer.h" // ~70, very heavy to compile
@@ -134,7 +134,7 @@
 #include "xrGame/smart_cover.h" // ~30, VERY heavy to compile
 #include "xrGame/team_hierarchy_holder.h" // ~35, but quite heavy to compile
 #include "xrGame/Tracer.h" // ~60, somewhat heavy to compile
-//#include "xrCore/_fbox2.h" // ~155
+//#include "xrCore/Math/fbox2.hpp" // ~155
 #include "xr_time.h" // only ~125, includes "alife_space.h" !
 #include "xrServerEntities/alife_movement_manager_holder.h" // only ~120, small and self-contained
 #include "xrServerEntities/xrServer_Objects_ALife_Monsters.h" // only ~120, very heavy to compile

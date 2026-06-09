@@ -1,6 +1,7 @@
 #pragma once
+
 #include "xrUICore/XML/xrUIXmlParser.h"
-#include "xrCore/_rect.h"
+#include "xrCore/Math/rect.hpp"
 #include "xrCommon/xr_map.h"
 
 class ITextureOwner;

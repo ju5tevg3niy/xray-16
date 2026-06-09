@@ -2,7 +2,7 @@
 
 #include "xrEngine/IGameFont.hpp"
 #include "xrCommon/xr_vector.h"
-#include "xrCore/_vector3d.h"
+#include "xrCore/Math/vector3.hpp"
 #ifdef DEBUG
 #include "xrCore/xrstring.h"
 #endif

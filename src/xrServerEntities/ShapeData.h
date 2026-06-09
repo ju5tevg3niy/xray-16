@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Common/types.hpp"
-#include "xrCore/_sphere.h"
-#include "xrCore/_matrix.h"
+#include "xrCore/Math/sphere.hpp"
+#include "xrCore/Math/matrix.hpp"
 #include "xrCommon/xr_vector.h"
 
 struct CShapeData

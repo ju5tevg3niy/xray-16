@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Common/GUID.hpp"
-#include "xrCore/_fbox.h"
+#include "xrCore/Math/fbox.hpp"
 
 constexpr cpcstr LEVEL_GRAPH_NAME = "level.ai";
 

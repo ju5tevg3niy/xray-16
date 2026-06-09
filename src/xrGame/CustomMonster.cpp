@@ -1,7 +1,6 @@
 // CustomMonster.cpp: implementation of the CCustomMonster class.
 //
 //////////////////////////////////////////////////////////////////////
-
 #include "pch_script.h"
 #include "ai_debug.h"
 #include "CustomMonster.h"
@@ -50,7 +49,7 @@
 
 // Lain: added
 #include "xrEngine/IGame_Level.h"
-#include "xrCore/_vector3d_ext.h"
+#include "xrCore/Math/vector3_ext.hpp"
 #include "debug_text_tree.h"
 #include "xrPhysics/IPHWorld.h"
 

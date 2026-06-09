@@ -1,9 +1,9 @@
 #pragma once
 
 #include "Common/types.hpp"
-#include "xrCore/_flags.h"
+#include "xrCore/Math/flags.hpp"
 #include "xrCore/xr_resource.h"
-#include "xrCore/_vector3d.h"
+#include "xrCore/Math/vector3.hpp"
 #include "xrCore/xr_token.h"
 #include "xrCommon/xr_vector.h" // DEFINE_VECTOR
 

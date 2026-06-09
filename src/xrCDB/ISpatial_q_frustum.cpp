@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "ISpatial.h"
 #include "Frustum.h"
-#include "xrCore/_fbox.h"
+#include "xrCore/Math/fbox.hpp"
 #include "xrCore/Threading/Lock.hpp"
 #include "xrCore/Threading/ScopeLock.hpp"
 

@@ -1,7 +1,8 @@
 #pragma once
+
 #include "xrPhysics/CycleConstStorage.h"
-#include "xrCore/_vector3d.h"
-#include "xrCore/_quaternion.h"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/quaternion.hpp"
 
 namespace extrapolation
 {

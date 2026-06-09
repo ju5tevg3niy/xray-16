@@ -1,16 +1,17 @@
 #pragma once
+
 // FS.h: interface for the CFS class.
 //
 //////////////////////////////////////////////////////////////////////
 
 #include "Common/types.hpp"
 #include "xrCore/Math/bitwise.hpp"
-#include "_compressed_normal.h"
-#include "_vector2.h"
-#include "_vector3d.h"
-#include "_vector4.h"
-#include "_color.h"
-#include "xrCommon/math_funcs.h"
+#include "xrCore/Math/compressed_normal.hpp"
+#include "xrCore/Math/vector2.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/vector4.hpp"
+#include "xrCore/Math/color.hpp"
+#include "xrCore/Math/math_funcs.hpp"
 #include "xrCommon/xr_stack.h"
 
 #define CFS_CompressMark (1ul << 31ul)

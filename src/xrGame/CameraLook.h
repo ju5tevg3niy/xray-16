@@ -1,7 +1,7 @@
 #pragma once
 
 #include "xrEngine/CameraBase.h"
-#include "xrCore/_quaternion.h"
+#include "xrCore/Math/quaternion.hpp"
 
 class CCameraLook : public CCameraBase
 {

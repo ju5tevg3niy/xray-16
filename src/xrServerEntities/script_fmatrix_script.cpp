@@ -8,7 +8,7 @@
 
 #include "pch_script.h"
 
-#include "xrCore/_quaternion.h"
+#include "xrCore/Math/quaternion.hpp"
 #include "base_client_classes_wrappers.h"
 
 void get_matrix_hpb(Fmatrix* self, float* h, float* p, float* b) { self->getHPB(*h, *p, *b); }

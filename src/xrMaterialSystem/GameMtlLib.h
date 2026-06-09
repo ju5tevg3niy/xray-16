@@ -1,7 +1,7 @@
 #pragma once
 
 #include "xrCore/xrstring.h"
-#include "xrCore/_flags.h"
+#include "xrCore/Math/flags.hpp"
 #include "xrCommon/xr_vector.h"
 
 #include "xrSound/Sound.h"

@@ -1,8 +1,7 @@
 #pragma once
-#ifndef ACTOR_MP_STATE_H
-#define ACTOR_MP_STATE_H
-#include "xrCore/_quaternion.h"
-#include "xrCore/_vector3d.h"
+
+#include "xrCore/Math/quaternion.hpp"
+#include "xrCore/Math/vector3.hpp"
 
 //#define USE_DIFFERENCES
 
@@ -52,5 +51,3 @@ public:
 };
 
 #include "actor_mp_state_inline.h"
-
-#endif // ACTOR_MP_STATE_H

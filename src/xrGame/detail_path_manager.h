@@ -5,13 +5,12 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Detail path manager
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
 #include "restricted_object.h"
 #include "detail_path_manager_space.h"
 #include "xrCore/Containers/AssociativeVector.hpp"
-#include "xrCore/_vector2.h"
+#include "xrCore/Math/vector2.hpp"
 #include "xrCommon/xr_vector.h"
 
 using namespace DetailPathManager;

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "xrCore/_std_extensions.h"
-#include "xrCore/_flags.h"
+#include "xrCore/Math/flags.hpp"
 #include "xrCore/xrstring.h"
 #include "xrCommon/xr_vector.h"
 

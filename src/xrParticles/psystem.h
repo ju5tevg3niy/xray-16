@@ -1,7 +1,7 @@
 #pragma once
 
-#include "xrCore/_vector3d.h"
-#include "xrCommon/math_funcs_inline.h"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
 
 #ifdef XRAY_STATIC_BUILD
 #   define PARTICLES_API

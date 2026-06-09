@@ -133,7 +133,6 @@ target_link_libraries(xrUICore
     xrAPI
     xrScriptEngine
     xrEngine
-    xrMiscMath
     xrImGui
     xrCore
     xrSound

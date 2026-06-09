@@ -411,7 +411,6 @@ target_link_libraries(xrPhysics
     xrCore
     xrEngine
     xrMaterialSystem
-    xrMiscMath
     xrScriptEngine
     xrAPI
     xrCDB

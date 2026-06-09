@@ -1,9 +1,9 @@
 // Stats.h: interface for the CStats class.
 //
 //////////////////////////////////////////////////////////////////////
-
 #pragma once
-#include "xrCore/_flags.h"
+
+#include "xrCore/Math/flags.hpp"
 #include "xrCore/xrstring.h"
 #include "xrCommon/xr_vector.h"
 #include "xrEngine/StatGraph.h"

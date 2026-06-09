@@ -2,7 +2,7 @@
 #include "xr_area.h"
 #include "Frustum.h"
 
-#include "xrCore/_vector3d_ext.h"
+#include "xrCore/Math/vector3_ext.hpp"
 
 using namespace collide;
 

@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include "MathUtils.h"
-#include "xrCore/_cylinder.h"
+#include "xrCore/Math/cylinder.hpp"
 #include <ode/common.h>
 
 /*

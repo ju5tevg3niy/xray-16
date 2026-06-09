@@ -1,6 +1,7 @@
 #pragma once
-#include "xrCore/_sphere.h"
-#include "xrCore/_fbox.h"
+
+#include "xrCore/Math/sphere.hpp"
+#include "xrCore/Math/fbox.hpp"
 
 #include "vis_object_data.h" //--#SM+#--
 

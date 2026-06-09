@@ -31,7 +31,6 @@ target_link_libraries(xrRenderPC_R4
     xrParticles
     xrScriptEngine
     xrAPI
-    xrMiscMath
 )
 
 target_compile_definitions(xrRenderPC_R4

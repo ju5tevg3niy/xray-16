@@ -1,8 +1,8 @@
 #pragma once
 
-#include "xrCore/_matrix33.h"
-#include "xrCore/_obb.h"
-#include "xrCore/_sphere.h"
+#include "xrCore/Math/matrix33.hpp"
+#include "xrCore/Math/obb.hpp"
+#include "xrCore/Math/sphere.hpp"
 
 namespace CDB
 {

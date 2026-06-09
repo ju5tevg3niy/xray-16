@@ -19,7 +19,7 @@
 #include "ActorCondition.h"
 #include "xrEngine/xr_level_controller.h"
 #include "Weapon.h"
-#include "xrCore/_vector3d_ext.h"
+#include "xrCore/Math/vector3_ext.hpp"
 #include "ai/monsters/control_direction_base.h"
 
 bool CBurer::can_scan = true;

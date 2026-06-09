@@ -5,13 +5,12 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Memory space
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
 #include "ai_sounds.h"
 #include "xrServer_Space.h"
 #include "alife_space.h"
-#include "xrCore/_flags.h"
+#include "xrCore/Math/flags.hpp"
 #include "xrCommon/misc_math_types.h"
 
 //#define USE_GAME_TIME
