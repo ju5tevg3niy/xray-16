@@ -1,5 +1,13 @@
-#include "stdafx.h"
-#include "FileCRC32.h"
+#include "Common/types.hpp"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCommon/xr_string.h"
+#include "xrCore/crc32.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/FileSystem.h"
+#include "xr_trims.h"
+
+#include "FileCRC32.hpp"
 
 void getFileCrc32(IReader* F, pcstr filePath, u32& outCrc, bool parseIncludes)
 {

@@ -1,4 +1,3 @@
-//---------------------------------------------------------------------------
 #include "stdafx.h"
 #pragma hdrstop
 
@@ -7,6 +6,7 @@
 #include "FMesh.hpp"
 #include "Motion.hpp"
 #include "Include/xrRender/Kinematics.h"
+#include "xrCore/crc32.hpp"
 
 motions_container* g_pMotionsContainer = nullptr;
 

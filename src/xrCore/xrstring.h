@@ -2,6 +2,7 @@
 
 #include <cstdio>
 
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "xrMemory.h"
 

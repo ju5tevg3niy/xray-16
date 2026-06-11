@@ -129,6 +129,8 @@
 // Precompiled Header
 #include "pch.hpp"
 
+#include "xrCore/crc32.hpp"
+
 namespace Opcode
 {
 #include "OPC_TreeBuilders.h"

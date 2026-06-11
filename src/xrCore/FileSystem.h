@@ -2,12 +2,19 @@
 // file: FileSystem.h
 //----------------------------------------------------
 
-#ifndef FileSystemH
-#define FileSystemH
+#pragma once
+
+#include <cstddef>
+
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "xrCommon/xr_smart_pointers.h"
+#include "xrCommon/xr_string.h"
 
 #define BACKUP_FILE_LEVEL 5
 
-class XRCORE_API EFS_Utils
+class EFS_Utils
 {
 protected:
     bool GetOpenNameInternal(
@@ -40,7 +47,7 @@ public:
     static xr_string ExtractFileExt(pcstr src);
     static xr_string ExcludeBasePath(pcstr full_path, pcstr excl_path);
 };
-extern XRCORE_API xr_unique_ptr<EFS_Utils> xr_EFS;
-#define EFS (*xr_EFS)
 
-#endif /*_INCDEF_FileSystem_H_*/
+extern xr_unique_ptr<EFS_Utils> xr_EFS;
+
+#define EFS (*xr_EFS)

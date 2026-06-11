@@ -9,6 +9,7 @@
 #include "SkeletonXSkinXW.h"
 #include "xrCore/FMesh.hpp"
 #include "xrCDB/Intersect.hpp"
+#include "xrCore/crc32.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {

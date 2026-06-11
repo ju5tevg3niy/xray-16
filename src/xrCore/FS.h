@@ -12,6 +12,7 @@
 #include "xrCore/Math/vector4.hpp"
 #include "xrCore/Math/color.hpp"
 #include "xrCore/Math/math_funcs.hpp"
+#include "xrCore/xrstring.h"
 #include "xrCommon/xr_stack.h"
 
 #define CFS_CompressMark (1ul << 31ul)

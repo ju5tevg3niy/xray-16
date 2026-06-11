@@ -192,7 +192,6 @@ target_sources_grouped(
     NAME "FS"
     FILES
     FileCRC32.cpp
-    FileCRC32.h
     FileSystem.cpp
     FileSystem.h
     FileSystem_borland.cpp

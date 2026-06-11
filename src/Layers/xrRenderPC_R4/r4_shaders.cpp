@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "r2.h"
 #include "Layers/xrRender/ShaderResourceTraits.h"
-#include "xrCore/FileCRC32.h"
+#include "xrCore/FileCRC32.hpp"
+#include "xrCore/crc32.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {

@@ -4,6 +4,7 @@
 #include "xrstring.h"
 #include "Threading/Lock.hpp"
 #include "xrCore/_std_extensions.h"
+#include "xrCore/crc32.hpp"
 
 #include "FS_impl.h"
 #include <SDL.h>

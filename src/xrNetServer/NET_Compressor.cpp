@@ -6,6 +6,7 @@
 #include "NET_Common.h"
 #include "NET_Compressor.h"
 #include "xrCore/Threading/Lock.hpp"
+#include "xrCore/crc32.hpp"
 
 #if NET_USE_COMPRESSION
 

@@ -1,7 +1,13 @@
-#ifndef LocatorAPI_defsH
-#define LocatorAPI_defsH
-
 #pragma once
+
+#include <ctime>
+
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "xrCommon/xr_set.h"
+#include "xrCommon/xr_string.h"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 
 enum FS_List : u32
 {
@@ -11,7 +17,7 @@ enum FS_List : u32
     FS_RootOnly = (1 << 3),
 };
 
-class XRCORE_API FS_Path
+class FS_Path
 {
 public:
     enum
@@ -42,7 +48,7 @@ public:
 struct _finddata64i32_t;
 #define _FINDDATA_T _finddata64i32_t
 
-struct XRCORE_API FS_File
+struct FS_File
 {
     enum
     {
@@ -65,6 +71,4 @@ public:
 };
 using FS_FileSet = xr_set<FS_File>;
 
-extern bool XRCORE_API PatternMatch(pcstr s, pcstr mask);
-
-#endif // LocatorAPI_defsH
+extern bool PatternMatch(pcstr s, pcstr mask);

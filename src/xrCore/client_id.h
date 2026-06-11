@@ -1,6 +1,6 @@
-#ifndef client_idH
-#define client_idH
 #pragma once
+
+#include "Common/types.hpp"
 
 #pragma pack(push, 1)
 class ClientID
@@ -19,5 +19,3 @@ public:
     bool operator<(const ClientID& other) const { return value() < other.value(); };
 };
 #pragma pack(pop)
-
-#endif

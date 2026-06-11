@@ -30,6 +30,7 @@
 #include "ai/monsters/control_animation_base.h"
 #include "ai/monsters/monster_velocity_space.h"
 #include "ai/monsters/anti_aim_ability.h"
+#include "xrCore/crc32.hpp"
 
 namespace detail::base_monster
 {

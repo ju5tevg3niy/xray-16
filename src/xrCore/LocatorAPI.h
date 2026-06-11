@@ -13,6 +13,7 @@
 #include "xrCommon/xr_smart_pointers.h"
 #include "xrCommon/predicates.h"
 #include "Common/Noncopyable.hpp"
+#include "xrCore/xr_ini.h"
 
 #if defined(XR_PLATFORM_POSIX)
 #include <stdint.h>

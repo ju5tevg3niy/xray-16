@@ -6,6 +6,7 @@
 #include "Common/LevelStructure.hpp"
 #include "xrEngine/IGame_Persistent.h"
 #include "xrCore/stream_reader.h"
+#include "xrCore/crc32.hpp"
 
 #if defined(USE_DX11)
 #include "Layers/xrRender/FHierrarhyVisual.h"

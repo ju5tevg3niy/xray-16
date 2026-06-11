@@ -13,6 +13,7 @@
 #include "GameObject.h"
 #include "Include/xrRender/Kinematics.h"
 #include "xrCore/Animation/Bone.hpp"
+#include "xrCore/crc32.hpp"
 
 const bool use_additional_radius = true;
 

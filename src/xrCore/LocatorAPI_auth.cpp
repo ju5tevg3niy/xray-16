@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #pragma hdrstop // huh?
 #include "xrCore/Threading/Lock.hpp"
+#include "xrCore/crc32.hpp"
 
 struct auth_options
 {

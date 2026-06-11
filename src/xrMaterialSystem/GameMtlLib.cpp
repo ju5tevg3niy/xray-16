@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "GameMtlLib.h"
 #include "Common/FSMacros.hpp"
+#include "xrCore/crc32.hpp"
 
 CGameMtlLibrary GMLib;
 

@@ -10,6 +10,7 @@
 #include "occRasterizer.h"
 #include "xrEngine/GameFont.h"
 #include "xrEngine/PerformanceAlert.hpp"
+#include "xrCore/crc32.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {

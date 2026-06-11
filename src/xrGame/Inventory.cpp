@@ -22,6 +22,7 @@
 #include "static_cast_checked.hpp"
 #include "player_hud.h"
 #include "xrNetServer/NET_Messages.h"
+#include "xrCore/crc32.hpp"
 
 using namespace InventoryUtilities;
 

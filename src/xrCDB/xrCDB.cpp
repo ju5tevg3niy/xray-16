@@ -5,6 +5,7 @@
 
 #include "xrCDB.h"
 #include "xrCore/Threading/Lock.hpp"
+#include "xrCore/crc32.hpp"
 
 namespace Opcode
 {

@@ -1,6 +1,7 @@
 #pragma once
 
-#include <string.h>
+#include <cstring>
+
 #include "Common/types.hpp"
 #include "client_id.h"
 #include "xrCommon/xr_string.h"
@@ -13,7 +14,6 @@ typedef _vector3<float> Fvector;
 template <class T> struct _vector4;
 typedef _vector4<float> Fvector4;
 class shared_str;
-
 
 #pragma pack(push, 1)
 
