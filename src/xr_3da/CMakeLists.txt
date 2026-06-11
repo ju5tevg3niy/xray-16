@@ -2,7 +2,6 @@ add_executable(xr_3da)
 
 target_sources(xr_3da PRIVATE
     entry_point.cpp
-    stdafx.h
 
     resource.h
     resource.rc

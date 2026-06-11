@@ -1,15 +1,20 @@
-#include "stdafx.h"
+#include <array>
+#include <cstdlib>
+#include <cstring>
+#include <exception>
+#include <stdexcept>
 
+#include "Common/Common.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/xrCore.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrEngine/Engine.h"
+#include "xrEngine/EngineAPI.h"
 #include "xrEngine/x_ray.h"
 #include "xrGame/xrGame.h"
 #include "Include/xrRender/xrRender.h"
-
-#if !defined(XR_PLATFORM_WINDOWS)
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <getopt.h>
-#endif
 
 // Always request high performance GPU
 extern "C"
