@@ -5,15 +5,11 @@
 // Author : Evgeniy Sokolov
 // Description : os clipboard class
 ////////////////////////////////////////////////////////////////////////////
-
-#ifndef OS_CLIPBOARD_H_INCLUDED
-#define OS_CLIPBOARD_H_INCLUDED
+#pragma once
 
 namespace os_clipboard
 {
-XRCORE_API void copy_to_clipboard(pcstr buf, bool alreadyUTF8 = false);
-XRCORE_API void paste_from_clipboard(pstr buf, size_t buf_size);
-XRCORE_API void update_clipboard(pcstr str);
+void copy_to_clipboard(pcstr buf, bool alreadyUTF8 = false);
+void paste_from_clipboard(pstr buf, size_t buf_size);
+void update_clipboard(pcstr str);
 } // namespace os_clipboard
-
-#endif // OS_CLIPBOARD_H_INCLUDED

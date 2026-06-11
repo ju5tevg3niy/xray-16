@@ -1,7 +1,4 @@
-//----------------------------------------------------
 #pragma once
-#ifndef MotionH
-#define MotionH
 
 #include "xrCore/Animation/Bone.hpp"
 #include "xrCore/_std_extensions.h"
@@ -44,7 +41,7 @@ struct st_BoneMotion
 using BoneMotionVec = xr_vector<st_BoneMotion>;
 
 //--------------------------------------------------------------------------
-class XRCORE_API CCustomMotion
+class CCustomMotion
 {
 protected:
     enum EMotionType : u32
@@ -94,7 +91,7 @@ public:
 };
 
 //--------------------------------------------------------------------------
-class XRCORE_API COMotion final : public CCustomMotion
+class COMotion final : public CCustomMotion
 {
 protected:
     CEnvelope* envs[ctMaxChannel];
@@ -140,7 +137,7 @@ enum ESMFlags
 
 #include "SkeletonMotions.hpp"
 
-class XRCORE_API CSMotion final : public CCustomMotion
+class CSMotion final : public CCustomMotion
 {
 protected:
     BoneMotionVec bone_mots;
@@ -183,7 +180,7 @@ public:
     void Optimize();
 };
 
-struct XRCORE_API SAnimParams
+struct SAnimParams
 {
     float t_current;
     float tmp;
@@ -221,7 +218,7 @@ public:
     void Pause(bool val) { bPlay = !val; }
 };
 
-class XRCORE_API CClip
+class CClip
 {
 public:
     struct AnimItem
@@ -250,4 +247,3 @@ public:
     virtual bool Load(IReader& F);
     bool Equal(CClip* c) const;
 };
-#endif

@@ -11,7 +11,7 @@
 #pragma pack(push, 4)
 #pragma warning(push)
 #pragma warning(disable : 4200)
-struct XRCORE_API str_value
+struct str_value
 {
     u32 dwReference;
     u32 dwLength;
@@ -20,7 +20,7 @@ struct XRCORE_API str_value
     char value[];
 };
 
-struct XRCORE_API str_value_cmp
+struct str_value_cmp
 {
     // less
     IC bool operator()(const str_value* A, const str_value* B) const { return A->dwCRC < B->dwCRC; };
@@ -31,7 +31,7 @@ struct XRCORE_API str_value_cmp
 struct str_container_impl;
 class IWriter;
 //////////////////////////////////////////////////////////////////////////
-class XRCORE_API str_container
+class str_container
 {
 public:
     str_container();
@@ -49,7 +49,7 @@ public:
 private:
     str_container_impl* impl;
 };
-XRCORE_API extern str_container* g_pStringContainer;
+extern str_container* g_pStringContainer;
 
 //////////////////////////////////////////////////////////////////////////
 class shared_str

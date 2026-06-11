@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "xrCommon/xr_vector.h"
 
-XRCORE_API bool g_bEnableStatGather = false;
+bool g_bEnableStatGather = false;
 
 void CStatTimer::FrameStart()
 {
@@ -18,7 +18,7 @@ void CStatTimer::FrameEnd()
         result = 0.99f * result + 0.01f * time;
 }
 
-XRCORE_API pauseMngr& g_pauseMngr()
+pauseMngr& g_pauseMngr()
 {
     static pauseMngr manager;
     return manager;

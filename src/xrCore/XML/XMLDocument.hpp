@@ -1,6 +1,4 @@
 #pragma once
-#ifndef xrXMLParserH
-#define xrXMLParserH
 
 #include "tinyxml.h"
 
@@ -11,14 +9,14 @@
 static constexpr pcstr CONFIG_PATH = _game_config_;
 static constexpr pcstr UI_PATH_DEFAULT = "ui";
 static constexpr pcstr UI_PATH_DEFAULT_WITH_DELIMITER = "ui" DELIMITER;
-XRCORE_API extern pcstr UI_PATH;
-XRCORE_API extern pcstr UI_PATH_WITH_DELIMITER;
+extern pcstr UI_PATH;
+extern pcstr UI_PATH_WITH_DELIMITER;
 
 using XML_NODE = TiXmlNode*;
 using CONST_XML_NODE = const TiXmlNode*;
 using XML_DOC  = TiXmlDocument;
 
-class XRCORE_API XMLDocument : public Noncopyable
+class XMLDocument : public Noncopyable
 {
 
 public:
@@ -102,5 +100,3 @@ public:
 private:
     XML_DOC m_Doc;
 };
-
-#endif // xrXMLParserH

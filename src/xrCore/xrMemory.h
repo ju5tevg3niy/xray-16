@@ -6,18 +6,7 @@
 #include "Common/types.hpp"
 #include "Common/Platform.hpp"
 
-#ifdef XRAY_STATIC_BUILD
-#   define XRCORE_API
-#else
-#   ifdef XRCORE_EXPORTS
-#      define XRCORE_API XR_EXPORT
-#   else
-#      define XRCORE_API XR_IMPORT
-#      define TRACY_IMPORTS
-#   endif
-#endif
-
-class XRCORE_API xrMemory
+class xrMemory
 {
 public:
     static constexpr size_t SMALL_SIZE_MAX = 128 * sizeof(void*);
@@ -40,7 +29,7 @@ public:
     void  small_free (void* ptr) noexcept;
 };
 
-extern XRCORE_API xrMemory Memory;
+extern xrMemory Memory;
 
 class small_buffer final
 {
@@ -165,7 +154,7 @@ void xr_delete(T* const& ptr) noexcept
     hacked_ptr = nullptr;
 }
 
-XRCORE_API void* xr_malloc(size_t size);
-XRCORE_API void* xr_realloc(void* ptr, size_t size);
+void* xr_malloc(size_t size);
+void* xr_realloc(void* ptr, size_t size);
 
-XRCORE_API pstr xr_strdup(pcstr string);
+pstr xr_strdup(pcstr string);

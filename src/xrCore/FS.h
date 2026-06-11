@@ -18,14 +18,14 @@
 #define CFS_CompressMark (1ul << 31ul)
 #define CFS_HeaderChunkID (666)
 
-XRCORE_API void VerifyPath(pcstr path);
+void VerifyPath(pcstr path);
 
 //#define FS_DEBUG
 
 #ifdef FS_DEBUG
-XRCORE_API extern u32 g_file_mapped_memory;
-XRCORE_API extern u32 g_file_mapped_count;
-XRCORE_API void dump_file_mappings();
+extern u32 g_file_mapped_memory;
+extern u32 g_file_mapped_count;
+void dump_file_mappings();
 extern void register_file_mapping(void* address, const u32& size, pcstr file_name);
 extern void unregister_file_mapping(void* address, const u32& size);
 #endif // DEBUG
@@ -33,7 +33,7 @@ extern void unregister_file_mapping(void* address, const u32& size);
 //------------------------------------------------------------------------------------
 // Write
 //------------------------------------------------------------------------------------
-class XRCORE_API IWriter
+class IWriter
 {
 private:
     xr_stack<size_t> chunk_pos;
@@ -120,7 +120,7 @@ public:
     virtual void flush() = 0;
 };
 
-class XRCORE_API CMemoryWriter final : public IWriter
+class CMemoryWriter final : public IWriter
 {
     u8* data;
     size_t position;
@@ -175,7 +175,7 @@ public:
 #ifdef TESTING_IREADER
 struct IReaderBase_Test;
 
-struct XRCORE_API IReaderTestPolicy
+struct IReaderTestPolicy
 {
     IReaderBase_Test* m_test;
     IReaderTestPolicy() { m_test = NULL; }
@@ -336,7 +336,7 @@ private:
 #   include "FS_impl.h"
 #endif
 
-class XRCORE_API IReader : public IReaderBase<IReader>
+class IReader : public IReaderBase<IReader>
 {
 protected:
     char* data;
@@ -422,7 +422,7 @@ private:
 
 template class IReaderBase<IReader>;
 
-class XRCORE_API CVirtualFileRW final : public IReader
+class CVirtualFileRW final : public IReader
 {
 private:
 #if defined(XR_PLATFORM_WINDOWS)

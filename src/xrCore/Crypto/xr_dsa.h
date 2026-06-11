@@ -5,7 +5,7 @@ struct evp_pkey_ctx_st;
 
 namespace crypto
 {
-class XRCORE_API xr_dsa
+class xr_dsa
 {
 public:
     static int const key_bit_length = 1024;

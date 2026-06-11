@@ -1,11 +1,12 @@
 #pragma once
+
 #include "xrCore/xrCore.h"
 
 typedef u16 xr_wide_char; // Don't replace it with wchar_t, it won't work correctly, I don't know why.
 
 #define MAX_MB_CHARS 4096
 
-XRCORE_API u16 mbhMulti2Wide(xr_wide_char* WideStr, xr_wide_char* WidePos, u16 WideStrSize, const char* MultiStr);
+u16 mbhMulti2Wide(xr_wide_char* WideStr, xr_wide_char* WidePos, u16 WideStrSize, const char* MultiStr);
 
 IC bool IsNeedSpaceCharacter(xr_wide_char wc)
 {
@@ -30,5 +31,5 @@ IC bool IsAlphaCharacter(xr_wide_char wc)
         ((wc >= 0xFF21) && (wc <= 0xFF3A)) || ((wc >= 0xFF41) && (wc <= 0xFF5A)));
 }
 
-XRCORE_API xr_string StringFromUTF8(const char* string, const std::locale& locale);
-XRCORE_API xr_string StringToUTF8(const char* string, const std::locale& locale);
+xr_string StringFromUTF8(const char* string, const std::locale& locale);
+xr_string StringToUTF8(const char* string, const std::locale& locale);

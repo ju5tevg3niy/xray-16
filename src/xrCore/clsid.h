@@ -34,5 +34,5 @@ constexpr CLASS_ID make_clsid(const char a, const char b, const char c, const ch
 
 #define MK_CLSID(a, b, c, d, e, f, g, h) xray::make_clsid(a, b, c, d, e, f, g, h)
 
-extern XRCORE_API void CLSID2TEXT(CLASS_ID id, pstr text);
-extern XRCORE_API CLASS_ID TEXT2CLSID(pcstr text);
+extern void CLSID2TEXT(CLASS_ID id, pstr text);
+extern CLASS_ID TEXT2CLSID(pcstr text);

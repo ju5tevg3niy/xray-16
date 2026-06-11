@@ -19,7 +19,7 @@ class IWriter;
 
 #define MAX_BONE_PARAMS 4
 
-class XRCORE_API CBoneInstance;
+class CBoneInstance;
 // callback
 using BoneCallbackFunction = void(CBoneInstance* P);
 using BoneCallback = BoneCallbackFunction*;
@@ -27,7 +27,7 @@ using BoneCallback = BoneCallbackFunction*;
 
 //*** Bone Instance *******************************************************************************
 #pragma pack(push, 8)
-class XRCORE_API CBoneInstance
+class CBoneInstance
 {
 public:
     // data
@@ -74,7 +74,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 2)
-struct XRCORE_API vertBoned1W // (3+3+3+3+2+1)*4 = 15*4 = 60 bytes
+struct vertBoned1W // (3+3+3+3+2+1)*4 = 15*4 = 60 bytes
 {
     Fvector P;
     Fvector N;
@@ -92,7 +92,7 @@ struct XRCORE_API vertBoned1W // (3+3+3+3+2+1)*4 = 15*4 = 60 bytes
     }
 #endif
 };
-struct XRCORE_API vertBoned2W // (1+3+3 + 1+3+3 + 2)*4 = 16*4 = 64 bytes
+struct vertBoned2W // (1+3+3 + 1+3+3 + 2)*4 = 16*4 = 64 bytes
 {
     u16 matrix0;
     u16 matrix1;
@@ -112,7 +112,7 @@ struct XRCORE_API vertBoned2W // (1+3+3 + 1+3+3 + 2)*4 = 16*4 = 64 bytes
     }
 #endif
 };
-struct XRCORE_API vertBoned3W // 70 bytes
+struct vertBoned3W // 70 bytes
 {
     u16 m[3];
     Fvector P;
@@ -131,7 +131,7 @@ struct XRCORE_API vertBoned3W // 70 bytes
     }
 #endif
 };
-struct XRCORE_API vertBoned4W // 76 bytes
+struct vertBoned4W // 76 bytes
 {
     u16 m[4];
     Fvector P;
@@ -164,7 +164,7 @@ enum EJointType
     jtForceU32 = u32(-1)
 };
 
-struct XRCORE_API SJointLimit
+struct SJointLimit
 {
     Fvector2 limit;
     float spring_factor;
@@ -178,7 +178,7 @@ struct XRCORE_API SJointLimit
     }
 };
 
-struct XRCORE_API SBoneShape
+struct SBoneShape
 {
     enum EShapeType
     {
@@ -215,7 +215,7 @@ struct XRCORE_API SBoneShape
 	bool Valid() const;
 };
 
-struct XRCORE_API SJointIKData
+struct SJointIKData
 {
     // IK
     EJointType type;
@@ -252,7 +252,7 @@ struct XRCORE_API SJointIKData
 };
 #pragma pack(pop)
 
-class XRCORE_API IBoneData
+class IBoneData
 {
 public:
     [[nodiscard]] virtual IBoneData& GetChild(u16 id) = 0;
@@ -277,7 +277,7 @@ public:
 class CBone;
 using BoneVec = xr_vector<CBone*>;
 
-class XRCORE_API CBone final : public CBoneInstance, public IBoneData
+class CBone final : public CBoneInstance, public IBoneData
 {
 public:
     friend class LWBoneParser;
@@ -430,7 +430,7 @@ class CBoneData;
 typedef xr_vector<CBoneData*> vecBones;
 typedef vecBones::iterator vecBonesIt;
 
-class XRCORE_API CBoneData final : public IBoneData
+class CBoneData final : public IBoneData
 {
 protected:
     u16 SelfID;

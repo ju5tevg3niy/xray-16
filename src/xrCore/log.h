@@ -1,6 +1,5 @@
 #pragma once
-#ifndef logH
-#define logH
+
 #include "xrCommon/xr_vector.h"
 #include "xrCommon/xr_string.h"
 
@@ -10,21 +9,21 @@ struct Fmatrix;
 
 #define VPUSH(a) ((a).x), ((a).y), ((a).z)
 
-void XRCORE_API __cdecl Msg(pcstr format, ...);
+void __cdecl Msg(pcstr format, ...);
 
-void XRCORE_API Log(pcstr msg);
-void XRCORE_API Log(pcstr msg, pcstr dop);
-void XRCORE_API Log(pcstr msg, int dop);
-void XRCORE_API Log(pcstr msg, unsigned int dop);
-void XRCORE_API Log(pcstr msg, long dop);
-void XRCORE_API Log(pcstr msg, unsigned long dop);
-void XRCORE_API Log(pcstr msg, long long dop);
-void XRCORE_API Log(pcstr msg, unsigned long long dop);
-void XRCORE_API Log(pcstr msg, float dop);
-void XRCORE_API Log(pcstr msg, const Fvector& dop);
-void XRCORE_API Log(pcstr msg, const Fmatrix& dop);
+void Log(pcstr msg);
+void Log(pcstr msg, pcstr dop);
+void Log(pcstr msg, int dop);
+void Log(pcstr msg, unsigned int dop);
+void Log(pcstr msg, long dop);
+void Log(pcstr msg, unsigned long dop);
+void Log(pcstr msg, long long dop);
+void Log(pcstr msg, unsigned long long dop);
+void Log(pcstr msg, float dop);
+void Log(pcstr msg, const Fvector& dop);
+void Log(pcstr msg, const Fmatrix& dop);
 
-void XRCORE_API LogWinErr(pcstr msg, long err_code);
+void LogWinErr(pcstr msg, long err_code);
 
 struct LogCallback
 {
@@ -39,13 +38,11 @@ struct LogCallback
     operator bool() const { return !!Log; }
 };
 
-LogCallback XRCORE_API SetLogCB(const LogCallback& cb);
-void XRCORE_API CreateLog(bool no_log = false);
+LogCallback SetLogCB(const LogCallback& cb);
+void CreateLog(bool no_log = false);
 void InitLog();
 void CloseLog();
-void XRCORE_API FlushLog();
+void FlushLog();
 
-extern XRCORE_API xr_vector<xr_string> LogFile;
-extern XRCORE_API bool LogExecCB;
-
-#endif
+extern xr_vector<xr_string> LogFile;
+extern bool LogExecCB;

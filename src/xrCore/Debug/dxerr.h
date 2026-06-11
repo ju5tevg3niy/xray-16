@@ -29,8 +29,8 @@ extern "C" {
 //--------------------------------------------------------------------------------------
 // DXGetErrorString
 //--------------------------------------------------------------------------------------
-XRCORE_API const WCHAR* WINAPI DXGetErrorStringW(_In_ HRESULT hr);
-XRCORE_API const CHAR* WINAPI DXGetErrorStringA(_In_ HRESULT hr);
+const WCHAR* WINAPI DXGetErrorStringW(_In_ HRESULT hr);
+const CHAR* WINAPI DXGetErrorStringA(_In_ HRESULT hr);
 #ifdef UNICODE
 #define DXGetErrorString DXGetErrorStringW
 #else
@@ -40,8 +40,8 @@ XRCORE_API const CHAR* WINAPI DXGetErrorStringA(_In_ HRESULT hr);
 // DXGetErrorDescription has to be modified to return a copy in a buffer rather than
 // the original static string.
 //--------------------------------------------------------------------------------------
-XRCORE_API void WINAPI DXGetErrorDescriptionW(_In_ HRESULT hr, _Out_cap_(count) WCHAR* desc, _In_ size_t count);
-XRCORE_API void WINAPI DXGetErrorDescriptionA(_In_ HRESULT hr, _Out_cap_(count) CHAR* desc, _In_ size_t count);
+void WINAPI DXGetErrorDescriptionW(_In_ HRESULT hr, _Out_cap_(count) WCHAR* desc, _In_ size_t count);
+void WINAPI DXGetErrorDescriptionA(_In_ HRESULT hr, _Out_cap_(count) CHAR* desc, _In_ size_t count);
 #ifdef UNICODE
 #define DXGetErrorDescription DXGetErrorDescriptionW
 #else
@@ -62,9 +62,9 @@ XRCORE_API void WINAPI DXGetErrorDescriptionA(_In_ HRESULT hr, _Out_cap_(count) 
 //
 //  Return: The hr that was passed in.
 //--------------------------------------------------------------------------------------
-XRCORE_API HRESULT WINAPI DXTraceW(_In_z_ const WCHAR* strFile, _In_ DWORD dwLine, _In_ HRESULT hr,
+HRESULT WINAPI DXTraceW(_In_z_ const WCHAR* strFile, _In_ DWORD dwLine, _In_ HRESULT hr,
     _In_opt_ const WCHAR* strMsg, _In_ bool bPopMsgBox);
-XRCORE_API HRESULT WINAPI DXTraceA(
+HRESULT WINAPI DXTraceA(
     _In_z_ const CHAR* strFile, _In_ DWORD dwLine, _In_ HRESULT hr, _In_opt_ const CHAR* strMsg, _In_ bool bPopMsgBox);
 #ifdef UNICODE
 #define DXTrace DXTraceW

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "xrCore/xrCore.h"
 #include "xrCore/Animation/Envelope.hpp"
 #include "xrCore/PostProcess/PPInfo.hpp"
@@ -25,7 +26,7 @@ typedef enum _pp_params : u32
     pp_last = 11,
 } pp_params;
 
-class XRCORE_API CPostProcessParam
+class CPostProcessParam
 {
 protected:
 public:
@@ -43,7 +44,7 @@ public:
     virtual void clear_all_keys() = 0;
 };
 
-class XRCORE_API CPostProcessValue final : public CPostProcessParam
+class CPostProcessValue final : public CPostProcessParam
 {
 protected:
     CEnvelope m_Value;
@@ -76,7 +77,7 @@ public:
     void clear_all_keys() override;
 };
 
-class XRCORE_API CPostProcessColor final : public CPostProcessParam
+class CPostProcessColor final : public CPostProcessParam
 {
 protected:
     float m_fBase;
@@ -120,7 +121,7 @@ public:
     void clear_all_keys() override;
 };
 
-class XRCORE_API BasicPostProcessAnimator
+class BasicPostProcessAnimator
 {
 protected:
     SPPInfo m_EffectorParams;

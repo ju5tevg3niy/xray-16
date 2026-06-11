@@ -1,4 +1,5 @@
 #pragma once
+
 #include "xrCore/xrCore.h"
 #include "xrCore/FS.h"
 
@@ -13,7 +14,7 @@ enum class ImageDataFormat : u32
     RGBA8 = 2,
 };
 
-class XRCORE_API Image final
+class Image final
 {
 private:
 #pragma pack(push, 1)

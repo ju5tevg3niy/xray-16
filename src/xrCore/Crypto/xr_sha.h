@@ -24,7 +24,7 @@ constexpr auto EmptyYielder = [](auto) {};
 /// This class contains all necessary API for SHA1 hash computation
 /// You can't create the object of this class. It is only needed to
 /// group the hashing logic.
-class XRCORE_API xr_sha1
+class xr_sha1
 {
 public:
     /// Size of resulting SHA1 hash value.

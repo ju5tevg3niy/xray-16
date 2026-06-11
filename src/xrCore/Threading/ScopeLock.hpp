@@ -4,7 +4,7 @@
 
 class Lock;
 
-class XRCORE_API ScopeLock : Noncopyable
+class ScopeLock : Noncopyable
 {
     Lock* syncObject;
 

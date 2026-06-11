@@ -1,4 +1,5 @@
 #pragma once
+
 #include "xrCommon/xr_string.h"
 
 namespace xray
@@ -7,7 +8,7 @@ namespace core
 {
 namespace detail
 {
-class XRCORE_API string_tupples
+class string_tupples
 {
     template <size_t... Ind, typename... Args>
     void process_args(const std::tuple<Args...>& args, std::index_sequence<Ind...>)
@@ -88,7 +89,7 @@ private:
     u32 m_count;
 };
 
-void XRCORE_API check_stack_overflow(u32 stack_increment);
+void check_stack_overflow(u32 stack_increment);
 
 } // namespace detail
 } // namespace core

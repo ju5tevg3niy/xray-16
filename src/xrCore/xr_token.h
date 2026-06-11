@@ -10,5 +10,5 @@ struct alignas(alignof(pcstr)) xr_token
 };
 static_assert(sizeof(xr_token) == sizeof(pcstr) * 2, "xr_token should be aligned, otherwise it may have problems on RISC (e.g. ARM) architectures, which require aligned pointers.");
 
-XRCORE_API pcstr get_token_name(const xr_token* tokens, int key);
-XRCORE_API int get_token_id(const xr_token* tokens, pcstr key);
+pcstr get_token_name(const xr_token* tokens, int key);
+int get_token_id(const xr_token* tokens, pcstr key);

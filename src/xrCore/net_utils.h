@@ -19,7 +19,7 @@ class shared_str;
 
 const u32 NET_PacketSizeLimit = 16 * 1024;
 
-struct XRCORE_API IIniFileStream
+struct IIniFileStream
 {
     virtual void __stdcall move_begin() = 0;
 
@@ -77,7 +77,7 @@ struct NET_Buffer
     u32 count;
 };
 
-class XRCORE_API NET_Packet
+class NET_Packet
 {
 public:
     IIniFileStream* inistream{};

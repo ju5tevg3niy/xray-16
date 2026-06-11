@@ -131,7 +131,7 @@ void FS_Path::rescan_path_cb()
     FS.m_Flags.set(CLocatorAPI::flNeedRescan, TRUE);
 }
 
-bool XRCORE_API PatternMatch(pcstr s, pcstr mask)
+bool PatternMatch(pcstr s, pcstr mask)
 {
     pcstr cp = 0;
     pcstr mp = 0;

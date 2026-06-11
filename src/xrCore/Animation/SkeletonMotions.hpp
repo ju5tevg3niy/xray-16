@@ -48,7 +48,7 @@ s16 x1,y1,z1;
 #pragma pack(pop)
 
 //*** Motion Data *********************************************************************************
-class XRCORE_API CMotion
+class CMotion
 {
     struct
     {
@@ -102,7 +102,7 @@ public:
     }
 };
 
-class XRCORE_API motion_marks
+class motion_marks
 {
 public:
     typedef std::pair<float, float> interval;
@@ -128,7 +128,7 @@ public:
 };
 
 const float fQuantizerRangeExt = 1.5f;
-class XRCORE_API CMotionDef
+class CMotionDef
 {
 public:
     u16 bone_or_part;
@@ -168,7 +168,7 @@ using BoneMotionsVec = xr_vector<MotionVec*>;
 using BoneMotionMap = xr_map<shared_str, MotionVec>;
 
 // partition
-class XRCORE_API CPartDef
+class CPartDef
 {
 public:
     shared_str Name;
@@ -178,7 +178,7 @@ public:
     [[nodiscard]]
     u32 mem_usage() const { return sizeof(*this) + bones.size() * sizeof(u32) + sizeof(Name); }
 };
-class XRCORE_API CPartition
+class CPartition
 {
     CPartDef P[MAX_PARTS];
 
@@ -200,7 +200,7 @@ public:
 };
 
 // shared motions
-struct XRCORE_API motions_value
+struct motions_value
 {
     accel_map m_motion_map; // motion associations
     accel_map m_cycle; // motion data itself (shared)
@@ -227,7 +227,7 @@ struct XRCORE_API motions_value
     }
 };
 
-class XRCORE_API motions_container
+class motions_container
 {
     using SharedMotionsMap = xr_map<shared_str, motions_value*>;
     SharedMotionsMap container;
@@ -241,9 +241,9 @@ public:
     void clean(bool force_destroy);
 };
 
-extern XRCORE_API motions_container* g_pMotionsContainer;
+extern motions_container* g_pMotionsContainer;
 
-class XRCORE_API shared_motions
+class shared_motions
 {
     motions_value* p_;
 

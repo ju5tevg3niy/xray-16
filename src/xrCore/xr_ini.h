@@ -17,10 +17,10 @@ class CInifile;
 struct xr_token;
 class IReader;
 
-class XRCORE_API CInifile
+class CInifile
 {
 public:
-    struct XRCORE_API Item
+    struct Item
     {
         shared_str first;
         shared_str second;
@@ -37,7 +37,7 @@ public:
 
     using Items = xr_vector<Item>;
 
-    struct XRCORE_API Sect
+    struct Sect
     {
         shared_str Name;
         Items Data;
@@ -265,6 +265,6 @@ public:
     (((ltx)->line_exist(section, name)) ? ((ltx)->method(section, name)) : (default_value))
 
 // Main configuration file
-extern XRCORE_API CInifile const* pSettings;
-extern XRCORE_API CInifile const* pSettingsAuth;
-extern XRCORE_API CInifile const* pSettingsOpenXRay;
+extern CInifile const* pSettings;
+extern CInifile const* pSettingsAuth;
+extern CInifile const* pSettingsOpenXRay;

@@ -1,5 +1,4 @@
-#ifndef FS_IMPL_H_INCLUDED
-#define FS_IMPL_H_INCLUDED
+#pragma once
 
 // 1: default
 // 1.5: check next chunk first heuristics
@@ -30,7 +29,7 @@ struct find_chunk_counter
     }
 };
 
-extern XRCORE_API find_chunk_counter g_find_chunk_counter;
+extern find_chunk_counter g_find_chunk_counter;
 
 struct find_chunk_auto_timer_t
 {
@@ -308,5 +307,3 @@ IC size_t IReaderBase<T>::find_chunk(u32 ID, bool* bCompressed)
 }
 
 #endif // #ifdef FIND_CHUNK_MAP
-
-#endif // #ifndef FS_IMPL_H_INCLUDED

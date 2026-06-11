@@ -20,18 +20,6 @@
 #pragma warning(disable : 4189) // local variable is initialized but not referenced
 #endif // frequently in release code due to large amount of VERIFY
 
-// Our headers
-#ifdef XRAY_STATIC_BUILD
-#   define XRCORE_API
-#else
-#   ifdef XRCORE_EXPORTS
-#      define XRCORE_API XR_EXPORT
-#   else
-#      define XRCORE_API XR_IMPORT
-#      define TRACY_IMPORTS
-#   endif
-#endif
-
 #include <tracy/Tracy.hpp>
 
 #include "xrDebug.h"
@@ -56,7 +44,7 @@
 #include "xrCore/Math/flags.hpp"
 
 // stl ext
-struct XRCORE_API xr_rtoken
+struct xr_rtoken
 {
     shared_str name;
     int id;
@@ -102,7 +90,7 @@ public:
 };
 
 // ***** The Core definition *****
-class XRCORE_API xrCore
+class xrCore
 {
     u32 buildId;
     static const pcstr buildDate;
@@ -136,4 +124,4 @@ private:
     void PrintBuildInfo();
 };
 
-extern XRCORE_API xrCore Core;
+extern xrCore Core;

@@ -14,7 +14,7 @@
 #include <fcntl.h>
 
 #ifdef FS_DEBUG
-XRCORE_API u32 g_file_mapped_memory = 0;
+u32 g_file_mapped_memory = 0;
 u32 g_file_mapped_count = 0;
 typedef xr_map<u32, std::pair<u32, shared_str>> FILE_MAPPINGS;
 FILE_MAPPINGS g_file_mappings;
@@ -56,7 +56,7 @@ void unregister_file_mapping(void* address, const u32& size)
 #endif // USE_MEMORY_MONITOR
 }
 
-XRCORE_API void dump_file_mappings()
+void dump_file_mappings()
 {
     Msg("* active file mappings (%d):", g_file_mappings.size());
 

@@ -1,13 +1,11 @@
 #pragma once
-#ifndef XR_DSA_VERIFYER_INCLUDED
-#define XR_DSA_VERIFYER_INCLUDED
 
 #include <optional>
 
 #include "xr_dsa.h"
 #include "xr_sha.h"
 
-class XRCORE_API xr_dsa_verifyer
+class xr_dsa_verifyer
 {
 public:
     xr_dsa_verifyer(u8 const p_number[crypto::xr_dsa::public_key_length],
@@ -23,5 +21,3 @@ protected:
 private:
     crypto::xr_dsa m_dsa;
 }; // class xr_dsa_verifyer
-
-#endif //#ifndef XR_DSA_VERIFYER_INCLUDED

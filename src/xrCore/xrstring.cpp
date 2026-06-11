@@ -9,7 +9,7 @@
 #include "FS_impl.h"
 #include <SDL.h>
 
-XRCORE_API str_container* g_pStringContainer = nullptr;
+str_container* g_pStringContainer = nullptr;
 
 #if 1
 

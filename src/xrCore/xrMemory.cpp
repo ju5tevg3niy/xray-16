@@ -137,7 +137,7 @@ void xrMemory::mem_free(void* ptr, size_t alignment)
 }
 
 // xr_strdup
-XRCORE_API pstr xr_strdup(pcstr string)
+pstr xr_strdup(pcstr string)
 {
     VERIFY(string);
     size_t len = xr_strlen(string) + 1;
@@ -226,12 +226,12 @@ void operator delete[](void* ptr, size_t, std::align_val_t alignment) noexcept
     Memory.mem_free(ptr, static_cast<size_t>(alignment));
 }
 
-XRCORE_API void* xr_malloc(size_t size)
+void* xr_malloc(size_t size)
 {
     return Memory.mem_alloc(size);
 }
 
-XRCORE_API void* xr_realloc(void* ptr, size_t size)
+void* xr_realloc(void* ptr, size_t size)
 {
     return Memory.mem_realloc(ptr, size);
 }

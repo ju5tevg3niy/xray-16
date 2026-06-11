@@ -68,7 +68,7 @@ public:
 
 inline IUserConfigHandler::~IUserConfigHandler() = default;
 
-class XRCORE_API xrDebug
+class xrDebug
 {
 public:
     using OutOfMemoryCallbackFunc = void(*)();

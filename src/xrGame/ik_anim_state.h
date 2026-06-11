@@ -1,7 +1,9 @@
 #pragma once
+
 class CBlend;
-class XRCORE_API motion_marks;
+class motion_marks;
 class IKinematicsAnimated;
+
 class ik_anim_state
 {
     bool is_step;

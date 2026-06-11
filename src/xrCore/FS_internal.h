@@ -130,7 +130,7 @@ public:
     CPackReader(void* _base, void* _data, size_t _size) : IReader(_data, _size), base_address(_base) {}
     ~CPackReader() override;
 };
-class XRCORE_API CFileReader final : public IReader
+class CFileReader final : public IReader
 {
 public:
     CFileReader(pcstr name);

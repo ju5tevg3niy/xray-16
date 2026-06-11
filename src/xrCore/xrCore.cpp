@@ -30,7 +30,7 @@
 #include "Compression/compression_ppmd_stream.h"
 extern compression::ppmd::stream* trained_model;
 
-XRCORE_API xrCore Core;
+xrCore Core;
 
 static u32 init_counter = 0;
 

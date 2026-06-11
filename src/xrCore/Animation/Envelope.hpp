@@ -1,5 +1,4 @@
-#ifndef EnvelopeH
-#define EnvelopeH
+#pragma once
 
 // refs
 class IWriter;
@@ -122,7 +121,7 @@ using KeyIt = KeyVec::iterator;
 // refs
 class CExporter;
 
-class XRCORE_API CEnvelope
+class CEnvelope
 {
 public:
     int behavior[2];
@@ -157,5 +156,3 @@ public:
 
     void Optimize();
 };
-
-#endif //_ENVELOPE_H_

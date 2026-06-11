@@ -1,9 +1,10 @@
 #pragma once
+
 #include "xrCommon/xr_smart_pointers.h"
 
 namespace XRay
 {
-class XRCORE_API ModuleHandle
+class ModuleHandle
 {
     void* handle;
     bool dontUnload;

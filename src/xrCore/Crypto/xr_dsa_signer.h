@@ -1,11 +1,9 @@
 #pragma once
-#ifndef XR_DSA_SIGNER_INCLUDED
-#define XR_DSA_SIGNER_INCLUDED
 
 #include "xr_dsa.h"
 #include "xr_sha.h"
 
-class XRCORE_API xr_dsa_signer
+class xr_dsa_signer
 {
 public:
     xr_dsa_signer(u8 const p_number[crypto::xr_dsa::public_key_length],
@@ -25,6 +23,4 @@ private:
 
 }; // xr_dsa_signer
 
-XRCORE_API char* current_time(string64& dest_time);
-
-#endif //#ifndef XR_DSA_SIGNER_INCLUDED
+char* current_time(string64& dest_time);

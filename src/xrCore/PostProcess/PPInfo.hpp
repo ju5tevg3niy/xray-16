@@ -1,7 +1,8 @@
 #pragma once
+
 #include "xrCore/xrCore.h"
 
-struct XRCORE_API SPPInfo
+struct SPPInfo
 {
     struct SColor
     {

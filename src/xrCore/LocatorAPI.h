@@ -75,7 +75,7 @@ public:
     operator bool() const { return Exists; }
 };
 
-class XRCORE_API CLocatorAPI : Noncopyable
+class CLocatorAPI : Noncopyable
 {
     friend class FS_Path;
 
@@ -118,7 +118,7 @@ public:
     // IMPORTNT: don't replace u32 with size_t for this struct
     // (Letter A in the first word is forgotten intentionally,
     //  size_t will blow up the engine compatibility with it's resources)
-    struct XRCORE_API archive_file_header
+    struct archive_file_header
     {
         u16  size; // size of following members:
         u32  size_real;
@@ -280,5 +280,5 @@ public:
     void unlock_rescan();
 };
 
-extern XRCORE_API xr_unique_ptr<CLocatorAPI> xr_FS;
+extern xr_unique_ptr<CLocatorAPI> xr_FS;
 #define FS (*xr_FS)

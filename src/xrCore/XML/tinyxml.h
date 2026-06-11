@@ -186,7 +186,7 @@ const TiXmlEncoding TIXML_DEFAULT_ENCODING = TIXML_ENCODING_UNKNOWN;
     A Decleration contains: Attributes (not on tree)
     @endverbatim
 */
-class XRCORE_API TiXmlBase
+class TiXmlBase
 {
     friend class TiXmlNode;
     friend class TiXmlElement;
@@ -398,7 +398,7 @@ private:
     in a document, or stand on its own. The type of a TiXmlNode
     can be queried, and it can be cast to its more defined type.
 */
-class XRCORE_API TiXmlNode : public TiXmlBase
+class TiXmlNode : public TiXmlBase
 {
     friend class TiXmlDocument;
     friend class TiXmlElement;

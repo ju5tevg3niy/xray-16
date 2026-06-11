@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #pragma hdrstop
 
-XRCORE_API void CLSID2TEXT(CLASS_ID id, pstr text)
+void CLSID2TEXT(CLASS_ID id, pstr text)
 {
     text[8] = 0;
     for (int i = 7; i >= 0; i--)
@@ -11,7 +11,7 @@ XRCORE_API void CLSID2TEXT(CLASS_ID id, pstr text)
     }
 }
 
-XRCORE_API CLASS_ID TEXT2CLSID(pcstr text)
+CLASS_ID TEXT2CLSID(pcstr text)
 {
     VERIFY3(xr_strlen(text) <= 8, "Beer from creator CLASS_ID:", text);
     char buf[9];

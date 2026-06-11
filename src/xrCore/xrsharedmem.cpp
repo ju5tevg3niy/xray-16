@@ -4,7 +4,7 @@
 
 using namespace std;
 
-XRCORE_API smem_container* g_pSharedMemoryContainer = nullptr;
+smem_container* g_pSharedMemoryContainer = nullptr;
 
 smem_container::smem_container()
 #ifdef CONFIG_PROFILE_LOCKS

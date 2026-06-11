@@ -34,7 +34,7 @@ constexpr size_t TASK_SIZE = std::max(RECOMMENDED_TASK_SIZE, std::hardware_destr
 constexpr size_t TASK_SIZE = RECOMMENDED_TASK_SIZE;
 #endif
 
-class XRCORE_API Task final : Noncopyable
+class Task final : Noncopyable
 {
     friend class TaskManager;
     friend class TaskAllocator;

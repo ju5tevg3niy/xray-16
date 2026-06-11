@@ -11,7 +11,7 @@
 
 class CTimer_paused;
 
-class XRCORE_API pauseMngr : Noncopyable
+class pauseMngr : Noncopyable
 {
     xr_vector<CTimer_paused*> m_timers;
     bool paused;
@@ -24,9 +24,9 @@ public:
     void UnRegister(CTimer_paused& t);
 };
 
-extern XRCORE_API pauseMngr& g_pauseMngr();
+extern pauseMngr& g_pauseMngr();
 
-class XRCORE_API CTimerBase
+class CTimerBase
 {
 public:
     using Clock = std::chrono::high_resolution_clock;
@@ -79,7 +79,7 @@ public:
     IC void Dump() const { Msg("* Elapsed time (sec): %f", GetElapsed_sec()); }
 };
 
-class XRCORE_API CTimer : public CTimerBase
+class CTimer : public CTimerBase
 {
     using inherited = CTimerBase;
 
@@ -124,7 +124,7 @@ public:
     }
 };
 
-class XRCORE_API CTimer_paused_ex : public CTimer
+class CTimer_paused_ex : public CTimer
 {
     Time save_clock;
 
@@ -151,15 +151,15 @@ public:
     }
 };
 
-class XRCORE_API CTimer_paused final : public CTimer_paused_ex
+class CTimer_paused final : public CTimer_paused_ex
 {
 public:
     CTimer_paused() { g_pauseMngr().Register(*this); }
     ~CTimer_paused() override { g_pauseMngr().UnRegister(*this); }
 };
 
-extern XRCORE_API bool g_bEnableStatGather;
-class XRCORE_API CStatTimer
+extern bool g_bEnableStatGather;
+class CStatTimer
 {
     using Duration = CTimerBase::Duration;
 

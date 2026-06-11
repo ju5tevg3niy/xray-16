@@ -23,7 +23,7 @@
 
 class TaskWorker;
 
-class XRCORE_API TaskManager final
+class TaskManager final
 {
 private:
     xr_vector<TaskWorker*> workers;
@@ -107,4 +107,4 @@ public:
     void GetStats(size_t& allocated, size_t& pushed, size_t& finished);
 };
 
-extern XRCORE_API xr_unique_ptr<TaskManager> TaskScheduler;
+extern xr_unique_ptr<TaskManager> TaskScheduler;

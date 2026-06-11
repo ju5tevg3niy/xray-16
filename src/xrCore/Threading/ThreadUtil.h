@@ -25,13 +25,13 @@ enum class priority_level
     time_critical,
 };
 
-XRCORE_API priority_level GetCurrentThreadPriorityLevel();
-XRCORE_API priority_class GetCurrentProcessPriorityClass();
+priority_level GetCurrentThreadPriorityLevel();
+priority_class GetCurrentProcessPriorityClass();
 
-XRCORE_API void SetCurrentThreadPriorityLevel(priority_level prio);
-XRCORE_API void SetCurrentProcessPriorityClass(priority_class cls);
+void SetCurrentThreadPriorityLevel(priority_level prio);
+void SetCurrentProcessPriorityClass(priority_class cls);
 
-XRCORE_API void SetCurrentThreadName(cpcstr name);
+void SetCurrentThreadName(cpcstr name);
 
 template <typename Invocable, typename... Args>
 [[nodiscard]] std::thread RunThread(cpcstr name, Invocable&& invocable, Args&&... args)

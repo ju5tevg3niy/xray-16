@@ -3,9 +3,9 @@
 #include "FileSystem.h"
 #include "xrCore/xr_token.h"
 
-XRCORE_API CInifile const* pSettings = nullptr;
-XRCORE_API CInifile const* pSettingsAuth = nullptr;
-XRCORE_API CInifile const* pSettingsOpenXRay = nullptr;
+CInifile const* pSettings = nullptr;
+CInifile const* pSettingsAuth = nullptr;
+CInifile const* pSettingsOpenXRay = nullptr;
 
 #if !defined(XR_PLATFORM_WINDOWS)
 #include <stdint.h>
@@ -252,7 +252,7 @@ bool item_pred(const CInifile::Item& x, pcstr val)
     return xr_strcmp(x.first.c_str(), val) < 0;
 }
 
-XRCORE_API bool _parse(pstr dest, pcstr src)
+bool _parse(pstr dest, pcstr src)
 {
     bool bInsideSTR = false;
     if (src)
@@ -283,7 +283,7 @@ XRCORE_API bool _parse(pstr dest, pcstr src)
     return bInsideSTR;
 }
 
-XRCORE_API void _decorate(pstr dest, pcstr src)
+void _decorate(pstr dest, pcstr src)
 {
     if (src)
     {
@@ -1169,117 +1169,117 @@ void CInifile::remove_include(cpcstr include)
 }
 
 template<>
-XRCORE_API pcstr CInifile::read(pcstr section, pcstr line) const
+pcstr CInifile::read(pcstr section, pcstr line) const
 {
     return r_string(section, line);
 }
 
 template<>
-XRCORE_API u8 CInifile::read(pcstr section, pcstr line) const
+u8 CInifile::read(pcstr section, pcstr line) const
 {
     return r_u8(section, line);
 }
 
 template<>
-XRCORE_API u16 CInifile::read(pcstr section, pcstr line) const
+u16 CInifile::read(pcstr section, pcstr line) const
 {
     return r_u16(section, line);
 }
 
 template<>
-XRCORE_API u32 CInifile::read(pcstr section, pcstr line) const
+u32 CInifile::read(pcstr section, pcstr line) const
 {
     return r_u32(section, line);
 }
 
 template<>
-XRCORE_API s8 CInifile::read(pcstr section, pcstr line) const
+s8 CInifile::read(pcstr section, pcstr line) const
 {
     return r_s8(section, line);
 }
 
 template<>
-XRCORE_API s16 CInifile::read(pcstr section, pcstr line) const
+s16 CInifile::read(pcstr section, pcstr line) const
 {
     return r_s16(section, line);
 }
 
 template<>
-XRCORE_API s32 CInifile::read(pcstr section, pcstr line) const
+s32 CInifile::read(pcstr section, pcstr line) const
 {
     return r_s32(section, line);
 }
 
 template<>
-XRCORE_API s64 CInifile::read(pcstr section, pcstr line) const
+s64 CInifile::read(pcstr section, pcstr line) const
 {
     return r_s64(section, line);
 }
 
 template<>
-XRCORE_API float CInifile::read(pcstr section, pcstr line) const
+float CInifile::read(pcstr section, pcstr line) const
 {
     return r_float(section, line);
 }
 
 template<>
-XRCORE_API Fcolor CInifile::read(pcstr section, pcstr line) const
+Fcolor CInifile::read(pcstr section, pcstr line) const
 {
     return r_fcolor(section, line);
 }
 
 template<>
-XRCORE_API Ivector2 CInifile::read(pcstr section, pcstr line) const
+Ivector2 CInifile::read(pcstr section, pcstr line) const
 {
     return r_ivector2(section, line);
 }
 
 template<>
-XRCORE_API Ivector3 CInifile::read(pcstr section, pcstr line) const
+Ivector3 CInifile::read(pcstr section, pcstr line) const
 {
     return r_ivector3(section, line);
 }
 
 template<>
-XRCORE_API Ivector4 CInifile::read(pcstr section, pcstr line) const
+Ivector4 CInifile::read(pcstr section, pcstr line) const
 {
     return r_ivector4(section, line);
 }
 
 template<>
-XRCORE_API bool CInifile::try_read(Ivector4& outValue, pcstr section, pcstr line) const
+bool CInifile::try_read(Ivector4& outValue, pcstr section, pcstr line) const
 {
     pcstr C = r_string(section, line);
     return 4 == sscanf(C, "%d,%d,%d,%d", &outValue.x, &outValue.y, &outValue.z, &outValue.w);
 }
 
 template<>
-XRCORE_API Fvector2 CInifile::read(pcstr section, pcstr line) const
+Fvector2 CInifile::read(pcstr section, pcstr line) const
 {
     return r_fvector2(section, line);
 }
 
 template<>
-XRCORE_API bool CInifile::try_read(Fvector2& outValue, pcstr section, pcstr line) const
+bool CInifile::try_read(Fvector2& outValue, pcstr section, pcstr line) const
 {
     pcstr C = r_string(section, line);
     return 2 == sscanf(C, "%f,%f", &outValue.x, &outValue.y);
 }
 
 template<>
-XRCORE_API Fvector3 CInifile::read(pcstr section, pcstr line) const
+Fvector3 CInifile::read(pcstr section, pcstr line) const
 {
     return r_fvector3(section, line);
 }
 
 template<>
-XRCORE_API Fvector4 CInifile::read(pcstr section, pcstr line) const
+Fvector4 CInifile::read(pcstr section, pcstr line) const
 {
     return r_fvector4(section, line);
 }
 
 template<>
-XRCORE_API bool CInifile::read(pcstr section, pcstr line) const
+bool CInifile::read(pcstr section, pcstr line) const
 {
     return r_bool(section, line);
 }

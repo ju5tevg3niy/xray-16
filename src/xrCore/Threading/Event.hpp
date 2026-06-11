@@ -6,7 +6,7 @@
 #   include <pthread.h>
 #endif
 
-class XRCORE_API Event
+class Event
 {
     void* handle;
 #if defined(XR_PLATFORM_POSIX)

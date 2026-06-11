@@ -1,8 +1,5 @@
 #pragma once
-#ifndef xrsharedmemH
-#define xrsharedmemH
 
-//#include "_stl_extensions.h"
 #include "xrCommon/xr_vector.h"
 #include "Common/Noncopyable.hpp"
 
@@ -13,7 +10,7 @@ class Lock;
 //////////////////////////////////////////////////////////////////////////
 #pragma warning(push)
 #pragma warning(disable : 4200)
-struct XRCORE_API smem_value
+struct smem_value
 {
     u32 dwReference;
     u32 dwCRC;
@@ -57,7 +54,7 @@ IC bool smem_equal(const smem_value* A, u32 dwCRC, u32 dwLength, u8* ptr)
 #pragma warning(pop)
 
 //////////////////////////////////////////////////////////////////////////
-class XRCORE_API smem_container : Noncopyable
+class smem_container : Noncopyable
 {
 
 public:
@@ -76,7 +73,7 @@ private:
     mutable Lock lock;
     cdb container;
 };
-XRCORE_API extern smem_container* g_pSharedMemoryContainer;
+extern smem_container* g_pSharedMemoryContainer;
 
 //////////////////////////////////////////////////////////////////////////
 template <class T>
@@ -203,5 +200,3 @@ IC void swap(ref_smem<T>& lhs, ref_smem<T>& rhs)
 }
 
 #pragma pack(pop)
-
-#endif
