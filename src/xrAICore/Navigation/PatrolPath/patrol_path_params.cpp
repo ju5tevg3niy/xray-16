@@ -11,6 +11,7 @@
 #include "patrol_path_params.h"
 #include "patrol_path_storage.h"
 #include "AISpaceBase.hpp"
+#include "xrAPI/EngineGlobalEnvironment.hpp"
 
 #include "xrScriptEngine/script_engine.hpp"
 

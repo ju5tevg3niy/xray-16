@@ -5,7 +5,8 @@
 #include "xrCore/xr_resource.h"
 #include "xrCore/Math/vector3.hpp"
 #include "xrCore/xr_token.h"
-#include "xrCommon/xr_vector.h" // DEFINE_VECTOR
+#include "xrCommon/xr_vector.h"
+#include "xrAPI/EngineGlobalEnvironment.hpp"
 
 #ifdef XRAY_STATIC_BUILD
 #   define XRSOUND_API

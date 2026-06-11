@@ -143,6 +143,8 @@ public:
 #endif
 };
 
+class CGameMtlLibrary;
+
 struct MTL_EXPORT_API SGameMtlPair
 {
     friend class CGameMtlLibrary;

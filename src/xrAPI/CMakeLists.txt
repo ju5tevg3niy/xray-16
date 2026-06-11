@@ -1,9 +1,7 @@
 add_library(xrAPI)
 
 target_sources(xrAPI PRIVATE
-    stdafx.h
-    stdafx.cpp
-    xrAPI.cpp
+    EngineGlobalEnvironment.cpp
 )
 
 target_include_directories(xrAPI
@@ -11,18 +9,8 @@ target_include_directories(xrAPI
     "${CMAKE_SOURCE_DIR}/src"
 )
 
-target_compile_definitions(xrAPI
-    PRIVATE
-    XRAPI_EXPORTS
-)
-
 set_target_properties(xrAPI PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrAPI
-    PRIVATE
-    stdafx.h
 )
 
 if (BUILD_SHARED_LIBS)

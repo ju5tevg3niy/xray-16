@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include "xrAPI/EngineGlobalEnvironment.hpp"
+
 #ifndef AI_COMPILER
 #include "xrAICore/Navigation/graph_engine.h"
 #include "xrAICore/Navigation/graph_engine_space.h"

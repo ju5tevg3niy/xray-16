@@ -13,6 +13,8 @@ enum class CScriptProfilerType : u32
     Sampling = 2,
 };
 
+class CScriptEngine;
+
 class XRSCRIPTENGINE_API CScriptProfiler
 {
 public:

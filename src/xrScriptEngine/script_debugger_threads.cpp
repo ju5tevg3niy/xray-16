@@ -4,7 +4,7 @@
 #include "script_engine.hpp"
 #include "script_thread.hpp"
 #include "script_debugger.hpp"
-#include "Include/xrAPI/xrAPI.h"
+#include "xrAPI/EngineGlobalEnvironment.hpp"
 
 u32 CDbgScriptThreads::Fill()
 {

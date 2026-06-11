@@ -19,6 +19,7 @@
 
 #include "AISpaceBase.hpp"
 #include "Common/object_broker.h"
+#include "xrAPI/EngineGlobalEnvironment.hpp"
 
 CPatrolPoint::CPatrolPoint(const CPatrolPath* path)
     : m_flags(0), m_level_vertex_id(u32(-1)), m_game_vertex_id(GameGraph::_GRAPH_ID(-1))

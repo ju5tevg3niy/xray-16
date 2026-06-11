@@ -5,6 +5,7 @@
 
 class CScriptProcess;
 class CScriptDebugger;
+class CScriptEngine;
 
 class XRSCRIPTENGINE_API CDbgScriptThreads
 {

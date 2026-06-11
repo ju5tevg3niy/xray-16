@@ -12,6 +12,7 @@
 #include "AISpaceBase.hpp"
 
 #include "xrScriptEngine/script_space.hpp"
+#include "xrAPI/EngineGlobalEnvironment.hpp"
 
 const CGameGraph* get_game_graph() { return &GEnv.AISpace->game_graph(); }
 const CGameGraph::CHeader* get_header(const CGameGraph* self_) { return (&self_->header()); }

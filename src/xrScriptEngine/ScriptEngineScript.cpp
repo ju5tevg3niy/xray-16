@@ -12,6 +12,7 @@
 #include "script_engine.hpp"
 #include "script_profiler.hpp"
 #include "script_debugger.hpp"
+#include "xrAPI/EngineGlobalEnvironment.hpp"
 
 void LuaLog(pcstr caMessage)
 {
