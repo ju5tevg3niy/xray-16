@@ -88,11 +88,6 @@ set_target_properties(xrOPCODE PROPERTIES
     PREFIX ""
 )
 
-target_precompile_headers(xrOPCODE
-    PRIVATE
-    pch.hpp
-)
-
 if (BUILD_SHARED_LIBS)
     install(TARGETS xrOPCODE LIBRARY
         DESTINATION "${CMAKE_INSTALL_LIBDIR}"

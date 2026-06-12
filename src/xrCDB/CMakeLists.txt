@@ -26,8 +26,6 @@ target_sources_grouped(
     Frustum.cpp
     Frustum.h
     Intersect.hpp
-    stdafx.h
-    StdAfx.cpp
     xrCDB.cpp
     xrCDB.h
     xrCDB_box.cpp
@@ -57,11 +55,6 @@ target_compile_definitions(xrCDB
 
 set_target_properties(xrCDB PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrCDB
-    PRIVATE
-    stdafx.h
 )
 
 if (BUILD_SHARED_LIBS)

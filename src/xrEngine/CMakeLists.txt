@@ -228,8 +228,6 @@ target_sources_grouped(
     defines.h
     embedded_resources_management.h
     mp_logging.h
-    stdafx.cpp
-    stdafx.h
     x_ray.cpp
     x_ray.h
 )
@@ -439,11 +437,6 @@ target_compile_definitions(xrEngine
 
 set_target_properties(xrEngine PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrEngine
-    PRIVATE
-    stdafx.h
 )
 
 if (BUILD_SHARED_LIBS)

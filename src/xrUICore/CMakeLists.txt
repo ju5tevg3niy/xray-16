@@ -1,8 +1,8 @@
 add_library(xrUICore)
 
-target_sources(xrUICore PRIVATE
-    pch.cpp
-    pch.hpp
+target_sources(
+    xrUICore
+    PRIVATE
     ui_base.cpp
     ui_base.h
     ui_debug.cpp
@@ -146,11 +146,6 @@ target_compile_definitions(xrUICore
 
 set_target_properties(xrUICore PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrUICore
-    PRIVATE
-    pch.hpp
 )
 
 if (BUILD_SHARED_LIBS)

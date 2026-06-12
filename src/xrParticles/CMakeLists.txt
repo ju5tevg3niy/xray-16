@@ -5,8 +5,6 @@ target_sources_grouped(
     NAME "Kernel"
     FILES
     "psystem.h"
-    "stdafx.h"
-    "stdafx.cpp"
 )
 
 target_sources_grouped(
@@ -47,11 +45,6 @@ target_compile_definitions(xrParticles
 
 set_target_properties(xrParticles PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrParticles
-    PRIVATE
-    stdafx.h
 )
 
 if (BUILD_SHARED_LIBS)

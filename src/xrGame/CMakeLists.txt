@@ -1384,8 +1384,6 @@ target_sources(xrGame PRIVATE
     static_obstacles_avoider.cpp
     static_obstacles_avoider.h
     static_obstacles_avoider_inline.h
-    StdAfx.cpp
-    StdAfx.h
     steering_behaviour_alignment.h
     steering_behaviour_base.h
     steering_behaviour_base_inline.h
@@ -2519,12 +2517,6 @@ endif()
 set_target_properties(xrGame PROPERTIES
     PREFIX ""
     UNITY_BUILD_BATCH_SIZE 50
-)
-
-target_precompile_headers(xrGame
-    PRIVATE
-    $<$<COMPILE_LANGUAGE:CXX>:StdAfx.h>
-    $<$<COMPILE_LANGUAGE:CXX>:pch_script.h>
 )
 
 if (BUILD_SHARED_LIBS)

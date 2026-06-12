@@ -19,8 +19,6 @@ target_sources(xrNetServer PRIVATE
     #NET_Server.cpp
     #NET_Server.h
     NET_Shared.h
-    stdafx.cpp
-    stdafx.h
     empty/NET_Client.cpp
     empty/NET_Client.h
     empty/NET_Server.cpp
@@ -45,11 +43,6 @@ target_compile_definitions(xrNetServer
 
 set_target_properties(xrNetServer PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrNetServer
-    PRIVATE
-    stdafx.h
 )
 
 if (BUILD_SHARED_LIBS)

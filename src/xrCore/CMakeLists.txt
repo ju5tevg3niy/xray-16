@@ -34,34 +34,6 @@ target_sources_grouped(
 
 target_sources_grouped(
     TARGET xrCore
-    NAME "Common"
-    FILES
-    ../Common/Common.hpp
-    ../Common/Config.hpp
-    ../Common/face_smoth_flags.h
-    ../Common/FSMacros.hpp
-    ../Common/LevelGameDef.h
-    ../Common/Noncopyable.hpp
-    ../Common/Platform.hpp
-    ../Common/OGF_GContainer_Vertices.hpp
-)
-
-target_sources_grouped(
-    TARGET xrCore
-    NAME "Common\\Object"
-    FILES
-    ../Common/object_broker.h
-    ../Common/object_cloner.h
-    ../Common/object_comparer.h
-    ../Common/object_destroyer.h
-    ../Common/object_interfaces.h
-    ../Common/object_loader.h
-    ../Common/object_saver.h
-    ../Common/object_type_traits.h
-)
-
-target_sources_grouped(
-    TARGET xrCore
     NAME "Compression\\lz"
     FILES
     LzHuf.cpp
@@ -252,16 +224,6 @@ target_sources_grouped(
 
 target_sources_grouped(
     TARGET xrCore
-    NAME "Kernel\\Common"
-    FILES
-    ../Common/_d3d_extensions.h
-    ../Common/GUID.hpp
-    ../Common/LevelStructure.hpp
-    ../Common/Util.hpp
-)
-
-target_sources_grouped(
-    TARGET xrCore
     NAME "Math"
     FILES
     dump_string.cpp
@@ -332,14 +294,6 @@ target_sources_grouped(
     FILES
     os_clipboard.cpp
     os_clipboard.h
-)
-
-target_sources_grouped(
-    TARGET xrCore
-    NAME "PCH"
-    FILES
-    stdafx.cpp
-    stdafx.h
 )
 
 target_sources_grouped(
@@ -469,9 +423,66 @@ set_target_properties(xrCore PROPERTIES
     PREFIX ""
 )
 
-target_precompile_headers(xrCore
-    PRIVATE
-    stdafx.h
+target_precompile_headers(
+    xrCore
+    PUBLIC
+    "$<$<COMPILE_LANGUAGE:CXX>:<algorithm$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<alloca.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<array$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<atomic$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<chrono$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<cmath$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<cstdarg$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<cstddef$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<cstdint$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<cstdio$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<cstring$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<ctime$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<ctype.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<deque$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<dirent.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<errno.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<fcntl.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<functional$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<iterator$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<limits.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<limits$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<list$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<map$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<math.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<memory.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<memory$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<mutex$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<new$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<optional$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<pthread.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<random$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<sched.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<SDL.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<SDL_cpuinfo.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<SDL_loadso.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<SDL_timer.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<SDL_version.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<set$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<stack$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<stdarg.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<stdio.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<stdlib.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<string.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<string$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<string_view$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<sys/mman.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<sys/param.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<sys/stat.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<sys/types.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<thread$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<tracy/Tracy.hpp$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<type_traits$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<unistd.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<unordered_map$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<utility$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<utime.h$<ANGLE-R>>"
+    "$<$<COMPILE_LANGUAGE:CXX>:<vector$<ANGLE-R>>"
 )
 
 if (BUILD_SHARED_LIBS)

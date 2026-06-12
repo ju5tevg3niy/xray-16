@@ -274,15 +274,6 @@ target_sources_grouped(
     Navigation/PatrolPath/patrol_path_storage_inline.h
 )
 
-target_sources_grouped(
-    TARGET xrAICore
-    NAME "Kernel"
-    FILES
-    pch.cpp
-    pch.hpp
-)
-
-
 target_include_directories(xrAICore
     PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}"
@@ -305,11 +296,6 @@ target_compile_definitions(xrAICore
 
 set_target_properties(xrAICore PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrAICore
-    PRIVATE
-    pch.hpp
 )
 
 if (BUILD_SHARED_LIBS)

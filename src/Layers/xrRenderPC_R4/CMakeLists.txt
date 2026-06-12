@@ -12,8 +12,6 @@ target_sources(xrRenderPC_R4 PRIVATE
     r4_shaders.cpp
     R_Backend_LOD.cpp
     R_Backend_LOD.h
-    stdafx.cpp
-    stdafx.h
     xrRender_R4.cpp
 )
 
@@ -41,11 +39,6 @@ target_compile_definitions(xrRenderPC_R4
 
 set_target_properties(xrRenderPC_R4 PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrRenderPC_R4
-    PRIVATE
-    stdafx.h
 )
 
 if (BUILD_SHARED_LIBS)

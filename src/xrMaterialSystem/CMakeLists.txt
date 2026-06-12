@@ -30,11 +30,6 @@ set_target_properties(xrMaterialSystem PROPERTIES
     PREFIX ""
 )
 
-target_precompile_headers(xrMaterialSystem
-    PRIVATE
-    stdafx.h
-)
-
 if (BUILD_SHARED_LIBS)
     install(TARGETS xrMaterialSystem LIBRARY
         DESTINATION "${CMAKE_INSTALL_LIBDIR}"

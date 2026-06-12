@@ -10,8 +10,6 @@ target_sources(xrRender_GL PRIVATE
     r2_R_sun.cpp
     r2_test_hw.cpp
     rgl_shaders.cpp
-    stdafx.cpp
-    stdafx.h
     xrRender_GL.cpp
     ../xrRender/Animation.cpp
     ../xrRender/Animation.h
@@ -424,11 +422,6 @@ target_compile_definitions(xrRender_GL
 
 set_target_properties(xrRender_GL PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrRender_GL
-    PRIVATE
-    $<$<COMPILE_LANGUAGE:CXX>:stdafx.h>
 )
 
 if (BUILD_SHARED_LIBS)

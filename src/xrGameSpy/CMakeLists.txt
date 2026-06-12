@@ -4,8 +4,6 @@ target_sources_grouped(
     TARGET xrGameSpy
     NAME "Kernel"
     FILES
-    stdafx.cpp
-    stdafx.h
     xrGameSpy.cpp
     xrGameSpy.h
     xrGameSpy_MainDefs.h
@@ -61,11 +59,6 @@ target_compile_definitions(xrGameSpy
 
 set_target_properties(xrGameSpy PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrGameSpy
-    PRIVATE
-    stdafx.h
 )
 
 if (BUILD_SHARED_LIBS)

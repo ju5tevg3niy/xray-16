@@ -4,8 +4,6 @@ target_sources_grouped(
     TARGET xrPhysics
     NAME "Kernel"
     FILES
-    stdafx.cpp
-    StdAfx.h
     xrPhysics.cpp
     xrPhysics.h
 )
@@ -425,11 +423,6 @@ target_compile_definitions(xrPhysics
 
 set_target_properties(xrPhysics PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrPhysics
-    PRIVATE
-    StdAfx.h
 )
 
 if (BUILD_SHARED_LIBS)

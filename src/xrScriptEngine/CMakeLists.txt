@@ -47,8 +47,6 @@ target_sources_grouped(
     TARGET xrScriptEngine
     NAME "Kernel"
     FILES
-    pch.cpp
-    pch.hpp
     xrScriptEngine.cpp
     xrScriptEngine.hpp
 )
@@ -108,11 +106,6 @@ target_compile_definitions(xrScriptEngine
 
 set_target_properties(xrScriptEngine PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(xrScriptEngine
-    PRIVATE
-    pch.hpp
 )
 
 if (BUILD_SHARED_LIBS)
