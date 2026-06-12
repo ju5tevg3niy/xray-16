@@ -23,10 +23,6 @@
 #include "xrsharedmem.h"
 #include "xrstring.h"
 
-#if __has_include(".GitInfo.hpp")
-#include ".GitInfo.hpp"
-#endif
-
 #include "Compression/compression_ppmd_stream.h"
 extern compression::ppmd::stream* trained_model;
 
