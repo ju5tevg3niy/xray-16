@@ -3,7 +3,7 @@
 #include "CameraDefs.h"
 #include "device.h"
 
-class ENGINE_API CEffectorCam : public SBaseEffector
+class CEffectorCam : public SBaseEffector
 {
 protected:
     ECamEffectorType eType;

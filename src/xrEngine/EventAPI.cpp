@@ -6,7 +6,7 @@ extern void msRead();
 extern void msCreate(pcstr name);
 
 //---------------------------------------------------------------------
-class ENGINE_API CEvent
+class CEvent
 {
     friend class CEventAPI;
 

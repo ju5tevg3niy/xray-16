@@ -113,7 +113,7 @@ void CHUDTarget::CursorOnFrame()
     }
 }
 
-extern ENGINE_API bool g_bRendering;
+extern bool g_bRendering;
 void CHUDTarget::Render()
 {
     using namespace ::detail::hud_target;

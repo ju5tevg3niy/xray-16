@@ -10,17 +10,17 @@
 #include "editor_base.h"
 
 // refs
-class ENGINE_API IRender_Visual;
-class ENGINE_API CInifile;
-class ENGINE_API CEnvironment;
+class IRender_Visual;
+class CInifile;
+class CEnvironment;
 
 // refs - effects
-class ENGINE_API CEnvironment;
-class ENGINE_API CLensFlare;
-class ENGINE_API CEffect_Rain;
-class ENGINE_API CEffect_Thunderbolt;
+class CEnvironment;
+class CLensFlare;
+class CEffect_Rain;
+class CEffect_Thunderbolt;
 
-class ENGINE_API CPerlinNoise1D;
+class CPerlinNoise1D;
 
 struct SThunderboltDesc;
 struct SThunderboltCollection;
@@ -41,7 +41,7 @@ class dxEnvironmentRender;
 #define DAY_LENGTH 86400.f
 
 // t-defs
-class ENGINE_API CEnvModifier
+class CEnvModifier
 {
 public:
     Fvector3 position;
@@ -60,7 +60,7 @@ public:
     float sum(CEnvModifier& _another, Fvector3& view);
 };
 
-class ENGINE_API CEnvAmbient
+class CEnvAmbient
 {
 public:
     struct SEffect
@@ -77,7 +77,7 @@ public:
     };
     using EffectVec = xr_vector<SEffect*>;
 
-    struct ENGINE_API SSndChannel
+    struct SSndChannel
     {
         shared_str m_load_section;
         Fvector2 m_sound_dist;
@@ -138,7 +138,7 @@ public:
     virtual SSndChannelVec& get_snd_channels() { return m_sound_channels; }
 };
 
-class ENGINE_API CEnvDescriptor
+class CEnvDescriptor
 {
 public:
     bool dont_save; // oh
@@ -214,7 +214,7 @@ public:
     shared_str m_identifier;
 };
 
-class ENGINE_API CEnvDescriptorMixer : public CEnvDescriptor
+class CEnvDescriptorMixer : public CEnvDescriptor
 {
 public:
     float weight;
@@ -236,7 +236,7 @@ public:
     void ed_show_params(const CEnvironment& env); // ImGui editor
 };
 
-class ENGINE_API CEnvironment : public xray::editor::ide_tool
+class CEnvironment : public xray::editor::ide_tool
 {
     friend class xray::render::render_r4::dxEnvironmentRender;
     friend class xray::render::render_gl::dxEnvironmentRender;
@@ -385,5 +385,5 @@ private:
     pcstr tool_name() const override { return "Weather Editor"; }
 };
 
-ENGINE_API extern Flags32 psEnvFlags;
-ENGINE_API extern float psVisDistance;
+extern Flags32 psEnvFlags;
+extern float psVisDistance;

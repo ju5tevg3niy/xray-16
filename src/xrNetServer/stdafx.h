@@ -2,7 +2,6 @@
 
 #include "Common/Common.hpp"
 #include "xrCore/xrCore.h"
-#include "xrCore/_std_extensions.h"
 
 #if defined(XR_PLATFORM_WINDOWS)
 #pragma warning(push)

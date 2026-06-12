@@ -16,7 +16,7 @@
 #endif
 #endif
 
-extern ENGINE_API float psHUD_FOV;
+extern float psHUD_FOV;
 
 namespace xray::render::RENDER_NAMESPACE
 {

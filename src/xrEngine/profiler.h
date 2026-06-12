@@ -55,7 +55,7 @@ struct CProfileStats
     inline CProfileStats();
 };
 
-class ENGINE_API CProfiler
+class CProfiler
 {
 private:
     struct pred_rstr
@@ -87,7 +87,7 @@ public:
     void add_profile_portion(const CProfileResultPortion &profile_portion);
 };
 
-extern ENGINE_API CProfiler* g_profiler;
+extern CProfiler* g_profiler;
 
 inline CProfiler& profiler();
 

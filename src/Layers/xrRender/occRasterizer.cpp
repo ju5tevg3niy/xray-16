@@ -1,6 +1,17 @@
 // occRasterizer.cpp: implementation of the occRasterizer class.
 //
 //////////////////////////////////////////////////////////////////////
+#include <cstddef>
+#include <tracy/Tracy.hpp>
+
+#include "Common/Platform.hpp"
+#include "xrCore/Math/bitwise.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
+#include "xrEngine/defines.h"
+#include "xrEngine/device.h"
 
 #include "stdafx.h"
 #include "occRasterizer.h"

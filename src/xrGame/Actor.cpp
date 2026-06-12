@@ -1031,7 +1031,7 @@ void CActor::g_Physics(Fvector& _accel, float jump, float dt)
         }
     }
 }
-extern ENGINE_API float g_fov;
+extern float g_fov;
 
 float CActor::currentFOV()
 {
@@ -1729,7 +1729,7 @@ void CActor::ForceTransformAndDirection(const Fmatrix& m)
     cam_Active()->Set(-xyz.x, -xyz.y, -xyz.z);
 }
 
-//ENGINE_API extern float psHUD_FOV;
+//extern float psHUD_FOV;
 float CActor::Radius() const
 {
     float R = inherited::Radius();

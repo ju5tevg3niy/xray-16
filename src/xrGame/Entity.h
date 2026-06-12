@@ -3,12 +3,13 @@
 #include "PhysicsShellHolder.h"
 #include "damage_manager.h"
 #include "EntityCondition.h"
+
 // refs
-class ENGINE_API CCameraBase;
-class ENGINE_API C3DSound;
-class ENGINE_API CMotionDef;
-class ENGINE_API IKinematics;
-class ENGINE_API CBoneInstance;
+class CCameraBase;
+class C3DSound;
+class CMotionDef;
+class IKinematics;
+class CBoneInstance;
 class CWeaponList;
 class CPHMovementControl;
 class CHudItem;

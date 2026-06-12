@@ -17,7 +17,7 @@
 #include "CustomHUD.h"
 #endif
 
-ENGINE_API IGame_Persistent* g_pGamePersistent = nullptr;
+IGame_Persistent* g_pGamePersistent = nullptr;
 
 IGame_Persistent::IGame_Persistent()
 {

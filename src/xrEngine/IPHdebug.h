@@ -11,4 +11,4 @@ public:
 
 inline IPhDebugRender::~IPhDebugRender() = default;
 
-extern ENGINE_API IPhDebugRender* ph_debug_render;
+extern IPhDebugRender* ph_debug_render;

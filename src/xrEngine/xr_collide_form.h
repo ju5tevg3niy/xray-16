@@ -113,10 +113,10 @@ public:
     ECollisionFormType Type() const { return m_type; }
 };
 
-class ENGINE_API CCF_Skeleton : public ICollisionForm
+class CCF_Skeleton : public ICollisionForm
 {
 public:
-    struct ENGINE_API SElement
+    struct SElement
     {
         union
         {
@@ -169,7 +169,7 @@ public:
 #endif
 };
 
-class ENGINE_API CCF_EventBox : public ICollisionForm
+class CCF_EventBox : public ICollisionForm
 {
     Fplane Planes[6];
 
@@ -182,7 +182,7 @@ public:
     bool Contact(IGameObject* O);
 };
 
-class ENGINE_API CCF_Shape : public ICollisionForm
+class CCF_Shape : public ICollisionForm
 {
 public:
     union shape_data

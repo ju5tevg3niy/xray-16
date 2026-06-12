@@ -7,8 +7,8 @@
 #include "Render.h"
 #include "StringTable/StringTable.h"
 
-extern ENGINE_API bool g_bRendering;
-ENGINE_API Fvector2 g_current_font_scale = {1.0f, 1.0f};
+extern bool g_bRendering;
+Fvector2 g_current_font_scale = {1.0f, 1.0f};
 
 #include "Include/xrRender/RenderFactory.h"
 #include "Include/xrRender/FontRender.h"

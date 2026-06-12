@@ -1,6 +1,4 @@
 #pragma once
-#ifndef igame_level_h_defined
-#define igame_level_h_defined
 
 #include "IInputReceiver.h"
 #include "xr_object_list.h"
@@ -12,16 +10,16 @@
 #include "pure.h"
 
 // refs
-class ENGINE_API CCameraManager;
-class ENGINE_API CCursor;
-class ENGINE_API CCustomHUD;
-class ENGINE_API ISpatial;
+class CCameraManager;
+class CCursor;
+class CCustomHUD;
+class ISpatial;
 namespace Feel
 {
-class ENGINE_API Sound;
+class Sound;
 }
 
-class ENGINE_API CServerInfo
+class CServerInfo
 {
 private:
     struct SItem_ServerInfo
@@ -52,7 +50,7 @@ public:
 };
 
 //-----------------------------------------------------------------------------------------------------------
-class ENGINE_API IGame_Level : public IInputReceiver,
+class IGame_Level : public IInputReceiver,
                                public pureRender,
                                public pureFrame,
                                public IEventReceiver
@@ -153,6 +151,4 @@ public:
 };
 
 //-----------------------------------------------------------------------------------------------------------
-extern ENGINE_API IGame_Level* g_pGameLevel;
-
-#endif
+extern IGame_Level* g_pGameLevel;

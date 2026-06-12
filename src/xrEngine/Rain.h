@@ -1,9 +1,6 @@
 // Rain.h: interface for the CRain class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#ifndef RainH
-#define RainH
 #pragma once
 
 #include "xrCDB/xr_collide_defs.h"
@@ -12,7 +9,7 @@
 #include "Include/xrRender/RainRender.h"
 
 // refs
-class ENGINE_API IRender_DetailModel;
+class IRender_DetailModel;
 
 namespace xray::render
 {
@@ -26,7 +23,7 @@ class dxRainRender;
 }
 } // namespace xray::render
 
-class ENGINE_API CEffect_Rain
+class CEffect_Rain
 {
     friend class xray::render::render_r4::dxRainRender;
     friend class xray::render::render_gl::dxRainRender;
@@ -95,5 +92,3 @@ public:
     void Render();
     void OnFrame();
 };
-
-#endif // RainH

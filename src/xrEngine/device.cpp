@@ -15,12 +15,12 @@
 
 #include <SDL.h>
 
-ENGINE_API CRenderDevice Device;
-ENGINE_API CLoadScreenRenderer load_screen_renderer;
+CRenderDevice Device;
+CLoadScreenRenderer load_screen_renderer;
 
-ENGINE_API bool g_bRendering = false;
+bool g_bRendering = false;
 
-ENGINE_API bool g_bBenchmark = false;
+bool g_bBenchmark = false;
 string512 g_sBenchmarkName;
 
 int ps_fps_limit = 501;
@@ -154,7 +154,7 @@ void CRenderDevice::CalcFrameStats()
 
 int g_svDedicateServerUpdateReate = 100;
 
-ENGINE_API xr_list<LOADING_EVENT> g_loading_events;
+xr_list<LOADING_EVENT> g_loading_events;
 
 bool CRenderDevice::BeforeFrame()
 {
@@ -491,7 +491,7 @@ void CRenderDevice::FrameMove()
     ImGui::EndFrame();
 }
 
-ENGINE_API bool bShowPauseString = true;
+bool bShowPauseString = true;
 
 void CRenderDevice::Pause(bool bOn, bool bTimer, bool bSound, [[maybe_unused]] pcstr reason)
 {

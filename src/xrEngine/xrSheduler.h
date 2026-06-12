@@ -5,7 +5,7 @@
 
 class ISheduled;
 
-class ENGINE_API CSheduler
+class CSheduler
 {
 private:
     struct Item

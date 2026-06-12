@@ -2,6 +2,12 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/Math/bitwise.hpp"
+#include "xrCore/Math/plane.hpp"
+#include "xrCore/Math/vector3.hpp"
+
 namespace xray::render::RENDER_NAMESPACE
 {
 const int occ_dim_0 = 64;

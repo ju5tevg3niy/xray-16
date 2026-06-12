@@ -10,8 +10,8 @@
 
 constexpr size_t bindings_count = kLASTACTION;
 
-ENGINE_API key_binding g_key_bindings[bindings_count];
-ENGINE_API EKeyGroup g_current_keygroup = _sp;
+key_binding g_key_bindings[bindings_count];
+EKeyGroup g_current_keygroup = _sp;
 
 struct action_binding_desc
 {
@@ -795,7 +795,7 @@ EGameActions GetBindedAction(int dik, EKeyContext context /*= EKeyContext::Undef
     return kNOTBINDED;
 }
 
-ENGINE_API pcstr GetActionBinding(EGameActions action)
+pcstr GetActionBinding(EGameActions action)
 {
     auto& binding = g_action_bindings[action];
 

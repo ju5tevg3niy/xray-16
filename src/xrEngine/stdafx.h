@@ -17,7 +17,6 @@
 #endif
 
 #include "xrCore/xrCore.h"
-#include "xrCore/_std_extensions.h"
 
 #define ECORE_API
 
@@ -34,6 +33,6 @@
 
 #include "xrSound/Sound.h"
 
-extern ENGINE_API CInifile* pGameIni;
+extern CInifile* pGameIni;
 
 #endif // _EDITOR

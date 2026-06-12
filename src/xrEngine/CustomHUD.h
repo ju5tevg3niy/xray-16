@@ -1,9 +1,10 @@
 #pragma once
+
 #include "xrEngine/EngineAPI.h"
 #include "xrEngine/EventAPI.h"
 #include "xrEngine/pure.h"
 
-ENGINE_API extern Flags32 psHUD_Flags;
+extern Flags32 psHUD_Flags;
 #define HUD_CROSSHAIR (1 << 0)
 #define HUD_CROSSHAIR_DIST (1 << 1)
 #define HUD_WEAPON (1 << 2)
@@ -20,7 +21,7 @@ ENGINE_API extern Flags32 psHUD_Flags;
 
 class IGameObject;
 
-class ENGINE_API XR_NOVTABLE CCustomHUD
+class XR_NOVTABLE CCustomHUD
     : public IEventReceiver,
       public CUIResetNotifier
 {

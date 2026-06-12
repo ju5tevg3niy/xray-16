@@ -31,9 +31,9 @@ class CGameNewsRegistryWrapper;
 class CCharacterPhysicsSupport;
 class CActorCameraManager;
 // refs
-class ENGINE_API CCameraBase;
-class ENGINE_API CBoneInstance;
-class ENGINE_API CBlend;
+class CCameraBase;
+class CBoneInstance;
+class CBlend;
 class CWeaponList;
 class CEffectorBobbing;
 class CHolderCustom;

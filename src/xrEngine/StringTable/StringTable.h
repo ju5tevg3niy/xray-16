@@ -23,7 +23,7 @@ struct STRING_TABLE_DATA
     STRING_TABLE_MAP m_StringTable;
 };
 
-class ENGINE_API CStringTable final
+class CStringTable final
 {
 public:
     void Init();
@@ -63,4 +63,4 @@ private:
     static xr_vector<xr_token> languagesToken;
 };
 
-ENGINE_API CStringTable& StringTable();
+CStringTable& StringTable();

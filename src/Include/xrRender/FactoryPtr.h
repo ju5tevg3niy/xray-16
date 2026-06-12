@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RenderFactory.h"
+#include "xrAPI/EngineGlobalEnvironment.hpp"
 
 // XXX: should be revisited.
 #ifdef XR_COMPILER_GCC // At least GCC call destructor of members at call parent destructor

@@ -15,7 +15,7 @@
 #include "xrScriptEngine/script_engine.hpp"
 #include "ai_space.h"
 
-extern ENGINE_API bool bShowPauseString;
+extern bool bShowPauseString;
 
 CUISequenceSimpleItem::~CUISequenceSimpleItem()
 {

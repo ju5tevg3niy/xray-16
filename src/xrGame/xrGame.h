@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCore/clsid.h"
+#include "xrCore/clsid.hpp"
 #include "xrEngine/EngineAPI.h"
 
 #ifdef XRAY_STATIC_BUILD

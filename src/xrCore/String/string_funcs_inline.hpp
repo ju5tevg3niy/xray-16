@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdarg>
+#include <cstdint>
 #include <cstdio>
 #include <cstring>
 #include <string_view>
@@ -8,10 +9,9 @@
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 
-// string management
-
 // return pointer to ".ext"
 IC char* strext(const char* S) { return (char*)strrchr(S, '.'); }
+
 IC size_t xr_strlen(const char* S) { return strlen(S); }
 
 #ifndef MASTER_GOLD
@@ -44,6 +44,7 @@ inline int __cdecl xr_sprintf(char (&destination)[count], pcstr format_string, .
     va_end(args);
     return result;
 }
+
 #else // #ifndef MASTER_GOLD
 
 inline int xr_strcpy(pstr destination, size_t const destination_size, pcstr source)
@@ -96,14 +97,6 @@ template <size_t count>
 inline int xr_strcat(char (&destination)[count], pcstr source)
 {
     return xr_strcat(destination, count, source);
-}
-
-inline void MemFill32(void* dst, u32 value, size_t dstSize)
-{
-    u32* ptr = static_cast<u32*>(dst);
-    u32* end = ptr + dstSize;
-    while (ptr != end)
-        *ptr++ = value;
 }
 
 // source: https://stackoverflow.com/a/46711735

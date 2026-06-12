@@ -1,9 +1,8 @@
 add_library(xrCore)
 
-target_sources_grouped(
-    TARGET xrCore
-    NAME "JJ fork"
-    FILES
+target_sources(
+    xrCore
+    PRIVATE
     cpu.cpp
     Math/compressed_normal.cpp
     Math/cylinder.cpp
@@ -275,7 +274,6 @@ target_sources_grouped(
     #ChooseTypes.H
     #client_id.h
     clsid.cpp
-    clsid.h
     fastdelegate.h
     xr_token.cpp
     xr_token.h

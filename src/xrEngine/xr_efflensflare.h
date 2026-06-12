@@ -5,9 +5,9 @@
 #include "Include/xrRender/FactoryPtr.h"
 #include "Include/xrRender/LensFlareRender.h"
 
-class ENGINE_API CInifile;
-class ENGINE_API CEnvDescriptorMixer;
-class ENGINE_API CEnvironment;
+class CInifile;
+class CEnvDescriptorMixer;
+class CEnvironment;
 
 namespace xray::render
 {
@@ -21,7 +21,7 @@ class dxLensFlareRender;
 }
 } // namespace xray::render
 
-class ENGINE_API CLensFlareDescriptor
+class CLensFlareDescriptor
 {
 public:
     struct SFlare
@@ -78,7 +78,7 @@ public:
     void save(CInifile* config) const;
 };
 
-class ENGINE_API CLensFlare
+class CLensFlare
 {
     friend class xray::render::render_r4::dxLensFlareRender;
     friend class xray::render::render_gl::dxLensFlareRender;

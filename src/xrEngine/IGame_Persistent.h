@@ -1,6 +1,4 @@
 #pragma once
-#ifndef IGame_PersistentH
-#define IGame_PersistentH
 
 #include "xrServerEntities/gametype_chooser.h"
 
@@ -23,9 +21,9 @@ class IGame_Level;
 class IRenderVisual;
 class ILoadingScreen;
 class IMainMenu;
-class ENGINE_API CPS_Instance;
+class CPS_Instance;
 //-----------------------------------------------------------------------------------------------------------
-class ENGINE_API IGame_Persistent :
+class IGame_Persistent :
     public pureFrame,
     public pureAppActivate,
     public pureAppDeactivate,
@@ -197,5 +195,4 @@ public:
     virtual void DestroyInternal(bool bForce) = 0;
 };
 
-extern ENGINE_API IGame_Persistent* g_pGamePersistent;
-#endif // IGame_PersistentH
+extern IGame_Persistent* g_pGamePersistent;

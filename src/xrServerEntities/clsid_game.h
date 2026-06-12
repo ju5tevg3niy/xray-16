@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCore/clsid.h"
+#include "xrCore/clsid.hpp"
 
 constexpr CLASS_ID CLSID_OBJECT_ACTOR               = xray::make_clsid("O_ACTOR ");
 constexpr CLASS_ID CLSID_OBJECT_HLAMP               = xray::make_clsid("O_HLAMP ");

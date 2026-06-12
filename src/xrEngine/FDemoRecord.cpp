@@ -13,7 +13,7 @@
 
 constexpr cpcstr DEMO_RECORD_HELP_FONT = "ui_font_letterica18_russian"; // "ui_font_graffiti19_russian";
 
-ENGINE_API extern bool g_bDisableRedText;
+extern bool g_bDisableRedText;
 static Flags32 s_hud_flag = {};
 static Flags32 s_dev_flags = {};
 static u32     s_window_mode = {};

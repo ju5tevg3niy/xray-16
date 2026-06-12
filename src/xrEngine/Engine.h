@@ -1,15 +1,5 @@
 #pragma once
 
-#ifdef XRAY_STATIC_BUILD
-#    define ENGINE_API
-#else
-#    ifdef ENGINE_BUILD
-#        define ENGINE_API XR_EXPORT
-#    else
-#        define ENGINE_API XR_IMPORT
-#    endif
-#endif
-
 #include "pure.h"
 #include "EngineAPI.h"
 #include "EventAPI.h"
@@ -22,7 +12,7 @@
 #define R__NUM_PARALLEL_CONTEXTS    (R__NUM_SUN_CASCADES + R__NUM_AUX_CONTEXTS)
 #define R__NUM_CONTEXTS             (R__NUM_PARALLEL_CONTEXTS + 1/* imm */)
 
-class ENGINE_API CEngine final : public pureFrame, public IEventReceiver
+class CEngine final : public pureFrame, public IEventReceiver
 {
     EVENT eQuit;
 
@@ -43,4 +33,4 @@ public:
     ~CEngine();
 };
 
-ENGINE_API extern CEngine Engine;
+extern CEngine Engine;

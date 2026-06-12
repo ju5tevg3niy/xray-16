@@ -1,9 +1,10 @@
 #pragma once
+
 #include "xrUICore/Static/UIStatic.h"
 
 namespace text_editor
 {
-class ENGINE_API line_edit_control;
+class line_edit_control;
 enum init_mode : u32;
 };
 

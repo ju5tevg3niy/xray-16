@@ -5,7 +5,7 @@
 #include "IRenderable.h"
 #include "xrCore/Math/bitwise.hpp"
 
-class ENGINE_API CPS_Instance : public SpatialBase, public ScheduledBase, public RenderableBase
+class CPS_Instance : public SpatialBase, public ScheduledBase, public RenderableBase
 {
     friend class IGame_Persistent;
 

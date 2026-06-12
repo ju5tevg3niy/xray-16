@@ -1,12 +1,9 @@
-#if !defined(AFX_FDEMORECORD_H__D7638760_FB61_11D3_B4E3_4854E82A090D__INCLUDED_)
-#define AFX_FDEMORECORD_H__D7638760_FB61_11D3_B4E3_4854E82A090D__INCLUDED_
-
 #pragma once
 
 #include "IInputReceiver.h"
 #include "Effector.h"
 
-class ENGINE_API CDemoRecord : public CEffectorCam, public IInputReceiver, public pureRender
+class CDemoRecord : public CEffectorCam, public IInputReceiver, public pureRender
 {
 private:
     enum movement_speed
@@ -84,5 +81,3 @@ public:
     bool m_b_redirect_input_to_level;
     virtual void OnRender();
 };
-
-#endif // !defined(AFX_FDEMORECORD_H__D7638760_FB61_11D3_B4E3_4854E82A090D__INCLUDED_)

@@ -17,7 +17,7 @@
 #include "editor_environment_manager.hpp"
 #include "editor_environment_weathers_manager.hpp"
 
-ENGINE_API extern CConsole* Console;
+extern CConsole* Console;
 engine_impl g_engine;
 
 engine_impl::engine_impl() : m_input_receiver(xr_new<IInputReceiver>()), m_input_captured(false) {}

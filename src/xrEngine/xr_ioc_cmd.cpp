@@ -554,7 +554,7 @@ virtual void Save (IWriter *F) {};
 #endif
 */
 
-ENGINE_API bool renderer_allow_override = false;
+bool renderer_allow_override = false;
 
 class CCC_renderer : public CCC_Token
 {
@@ -677,7 +677,7 @@ public:
     virtual void Save(IWriter* F) {}
 };
 
-class ENGINE_API CCC_HideConsole : public IConsole_Command
+class CCC_HideConsole : public IConsole_Command
 {
 public:
     CCC_HideConsole(pcstr N) : IConsole_Command(N) { bEmptyArgsHandled = true; }
@@ -696,8 +696,8 @@ public:
     }
 };
 
-ENGINE_API float g_fov = 67.5f;
-ENGINE_API float psHUD_FOV = 0.45f;
+float g_fov = 67.5f;
+float psHUD_FOV = 0.45f;
 
 // extern int psSkeletonUpdate;
 extern int rsDVB_Size;
@@ -710,9 +710,9 @@ extern Flags32 psEnvFlags;
 
 extern int g_ErrorLineCount;
 
-ENGINE_API int ps_r__Supersample = 1;
-ENGINE_API int ps_r__WallmarksOnSkeleton = 0;
-ENGINE_API shared_str current_player_hud_sect{};
+int ps_r__Supersample = 1;
+int ps_r__WallmarksOnSkeleton = 0;
+shared_str current_player_hud_sect{};
 
 extern int ps_fps_limit;
 extern int ps_fps_limit_in_menu;

@@ -1,14 +1,13 @@
-#ifndef __XR_OBJECT_LIST_H__
-#define __XR_OBJECT_LIST_H__
+#pragma once
 
 #ifdef DEBUG
-extern ENGINE_API BOOL debug_destroy;
+extern BOOL debug_destroy;
 #endif
 
 class IGameObject;
 class NET_Packet;
 
-class ENGINE_API CObjectList
+class CObjectList
 {
 public:
     struct ObjectUpdateStatistics
@@ -135,5 +134,3 @@ private:
     static void clear_crow_vec(Objects& o);
     static void dump_list(Objects& v, pcstr reason);
 };
-
-#endif //__XR_OBJECT_LIST_H__

@@ -1,5 +1,4 @@
-#ifndef tntQAVIH
-#define tntQAVIH
+#pragma once
 
 #include <math.h>
 
@@ -60,7 +59,7 @@ typedef struct
     // RECT rcFrame; - лажа в MSDN
 } AVIStreamHeaderCustom;
 
-class ENGINE_API CAviPlayerCustom
+class CAviPlayerCustom
 {
 protected:
     CAviPlayerCustom* alpha;
@@ -100,4 +99,3 @@ public:
     bool NeedUpdate() { return CalcFrame() != m_dwFrameCurrent; }
     int SetSpeed(int nPercent);
 };
-#endif

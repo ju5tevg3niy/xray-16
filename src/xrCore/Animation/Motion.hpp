@@ -1,7 +1,7 @@
 #pragma once
 
 #include "xrCore/Animation/Bone.hpp"
-#include "xrCore/_std_extensions.h"
+#include "xrCore/String/string_funcs_inline.hpp"
 #include "xrCommon/xr_vector.h"
 
 // refs

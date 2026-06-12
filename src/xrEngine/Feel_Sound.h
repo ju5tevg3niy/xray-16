@@ -8,7 +8,7 @@ using Fvector = _vector3<float>;
 
 namespace Feel
 {
-class ENGINE_API Sound
+class Sound
 {
 public:
     virtual void feel_sound_new(IGameObject* /*who*/, int /*type*/, const CSound_UserDataPtr& /*user_data*/,

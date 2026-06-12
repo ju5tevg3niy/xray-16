@@ -1,9 +1,11 @@
 #pragma once
+
 #include "xrEngine/CameraDefs.h"
+
 struct SPPInfo;
 
 // постпроцесс
-class ENGINE_API CEffectorPP : public SBaseEffector
+class CEffectorPP : public SBaseEffector
 {
     EEffectorPPType eType;
     bool bFreeOnRemove;

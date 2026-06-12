@@ -8,8 +8,8 @@
 #include "AnselManager.h"
 #include "holder_custom.h"
 
-ENGINE_API extern bool bShowPauseString;
-ENGINE_API extern bool g_bDisableRedText;
+extern bool bShowPauseString;
+extern bool g_bDisableRedText;
 BOOL stored_red_text;
 
 /* XXX: Support camera move

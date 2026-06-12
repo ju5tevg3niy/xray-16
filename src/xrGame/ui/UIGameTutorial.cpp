@@ -14,7 +14,7 @@
 #include "UIPdaWnd.h"
 #include "xrScriptEngine/Functor.hpp"
 
-extern ENGINE_API bool bShowPauseString;
+extern bool bShowPauseString;
 
 void CallFunction(shared_str const& func)
 {

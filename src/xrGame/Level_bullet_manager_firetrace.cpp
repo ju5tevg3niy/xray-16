@@ -23,7 +23,7 @@
 #include "Actor.h"
 #include "ai/monsters/basemonster/base_monster.h"
 
-extern ENGINE_API int ps_r__WallmarksOnSkeleton;
+extern int ps_r__WallmarksOnSkeleton;
 
 //константы ShootFactor, определяющие
 //поведение пули при столкновении с объектом

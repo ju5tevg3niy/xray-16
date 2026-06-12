@@ -3,7 +3,7 @@
 
 #include "xrstring.h"
 #include "Threading/Lock.hpp"
-#include "xrCore/_std_extensions.h"
+#include "xrCore/String/string_funcs_inline.hpp"
 #include "xrCore/crc32.hpp"
 
 #include "FS_impl.h"

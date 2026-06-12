@@ -1,11 +1,9 @@
-#ifndef ObjectAnimatorH
-#define ObjectAnimatorH
 #pragma once
 
 #include "xrCore/Animation/Motion.hpp"
 
 // refs
-class ENGINE_API CObjectAnimator
+class CObjectAnimator
 {
     using MotionVec = xr_vector<COMotion*>;
 
@@ -42,5 +40,3 @@ public:
     void Update(float dt);
     void DrawPath();
 };
-
-#endif // ObjectAnimatorH

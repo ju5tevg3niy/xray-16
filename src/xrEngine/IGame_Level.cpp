@@ -10,7 +10,7 @@
 #include "xr_object.h"
 #include "Feel_Sound.h"
 
-ENGINE_API IGame_Level* g_pGameLevel = NULL;
+IGame_Level* g_pGameLevel = NULL;
 extern bool g_bLoaded;
 
 IGame_Level::IGame_Level()

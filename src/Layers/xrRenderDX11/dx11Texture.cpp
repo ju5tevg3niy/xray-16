@@ -21,7 +21,7 @@ int get_texture_load_lod(LPCSTR fn)
     auto it_ = sect.Data.cbegin();
     auto it_e_ = sect.Data.cend();
 
-    ENGINE_API bool is_enough_address_space_available();
+    bool is_enough_address_space_available();
     static bool enough_address_space_available = is_enough_address_space_available();
 
     auto it = it_;

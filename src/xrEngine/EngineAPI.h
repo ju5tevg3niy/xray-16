@@ -6,9 +6,14 @@
 #pragma once
 
 #include <array>
+#include <cstddef>
+#include <utility>
 
-#include "xrCore/clsid.h"
-#include "xrEngine/Engine.h"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCommon/xr_vector.h"
+#include "xrCommon/xr_map.h"
+#include "xrCore/clsid.hpp"
 
 class IGame_Persistent;
 
@@ -23,7 +28,7 @@ public:
 inline IFactoryObject::~IFactoryObject() = default;
 inline IFactoryObject* IFactoryObject::_construct() { return this; }
 
-class ENGINE_API XR_NOVTABLE FactoryObjectBase : public virtual IFactoryObject
+class XR_NOVTABLE FactoryObjectBase : public virtual IFactoryObject
 {
 public:
     CLASS_ID CLS_ID;
@@ -60,7 +65,7 @@ public:
     virtual void ClearEnv() = 0;
 };
 
-class ENGINE_API CEngineAPI
+class CEngineAPI
 {
     xr_map<cpcstr, RendererModule*> renderModes;
 
@@ -83,7 +88,7 @@ public:
     void Destroy();
 };
 
-ENGINE_API bool is_enough_address_space_available();
+bool is_enough_address_space_available();
 
 #define NEW_INSTANCE(a) Engine.External.pCreate(a)
 #define DEL_INSTANCE(a)\

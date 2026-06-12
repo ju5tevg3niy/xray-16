@@ -1,5 +1,3 @@
-#ifndef xrTheora_SurfaceH
-#define xrTheora_SurfaceH
 #pragma once
 
 #ifdef SDL_OUTPUT
@@ -9,7 +7,7 @@
 // refs
 class CTheoraStream;
 
-class ENGINE_API CTheoraSurface
+class CTheoraSurface
 {
 #ifdef SDL_OUTPUT
     // SDL Video playback structures
@@ -59,5 +57,3 @@ public:
     u32 Width(bool bRealSize);
     u32 Height(bool bRealSize);
 };
-
-#endif // xrTheora_SurfaceH

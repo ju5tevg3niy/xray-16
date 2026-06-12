@@ -4,9 +4,7 @@
 // Author : Evgeniy Sokolov
 // Description : line edit control class
 ////////////////////////////////////////////////////////////////////////////
-
-#ifndef LINE_EDIT_CONTROL_H_INCLUDED
-#define LINE_EDIT_CONTROL_H_INCLUDED
+#pragma once
 
 #include "xr_input.h"
 
@@ -46,7 +44,7 @@ enum init_mode : u32
     im_count
 }; // init_mode
 
-class ENGINE_API line_edit_control
+class line_edit_control
 {
     using Base = text_editor::base;
     using Callback = fastdelegate::FastDelegate0<void>;
@@ -171,5 +169,3 @@ private:
 }; // class line_edit_control
 
 } // namespace text_editor
-
-#endif // ##ifndef LINE_EDIT_CONTROL_H_INCLUDED

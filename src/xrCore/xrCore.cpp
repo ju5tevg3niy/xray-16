@@ -14,7 +14,7 @@
 #include <unistd.h>
 #endif
 #include "xrCore.h"
-#include "xrCore/_std_extensions.h"
+#include "xrCore/String/string_funcs_inline.hpp"
 #include "Threading/TaskManager.hpp"
 
 #include <SDL.h>

@@ -30,7 +30,7 @@ public:
 
 inline ISheduled::~ISheduled() = default;
 
-class ENGINE_API XR_NOVTABLE ScheduledBase : public virtual ISheduled, Noncopyable
+class XR_NOVTABLE ScheduledBase : public virtual ISheduled, Noncopyable
 {
 public:
     SchedulerData shedule;

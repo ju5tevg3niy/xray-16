@@ -1,12 +1,11 @@
 #pragma once
-#ifndef pure_relcaseH
-#define pure_relcaseH
+
 #include "xrCore/xrDebug_macros.h"
 #include "IGame_Level.h"
 
 class IGameObject;
 
-class ENGINE_API pure_relcase
+class pure_relcase
 {
 private:
     int m_ID;
@@ -21,5 +20,3 @@ public:
     }
     virtual ~pure_relcase();
 };
-
-#endif // pure_relcaseH

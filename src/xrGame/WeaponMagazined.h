@@ -4,7 +4,7 @@
 #include "HudSound.h"
 #include "ai_sounds.h"
 
-class ENGINE_API CMotionDef;
+class CMotionDef;
 
 //размер очереди считается бесконечность
 //заканчиваем стрельбу, только, если кончились патроны

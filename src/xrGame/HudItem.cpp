@@ -437,7 +437,7 @@ void CHudItem::OnMovementChanged(ACTOR_DEFS::EMoveCommand cmd)
     }
 }
 
-extern ENGINE_API float psHUD_FOV;
+extern float psHUD_FOV;
 void CHudItem::TransformPosFromWorldToHud(Fvector& worldPos)
 {
     CActor* actor = smart_cast<CActor*>(object().H_Parent());

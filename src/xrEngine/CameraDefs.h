@@ -43,6 +43,6 @@ enum EEffectorPPType
 };
 
 // refs
-class ENGINE_API CCameraBase;
-class ENGINE_API CEffectorCam;
-class ENGINE_API CEffectorPP;
+class CCameraBase;
+class CEffectorCam;
+class CEffectorPP;

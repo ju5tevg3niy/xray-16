@@ -1,17 +1,20 @@
 #pragma once
 
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+
 #ifdef DEBUG
-ENGINE_API extern bool bDebug;
+extern bool bDebug;
 #else
 #define bDebug 0
 #endif
 
-extern ENGINE_API bool CallOfPripyatMode;
-extern ENGINE_API bool ClearSkyMode;
-extern ENGINE_API bool ShadowOfChernobylMode;
+extern bool CallOfPripyatMode;
+extern bool ClearSkyMode;
+extern bool ShadowOfChernobylMode;
 
 // textures
-ENGINE_API extern int psTextureLOD;
+extern int psTextureLOD;
 
 // psDeviceFlags
 enum
@@ -61,7 +64,7 @@ struct DeviceMode
     u32 BitsPerPixel;
 };
 
-ENGINE_API extern DeviceMode psDeviceMode;
-ENGINE_API extern Flags32 psDeviceFlags;
+extern DeviceMode psDeviceMode;
+extern Flags32 psDeviceFlags;
 
 #include "Common/FSMacros.hpp"

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Common/types.hpp"
 #include "fastdelegate.h"
 #include "xrCore/xrstring.h"
 #include "xrCore/Math/flags.hpp"
@@ -7,7 +8,7 @@
 #include "xrCore/Math/vector2.hpp"
 #include "xrCore/Math/vector3.hpp"
 #include "xrCore/Math/vector4.hpp"
-#include "xrCore/clsid.h"
+#include "xrCore/clsid.hpp"
 #include "xrCommon/xr_vector.h"
 
 constexpr pcstr OPENXRAY_INI_SECTION = "openxray";

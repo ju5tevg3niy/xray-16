@@ -1,5 +1,4 @@
-#ifndef __XR_STREAM_SOUND_H__
-#define __XR_STREAM_SOUND_H__
+#pragma once
 
 #ifdef WINDOWS
 #include <msacm.h>
@@ -8,9 +7,9 @@
 #endif
 
 // refs
-class ENGINE_API IReader;
+class IReader;
 
-class ENGINE_API CSoundStream : public CSound_stream_interface
+class CSoundStream : public CSound_stream_interface
 {
 protected:
     struct sxr_riff
@@ -95,5 +94,3 @@ public:
     void Update();
     void OnMove();
 };
-
-#endif //__XR_STREAM_SOUND_H__

@@ -21,7 +21,7 @@
 #include "PHDestroyable.h"
 #include "DelayedActionFuse.h"
 // refs
-class ENGINE_API CBoneInstance;
+class CBoneInstance;
 class CActor;
 class CInventory;
 class CSE_PHSkeleton;

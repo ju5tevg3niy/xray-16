@@ -7,7 +7,7 @@
 
 CUICursor& GetUICursor() { return GEnv.UI->GetUICursor(); }
 UICore& UI() { return *GEnv.UI; }
-extern ENGINE_API Fvector2 g_current_font_scale;
+extern Fvector2 g_current_font_scale;
 
 void S2DVert::rotate_pt(const Fvector2& pivot, const float cosA, const float sinA, const float kx)
 {

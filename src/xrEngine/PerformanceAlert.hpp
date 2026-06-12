@@ -1,9 +1,10 @@
 #pragma once
+
 #include "xrEngine/Engine.h"
 #include "xrCore/xrCore.h"
 #include "xrEngine/IPerformanceAlert.hpp"
 
-class ENGINE_API PerformanceAlert : public IPerformanceAlert
+class PerformanceAlert : public IPerformanceAlert
 {
 private:
     u32 alertColor;

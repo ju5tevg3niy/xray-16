@@ -7,7 +7,7 @@
 
 // XXX: replace std::string with xr_string and optimize
 
-ENGINE_API std::string dbg_object_base_dump_string(const IGameObject* obj)
+std::string dbg_object_base_dump_string(const IGameObject* obj)
 {
     if (!obj)
         return make_string("object: NULL ptr");
@@ -15,7 +15,7 @@ ENGINE_API std::string dbg_object_base_dump_string(const IGameObject* obj)
         obj->cNameSect().c_str(), obj->Visual() ? obj->cNameVisual().c_str() : "none");
 }
 
-ENGINE_API std::string dbg_object_poses_dump_string(const IGameObject* obj)
+std::string dbg_object_poses_dump_string(const IGameObject* obj)
 {
     if (!obj)
         return {};
@@ -31,7 +31,7 @@ ENGINE_API std::string dbg_object_poses_dump_string(const IGameObject* obj)
     return make_string("\n XFORM: %s \n position stack : %s \n, ", get_string(obj->XFORM()).c_str(), buf.c_str());
 }
 
-ENGINE_API std::string dbg_object_visual_geom_dump_string(const IGameObject* obj)
+std::string dbg_object_visual_geom_dump_string(const IGameObject* obj)
 {
     if (!obj || !obj->Visual())
         return {};
@@ -69,7 +69,7 @@ ENGINE_API std::string dbg_object_visual_geom_dump_string(const IGameObject* obj
  u32 dwFrame_UpdateCL;
  u32 dwFrame_AsCrow;
  */
-ENGINE_API std::string dbg_object_props_dump_string(const IGameObject* obj)
+std::string dbg_object_props_dump_string(const IGameObject* obj)
 {
     if (!obj)
         return {};
@@ -95,12 +95,12 @@ ENGINE_API std::string dbg_object_props_dump_string(const IGameObject* obj)
         netSvUpdate.c_str(), crow.c_str(), preDestroy.c_str(), updateFrameDbg, updateFrame, updateFrameCrow, Device.dwFrame,
         Device.dwTimeGlobal);
 }
-ENGINE_API std::string dbg_object_full_dump_string(const IGameObject* obj)
+std::string dbg_object_full_dump_string(const IGameObject* obj)
 {
     return dbg_object_base_dump_string(obj) + dbg_object_props_dump_string(obj) + dbg_object_poses_dump_string(obj) +
         dbg_object_visual_geom_dump_string(obj);
 }
-ENGINE_API std::string dbg_object_full_capped_dump_string(const IGameObject* obj)
+std::string dbg_object_full_capped_dump_string(const IGameObject* obj)
 {
     return std::string("\n object dump: \n") + dbg_object_full_dump_string(obj);
 }

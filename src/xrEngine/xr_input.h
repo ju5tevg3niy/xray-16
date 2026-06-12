@@ -104,7 +104,7 @@ struct ControllerAxisState
 // Make sure it fits the C++ standard requirements on unions and we can use default constructor
 static_assert(std::is_trivial_v<ControllerAxisState>);
 
-struct ENGINE_API ControllerState
+struct ControllerState
 {
     union
     {
@@ -141,9 +141,9 @@ struct ENGINE_API ControllerState
     bool attitude_changed() const;
 };
 
-class ENGINE_API IInputReceiver;
+class IInputReceiver;
 
-class ENGINE_API CInput
+class CInput
     : public pureFrame,
       public pureAppActivate,
       public pureAppDeactivate
@@ -270,4 +270,4 @@ public:
     void Feedback(FeedbackType type, float s1, float s2, float duration);
 };
 
-extern ENGINE_API CInput* pInput;
+extern CInput* pInput;

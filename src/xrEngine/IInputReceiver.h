@@ -9,7 +9,7 @@
 // so it's logically correct to include it
 #include "xr_level_controller.h"
 
-class ENGINE_API IInputReceiver
+class IInputReceiver
 {
 public:
     virtual ~IInputReceiver() = default;
@@ -41,20 +41,20 @@ public:
     virtual void IR_OnControllerAttitudeChange(Fvector /*change*/) {}
 };
 
-ENGINE_API extern float psMouseSens;
-ENGINE_API extern float psMouseSensScale;
-ENGINE_API extern Flags32 psMouseInvert;
+extern float psMouseSens;
+extern float psMouseSensScale;
+extern Flags32 psMouseInvert;
 
-ENGINE_API extern float psControllerStickSensX;
-ENGINE_API extern float psControllerStickSensY;
-ENGINE_API extern float psControllerStickSensScale;
-ENGINE_API extern float psControllerStickInnerDeadZone;
-ENGINE_API extern float psControllerStickOuterDeadZone;
-ENGINE_API extern float psControllerStickAngularDeadZone;
-ENGINE_API extern float psControllerSensorSens;
-ENGINE_API extern float psControllerSensorDeadZone;
-ENGINE_API extern float psControllerCursorAutohideTime;
-ENGINE_API extern Flags32 psControllerFlags;
+extern float psControllerStickSensX;
+extern float psControllerStickSensY;
+extern float psControllerStickSensScale;
+extern float psControllerStickInnerDeadZone;
+extern float psControllerStickOuterDeadZone;
+extern float psControllerStickAngularDeadZone;
+extern float psControllerSensorSens;
+extern float psControllerSensorDeadZone;
+extern float psControllerCursorAutohideTime;
+extern Flags32 psControllerFlags;
 
 enum EControllerFlags
 {

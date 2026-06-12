@@ -1,11 +1,9 @@
-#ifndef xrTheora_StreamH
-#define xrTheora_StreamH
 #pragma once
 
 #include <theora/theora.h>
 #include "xrCore/stream_reader.h"
 
-class ENGINE_API CTheoraStream
+class CTheoraStream
 {
     friend class CTheoraSurface;
 
@@ -40,5 +38,3 @@ public:
 
     yuv_buffer* CurrentFrame() { return &t_yuv_buffer; }
 };
-
-#endif // xrTheora_StreamH

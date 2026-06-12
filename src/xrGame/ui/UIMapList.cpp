@@ -17,9 +17,9 @@
 #include "xrCore/xr_token.h"
 #include "xrCore/buffer_vector.h"
 
-extern ENGINE_API string512 g_sLaunchOnExit_app;
-extern ENGINE_API string512 g_sLaunchOnExit_params;
-extern ENGINE_API string_path g_sLaunchWorkingFolder;
+extern string512 g_sLaunchOnExit_app;
+extern string512 g_sLaunchOnExit_params;
+extern string_path g_sLaunchWorkingFolder;
 
 LPCSTR GameTypeToString(EGameIDs gt, bool bShort);
 

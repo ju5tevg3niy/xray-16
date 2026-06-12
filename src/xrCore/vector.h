@@ -7,8 +7,6 @@
 #include "Common/types.hpp"
 #include "xrCore/cpu.hpp"
 #include "xrCore/Math/bitwise.hpp"
-#include "_std_extensions.h"
-#include "xrCore/Math/math_funcs_inline.hpp"
 
 struct Fquaternion;
 

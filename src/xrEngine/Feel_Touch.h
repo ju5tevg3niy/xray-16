@@ -10,7 +10,7 @@ using Fvector = _vector3<float>;
 
 namespace Feel
 {
-class ENGINE_API Touch : private pure_relcase
+class Touch : private pure_relcase
 {
     friend class pure_relcase;
 

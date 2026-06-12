@@ -4,17 +4,17 @@
 #include "Common/Noncopyable.hpp"
 #include "xrCommon/xr_vector.h"
 
-class ENGINE_API CEvent;
+class CEvent;
 typedef CEvent* EVENT;
 
 //---------------------------------------------------------------------
-class ENGINE_API IEventReceiver
+class IEventReceiver
 {
 public:
     virtual void OnEvent(EVENT E, u64 P1, u64 P2) = 0;
 };
 //---------------------------------------------------------------------
-class ENGINE_API CEventAPI : private Noncopyable
+class CEventAPI : private Noncopyable
 {
     struct Deferred
     {

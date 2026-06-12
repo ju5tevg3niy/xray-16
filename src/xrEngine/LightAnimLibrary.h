@@ -1,13 +1,10 @@
-//---------------------------------------------------------------------------
+#pragma once
 
-#ifndef LightAnimLibraryH
-#define LightAnimLibraryH
-//---------------------------------------------------------------------------
 #ifdef _EDITOR
 #include "editors/xrEProps/FolderLib.h"
 #endif
 
-class ENGINE_API CLAItem
+class CLAItem
 {
 public:
     xr_string cName;
@@ -45,7 +42,7 @@ public:
 using LAItemVec = xr_vector<CLAItem*>;
 using LAItemIt = LAItemVec::iterator;
 
-class ENGINE_API ELightAnimLibrary
+class ELightAnimLibrary
 {
 public:
     LAItemVec Items;
@@ -69,6 +66,4 @@ public:
     LAItemVec& Objects() { return Items; }
 };
 
-extern ENGINE_API ELightAnimLibrary LALib;
-
-#endif
+extern ELightAnimLibrary LALib;

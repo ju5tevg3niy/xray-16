@@ -71,4 +71,4 @@ public:
     sPoly2D* ClipPoly(sPoly2D& S, sPoly2D& D) const;
 };
 
-extern ENGINE_API bool g_bRendering;
+extern bool g_bRendering;

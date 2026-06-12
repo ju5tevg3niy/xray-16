@@ -22,7 +22,7 @@ void fix_texture_name(pstr fn)
 }
 
 #ifndef _EDITOR
-ENGINE_API bool is_enough_address_space_available();
+bool is_enough_address_space_available();
 #else
 bool is_enough_address_space_available() { return true; }
 #endif

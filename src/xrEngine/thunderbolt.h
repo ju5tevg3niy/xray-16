@@ -10,9 +10,9 @@
 #include "Include/xrRender/ThunderboltRender.h"
 
 // refs
-class ENGINE_API IRender_DetailModel;
-class ENGINE_API CLAItem;
-class ENGINE_API CEnvDescriptorMixer;
+class IRender_DetailModel;
+class CLAItem;
+class CEnvDescriptorMixer;
 
 namespace xray::render
 {
@@ -26,7 +26,7 @@ class dxThunderboltRender;
 }
 } // namespace xray::render
 
-struct ENGINE_API SThunderboltDesc
+struct SThunderboltDesc
 {
     // geom
     // IRender_DetailModel* l_model;
@@ -70,7 +70,7 @@ public:
     void save(CInifile* config) const;
 };
 
-struct ENGINE_API SThunderboltCollection
+struct SThunderboltCollection
 {
     xr_vector<SThunderboltDesc*> palette;
     shared_str section;
@@ -90,7 +90,7 @@ struct ENGINE_API SThunderboltCollection
 
 #define THUNDERBOLT_CACHE_SIZE 8
 //
-class ENGINE_API CEffect_Thunderbolt
+class CEffect_Thunderbolt
 {
     friend class xray::render::render_r4::dxThunderboltRender;
     friend class xray::render::render_gl::dxThunderboltRender;

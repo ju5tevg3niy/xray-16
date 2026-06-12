@@ -1,6 +1,4 @@
 #pragma once
-#ifndef xr_device
-#define xr_device
 
 // Note:
 // ZNear - always 0.0f
@@ -31,7 +29,7 @@ class Task;
 constexpr float VIEWPORT_NEAR = 0.2f;
 constexpr float HUD_VIEWPORT_NEAR = 0.05f;
 
-class ENGINE_API CRenderDevice : public IWindowHandler
+class CRenderDevice : public IWindowHandler
 {
 public:
     // Main objects used for creating and rendering the 3D scene
@@ -310,14 +308,14 @@ private:
     DECLARE_SCRIPT_REGISTER_FUNCTION();
 };
 
-extern ENGINE_API CRenderDevice Device;
+extern CRenderDevice Device;
 
-extern ENGINE_API bool g_bBenchmark;
+extern bool g_bBenchmark;
 
 typedef fastdelegate::FastDelegate0<bool> LOADING_EVENT;
-extern ENGINE_API xr_list<LOADING_EVENT> g_loading_events;
+extern xr_list<LOADING_EVENT> g_loading_events;
 
-class ENGINE_API CLoadScreenRenderer : public pureFrame, public pureRender
+class CLoadScreenRenderer : public pureFrame, public pureRender
 {
 public:
     void OnFrame() override;
@@ -333,7 +331,7 @@ private:
     bool m_registered{};
     bool m_need_user_input{};
 };
-extern ENGINE_API CLoadScreenRenderer load_screen_renderer;
+extern CLoadScreenRenderer load_screen_renderer;
 
 class CDeviceResetNotifier : public pureDeviceReset
 {
@@ -355,5 +353,3 @@ public:
         Device.seqUIReset.Remove(this);
     }
 };
-
-#endif

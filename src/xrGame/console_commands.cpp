@@ -72,7 +72,6 @@ extern void release_smart_cast_stats();
 extern u64 g_qwStartGameTime;
 extern u64 g_qwEStartGameTime;
 
-ENGINE_API
 extern float psHUD_FOV;
 extern float psSqueezeVelocity;
 extern int psLUA_GCSTEP;
@@ -103,7 +102,7 @@ extern BOOL g_ai_use_old_vision;
 float g_aim_predict_time = 0.40f;
 int g_keypress_on_start = 1;
 
-ENGINE_API extern float g_console_sensitive;
+extern float g_console_sensitive;
 
 //Alundaio
 extern BOOL g_ai_die_in_anomaly;

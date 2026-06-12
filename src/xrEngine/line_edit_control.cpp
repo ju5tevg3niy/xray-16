@@ -20,7 +20,7 @@
 
 #include <locale>
 
-ENGINE_API float g_console_sensitive = 0.15f;
+float g_console_sensitive = 0.15f;
 
 namespace text_editor
 {

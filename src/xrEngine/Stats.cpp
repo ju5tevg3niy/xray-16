@@ -17,15 +17,15 @@
 int g_ErrorLineCount = 15;
 Flags32 g_stats_flags = {};
 
-ENGINE_API CStatTimer gTestTimer0;
-ENGINE_API CStatTimer gTestTimer1;
-ENGINE_API CStatTimer gTestTimer2;
-ENGINE_API CStatTimer gTestTimer3;
+CStatTimer gTestTimer0;
+CStatTimer gTestTimer1;
+CStatTimer gTestTimer2;
+CStatTimer gTestTimer3;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-ENGINE_API bool g_bDisableRedText = false;
+bool g_bDisableRedText = false;
 int g_bShowRedText = 1;
 CStats::CStats()
 {

@@ -11,7 +11,7 @@ using EffectorPPVec = xr_vector<CEffectorPP*>;
 #define effCustomEffectorStartID 10000
 
 struct SCamEffectorInfo;
-class ENGINE_API CCameraManager
+class CCameraManager
 {
 protected:
     SCamEffectorInfo m_cam_info;
@@ -63,8 +63,8 @@ public:
     CCameraManager(bool bApplyOnUpdate);
     virtual ~CCameraManager();
 };
-ENGINE_API extern SPPInfo pp_identity;
-ENGINE_API extern SPPInfo pp_zero;
+extern SPPInfo pp_identity;
+extern SPPInfo pp_zero;
 
-ENGINE_API extern float psCamInert;
-ENGINE_API extern float psCamSlideInert;
+extern float psCamInert;
+extern float psCamSlideInert;

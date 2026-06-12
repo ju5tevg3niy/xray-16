@@ -36,21 +36,21 @@ public:
     }
 } dummyController;
 
-ENGINE_API float psMouseSens = 1.f;
-ENGINE_API float psMouseSensScale = 1.f;
-ENGINE_API Flags32 psMouseInvert = {};
+float psMouseSens = 1.f;
+float psMouseSensScale = 1.f;
+Flags32 psMouseInvert = {};
 
-ENGINE_API float psControllerStickSensX = 0.12f;
-ENGINE_API float psControllerStickSensY = 0.7f;
-ENGINE_API float psControllerStickSensScale = 1.f;
-ENGINE_API float psControllerStickInnerDeadZone = 0.15f;
-ENGINE_API float psControllerStickOuterDeadZone = 0.96f;
-ENGINE_API float psControllerStickAngularDeadZone = 0.95f;
-ENGINE_API float psControllerSensorSens = 0.5f;
-ENGINE_API float psControllerSensorDeadZone = 0.005f;
-ENGINE_API Flags32 psControllerFlags = { ControllerEnableSensors };
+float psControllerStickSensX = 0.12f;
+float psControllerStickSensY = 0.7f;
+float psControllerStickSensScale = 1.f;
+float psControllerStickInnerDeadZone = 0.15f;
+float psControllerStickOuterDeadZone = 0.96f;
+float psControllerStickAngularDeadZone = 0.95f;
+float psControllerSensorSens = 0.5f;
+float psControllerSensorDeadZone = 0.005f;
+Flags32 psControllerFlags = { ControllerEnableSensors };
 
-ENGINE_API float psControllerCursorAutohideTime = 1.5f;
+float psControllerCursorAutohideTime = 1.5f;
 
 static bool AltF4Pressed = false;
 

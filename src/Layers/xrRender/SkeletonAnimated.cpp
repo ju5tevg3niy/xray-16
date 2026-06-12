@@ -12,7 +12,7 @@
 #include "xrCore/dump_string.h"
 #endif
 
-extern ENGINE_API shared_str current_player_hud_sect;
+extern shared_str current_player_hud_sect;
 
 namespace xray::render::RENDER_NAMESPACE
 {

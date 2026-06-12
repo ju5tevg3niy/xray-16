@@ -28,7 +28,7 @@
 #include "IGame_Persistent.h"
 #endif
 
-extern bool ENGINE_API g_bRendering;
+extern bool g_bRendering;
 
 namespace xray::render::RENDER_NAMESPACE
 {

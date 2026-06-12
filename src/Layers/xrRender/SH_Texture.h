@@ -3,7 +3,7 @@
 #include "xrCore/xr_resource.h"
 
 class CAviPlayerCustom;
-class ENGINE_API CTheoraSurface;
+class CTheoraSurface;
 
 namespace xray::render::RENDER_NAMESPACE
 {

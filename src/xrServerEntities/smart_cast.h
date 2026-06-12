@@ -6,10 +6,7 @@
 //	Description : Smart dynamic cast
 ////////////////////////////////////////////////////////////////////////////
 
-// WARNING: Due to conditional include of different implementations, this file CAN NOT have a
-// #pragma once include guard. It can however have a marco-declared include guard.
-#ifndef SMART_CAST_H
-#define SMART_CAST_H
+#pragma once
 
 #ifdef DEBUG
 #ifndef PURE_DYNAMIC_CAST
@@ -67,10 +64,10 @@ DECLARE_SPECIALIZATION(IRenderVisual, IKinematics, dcast_RenderVisual);
 #define cast_type_list save_cast_list(IRenderVisual, IKinematics)
 
 #ifndef DO_NOT_DECLARE_TYPE_LIST
-class ENGINE_API ISpatial;
+class ISpatial;
 namespace Feel
 {
-class ENGINE_API Sound;
+class Sound;
 }
 typedef Feel::Sound Feel__Sound;
 template <>
@@ -334,5 +331,3 @@ DECLARE_SPECIALIZATION(CSE_ALifeItemPDA, CSE_Abstract, cast_item_pda);
 #include "smart_cast_impl1.h"
 #endif
 #endif // PURE_DYNAMIC_CAST
-
-#endif // SMART_CAST_H

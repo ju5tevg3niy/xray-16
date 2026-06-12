@@ -35,7 +35,7 @@ public:
 inline IRenderable::~IRenderable() = default;
 
 // XXX: can't be NOVTABLE because of dynamic_cast in the constructor.. Fix some day
-class ENGINE_API /*XR_NOVTABLE*/ RenderableBase : public virtual IRenderable
+class /*XR_NOVTABLE*/ RenderableBase : public virtual IRenderable
 {
 public:
     RenderData renderable;

@@ -17,7 +17,7 @@ CPS_Instance::CPS_Instance(bool destroy_on_game_load)
     m_bAutoRemove = true;
     m_bDead = false;
 }
-extern ENGINE_API bool g_bRendering;
+extern bool g_bRendering;
 
 //----------------------------------------------------
 CPS_Instance::~CPS_Instance()

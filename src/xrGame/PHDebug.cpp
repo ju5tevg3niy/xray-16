@@ -690,7 +690,7 @@ bool CFunctionGraph::IsActive()
 }
 
 LPCSTR PH_DBG_ObjectTrackName() { return s_dbg_trace_obj_name; }
-// extern ENGINE_API	IGame_Level*	g_pGameLevel;
+// extern	IGame_Level*	g_pGameLevel;
 void PH_DBG_SetTrackObject()
 {
     //	xr_strcpy( s_dbg_trace_obj_name,obj);

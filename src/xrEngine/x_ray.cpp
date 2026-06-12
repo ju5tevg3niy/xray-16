@@ -42,14 +42,14 @@ constexpr size_t MAX_WINDOW_EVENTS = 32;
 constexpr discord::ClientId DISCORD_APP_ID = 421286728695939072;
 #endif
 
-ENGINE_API CInifile* pGameIni = nullptr;
-ENGINE_API bool CallOfPripyatMode = false;
-ENGINE_API bool ClearSkyMode = false;
-ENGINE_API bool ShadowOfChernobylMode = false;
+CInifile* pGameIni = nullptr;
+bool CallOfPripyatMode = false;
+bool ClearSkyMode = false;
+bool ShadowOfChernobylMode = false;
 
-ENGINE_API string512 g_sLaunchOnExit_params{};
-ENGINE_API string512 g_sLaunchOnExit_app{};
-ENGINE_API string_path g_sLaunchWorkingFolder{};
+string512 g_sLaunchOnExit_params{};
+string512 g_sLaunchOnExit_app{};
+string_path g_sLaunchWorkingFolder{};
 
 namespace
 {

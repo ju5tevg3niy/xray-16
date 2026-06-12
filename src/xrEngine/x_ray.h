@@ -1,5 +1,4 @@
-#ifndef __X_RAY_H__
-#define __X_RAY_H__
+#pragma once
 
 #include <mutex>
 #include <array>
@@ -15,7 +14,7 @@ class Core;
 }
 
 // definition
-class ENGINE_API CApplication final
+class CApplication final
 {
     SDL_Window* m_window{};
     std::thread m_splash_thread;
@@ -46,5 +45,3 @@ public:
 
     int Run();
 };
-
-#endif //__XR_BASE_H__

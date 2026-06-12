@@ -10,8 +10,8 @@
 class IUIShader;
 typedef FactoryPtr<IUIShader> wm_shader;
 // refs
-class ENGINE_API IRenderable;
-struct ENGINE_API FSlideWindowItem;
+class IRenderable;
+struct FSlideWindowItem;
 
 // fwd. decl.
 struct SDL_Window;
@@ -32,7 +32,7 @@ const float fLightSmoothFactor = 4.f;
 #endif
 //////////////////////////////////////////////////////////////////////////
 // definition (Dynamic Light)
-class ENGINE_API IRender_Light : public xr_resource
+class IRender_Light : public xr_resource
 {
 public:
     enum LT
@@ -66,7 +66,7 @@ public:
     virtual bool get_hud_mode() = 0;
     virtual ~IRender_Light();
 };
-struct ENGINE_API resptrcode_light : public resptr_base<IRender_Light>
+struct resptrcode_light : public resptr_base<IRender_Light>
 {
     void destroy() { _set(NULL); }
 };
@@ -74,7 +74,7 @@ typedef resptr_core<IRender_Light, resptrcode_light> ref_light;
 
 //////////////////////////////////////////////////////////////////////////
 // definition (Dynamic Glow)
-class ENGINE_API IRender_Glow : public xr_resource
+class IRender_Glow : public xr_resource
 {
 public:
     virtual void set_active(bool) = 0;
@@ -87,7 +87,7 @@ public:
     virtual void set_color(float r, float g, float b) = 0;
     virtual ~IRender_Glow();
 };
-struct ENGINE_API resptrcode_glow : public resptr_base<IRender_Glow>
+struct resptrcode_glow : public resptr_base<IRender_Glow>
 {
     void destroy() { _set(NULL); }
 };
@@ -95,7 +95,7 @@ typedef resptr_core<IRender_Glow, resptrcode_glow> ref_glow;
 
 //////////////////////////////////////////////////////////////////////////
 // definition (Per-object render-specific data)
-class ENGINE_API IRender_ObjectSpecific
+class IRender_ObjectSpecific
 {
 public:
     enum mode
@@ -128,7 +128,7 @@ enum class DeviceState
     NeedReset
 };
 
-class ENGINE_API IRender
+class IRender
 {
 public:
     enum GenerationLevel : u32
@@ -160,7 +160,7 @@ public:
         HelperContext
     };
 
-    class ENGINE_API ScopedContext
+    class ScopedContext
     {
         RenderContext previousContext;
 

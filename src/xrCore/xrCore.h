@@ -23,14 +23,9 @@
 #include <tracy/Tracy.hpp>
 
 #include "xrDebug.h"
-//#include "vector.h"
-
-#include "clsid.h"
-//#include "Threading/Lock.hpp"
 #include "xrMemory.h"
 
 //#include "_stl_extensions.h"
-#include "_std_extensions.h"
 #include "xrCore/Math/rect.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "xrCommon/xr_vector.h"

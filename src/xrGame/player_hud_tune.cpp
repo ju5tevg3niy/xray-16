@@ -13,7 +13,7 @@
 #include "xrEngine/GameFont.h"
 #include "player_hud_tune.h"
 
-extern ENGINE_API float psHUD_FOV;
+extern float psHUD_FOV;
 
 CHudTuner::CHudTuner()
 {

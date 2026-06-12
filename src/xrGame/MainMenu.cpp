@@ -38,7 +38,7 @@
 #include "xrEngine/xr_input.h"
 
 // fwd. decl.
-extern ENGINE_API bool bShowPauseString;
+extern bool bShowPauseString;
 
 //#define DEMO_BUILD
 

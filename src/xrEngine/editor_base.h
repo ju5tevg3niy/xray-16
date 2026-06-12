@@ -7,7 +7,7 @@
 
 namespace xray::editor
 {
-class XR_NOVTABLE ENGINE_API ide_tool
+class XR_NOVTABLE ide_tool
 {
     bool is_opened{};
 
@@ -32,7 +32,7 @@ public:
     virtual size_t estimate_settings_size() const { return 0; }
 };
 
-class ENGINE_API ide final :
+class ide final :
     public pureFrame,
     public pureAppActivate,
     public pureAppDeactivate,

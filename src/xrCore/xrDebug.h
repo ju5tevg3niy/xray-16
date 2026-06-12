@@ -129,7 +129,7 @@ private:
 };
 
 // forward declaration
-// Definition is in xrCore/_std_extensions.h
+// Definition is in xrCore/String/string_funcs_inline.hpp
 inline int __cdecl xr_sprintf(pstr destination, size_t const buffer_size, pcstr format_string, ...);
 
 // for debug purposes only

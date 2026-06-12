@@ -10,7 +10,7 @@
 #include "GamePersistent.h"
 
 player_hud* g_player_hud = nullptr;
-extern ENGINE_API shared_str current_player_hud_sect;
+extern shared_str current_player_hud_sect;
 
 // --#SM+# Begin--
 constexpr float PITCH_OFFSET_R    = 0.0f;   // Насколько сильно ствол смещается вбок (влево) при вертикальных поворотах камеры

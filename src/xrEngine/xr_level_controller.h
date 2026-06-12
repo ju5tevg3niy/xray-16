@@ -237,30 +237,30 @@ struct key_binding
     keyboard_key* m_keyboard[bindtypes_count];
 };
 
-extern ENGINE_API EKeyGroup g_current_keygroup;
+extern EKeyGroup g_current_keygroup;
 
-extern ENGINE_API game_action actions[];
-extern ENGINE_API keyboard_key keyboards[];
+extern game_action actions[];
+extern keyboard_key keyboards[];
 
-extern ENGINE_API key_binding g_key_bindings[];
+extern key_binding g_key_bindings[];
 
-ENGINE_API bool IsGroupNotConflicted(EKeyGroup g1, EKeyGroup g2);
-ENGINE_API bool IsContextNotConflicted(EKeyContext c1, EKeyContext c2);
+bool IsGroupNotConflicted(EKeyGroup g1, EKeyGroup g2);
+bool IsContextNotConflicted(EKeyContext c1, EKeyContext c2);
 
-ENGINE_API pcstr IdToActionName(EGameActions id);
-ENGINE_API EGameActions ActionNameToId(pcstr name, bool silent = false);
-ENGINE_API game_action* ActionNameToPtr(pcstr name, bool silent = false);
+pcstr IdToActionName(EGameActions id);
+EGameActions ActionNameToId(pcstr name, bool silent = false);
+game_action* ActionNameToPtr(pcstr name, bool silent = false);
 
-ENGINE_API pcstr DikToKeyname(int dik);
-ENGINE_API int KeynameToDik(pcstr name, bool silent = false);
-ENGINE_API keyboard_key* KeynameToPtr(pcstr name, bool silent = false);
-ENGINE_API keyboard_key* DikToPtr(int dik, bool silent);
+pcstr DikToKeyname(int dik);
+int KeynameToDik(pcstr name, bool silent = false);
+keyboard_key* KeynameToPtr(pcstr name, bool silent = false);
+keyboard_key* DikToPtr(int dik, bool silent);
 
-ENGINE_API bool IsBinded(EGameActions action_id, int dik, EKeyContext context = EKeyContext::Undefined);
-ENGINE_API int GetActionDik(EGameActions action_id, int idx = -1);
-ENGINE_API EGameActions GetBindedAction(int dik, EKeyContext context = EKeyContext::Undefined);
+bool IsBinded(EGameActions action_id, int dik, EKeyContext context = EKeyContext::Undefined);
+int GetActionDik(EGameActions action_id, int idx = -1);
+EGameActions GetBindedAction(int dik, EKeyContext context = EKeyContext::Undefined);
 
-ENGINE_API pcstr GetActionBinding(EGameActions action);
+pcstr GetActionBinding(EGameActions action);
 
 template <typename Invocable>
 void ForAllActionKeys(EGameActions action_id, Invocable&& invocable)
@@ -284,15 +284,15 @@ void ForAllActionKeys(EGameActions action_id, Invocable&& invocable)
     }
 }
 
-extern ENGINE_API void CCC_RegisterInput();
-extern ENGINE_API void CCC_DeregisterInput();
+extern void CCC_RegisterInput();
+extern void CCC_DeregisterInput();
 
 struct con_cmd
 {
     shared_str cmd;
 };
 
-class ENGINE_API ConsoleBindCmds
+class ConsoleBindCmds
 {
 public:
     xr_map<int, con_cmd> m_bindConsoleCmds;
@@ -304,9 +304,9 @@ public:
     void save(IWriter* F);
 };
 
-extern ENGINE_API ConsoleBindCmds g_consoleBindCmds;
+extern ConsoleBindCmds g_consoleBindCmds;
 
-struct ENGINE_API key_binding_registrator
+struct key_binding_registrator
 {
     DECLARE_SCRIPT_REGISTER_FUNCTION();
 };

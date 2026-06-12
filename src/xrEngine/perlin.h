@@ -1,9 +1,8 @@
-#ifndef perlinH
-#define perlinH
+#pragma once
 
 #define PERLIN_SAMPLE_SIZE 256
 
-class ENGINE_API CPerlinNoiseCustom
+class CPerlinNoiseCustom
 {
 protected:
     int mSeed;
@@ -34,7 +33,7 @@ public:
     IC void SetAmplitude(float amp) { mAmplitude = amp; }
 };
 
-class ENGINE_API CPerlinNoise1D : public CPerlinNoiseCustom
+class CPerlinNoise1D : public CPerlinNoiseCustom
 {
 private:
     float noise(float arg);
@@ -49,7 +48,7 @@ public:
     float GetContinious(float v);
 };
 
-class ENGINE_API CPerlinNoise2D : public CPerlinNoiseCustom
+class CPerlinNoise2D : public CPerlinNoiseCustom
 {
 private:
     float noise(const Fvector2& vec);
@@ -64,7 +63,7 @@ public:
     float Get(float x, float y);
 };
 
-class ENGINE_API CPerlinNoise3D : public CPerlinNoiseCustom
+class CPerlinNoise3D : public CPerlinNoiseCustom
 {
 private:
     float noise(const Fvector3& vec);
@@ -78,5 +77,3 @@ public:
     CPerlinNoise3D(int seed) : CPerlinNoiseCustom(seed) {}
     float Get(float x, float y, float z);
 };
-
-#endif

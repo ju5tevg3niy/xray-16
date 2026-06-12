@@ -1,9 +1,15 @@
-//---------------------------------------------------------------------------
-#ifndef StatGraphH
-#define StatGraphH
+#pragma once
 
+#include <cstddef>
+
+#include "Common/types.hpp"
 #include "Include/xrRender/FactoryPtr.h"
 #include "Include/xrRender/StatGraphRender.h"
+#include "xrCommon/xr_vector.h"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/vector2.hpp"
+#include "xrCore/xrDebug_macros.h"
+#include "xrEngine/pure.h"
 #include "xrCommon/xr_deque.h"
 
 namespace xray::render
@@ -19,7 +25,7 @@ class dxStatGraphRender;
 } // namespace xray::render
 
 //---------------------------------------------------------------------------
-class ENGINE_API CStatGraph : public pureRender
+class CStatGraph : public pureRender
 {
     friend class xray::render::render_r4::dxStatGraphRender;
     friend class xray::render::render_gl::dxStatGraphRender;
@@ -182,4 +188,3 @@ public:
         m_Markers.erase(m_Markers.begin() + ID);
     }
 };
-#endif

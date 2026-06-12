@@ -5,9 +5,9 @@
 #pragma once
 
 // refs
-class ENGINE_API IConsole_Command;
+class IConsole_Command;
 
-class ENGINE_API CConsole :
+class CConsole :
     public pureFrame,
     public IInputReceiver,
     public IEventReceiver,
@@ -197,4 +197,4 @@ private:
     DECLARE_SCRIPT_REGISTER_FUNCTION();
 }; // class CConsole
 
-ENGINE_API extern CConsole* Console;
+extern CConsole* Console;

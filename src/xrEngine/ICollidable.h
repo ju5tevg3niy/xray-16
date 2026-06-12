@@ -14,7 +14,7 @@ inline ICollidable::~ICollidable() = default;
 
 // XXX: merge into IGameObject
 // XXX: can't be NOVTABLE because of dynamic_cast in the constructor.. Fix some day
-class ENGINE_API /*XR_NOVTABLE*/ CollidableBase : public virtual ICollidable
+class /*XR_NOVTABLE*/ CollidableBase : public virtual ICollidable
 {
 public:
     CollidableBase();

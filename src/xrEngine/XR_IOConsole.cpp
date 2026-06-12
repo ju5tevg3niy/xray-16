@@ -26,7 +26,7 @@ static Fcolor const tips_back_color    = color_rgba(20, 20, 20, 200);
 static Fcolor const tips_select_color  = color_rgba(90, 90, 140, 230);
 static Fcolor const tips_word_color    = color_rgba(5, 100, 56, 200);
 
-ENGINE_API CConsole* Console = NULL;
+CConsole* Console = NULL;
 
 extern char const* const ioc_prompt;
 char const* const ioc_prompt = ">>>";

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCore/_std_extensions.h"
+#include "xrCore/String/string_funcs_inline.hpp"
 #include "xrCore/Math/flags.hpp"
 #include "xrCore/xrstring.h"
 #include "xrCommon/xr_vector.h"

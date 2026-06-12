@@ -13,7 +13,7 @@ class IGameObject;
 // XXX: refactor:
 // 1. tag and style are used for the same purpose,
 // 2. Convert remaining bools to flags
-class ENGINE_API CCameraBase
+class CCameraBase
 {
 protected:
     IGameObject* parent;

@@ -1,8 +1,9 @@
 #pragma once
+
 #include "XR_IOConsole.h"
 #include "IGame_Level.h"
 
-class ENGINE_API CTextConsole : public CConsole
+class CTextConsole : public CConsole
 {
 private:
     typedef CConsole inherited;
@@ -53,4 +54,4 @@ public:
 
 }; // class TextConsole
 
-// extern ENGINE_API CTextConsole* TextConsole;
+// extern CTextConsole* TextConsole;

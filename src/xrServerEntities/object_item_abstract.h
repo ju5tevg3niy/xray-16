@@ -7,11 +7,9 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#ifndef object_item_abstractH
-#define object_item_abstractH
 
 #include "object_factory_space.h"
-#include "xrCore/clsid.h"
+#include "xrCore/clsid.hpp"
 #include "xrCore/xrstring.h"
 
 class CObjectItemAbstract
@@ -31,4 +29,3 @@ public:
 };
 
 #include "object_item_abstract_inline.h"
-#endif
