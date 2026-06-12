@@ -1,4 +1,3 @@
-#pragma once
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: xrServer_Objects_ALife_Items.h
 //	Created 	: 19.09.2002
@@ -7,8 +6,7 @@
 //	Description : Server objects items for ALife simulator
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef xrServer_Objects_ALife_ItemsH
-#define xrServer_Objects_ALife_ItemsH
+#pragma once
 
 #include "xrServer_Objects_ALife.h"
 #include "PHSynchronize.h"
@@ -16,9 +14,6 @@
 
 #include "character_info_defs.h"
 #include "InfoPortionDefs.h"
-
-#pragma warning(push)
-#pragma warning(disable : 4005)
 
 class CSE_ALifeItemAmmo;
 
@@ -505,7 +500,3 @@ public:
 private:
     DECLARE_SCRIPT_REGISTER_FUNCTION(CSE_ALifeItem);
 };
-
-#pragma warning(pop)
-
-#endif

@@ -152,10 +152,7 @@ IC static int CollideIntoGroup(
 
         if (is_tri_1)
         {
-#pragma warning(push)
-#pragma warning(disable : 4245)
             if (material_1->Flags.test(SGameMtl::flSlowDown) && !(usr_data_2->pushing_neg || usr_data_2->pushing_b_neg))
-#pragma warning(pop)
             {
                 dBodyID body = dGeomGetBody(g2);
                 R_ASSERT2(body, "static - static collision !!!");
@@ -178,10 +175,7 @@ IC static int CollideIntoGroup(
         }
         if (is_tri_2)
         {
-#pragma warning(push)
-#pragma warning(disable : 4245)
             if (material_2->Flags.test(SGameMtl::flSlowDown) && !(usr_data_1->pushing_neg || usr_data_1->pushing_b_neg))
-#pragma warning(pop)
             {
                 dBodyID body = dGeomGetBody(g1);
                 R_ASSERT2(body, "static - static collision !!!");

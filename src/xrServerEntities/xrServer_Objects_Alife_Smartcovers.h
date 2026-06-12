@@ -6,13 +6,9 @@
 //  Description : Server objects smartcovers for ALife simulator
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef xrServer_Objects_ALife_SmartcoversH
-#define xrServer_Objects_ALife_SmartcoversH
+#pragma once
 
 #include "xrServer_Objects_ALife.h"
-
-#pragma warning(push)
-#pragma warning(disable : 4005)
 
 class CSE_ALifeDynamicObject;
 
@@ -94,5 +90,3 @@ public:
 private:
     DECLARE_SCRIPT_REGISTER_FUNCTION(CSE_ALifeDynamicObject);
 };
-#pragma warning(pop)
-#endif

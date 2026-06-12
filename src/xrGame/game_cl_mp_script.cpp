@@ -10,9 +10,6 @@
 #include "date_time.h"
 #include "ui/UIDialogWnd.h"
 
-#pragma warning(push)
-#pragma warning(disable : 4709)
-
 template <typename T>
 struct CGameClMpScriptWrapperBase : public T, public luabind::wrap_base
 {
@@ -41,8 +38,6 @@ struct CGameClMpScriptWrapperBase : public T, public luabind::wrap_base
         return ptr->self_type::inherited::createPlayerState();
     }
 };
-
-#pragma warning(pop)
 
 void game_cl_mp_script::EventGen(NET_Packet* P, u16 type, u16 dest) { u_EventGen(*P, type, dest); }
 void game_cl_mp_script::GameEventGen(NET_Packet* P, u16 dest) { u_EventGen(*P, u16(GE_GAME_EVENT & 0xffff), dest); }

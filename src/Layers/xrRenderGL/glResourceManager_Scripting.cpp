@@ -163,8 +163,6 @@ public:
     }
 };
 
-#pragma warning( push )
-#pragma warning( disable : 4512)
 // wrapper
 class adopt_compiler
 {
@@ -287,7 +285,6 @@ public:
 
     adopt_dx10options _dx10Options() { return adopt_dx10options(); };
 };
-#pragma warning( pop )
 
 class adopt_blend
 {

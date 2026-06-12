@@ -17,9 +17,6 @@ typedef unsigned int u32;
 #include <stdlib.h>
 #include <vcclr.h>
 
-#pragma warning(disable : 4127)
-#pragma warning(disable : 4100)
-
 #pragma managed(push, off)
 #include "Common/Common.hpp"
 #pragma managed(pop)

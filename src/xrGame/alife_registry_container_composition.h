@@ -21,9 +21,6 @@
 
 #include "actor_statistic_defs.h"
 
-#pragma warning(push)
-#pragma warning(disable : 4005)
-
 template <typename _index_type, typename _data_type>
 class CALifeAbstractRegistry;
 
@@ -88,5 +85,3 @@ add_to_registry_type_list(CSpecificCharacterRegistry)
 #define map_locations define_constant(CActorStatisticRegistry)
 #undef registry_type_list
 #define registry_type_list save_registry_type_list(CActorStatisticRegistry)
-
-#pragma warning(pop)

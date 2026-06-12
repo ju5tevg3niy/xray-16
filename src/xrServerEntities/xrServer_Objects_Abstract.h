@@ -6,8 +6,7 @@
 //  Description : Server objects
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef xrServer_Objects_AbstractH
-#define xrServer_Objects_AbstractH
+#pragma once
 
 #include "xrServer_Space.h"
 #include "xrCDB/xrCDB.h"
@@ -25,8 +24,6 @@ class CDUInterface;
 
 #include "xrEProps.h"
 #include "Include/xrRender/DrawUtils.h"
-#pragma warning(push)
-#pragma warning(disable : 4005)
 
 #pragma pack(push, 4)
 
@@ -163,7 +160,5 @@ public:
 };
 
 inline IServerEntity::~IServerEntity() = default;
-#pragma warning(pop)
 
 #pragma pack(pop)
-#endif // xrServer_Objects_AbstractH

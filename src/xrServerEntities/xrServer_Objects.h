@@ -12,9 +12,6 @@
 #include "ShapeData.h"
 #include "PHNetState.h"
 
-#pragma warning(push)
-#pragma warning(disable : 4005)
-
 //------------------------------------------------------------------------------
 // Version history
 //------------------------------------------------------------------------------
@@ -280,5 +277,3 @@ private:
 extern CSE_Abstract* F_entity_Create(LPCSTR caSection);
 extern CSE_Abstract* F_entity_Create(LPCSTR caSection, bool no_assert);
 #endif
-
-#pragma warning(pop)

@@ -2,12 +2,8 @@
 
 #include "xrCore/Math/flags.hpp"
 
-#pragma warning(push)
-#pragma warning(disable : 4995)
-#pragma warning(disable : 4267)
 #include "ode/ode/src/objects.h"
 #include "ode/ode/src/joint.h"
-#pragma warning(pop)
 #include <ode/objects.h>
 #include "PhysicsCommon.h"
 

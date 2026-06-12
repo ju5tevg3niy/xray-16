@@ -9,9 +9,6 @@
 #include "ode_redefine.h"
 #include "xrCDB/xr_area.h"
 
-#pragma warning(push)
-#pragma warning(disable : 4995)
-#pragma warning(disable : 4267)
 ICF void GetNormal(CDB::TRI* XTri, Fvector& n, const Fvector* V_array)
 {
     // VERIFY(g_pGameLevel);
@@ -192,4 +189,3 @@ ICF float DistToTri(Triangle* T, const float* pos, float* dir, float* p, ETriDis
 
     // return _min(_min(DistToFragmenton(pos)))
 }
-#pragma warning(pop)

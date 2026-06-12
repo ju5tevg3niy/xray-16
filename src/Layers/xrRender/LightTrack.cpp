@@ -72,8 +72,6 @@ void CROS_impl::add(light* source)
 }
 
 //////////////////////////////////////////////////////////////////////////
-#pragma warning(push)
-#pragma warning(disable : 4305)
 
 // const float		hdir		[lt_hemisamples][3] =
 // {
@@ -120,7 +118,6 @@ const float hdir[lt_hemisamples][3] = {
 
     {-0.42533, 0.85065, -0.30902}, {0.68819, 0.52573, 0.50000},
 };
-#pragma warning(pop)
 
 // inline CROS_impl::CubeFaces CROS_impl::get_cube_face(Fvector3& dir)
 //{

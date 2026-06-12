@@ -11,9 +11,6 @@
 #include "alife_interaction_manager.h"
 #include "alife_update_manager.h"
 
-#pragma warning(push)
-#pragma warning(disable : 4005)
-
 class CALifeSimulator : public CALifeUpdateManager, public CALifeInteractionManager
 {
 protected:
@@ -36,5 +33,3 @@ private:
 
     DECLARE_SCRIPT_REGISTER_FUNCTION();
 };
-
-#pragma warning(pop)

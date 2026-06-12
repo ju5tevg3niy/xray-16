@@ -151,8 +151,6 @@ public:
         file_size = 0;
         position = 0;
     }
-#pragma warning(push)
-#pragma warning(disable : 4995)
     IC void free()
     {
         file_size = 0;
@@ -160,7 +158,6 @@ public:
         mem_size = 0;
         xr_free(data);
     }
-#pragma warning(pop)
     bool save_to(pcstr fn) const;
     void flush() override {}
 };

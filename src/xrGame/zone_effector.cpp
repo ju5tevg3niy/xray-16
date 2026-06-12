@@ -30,8 +30,6 @@ void CZoneEffector::Load(LPCSTR section)
     VERIFY(r_min_perc <= r_max_perc);
 }
 
-#pragma warning(push)
-#pragma warning(disable : 4826) // XXX: Do something with that cheap ID generation, remove warning
 void CZoneEffector::Activate()
 {
     m_pActor = smart_cast<CActor*>(Level().CurrentEntity());
@@ -54,7 +52,6 @@ void CZoneEffector::Stop()
     m_pp_effector = NULL;
     m_pActor = NULL;
 };
-#pragma warning(pop)
 
 void CZoneEffector::Update(float dist, float r, ALife::EHitType hit_type)
 {

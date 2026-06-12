@@ -57,8 +57,6 @@ struct R_statistics
     R_statistics_element s_dynamic_4B;
 };
 
-#pragma warning(push)
-#pragma warning(disable:4324)
 class ECORE_API CBackend
 {
 public:
@@ -602,7 +600,6 @@ public:
     dx11ShaderResourceStateCache SRVSManager;
 #endif // USE_DX11
 };
-#pragma warning(pop)
 
 #define RCache RImplementation.get_imm_context().cmd_list
 } // namespace xray::render::RENDER_NAMESPACE

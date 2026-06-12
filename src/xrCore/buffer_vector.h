@@ -7,8 +7,9 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#ifndef BUFFER_VECTOR_H_INCLUDED
-#define BUFFER_VECTOR_H_INCLUDED
+
+#include <cstddef>
+#include <iterator>
 
 template <typename T>
 class buffer_vector
@@ -112,5 +113,3 @@ template <typename T>
 inline void swap(buffer_vector<T>& left, buffer_vector<T>& right);
 
 #include "buffer_vector_inline.h"
-
-#endif // BUFFER_VECTOR_H_INCLUDED

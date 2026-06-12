@@ -9,8 +9,6 @@
 #define HEMI2_FACES 160
 #define HEMI3_VERTS 196
 
-#pragma warning(push)
-#pragma warning(disable : 4305)
 const Fvector hemi_1[HEMI1_VERTS] = {
     {0.525730, 0.850655, -0.000000}, {0.162460, 0.850655, 0.500000}, {0.000000, 1.000000, -0.000000},
     {-0.425324, 0.850655, 0.309015}, {-0.425324, 0.850655, -0.309017}, {0.162460, 0.850655, -0.500000},
@@ -133,7 +131,6 @@ const Fvector hemi_3[HEMI3_VERTS] = {
     {+0.1525, +0.0799, +0.4694}, {-0.1517, +0.0952, +0.4668}, {-0.3993, +0.0799, +0.2901}, {-0.4909, +0.0952, -0.0000},
     {-0.3993, +0.0799, -0.2901}, {-0.1517, +0.0952, -0.4668}, {+0.1525, +0.0799, -0.4694}, {+0.3971, +0.0952, -0.2885},
 };
-#pragma warning(pop)
 
 void ECORE_API xrHemisphereBuild(int quality, float energy, xrHemisphereIterator* iterator, LPVOID param)
 {

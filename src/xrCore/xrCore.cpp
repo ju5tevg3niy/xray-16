@@ -1,7 +1,6 @@
 // xrCore.cpp : Defines the entry point for the DLL application.
 //
 #include "stdafx.h"
-#pragma hdrstop
 
 #if defined(XR_PLATFORM_WINDOWS)
 #include <mmsystem.h>

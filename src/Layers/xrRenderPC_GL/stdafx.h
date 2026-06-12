@@ -1,12 +1,6 @@
 #pragma once
 
-#pragma warning(disable:4995)
 #include "xrEngine/stdafx.h"
-#pragma warning(default:4995)
-#pragma warning(disable:4714)
-#pragma warning( 4 : 4018 )
-#pragma warning( 4 : 4244 )
-#pragma warning(disable:4237)
 
 #include "xrEngine/vis_common.h"
 #include "xrEngine/Render.h"

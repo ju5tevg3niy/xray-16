@@ -70,8 +70,6 @@ struct SUBRANGE
 static SUBRANGE SubRange = {0, 0, 0};
 static u32 low = 0, code = 0, range = 0;
 
-#pragma warning(push)
-#pragma warning(disable : 4146)
 inline void rcEncNormalize(_PPMD_FILE* stream)
 {
     while ((low ^ (low + range)) < TOP || (range < BOT && ((range = -low & (BOT - 1)), 1)))
@@ -81,7 +79,6 @@ inline void rcEncNormalize(_PPMD_FILE* stream)
         low <<= 8;
     }
 }
-#pragma warning(pop)
 
 static inline void rcInitEncoder()
 {
@@ -119,8 +116,6 @@ static inline void rcInitDecoder(_PPMD_FILE* stream)
         code = (code << 8) | _PPMD_D_GETC(stream);
 }
 
-#pragma warning(push)
-#pragma warning(disable : 4146)
 inline void rcDecNormalize(_PPMD_FILE* stream)
 {
     while ((low ^ (low + range)) < TOP || (range < BOT && ((range = -low & (BOT - 1)), 1)))
@@ -130,7 +125,6 @@ inline void rcDecNormalize(_PPMD_FILE* stream)
         low <<= 8;
     }
 }
-#pragma warning(pop)
 
 /*
 #define RC_DEC_NORMALIZE(stream) {                                          \

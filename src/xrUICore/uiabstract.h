@@ -1,8 +1,5 @@
 #pragma once
 
-#pragma warning(disable : 4511)
-#pragma warning(disable : 4512)
-
 #include "Common/Noncopyable.hpp"
 #include "xrEngine/GameFont.h"
 

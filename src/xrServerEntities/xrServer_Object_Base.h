@@ -35,9 +35,6 @@ class CSE_ALifeSmartZone;
 class CSE_ALifeOnlineOfflineGroup;
 class CSE_ALifeItemPDA;
 
-#pragma warning(push)
-#pragma warning(disable : 4005)
-
 class CPureServerObject : public IPureServerObject
 {
     using inherited = IPureServerObject;
@@ -191,5 +188,3 @@ private:
 };
 
 extern u16 script_server_object_version();
-
-#pragma warning(pop)

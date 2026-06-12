@@ -9,8 +9,6 @@
 #include <cstring>
 
 #pragma pack(push, 4)
-#pragma warning(push)
-#pragma warning(disable : 4200)
 struct str_value
 {
     u32 dwReference;
@@ -25,8 +23,6 @@ struct str_value_cmp
     // less
     IC bool operator()(const str_value* A, const str_value* B) const { return A->dwCRC < B->dwCRC; };
 };
-
-#pragma warning(pop)
 
 struct str_container_impl;
 class IWriter;

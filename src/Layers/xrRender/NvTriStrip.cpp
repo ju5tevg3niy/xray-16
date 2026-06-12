@@ -2,8 +2,6 @@
 #include "NvTriStripObjects.h"
 #include "NvTriStrip.h"
 
-#pragma warning(disable : 4018)
-
 namespace xray::render::RENDER_NAMESPACE
 {
 ////////////////////////////////////////////////////////////////////////////////////////

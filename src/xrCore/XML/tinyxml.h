@@ -25,12 +25,6 @@ distribution.
 #ifndef TINYXML_INCLUDED
 #define TINYXML_INCLUDED
 
-#ifdef _MSC_VER
-#pragma warning(push)
-#pragma warning(disable : 4530)
-#pragma warning(disable : 4786)
-#endif
-
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -1332,9 +1326,5 @@ private:
     TiXmlCursor errorLocation;
     bool useMicrosoftBOM; // the UTF-8 BOM were found when read. Note this, and try to write.
 };
-
-#ifdef _MSC_VER
-#pragma warning(pop)
-#endif
 
 #endif

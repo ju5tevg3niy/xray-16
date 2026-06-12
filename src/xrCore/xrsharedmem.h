@@ -8,8 +8,6 @@ class Lock;
 
 #pragma pack(push, 4)
 //////////////////////////////////////////////////////////////////////////
-#pragma warning(push)
-#pragma warning(disable : 4200)
 struct smem_value
 {
     u32 dwReference;
@@ -51,7 +49,6 @@ IC bool smem_equal(const smem_value* A, u32 dwCRC, u32 dwLength, u8* ptr)
         return false;
     return 0 == memcmp(A->value, ptr, dwLength);
 };
-#pragma warning(pop)
 
 //////////////////////////////////////////////////////////////////////////
 class smem_container : Noncopyable

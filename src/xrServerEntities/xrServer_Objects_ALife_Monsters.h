@@ -7,8 +7,6 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#ifndef xrServer_Objects_ALife_MonstersH
-#define xrServer_Objects_ALife_MonstersH
 
 #include "xrServer_Objects_ALife.h"
 #include "xrServer_Objects_ALife_Items.h"
@@ -20,9 +18,6 @@
 class CALifeMonsterBrain;
 class CALifeHumanBrain;
 class CALifeOnlineOfflineGroupBrain;
-
-#pragma warning(push)
-#pragma warning(disable : 4005)
 
 class CSE_ALifeTraderAbstract
 {
@@ -789,7 +784,3 @@ public:
 private:
     DECLARE_SCRIPT_REGISTER_FUNCTION(CSE_ALifeDynamicObject, CSE_ALifeSchedulable);
 };
-
-#pragma warning(pop)
-
-#endif

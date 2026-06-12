@@ -6,18 +6,15 @@
 //  Description : Server objects for ALife simulator
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef xrServer_Objects_ALifeH
-#define xrServer_Objects_ALifeH
-//#include "pch_script.h" - No, no NO!
+#pragma once
+
 #include "xrServer_Objects.h"
 #include "alife_space.h"
 #include "xrAICore/Navigation/game_graph_space.h"
+
 #ifdef XRGAME_EXPORTS
 #include "xrGame/alife_smart_terrain_task.h"
 #endif //#ifdef XRGAME_EXPORTS
-
-#pragma warning(push)
-#pragma warning(disable : 4005)
 
 #ifdef XRGAME_EXPORTS
 class CALifeSimulator;
@@ -811,7 +808,3 @@ public:
 private:
     DECLARE_SCRIPT_REGISTER_FUNCTION(CSE_ALifeDynamicObjectVisual);
 };
-
-#pragma warning(pop)
-
-#endif

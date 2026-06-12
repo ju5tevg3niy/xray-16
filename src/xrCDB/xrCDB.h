@@ -177,7 +177,6 @@ public:
     ICF void r_clear_compact() { rd.clear(); };
 };
 
-//
 class XRCDB_API Collector
 {
     xr_vector<Fvector> verts;
@@ -216,9 +215,8 @@ public:
     }
 };
 
-#pragma warning(push)
-#pragma warning(disable : 4275)
 const u32 clpMX = 24, clpMY = 16, clpMZ = 24;
+
 class XRCDB_API CollectorPacked : public Noncopyable
 {
     xr_vector<Fvector> verts;
@@ -268,6 +266,5 @@ public:
 
     void clear();
 };
-#pragma warning(pop)
 }
 #pragma pack(pop)

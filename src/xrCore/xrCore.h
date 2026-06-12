@@ -6,20 +6,6 @@
 #define CONCATENIZE_HELPER(a, b) a##b
 #define CONCATENIZE(a, b) CONCATENIZE_HELPER(a, b)
 
-// Warnings
-#pragma warning(disable : 4127) // conditional expression is constant
-#pragma warning(disable : 4345)
-
-#ifdef XR_ARCHITECTURE_X64
-#pragma warning(disable : 4512)
-#endif
-
-#pragma warning(disable : 4714) // __forceinline not inlined
-
-#ifndef DEBUG
-#pragma warning(disable : 4189) // local variable is initialized but not referenced
-#endif // frequently in release code due to large amount of VERIFY
-
 #include <tracy/Tracy.hpp>
 
 #include "xrDebug.h"

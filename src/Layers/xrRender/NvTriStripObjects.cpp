@@ -1,6 +1,4 @@
 #include "stdafx.h"
-#pragma warning(disable : 4786)
-#pragma warning(disable : 4018)
 
 #include <assert.h>
 #include <set>

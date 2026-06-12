@@ -6,8 +6,10 @@
 // Description : buffer vector template class inline functions
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef BUFFER_VECTOR_INLINE_H_INCLUDED
-#define BUFFER_VECTOR_INLINE_H_INCLUDED
+#pragma once
+
+#include "xrCore/buffer_vector.h"
+#include "xrCore/xrDebug_macros.h"
 
 #define TEMPLATE_SPECIALIZATION template <typename T>
 #define buffer_vector_specialized buffer_vector<T>
@@ -344,5 +346,3 @@ TEMPLATE_SPECIALIZATION
 inline void swap(buffer_vector_specialized& left, buffer_vector_specialized& right) { left.swap(right); }
 #undef TEMPLATE_SPECIALIZATION
 #undef buffer_vector_specialized
-
-#endif // BUFFER_VECTOR_INLINE_H_INCLUDED

@@ -1,8 +1,5 @@
 #pragma once
 
-#pragma warning(push)
-#pragma warning(disable : 4995)
-#pragma warning(disable : 4267)
 #include <ode/common.h>
 #include <ode/odemath.h>
 #include <ode/objects.h>
@@ -114,5 +111,3 @@ IC void dVectorInterpolate(float* res, const float* from, const float* to, float
 float E_NL(dBodyID b1, dBodyID b2, const dReal* norm);
 
 float E_NlS(dBodyID body, const dReal* norm, float norm_sign); // if body c.geom.g1 norm_sign + else -
-
-#pragma warning(pop)

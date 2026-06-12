@@ -1,10 +1,8 @@
-#ifndef SPACE_UTILS_H
-#define SPACE_UTILS_H
-#pragma warning(push)
-#pragma warning(disable : 4995)
-#pragma warning(disable : 4267)
+#pragma once
+
+// JJ-fork: huh?
 #include "../3rd party/ode/ode/src/collision_kernel.h"
-#pragma warning(pop)
+
 IC void spatialParsFromDGeom(dGeomID d_space, Fvector& center, Fvector& AABB, float& radius)
 {
     d_space->computeAABB();
@@ -13,4 +11,3 @@ IC void spatialParsFromDGeom(dGeomID d_space, Fvector& center, Fvector& AABB, fl
     AABB.x = dAABB[1] - center.x, AABB.y = dAABB[3] - center.y, AABB.z = dAABB[5] - center.z;
     radius = _max(AABB.x, _max(AABB.y, AABB.z));
 }
-#endif

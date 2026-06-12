@@ -143,9 +143,6 @@ void game_sv_mp_script::OnPlayerDisconnect(ClientID id_who, pstr Name, u16 GameI
     inherited::OnPlayerDisconnect(id_who, Name, GameID);
 };
 
-#pragma warning(push)
-#pragma warning(disable : 4709)
-
 template <typename T>
 struct CGameSvMpScriptWrapperBase : public T, public luabind::wrap_base
 {
@@ -176,8 +173,6 @@ struct CGameSvMpScriptWrapperBase : public T, public luabind::wrap_base
 
     DEFINE_LUA_WRAPPER_METHOD_R2P3_V3(OnPlayerHitPlayer, u16, u16, NET_Packet)
 };
-
-#pragma warning(pop)
 
 void game_sv_mp::script_register(lua_State* luaState)
 {

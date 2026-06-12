@@ -51,9 +51,6 @@
 #include "debug_text_tree.h"
 #endif
 
-#pragma warning(disable : 4355)
-#pragma warning(push)
-
 CBaseMonster::CBaseMonster()
     : m_psy_aura(this, "psy"), m_radiation_aura(this, "radiation"), m_fire_aura(this, "fire"), m_base_aura(this, "base")
 {
@@ -110,8 +107,6 @@ CBaseMonster::CBaseMonster()
     m_last_tick_enemy_inaccessible = 0;
     m_first_tick_object_not_at_home = 0;
 }
-
-#pragma warning(pop)
 
 CBaseMonster::~CBaseMonster()
 {

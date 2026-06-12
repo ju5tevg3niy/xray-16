@@ -29,11 +29,8 @@ void CSE_ALifeObject::spawn_supplies(LPCSTR ini_string)
             return;
     }
 
-#pragma warning(push)
-#pragma warning(disable : 4238)
     IReader reader((void*)ini_string, xr_strlen(ini_string));
     CInifile ini(&reader, FS.get_path("$game_config$")->m_Path);
-#pragma warning(pop)
     u8 loadoutIndex = 0;
     string32 loadoutSection = "spawn_loadout";
 

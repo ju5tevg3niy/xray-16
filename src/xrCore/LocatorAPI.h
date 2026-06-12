@@ -1,14 +1,11 @@
 #pragma once
 
-#pragma warning(push)
-#pragma warning(disable : 4995)
 #if defined(XR_PLATFORM_WINDOWS)
 #include <io.h>
 #endif
-#pragma warning(pop)
+
 #include "Common/Util.hpp"
 #include "LocatorAPI_defs.h"
-//#include "xrCore/Threading/Lock.hpp"
 #include "xrCommon/xr_map.h"
 #include "xrCommon/xr_smart_pointers.h"
 #include "xrCommon/predicates.h"
