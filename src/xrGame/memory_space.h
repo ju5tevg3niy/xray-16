@@ -11,7 +11,7 @@
 #include "xrServer_Space.h"
 #include "alife_space.h"
 #include "xrCore/Math/flags.hpp"
-#include "xrCommon/misc_math_types.h"
+#include "xrCore/Math/rotation.hpp"
 
 //#define USE_GAME_TIME
 #define USE_LEVEL_TIME

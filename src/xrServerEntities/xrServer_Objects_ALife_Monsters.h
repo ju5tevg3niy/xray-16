@@ -13,7 +13,7 @@
 #include "character_info_defs.h"
 #include "xrCore/Containers/AssociativeVector.hpp"
 #include "alife_movement_manager_holder.h"
-#include "xrCommon/misc_math_types.h"
+#include "xrCore/Math/rotation.hpp"
 
 class CALifeMonsterBrain;
 class CALifeHumanBrain;

@@ -17,7 +17,7 @@
 #include "xrServerEntities/smart_cast.h" // a lot
 #include "xrScriptEngine/script_space_forward.hpp" // ~765 // XXX: See to it this goes to pch_script
 #include "Common/LevelStructure.hpp" // ~730
-#include "xrCommon/misc_math_types.h" // ~770
+#include "xrCore/Math/rotation.hpp" // ~770
 #include "xrEngine/ISheduled.h" // ~740
 #include "xrCDB/ISpatial.h" // ~700
 #include "xrCore/xrPool.h" // ~700

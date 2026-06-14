@@ -5,11 +5,10 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Monster types and structures
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
 #include "Common/types.hpp"
-#include "xrCommon/misc_math_types.h"
+#include "xrCore/Math/rotation.hpp"
 
 namespace MonsterSpace
 {

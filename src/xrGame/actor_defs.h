@@ -1,7 +1,8 @@
 #pragma once
+
 #include "PHSynchronize.h"
 #include "xrServer_Space.h"
-#include "xrCommon/misc_math_types.h"
+#include "xrCore/Math/rotation.hpp"
 
 #define ACTOR_HEIGHT 1.75f
 #define ACTOR_LOOKOUT_SPEED 2.f

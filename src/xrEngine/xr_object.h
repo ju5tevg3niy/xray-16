@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCommon/misc_math_types.h" // SRotation
+#include "xrCore/Math/rotation.hpp" // SRotation
 
 #include "xrCore/FixedVector.h"
 
