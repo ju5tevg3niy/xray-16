@@ -3,7 +3,7 @@
 #include "xrCore/Math/fbox.hpp"
 #include "xrCore/Math/obb.hpp"
 #include "xrPhysics.h"
-#include "xrCore/String/string_funcs_inline.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
 #ifdef DEBUG
 #include "xrCore/dump_string.h"
 #endif

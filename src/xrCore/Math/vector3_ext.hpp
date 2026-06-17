@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCore/Math/vector3.hpp"
+#include "vector3.hpp"
 
 inline Fvector cr_fvector3(float f)
 {

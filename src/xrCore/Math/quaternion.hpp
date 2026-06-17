@@ -3,11 +3,12 @@
 #include <cmath>
 
 #include "Common/Platform.hpp"
-#include "xrCore/Math/vector3.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
-#include "xrCore/Math/constants.hpp"
 #include "xrCore/xrDebug_macros.h"
 #include "xrCore/xrDebug.h"
+
+#include "vector3.hpp"
+#include "math_funcs_inline.hpp"
+#include "constants.hpp"
 
 /***************************************************************************
  The quaternion module contains basic support for a quaternion object.

@@ -12,6 +12,12 @@ target_sources(
     Math/sphere.cpp
     Math/vector.cpp
     Math/vector3_ext.cpp
+    Text/string_conversion.cpp
+    Threading/Event.cpp
+    Threading/Lock.cpp
+    Threading/ScopeLock.cpp
+    Threading/TaskManager.cpp
+    Threading/ThreadUtil.cpp
     timestamp.cpp
 )
 
@@ -325,39 +331,6 @@ target_sources_grouped(
 
 target_sources_grouped(
     TARGET xrCore
-    NAME "Text"
-    FILES
-    Text/StringConversion.cpp
-    Text/StringConversion.hpp
-)
-
-target_sources_grouped(
-    TARGET xrCore
-    NAME "Threading"
-    FILES
-    Threading/Event.cpp
-    Threading/Event.hpp
-    Threading/Lock.cpp
-    Threading/Lock.hpp
-    Threading/ParallelFor.hpp
-    Threading/ParallelForEach.hpp
-    Threading/ScopeLock.cpp
-    Threading/ScopeLock.hpp
-    Threading/Task.hpp
-    Threading/TaskManager.cpp
-    Threading/TaskManager.hpp
-)
-
-target_sources_grouped(
-    TARGET xrCore
-    NAME "Threading\\Util"
-    FILES
-    Threading/ThreadUtil.cpp
-    Threading/ThreadUtil.h
-)
-
-target_sources_grouped(
-    TARGET xrCore
     NAME "XML"
     FILES
     XML/XMLDocument.cpp
@@ -421,68 +394,6 @@ target_compile_definitions(xrCore
 
 set_target_properties(xrCore PROPERTIES
     PREFIX ""
-)
-
-target_precompile_headers(
-    xrCore
-    PUBLIC
-    "$<$<COMPILE_LANGUAGE:CXX>:<algorithm$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<alloca.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<array$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<atomic$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<chrono$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<cmath$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<cstdarg$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<cstddef$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<cstdint$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<cstdio$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<cstring$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<ctime$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<ctype.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<deque$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<dirent.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<errno.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<fcntl.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<functional$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<iterator$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<limits.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<limits$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<list$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<map$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<math.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<memory.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<memory$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<mutex$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<new$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<optional$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<pthread.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<random$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<sched.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<SDL.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<SDL_cpuinfo.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<SDL_loadso.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<SDL_timer.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<SDL_version.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<set$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<stack$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<stdarg.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<stdio.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<stdlib.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<string.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<string$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<string_view$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<sys/mman.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<sys/param.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<sys/stat.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<sys/types.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<thread$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<tracy/Tracy.hpp$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<type_traits$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<unistd.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<unordered_map$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<utility$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<utime.h$<ANGLE-R>>"
-    "$<$<COMPILE_LANGUAGE:CXX>:<vector$<ANGLE-R>>"
 )
 
 if (BUILD_SHARED_LIBS)

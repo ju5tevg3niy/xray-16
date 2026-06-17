@@ -9,7 +9,7 @@
 #include "pch.hpp"
 #include "UILines.h"
 #include "XML/UIXmlInitBase.h"
-#include "xrCore/Text/StringConversion.hpp"
+#include "xrCore/Text/string_conversion.hpp"
 
 constexpr auto COLOR_TAG_BEGIN = "%c[";
 constexpr auto COLOR_TAG_END = ']';

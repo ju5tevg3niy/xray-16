@@ -1,5 +1,6 @@
-#include "stdafx.h"
-#include "ThreadUtil.h"
+#include "Common/types.hpp"
+
+#include "ThreadUtil.hpp"
 
 #if defined(XR_PLATFORM_POSIX)
 #   include <pthread.h>

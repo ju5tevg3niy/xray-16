@@ -1,6 +1,5 @@
-#include "xrCore/Math/matrix.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
-
+#include "matrix.hpp"
+#include "math_funcs_inline.hpp"
 #include "quaternion.hpp"
 
 #define TRACE_QZERO_TOLERANCE 0.1f

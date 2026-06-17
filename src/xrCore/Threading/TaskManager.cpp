@@ -13,19 +13,25 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-#include "stdafx.h"
+#include <algorithm>
+#include <atomic>
+#include <cstddef>
+#include <mutex>
+#include <random>
+#include <SDL_events.h>
+#include <thread>
+#include <tracy/Tracy.hpp>
+
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCommon/xr_smart_pointers.h"
+#include "xrCore/Math/fast_lc16.hpp"
+#include "xrCore/xrDebug.h"
+#include "xrCore/xrDebug_macros.h"
 
 #include "Task.hpp"
 #include "TaskManager.hpp"
-
-#include "ScopeLock.hpp"
-
-#include <thread>
-#include <SDL_events.h>
-
-#include "Math/fast_lc16.hpp"
-
-#include <random>
+#include "ThreadUtil.hpp"
 
 #if defined(XR_ARCHITECTURE_X86) || defined(XR_ARCHITECTURE_X64) || defined(XR_ARCHITECTURE_E2K)
 #include <immintrin.h>

@@ -31,6 +31,8 @@ distribution.
 #include <string.h>
 #include <assert.h>
 
+#include "xrCommon/xr_string.h"
+
 // Help out windows:
 #if defined(_DEBUG) && !defined(DEBUG)
 #define DEBUG

@@ -1,7 +1,7 @@
-#include "stdafx.h"
+#include "xrCore/xrDebug_macros.h"
+
 #include "ScopeLock.hpp"
-#include "Threading/Lock.hpp"
-#include "xrDebug.h"
+#include "Lock.hpp"
 
 ScopeLock::ScopeLock(Lock* SyncObject) : syncObject(SyncObject)
 {

@@ -7,15 +7,22 @@
 // Modified : 24.07.2018
 // Modified by : Xottab_DUTY
 ////////////////////////////////////////////////////////////////////////////
+#include <SDL_clipboard.h>
+#include <SDL_error.h>
+#include <SDL_stdinc.h>
+#include <cctype>
+#include <cstddef>
+#include <locale>
 
-#include "stdafx.h"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCommon/xr_string.h"
+#include "xrCore/Text/string_conversion.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/log.h"
+#include "xrCore/xrDebug_macros.h"
 
 #include "os_clipboard.h"
-#include "Text/StringConversion.hpp"
-
-#include <SDL.h>
-
-#include <locale>
 
 void os_clipboard::copy_to_clipboard(pcstr buf, bool alreadyUTF8 /*= false*/)
 {

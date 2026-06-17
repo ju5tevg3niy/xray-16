@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstddef>
+
 #include "Common/types.hpp"
 
 #if defined(XR_PLATFORM_POSIX)

@@ -1,6 +1,10 @@
 #pragma once
 
-#include "xrCore/xrCore.h"
+#include <locale>
+
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCommon/xr_string.h"
 
 typedef u16 xr_wide_char; // Don't replace it with wchar_t, it won't work correctly, I don't know why.
 

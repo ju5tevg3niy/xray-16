@@ -1,10 +1,11 @@
 #pragma once
 
-#include "xrCore/Math/vector2.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
-#include "xrCore/Math/constants.hpp"
 #include "Common/types.hpp"
 #include "Common/Platform.hpp"
+
+#include "vector2.hpp"
+#include "math_funcs_inline.hpp"
+#include "constants.hpp"
 
 struct Fbox2
 {

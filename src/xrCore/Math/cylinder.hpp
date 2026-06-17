@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Common/types.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
-#include "xrCore/Math/vector3.hpp"
+
+#include "math_funcs_inline.hpp"
+#include "vector3.hpp"
 
 struct Fcylinder
 {

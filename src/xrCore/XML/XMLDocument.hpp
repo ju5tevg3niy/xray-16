@@ -1,9 +1,15 @@
 #pragma once
 
-#include "tinyxml.h"
+#include <cstddef>
 
+#include "Common/FSMacros.hpp"
+#include "Common/Noncopyable.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
 #include "xrCommon/xr_vector.h"
 #include "xrCore/xrstring.h"
+
+#include "tinyxml.h"
 
 // XXX: interesting idea is to have variable configs folder. Need we?
 static constexpr pcstr CONFIG_PATH = _game_config_;

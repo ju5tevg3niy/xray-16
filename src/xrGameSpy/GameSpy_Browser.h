@@ -1,7 +1,8 @@
 #pragma once
+
 #include "xrGameSpy/xrGameSpy.h"
 #include "xrCore/Threading/Lock.hpp"
-#include "xrCore/String/string_funcs_inline.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
 
 class CServerList;
 class CGameSpy_QR2;

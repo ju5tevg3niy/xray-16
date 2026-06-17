@@ -2,9 +2,10 @@
 
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCore/Math/vector3.hpp"
-#include "xrCore/Math/matrix33.hpp"
-#include "xrCore/Math/matrix.hpp"
+
+#include "vector3.hpp"
+#include "matrix33.hpp"
+#include "matrix.hpp"
 
 struct Fobb
 {

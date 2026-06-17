@@ -1,10 +1,11 @@
 #pragma once
 
-#include "xrCore/Math/vector3.hpp"
 #include "Common/Platform.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
-#include "xrCore/Math/constants.hpp"
-#include "xrCore/Math/matrix.hpp"
+
+#include "vector3.hpp"
+#include "math_funcs_inline.hpp"
+#include "constants.hpp"
+#include "matrix.hpp"
 
 class Fplane
 {

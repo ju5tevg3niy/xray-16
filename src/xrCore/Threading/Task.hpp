@@ -15,7 +15,16 @@
 */
 #pragma once
 
-#include <new> // for std::hardware_destructive_interference_size
+#include <algorithm>
+#include <atomic>
+#include <limits>
+#include <new>
+#include <cstddef>
+#include <type_traits>
+
+#include "Common/Noncopyable.hpp"
+#include "Common/Platform.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 #if defined(XR_ARCHITECTURE_X86) || defined(XR_ARCHITECTURE_ARM) || defined(XR_ARCHITECTURE_PPC)
 constexpr size_t RECOMMENDED_TASK_SIZE = 64; // bytes

@@ -1,5 +1,20 @@
-#include "stdafx.h"
+#include <algorithm>
+#include <cctype>
+#include <cstdlib>
+#include <cstring>
 
+#include "Common/FSMacros.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrstring.h"
+
+#include "tinyxml.h"
 #include "XMLDocument.hpp"
 
 pcstr UI_PATH = UI_PATH_DEFAULT;

@@ -6,7 +6,7 @@
 #include "client_id.h"
 #include "xrCommon/xr_string.h"
 #include "xrCore/Math/matrix.hpp"
-#include "xrCore/String/string_funcs_inline.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
 
 // fwd. decl.
 template <class T> struct _vector3;

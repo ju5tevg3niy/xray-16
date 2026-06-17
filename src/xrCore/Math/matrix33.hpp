@@ -2,11 +2,12 @@
 
 #include <cstddef>
 
-#include "xrCore/Math/vector3.hpp"
-#include "xrCore/Math/matrix.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
 #include "Common/Platform.hpp"
 #include "xrCore/xrMemory.h"
+
+#include "vector3.hpp"
+#include "matrix.hpp"
+#include "math_funcs_inline.hpp"
 
 struct Fmatrix33
 {

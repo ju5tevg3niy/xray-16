@@ -1,11 +1,11 @@
 #include <limits>
 
-#include "xrCore/Math/vector3.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
 #include "xrCore/xrDebug_macros.h"
 #include "xrCore/log.h"
 
 #include "cylinder.hpp"
+#include "vector3.hpp"
+#include "math_funcs_inline.hpp"
 
 int Fcylinder::intersect(const Fvector3& start, const Fvector3& dir, float afT[2], ecode code[2]) const
 {

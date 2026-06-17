@@ -56,7 +56,7 @@ struct xr_rtoken
 #endif
 
 #include "net_utils.h"
-#include "Threading/ThreadUtil.h"
+#include "xrCore/Threading/ThreadUtil.hpp"
 
 // destructor
 template <class T>

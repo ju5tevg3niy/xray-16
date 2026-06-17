@@ -1,8 +1,7 @@
 #include <cmath>
 
-#include "xrCore/Math/vector3.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
-
+#include "vector3.hpp"
+#include "math_funcs_inline.hpp"
 #include "vector3_ext.hpp"
 
 float dotproduct(const Fvector& v1, const Fvector& v2)

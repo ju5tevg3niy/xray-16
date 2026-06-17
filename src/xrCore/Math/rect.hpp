@@ -2,7 +2,8 @@
 
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCore/Math/vector2.hpp"
+
+#include "vector2.hpp"
 
 template <class T>
 struct _rect

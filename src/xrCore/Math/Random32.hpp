@@ -5,7 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : 32-bit peudo random number generator
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
 #include "Common/types.hpp"

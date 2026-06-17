@@ -1,14 +1,11 @@
 #pragma once
 
 #include "Common/types.hpp"
-#include "xrCore/vector.h"
-
-// fwd. decl.
-template <class T> struct _vector3;
-using Fvector = _vector3<float>;
-struct Fmatrix;
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/vector3.hpp"
 
 class IPhysicsGeometry;
+
 class IPhysicsElement
 {
 public:

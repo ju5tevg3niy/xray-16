@@ -32,7 +32,7 @@
 #include "DiscordGameSDK/discord.h"
 #define USE_DISCORD_INTEGRATION
 
-#include "xrCore/Text/StringConversion.hpp"
+#include "xrCore/Text/string_conversion.hpp"
 #endif
 
 // global variables

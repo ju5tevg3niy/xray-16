@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "stream_reader.h"
-#include "xrCore/String/string_funcs_inline.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
 
 #if defined(XR_PLATFORM_POSIX)
 #include <sys/mman.h>

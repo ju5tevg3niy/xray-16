@@ -2,7 +2,7 @@
 
 #include "Common/types.hpp"
 #include "xrCore/Math/vector2.hpp"
-#include "xrCore/Text/StringConversion.hpp"
+#include "xrCore/Text/string_conversion.hpp"
 
 class XR_NOVTABLE IGameFont
 {

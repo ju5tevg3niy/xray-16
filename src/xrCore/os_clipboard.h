@@ -7,6 +7,10 @@
 ////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <cstddef>
+
+#include "Common/types.hpp"
+
 namespace os_clipboard
 {
 void copy_to_clipboard(pcstr buf, bool alreadyUTF8 = false);

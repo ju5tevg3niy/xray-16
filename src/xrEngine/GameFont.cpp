@@ -3,7 +3,7 @@
 
 #include "GameFont.h"
 #include "xr_level_controller.h"
-#include "xrCore/Text/StringConversion.hpp"
+#include "xrCore/Text/string_conversion.hpp"
 #include "Render.h"
 #include "StringTable/StringTable.h"
 

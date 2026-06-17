@@ -2,10 +2,11 @@
 
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCore/Math/constants.hpp"
-#include "xrCore/Math/bitwise.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
 #include "xrCore/xrDebug_macros.h"
+
+#include "constants.hpp"
+#include "bitwise.hpp"
+#include "math_funcs_inline.hpp"
 
 constexpr s32 clamp_to_8bit(const s32 val) noexcept
 {

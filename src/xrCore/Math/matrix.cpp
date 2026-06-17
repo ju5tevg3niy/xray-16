@@ -1,12 +1,12 @@
 #include <cmath>
 
-#include "xrCore/Math/quaternion.hpp"
-#include "xrCore/Math/vector3.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
 #include "Common/types.hpp"
 #include "xrCore/xrDebug_macros.h"
 
 #include "matrix.hpp"
+#include "quaternion.hpp"
+#include "vector3.hpp"
+#include "math_funcs_inline.hpp"
 
 Fmatrix& Fmatrix::rotation(const Fquaternion& Q)
 {

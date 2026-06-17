@@ -13,7 +13,7 @@
 #include <unistd.h>
 #endif
 #include "xrCore.h"
-#include "xrCore/String/string_funcs_inline.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
 #include "Threading/TaskManager.hpp"
 
 #include <SDL.h>

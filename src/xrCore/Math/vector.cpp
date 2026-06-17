@@ -2,13 +2,12 @@
 #include <limits>
 
 #include "Common/types.hpp"
-#include "xrCore/Math/random.hpp"
-#include "xrCore/Math/math_funcs.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
-#include "xrCore/Math/constants.hpp"
-#include "xrCore/Math/vector3.hpp"
 #include "xrCore/xrDebug_macros.h"
 
+#include "random.hpp"
+#include "math_funcs.hpp"
+#include "math_funcs_inline.hpp"
+#include "constants.hpp"
 #include "vector3.hpp"
 
 template <typename T>

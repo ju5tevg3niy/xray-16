@@ -1,6 +1,11 @@
 #pragma once
 
+#include <functional>
 #include <thread>
+#include <utility>
+
+#include "Common/types.hpp"
+#include "xrCore/cpu.hpp"
 
 namespace Threading
 {

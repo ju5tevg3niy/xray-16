@@ -15,6 +15,7 @@
 */
 #pragma once
 
+#include "Task.hpp"
 #include "ParallelFor.hpp"
 
 namespace detail

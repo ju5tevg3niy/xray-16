@@ -3,7 +3,7 @@
 #include "dxFontRender.h"
 
 #include "xrEngine/GameFont.h"
-#include "xrCore/Text/StringConversion.hpp"
+#include "xrCore/Text/string_conversion.hpp"
 
 extern bool g_bRendering;
 extern Fvector2 g_current_font_scale;

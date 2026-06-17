@@ -5,7 +5,7 @@
 #include "IInputReceiver.h"
 #include "GameFont.h"
 #include "XR_IOConsole.h"
-#include "xrCore/Text/StringConversion.hpp"
+#include "xrCore/Text/string_conversion.hpp"
 
 #include <locale>
 

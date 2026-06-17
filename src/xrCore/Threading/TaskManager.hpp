@@ -15,11 +15,17 @@
 */
 #pragma once
 
+#include <atomic>
+#include <cstddef>
+#include <mutex>
+#include <thread>
+
+#include "Common/Platform.hpp"
+#include "xrCommon/xr_vector.h"
+#include "xrCommon/xr_smart_pointers.h"
+
 #include "Task.hpp"
 #include "Event.hpp"
-
-#include <atomic>
-#include <mutex>
 
 class TaskWorker;
 

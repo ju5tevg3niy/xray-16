@@ -1,6 +1,10 @@
-#include "stdafx.h"
-#include "Lock.hpp"
+#include <atomic>
 #include <mutex>
+
+#include "Common/Platform.hpp"
+#include "xrCore/xrMemory.h"
+
+#include "Lock.hpp"
 
 struct LockImpl
 {

@@ -10,7 +10,7 @@
 
 #include "xrCore/os_clipboard.h"
 #include "xrCore/buffer_vector.h"
-#include "xrCore/Text/StringConversion.hpp"
+#include "xrCore/Text/string_conversion.hpp"
 #include "Common/object_broker.h"
 #include "xr_input.h"
 

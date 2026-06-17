@@ -9,7 +9,7 @@
 #include "xrCore/Math/compressed_normal.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "xrCore/Math/random.hpp"
-#include "xrCore/String/string_funcs_inline.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
 #include "xrCore/xrDebug.h"
 #include "xrCore/log.h"
 

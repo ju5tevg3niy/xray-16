@@ -1,11 +1,12 @@
 #pragma once
 
-#include "xrCore/Math/constants.hpp"
-#include "xrCore/Math/vector3.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
 #include "Common/types.hpp"
 #include "Common/Platform.hpp"
 #include "xrCore/xrDebug_macros.h"
+
+#include "constants.hpp"
+#include "vector3.hpp"
+#include "math_funcs_inline.hpp"
 
 struct Fsphere
 {

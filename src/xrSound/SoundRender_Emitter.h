@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCore/String/string_funcs_inline.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
 
 #include "SoundRender.h"
 #include "SoundRender_Environment.h"

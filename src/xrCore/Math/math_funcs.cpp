@@ -1,8 +1,8 @@
 #include "Common/Platform.hpp"
-#include "xrCore/Math/bitwise.hpp"
-#include "xrCore/Math/constants.hpp"
-#include "xrCore/Math/math_funcs_inline.hpp"
 
+#include "bitwise.hpp"
+#include "constants.hpp"
+#include "math_funcs_inline.hpp"
 #include "math_funcs.hpp"
 
 // normalize angle (0..2PI)

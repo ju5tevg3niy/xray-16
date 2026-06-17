@@ -15,6 +15,13 @@
 */
 #pragma once
 
+#include <cstddef>
+#include <iterator>
+#include <thread>
+
+#include "xrCore/xrDebug_macros.h"
+
+#include "Task.hpp"
 #include "TaskManager.hpp"
 
 class TaskWorker;
