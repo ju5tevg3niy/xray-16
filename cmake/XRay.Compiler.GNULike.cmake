@@ -159,9 +159,9 @@ else()
 endif()
 
 set(XRAY_ENABLE_WARNINGS
-    -Wall
+    #-Wall
     #-Werror
-    -Wextra
+    #-Wextra
     #-pedantic
     -Wno-unknown-pragmas
     -Wno-strict-aliasing
