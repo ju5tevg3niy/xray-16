@@ -25,3 +25,4 @@ doc/doxygen/html/*
 
 /compile_commands.json
 !.clangd
+!.clang-format

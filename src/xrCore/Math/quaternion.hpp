@@ -3,12 +3,12 @@
 #include <cmath>
 
 #include "Common/Platform.hpp"
-#include "xrCore/xrDebug_macros.h"
 #include "xrCore/xrDebug.h"
+#include "xrCore/xrDebug_macros.h"
 
-#include "vector3.hpp"
-#include "math_funcs_inline.hpp"
 #include "constants.hpp"
+#include "math_funcs_inline.hpp"
+#include "vector3.hpp"
 
 /***************************************************************************
  The quaternion module contains basic support for a quaternion object.
@@ -44,9 +44,10 @@
  and let P be a quaternion(0,p).  Protated = q*P*qinverse
  ( Protated = q*P*q' if q is a unit quaternion)
 
- concatenation rotations is similar to matrix concatenation.  given two rotations
- q1 and q2,  to rotate by q1, then q2:  let qc = (q2*q1), then the combined
- rotation is given by qc*P*qcinverse (= qc*P*qc' if q is a unit quaternion)
+ concatenation rotations is similar to matrix concatenation.  given two
+ rotations q1 and q2,  to rotate by q1, then q2:  let qc = (q2*q1), then the
+ combined rotation is given by qc*P*qcinverse (= qc*P*qc' if q is a unit
+ quaternion)
 
  multiplication:
  q1 = w1 + x1i + y1j + z1k
@@ -63,10 +64,10 @@
  q1*q2 = q3 = (s1*s2 - dot_product(v1,v2),   {s3}
  (s1*v2 + s2*v1 + cross_product(v1,v2)) {v3}
 
- interpolation - it is possible (and sometimes reasonable) to interpolate between
- two quaternions by interpolating each component.  This does not quarantee a
- resulting unit quaternion, and will result in an animation with non-linear
- rotational velocity.
+ interpolation - it is possible (and sometimes reasonable) to interpolate
+ between two quaternions by interpolating each component.  This does not
+ quarantee a resulting unit quaternion, and will result in an animation with
+ non-linear rotational velocity.
 
  spherical interpolation: (slerp) treat the quaternions as vectors
  find the angle between them (w = arccos(q1 dot q2) ).
@@ -150,305 +151,285 @@
 
 struct Fmatrix;
 
-struct Fquaternion
-{
-    using TYPE = float;
-    using Self = Fquaternion;
-    using SelfRef = Self&;
-    using SelfCRef = const Self&;
+struct Fquaternion {
+  using TYPE = float;
+  using Self = Fquaternion;
+  using SelfRef = Self&;
+  using SelfCRef = const Self&;
 
-private:
-    static float _asin_(float val)
-    {
-        const float c1 = 0.892399f;
-        const float c3 = 1.693204f;
-        const float c5 = -3.853735f;
-        const float c7 = 2.838933f;
+ private:
+  static float _asin_(float val) {
+    const float c1 = 0.892399f;
+    const float c3 = 1.693204f;
+    const float c5 = -3.853735f;
+    const float c7 = 2.838933f;
 
-        const float x2 = val * val;
-        const float d = val * (c1 + x2 * (c3 + x2 * (c5 + x2 * c7)));
+    const float x2 = val * val;
+    const float d = val * (c1 + x2 * (c3 + x2 * (c5 + x2 * c7)));
 
-        return d;
+    return d;
+  }
+
+  static float _acos_(float val) { return PI_DIV_2 - _asin_(val); }
+
+ public:
+  float x, y, z, w;
+
+  SelfRef set(float W, float X, float Y, float Z)  // don't normalize
+  {
+    x = X;
+    y = Y;
+    z = Z;
+    w = W;
+    return *this;
+  }
+
+  SelfRef set(SelfCRef Q)  // don't normalize
+  {
+    set(Q.w, Q.x, Q.y, Q.z);
+    return *this;
+  }
+
+  SelfRef set(const Fmatrix& m);
+
+  // multiplies q1 * q2, and places the result in *this.
+  // no failure.  renormalization not automatic
+
+  /*
+   q1*q2 = q3 =
+   (w1*w2 - x1*x2 - y1*y2 - z1*z2)     {w3}
+   (w1*x2 + x1*w2 + y1*z2 - z1*y2)i {x3}
+   (w1*y2 - x1*z2 + y1*w2 + z1*x2)j    {y3}
+   (w1*z2 + x1*y2 - y1*x2 + z1*w2)k {z3}
+   */
+  SelfRef mul(SelfCRef q1l, SelfCRef q2l) {
+    VERIFY(q1l.isValid());
+    VERIFY(q2l.isValid());
+
+    w = ((q1l.w * q2l.w) - (q1l.x * q2l.x) - (q1l.y * q2l.y) - (q1l.z * q2l.z));
+
+    x = ((q1l.w * q2l.x) + (q1l.x * q2l.w) + (q1l.y * q2l.z) - (q1l.z * q2l.y));
+
+    y = ((q1l.w * q2l.y) - (q1l.x * q2l.z) + (q1l.y * q2l.w) + (q1l.z * q2l.x));
+
+    z = ((q1l.w * q2l.z) + (q1l.x * q2l.y) - (q1l.y * q2l.x) + (q1l.z * q2l.w));
+    return *this;
+  }
+
+  SelfRef add(SelfCRef q1, SelfCRef q2) {
+    x = q1.x + q2.x;
+    y = q1.y + q2.y;
+    z = q1.z + q2.z;
+    w = q1.w + q2.w;
+    return *this;
+  }
+
+  SelfRef sub(SelfCRef q1, SelfCRef q2) {
+    x = q1.x - q2.x;
+    y = q1.y - q2.y;
+    z = q1.z - q2.z;
+    w = q1.w - q2.w;
+    return *this;
+  }
+
+  SelfRef add(SelfCRef q) {
+    x += q.x;
+    y += q.y;
+    z += q.z;
+    w += q.w;
+    return *this;
+  }
+
+  SelfRef sub(SelfCRef q) {
+    x -= q.x;
+    y -= q.y;
+    z -= q.z;
+    w -= q.w;
+    return *this;
+  }
+
+  // validates numerical stability
+  bool isValid() const {
+    if ((w * w) < 0.0f)
+      return false;
+    if ((x * x) < 0.0f)
+      return false;
+    if ((y * y) < 0.0f)
+      return false;
+    if ((z * z) < 0.0f)
+      return false;
+    return true;
+  }
+
+  // checks for Unit-length quaternion
+  bool isUnit() const {
+    float m = magnitude();
+
+    if ((m < 1.0 + UNIT_TOLERANCE) && (m > 1.0 - UNIT_TOLERANCE))
+      return true;
+    return false;
+  }
+
+  // normalizes Q to be a unit geQuaternion
+  SelfRef normalize() {
+    float m = _sqrt(magnitude());
+
+    if ((m < QZERO_TOLERANCE) && (m > -QZERO_TOLERANCE))
+      return *this;
+
+    float one_over_magnitude = 1.0f / m;
+
+    w *= one_over_magnitude;
+    x *= one_over_magnitude;
+    y *= one_over_magnitude;
+    z *= one_over_magnitude;
+    return *this;
+  }
+
+  // inversion
+  SelfRef inverse(SelfCRef Q) { return set(Q.w, -Q.x, -Q.y, -Q.z); }
+  SelfRef inverse() { return set(w, -x, -y, -z); }
+  SelfRef inverse_with_w(SelfCRef Q) { return set(-Q.w, -Q.x, -Q.y, -Q.z); }
+  SelfRef inverse_with_w() { return set(-w, -x, -y, -z); }
+
+  // identity - no rotation
+  SelfRef identity() { return set(1.f, 0.f, 0.f, 0.f); }
+
+  // square length
+  float magnitude() const { return w * w + x * x + y * y + z * z; }
+
+  // makes unit rotation
+  SelfRef rotationYawPitchRoll(float _x, float _y, float _z) {
+    float fSinYaw = _sin(_x * .5f);
+    float fCosYaw = _cos(_x * .5f);
+    float fSinPitch = _sin(_y * .5f);
+    float fCosPitch = _cos(_y * .5f);
+    float fSinRoll = _sin(_z * .5f);
+    float fCosRoll = _cos(_z * .5f);
+
+    x = fSinRoll * fCosPitch * fCosYaw - fCosRoll * fSinPitch * fSinYaw;
+    y = fCosRoll * fSinPitch * fCosYaw + fSinRoll * fCosPitch * fSinYaw;
+    z = fCosRoll * fCosPitch * fSinYaw - fSinRoll * fSinPitch * fCosYaw;
+    w = fCosRoll * fCosPitch * fCosYaw + fSinRoll * fSinPitch * fSinYaw;
+    return *this;
+  }
+
+  // makes unit rotation
+  SelfRef rotationYawPitchRoll(const Fvector& ypr) {
+    return rotationYawPitchRoll(ypr.x, ypr.y, ypr.z);
+  }
+
+  // set a quaternion from an axis and a rotation around the axis
+  SelfRef rotation(Fvector& axis, float angle) {
+    w = _cos(angle * 0.5f);
+    const float sinTheta = _sin(angle * 0.5f);
+    x = sinTheta * axis.x;
+    y = sinTheta * axis.y;
+    z = sinTheta * axis.z;
+    return *this;
+  }
+
+  // gets an axis and angle of rotation around the axis from a quaternion
+  // returns TRUE if there is an axis.
+  // returns FALSE if there is no axis (and Axis is set to 0,0,0, and Theta is
+  // 0)
+
+  bool get_axis_angle(Fvector& axis, float& angle) {
+    float s = _sqrt(x * x + y * y + z * z);
+    if (s > EPS_S) {
+      float OneOverSinTheta = 1.f / s;
+      axis.x = OneOverSinTheta * x;
+      axis.y = OneOverSinTheta * y;
+      axis.z = OneOverSinTheta * z;
+      angle = 2.0f * std::atan2(s, w);
+      return true;
     }
+    axis.x = axis.y = axis.z = 0.0f;
+    angle = 0.0f;
+    return false;
+  }
 
-    static float _acos_(float val) { return PI_DIV_2 - _asin_(val); }
-
-public:
-    float x, y, z, w;
-
-    SelfRef set(float W, float X, float Y, float Z) // don't normalize
-    {
-        x = X;
-        y = Y;
-        z = Z;
-        w = W;
-        return *this;
-    }
-
-    SelfRef set(SelfCRef Q) // don't normalize
-    {
-        set(Q.w, Q.x, Q.y, Q.z);
-        return *this;
-    }
-
-    SelfRef set(const Fmatrix& m);
-
-    // multiplies q1 * q2, and places the result in *this.
-    // no failure.  renormalization not automatic
-
-    /*
-     q1*q2 = q3 =
-     (w1*w2 - x1*x2 - y1*y2 - z1*z2)     {w3}
-     (w1*x2 + x1*w2 + y1*z2 - z1*y2)i {x3}
-     (w1*y2 - x1*z2 + y1*w2 + z1*x2)j    {y3}
-     (w1*z2 + x1*y2 - y1*x2 + z1*w2)k {z3}
-     */
-    SelfRef mul(SelfCRef q1l, SelfCRef q2l)
-    {
-        VERIFY(q1l.isValid());
-        VERIFY(q2l.isValid());
-
-        w = ((q1l.w * q2l.w) - (q1l.x * q2l.x) - (q1l.y * q2l.y) - (q1l.z * q2l.z));
-
-        x = ((q1l.w * q2l.x) + (q1l.x * q2l.w) + (q1l.y * q2l.z) - (q1l.z * q2l.y));
-
-        y = ((q1l.w * q2l.y) - (q1l.x * q2l.z) + (q1l.y * q2l.w) + (q1l.z * q2l.x));
-
-        z = ((q1l.w * q2l.z) + (q1l.x * q2l.y) - (q1l.y * q2l.x) + (q1l.z * q2l.w));
-        return *this;
-    }
-
-    SelfRef add(SelfCRef q1, SelfCRef q2)
-    {
-        x = q1.x + q2.x;
-        y = q1.y + q2.y;
-        z = q1.z + q2.z;
-        w = q1.w + q2.w;
-        return *this;
-    }
-
-    SelfRef sub(SelfCRef q1, SelfCRef q2)
-    {
-        x = q1.x - q2.x;
-        y = q1.y - q2.y;
-        z = q1.z - q2.z;
-        w = q1.w - q2.w;
-        return *this;
-    }
-
-    SelfRef add(SelfCRef q)
-    {
-        x += q.x;
-        y += q.y;
-        z += q.z;
-        w += q.w;
-        return *this;
-    }
-
-    SelfRef sub(SelfCRef q)
-    {
-        x -= q.x;
-        y -= q.y;
-        z -= q.z;
-        w -= q.w;
-        return *this;
-    }
-
-    // validates numerical stability
-    bool isValid() const
-    {
-        if ((w * w) < 0.0f)
-            return false;
-        if ((x * x) < 0.0f)
-            return false;
-        if ((y * y) < 0.0f)
-            return false;
-        if ((z * z) < 0.0f)
-            return false;
-        return true;
-    }
-
-    // checks for Unit-length quaternion
-    bool isUnit() const
-    {
-        float m = magnitude();
-
-        if ((m < 1.0 + UNIT_TOLERANCE) && (m > 1.0 - UNIT_TOLERANCE))
-            return true;
-        return false;
-    }
-
-    // normalizes Q to be a unit geQuaternion
-    SelfRef normalize()
-    {
-        float m = _sqrt(magnitude());
-
-        if ((m < QZERO_TOLERANCE) && (m > -QZERO_TOLERANCE))
-            return *this;
-
-        float one_over_magnitude = 1.0f / m;
-
-        w *= one_over_magnitude;
-        x *= one_over_magnitude;
-        y *= one_over_magnitude;
-        z *= one_over_magnitude;
-        return *this;
-    }
-
-    // inversion
-    SelfRef inverse(SelfCRef Q) { return set(Q.w, -Q.x, -Q.y, -Q.z); }
-    SelfRef inverse() { return set(w, -x, -y, -z); }
-    SelfRef inverse_with_w(SelfCRef Q) { return set(-Q.w, -Q.x, -Q.y, -Q.z); }
-    SelfRef inverse_with_w() { return set(-w, -x, -y, -z); }
-
-    // identity - no rotation
-    SelfRef identity() { return set(1.f, 0.f, 0.f, 0.f); }
-
-    // square length
-    float magnitude() const { return w * w + x * x + y * y + z * z; }
-
-    // makes unit rotation
-    SelfRef rotationYawPitchRoll(float _x, float _y, float _z)
-    {
-        float fSinYaw = _sin(_x * .5f);
-        float fCosYaw = _cos(_x * .5f);
-        float fSinPitch = _sin(_y * .5f);
-        float fCosPitch = _cos(_y * .5f);
-        float fSinRoll = _sin(_z * .5f);
-        float fCosRoll = _cos(_z * .5f);
-
-        x = fSinRoll * fCosPitch * fCosYaw - fCosRoll * fSinPitch * fSinYaw;
-        y = fCosRoll * fSinPitch * fCosYaw + fSinRoll * fCosPitch * fSinYaw;
-        z = fCosRoll * fCosPitch * fSinYaw - fSinRoll * fSinPitch * fCosYaw;
-        w = fCosRoll * fCosPitch * fCosYaw + fSinRoll * fSinPitch * fSinYaw;
-        return *this;
-    }
-
-    // makes unit rotation
-    SelfRef rotationYawPitchRoll(const Fvector& ypr) { return rotationYawPitchRoll(ypr.x, ypr.y, ypr.z); }
-
-    // set a quaternion from an axis and a rotation around the axis
-    SelfRef rotation(Fvector& axis, float angle)
-    {
-        w = _cos(angle * 0.5f);
-        const float sinTheta = _sin(angle * 0.5f);
-        x = sinTheta * axis.x;
-        y = sinTheta * axis.y;
-        z = sinTheta * axis.z;
-        return *this;
-    }
-
-    // gets an axis and angle of rotation around the axis from a quaternion
-    // returns TRUE if there is an axis.
-    // returns FALSE if there is no axis (and Axis is set to 0,0,0, and Theta is 0)
-
-    bool get_axis_angle(Fvector& axis, float& angle)
-    {
-        float s = _sqrt(x * x + y * y + z * z);
-        if (s > EPS_S)
-        {
-            float OneOverSinTheta = 1.f / s;
-            axis.x = OneOverSinTheta * x;
-            axis.y = OneOverSinTheta * y;
-            axis.z = OneOverSinTheta * z;
-            angle = 2.0f * std::atan2(s, w);
-            return true;
-        }
-        axis.x = axis.y = axis.z = 0.0f;
-        angle = 0.0f;
-        return false;
-    }
-
-    // spherical interpolation between q0 and q1.   0<=t<=1
-    // resulting quaternion is 'between' q0 and q1
-    // with t==0 being all q0, and t==1 being all q1.
-    // returns a quaternion with a positive W - always takes shortest route
-    // through the positive W domain.
-    ICF SelfRef slerp(SelfCRef Q0, SelfCRef Q1, float tm)
-    {
-        float Scale0, Scale1, sign;
+  // spherical interpolation between q0 and q1.   0<=t<=1
+  // resulting quaternion is 'between' q0 and q1
+  // with t==0 being all q0, and t==1 being all q1.
+  // returns a quaternion with a positive W - always takes shortest route
+  // through the positive W domain.
+  ICF SelfRef slerp(SelfCRef Q0, SelfCRef Q1, float tm) {
+    float Scale0, Scale1, sign;
 
 #ifdef DEBUG
-        if (!(0.0f <= tm && tm <= 1.0f))
-            xrDebug::Fatal(DEBUG_INFO, "Quaternion::slerp - invalid 'tm' arrived: %f", tm);
+    if (!(0.0f <= tm && tm <= 1.0f))
+      xrDebug::Fatal(DEBUG_INFO, "Quaternion::slerp - invalid 'tm' arrived: %f",
+                     tm);
 #endif
 
-        float cosom = (Q0.w * Q1.w) + (Q0.x * Q1.x) + (Q0.y * Q1.y) + (Q0.z * Q1.z);
+    float cosom = (Q0.w * Q1.w) + (Q0.x * Q1.x) + (Q0.y * Q1.y) + (Q0.z * Q1.z);
 
-        if (cosom < 0)
-        {
-            cosom = -cosom;
-            sign = -1.f;
-        }
-        else
-        {
-            sign = 1.f;
-        }
-
-        if ((1.0f - cosom) > EPS)
-        {
-            float omega = _acos_(cosom);
-            float i_sinom = 1.f / _sin(omega);
-            float t_omega = tm * omega;
-            Scale0 = _sin(omega - t_omega) * i_sinom;
-            Scale1 = _sin(t_omega) * i_sinom;
-        }
-        else
-        {
-            // has numerical difficulties around cosom == 0
-            // in this case degenerate to linear interpolation
-            Scale0 = 1.0f - tm;
-            Scale1 = tm;
-        }
-        Scale1 *= sign;
-
-        x = Scale0 * Q0.x + Scale1 * Q1.x;
-        y = Scale0 * Q0.y + Scale1 * Q1.y;
-        z = Scale0 * Q0.z + Scale1 * Q1.z;
-        w = Scale0 * Q0.w + Scale1 * Q1.w;
-        return *this;
+    if (cosom < 0) {
+      cosom = -cosom;
+      sign = -1.f;
+    } else {
+      sign = 1.f;
     }
 
-    // return true if quaternions differ elementwise by less than Tolerance.
-    bool cmp(SelfCRef Q, float Tolerance = 0.0001f)
-    {
-        if (// they are the same but with opposite signs
-            ((_abs(x + Q.x) <= Tolerance) && (_abs(y + Q.y) <= Tolerance) && (_abs(z + Q.z) <= Tolerance) &&
-                (_abs(w + Q.w) <= Tolerance)) || // they are the same with same signs
-            ((_abs(x - Q.x) <= Tolerance) && (_abs(y - Q.y) <= Tolerance) && (_abs(z - Q.z) <= Tolerance) &&
-                (_abs(w - Q.w) <= Tolerance)))
-            return true;
-        return false;
+    if ((1.0f - cosom) > EPS) {
+      float omega = _acos_(cosom);
+      float i_sinom = 1.f / _sin(omega);
+      float t_omega = tm * omega;
+      Scale0 = _sin(omega - t_omega) * i_sinom;
+      Scale1 = _sin(t_omega) * i_sinom;
+    } else {
+      // has numerical difficulties around cosom == 0
+      // in this case degenerate to linear interpolation
+      Scale0 = 1.0f - tm;
+      Scale1 = tm;
     }
+    Scale1 *= sign;
 
-    SelfRef ln(SelfCRef Q)
-    {
-        float n = Q.x * Q.x + Q.y * Q.y + Q.z * Q.z;
-        float r = _sqrt(n);
-        float t = (r > EPS_S) ? std::atan2(r, Q.w) / r : float(0);
-        x = t * Q.x;
-        y = t * Q.y;
-        z = t * Q.z;
-        w = .5f * std::log(n + Q.w * Q.w);
-        return *this;
-    }
+    x = Scale0 * Q0.x + Scale1 * Q1.x;
+    y = Scale0 * Q0.y + Scale1 * Q1.y;
+    z = Scale0 * Q0.z + Scale1 * Q1.z;
+    w = Scale0 * Q0.w + Scale1 * Q1.w;
+    return *this;
+  }
 
-    SelfRef exp(SelfCRef Q)
-    {
-        float r = _sqrt(Q.x * Q.x + Q.y * Q.y + Q.z * Q.z);
-        float et = std::exp(Q.w);
-        float s = (r >= EPS_S) ? et * _sin(r) / r : 0.f;
-        x = s * Q.x;
-        y = s * Q.y;
-        z = s * Q.z;
-        w = et * _cos(r);
-        return *this;
-    }
+  // return true if quaternions differ elementwise by less than Tolerance.
+  bool cmp(SelfCRef Q, float Tolerance = 0.0001f) {
+    if (  // they are the same but with opposite signs
+        ((_abs(x + Q.x) <= Tolerance) && (_abs(y + Q.y) <= Tolerance) &&
+         (_abs(z + Q.z) <= Tolerance) &&
+         (_abs(w + Q.w) <= Tolerance)) ||  // they are the same with same signs
+        ((_abs(x - Q.x) <= Tolerance) && (_abs(y - Q.y) <= Tolerance) &&
+         (_abs(z - Q.z) <= Tolerance) && (_abs(w - Q.w) <= Tolerance)))
+      return true;
+    return false;
+  }
+
+  SelfRef ln(SelfCRef Q) {
+    float n = Q.x * Q.x + Q.y * Q.y + Q.z * Q.z;
+    float r = _sqrt(n);
+    float t = (r > EPS_S) ? std::atan2(r, Q.w) / r : float(0);
+    x = t * Q.x;
+    y = t * Q.y;
+    z = t * Q.z;
+    w = .5f * std::log(n + Q.w * Q.w);
+    return *this;
+  }
+
+  SelfRef exp(SelfCRef Q) {
+    float r = _sqrt(Q.x * Q.x + Q.y * Q.y + Q.z * Q.z);
+    float et = std::exp(Q.w);
+    float s = (r >= EPS_S) ? et * _sin(r) / r : 0.f;
+    x = s * Q.x;
+    y = s * Q.y;
+    z = s * Q.z;
+    w = et * _cos(r);
+    return *this;
+  }
 };
 
-inline bool _valid(const Fquaternion& s)
-{
-    return _valid(s.x) && _valid(s.y) && _valid(s.z) && _valid(s.w);
+inline bool _valid(const Fquaternion& s) {
+  return _valid(s.x) && _valid(s.y) && _valid(s.z) && _valid(s.w);
 }
 
 #undef UNIT_TOLERANCE

@@ -9,17 +9,15 @@
 
 #include "Common/types.hpp"
 
-class CRandom32
-{
-private:
-    u32 m_seed;
+class CRandom32 {
+ private:
+  u32 m_seed;
 
-public:
-    inline u32 seed() const { return m_seed; }
-    inline void seed(u32 seed) { m_seed = seed; }
-    inline u32 random(u32 range)
-    {
-        m_seed = 0x08088405U * m_seed + 1U;
-        return u32((u64(m_seed) * u64(range)) >> 32U);
-    }
+ public:
+  inline u32 seed() const { return m_seed; }
+  inline void seed(u32 seed) { m_seed = seed; }
+  inline u32 random(u32 range) {
+    m_seed = 0x08088405U * m_seed + 1U;
+    return u32((u64(m_seed) * u64(range)) >> 32U);
+  }
 };

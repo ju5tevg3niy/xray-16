@@ -4,11 +4,10 @@
 
 class Lock;
 
-class ScopeLock : Noncopyable
-{
-    Lock* syncObject;
+class ScopeLock : Noncopyable {
+  Lock* syncObject;
 
-public:
-    ScopeLock(Lock* SyncObject);
-    ~ScopeLock();
+ public:
+  ScopeLock(Lock* SyncObject);
+  ~ScopeLock();
 };

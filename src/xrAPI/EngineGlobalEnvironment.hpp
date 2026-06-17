@@ -10,20 +10,19 @@ class ISoundManager;
 class IUIRender;
 class UICore;
 
-class EngineGlobalEnvironment
-{
-public:
-    IRender* Render;
-    IDebugRender* DRender;
-    CDUInterface* DU;
-    IUIRender* UIRender;
-    IRenderFactory* RenderFactory;
-    CScriptEngine* ScriptEngine;
-    AISpaceBase* AISpace;
-    ISoundManager* Sound;
-    UICore* UI;
+class EngineGlobalEnvironment {
+ public:
+  IRender* Render;
+  IDebugRender* DRender;
+  CDUInterface* DU;
+  IUIRender* UIRender;
+  IRenderFactory* RenderFactory;
+  CScriptEngine* ScriptEngine;
+  AISpaceBase* AISpace;
+  ISoundManager* Sound;
+  UICore* UI;
 
-    bool isDedicatedServer;
+  bool isDedicatedServer;
 };
 
 extern EngineGlobalEnvironment GEnv;

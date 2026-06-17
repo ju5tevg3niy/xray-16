@@ -21,96 +21,93 @@
 #include <thread>
 
 #include "Common/Platform.hpp"
-#include "xrCommon/xr_vector.h"
 #include "xrCommon/xr_smart_pointers.h"
+#include "xrCommon/xr_vector.h"
 
-#include "Task.hpp"
 #include "Event.hpp"
+#include "Task.hpp"
 
 class TaskWorker;
 
-class TaskManager final
-{
-private:
-    xr_vector<TaskWorker*> workers;
-    xr_vector<std::thread> workerThreads;
-    std::mutex workersLock;
+class TaskManager final {
+ private:
+  xr_vector<TaskWorker*> workers;
+  xr_vector<std::thread> workerThreads;
+  std::mutex workersLock;
 
-    inline static Event newWorkArrived;
-    std::atomic_size_t activeWorkersCount{};
+  inline static Event newWorkArrived;
+  std::atomic_size_t activeWorkersCount{};
 
-    std::atomic_bool shouldPause{};
-    std::atomic_bool shouldStop{};
+  std::atomic_bool shouldPause{};
+  std::atomic_bool shouldStop{};
 
-private:
-    ICN void TaskWorkerStart();
+ private:
+  ICN void TaskWorkerStart();
 
-    [[nodiscard]] Task* TryToSteal() const;
+  [[nodiscard]] Task* TryToSteal() const;
 
-    [[nodiscard]] static Task* AllocateTask() noexcept;
+  [[nodiscard]] static Task* AllocateTask() noexcept;
 
-    static void ExecuteTask(Task& task);
+  static void ExecuteTask(Task& task);
 
-    void SetThreadStatus(bool active) noexcept;
+  void SetThreadStatus(bool active) noexcept;
 
-public:
-    TaskManager();
-    ~TaskManager();
+ public:
+  TaskManager();
+  ~TaskManager();
 
-    void SpawnThreads();
+  void SpawnThreads();
 
-    void RegisterThisThreadAsWorker();
-    void UnregisterThisThreadAsWorker();
+  void RegisterThisThreadAsWorker();
+  void UnregisterThisThreadAsWorker();
 
-public:
-    // Create a task, but don't run it yet
-    template <typename Invokable>
-    [[nodiscard]] static Task& CreateTask(Invokable func)
-    {
-        return *new (AllocateTask()) Task(func);
-    }
+ public:
+  // Create a task, but don't run it yet
+  template <typename Invokable>
+  [[nodiscard]] static Task& CreateTask(Invokable func) {
+    return *new (AllocateTask()) Task(func);
+  }
 
-    // Create a task as child, but don't run it yet
-    template <typename Invokable>
-    [[nodiscard]] static Task& CreateTask(Task& parent, Invokable func)
-    {
-        return *new (AllocateTask()) Task(func, &parent);
-    }
+  // Create a task as child, but don't run it yet
+  template <typename Invokable>
+  [[nodiscard]] static Task& CreateTask(Task& parent, Invokable func) {
+    return *new (AllocateTask()) Task(func, &parent);
+  }
 
-    // Run task in parallel
-    static void PushTask(Task& task) noexcept;
+  // Run task in parallel
+  static void PushTask(Task& task) noexcept;
 
-    // Run task immediately in this thread
-    static void RunTask(Task& task);
+  // Run task immediately in this thread
+  static void RunTask(Task& task);
 
-    // Shortcut: create a task and run it immediately
-    template <typename Invokable>
-    static Task& AddTask(Invokable func)
-    {
-        Task& task = CreateTask(func);
-        PushTask(task);
-        return task;
-    }
+  // Shortcut: create a task and run it immediately
+  template <typename Invokable>
+  static Task& AddTask(Invokable func) {
+    Task& task = CreateTask(func);
+    PushTask(task);
+    return task;
+  }
 
-    // Shortcut: create task and run it immediately
-    template <typename Invokable>
-    static Task& AddTask(Task& parent, Invokable func)
-    {
-        Task& task = CreateTask(parent, func);
-        PushTask(task);
-        return task;
-    }
+  // Shortcut: create task and run it immediately
+  template <typename Invokable>
+  static Task& AddTask(Task& parent, Invokable func) {
+    Task& task = CreateTask(parent, func);
+    PushTask(task);
+    return task;
+  }
 
-public:
-    void Wait(const Task& task, bool updateSystemEvents = false) const;
-    bool ExecuteOneTask() const;
+ public:
+  void Wait(const Task& task, bool updateSystemEvents = false) const;
+  bool ExecuteOneTask() const;
 
-    void Pause(bool pause) { shouldPause.store(pause, std::memory_order_release); }
+  void Pause(bool pause) {
+    shouldPause.store(pause, std::memory_order_release);
+  }
 
-public:
-    [[nodiscard]] size_t GetWorkersCount() const noexcept;
-    [[nodiscard]] static size_t GetCurrentWorkerID() noexcept;
-    void GetStats(size_t& allocated, size_t& pushed, size_t& finished);
+ public:
+  [[nodiscard]] size_t GetWorkersCount() const noexcept;
+  [[nodiscard]] static size_t GetCurrentWorkerID() noexcept;
+  void GetStats(size_t& allocated, size_t& pushed, size_t& finished);
 };
 
 extern xr_unique_ptr<TaskManager> TaskScheduler;

@@ -27,7 +27,12 @@ float angle_lerp(float A, float B, float f);
 
 float angle_inertion(float src, float tgt, float speed, float clmp, float dt);
 
-float angle_inertion_var(float src, float tgt, float min_speed, float max_speed, float clmp, float dt);
+float angle_inertion_var(float src,
+                         float tgt,
+                         float min_speed,
+                         float max_speed,
+                         float clmp,
+                         float dt);
 
 double rsqrt(double v) noexcept;
 

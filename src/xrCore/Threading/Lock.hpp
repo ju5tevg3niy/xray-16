@@ -7,42 +7,42 @@ typedef void (*add_profile_portion_callback)(pcstr id, const u64& time);
 void set_add_profile_portion(add_profile_portion_callback callback);
 
 #define MUTEX_PROFILE_PREFIX_ID #mutexes /
-#define MUTEX_PROFILE_ID(a) MACRO_TO_STRING(CONCATENIZE(MUTEX_PROFILE_PREFIX_ID, a))
-#endif // CONFIG_PROFILE_LOCKS
+#define MUTEX_PROFILE_ID(a) \
+  MACRO_TO_STRING(CONCATENIZE(MUTEX_PROFILE_PREFIX_ID, a))
+#endif  // CONFIG_PROFILE_LOCKS
 
-class Lock
-{
-    struct LockImpl* impl{};
+class Lock {
+  struct LockImpl* impl{};
 
-public:
+ public:
 #ifdef CONFIG_PROFILE_LOCKS
-    Lock(const char* id);
+  Lock(const char* id);
 #else
-    Lock();
+  Lock();
 #endif
-    ~Lock();
+  ~Lock();
 
-    Lock(Lock& other) = delete;
-    Lock& operator=(Lock& other) = delete;
+  Lock(Lock& other) = delete;
+  Lock& operator=(Lock& other) = delete;
 
-    Lock(Lock&& other) noexcept(false);
-    Lock& operator=(Lock&& other) noexcept(false);
+  Lock(Lock&& other) noexcept(false);
+  Lock& operator=(Lock&& other) noexcept(false);
 
 #ifdef CONFIG_PROFILE_LOCKS
-    void Enter();
+  void Enter();
 #else
-    void Enter();
+  void Enter();
 #endif
 
-    bool TryEnter();
+  bool TryEnter();
 
-    void Leave();
+  void Leave();
 
-    bool IsLocked() const { return !!lockCounter; }
+  bool IsLocked() const { return !!lockCounter; }
 
-private:
-    std::atomic_int lockCounter;
+ private:
+  std::atomic_int lockCounter;
 #ifdef CONFIG_PROFILE_LOCKS
-    const char* id;
+  const char* id;
 #endif
 };
