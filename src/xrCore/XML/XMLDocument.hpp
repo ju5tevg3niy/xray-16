@@ -1,12 +1,12 @@
 #pragma once
 
 #include <cstddef>
+#include <vector>
 
 #include "Common/FSMacros.hpp"
 #include "Common/Noncopyable.hpp"
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
-#include "xrCommon/xr_vector.h"
 #include "xrCore/xrstring.h"
 
 #include "tinyxml.h"
@@ -98,7 +98,7 @@ protected:
     bool m_bIgnoreMissingEndTagError;
 
     //буфферный вектор для проверки уникальность аттрибутов
-    xr_vector<shared_str> m_AttribValues;
+    std::vector<shared_str> m_AttribValues;
 
 public:
     virtual shared_str correct_file_name(pcstr path, pcstr fn) { return fn; }

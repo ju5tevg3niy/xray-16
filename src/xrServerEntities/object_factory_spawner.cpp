@@ -56,7 +56,7 @@ void CObjectFactory::init_spawn_data()
         {
             category = SpawnCategory::Unknown;
 
-            xr_string temp;
+            std::string temp;
             cpcstr npc        = pSettings->read_if_exists<pcstr>(name, "npc", nullptr);
             cpcstr npc_random = pSettings->read_if_exists<pcstr>(name, "npc_random", "");
             _GetItem(npc ? npc : npc_random, 0, temp);
@@ -252,7 +252,7 @@ void CObjectFactory::on_tool_frame()
 
         for (const CInifile::Sect* section : sections)
         {
-            xr_string name;
+            std::string name;
             switch (static_cast<DisplayMode>(display_mode))
             {
             case DisplayGameNames:

@@ -112,7 +112,7 @@ void render_rain::calculate()
     // Compute volume(s) - something like a frustum for infinite directional light
     // Also compute virtual light position and sector it is inside
     CFrustum cull_frustum;
-    xr_vector<Fplane> cull_planes;
+    std::vector<Fplane> cull_planes;
     Fvector3 cull_COP;
     Fmatrix cull_xform;
     {

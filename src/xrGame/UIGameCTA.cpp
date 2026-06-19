@@ -329,7 +329,7 @@ void TryToDefuseGrenadeLauncher(
     if (!weapon)
         return;
 
-    xr_vector<shared_str> const* tmp_ammo_types = NULL;
+    std::vector<shared_str> const* tmp_ammo_types = NULL;
     u8 const* tmp_ammo_type = NULL;
     u16 ammo_elapsed = 0;
     if (weapon->m_bGrenadeMode)
@@ -392,7 +392,7 @@ void TryToDefuseWeapon(CWeapon const* weapon, TIItemContainer const& all_items, 
     if (weapon->IsGrenadeLauncherAttached())
         TryToDefuseGrenadeLauncher(tmp_gl_weapon, all_items, dest_ammo);
 
-    xr_vector<shared_str> const* tmp_ammo_types = NULL;
+    std::vector<shared_str> const* tmp_ammo_types = NULL;
     u8 const* tmp_ammo_type = NULL;
     u16 ammo_elapsed = 0;
     if (tmp_gl_weapon && tmp_gl_weapon->m_bGrenadeMode)

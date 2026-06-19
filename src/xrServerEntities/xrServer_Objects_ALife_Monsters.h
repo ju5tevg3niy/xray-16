@@ -45,7 +45,7 @@ public:
     CHARACTER_COMMUNITY_INDEX m_community_index;
     CHARACTER_REPUTATION_VALUE m_reputation;
     CHARACTER_RANK_VALUE m_rank;
-    xr_string m_character_name;
+    std::string m_character_name;
     shared_str m_icon_name;
 
     bool m_deadbody_can_take;
@@ -66,8 +66,8 @@ public:
     shared_str m_SpecificCharacter;
 
     //буферный вектор проверенных персонажей
-    xr_vector<shared_str> m_CheckedCharacters;
-    xr_vector<shared_str> m_DefaultCharacters;
+    std::vector<shared_str> m_CheckedCharacters;
+    std::vector<shared_str> m_DefaultCharacters;
 
 public:
     CSE_ALifeTraderAbstract(LPCSTR caSection);
@@ -83,7 +83,7 @@ public:
 
 #ifdef XRGAME_EXPORTS
     virtual void add_online(const bool& update_registries);
-    virtual void add_offline(const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
+    virtual void add_offline(const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
 #if 0 // def DEBUG
             bool                    check_inventory_consistency ();
 #endif
@@ -118,7 +118,7 @@ public:
     u32 dwfGetItemCost(CSE_ALifeInventoryItem* tpALifeInventoryItem);
     virtual void spawn_supplies();
     virtual void add_online(const bool& update_registries);
-    virtual void add_offline(const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
+    virtual void add_offline(const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
 #endif
 #ifdef DEBUG
     virtual bool match_configuration() const /* noexcept */;
@@ -262,8 +262,8 @@ public:
     SRotation o_torso; // torso in world coords
     bool m_bDeathIsProcessed;
 
-    xr_vector<ALife::_OBJECT_ID> m_dynamic_out_restrictions;
-    xr_vector<ALife::_OBJECT_ID> m_dynamic_in_restrictions;
+    std::vector<ALife::_OBJECT_ID> m_dynamic_out_restrictions;
+    std::vector<ALife::_OBJECT_ID> m_dynamic_in_restrictions;
 
     u32 m_ef_creature_type;
     u32 m_ef_weapon_type;
@@ -378,7 +378,7 @@ public:
     virtual void vfDetachAll(bool bFictitious = false){};
     void vfCheckForPopulationChanges();
     virtual void add_online(const bool& update_registries);
-    virtual void add_offline(const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
+    virtual void add_offline(const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
     virtual void on_register();
     virtual void on_unregister();
     virtual Fvector draw_level_position() const;
@@ -440,7 +440,7 @@ public:
 #ifdef XRGAME_EXPORTS
     virtual void spawn_supplies();
     virtual void add_online(const bool& update_registries);
-    virtual void add_offline(const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
+    virtual void add_offline(const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
 #endif
 #ifdef DEBUG
     virtual bool match_configuration() const /* noexcept */;
@@ -591,7 +591,7 @@ public:
 #ifdef XRGAME_EXPORTS
     virtual void on_spawn();
     virtual void add_online(const bool& update_registries);
-    virtual void add_offline(const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
+    virtual void add_offline(const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
 #endif // XRGAME_EXPORTS
     virtual void UPDATE_Read(NET_Packet& P);
     virtual void UPDATE_Write(NET_Packet& P);
@@ -660,7 +660,7 @@ public:
     virtual void on_register();
     virtual void on_unregister();
     virtual void add_online(const bool& update_registries);
-    virtual void add_offline(const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
+    virtual void add_offline(const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
 #endif
 
 private:

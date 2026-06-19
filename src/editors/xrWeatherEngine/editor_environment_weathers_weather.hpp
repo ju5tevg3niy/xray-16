@@ -54,7 +54,7 @@ private:
     void id_setter(pcstr value);
 
 public:
-    typedef xr_vector<time*> container_type;
+    typedef std::vector<time*> container_type;
 
 public:
     inline container_type const& times() const { return m_times; }

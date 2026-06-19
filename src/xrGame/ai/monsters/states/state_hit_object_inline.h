@@ -39,10 +39,10 @@ bool CStateMonsterHitObjectAbstract::check_start_conditions()
     m_nearest_objects.clear();
     Level().ObjectSpace.GetNearest(m_nearest_objects, object->Position(), object->Radius() - 0.5f, object());
 
-    xr_vector<IGameObject*>::iterator B = m_nearest_objects.begin();
-    xr_vector<IGameObject*>::iterator E = m_nearest_objects.end();
+    std::vector<IGameObject*>::iterator B = m_nearest_objects.begin();
+    std::vector<IGameObject*>::iterator E = m_nearest_objects.end();
 
-    for (xr_vector<IGameObject*>::iterator I = B; I != E; ++I)
+    for (std::vector<IGameObject*>::iterator I = B; I != E; ++I)
     {
         CPhysicsShellHolder* obj = smart_cast<CPhysicsShellHolder*>(*I);
         if (!obj || !obj->m_pPhysicsShell)

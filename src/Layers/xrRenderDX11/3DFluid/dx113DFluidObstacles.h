@@ -49,8 +49,8 @@ private:
 
     //	Cache vectors to avoid memory reallocations
     //	TODO: DX11: Reserve memory on object creation
-    xr_vector<ISpatial*> m_lstRenderables;
-    xr_vector<const IPhysicsShell*> m_lstShells;
-    xr_vector<const IPhysicsElement*> m_lstElements;
+    std::vector<ISpatial*> m_lstRenderables;
+    std::vector<const IPhysicsShell*> m_lstShells;
+    std::vector<const IPhysicsElement*> m_lstElements;
 };
 } // namespace xray::render::RENDER_NAMESPACE

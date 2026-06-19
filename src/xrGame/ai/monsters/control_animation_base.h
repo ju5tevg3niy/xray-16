@@ -34,10 +34,10 @@ protected:
         float aggressive;
     } m_accel;
 
-    xr_vector<SAnimItem*> m_anim_storage;
+    std::vector<SAnimItem*> m_anim_storage;
 
     // анимации подмены
-    xr_vector<SReplacedAnim> m_tReplacedAnims;
+    std::vector<SReplacedAnim> m_tReplacedAnims;
 
 public:
     EAction m_tAction;
@@ -58,9 +58,9 @@ protected:
     bool braking_mode;
     // ---------------------------------------------------------------------------------------
 
-    xr_map<EAction, SMotionItem> m_tMotions; // карта соответсвий EAction к SMotionItem
-    xr_vector<STransition> m_tTransitions; // вектор переходов из одной анимации в другую
-    xr_vector<SAAParam> m_attack_anims; // работа с анимациями атаки
+    std::map<EAction, SMotionItem> m_tMotions; // карта соответсвий EAction к SMotionItem
+    std::vector<STransition> m_tTransitions; // вектор переходов из одной анимации в другую
+    std::vector<SAAParam> m_attack_anims; // работа с анимациями атаки
 
 protected:
     void init_anim_storage();

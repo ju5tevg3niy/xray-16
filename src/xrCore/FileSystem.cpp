@@ -14,39 +14,39 @@
 xr_unique_ptr<EFS_Utils> xr_EFS;
 //----------------------------------------------------
 
-xr_string EFS_Utils::ExtractFileName(pcstr src)
+std::string EFS_Utils::ExtractFileName(pcstr src)
 {
     string_path name;
     _splitpath(src, 0, 0, name, 0);
-    return xr_string(name);
+    return std::string(name);
 }
 
-xr_string EFS_Utils::ExtractFileExt(pcstr src)
+std::string EFS_Utils::ExtractFileExt(pcstr src)
 {
     string_path ext;
     _splitpath(src, 0, 0, 0, ext);
-    return xr_string(ext);
+    return std::string(ext);
 }
 
-xr_string EFS_Utils::ExtractFilePath(pcstr src)
+std::string EFS_Utils::ExtractFilePath(pcstr src)
 {
     string_path drive, dir;
     _splitpath(src, drive, dir, 0, 0);
-    return xr_string(drive) + dir;
+    return std::string(drive) + dir;
 }
 
-xr_string EFS_Utils::ExcludeBasePath(pcstr full_path, pcstr excl_path)
+std::string EFS_Utils::ExcludeBasePath(pcstr full_path, pcstr excl_path)
 {
     pcstr sub = strstr(full_path, excl_path);
     if (0 != sub)
-        return xr_string(sub + xr_strlen(excl_path));
+        return std::string(sub + xr_strlen(excl_path));
     else
-        return xr_string(full_path);
+        return std::string(full_path);
 }
 
-xr_string EFS_Utils::ChangeFileExt(pcstr src, pcstr ext)
+std::string EFS_Utils::ChangeFileExt(pcstr src, pcstr ext)
 {
-    xr_string tmp;
+    std::string tmp;
     pstr src_ext = strext(src);
     if (src_ext)
     {
@@ -61,7 +61,7 @@ xr_string EFS_Utils::ChangeFileExt(pcstr src, pcstr ext)
     return tmp;
 }
 
-xr_string EFS_Utils::ChangeFileExt(const xr_string& src, pcstr ext) { return ChangeFileExt(src.c_str(), ext); }
+std::string EFS_Utils::ChangeFileExt(const std::string& src, pcstr ext) { return ChangeFileExt(src.c_str(), ext); }
 //----------------------------------------------------
 void MakeFilter(string1024& dest, pcstr info, pcstr ext)
 {

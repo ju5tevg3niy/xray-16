@@ -40,7 +40,7 @@ void CCar::SWheel::WheellCollisionCallback(
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool CCar::WheelHit(float P, s16 element, ALife::EHitType hit_type)
 {
-    xr_map<u16, SWheel>::iterator i = m_wheels_map.find(element);
+    std::map<u16, SWheel>::iterator i = m_wheels_map.find(element);
     if (i != m_wheels_map.end())
     {
         i->second.Hit(P);

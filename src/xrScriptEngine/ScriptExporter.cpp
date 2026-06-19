@@ -1,8 +1,8 @@
+#include <unordered_map>
+
 #include "pch.hpp"
 
 #include "ScriptExporter.hpp"
-
-#include "xrCommon/xr_unordered_map.h"
 
 namespace xray::script_export
 {
@@ -37,13 +37,13 @@ void node::sort()
     {
         not_visited, visiting, done
     };
-    xr_unordered_map<const node*, state> map;
+    std::unordered_map<const node*, state> map;
     map.reserve(nodes_count);
 
     for (auto n = first_node; n; n = n->m_next_node)
         map[n] = state::not_visited;
 
-    xr_vector<node*> sorted;
+    std::vector<node*> sorted;
     sorted.reserve(map.size());
 
     std::function<void(const node*)> depth_first_search = [&](const node* n)

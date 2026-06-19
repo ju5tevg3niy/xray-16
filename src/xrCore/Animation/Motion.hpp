@@ -1,8 +1,9 @@
 #pragma once
 
+#include <vector>
+
 #include "xrCore/Animation/Bone.hpp"
 #include "xrCore/Text/string_funcs_inline.hpp"
-#include "xrCommon/xr_vector.h"
 
 // refs
 class CEnvelope;
@@ -38,7 +39,7 @@ struct st_BoneMotion
     void SetName(pcstr nm) { name = nm; }
 };
 // vector по костям
-using BoneMotionVec = xr_vector<st_BoneMotion>;
+using BoneMotionVec = std::vector<st_BoneMotion>;
 
 //--------------------------------------------------------------------------
 class CCustomMotion
@@ -150,7 +151,7 @@ public:
     float fPower;
     Flags8 m_Flags;
 
-    xr_vector<motion_marks> marks;
+    std::vector<motion_marks> marks;
 
     void Clear();
 

@@ -5,11 +5,13 @@
 //  Author      : Dmitriy Iassenev
 //  Description : Object loader
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
+
 #include <type_traits>
+#include <stack>
+#include <string>
+
 #include "xrCore/xrstring.h"
-#include "xrCommon/xr_string.h"
 
 template <class M, typename P>
 struct CLoader
@@ -138,7 +140,7 @@ struct CLoader
     }
 
     static void load_data(shared_str& data, M& stream, const P& p) { stream.r_stringZ(data); }
-    static void load_data(xr_string& data, M& stream, const P& p)
+    static void load_data(std::string& data, M& stream, const P& p)
     {
         shared_str S;
         stream.r_stringZ(S);
@@ -159,14 +161,14 @@ struct CLoader
         p.after_load(data, stream);
     }
 
-    static void load_data(xr_vector<bool>& data, M& stream, const P& p)
+    static void load_data(std::vector<bool>& data, M& stream, const P& p)
     {
         if (p.can_clear())
             data.clear();
         const size_t prev_count = data.size();
         data.resize(prev_count + stream.r_u32());
-        xr_vector<bool>::iterator I = data.begin() + prev_count;
-        xr_vector<bool>::iterator E = data.end();
+        std::vector<bool>::iterator I = data.begin() + prev_count;
+        std::vector<bool>::iterator E = data.end();
         u32 mask = 0;
         for (int j = 32; I != E; ++I, ++j)
         {
@@ -258,7 +260,7 @@ struct CLoader
     }
 
     template <typename T1, typename T2>
-    static void load_data(xr_stack<T1, T2>& data, M& stream, const P& p)
+    static void load_data(std::stack<T1, T2>& data, M& stream, const P& p)
     {
         load_data(data, stream, p, true);
     }

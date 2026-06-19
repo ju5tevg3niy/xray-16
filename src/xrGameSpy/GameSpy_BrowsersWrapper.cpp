@@ -1,6 +1,7 @@
+#include <array>
+
 #include "stdafx.h"
 #include "GameSpy_BrowsersWrapper.h"
-#include "xrCommon/xr_array.h"
 #include "xrCore/Threading/ScopeLock.hpp"
 
 CGSUpdateStatusAccumulator::CGSUpdateStatusAccumulator(GSUpdateStatus s) { Register(s); }
@@ -58,7 +59,7 @@ static constexpr SBrowserConfig cop_master_bro = { { GAMESPY_GAMENAME, GAMESPY_G
 static constexpr SBrowserConfig cs_master_bro  = { { GAMESPY_GAMENAME_CS, GAMESPY_GAMEKEY_CS }, true };
 static constexpr SBrowserConfig soc_master_bro = { { GAMESPY_GAMENAME_SOC, GAMESPY_GAMEKEY_SOC }, true };
 
-static constexpr xr_array<SBrowserConfig, 3> master_lists = { cop_master_bro, cs_master_bro, soc_master_bro };
+static constexpr std::array<SBrowserConfig, 3> master_lists = { cop_master_bro, cs_master_bro, soc_master_bro };
 
 CGameSpy_BrowsersWrapper::CGameSpy_BrowsersWrapper()
 {

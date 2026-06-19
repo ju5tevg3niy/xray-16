@@ -405,7 +405,7 @@ int game_cl_Deathmatch::GetPlayersPlace(game_PlayerState* ps)
     game_cl_GameState::PLAYERS_MAP_IT E = Game().players.end();
 
     // create temporary map (sort by kills)
-    xr_vector<game_PlayerState*> Players;
+    std::vector<game_PlayerState*> Players;
     for (; I != E; ++I)
         Players.push_back(I->second);
     std::sort(Players.begin(), Players.end(), DM_Compare_Players);
@@ -882,7 +882,7 @@ void game_cl_Deathmatch::OnVoteEnd(NET_Packet& P)
     }
 };
 
-void game_cl_Deathmatch::GetMapEntities(xr_vector<SZoneMapEntityData>& dst)
+void game_cl_Deathmatch::GetMapEntities(std::vector<SZoneMapEntityData>& dst)
 {
     /*
     SZoneMapEntityData D;

@@ -1,9 +1,10 @@
 #pragma once
 
+#include <vector>
+#include <deque>
+
 #include "NET_Shared.h"
 #include "NET_Common.h"
-#include "xrCommon/xr_deque.h"
-#include "xrCommon/xr_vector.h"
 #include "Common/Noncopyable.hpp"
 #include "xrCore/xrstring.h"
 
@@ -12,8 +13,8 @@ struct ip_address;
 class XRNETSERVER_API INetQueue : Noncopyable
 {
     Lock cs;
-    xr_deque<NET_Packet*> ready;
-    xr_vector<NET_Packet*> unused;
+    std::deque<NET_Packet*> ready;
+    std::vector<NET_Packet*> unused;
 
 public:
     INetQueue();
@@ -70,7 +71,7 @@ protected:
     IDirectPlay8Address* net_Address_server;
 
     Lock net_csEnumeration;
-    xr_vector<HOST_NODE> net_Hosts;
+    std::vector<HOST_NODE> net_Hosts;
 
     NET_Compressor net_Compressor;
 

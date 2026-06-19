@@ -1,7 +1,7 @@
 #pragma once
 
-#include "xrCommon/xr_string.h"
-#include "xrCommon/xr_map.h"
+#include <string>
+#include <map>
 
 #include "xrCore/xrstring.h"
 
@@ -212,7 +212,7 @@ struct keyboard_key
 {
     pcstr key_name;
     int dik;
-    xr_string key_local_name;
+    std::string key_local_name;
 };
 
 enum EKeyGroup
@@ -295,7 +295,7 @@ struct con_cmd
 class ConsoleBindCmds
 {
 public:
-    xr_map<int, con_cmd> m_bindConsoleCmds;
+    std::map<int, con_cmd> m_bindConsoleCmds;
 
     void bind(int dik, LPCSTR N);
     void unbind(int dik);

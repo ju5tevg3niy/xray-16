@@ -157,7 +157,7 @@ void CSkeletonX::_Render_soft(CBackend& cmd_list, ref_geom& hGeom, u32 vCount, u
 void CSkeletonX::_Load(const char* N, IReader* data, u32& dwVertCount)
 {
     s_bones_array_const = "sbones_array";
-    xr_vector<u16> bids;
+    std::vector<u16> bids;
 
     // Load vertices
     R_ASSERT(data->find_chunk(OGF_VERTICES));

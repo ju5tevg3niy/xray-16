@@ -1,12 +1,14 @@
 #pragma once
 
+#include <set>
+#include <map>
+
 #if defined(XR_PLATFORM_WINDOWS)
 #include <io.h>
 #endif
 
 #include "Common/Util.hpp"
 #include "LocatorAPI_defs.h"
-#include "xrCommon/xr_map.h"
 #include "xrCommon/xr_smart_pointers.h"
 #include "xrCommon/predicates.h"
 #include "Common/Noncopyable.hpp"
@@ -132,7 +134,7 @@ public:
         archive_file_header(IWriter& writer, pcstr file_name, u32 real_size, u32 compressed_size, u32 crc_sum, u32 pointer);
     };
 
-    using archives_vec = xr_vector<archive>;
+    using archives_vec = std::vector<archive>;
     archives_vec m_archives;
     void LoadArchive(archive& A, pcstr entrypoint = nullptr);
 
@@ -142,13 +144,13 @@ private:
         bool operator()(const file& x, const file& y) const { return xr_strcmp(x.name, y.name) < 0; }
     };
 
-    using PathMap = xr_map<pcstr, FS_Path*, pred_str>;
+    using PathMap = std::map<pcstr, FS_Path*, pred_str>;
     PathMap m_paths;
 
-    using files_set = xr_set<file, file_pred>;
+    using files_set = std::set<file, file_pred>;
     using files_it = files_set::iterator;
 
-    using FFVec = xr_vector<_finddata_t>;
+    using FFVec = std::vector<_finddata_t>;
     FFVec rec_files;
 
     int m_iLockRescan;
@@ -252,9 +254,9 @@ public:
     u32 get_file_age(pcstr nm);
     void set_file_age(pcstr nm, u32 age);
 
-    xr_vector<pstr>* file_list_open(pcstr initial, pcstr folder, u32 flags = FS_ListFiles);
-    xr_vector<pstr>* file_list_open(pcstr path, u32 flags = FS_ListFiles);
-    void file_list_close(xr_vector<pstr>*& lst);
+    std::vector<pstr>* file_list_open(pcstr initial, pcstr folder, u32 flags = FS_ListFiles);
+    std::vector<pstr>* file_list_open(pcstr path, u32 flags = FS_ListFiles);
+    void file_list_close(std::vector<pstr>*& lst);
 
     bool path_exist(pcstr path);
     FS_Path* get_path(pcstr path);
@@ -266,7 +268,7 @@ public:
 
     void unload_archive(archive& A);
 
-    void auth_generate(xr_vector<shared_str>& ignore, xr_vector<shared_str>& important);
+    void auth_generate(std::vector<shared_str>& ignore, std::vector<shared_str>& important);
     u64 auth_get();
     void auth_runtime(void*);
 

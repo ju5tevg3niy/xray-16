@@ -36,8 +36,8 @@ public:
     void fill(XRay::Editor::property_holder_base* holder);
     shared_str unique_id(shared_str const& id) const;
 
-    using channel_container_type = xr_vector<channel*>;
-    using channels_ids_type = xr_vector<pstr>;
+    using channel_container_type = std::vector<channel*>;
+    using channels_ids_type = std::vector<pstr>;
 
     channels_ids_type const& channels_ids() const;
 

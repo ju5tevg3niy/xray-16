@@ -537,9 +537,9 @@ BOOL dbg_draw_character_physics = false;
 BOOL dbg_draw_character_binds = false;
 BOOL dbg_draw_character_physics_pones = false;
 
-void dbg_draw_geoms(xr_vector<CODEGeom*>& m_weapon_geoms)
+void dbg_draw_geoms(std::vector<CODEGeom*>& m_weapon_geoms)
 {
-    xr_vector<CODEGeom *>::iterator ii = m_weapon_geoms.begin(), ee = m_weapon_geoms.end();
+    std::vector<CODEGeom *>::iterator ii = m_weapon_geoms.begin(), ee = m_weapon_geoms.end();
     for (; ii != ee; ++ii)
     {
         CODEGeom* g = (*ii);
@@ -761,7 +761,7 @@ void reset_root_bone_start_pose( CPhysicsShell& shell )
     //											);
 #pragma todo("LL_GetBindTransform shoud use buffer_vector")
 
-    xr_vector<Fmatrix> anim_bones_bind_positions;
+    std::vector<Fmatrix> anim_bones_bind_positions;
     K->LL_GetBindTransform( anim_bones_bind_positions );
 
 
@@ -856,7 +856,7 @@ void CCharacterPhysicsSupport::RemoveActiveWeaponCollision()
     VERIFY(m_pPhysicsShell);
     VERIFY(m_weapon_attach_bone);
     VERIFY(!m_weapon_geoms.empty());
-    xr_vector<CODEGeom *>::iterator ii = m_weapon_geoms.begin(), ee = m_weapon_geoms.end();
+    std::vector<CODEGeom *>::iterator ii = m_weapon_geoms.begin(), ee = m_weapon_geoms.end();
     Fmatrix m0;
     (*ii)->get_xform(m0);
     CPhysicsElement* root = m_active_item_obj->PPhysicsShell()->get_ElementByStoreOrder(0);
@@ -903,7 +903,7 @@ void CCharacterPhysicsSupport::RemoveActiveWeaponCollision()
 }
 void CCharacterPhysicsSupport::bone_fix_clear()
 {
-    xr_vector<anim_bone_fix *>::iterator i = m_weapon_bone_fixes.begin(), e = m_weapon_bone_fixes.end();
+    std::vector<anim_bone_fix *>::iterator i = m_weapon_bone_fixes.begin(), e = m_weapon_bone_fixes.end();
     for (; i != e; ++i)
     {
         (*i)->deinit();
@@ -977,7 +977,7 @@ void CCharacterPhysicsSupport::AddActiveWeaponCollision()
     u16 geom_num = weapon_element->numberOfGeoms();
     for (u16 i = 0; i < geom_num; ++i)
         m_weapon_geoms.push_back(weapon_element->geometry(i));
-    xr_vector<CODEGeom *>::iterator ii = m_weapon_geoms.begin(), ee = m_weapon_geoms.end();
+    std::vector<CODEGeom *>::iterator ii = m_weapon_geoms.begin(), ee = m_weapon_geoms.end();
 
     // DBG_OpenCashedDraw();
 

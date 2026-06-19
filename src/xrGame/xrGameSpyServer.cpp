@@ -178,7 +178,7 @@ u32 xrGameSpyServer::OnMessage(NET_Packet& P, ClientID sender) // Non-Zero means
         u32 bytesRemain = P.r_elapsed();
         if (bytesRemain == 0 || bytesRemain > sizeof(ResponseStr))
         {
-            xr_string clientIp = CL->m_cAddress.to_string();
+            std::string clientIp = CL->m_cAddress.to_string();
             Msg("! WARNING: Validation challenge respond from client [%s] is %s. DoS attack?", clientIp.c_str(),
                 bytesRemain == 0 ? "empty" : "too long");
 

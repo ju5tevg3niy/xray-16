@@ -3,7 +3,7 @@
 #include "Entity.h"
 
 // Igor DEFINE_VECTOR(ref_shader, SHADER_VECTOR, SHADER_VECTOR_IT);
-using STR_VECTOR = xr_vector<shared_str>;
+using STR_VECTOR = std::vector<shared_str>;
 
 class MONSTER_COMMUNITY;
 class CEntityCondition;
@@ -95,7 +95,7 @@ public:
     virtual void set_collision_hit_callback(ICollisionHitCallback* cc);
 
 protected:
-    using WOUND_VECTOR = xr_vector<CWound*>;
+    using WOUND_VECTOR = std::vector<CWound*>;
     WOUND_VECTOR m_ParticleWounds;
 
     virtual void StartFireParticles(CWound* pWound);
@@ -199,7 +199,7 @@ public:
 private:
     void fill_hit_bone_surface_areas() const;
 
-    typedef xr_vector<std::pair<u16, float>> hit_bone_surface_areas_type;
+    typedef std::vector<std::pair<u16, float>> hit_bone_surface_areas_type;
 
     mutable hit_bone_surface_areas_type m_hit_bone_surface_areas;
     mutable CRandom m_hit_bones_random;

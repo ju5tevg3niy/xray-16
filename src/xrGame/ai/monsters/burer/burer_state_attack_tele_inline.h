@@ -187,7 +187,7 @@ bool CStateBurerAttackTele<Object>::check_completion()
 //////////////////////////////////////////////////////////////////////////
 
 template <typename Object>
-void CStateBurerAttackTele<Object>::FindFreeObjects(xr_vector<IGameObject*>& tpObjects, const Fvector& pos)
+void CStateBurerAttackTele<Object>::FindFreeObjects(std::vector<IGameObject*>& tpObjects, const Fvector& pos)
 {
     Level().ObjectSpace.GetNearest(tpObjects, pos, this->object->m_tele_find_radius, nullptr);
 

@@ -38,8 +38,8 @@ public:
     explicit account_manager(CGameSpy_GP* gsgp_inst);
     ~account_manager();
 
-    typedef xr_vector<shared_str> suggested_nicks_t;
-    typedef xr_vector<char const*> suggested_nicks_ptrs_t;
+    typedef std::vector<shared_str> suggested_nicks_t;
+    typedef std::vector<char const*> suggested_nicks_ptrs_t;
     void suggest_unique_nicks(char const* unick, suggest_nicks_cb sncb);
     bool is_suggest_unique_nicks_active() const;
     void reinit_suggest_unique_nicks();
@@ -50,8 +50,8 @@ public:
 
     void delete_profile(account_operation_cb dpcb);
 
-    typedef xr_vector<shared_str> profiles_store_t;
-    typedef xr_vector<char const*> profiles_nicks_ptrs_t;
+    typedef std::vector<shared_str> profiles_store_t;
+    typedef std::vector<char const*> profiles_nicks_ptrs_t;
 
     void get_account_profiles(char const* email, char const* password, account_profiles_cb profiles_cb);
     bool is_get_account_profiles_active() const;

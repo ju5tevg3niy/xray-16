@@ -677,15 +677,15 @@ void game_sv_TeamDeathmatch::OnDetachItem(CSE_ActorMP* actor, CSE_Abstract* item
     if (item->m_tClassID == CLSID_OBJECT_PLAYERS_BAG)
     {
         // move all items from player to rukzak
-        xr_vector<u16>::const_iterator it_e = actor->children.end();
+        std::vector<u16>::const_iterator it_e = actor->children.end();
 
-        xr_vector<CSE_Abstract*> to_transfer;
-        xr_vector<CSE_Abstract*> to_destroy;
-        xr_vector<CSE_Abstract*> to_reject;
+        std::vector<CSE_Abstract*> to_transfer;
+        std::vector<CSE_Abstract*> to_destroy;
+        std::vector<CSE_Abstract*> to_reject;
         // may be there is a sense to move next invokation into the ProcessDeath method...
         FillDeathActorRejectItems(actor, to_reject);
 
-        for (xr_vector<u16>::const_iterator it = actor->children.begin(); it != it_e; ++it)
+        for (std::vector<u16>::const_iterator it = actor->children.begin(); it != it_e; ++it)
         {
             u16 ItemID = *it;
             CSE_Abstract* e_item = get_entity_from_eid(ItemID);

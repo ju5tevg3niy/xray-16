@@ -5,7 +5,7 @@
 // refs
 class CObjectAnimator
 {
-    using MotionVec = xr_vector<COMotion*>;
+    using MotionVec = std::vector<COMotion*>;
 
 protected:
     bool bLoop;

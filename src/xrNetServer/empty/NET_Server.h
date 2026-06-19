@@ -37,7 +37,7 @@ struct XRNETSERVER_API ip_address {
     } m_data;
 
     void set(pcstr src_string);
-    xr_string to_string() const;
+    std::string to_string() const;
 
     bool operator==(const ip_address& other) const
     {
@@ -115,7 +115,7 @@ public:
     void Load(CInifile& ini, const shared_str& sect);
     void Save(CInifile& ini);
 
-    xr_string BannedTimeTo() const;
+    std::string BannedTimeTo() const;
 };
 
 //==============================================================================
@@ -148,13 +148,13 @@ protected:
 
     PlayersMonitor net_players;
     // Lock		csPlayers;
-    // xr_vector<IClient*>	net_Players;
-    // xr_vector<IClient*>	net_Players_disconnected;
+    // std::vector<IClient*>	net_Players;
+    // std::vector<IClient*>	net_Players_disconnected;
     IClient* SV_Client;
 
     int psNET_Port;
 
-    xr_vector<IBannedClient*> BannedAddresses;
+    std::vector<IBannedClient*> BannedAddresses;
     ip_filter m_ip_filter;
 
     //

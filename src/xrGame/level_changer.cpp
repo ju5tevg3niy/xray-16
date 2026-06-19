@@ -21,7 +21,7 @@
 #include "UIGameSP.h"
 #include "xrEngine/xr_collide_form.h"
 
-xr_vector<CLevelChanger*> g_lchangers;
+std::vector<CLevelChanger*> g_lchangers;
 
 CLevelChanger::~CLevelChanger() {}
 void CLevelChanger::Center(Fvector& C) const { XFORM().transform_tiny(C, GetCForm()->getSphere().P); }
@@ -29,7 +29,7 @@ float CLevelChanger::Radius() const { return GetCForm()->getRadius(); }
 void CLevelChanger::net_Destroy()
 {
     inherited::net_Destroy();
-    xr_vector<CLevelChanger*>::iterator it = std::find(g_lchangers.begin(), g_lchangers.end(), this);
+    std::vector<CLevelChanger*>::iterator it = std::find(g_lchangers.begin(), g_lchangers.end(), this);
     if (it != g_lchangers.end())
         g_lchangers.erase(it);
 }
@@ -173,8 +173,8 @@ void CLevelChanger::update_actor_invitation()
 {
     if (m_bSilentMode)
         return;
-    xr_vector<IGameObject*>::iterator it = feel_touch.begin();
-    xr_vector<IGameObject*>::iterator it_e = feel_touch.end();
+    std::vector<IGameObject*>::iterator it = feel_touch.begin();
+    std::vector<IGameObject*>::iterator it_e = feel_touch.end();
 
     for (; it != it_e; ++it)
     {

@@ -76,7 +76,7 @@ struct eq_fname_check
     bool operator()(_open_file& itm) const { return _val == itm._fn && itm._reader != nullptr; }
 };
 
-xr_vector<_open_file> g_open_files;
+std::vector<_open_file> g_open_files;
 
 void _check_open_file(const shared_str& _fname)
 {
@@ -1133,7 +1133,7 @@ FileStatus CLocatorAPI::exist(
     return exist(fn, fsType);
 }
 
-xr_vector<pstr>* CLocatorAPI::file_list_open(pcstr initial, pcstr folder, u32 flags)
+std::vector<pstr>* CLocatorAPI::file_list_open(pcstr initial, pcstr folder, u32 flags)
 {
     string_path N;
     R_ASSERT(initial && initial[0]);
@@ -1141,7 +1141,7 @@ xr_vector<pstr>* CLocatorAPI::file_list_open(pcstr initial, pcstr folder, u32 fl
     return file_list_open(N, flags);
 }
 
-xr_vector<pstr>* CLocatorAPI::file_list_open(pcstr _path, u32 flags)
+std::vector<pstr>* CLocatorAPI::file_list_open(pcstr _path, u32 flags)
 {
     R_ASSERT(_path);
     VERIFY(flags);
@@ -1160,7 +1160,7 @@ xr_vector<pstr>* CLocatorAPI::file_list_open(pcstr _path, u32 flags)
     if (I == m_files.end())
         return nullptr;
 
-    xr_vector<char*>* dest = xr_new<xr_vector<char*>>();
+    std::vector<char*>* dest = xr_new<std::vector<char*>>();
 
     size_t base_len = xr_strlen(N);
     for (++I; I != m_files.end(); ++I)
@@ -1200,11 +1200,11 @@ xr_vector<pstr>* CLocatorAPI::file_list_open(pcstr _path, u32 flags)
     return dest;
 }
 
-void CLocatorAPI::file_list_close(xr_vector<pstr>*& lst)
+void CLocatorAPI::file_list_close(std::vector<pstr>*& lst)
 {
     if (lst)
     {
-        for (xr_vector<char*>::iterator I = lst->begin(); I != lst->end(); ++I)
+        for (std::vector<char*>::iterator I = lst->begin(); I != lst->end(); ++I)
             xr_free(*I);
         xr_delete(lst);
     }
@@ -1228,7 +1228,7 @@ size_t CLocatorAPI::file_list(FS_FileSet& dest, pcstr path, u32 flags /*= FS_Lis
     if (I == m_files.end())
         return 0;
 
-    xr_vector<xr_string> masks;
+    std::vector<std::string> masks;
     _SequenceToList(masks, mask);
     bool b_mask = !masks.empty();
 
@@ -1876,7 +1876,7 @@ pcstr CLocatorAPI::update_path(string_path& dest, pcstr initial, pcstr src, bool
     return path->_update(dest, src);
 }
 /*
-void CLocatorAPI::update_path(xr_string& dest, pcstr initial, pcstr src)
+void CLocatorAPI::update_path(std::string& dest, pcstr initial, pcstr src)
 {
     return get_path(initial)->_update(dest,src);
 }

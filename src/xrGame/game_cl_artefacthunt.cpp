@@ -294,7 +294,7 @@ CUIGameCustom* game_cl_ArtefactHunt::createGameUI()
     return m_game_ui;
 }
 
-void game_cl_ArtefactHunt::GetMapEntities(xr_vector<SZoneMapEntityData>& dst)
+void game_cl_ArtefactHunt::GetMapEntities(std::vector<SZoneMapEntityData>& dst)
 {
     inherited::GetMapEntities(dst);
 

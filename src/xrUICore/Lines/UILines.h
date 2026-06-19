@@ -55,9 +55,9 @@ public:
 
 protected:
     // %c[255,255,255,255]
-    u32 GetColorFromText(const xr_string& str) const;
+    u32 GetColorFromText(const std::string& str) const;
     float GetVIndentByAlign();
-    xr_string CutFirstColoredTextEntry(u32& color, xr_string& text) const;
+    std::string CutFirstColoredTextEntry(u32& color, std::string& text) const;
     CUILine ParseTextToColoredLine(const std::string_view& str);
 
 protected:
@@ -77,7 +77,7 @@ protected:
     EVTextAlignment m_eVTextAlign{ valTop };
     u32 m_dwTextColor{ 0xffffffff };
 
-    xr_vector<CUILine> m_lines; // parsed text
+    std::vector<CUILine> m_lines; // parsed text
     shared_str m_text{ "" };
     CGameFont* m_pFont{};
 };

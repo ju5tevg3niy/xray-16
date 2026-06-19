@@ -1,10 +1,18 @@
 #pragma once
 
-#include "xrCore/Threading/Lock.hpp" // XXX: Remove from header. Put in .cpp.
+#include <cstddef>
+#include <map>
+#include <type_traits>
+#include <vector>
+
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
 #include "Common/Noncopyable.hpp"
+#include "xrCore/Threading/Lock.hpp" // XXX: Remove from header. Put in .cpp.
 #include "xrCore/Math/constants.hpp"
 #include "xrCore/Math/vector3.hpp"
-#include "xrCommon/xr_vector.h"
+#include "xrCore/FS.h"
+#include "xrCore/xrstring.h"
 
 #ifdef XRAY_STATIC_BUILD
 #   define XRCDB_API
@@ -60,7 +68,7 @@ static_assert(sizeof(TRI) == 16, "TRI always should be 16 bytes on any architect
 using build_callback = void(Fvector* V, u32 Vcnt, TRI* T, u32 Tcnt, void* params);
 using serialize_callback = void(IWriter& writer);
 using deserialize_callback = bool(IReader& reader);
-using remapping_materials_callback = void(TRI* T, u32 Tcnt, xr_map<u16, shared_str>& gameMtls);
+using remapping_materials_callback = void(TRI* T, u32 Tcnt, std::map<u16, shared_str>& gameMtls);
 
 // Model definition
 class XRCDB_API MODEL : Noncopyable
@@ -158,7 +166,7 @@ enum
 class XRCDB_API COLLIDER
 {
     // Result management
-    xr_vector<RESULT> rd;
+    std::vector<RESULT> rd;
 
 public:
     ~COLLIDER();
@@ -169,7 +177,7 @@ public:
 
     ICF RESULT* r_begin() { return &*rd.begin(); };
     //ICF RESULT* r_end() { return &*rd.end(); };
-    ICF xr_vector<RESULT>* r_get() { return &rd; };
+    ICF std::vector<RESULT>* r_get() { return &rd; };
     RESULT& r_add();
     void r_free();
     ICF size_t r_count() { return rd.size(); };
@@ -179,8 +187,8 @@ public:
 
 class XRCDB_API Collector
 {
-    xr_vector<Fvector> verts;
-    xr_vector<TRI> faces;
+    std::vector<Fvector> verts;
+    std::vector<TRI> faces;
 
     u32 VPack(const Fvector& V, float eps);
 
@@ -191,7 +199,7 @@ public:
         const Fvector& v0, const Fvector& v1, const Fvector& v2, u16 material, u16 sector, float eps = EPS);
     void add_face_packed_D(const Fvector& v0, const Fvector& v1, const Fvector& v2, u32 dummy, float eps = EPS);
     void remove_duplicate_T();
-    void calc_adjacency(xr_vector<u32>& dest) const;
+    void calc_adjacency(std::vector<u32>& dest) const;
 
     [[nodiscard]]
     auto getVS() const { return verts.size(); }
@@ -219,11 +227,11 @@ const u32 clpMX = 24, clpMY = 16, clpMZ = 24;
 
 class XRCDB_API CollectorPacked : public Noncopyable
 {
-    xr_vector<Fvector> verts;
-    xr_vector<TRI> faces;
-    xr_vector<u32> flags;
+    std::vector<Fvector> verts;
+    std::vector<TRI> faces;
+    std::vector<u32> flags;
     Fvector VMmin, VMscale;
-    xr_vector<u32> VM[clpMX + 1][clpMY + 1][clpMZ + 1];
+    std::vector<u32> VM[clpMX + 1][clpMY + 1][clpMZ + 1];
     Fvector VMeps;
 
     u32 VPack(const Fvector& V);

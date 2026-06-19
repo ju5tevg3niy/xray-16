@@ -1,4 +1,4 @@
-#include "xrCommon/xr_list.h"
+#include <list>
 
 #include "math_funcs_inline.hpp"
 #include "sphere.hpp"
@@ -49,7 +49,7 @@ class Basis {
 class Miniball {
  public:
   // types
-  typedef xr_list<Fvector> VectorList;
+  typedef std::list<Fvector> VectorList;
   typedef VectorList::iterator It;
   typedef VectorList::const_iterator Cit;
 

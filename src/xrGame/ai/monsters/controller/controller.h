@@ -64,7 +64,7 @@ public:
     CControllerAnimation& custom_anim() { return (*m_custom_anim_base); }
     CControllerDirection& custom_dir() { return (*m_custom_dir_base); }
 public:
-    xr_vector<CEntity*> m_controlled_objects;
+    std::vector<CEntity*> m_controlled_objects;
 
 public:
     CController();
@@ -94,7 +94,7 @@ public:
     //-------------------------------------------------------------------
 
     virtual bool is_relation_enemy(const CEntityAlive* tpEntityAlive) const;
-    xr_vector<shared_str> m_friend_community_overrides;
+    std::vector<shared_str> m_friend_community_overrides;
     void load_friend_community_overrides(LPCSTR section);
     bool is_community_friend_overrides(const CEntityAlive* tpEntityAlive) const;
     //-------------------------------------------------------------------

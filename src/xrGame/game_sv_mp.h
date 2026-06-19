@@ -17,7 +17,7 @@ struct Rank_Struct
     shared_str m_sTitle;
     int m_iTerms[MAX_TERMS]{};
     int m_iBonusMoney{};
-    xr_vector<float> m_aRankDiff_ExpBonus;
+    std::vector<float> m_aRankDiff_ExpBonus;
 };
 
 class game_sv_mp : public game_sv_GameState
@@ -26,11 +26,11 @@ class game_sv_mp : public game_sv_GameState
 
 protected:
     //список трупов для удаления
-    using CORPSE_LIST = xr_deque<u16>;
+    using CORPSE_LIST = std::deque<u16>;
 
     CORPSE_LIST m_CorpseList;
 
-    using RANKS_LIST = xr_vector<Rank_Struct>;
+    using RANKS_LIST = std::vector<Rank_Struct>;
 
     RANKS_LIST m_aRanks;
     bool m_bRankUp_Allowed;
@@ -97,7 +97,7 @@ protected:
     // send to all clients new states of health.
     void RenewAllActorsHealth();
 
-    virtual void FillDeathActorRejectItems(CSE_ActorMP* actor, xr_vector<CSE_Abstract*>& to_reject){};
+    virtual void FillDeathActorRejectItems(CSE_ActorMP* actor, std::vector<CSE_Abstract*>& to_reject){};
 
 public:
     game_sv_mp();

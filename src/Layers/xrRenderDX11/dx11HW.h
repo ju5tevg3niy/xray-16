@@ -109,5 +109,5 @@ private:
     XRay::Module hD3D;
 };
 
-extern ECORE_API CHW HW;
+extern CHW HW;
 } // namespace xray::render::RENDER_NAMESPACE

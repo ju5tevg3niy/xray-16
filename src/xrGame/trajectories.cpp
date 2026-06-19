@@ -68,7 +68,7 @@ IC bool trajectory_query_callback(collide::rq_result& result, LPVOID params)
 static bool trajectory_check_collision(float low, float high, Fvector const& position, Fvector const& velocity,
     Fvector const& gravity, IGameObject* const self_object, IGameObject* const ignored_object,
     Fvector& collide_position, collide::rq_results& temp_rq_results, Fvector box_size,
-    xr_vector<trajectory_pick>* const out_trajectory_picks, xr_vector<Fvector>* const out_collide_tris)
+    std::vector<trajectory_pick>* const out_trajectory_picks, std::vector<Fvector>* const out_collide_tris)
 {
     Fvector start;
     trajectory_get_position(start, position, velocity, gravity, low);
@@ -157,7 +157,7 @@ static bool trajectory_check_collision(float low, float high, Fvector const& pos
 bool trajectory_intersects_geometry(float trajectory_time, Fvector const& trajectory_start,
     Fvector const& trajectory_end, Fvector const& trajectory_velocity, Fvector& collide_position,
     IGameObject* const self_object, IGameObject* const ignored_object, collide::rq_results& temp_rq_results,
-    xr_vector<trajectory_pick>* const out_trajectory_picks, xr_vector<Fvector>* const out_collide_tris,
+    std::vector<trajectory_pick>* const out_trajectory_picks, std::vector<Fvector>* const out_collide_tris,
     Fvector const& box_size)
 {
 #ifdef DEBUG

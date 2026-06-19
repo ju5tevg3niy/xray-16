@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCommon/xr_unordered_map.h"
+#include <unordered_map>
 
 #include "SoundRender.h"
 #include "SoundRender_Environment.h"
@@ -68,13 +68,13 @@ public:
 
 protected:
     // Containers
-    xr_vector<CSoundRender_Scene*> m_scenes;
+    std::vector<CSoundRender_Scene*> m_scenes;
 
     Lock s_sources_lock;
-    xr_unordered_map<xr_string, CSoundRender_Source*> s_sources;
+    std::unordered_map<std::string, CSoundRender_Source*> s_sources;
 
     u32 s_emitters_u; // emitter update marker
-    xr_vector<CSoundRender_Target*> s_targets;
+    std::vector<CSoundRender_Target*> s_targets;
 
     CSoundRender_Effects* m_effects{};
 

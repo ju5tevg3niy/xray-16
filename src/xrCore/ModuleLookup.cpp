@@ -31,7 +31,7 @@ void* ModuleHandle::Open(pcstr moduleName)
 
     Log("Loading module:", moduleName);
 
-    xr_string buf(moduleName);
+    std::string buf(moduleName);
 #ifdef XR_PLATFORM_WINDOWS
     buf += ".dll";
 #elif defined(XR_PLATFORM_APPLE)

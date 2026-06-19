@@ -111,7 +111,7 @@ bool RunJITCommand(lua_State* ls, const char* command)
 
 const char* const CScriptEngine::GlobalNamespace = SCRIPT_GLOBAL_NAMESPACE;
 Lock CScriptEngine::stateMapLock;
-xr_unordered_map<lua_State*, CScriptEngine*> CScriptEngine::stateMap;
+std::unordered_map<lua_State*, CScriptEngine*> CScriptEngine::stateMap;
 
 string4096 CScriptEngine::g_ca_stdout;
 

@@ -5,7 +5,7 @@
 
 struct SExts
 {
-    xr_vector<pstr> exts;
+    std::vector<pstr> exts;
     void format_register(pcstr ext)
     {
         if (ext && ext[0])

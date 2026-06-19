@@ -185,7 +185,7 @@ SDeclaration::~SDeclaration()
     RImplementation.Resources->_DeleteDecl(this);
     //	Release vertex layout
 #if defined(USE_DX11)
-    xr_map<ID3DBlob*, ID3DInputLayout*>::iterator iLayout;
+    std::map<ID3DBlob*, ID3DInputLayout*>::iterator iLayout;
     iLayout = vs_to_layout.begin();
     for (; iLayout != vs_to_layout.end(); ++iLayout)
     {

@@ -316,7 +316,7 @@ private:
 private:
     CGameObject* m_trader_game_object;
     CInventoryOwner* m_current_trader;
-    xr_vector<CTradeItem> m_temp_items;
+    std::vector<CTradeItem> m_temp_items;
     u32 m_total_money;
     bool m_sell_info_actuality;
     bool m_can_select_weapon;
@@ -605,7 +605,7 @@ public:
     typedef fastdelegate::FastDelegate<bool(SHit const*)> HitCallback;
 
 private:
-    typedef xr_vector<on_best_cover_changed_delegate> cover_delegates;
+    typedef std::vector<on_best_cover_changed_delegate> cover_delegates;
 
 private:
     cover_delegates m_cover_delegates;
@@ -666,8 +666,8 @@ private:
     u32 m_throw_time_interval;
 
 #ifdef DEBUG
-    xr_vector<trajectory_pick> m_throw_picks;
-    xr_vector<Fvector> m_throw_collide_tris;
+    std::vector<trajectory_pick> m_throw_picks;
+    std::vector<Fvector> m_throw_collide_tris;
 #endif // DEBUG
 
 public:
@@ -715,7 +715,7 @@ private:
     void fill_bones_body_parts(LPCSTR bone_id, const ECriticalWoundType& wound_type);
 
 public:
-    typedef xr_vector<float> CRITICAL_WOUND_WEIGHTS;
+    typedef std::vector<float> CRITICAL_WOUND_WEIGHTS;
 
 private:
     CRITICAL_WOUND_WEIGHTS m_critical_wound_weights;
@@ -805,7 +805,7 @@ public:
     bool can_fire_right_now();
 
 public:
-    typedef xr_vector<IGameObject*> ignored_touched_objects_type;
+    typedef std::vector<IGameObject*> ignored_touched_objects_type;
     inline ignored_touched_objects_type& ignored_touched_objects() { return m_ignored_touched_objects; }
     void generate_take_event(IGameObject const* const object) const;
 

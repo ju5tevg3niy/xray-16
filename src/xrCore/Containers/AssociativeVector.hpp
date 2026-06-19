@@ -11,18 +11,18 @@
 #include <algorithm>
 #include <functional>
 #include <utility>
+#include <vector>
 
 #include "xrCore/xrCore.h"
-#include "xrCommon/xr_vector.h"
 #include "AssociativeVectorComparer.hpp"
 
 template <typename TKey, typename TValue, typename TKeyComparer = std::less<TKey>>
-class AssociativeVector : protected xr_vector<std::pair<TKey, TValue>>,
+class AssociativeVector : protected std::vector<std::pair<TKey, TValue>>,
                           protected AssociativeVectorComparer<TKey, TValue, TKeyComparer>
 {
 private:
     typedef AssociativeVector<TKey, TValue, TKeyComparer> TSelf;
-    typedef xr_vector<std::pair<TKey, TValue>> inherited;
+    typedef std::vector<std::pair<TKey, TValue>> inherited;
 
 public:
     typedef AssociativeVectorComparer<TKey, TValue, TKeyComparer> TComparer;

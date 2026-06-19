@@ -1,3 +1,5 @@
+#include <set>
+
 #include "stdafx.h"
 
 #include <assert.h>
@@ -1199,10 +1201,10 @@ void NvStripifier::FindAllStrips(
         //
         // PHASE 1: Set up numSamples * numEdges experiments
         //
-        xr_vector<NvStripInfoVec> experiments;
+        std::vector<NvStripInfoVec> experiments;
         experiments.resize(numSamples * 6);
         int experimentIndex = 0;
-        xr_set<NvFaceInfo*> resetPoints;
+        std::set<NvFaceInfo*> resetPoints;
         int i;
         for (i = 0; i < numSamples; i++)
         {
@@ -1340,7 +1342,7 @@ void NvStripifier::FindAllStrips(
 // This will count the number of triangles left in the
 // strip list starting at iter and finishing up at end
 //
-int NvStripifier::CountRemainingTris(xr_list<NvStripInfo*>::iterator iter, xr_list<NvStripInfo*>::iterator end)
+int NvStripifier::CountRemainingTris(std::list<NvStripInfo*>::iterator iter, std::list<NvStripInfo*>::iterator end)
 {
     int count = 0;
     while (iter != end)

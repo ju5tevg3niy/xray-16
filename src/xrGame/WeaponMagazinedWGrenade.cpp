@@ -88,7 +88,7 @@ bool CWeaponMagazinedWGrenade::net_Spawn(CSE_Abstract* DC)
     }
     else
     {
-        xr_vector<CCartridge>* pM = NULL;
+        std::vector<CCartridge>* pM = NULL;
         bool b_if_grenade_mode = (m_bGrenadeMode && iAmmoElapsed && !getRocketCount());
         if (b_if_grenade_mode)
             pM = &m_magazine;
@@ -855,7 +855,7 @@ bool CWeaponMagazinedWGrenade::install_upgrade_ammo_class(LPCSTR section, bool t
     bool result2 = process_if_exists_set(section, "ammo_class", &CInifile::r_string, str, test);
     if (result2 && !test)
     {
-        xr_vector<shared_str>& ammo_types = m_bGrenadeMode ? m_ammoTypes2 : m_ammoTypes;
+        std::vector<shared_str>& ammo_types = m_bGrenadeMode ? m_ammoTypes2 : m_ammoTypes;
         ammo_types.clear();
         for (int i = 0, count = _GetItemCount(str); i < count; ++i)
         {
@@ -881,7 +881,7 @@ bool CWeaponMagazinedWGrenade::install_upgrade_impl(LPCSTR section, bool test)
     bool result2 = process_if_exists_set(section, "grenade_class", &CInifile::r_string, str, test);
     if (result2 && !test)
     {
-        xr_vector<shared_str>& ammo_types = !m_bGrenadeMode ? m_ammoTypes2 : m_ammoTypes;
+        std::vector<shared_str>& ammo_types = !m_bGrenadeMode ? m_ammoTypes2 : m_ammoTypes;
         ammo_types.clear();
         for (int i = 0, count = _GetItemCount(str); i < count; ++i)
         {

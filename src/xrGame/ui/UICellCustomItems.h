@@ -15,7 +15,7 @@ class CUIInventoryCellItem : public CUICellItem
 {
     typedef CUICellItem inherited;
 
-    xr_vector<SIconLayer*> m_layers;
+    std::vector<SIconLayer*> m_layers;
 
 public:
     CUIInventoryCellItem(CInventoryItem* itm);

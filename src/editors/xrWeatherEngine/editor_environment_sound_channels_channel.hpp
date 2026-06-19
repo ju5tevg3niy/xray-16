@@ -39,7 +39,7 @@ private:
     void id_setter(pcstr value);
 
 public:
-    using sound_container_type = xr_vector<source*>;
+    using sound_container_type = std::vector<source*>;
 
 private:
     using property_holder_type = XRay::Editor::property_holder_base;

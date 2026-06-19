@@ -1,11 +1,9 @@
 #pragma once
-// xrServer.h: interface for the xrServer class.
-//
-//////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_XRSERVER_H__65728A25_16FC_4A7B_8CCE_D798CA5EC64E__INCLUDED_)
-#define AFX_XRSERVER_H__65728A25_16FC_4A7B_8CCE_D798CA5EC64E__INCLUDED_
-#pragma once
+#include <set>
+#include <unordered_map>
+
+#include "Common/Platform.hpp"
 
 #if defined(XR_PLATFORM_WINDOWS)
 #include "xrNetServer/NET_Server.h"
@@ -18,7 +16,6 @@
 #include "secure_messaging.h"
 #include "xrServer_updates_compressor.h"
 #include "xrClientsPool.h"
-#include "xrCommon/xr_unordered_map.h"
 
 #ifdef DEBUG
 //. #define SLOW_VERIFY_ENTITIES
@@ -30,12 +27,12 @@ constexpr u32 NET_Latency = 50; // time in (ms)
 
 // XXX: check if u16 used for entity's id. If true, then this must be changed, if we want to increase the number of ID's.
 #ifdef XR_PLATFORM_WINDOWS
-using xrS_entities = xr_unordered_map<u16, CSE_Abstract*>;
+using xrS_entities = std::unordered_map<u16, CSE_Abstract*>;
 #elif defined(XR_PLATFORM_POSIX)
-// XXX: For the game engine to work correctly, the actor must always load first, the xr_unordered_map implementation for win
+// XXX: For the game engine to work correctly, the actor must always load first, the std::unordered_map implementation for win
 // provides this, but the CPP standard order of elements in the container is not defined, which leads to crashes when
 // loading saved game under UNIX
-using xrS_entities = xr_map<u16, CSE_Abstract*>;
+using xrS_entities = std::map<u16, CSE_Abstract*>;
 #else
 #error add your platform-specific extension here
 #endif
@@ -83,7 +80,7 @@ struct CheaterToKick
     shared_str reason;
     ClientID cheater_id;
 };
-typedef xr_vector<CheaterToKick> cheaters_t;
+typedef std::vector<CheaterToKick> cheaters_t;
 
 namespace file_transfer
 {
@@ -97,8 +94,8 @@ class xrServer : public IPureServer
 {
 private:
     xrS_entities entities;
-    xr_multiset<svs_respawn> q_respawn;
-    xr_vector<u16> conn_spawned_ids;
+    std::multiset<svs_respawn> q_respawn;
+    std::vector<u16> conn_spawned_ids;
     cheaters_t m_cheaters;
 
     file_transfer::server_site* m_file_transfers;
@@ -121,7 +118,7 @@ private:
 
     void LoadServerInfo();
 
-    typedef xr_vector<server_info_uploader*> info_uploaders_t;
+    typedef std::vector<server_info_uploader*> info_uploaders_t;
 
     info_uploaders_t m_info_uploaders;
     IReader* m_server_logo;
@@ -135,7 +132,7 @@ private:
     };
 
     Lock DelayedPackestCS;
-    xr_deque<DelayedPacket> m_aDelayedPackets;
+    std::deque<DelayedPacket> m_aDelayedPackets;
     void ProceedDelayedPackets();
     void AddDelayedPacket(NET_Packet& Packet, ClientID Sender);
     u32 OnDelayedMessage(NET_Packet& P, ClientID sender); // Non-Zero means broadcasting with "flags" as returned
@@ -293,7 +290,7 @@ public:
     void SendPlayersInfo(ClientID const& to_client);
 
 public:
-    xr_string ent_name_safe(u16 eid);
+    std::string ent_name_safe(u16 eid);
 #ifdef DEBUG
     bool verify_entities() const;
     void verify_entity(const CSE_Abstract* entity) const;
@@ -320,5 +317,3 @@ enum e_dbg_net_Draw_Flags
 };
 extern Flags32 dbg_net_Draw_Flags;
 #endif
-
-#endif // !defined(AFX_XRSERVER_H__65728A25_16FC_4A7B_8CCE_D798CA5EC64E__INCLUDED_)

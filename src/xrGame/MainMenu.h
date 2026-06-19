@@ -67,7 +67,7 @@ class CMainMenu : public IMainMenu,
     string_path m_screenshot_name;
     u32 m_screenshotFrame;
 
-    xr_vector<CUIWindow*> m_pp_draw_wnds;
+    std::vector<CUIWindow*> m_pp_draw_wnds;
 
     CGameSpy_Full* m_pGameSpyFull{};
     gamespy_gp::account_manager* m_account_mngr{};
@@ -115,7 +115,7 @@ protected:
     shared_str m_player_name;
     shared_str m_cdkey;
 
-    xr_vector<CUIMessageBoxEx*> m_pMB_ErrDlgs;
+    std::vector<CUIMessageBoxEx*> m_pMB_ErrDlgs;
     bool ReloadUI();
 
 public:

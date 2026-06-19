@@ -71,7 +71,7 @@ void try_change_current_entity()
     CFrustum frustum;
     frustum.CreateFromMatrix(Device.mFullTransform, FRUSTUM_P_LRTB | FRUSTUM_P_FAR);
 
-    typedef xr_vector<ISpatial*> OBJECTS;
+    typedef std::vector<ISpatial*> OBJECTS;
     OBJECTS ISpatialResult;
     g_pGamePersistent->SpatialSpace.q_frustum(ISpatialResult, 0, STYPE_COLLIDEABLE, frustum);
 
@@ -357,7 +357,7 @@ void CAI_Stalker::debug_text()
         DBG_OutText("%s%sselected", indent, indent);
 
         float fuzzy = 0.f;
-        xr_vector<feel_visible_Item>::iterator I = feel_visible.begin(), E = feel_visible.end();
+        std::vector<feel_visible_Item>::iterator I = feel_visible.begin(), E = feel_visible.end();
         for (; I != E; ++I)
             if (I->O->ID() == memory().enemy().selected()->ID())
             {
@@ -820,8 +820,8 @@ void CAI_Stalker::debug_text()
         DBG_OutText("%s%sobjects     : %d", indent, indent, object_count);
     }
     {
-        xr_vector<CSoundPlayer::CSoundSingle>::const_iterator I = sound().playing_sounds().begin();
-        xr_vector<CSoundPlayer::CSoundSingle>::const_iterator E = sound().playing_sounds().end();
+        std::vector<CSoundPlayer::CSoundSingle>::const_iterator I = sound().playing_sounds().begin();
+        std::vector<CSoundPlayer::CSoundSingle>::const_iterator E = sound().playing_sounds().end();
         for (; I != E; ++I)
             DBG_OutText("%s%s%s[%s]%s", indent, indent, indent,
                 (Device.dwTimeGlobal < (*I).m_start_time) ? "not yet started" :
@@ -995,7 +995,7 @@ void CAI_Stalker::dbg_draw_vision()
 
 namespace detail::stalker::debug
 {
-using COLLIDE_POINTS = xr_vector<Fvector>;
+using COLLIDE_POINTS = std::vector<Fvector>;
 
 class ray_query_param
 {
@@ -1058,7 +1058,7 @@ void draw_visiblity_rays(CCustomMonster* self, const IGameObject* object, collid
     using namespace ::detail::stalker::debug;
 
     typedef Feel::Vision::feel_visible_Item feel_visible_Item;
-    typedef xr_vector<feel_visible_Item> VISIBLE_ITEMS;
+    typedef std::vector<feel_visible_Item> VISIBLE_ITEMS;
 
     feel_visible_Item* item = 0;
     {
@@ -1127,7 +1127,7 @@ void CAI_Stalker::dbg_draw_visibility_rays()
 
 #define DEBUG_RENDER
 
-xr_vector<Fmatrix> g_stalker_skeleton;
+std::vector<Fmatrix> g_stalker_skeleton;
 
 static Fmatrix aim_on_actor(Fvector const& bone_position, Fvector const& weapon_position,
     Fvector const& weapon_direction, Fvector const& target, bool const& debug_draw)
@@ -1629,7 +1629,7 @@ void CAI_Stalker::OnRender()
         if (!memory().enemy().selected() || !memory().visual().visible_now(memory().enemy().selected()))
             return;
 
-        xr_vector<IGameObject*> objects;
+        std::vector<IGameObject*> objects;
         feel_vision_get(objects);
         if (std::find(objects.begin(), objects.end(), memory().enemy().selected()) != objects.end())
         {

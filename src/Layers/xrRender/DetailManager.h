@@ -16,9 +16,9 @@ const int dm_max_decompress = 14;
 class CCustomObject;
 typedef u32 ObjClassID;
 
-typedef xr_list<CCustomObject*> ObjectList;
+typedef std::list<CCustomObject*> ObjectList;
 typedef ObjectList::iterator ObjectIt;
-typedef xr_map<ObjClassID, ObjectList> ObjectMap;
+typedef std::map<ObjClassID, ObjectList> ObjectMap;
 typedef ObjectMap::iterator ObjectPairIt;
 
 #else
@@ -50,7 +50,7 @@ extern float dm_current_fade;// = float(2*dm_current_size)-.5f;
 extern float ps_current_detail_density;
 extern float ps_current_detail_height;
 
-class ECORE_API CDetailManager
+class CDetailManager
 {
 public:
     struct SlotItem
@@ -66,7 +66,7 @@ public:
 #endif
     };
 
-    using SlotItemVec = xr_vector<SlotItem*>;
+    using SlotItemVec = std::vector<SlotItem*>;
 
     struct SlotPart
     { //
@@ -115,7 +115,7 @@ public:
         }
     };
 
-    typedef xr_vector<xr_vector<SlotItemVec*>> vis_list;
+    typedef std::vector<std::vector<SlotItemVec*>> vis_list;
     typedef svector<CDetail*, dm_max_objects> DetailVec;
     typedef DetailVec::iterator DetailIt;
     typedef poolSS<SlotItem, 4096> PSS;

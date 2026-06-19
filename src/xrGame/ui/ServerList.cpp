@@ -169,7 +169,7 @@ void CServerList::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 
         if (pWnd == m_message_box)
         {
-            xr_string command;
+            std::string command;
             item->CreateConsoleCommand(command, m_playerName.c_str(),
                 m_message_box->m_pMessageBox->GetUserPassword(),
                 m_message_box->GetPassword());
@@ -293,7 +293,7 @@ void CServerList::FillUpDetailedServerInfo()
         pstr _buff = NULL;
         CUIListBoxItem* pItemAdv;
         // TEAM 1
-        xr_vector<PlayerInfo>::iterator it;
+        std::vector<PlayerInfo>::iterator it;
         for (it = srvInfo.m_aPlayers.begin(); it != srvInfo.m_aPlayers.end(); ++it)
         {
             PlayerInfo pf = *it;
@@ -375,7 +375,7 @@ void CServerList::FillUpDetailedServerInfo()
     }
     else
     {
-        xr_vector<PlayerInfo>::iterator it;
+        std::vector<PlayerInfo>::iterator it;
         for (it = srvInfo.m_aPlayers.begin(); it != srvInfo.m_aPlayers.end(); ++it)
         {
             PlayerInfo pf = *it;
@@ -610,7 +610,7 @@ void CServerList::ConnectToSelected()
     }
     else
     {
-        xr_string command;
+        std::string command;
         item->CreateConsoleCommand(command, m_playerName.c_str(), "", "");
         Console->Execute(command.c_str());
     }
@@ -861,7 +861,7 @@ void CServerList::SetSortFunc_internal(ESortingMode sort_mode, ESortingType sort
 void CServerList::SrvInfo2LstSrvInfo(const ServerInfo* pServerInfo)
 {
     m_itemInfo.info.server = pServerInfo->m_ServerName;
-    xr_string address = pServerInfo->m_HostName;
+    std::string address = pServerInfo->m_HostName;
     char port[8];
     address += "/port=";
     address += xr_itoa(pServerInfo->m_Port, port, 10);

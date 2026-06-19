@@ -4,7 +4,7 @@
 
 class CUITabButton;
 
-using TABS_VECTOR = xr_vector<CUITabButton*>;
+using TABS_VECTOR = std::vector<CUITabButton*>;
 
 class XRUICORE_API CUITabControl : public CUIWindow, public CUIOptionsItem
 {

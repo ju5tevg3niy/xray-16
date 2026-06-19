@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "Shader.h"
 
 namespace PAPI
@@ -8,7 +10,7 @@ struct Particle;
 struct ParticleEffect;
 struct PAHeader;
 struct ParticleAction;
-using PAVec = xr_vector<ParticleAction*>;
+using PAVec = std::vector<ParticleAction*>;
 }
 struct EParticleAction;
 
@@ -48,7 +50,7 @@ struct SFrame
     }
 };
 
-class ECORE_API CPEDef
+class CPEDef
 {
 public:
     enum
@@ -112,7 +114,7 @@ public:
 #ifdef _EDITOR
     // change Copy&Equal if variables changed
 public:
-    DEFINE_VECTOR(EParticleAction*, EPAVec, EPAVecIt);
+    using EPAVec = std::vector<EParticleAction*>;
     EPAVec m_EActionList;
 
 public:
@@ -120,10 +122,10 @@ public:
     bool __stdcall NameOnAfterEdit(PropValue* sender, shared_str& edit_val);
     bool __stdcall CollisionFrictionOnAfterEdit(PropValue* sender, float& edit_val);
     void __stdcall CollisionFrictionOnBeforeEdit(PropValue* sender, float& edit_val);
-    void __stdcall CollisionFrictionOnDraw(PropValue* sender, xr_string& draw_val);
+    void __stdcall CollisionFrictionOnDraw(PropValue* sender, std::string& draw_val);
     bool __stdcall CollisionCutoffOnAfterEdit(PropValue* sender, float& edit_val);
     void __stdcall CollisionCutoffOnBeforeEdit(PropValue* sender, float& edit_val);
-    void __stdcall CollisionCutoffOnDraw(PropValue* sender, xr_string& draw_val);
+    void __stdcall CollisionCutoffOnDraw(PropValue* sender, std::string& draw_val);
     void __stdcall OnActionEditClick(ButtonValue* sender, bool& bDataModified, bool& bSafe);
     void __stdcall OnFrameResize(PropValue* sender);
     void __stdcall OnShaderChange(PropValue* sender);

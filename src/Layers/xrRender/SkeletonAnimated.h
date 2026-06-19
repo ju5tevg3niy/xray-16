@@ -40,7 +40,7 @@ public:
 // typedef void	( * MotionMarkCallback)		(CBlend*		P);
 
 //*** The visual itself ***************************************************************************
-class ECORE_API CKinematicsAnimated : public CKinematics, public IKinematicsAnimated
+class CKinematicsAnimated : public CKinematics, public IKinematicsAnimated
 {
     typedef CKinematics inherited;
     friend class CBoneData;
@@ -84,7 +84,7 @@ private:
         shared_motions motions;
         BoneMotionsVec bone_motions;
     };
-    using MotionsSlotVec = xr_vector<SMotionsSlot>;
+    using MotionsSlotVec = std::vector<SMotionsSlot>;
     MotionsSlotVec m_Motions;
 
     CPartition* m_Partition{};

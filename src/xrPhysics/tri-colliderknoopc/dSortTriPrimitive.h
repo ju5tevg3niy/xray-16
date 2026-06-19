@@ -319,7 +319,7 @@ IC int dcTriListCollider::dSortTriPrimitiveCollide(
 	}
 
     // if(intersect) ret=0;
-    //xr_vector<Triangle>::iterator i;
+    //std::vector<Triangle>::iterator i;
 
     if (intersect)
     {

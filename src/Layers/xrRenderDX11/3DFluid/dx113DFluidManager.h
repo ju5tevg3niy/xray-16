@@ -55,7 +55,7 @@ public:
 
 #ifndef MASTER_GOLD
     // Allow real-time config reload
-    void RegisterFluidData(dx113DFluidData* pData, const xr_string& SectionName);
+    void RegisterFluidData(dx113DFluidData* pData, const std::string& SectionName);
     void DeregisterFluidData(dx113DFluidData* pData);
     void UpdateProfiles();
 #endif
@@ -139,8 +139,8 @@ private:
 
 #ifndef MASTER_GOLD
     // Allow real-time config reload
-    xr_vector<xr_string> m_lstSectionNames;
-    xr_vector<dx113DFluidData*> m_lstFluidData;
+    std::vector<std::string> m_lstSectionNames;
+    std::vector<dx113DFluidData*> m_lstFluidData;
 #endif
 };
 

@@ -146,7 +146,7 @@ struct rq_result
     IC bool valid() { return (element >= 0); }
 };
 
-using rqVec = xr_vector<rq_result>;
+using rqVec = std::vector<rq_result>;
 
 class rq_results
 {

@@ -18,8 +18,8 @@ public:
     template <typename T>
     class CItemBase
     {
-        xr_vector<T> m_data;
-        typedef typename xr_vector<T>::iterator ITEM_STORAGE_VEC_IT;
+        std::vector<T> m_data;
+        typedef typename std::vector<T>::iterator ITEM_STORAGE_VEC_IT;
 
         struct remove_text_pred
         {
@@ -255,10 +255,17 @@ private:
         bool operator<(const SKey& val) const { return (class_ptr < val.class_ptr); }
     };
 
-    DEFINE_MAP(LPCSTR, CObjectInfo*, CLASS_INFO_MAP, CLASS_INFO_MAP_IT);
-    DEFINE_MAP(IGameObject*, CLASS_INFO_MAP, OBJECT_INFO_MAP, OBJECT_INFO_MAP_IT);
-    DEFINE_MAP(SKey, CTextInfo*, TEXT_INFO_MAP, TEXT_INFO_MAP_IT);
-    DEFINE_MAP(SKey, CLevelInfo*, LEVEL_INFO_MAP, LEVEL_INFO_MAP_IT);
+    using CLASS_INFO_MAP = std::map<LPCSTR, CObjectInfo*>;
+    using CLASS_INFO_MAP_IT = CLASS_INFO_MAP::iterator;
+
+    using OBJECT_INFO_MAP = std::map<IGameObject*, CLASS_INFO_MAP>;
+    using OBJECT_INFO_MAP_IT = OBJECT_INFO_MAP::iterator;
+
+    using TEXT_INFO_MAP = std::map<SKey, CTextInfo*>;
+    using TEXT_INFO_MAP_IT = TEXT_INFO_MAP::iterator;
+
+    using LEVEL_INFO_MAP = std::map<SKey, CLevelInfo*>;
+    using LEVEL_INFO_MAP_IT = LEVEL_INFO_MAP::iterator;
 
     OBJECT_INFO_MAP m_objects_info;
     TEXT_INFO_MAP m_text_info;

@@ -50,7 +50,7 @@ private:
 };
 
 // The class itself
-class ECORE_API dxRender_Visual : public IRenderVisual
+class dxRender_Visual : public IRenderVisual
 {
 public:
 #ifdef _EDITOR

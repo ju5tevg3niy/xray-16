@@ -6,7 +6,7 @@
 #include "xrPhysics/ExtendedGeom.h"
 #include "dTriColliderMath.h"
 
-extern xr_vector<flags8> gl_cl_tries_state;
+extern std::vector<flags8> gl_cl_tries_state;
 
 // NOTE: stride is sizeof(dContact) * N, where N is [0, ...)
 inline dContactGeom* CONTACT(dContactGeom* ptr, const int stride)

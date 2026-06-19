@@ -72,7 +72,7 @@ public:
 
 struct SThunderboltCollection
 {
-    xr_vector<SThunderboltDesc*> palette;
+    std::vector<SThunderboltDesc*> palette;
     shared_str section;
 
     SThunderboltCollection(const shared_str& sect, CInifile const* pIni, CInifile const* thunderbolts);
@@ -96,7 +96,7 @@ class CEffect_Thunderbolt
     friend class xray::render::render_gl::dxThunderboltRender;
 
 protected:
-    xr_vector<SThunderboltCollection*> collections;
+    std::vector<SThunderboltCollection*> collections;
     SThunderboltDesc* current;
 
 private:

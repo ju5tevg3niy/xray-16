@@ -17,7 +17,7 @@ constexpr pcstr RENDERER_RGL_MODE = "renderer_rgl";   // id 6
 
 class RGLRendererModule final : public RendererModule
 {
-    xr_vector<std::pair<pcstr, int>> modes;
+    std::vector<std::pair<pcstr, int>> modes;
 
 public:
     bool CheckCanAddMode() const
@@ -30,7 +30,7 @@ public:
         return xrRender_test_hw();
     }
 
-    const xr_vector<std::pair<pcstr, int>>& ObtainSupportedModes() override
+    const std::vector<std::pair<pcstr, int>>& ObtainSupportedModes() override
     {
         ZoneScoped;
 

@@ -1,7 +1,8 @@
 #pragma once
 
+#include <vector>
+
 #include "pure_relcase.h"
-#include "xrCommon/xr_vector.h"
 
 // fwd. decl.
 class IGameObject;
@@ -22,11 +23,11 @@ public:
     };
 
 protected:
-    xr_vector<DenyTouch> feel_touch_disable;
+    std::vector<DenyTouch> feel_touch_disable;
 
 public:
-    xr_vector<IGameObject*> feel_touch;
-    xr_vector<IGameObject*> q_nearest;
+    std::vector<IGameObject*> feel_touch;
+    std::vector<IGameObject*> q_nearest;
 
 public:
     void feel_touch_relcase(IGameObject* O);

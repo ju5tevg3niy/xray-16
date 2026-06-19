@@ -13,15 +13,15 @@
 //////////////////////////////////////////////////////////////////////
 // FS_File
 //////////////////////////////////////////////////////////////////////
-FS_File::FS_File(const xr_string& nm, long sz, time_t modif, unsigned attr) { set(nm, sz, modif, attr); }
-FS_File::FS_File(const xr_string& nm) { set(nm, 0, 0, 0); }
+FS_File::FS_File(const std::string& nm, long sz, time_t modif, unsigned attr) { set(nm, sz, modif, attr); }
+FS_File::FS_File(const std::string& nm) { set(nm, 0, 0, 0); }
 FS_File::FS_File(const _FINDDATA_T& f) { set(f.name, f.size, f.time_write, (f.attrib & _A_SUBDIR) ? flSubDir : 0); }
-FS_File::FS_File(const xr_string& nm, const _FINDDATA_T& f)
+FS_File::FS_File(const std::string& nm, const _FINDDATA_T& f)
 {
     set(nm, f.size, f.time_write, (f.attrib & _A_SUBDIR) ? flSubDir : 0);
 }
 
-void FS_File::set(const xr_string& nm, long sz, time_t modif, unsigned attr)
+void FS_File::set(const std::string& nm, long sz, time_t modif, unsigned attr)
 {
     name = nm;
     xr_fs_strlwr(name);
@@ -119,10 +119,10 @@ pcstr FS_Path::_update(string_path& dest, pcstr src) const
     return xr_fs_strlwr(dest);
 }
 /*
-void FS_Path::_update(xr_string& dest, pcstr src)const
+void FS_Path::_update(std::string& dest, pcstr src)const
 {
 R_ASSERT(src);
-dest = xr_string(m_Path)+src;
+dest = std::string(m_Path)+src;
 xr_strlwr (dest);
 }*/
 void FS_Path::rescan_path_cb()

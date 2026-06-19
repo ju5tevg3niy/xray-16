@@ -59,7 +59,7 @@ public:
     }
 };
 
-void ISpatial_DB::q_frustum(xr_vector<ISpatial*>& R, u32 _o, u32 _mask, const CFrustum& _frustum)
+void ISpatial_DB::q_frustum(std::vector<ISpatial*>& R, u32 _o, u32 _mask, const CFrustum& _frustum)
 {
     ZoneScoped;
     ScopeLock scope(&cs);

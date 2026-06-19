@@ -206,7 +206,7 @@ SThunderboltCollection* manager::thunderbolt_collection(CInifile const* pIni, CI
 }
 
 SThunderboltCollection* manager::thunderbolt_collection(
-    xr_vector<SThunderboltCollection*>& collection, shared_str const& id)
+    std::vector<SThunderboltCollection*>& collection, shared_str const& id)
 {
     return (m_thunderbolts->get_collection(id));
 }

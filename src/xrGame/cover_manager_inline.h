@@ -77,8 +77,8 @@ IC const CCoverPoint* CCoverManager::best_cover(
 
     float radius_sqr = _sqr(radius);
 
-    xr_vector<CCoverPoint*>::const_iterator I = m_nearest.begin();
-    xr_vector<CCoverPoint*>::const_iterator E = m_nearest.end();
+    std::vector<CCoverPoint*>::const_iterator I = m_nearest.begin();
+    std::vector<CCoverPoint*>::const_iterator E = m_nearest.end();
     for (; I != E; ++I)
     {
         if (radius_sqr < position.distance_to_sqr((*I)->position()))

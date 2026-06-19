@@ -63,13 +63,13 @@ protected:
     IGameObject* pCurrentViewEntity;
 
     // Static sounds
-    xr_vector<ref_sound> Sounds_Random;
+    std::vector<ref_sound> Sounds_Random;
     u32 Sounds_Random_dwNextTime;
     bool Sounds_Random_Enabled;
     CCameraManager* m_pCameras;
 
     // temporary
-    xr_vector<ISpatial*> snd_ER;
+    std::vector<ISpatial*> snd_ER;
 
 public:
     ISoundScene* Sound{};
@@ -89,7 +89,7 @@ public: // deferred sound events
         ref_sound source;
         float power;
     };
-    xr_vector<_esound_delegate> snd_Events;
+    std::vector<_esound_delegate> snd_Events;
 
 public:
     // Main, global functions
@@ -111,7 +111,7 @@ public:
     virtual void Load_GameSpecific_CFORM(CDB::TRI* T, u32 count) = 0;
     virtual void Load_GameSpecific_CFORM_Serialize(IWriter& writer) = 0;
     virtual bool Load_GameSpecific_CFORM_Deserialize(IReader& reader) = 0;
-    virtual void Load_GameSpecific_CFORM_SetMaterials(CDB::TRI* tris, u32 count, xr_map<u16, shared_str>& gameMtls) = 0;
+    virtual void Load_GameSpecific_CFORM_SetMaterials(CDB::TRI* tris, u32 count, std::map<u16, shared_str>& gameMtls) = 0;
 
     virtual void OnFrame(void);
     virtual void OnRender(void);

@@ -36,7 +36,7 @@ void ip_address::set(pcstr src_string)
     }
 }
 
-xr_string ip_address::to_string() const
+std::string ip_address::to_string() const
 {
     string128 res;
     xr_sprintf(res, sizeof(res), "%d.%d.%d.%d", m_data.a1, m_data.a2, m_data.a3, m_data.a4);
@@ -67,7 +67,7 @@ void IBannedClient::Save(CInifile& ini)
     ini.w_string(HAddr.to_string().c_str(), "time_to", BannedTimeTo().c_str());
 }
 
-xr_string IBannedClient::BannedTimeTo() const
+std::string IBannedClient::BannedTimeTo() const
 {
     string256 res;
 
@@ -302,7 +302,7 @@ IPureServer::EConnect IPureServer::Connect(pcstr options, GameDescriptionData& g
         psNET_Port = dwServerPort;
         while (HostSuccess != S_OK) {
             if (HostSuccess != S_OK) {
-                //			xr_string res = xrDebug::ErrorToString(HostSuccess);
+                //			std::string res = xrDebug::ErrorToString(HostSuccess);
                 if (bPortWasSet) {
                     Msg("! IPureServer : port %d is BUSY!", psNET_Port);
                     return ErrConnect;

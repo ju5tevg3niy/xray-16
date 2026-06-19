@@ -412,7 +412,7 @@ void CResourceManager::LS_Load()
     ScriptEngine.init(exporterFunc, false);
     // load shaders
     const char* shaderPath = RImplementation.getShaderPath();
-    xr_vector<char*>* folder = FS.file_list_open("$game_shaders$", shaderPath, FS_ListFiles | FS_RootOnly);
+    std::vector<char*>* folder = FS.file_list_open("$game_shaders$", shaderPath, FS_ListFiles | FS_RootOnly);
     R_ASSERT3(folder, "Shader folder not found: ", shaderPath);
     for (u32 it = 0; it < folder->size(); it++)
     {

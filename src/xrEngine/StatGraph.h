@@ -1,16 +1,16 @@
 #pragma once
 
 #include <cstddef>
+#include <vector>
+#include <deque>
 
 #include "Common/types.hpp"
 #include "Include/xrRender/FactoryPtr.h"
 #include "Include/xrRender/StatGraphRender.h"
-#include "xrCommon/xr_vector.h"
 #include "xrCore/Math/math_funcs_inline.hpp"
 #include "xrCore/Math/vector2.hpp"
 #include "xrCore/xrDebug_macros.h"
 #include "xrEngine/pure.h"
-#include "xrCommon/xr_deque.h"
 
 namespace xray::render
 {
@@ -52,7 +52,7 @@ protected:
             data = d;
         }
     };
-    using ElementsDeq = xr_deque<SElement>;
+    using ElementsDeq = std::deque<SElement>;
 
     struct SSubGraph
     {
@@ -61,7 +61,7 @@ protected:
         SSubGraph(EStyle s) { style = s; };
         void SetStyle(EStyle s) { style = s; };
     };
-    using SubGraphVec = xr_vector<SSubGraph>;
+    using SubGraphVec = std::vector<SSubGraph>;
     SubGraphVec subgraphs;
 
     float mn, mx;
@@ -83,7 +83,7 @@ protected:
         float m_fPos;
         u32 m_dwColor;
     };
-    using MarkersDeq = xr_deque<SMarker>;
+    using MarkersDeq = std::deque<SMarker>;
     MarkersDeq m_Markers;
 
 protected:

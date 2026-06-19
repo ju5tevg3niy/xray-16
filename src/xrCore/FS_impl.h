@@ -236,7 +236,7 @@ IC size_t IReaderBase<T>::find_chunk(u32 ID, bool* bCompressed)
 
 struct IReaderBase_Test
 {
-    typedef xr_unordered_map<u32, size_t> id2pos_container;
+    typedef std::unordered_map<u32, size_t> id2pos_container;
 
     id2pos_container id2pos;
     size_t last_pos;

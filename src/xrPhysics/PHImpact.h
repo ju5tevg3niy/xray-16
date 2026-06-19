@@ -12,4 +12,4 @@ struct SPHImpact
         geom = root_geom;
     }
 };
-using PH_IMPACT_STORAGE = xr_vector<SPHImpact>;
+using PH_IMPACT_STORAGE = std::vector<SPHImpact>;

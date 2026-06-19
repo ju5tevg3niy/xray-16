@@ -495,7 +495,7 @@ void CControlAnimationBase::ValidateAnimation()
 void CControlAnimationBase::UpdateAnimCount()
 {
     IKinematicsAnimated* skel = smart_cast<IKinematicsAnimated*>(m_object->Visual());
-    xr_vector<size_t> subjectsToDelete;
+    std::vector<size_t> subjectsToDelete;
 
     for (auto it = m_anim_storage.begin(); it != m_anim_storage.end(); ++it)
     {

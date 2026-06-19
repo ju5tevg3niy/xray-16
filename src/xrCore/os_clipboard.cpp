@@ -12,11 +12,11 @@
 #include <SDL_stdinc.h>
 #include <cctype>
 #include <cstddef>
+#include <string>
 #include <locale>
 
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCommon/xr_string.h"
 #include "xrCore/Text/string_conversion.hpp"
 #include "xrCore/Text/string_funcs_inline.hpp"
 #include "xrCore/log.h"
@@ -34,7 +34,7 @@ void os_clipboard::copy_to_clipboard(pcstr buf, bool alreadyUTF8 /*= false*/)
     else
     {
         static std::locale locale("");
-        xr_string string = StringToUTF8(buf, locale);
+        std::string string = StringToUTF8(buf, locale);
         result = SDL_SetClipboardText(string.c_str());
     }
     if (result < 0)
@@ -61,7 +61,7 @@ void os_clipboard::paste_from_clipboard(pstr buffer, size_t buffer_size)
     }
 
     static std::locale locale("");
-    const xr_string string = StringFromUTF8(clipData, locale);
+    const std::string string = StringFromUTF8(clipData, locale);
     SDL_free(clipData);
 
     strncpy_s(buffer, buffer_size, string.c_str(), buffer_size - 1);
@@ -101,7 +101,7 @@ void os_clipboard::update_clipboard(pcstr string)
     }
 
     static std::locale locale("");
-    const xr_string stringInUTF8 = StringToUTF8(string, locale);
+    const std::string stringInUTF8 = StringToUTF8(string, locale);
 
     const size_t clipLength = xr_strlen(clipData);
     const size_t stringLength = stringInUTF8.size();

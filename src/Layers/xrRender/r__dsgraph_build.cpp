@@ -666,8 +666,8 @@ void R_dsgraph_structure::add_static(dxRender_Visual* pVisual, const CFrustum& v
     }
 }
 
-void R_dsgraph_structure::load(const xr_vector<CSector::level_sector_data_t>& sectors_data,
-    const xr_vector<CPortal::level_portal_data_t>& portals_data)
+void R_dsgraph_structure::load(const std::vector<CSector::level_sector_data_t>& sectors_data,
+    const std::vector<CPortal::level_portal_data_t>& portals_data)
 {
     ZoneScoped;
 
@@ -744,7 +744,7 @@ void R_dsgraph_structure::build_subspace()
 
     // Determine visibility for static geometry hierarchy
 #if 0
-    static xr_vector<Task*> static_geo_tasks;
+    static std::vector<Task*> static_geo_tasks;
     static_geo_tasks.resize(PortalTraverser.r_sectors.size());
 #endif
 

@@ -1,16 +1,12 @@
-//----------------------------------------------------
-// file: FileSystem.h
-//----------------------------------------------------
-
 #pragma once
 
+#include <string>
 #include <cstddef>
 
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
 #include "xrCommon/xr_smart_pointers.h"
-#include "xrCommon/xr_string.h"
 
 #define BACKUP_FILE_LEVEL 5
 
@@ -27,25 +23,25 @@ public:
 
     bool GetOpenName(pcstr initial, string_path& buffer, int sz_buf, bool bMulti = false, pcstr offset = 0,
         int start_flt_ext = -1);
-    bool GetOpenName(pcstr initial, xr_string& buf, bool bMulti = false, pcstr offset = 0, int start_flt_ext = -1);
+    bool GetOpenName(pcstr initial, std::string& buf, bool bMulti = false, pcstr offset = 0, int start_flt_ext = -1);
 
     bool GetSaveName(pcstr initial, string_path& buffer, pcstr offset = 0, int start_flt_ext = -1);
-    bool GetSaveName(pcstr initial, xr_string& buf, pcstr offset = 0, int start_flt_ext = -1);
+    bool GetSaveName(pcstr initial, std::string& buf, pcstr offset = 0, int start_flt_ext = -1);
 
     void MarkFile(pcstr fn, bool bDeleteSource);
 
-    xr_string AppendFolderToName(xr_string& tex_name, int depth, BOOL full_name);
+    std::string AppendFolderToName(std::string& tex_name, int depth, BOOL full_name);
 
     pcstr AppendFolderToName(pstr tex_name, size_t const tex_name_size, int depth, BOOL full_name);
     pcstr AppendFolderToName(pcstr src_name, pstr dest_name, size_t const dest_name_size, int depth, BOOL full_name);
 
-    xr_string ChangeFileExt(pcstr src, pcstr ext);
-    xr_string ChangeFileExt(const xr_string& src, pcstr ext);
+    std::string ChangeFileExt(pcstr src, pcstr ext);
+    std::string ChangeFileExt(const std::string& src, pcstr ext);
 
-    static xr_string ExtractFileName(pcstr src);
-    static xr_string ExtractFilePath(pcstr src);
-    static xr_string ExtractFileExt(pcstr src);
-    static xr_string ExcludeBasePath(pcstr full_path, pcstr excl_path);
+    static std::string ExtractFileName(pcstr src);
+    static std::string ExtractFilePath(pcstr src);
+    static std::string ExtractFileExt(pcstr src);
+    static std::string ExcludeBasePath(pcstr full_path, pcstr excl_path);
 };
 
 extern xr_unique_ptr<EFS_Utils> xr_EFS;

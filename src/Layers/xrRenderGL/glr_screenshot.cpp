@@ -31,7 +31,7 @@ void CRender::Screenshot(ScreenshotMode mode /*= SM_NORMAL*/, pcstr name /*= nul
         IWriter* fs = FS.w_open("$screenshots$", buf);
         R_ASSERT(fs);
 
-        xr_vector<u8> pixels;
+        std::vector<u8> pixels;
         pixels.resize(Device.dwWidth * Device.dwHeight * 3);
 
         glReadPixels(0, 0, Device.dwWidth, Device.dwHeight, GL_RGB, GL_UNSIGNED_BYTE, pixels.data());

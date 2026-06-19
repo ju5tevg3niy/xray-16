@@ -5,9 +5,9 @@
 //	Author		: Dmitriy Iassenev
 //	Description : rat state manager class
 ////////////////////////////////////////////////////////////////////////////
+#pragma once
 
-#ifndef RAT_STATE_MANAGER_H_INCLUDED
-#define RAT_STATE_MANAGER_H_INCLUDED
+#include <stack>
 
 #include "Common/Noncopyable.hpp"
 #include "xrCore/Containers/AssociativeVector.hpp"
@@ -20,7 +20,7 @@ class rat_state_manager : private Noncopyable
 private:
     typedef u32 state_id_type;
     typedef AssociativeVector<state_id_type, rat_state_base*> States;
-    typedef xr_stack<state_id_type> Stack;
+    typedef std::stack<state_id_type> Stack;
 
 private:
     CAI_Rat* m_object;
@@ -43,5 +43,3 @@ public:
 };
 
 #include "rat_state_manager_inline.h"
-
-#endif // RAT_STATE_MANAGER_H_INCLUDED

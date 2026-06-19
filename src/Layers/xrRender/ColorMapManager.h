@@ -20,7 +20,7 @@ private:
         bool operator()(const shared_str& x, const shared_str& y) const { return x < y; }
     };
 
-    using map_Tex = xr_map<shared_str, ref_texture, str_pred>;
+    using map_Tex = std::map<shared_str, ref_texture, str_pred>;
 
     ref_texture m_CMap[2];
     shared_str m_strCMap[2];

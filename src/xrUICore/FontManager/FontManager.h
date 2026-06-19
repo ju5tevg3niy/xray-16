@@ -5,7 +5,7 @@ struct XRUICORE_API CFontManager : public CUIResetNotifier
     CFontManager();
     ~CFontManager();
 
-    typedef xr_vector<CGameFont**> FONTS_VEC;
+    typedef std::vector<CGameFont**> FONTS_VEC;
     typedef FONTS_VEC::iterator FONTS_VEC_IT;
     FONTS_VEC m_all_fonts;
     void Render();

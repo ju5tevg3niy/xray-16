@@ -68,7 +68,7 @@ struct CUIDebugState
 
 class XRUICORE_API CUIDebugger final : public xray::editor::ide_tool, public CUIResetNotifier
 {
-    xr_vector<CUIDebuggable*> m_root_windows;
+    std::vector<CUIDebuggable*> m_root_windows;
     CUIDebugState m_state;
 
 public:

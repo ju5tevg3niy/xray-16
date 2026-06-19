@@ -1,7 +1,8 @@
+#include <string>
+
 #include "Common/types.hpp"
 #include "xrCore/LocatorAPI.h"
 #include "xrCore/string_concatenations.h"
-#include "xrCommon/xr_string.h"
 #include "xrCore/crc32.hpp"
 #include "xrCore/FS.h"
 #include "xrCore/FileSystem.h"
@@ -28,7 +29,7 @@ void getFileCrc32(IReader* F, pcstr filePath, u32& outCrc, bool parseIncludes)
                     xr_strlwr(inc_name);
                     string_path fn;
                     strconcat(sizeof fn, fn, filePath, inc_name);
-                    const xr_string inc_path = EFS_Utils::ExtractFilePath(fn);
+                    const std::string inc_path = EFS_Utils::ExtractFilePath(fn);
                     IReader* I = FS.r_open(fn);
                     R_ASSERT3(I, "Can't find include file:", inc_name);
                     addFileCrc32(I, inc_path.c_str(), outCrc, true);

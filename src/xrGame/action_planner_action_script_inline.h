@@ -12,8 +12,8 @@
 #define CSActionPlannerActionScript CActionPlannerActionScript<_object_type>
 
 TEMPLATE_SPECIALIZATION
-IC CSActionPlannerActionScript::CActionPlannerActionScript(const xr_vector<COperatorCondition>& conditions,
-    const xr_vector<COperatorCondition>& effects, _object_type* object, LPCSTR action_name)
+IC CSActionPlannerActionScript::CActionPlannerActionScript(const std::vector<COperatorCondition>& conditions,
+    const std::vector<COperatorCondition>& effects, _object_type* object, LPCSTR action_name)
     : inherited(conditions, effects, object ? object->lua_game_object() : 0, action_name)
 {
     m_object = object;

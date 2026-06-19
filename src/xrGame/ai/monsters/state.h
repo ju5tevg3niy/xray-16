@@ -65,7 +65,7 @@ protected:
 private:
     void free_mem();
 
-    xr_map<u32, CSState*> substates;
+    std::map<u32, CSState*> substates;
 };
 
 #include "state_inline.h"

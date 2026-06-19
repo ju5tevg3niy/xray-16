@@ -17,7 +17,7 @@ class CControlManagerCustom : public CControl_ComBase
 {
     typedef CControl_ComBase inherited;
 
-    xr_vector<IGameObject*> m_nearest;
+    std::vector<IGameObject*> m_nearest;
 
     CAnimationSequencer* m_sequencer;
     CAnimationTriple* m_triple_anim;
@@ -29,7 +29,7 @@ class CControlManagerCustom : public CControl_ComBase
     CControlMeleeJump* m_melee_jump;
     CControlCriticalWound* m_critical_wound;
 
-    using ROT_JUMP_DATA_VEC = xr_vector<SControlRotationJumpData>;
+    using ROT_JUMP_DATA_VEC = std::vector<SControlRotationJumpData>;
     ROT_JUMP_DATA_VEC m_rot_jump_data;
 
     SControlMeleeJumpData m_melee_jump_data;

@@ -1,7 +1,7 @@
 #pragma once
 
-xr_vector<xr_string> BuildStackTrace(u16 maxFramesCount = 512);
+std::vector<std::string> BuildStackTrace(u16 maxFramesCount = 512);
 
 #ifdef XR_PLATFORM_WINDOWS
-xr_vector<xr_string> BuildStackTrace(PCONTEXT threadCtx, u16 maxFramesCount);
+std::vector<std::string> BuildStackTrace(PCONTEXT threadCtx, u16 maxFramesCount);
 #endif

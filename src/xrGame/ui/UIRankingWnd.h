@@ -35,14 +35,14 @@ class CUIRankingWnd final : public CUIWindow, public CUIWndCallback
     CUIStatic* m_monster_icon{};
     CUIStatic* m_favorite_weapon_icon{};
 
-    xr_vector<CUIAchievements*> m_achieves_vec;
+    std::vector<CUIAchievements*> m_achieves_vec;
 
     //Alundaio: CoC Rankings
-    xr_vector<CUIRankingsCoC*> m_coc_ranking_vec;
+    std::vector<CUIRankingsCoC*> m_coc_ranking_vec;
     CUIRankingsCoC* m_coc_ranking_actor{};
     //-Alundaio
 
-    xr_vector<CUIStatic*> m_stat_info;
+    std::vector<CUIStatic*> m_stat_info;
 
     u32 m_delay;
     u32 m_previous_time;

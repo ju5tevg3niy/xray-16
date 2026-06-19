@@ -43,7 +43,7 @@ private:
     void change_state(actor* initiator); //Alundaio: Pass the initiator
 
 private:
-    typedef xr_vector<actor*> actors_type;
+    typedef std::vector<actor*> actors_type;
 
 private:
     actors_type m_initiators;

@@ -52,10 +52,10 @@ public:
         bool operator()(const char* x, const char* y) const { return xr_strcmp(x, y) < 0; }
     };
 
-    using vecCMD     = xr_map<pcstr, IConsole_Command*, str_pred>;
-    using vecHistory = xr_vector<shared_str>;
-    using vecTips    = xr_vector<shared_str>;
-    using vecTipsEx  = xr_vector<TipString>;
+    using vecCMD     = std::map<pcstr, IConsole_Command*, str_pred>;
+    using vecHistory = std::vector<shared_str>;
+    using vecTips    = std::vector<shared_str>;
+    using vecTipsEx  = std::vector<TipString>;
 
     enum
     {

@@ -130,10 +130,10 @@ void clientdata_proxy::save_proxy_screenshot()
     if (!clgame)
         return;
 
-    xr_string base_name = xr_string(m_cheater_name.c_str()) + '_';
+    std::string base_name = std::string(m_cheater_name.c_str()) + '_';
     base_name += m_cheater_digest.size() ? m_cheater_digest.c_str() : "nulldigest";
 
-    xr_string fname = clgame->generate_file_name(base_name);
+    std::string fname = clgame->generate_file_name(base_name);
 
     clgame->decompress_and_save_screenshot(
         fname.c_str(), my_proxy_mem_file.pointer(), my_proxy_mem_file.size(), m_receiver->get_user_param());
@@ -145,7 +145,7 @@ void clientdata_proxy::save_proxy_config()
     if (!clgame)
         return;
 
-    xr_string name = clgame->generate_file_name(xr_string(m_cheater_name.c_str()) + ".cltx");
+    std::string name = clgame->generate_file_name(std::string(m_cheater_name.c_str()) + ".cltx");
 
     IWriter* tmp_writer = FS.w_open("$screenshots$", name.c_str());
     if (!tmp_writer)

@@ -68,7 +68,7 @@ void CUITextBanner::Out(float x, float y, const char* fmt, ...)
 
     va_list Print;
     string512 msg;
-    xr_string buf;
+    std::string buf;
 
     va_start(Print, fmt);
     vsprintf_s(msg, fmt, Print);

@@ -6,7 +6,7 @@
 
 #define DEFAULT_ITEM_HEIGHT 30
 
-using LIST_ITEM_LIST = xr_list<CUIListItem*>;
+using LIST_ITEM_LIST = std::list<CUIListItem*>;
 using LIST_ITEM_LIST_it = LIST_ITEM_LIST::iterator;
 class CUIScrollBar;
 class CUIFrameLineWnd;

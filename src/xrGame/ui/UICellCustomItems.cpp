@@ -297,8 +297,8 @@ bool CUIAmmoCellItem::EqualTo(CUICellItem* itm)
 CUIDragItem* CUIAmmoCellItem::CreateDragItem() { return IsHelper() ? NULL : inherited::CreateDragItem(); }
 u32 CUIAmmoCellItem::CalculateAmmoCount()
 {
-    xr_vector<CUICellItem*>::iterator it = m_childs.begin();
-    xr_vector<CUICellItem*>::iterator it_e = m_childs.end();
+    std::vector<CUICellItem*>::iterator it = m_childs.begin();
+    std::vector<CUICellItem*>::iterator it_e = m_childs.end();
 
     u32 total = IsHelper() ? 0 : object()->m_boxCurr;
     for (; it != it_e; ++it)

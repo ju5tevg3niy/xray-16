@@ -56,10 +56,10 @@ CExtraContentFilter::~CExtraContentFilter()
 
 bool CExtraContentFilter::IsDataEnabled(LPCSTR pData)
 {
-    for (xr_vector<PackData*>::iterator it = aDataPacks.begin(); it != aDataPacks.end(); it++)
+    for (std::vector<PackData*>::iterator it = aDataPacks.begin(); it != aDataPacks.end(); it++)
     {
         PackData* pPackData = *it;
-        xr_vector<shared_str>::const_iterator i =
+        std::vector<shared_str>::const_iterator i =
             std::find(pPackData->aContent.begin(), pPackData->aContent.end(), pData);
         if (i != pPackData->aContent.end())
         {

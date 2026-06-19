@@ -149,7 +149,7 @@ void CSpaceRestrictionComposition::test_correctness()
         return;
     }
 
-    xr_vector<u32> nodes;
+    std::vector<u32> nodes;
     {
         for (const auto& restriction : m_restrictions)
         {

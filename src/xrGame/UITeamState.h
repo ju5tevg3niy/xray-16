@@ -24,7 +24,7 @@ private:
     typedef CUIWindow inherited;
 
     typedef std::pair<CUIScrollView*, UITeamHeader*> TScrollPanel;
-    typedef xr_vector<TScrollPanel> TScrollPanels;
+    typedef std::vector<TScrollPanel> TScrollPanels;
 
     struct TPlayerItem
     {
@@ -47,7 +47,7 @@ private:
 
     TScrollPanels m_scroll_panels;
 
-    xr_vector<ClientID> toDeletePlayers;
+    std::vector<ClientID> toDeletePlayers;
 
     s32 m_artefact_count;
 

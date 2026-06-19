@@ -29,13 +29,13 @@ class CSE_ALifeInventoryItem;
 
 struct SFillPropData
 {
-    xr_vector<xr_rtoken> locations[4];
-    xr_vector<shared_str> level_ids;
-    xr_vector<xr_rtoken> story_names;
-    xr_vector<xr_rtoken> spawn_story_names;
-    xr_vector<shared_str> character_profiles;
-    xr_vector<shared_str> smart_covers;
-    xr_map<shared_str, u32> location_colors;
+    std::vector<xr_rtoken> locations[4];
+    std::vector<shared_str> level_ids;
+    std::vector<xr_rtoken> story_names;
+    std::vector<xr_rtoken> spawn_story_names;
+    std::vector<shared_str> character_profiles;
+    std::vector<shared_str> smart_covers;
+    std::map<shared_str, u32> location_colors;
     u32 counter;
     SFillPropData();
     ~SFillPropData();
@@ -310,7 +310,7 @@ public:
     virtual void switch_online();
     virtual void switch_offline();
     virtual void add_online(const bool& update_registries);
-    virtual void add_offline(const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
+    virtual void add_offline(const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
     virtual bool redundant() const;
     void attach(CSE_ALifeInventoryItem* tpALifeInventoryItem, bool bALifeRequest, bool bAddChildren = true);
     void detach(CSE_ALifeInventoryItem* tpALifeInventoryItem, ALife::OBJECT_IT* I = 0, bool bALifeRequest = true,
@@ -660,8 +660,8 @@ public:
         void write(NET_Packet& P);
         float health;
     };
-    xr_vector<SDoorState> door_states;
-    xr_vector<SWheelState> wheel_states;
+    std::vector<SDoorState> door_states;
+    std::vector<SWheelState> wheel_states;
     float health;
     CSE_ALifeCar(LPCSTR caSection);
     virtual ~CSE_ALifeCar();
@@ -796,7 +796,7 @@ public:
     CSE_ALifeInventoryBox(LPCSTR caSection);
     virtual ~CSE_ALifeInventoryBox();
 #ifdef XRGAME_EXPORTS
-    virtual void add_offline(const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
+    virtual void add_offline(const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries);
     virtual void add_online(const bool& update_registries);
 #endif
     virtual void UPDATE_Read(NET_Packet& P);

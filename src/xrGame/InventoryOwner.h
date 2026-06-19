@@ -188,7 +188,7 @@ public:
     float Sympathy() const { return CharacterInfo().Sympathy(); }
 protected:
     CCharacterInfo* m_pCharacterInfo;
-    xr_string m_game_name;
+    std::string m_game_name;
 
 public:
     void renderable_Render(u32 context_id, IRenderable* root) override;

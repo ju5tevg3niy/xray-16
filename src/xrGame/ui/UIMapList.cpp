@@ -120,14 +120,14 @@ void CUIMapList::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 
 void CUIMapList::OnListItemClicked()
 {
-    xr_string map_name = "intro" DELIMITER "intro_map_pic_";
+    std::string map_name = "intro" DELIMITER "intro_map_pic_";
 
     CUIListBoxItem* itm = m_pList1->GetSelectedItem();
     u32 _idx = (u32)(__int64)(itm->GetData());
     const MPLevelDesc& M = GetMapNameInt(GetCurGameType(), _idx);
 
     map_name += M.map_name.c_str();
-    xr_string full_name = map_name + ".dds";
+    std::string full_name = map_name + ".dds";
 
     Frect orig_rect = m_pMapPic->GetTextureRect();
 

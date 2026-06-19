@@ -8,11 +8,11 @@
 #include <array>
 #include <cstddef>
 #include <utility>
+#include <vector>
+#include <map>
 
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCommon/xr_vector.h"
-#include "xrCommon/xr_map.h"
 #include "xrCore/clsid.hpp"
 
 class IGame_Persistent;
@@ -59,7 +59,7 @@ class XR_NOVTABLE RendererModule
 {
 public:
     virtual ~RendererModule() = default;
-    virtual const xr_vector<std::pair<pcstr, int>>& ObtainSupportedModes() = 0;
+    virtual const std::vector<std::pair<pcstr, int>>& ObtainSupportedModes() = 0;
     virtual bool CheckGameRequirements() = 0;
     virtual void SetupEnv(pcstr mode) = 0;
     virtual void ClearEnv() = 0;
@@ -67,7 +67,7 @@ public:
 
 class CEngineAPI
 {
-    xr_map<cpcstr, RendererModule*> renderModes;
+    std::map<cpcstr, RendererModule*> renderModes;
 
     GameModule* gameModule{};
     RendererModule* selectedRenderer{};

@@ -1,5 +1,10 @@
 #pragma once
 
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/xr_resource.h"
 #include "xrEngine/WaveForm.h"
 
 class IReader;
@@ -7,7 +12,7 @@ class IWriter;
 
 namespace xray::render::RENDER_NAMESPACE
 {
-class ECORE_API CMatrix : public xr_resource_named
+class CMatrix : public xr_resource_named
 {
 public:
     enum

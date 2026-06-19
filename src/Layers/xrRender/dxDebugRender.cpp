@@ -49,7 +49,7 @@ void dxDebugRender::try_render(u32 const& vertex_count, u32 const& index_count)
         return;
     }
 }
-void _add_lines(xr_vector<FVF::L>& vertices, xr_vector<u16>& indices, Fvector const* pvertices, u32 const& vertex_count,
+void _add_lines(std::vector<FVF::L>& vertices, std::vector<u16>& indices, Fvector const* pvertices, u32 const& vertex_count,
     u16 const* pairs, u32 const& pair_count, u32 const& color)
 {
     VERIFY(vertices.size() < u16(-1));
@@ -57,15 +57,15 @@ void _add_lines(xr_vector<FVF::L>& vertices, xr_vector<u16>& indices, Fvector co
 
     u32 indices_size = indices.size();
     indices.resize(indices_size + 2 * pair_count);
-    xr_vector<u16>::iterator I = indices.begin() + indices_size;
-    xr_vector<u16>::iterator E = indices.end();
+    std::vector<u16>::iterator I = indices.begin() + indices_size;
+    std::vector<u16>::iterator E = indices.end();
     const u16* J = pairs;
     for (; I != E; ++I, ++J)
         *I = vertices_size + *J;
 
     vertices.resize(vertices_size + vertex_count);
-    xr_vector<FVF::L>::iterator i = vertices.begin() + vertices_size;
-    xr_vector<FVF::L>::iterator e = vertices.end();
+    std::vector<FVF::L>::iterator i = vertices.begin() + vertices_size;
+    std::vector<FVF::L>::iterator e = vertices.end();
     Fvector const* j = pvertices;
     for (; i != e; ++i, ++j)
     {
@@ -134,8 +134,8 @@ void dxDebugRender::dbg_DrawTRI(Fmatrix& T, Fvector& p1, Fvector& p2, Fvector& p
 struct RDebugRender : public dxDebugRender, public pureRender
 {
 private:
-    xr_vector<u16> _line_indices;
-    xr_vector<FVF::L> _line_vertices;
+    std::vector<u16> _line_indices;
+    std::vector<FVF::L> _line_vertices;
 
 public:
     void Register() override

@@ -1,7 +1,10 @@
 #pragma once
 
-#include "xrCommon/xr_vector.h"
+#include <vector>
+
 #include "Common/Noncopyable.hpp"
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
 
 // fwd. decl.
 class Lock;
@@ -66,7 +69,7 @@ public:
     size_t stat_economy() const;
 
 private:
-    typedef xr_vector<smem_value*> cdb;
+    typedef std::vector<smem_value*> cdb;
     mutable Lock lock;
     cdb container;
 };

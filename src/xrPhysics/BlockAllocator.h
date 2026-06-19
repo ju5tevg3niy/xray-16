@@ -1,12 +1,18 @@
 #pragma once
 
+#include <cstddef>
+#include <vector>
+
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
+
 template <class T, u32 block_size>
 class CBlockAllocator
 {
     u32 block_count;
     u32 block_position;
     T* current_block;
-    xr_vector<T*> blocks;
+    std::vector<T*> blocks;
 
 public:
     IC T* add()
@@ -83,7 +89,4 @@ private:
     IC T& back() { return current_block[block_position - 1]; }
     IC T& back_pointer() { return current_block + block_position - 1; }
     IC T& operator[](u32 position) { return *pointer(position); }
-    // What is xr_allocator_t? This two methods are unused
-    //IC void construct(u32 position) { xr_allocator_t<T>().construct(pointer(position)); }
-    //IC void construct_back() { xr_allocator_t<T>().construct(back_pointer()); }
 };

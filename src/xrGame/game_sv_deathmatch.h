@@ -30,7 +30,7 @@ protected:
             return MinEnemyDist < x.MinEnemyDist;
         };
     };
-    xr_vector<u32> m_vFreeRPoints[TEAM_COUNT];
+    std::vector<u32> m_vFreeRPoints[TEAM_COUNT];
     u32 m_dwLastRPoints[TEAM_COUNT];
 
     BOOL m_delayedRoundEnd;
@@ -41,7 +41,7 @@ protected:
 
     shared_str m_sBaseWeaponCostSection;
 
-    xr_vector<game_TeamState> teams; // dm,tdm,ah
+    std::vector<game_TeamState> teams; // dm,tdm,ah
 
     LPCSTR pWinnigPlayerName;
 
@@ -49,17 +49,17 @@ protected:
     virtual void ConsoleCommands_Create();
     virtual void ConsoleCommands_Clear();
     /////////////////////////////////////////////////////////////
-    using ANOMALIES = xr_vector<xr_string>;
-    using ANOMALY_SETS = xr_vector<ANOMALIES>;
+    using ANOMALIES = std::vector<std::string>;
+    using ANOMALY_SETS = std::vector<ANOMALIES>;
 
     ANOMALIES m_AnomaliesPermanent;
     ANOMALY_SETS m_AnomalySetsList;
-    xr_vector<u8> m_AnomalySetID;
+    std::vector<u8> m_AnomalySetID;
     u32 m_dwLastAnomalySetID;
     u32 m_dwLastAnomalyStartTime;
 
-    using ANOMALIES_ID = xr_vector<u16>;
-    using ANOMALY_SETS_ID = xr_vector<ANOMALIES_ID>;
+    using ANOMALIES_ID = std::vector<u16>;
+    using ANOMALY_SETS_ID = std::vector<ANOMALIES_ID>;
 
     ANOMALY_SETS_ID m_AnomalyIDSetsList;
 
@@ -86,14 +86,14 @@ protected:
 
     virtual void OnPlayerBuyFinished(ClientID id_who, NET_Packet& P);
 
-    virtual void CheckItem(game_PlayerState* ps, PIItem pItem, xr_vector<s16>* pItemsDesired,
-        xr_vector<u16>* pItemsToDelete, bool ExactMatch);
+    virtual void CheckItem(game_PlayerState* ps, PIItem pItem, std::vector<s16>* pItemsDesired,
+        std::vector<u16>* pItemsToDelete, bool ExactMatch);
     virtual bool HasChampion();
 
     virtual void check_Player_for_Invincibility(game_PlayerState* ps);
 
     virtual void Check_ForClearRun(game_PlayerState* ps);
-    virtual void FillDeathActorRejectItems(CSE_ActorMP* actor, xr_vector<CSE_Abstract*>& to_reject);
+    virtual void FillDeathActorRejectItems(CSE_ActorMP* actor, std::vector<CSE_Abstract*>& to_reject);
 
     u32 m_dwWarmUp_CurTime;
     bool m_bInWarmUp;

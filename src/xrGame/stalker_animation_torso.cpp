@@ -22,7 +22,7 @@
 const u32 need_look_back_time_interval = 2000;
 
 MotionID CStalkerAnimationManager::aim_animation(
-    const u32& slot, const xr_vector<CAniVector>& animation, const u32& index) const
+    const u32& slot, const std::vector<CAniVector>& animation, const u32& index) const
 {
     if (!m_special_danger_move)
         return (animation[6].A[index]);
@@ -73,7 +73,7 @@ MotionID CStalkerAnimationManager::no_object_animation(const EBodyState& body_st
 {
     const CAI_Stalker& stalker = object();
     const stalker_movement_manager_smart_cover& movement = stalker.movement();
-    const xr_vector<CAniVector>& animation = m_data_storage->m_part_animations.A[body_state].m_torso.A[0].A;
+    const std::vector<CAniVector>& animation = m_data_storage->m_part_animations.A[body_state].m_torso.A[0].A;
 
     if (eMentalStateFree == movement.mental_state())
     {
@@ -100,9 +100,9 @@ MotionID CStalkerAnimationManager::unknown_object_animation(u32 slot, const EBod
 {
     // animation shortcuts
     typedef CStalkerAnimationState STATE;
-    const xr_vector<STATE>& part_animations = m_data_storage->m_part_animations.A;
-    const xr_vector<CAniVector>& animation = part_animations[body_state].m_torso.A[slot].A;
-    const xr_vector<CAniVector>& animation_stand = part_animations[eBodyStateStand].m_torso.A[slot].A;
+    const std::vector<STATE>& part_animations = m_data_storage->m_part_animations.A;
+    const std::vector<CAniVector>& animation = part_animations[body_state].m_torso.A[slot].A;
+    const std::vector<CAniVector>& animation_stand = part_animations[eBodyStateStand].m_torso.A[slot].A;
 
     // stalker shortcuts
     const CAI_Stalker& stalker = object();
@@ -171,7 +171,7 @@ MotionID CStalkerAnimationManager::unknown_object_animation(u32 slot, const EBod
 
 MotionID CStalkerAnimationManager::weapon_animation(u32 slot, const EBodyState& body_state)
 {
-    const xr_vector<CAniVector>& animation = m_data_storage->m_part_animations.A[body_state].m_torso.A[slot].A;
+    const std::vector<CAniVector>& animation = m_data_storage->m_part_animations.A[body_state].m_torso.A[slot].A;
 
     switch (m_weapon->GetState())
     {
@@ -226,8 +226,8 @@ MotionID CStalkerAnimationManager::missile_animation(u32 slot, const EBodyState&
     //	if (body_state == eBodyStateCrouch)
     //		slot						= 0;
 
-    const xr_vector<CAniVector>& animation = m_data_storage->m_part_animations.A[body_state].m_torso.A[slot].A;
-    //	const xr_vector<CAniVector>		&animation =
+    const std::vector<CAniVector>& animation = m_data_storage->m_part_animations.A[body_state].m_torso.A[slot].A;
+    //	const std::vector<CAniVector>		&animation =
     // m_data_storage->m_part_animations.A[eBodyStateStand].m_torso.A[slot].A;
 
     switch (m_missile->GetState())

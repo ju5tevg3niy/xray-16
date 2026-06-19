@@ -29,8 +29,8 @@ struct ARTICLE_DATA : public ISerializable
     EArticleType article_type{ eEncyclopediaArticle };
 };
 
-using ARTICLE_ID_VECTOR = xr_vector<shared_str>;
-using ARTICLE_VECTOR = xr_vector<ARTICLE_DATA>;
+using ARTICLE_ID_VECTOR = std::vector<shared_str>;
+using ARTICLE_VECTOR = std::vector<ARTICLE_DATA>;
 
 class FindArticleByIDPred
 {

@@ -1,6 +1,8 @@
 #pragma once
+
+#include <vector>
+
 #include "xrCore/fastdelegate.h"
-#include "xrCommon/xr_vector.h"
 
 // fwd. decl.
 template <class T>
@@ -47,7 +49,7 @@ struct SChooseItem
     SChooseItem(LPCSTR nm, LPCSTR ht) : name(nm), hint(ht) {}
 };
 
-using ChooseItemVec = xr_vector<SChooseItem>;
+using ChooseItemVec = std::vector<SChooseItem>;
 
 // typedef
 typedef fastdelegate::FastDelegate2<ChooseItemVec&, void*> TOnChooseFillItems;

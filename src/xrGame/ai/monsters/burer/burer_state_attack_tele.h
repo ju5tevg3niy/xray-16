@@ -13,9 +13,9 @@ class CStateBurerAttackTele : public CState<Object>
 private:
     typedef CState<Object> inherited;
 
-    xr_vector<CPhysicsShellHolder*> tele_objects;
+    std::vector<CPhysicsShellHolder*> tele_objects;
     CPhysicsShellHolder* selected_object;
-    xr_vector<IGameObject*> m_nearest;
+    std::vector<IGameObject*> m_nearest;
 
     u32 time_started;
 
@@ -58,7 +58,7 @@ private:
     void SelectObjects();
 
     // internal for FindObjects
-    void FindFreeObjects(xr_vector<IGameObject*>& tpObjects, const Fvector& pos);
+    void FindFreeObjects(std::vector<IGameObject*>& tpObjects, const Fvector& pos);
     void OnGrenadeDestroyed(CGrenade* const grenade);
 
     void FireAllToEnemy();

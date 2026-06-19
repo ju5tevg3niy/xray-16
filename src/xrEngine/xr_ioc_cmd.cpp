@@ -12,10 +12,10 @@
 #include "xr_object.h"
 #include "xr_object_list.h"
 
-xr_vector<xr_token> VidQualityToken;
+std::vector<xr_token> VidQualityToken;
 
-extern xr_vector<xr_token> vid_monitor_token;
-extern xr_map<u32, xr_vector<xr_token>> vid_mode_token;
+extern std::vector<xr_token> vid_monitor_token;
+extern std::map<u32, std::vector<xr_token>> vid_mode_token;
 
 const xr_token vid_bpp_token[] = {{"16", 16}, {"32", 32}, {0, 0}};
 

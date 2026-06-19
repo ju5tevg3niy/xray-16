@@ -1,12 +1,13 @@
 #pragma once
 
+#include <string>
+
 #include "Common/object_interfaces.h"
 #include "inventory_space.h"
 #include "gametype_chooser.h"
 #include "UIDialogHolder.h"
 #include "xrEngine/CustomHUD.h"
 #include "script_game_object.h"
-#include "xrCommon/xr_string.h"
 
 // fwd. decl.
 class CTeamBaseZone;
@@ -49,7 +50,7 @@ struct SGameTypeMaps
 {
     shared_str m_game_type_name;
     EGameIDs m_game_type_id;
-    xr_vector<MPLevelDesc> m_map_names;
+    std::vector<MPLevelDesc> m_map_names;
 };
 
 struct MPWeatherDesc
@@ -61,16 +62,16 @@ struct MPWeatherDesc
 class CMapListHelper
 {
 private:
-    xr_vector<SGameTypeMaps> m_storage;
-    xr_vector<MPWeatherDesc> m_weathers;
+    std::vector<SGameTypeMaps> m_storage;
+    std::vector<MPWeatherDesc> m_weathers;
 
 public:
     const SGameTypeMaps& GetMapListFor(const EGameIDs gameId);
-    const xr_vector<MPWeatherDesc>& GetGameWeathers();
+    const std::vector<MPWeatherDesc>& GetGameWeathers();
 
 private:
     void Load();
-    void LoadMapInfo(const char* cfgName, const xr_string& levelName, const char* levelVer = "1.0");
+    void LoadMapInfo(const char* cfgName, const std::string& levelName, const char* levelVer = "1.0");
     SGameTypeMaps* GetMapListInt(const shared_str& gameType);
 };
 
@@ -81,7 +82,7 @@ class CUIGameCustom : public FactoryObjectBase, public CDialogHolder, public CUI
 protected:
     CUIWindow* Window;
     CUIXml* MsgConfig;
-    xr_vector<StaticDrawableWrapper*> CustomStatics;
+    std::vector<StaticDrawableWrapper*> CustomStatics;
     CUIActorMenu* ActorMenu;
     CUIPdaWnd* PdaMenu;
     bool showGameIndicators;

@@ -43,7 +43,7 @@ public:
 class CMapSpotPointer final : public CMapSpot
 {
     typedef CMapSpot inherited;
-    xr_string m_pointer_hint;
+    std::string m_pointer_hint;
 
 public:
     CMapSpotPointer(CMapLocation*);

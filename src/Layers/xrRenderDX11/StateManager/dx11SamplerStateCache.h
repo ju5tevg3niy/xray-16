@@ -12,7 +12,7 @@ public:
 
     //	State handle
     typedef u32 SHandle;
-    typedef xr_vector<SHandle> HArray;
+    typedef std::vector<SHandle> HArray;
 
 public:
     dx11SamplerStateCache();
@@ -51,7 +51,7 @@ private:
     //	Private data
 private:
     //	This must be cleared on device destroy
-    xr_vector<StateRecord> m_StateArray;
+    std::vector<StateRecord> m_StateArray;
 
     u32 m_uiMaxAnisotropy;
     float m_uiMipLODBias;

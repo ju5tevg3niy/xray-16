@@ -143,7 +143,7 @@ void ISpatial_NODE::_insert(ISpatial* S)
 void ISpatial_NODE::_remove(ISpatial* S)
 {
     S->GetSpatialData().node_ptr = NULL;
-    xr_vector<ISpatial*>::iterator it = std::find(items.begin(), items.end(), S);
+    std::vector<ISpatial*>::iterator it = std::find(items.begin(), items.end(), S);
     VERIFY(it != items.end());
     items.erase(it);
     S->GetSpatialData().space->Stats.ObjectCount--;

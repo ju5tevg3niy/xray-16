@@ -353,7 +353,7 @@ CInifile::CInifile(pcstr fileName, bool readOnly, bool loadAtStart, bool saveAtE
         IReader* R = FS.r_open(fileName);
         if (R)
         {
-            const xr_string path = EFS_Utils::ExtractFilePath(m_file_name);
+            const std::string path = EFS_Utils::ExtractFilePath(m_file_name);
             if (sect_count)
                 DATA.reserve(sect_count);
             Load(R, path.c_str(), allow_include_func);
@@ -1160,7 +1160,7 @@ void CInifile::remove_line(pcstr S, pcstr L)
 
 void CInifile::remove_include(cpcstr include)
 {
-    const auto it = std::find_if(m_includes.begin(), m_includes.end(), [&](const xr_string& incl)
+    const auto it = std::find_if(m_includes.begin(), m_includes.end(), [&](const std::string& incl)
     {
         return xr_strcmp(incl.c_str(), include) == 0;
     });

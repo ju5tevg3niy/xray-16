@@ -1,9 +1,12 @@
 #pragma once
+
+#include <array>
+#include <deque>
+
 #include "xrEngine/xr_level_controller.h"
 #include "xrEngine/pure.h"
 #include "xrEngine/IInputReceiver.h"
 #include "xrScriptEngine/Functor.hpp"
-#include "xrCommon/xr_deque.h"
 
 class CUIWindow;
 class CUIStatic;
@@ -16,7 +19,7 @@ class CUISequencer : public pureFrame, public pureRender, public IInputReceiver
 protected:
     CUIWindow* m_UIWindow;
     ref_sound m_global_sound;
-    xr_deque<CUISequenceItem*> m_sequencer_items;
+    std::deque<CUISequenceItem*> m_sequencer_items;
     pcstr m_name;
 
     bool GrabInput();
@@ -75,7 +78,7 @@ public:
 
 class CUISequenceItem
 {
-    xr_vector<int> m_disabled_actions;
+    std::vector<int> m_disabled_actions;
 
 protected:
     enum
@@ -89,8 +92,8 @@ protected:
         etiStoredCursorState = (1 << 6),
         eti_last = 7,
     };
-    xr_vector<shared_str> m_start_lua_functions;
-    xr_vector<shared_str> m_stop_lua_functions;
+    std::vector<shared_str> m_start_lua_functions;
+    std::vector<shared_str> m_stop_lua_functions;
     luabind::functor<void> m_onframe_functor;
 
     Flags32 m_flags;
@@ -137,7 +140,7 @@ class CUISequenceSimpleItem : public CUISequenceItem
         void Start();
         void Stop();
     };
-    using SubItemVec = xr_vector<SSubItem>;
+    using SubItemVec = std::vector<SSubItem>;
     SubItemVec m_subitems;
     struct SActionItem
     {
@@ -156,7 +159,7 @@ public:
     string64 m_pda_section;
     Fvector2 m_desired_cursor_pos;
     EGameActions m_continue_action_guard;
-    xr_vector<SActionItem> m_actions;
+    std::vector<SActionItem> m_actions;
 
 public:
     CUISequenceSimpleItem(CUISequencer* owner) : CUISequenceItem(owner) {}
@@ -183,7 +186,7 @@ class CUISequenceVideoItem : public CUISequenceItem
     using inherited = CUISequenceItem;
 
     static constexpr size_t channels_count = 2;
-    xr_array<ref_sound, channels_count> m_sound;
+    std::array<ref_sound, channels_count> m_sound;
 
     FactoryPtr<IUISequenceVideoItem> m_texture;
 

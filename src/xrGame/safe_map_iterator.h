@@ -13,7 +13,7 @@ template <typename _key_type, typename _data_type, typename _predicate = std::le
 class CSafeMapIterator
 {
 public:
-    typedef xr_map<_key_type, _data_type*, _predicate> _REGISTRY;
+    typedef std::map<_key_type, _data_type*, _predicate> _REGISTRY;
     typedef typename _REGISTRY::iterator _iterator;
     typedef typename _REGISTRY::const_iterator _const_iterator;
 

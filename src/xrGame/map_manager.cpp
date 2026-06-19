@@ -193,7 +193,7 @@ void CMapManager::RemoveMapLocation(CMapLocation* ml)
     }
 }
 
-bool CMapManager::GetMapLocationsForObject(u16 id, xr_vector<CMapLocation*>& res)
+bool CMapManager::GetMapLocationsForObject(u16 id, std::vector<CMapLocation*>& res)
 {
     res.clear();
     auto it = Locations().begin();
@@ -223,7 +223,7 @@ CMapLocation* CMapManager::GetMapLocation(const shared_str& spot_type, u16 id)
     return 0;
 }
 
-void CMapManager::GetMapLocations(const shared_str& spot_type, u16 id, xr_vector<CMapLocation*>& res)
+void CMapManager::GetMapLocations(const shared_str& spot_type, u16 id, std::vector<CMapLocation*>& res)
 {
     FindLocationBySpotID key(spot_type, id);
     auto it = std::find_if(Locations().begin(), Locations().end(), key);

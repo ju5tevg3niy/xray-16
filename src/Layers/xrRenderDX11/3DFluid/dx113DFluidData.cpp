@@ -94,7 +94,7 @@ void dx113DFluidData::Load(IReader* data)
 {
     //  Version 3
 
-    xr_string Profile;
+    std::string Profile;
     data->r_string(Profile);
 
     //  Prepare transform
@@ -113,7 +113,7 @@ void dx113DFluidData::Load(IReader* data)
     ParseProfile(Profile);
 }
 
-void dx113DFluidData::ParseProfile(const xr_string& Profile)
+void dx113DFluidData::ParseProfile(const std::string& Profile)
 {
     string_path fn;
     FS.update_path(fn, "$game_config$", Profile.c_str());
@@ -223,7 +223,7 @@ void dx113DFluidData::ParseProfile(const xr_string& Profile)
 
 #ifndef MASTER_GOLD
 // Allow real-time config reload
-void dx113DFluidData::ReparseProfile(const xr_string& Profile)
+void dx113DFluidData::ReparseProfile(const std::string& Profile)
 {
     m_Emitters.clear();
     ParseProfile(Profile);

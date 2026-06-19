@@ -7,7 +7,7 @@
 using namespace collide;
 
 bool CObjectSpace::BoxQuery(Fvector const& box_center, Fvector const& box_z_axis, Fvector const& box_y_axis,
-    Fvector const& box_sizes, xr_vector<Fvector>* out_tris)
+    Fvector const& box_sizes, std::vector<Fvector>* out_tris)
 {
     ZoneScoped;
 

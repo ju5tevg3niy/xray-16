@@ -1521,9 +1521,9 @@ void game_cl_mp::SendCollectedData(u8 const* buffer, u32 buffer_size, u32 uncomp
         upload_memory_writer.pointer(), upload_memory_writer.size(), sending_cb, uncompressed_size);
 };
 
-xr_string game_cl_mp::generate_file_name(const xr_string& base_name, const time_t* date_time)
+std::string game_cl_mp::generate_file_name(const std::string& base_name, const time_t* date_time)
 {
-    xr_string res = sanitize_filename(base_name);
+    std::string res = sanitize_filename(base_name);
 
     time_t file_time = (date_time != nullptr) ? *date_time : time(nullptr);
 
@@ -1533,14 +1533,14 @@ xr_string game_cl_mp::generate_file_name(const xr_string& base_name, const time_
         string16 date_str = {};
         xr_sprintf(date_str, "%02d%02d%02d-%02d%02d%02d_", time_splitted.tm_year % 100, time_splitted.tm_mon,
             time_splitted.tm_mday, time_splitted.tm_hour, time_splitted.tm_min, time_splitted.tm_sec);
-        res = xr_string(date_str) + res;
+        res = std::string(date_str) + res;
     }
     return res;
 }
 
-xr_string game_cl_mp::sanitize_filename(const xr_string& base_name)
+std::string game_cl_mp::sanitize_filename(const std::string& base_name)
 {
-    xr_string res = base_name;
+    std::string res = base_name;
 
     for (size_t i = 0; i < res.length(); ++i)
     {
@@ -1591,7 +1591,7 @@ void game_cl_mp::PrepareToReceiveFile(
         draw_downloads(false);
     }
 
-    xr_string base_name = client_session_id.c_str();
+    std::string base_name = client_session_id.c_str();
     tmp_binder->m_file_name = generate_file_name(base_name).c_str();
     tmp_binder->m_owner = this;
     tmp_binder->m_active = true;

@@ -13,7 +13,7 @@
 #include "xrScriptEngine/ScriptExporter.hpp"
 #include "xrScriptEngine/script_space.hpp"
 
-extern xr_vector<xr_token> VidQualityToken;
+extern std::vector<xr_token> VidQualityToken;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

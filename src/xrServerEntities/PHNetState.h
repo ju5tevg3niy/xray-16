@@ -1,8 +1,9 @@
 #pragma once
 
+#include <vector>
+
 #include "xrCore/Math/vector3.hpp"
 #include "xrCore/Math/quaternion.hpp"
-#include "xrCommon/xr_vector.h"
 
 class NET_Packet;
 
@@ -42,7 +43,7 @@ private:
     void read(src& P, const Fvector& min, const Fvector& max);
 };
 
-using PHNETSTATE_VECTOR = xr_vector<SPHNetState>;
+using PHNETSTATE_VECTOR = std::vector<SPHNetState>;
 
 struct XRPHYSICS_API SPHBonesData
 {

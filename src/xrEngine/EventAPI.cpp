@@ -12,7 +12,7 @@ class CEvent
 
 private:
     char* Name;
-    xr_vector<IEventReceiver*> Handlers;
+    std::vector<IEventReceiver*> Handlers;
     u32 dwRefCount;
 
 public:
@@ -29,7 +29,7 @@ public:
     }
     void Detach(IEventReceiver* H)
     {
-        xr_vector<IEventReceiver*>::iterator I = std::find(Handlers.begin(), Handlers.end(), H);
+        std::vector<IEventReceiver*>::iterator I = std::find(Handlers.begin(), Handlers.end(), H);
         if (I != Handlers.end())
             Handlers.erase(I);
     }
@@ -60,7 +60,7 @@ EVENT CEventAPI::Create(const char* N)
 {
     CS.Enter();
     CEvent E(N);
-    for (xr_vector<CEvent*>::iterator I = Events.begin(); I != Events.end(); ++I)
+    for (std::vector<CEvent*>::iterator I = Events.begin(); I != Events.end(); ++I)
     {
         if ((*I)->Equal(E))
         {
@@ -82,7 +82,7 @@ void CEventAPI::Destroy(EVENT& E)
     E->dwRefCount--;
     if (E->dwRefCount == 0)
     {
-        xr_vector<CEvent*>::iterator I = std::find(Events.begin(), Events.end(), E);
+        std::vector<CEvent*>::iterator I = std::find(Events.begin(), Events.end(), E);
         R_ASSERT(I != Events.end());
         Events.erase(I);
         xr_delete(E);

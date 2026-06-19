@@ -39,9 +39,9 @@ void XR_EPROPS_API CheckWindowPos(TForm* form);
 //------------------------------------------------------------------------------
 // Prepare Key
 //------------------------------------------------------------------------------
-IC xr_string FolderAppend(LPCSTR val)
+IC std::string FolderAppend(LPCSTR val)
 {
-    xr_string tmp = (val && val[0]) ? val : "";
+    std::string tmp = (val && val[0]) ? val : "";
     if (val && val[0])
         tmp += DELIMITER;
     return tmp;
@@ -49,17 +49,17 @@ IC xr_string FolderAppend(LPCSTR val)
 IC shared_str PrepareKey(LPCSTR pref, LPCSTR key)
 {
     R_ASSERT(key);
-    return shared_str(xr_string(FolderAppend(pref) + key).c_str());
+    return shared_str(std::string(FolderAppend(pref) + key).c_str());
 }
 IC shared_str PrepareKey(LPCSTR pref0, LPCSTR pref1, LPCSTR key)
 {
     R_ASSERT(key);
-    return shared_str(xr_string(FolderAppend(pref0) + FolderAppend(pref1) + key).c_str());
+    return shared_str(std::string(FolderAppend(pref0) + FolderAppend(pref1) + key).c_str());
 }
 IC shared_str PrepareKey(LPCSTR pref0, LPCSTR pref1, LPCSTR pref2, LPCSTR key)
 {
     R_ASSERT(key);
-    return shared_str(xr_string(FolderAppend(pref0) + FolderAppend(pref1) + FolderAppend(pref2) + key).c_str());
+    return shared_str(std::string(FolderAppend(pref0) + FolderAppend(pref1) + FolderAppend(pref2) + key).c_str());
 }
 //------------------------------------------------------------------------------
 // Properties
@@ -74,18 +74,18 @@ public:
     // predefind event routines
     virtual bool FvectorRDOnAfterEdit(PropValue* sender, Fvector& edit_val) = 0;
     virtual void FvectorRDOnBeforeEdit(PropValue* sender, Fvector& edit_val) = 0;
-    virtual void FvectorRDOnDraw(PropValue* sender, xr_string& draw_val) = 0;
+    virtual void FvectorRDOnDraw(PropValue* sender, std::string& draw_val) = 0;
     virtual bool floatRDOnAfterEdit(PropValue* sender, float& edit_val) = 0;
     virtual void floatRDOnBeforeEdit(PropValue* sender, float& edit_val) = 0;
-    virtual void floatRDOnDraw(PropValue* sender, xr_string& draw_val) = 0;
+    virtual void floatRDOnDraw(PropValue* sender, std::string& draw_val) = 0;
     // R-name edit
     virtual void NameBeforeEdit(PropValue* sender, shared_str& edit_val) = 0;
     virtual bool NameAfterEdit(PropValue* sender, shared_str& edit_val) = 0;
-    virtual void NameDraw(PropValue* sender, xr_string& draw_val) = 0;
+    virtual void NameDraw(PropValue* sender, std::string& draw_val) = 0;
     // C-name edit
-    virtual void CNameBeforeEdit(PropValue* sender, xr_string& edit_val) = 0;
-    virtual bool CNameAfterEdit(PropValue* sender, xr_string& edit_val) = 0;
-    virtual void CNameDraw(PropValue* sender, xr_string& draw_val) = 0;
+    virtual void CNameBeforeEdit(PropValue* sender, std::string& edit_val) = 0;
+    virtual bool CNameAfterEdit(PropValue* sender, std::string& edit_val) = 0;
+    virtual void CNameDraw(PropValue* sender, std::string& draw_val) = 0;
 
 public:
     virtual CaptionValue* CreateCaption(PropItemVec& items, shared_str key, shared_str val) = 0;
@@ -132,7 +132,7 @@ public:
     virtual ColorValue* CreateFColor(PropItemVec& items, shared_str key, Fcolor* val) = 0;
     virtual VectorValue* CreateVColor(PropItemVec& items, shared_str key, Fvector* val) = 0;
     virtual RTextValue* CreateRText(PropItemVec& items, shared_str key, shared_str* val) = 0;
-    virtual STextValue* CreateSText(PropItemVec& items, shared_str key, xr_string* val) = 0;
+    virtual STextValue* CreateSText(PropItemVec& items, shared_str key, std::string* val) = 0;
     virtual WaveValue* CreateWave(PropItemVec& items, shared_str key, WaveForm* val) = 0;
     virtual FloatValue* CreateTime(
         PropItemVec& items, shared_str key, float* val, float mn = 0.f, float mx = 86400.f) = 0;
@@ -150,7 +150,7 @@ public:
     // obsolette
     virtual CTextValue* CreateCText(PropItemVec& items, shared_str key, pstr val, u32 sz) = 0;
     virtual CListValue* CreateCList(
-        PropItemVec& items, shared_str key, pstr val, u32 sz, xr_string* lst, u32 cnt) = 0;
+        PropItemVec& items, shared_str key, pstr val, u32 sz, std::string* lst, u32 cnt) = 0;
     virtual CTextValue* CreateCName(
         PropItemVec& items, shared_str key, pstr val, u32 sz, ListItem* owner) = 0;
     virtual TokenValueSH* CreateTokenSH(

@@ -52,7 +52,7 @@ void Vision::o_new(IGameObject* O)
 }
 void Vision::o_delete(IGameObject* O)
 {
-    xr_vector<feel_visible_Item>::iterator I = feel_visible.begin(), TE = feel_visible.end();
+    std::vector<feel_visible_Item>::iterator I = feel_visible.begin(), TE = feel_visible.end();
     for (; I != TE; ++I)
         if (I->O == O)
         {
@@ -71,7 +71,7 @@ void Vision::feel_vision_clear()
 
 void Vision::feel_vision_relcase(IGameObject* object)
 {
-    xr_vector<IGameObject*>::iterator Io;
+    std::vector<IGameObject*>::iterator Io;
     Io = std::find(seen.begin(), seen.end(), object);
     if (Io != seen.end())
         seen.erase(Io);
@@ -81,7 +81,7 @@ void Vision::feel_vision_relcase(IGameObject* object)
     Io = std::find(diff.begin(), diff.end(), object);
     if (Io != diff.end())
         diff.erase(Io);
-    xr_vector<feel_visible_Item>::iterator Ii = feel_visible.begin(), IiE = feel_visible.end();
+    std::vector<feel_visible_Item>::iterator Ii = feel_visible.begin(), IiE = feel_visible.end();
     for (; Ii != IiE; ++Ii)
         if (Ii->O == object)
         {
@@ -111,7 +111,7 @@ void Vision::feel_vision_query(Fmatrix& mFull, Fvector& P)
     if (seen.size() > 1)
     {
         std::sort(seen.begin(), seen.end());
-        xr_vector<IGameObject*>::iterator end = std::unique(seen.begin(), seen.end());
+        std::vector<IGameObject*>::iterator end = std::unique(seen.begin(), seen.end());
         if (end != seen.end())
             seen.erase(end, seen.end());
     }
@@ -122,12 +122,12 @@ void Vision::feel_vision_update(IGameObject* parent, Fvector& P, float dt, float
     // B-A = objects, that become visible
     if (!seen.empty())
     {
-        xr_vector<IGameObject*>::iterator E = std::remove(seen.begin(), seen.end(), parent);
+        std::vector<IGameObject*>::iterator E = std::remove(seen.begin(), seen.end(), parent);
         seen.resize(E - seen.begin());
 
         {
             diff.resize(_max(seen.size(), query.size()));
-            xr_vector<IGameObject*>::iterator E2 =
+            std::vector<IGameObject*>::iterator E2 =
                 std::set_difference(seen.begin(), seen.end(), query.begin(), query.end(), diff.begin());
             diff.resize(E2 - diff.begin());
             for (u32 i = 0; i < diff.size(); i++)
@@ -139,7 +139,7 @@ void Vision::feel_vision_update(IGameObject* parent, Fvector& P, float dt, float
     if (!query.empty())
     {
         diff.resize(_max(seen.size(), query.size()));
-        xr_vector<IGameObject*>::iterator E =
+        std::vector<IGameObject*>::iterator E =
             std::set_difference(query.begin(), query.end(), seen.begin(), seen.end(), diff.begin());
         diff.resize(E - diff.begin());
         for (u32 i = 0; i < diff.size(); i++)
@@ -153,7 +153,7 @@ void Vision::feel_vision_update(IGameObject* parent, Fvector& P, float dt, float
 void Vision::o_trace(Fvector& P, float dt, float vis_threshold)
 {
     RQR.r_clear();
-    xr_vector<feel_visible_Item>::iterator I = feel_visible.begin(), E = feel_visible.end();
+    std::vector<feel_visible_Item>::iterator I = feel_visible.begin(), E = feel_visible.end();
     for (; I != E; ++I)
     {
         if (0 == I->O->GetCForm())
@@ -229,8 +229,8 @@ void Vision::o_trace(Fvector& P, float dt, float vis_threshold)
             RD.flags = CDB::OPT_ONLYFIRST;
 
             bool collision_found = false;
-            xr_vector<ISpatial*>::const_iterator i = r_spatial.begin();
-            xr_vector<ISpatial*>::const_iterator e = r_spatial.end();
+            std::vector<ISpatial*>::const_iterator i = r_spatial.begin();
+            std::vector<ISpatial*>::const_iterator e = r_spatial.end();
             for (; i != e; ++i)
             {
                 if (*i == m_owner)

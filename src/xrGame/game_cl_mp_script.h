@@ -14,7 +14,7 @@ protected:
 public:
     game_cl_mp_script();
     virtual bool CanBeReady() { return false; };
-    virtual void GetMapEntities(xr_vector<SZoneMapEntityData>& dst){};
+    virtual void GetMapEntities(std::vector<SZoneMapEntityData>& dst){};
     virtual void shedule_Update(u32 dt);
     virtual game_PlayerState* createPlayerState() { return inherited::createPlayerState(nullptr); };
     void EventGen(NET_Packet* P, u16 type, u16 dest);

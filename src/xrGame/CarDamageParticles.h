@@ -1,7 +1,7 @@
 #pragma once
 
 class CCar;
-using BIDS = xr_vector<u16>;
+using BIDS = std::vector<u16>;
 
 struct CCarDamageParticles
 {

@@ -28,7 +28,7 @@
 
 extern CScriptPropertiesListHelper* g_property_list_helper;
 
-typedef xr_vector<std::pair<shared_str, int>> STORY_PAIRS;
+typedef std::vector<std::pair<shared_str, int>> STORY_PAIRS;
 extern STORY_PAIRS story_ids;
 extern STORY_PAIRS spawn_story_ids;
 

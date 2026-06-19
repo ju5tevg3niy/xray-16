@@ -17,7 +17,7 @@ public:
     void Draw(CGameFont* pFont, float x, float y) const;
 
 public:
-    xr_string m_text;
+    std::string m_text;
     u32 m_color{};
     bool m_last_in_line{};
 };

@@ -1,9 +1,10 @@
 #pragma once
 
+#include <vector>
+
 #include "xrCore/Text/string_funcs_inline.hpp"
 #include "xrCore/Math/flags.hpp"
 #include "xrCore/xrstring.h"
-#include "xrCommon/xr_vector.h"
 
 // fwd. decl.
 class IReader;
@@ -50,7 +51,7 @@ inline EGameIDs ParseStringToGameType(pcstr str)
 
 class PropValue;
 class PropItem;
-using PropItemVec = xr_vector<PropItem*>;
+using PropItemVec = std::vector<PropItem*>;
 
 struct GameTypeChooser
 {

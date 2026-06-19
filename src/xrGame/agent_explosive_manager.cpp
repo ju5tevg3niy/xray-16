@@ -41,7 +41,7 @@ void CAgentExplosiveManager::remove_links(IGameObject* object)
 void CAgentExplosiveManager::register_explosive(const CExplosive* explosive, const CGameObject* game_object)
 {
     {
-        xr_vector<CDangerExplosive>::iterator I = std::find(m_explosives.begin(), m_explosives.end(), explosive);
+        std::vector<CDangerExplosive>::iterator I = std::find(m_explosives.begin(), m_explosives.end(), explosive);
         if (I != m_explosives.end())
             return;
     }
@@ -67,8 +67,8 @@ bool CAgentExplosiveManager::process_explosive(CMemberOrder& member)
 {
     float min_dist_sqr = flt_max;
     CDangerExplosive* best_grenade = 0;
-    xr_vector<CDangerExplosive>::iterator I = m_explosives.begin();
-    xr_vector<CDangerExplosive>::iterator E = m_explosives.end();
+    std::vector<CDangerExplosive>::iterator I = m_explosives.begin();
+    std::vector<CDangerExplosive>::iterator E = m_explosives.end();
     for (; I != E; ++I)
     {
         if (!member.object().memory().visual().visible_now((*I).m_game_object))

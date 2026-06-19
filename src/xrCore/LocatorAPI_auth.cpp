@@ -5,12 +5,12 @@
 
 struct auth_options
 {
-    xr_vector<shared_str> ignore;
-    xr_vector<shared_str> important;
+    std::vector<shared_str> ignore;
+    std::vector<shared_str> important;
 };
 
 void auth_entry(void* p) { FS.auth_runtime(p); }
-void CLocatorAPI::auth_generate(xr_vector<shared_str>& ignore, xr_vector<shared_str>& important)
+void CLocatorAPI::auth_generate(std::vector<shared_str>& ignore, std::vector<shared_str>& important)
 {
     auth_options* _o = xr_new<auth_options>();
     _o->ignore = ignore;

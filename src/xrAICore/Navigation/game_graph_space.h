@@ -150,5 +150,5 @@ struct STerrainPlace
     svector<_LOCATION_ID, LOCATION_TYPE_COUNT> tMask;
 };
 
-using TERRAIN_VECTOR = xr_vector<STerrainPlace>;
+using TERRAIN_VECTOR = std::vector<STerrainPlace>;
 }

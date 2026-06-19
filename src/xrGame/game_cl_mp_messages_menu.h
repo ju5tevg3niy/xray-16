@@ -1,5 +1,5 @@
 protected:
-using MESSAGEMENUS = xr_vector<cl_MessageMenu>;
+using MESSAGEMENUS = std::vector<cl_MessageMenu>;
 MESSAGEMENUS m_aMessageMenus;
 
 virtual void AddMessageMenu(LPCSTR menu_section, LPCSTR snd_path, LPCSTR team_prefix);

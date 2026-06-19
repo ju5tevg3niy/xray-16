@@ -13,6 +13,6 @@ public:
 
 protected:
     float GetNextLeftPos();
-    typedef xr_vector<CUIStatic*>::iterator my_it;
-    xr_vector<CUIStatic*> m_fields;
+    typedef std::vector<CUIStatic*>::iterator my_it;
+    std::vector<CUIStatic*> m_fields;
 };

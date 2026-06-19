@@ -457,7 +457,7 @@ bool IPureClient::Connect(pcstr options)
 
                 if (res != S_OK)
                 {
-                    //			xr_string res = xrDebug::ErrorToString(HostSuccess);
+                    //			std::string res = xrDebug::ErrorToString(HostSuccess);
 
                     if (bPortWasSet)
                     {
@@ -538,7 +538,7 @@ bool IPureClient::Connect(pcstr options)
 
                 if (res != S_OK)
                 {
-                    //xr_string res = xrDebug::ErrorToString(HostSuccess);
+                    //std::string res = xrDebug::ErrorToString(HostSuccess);
                     switch (res)
                     {
                     case DPNERR_INVALIDHOSTADDRESS:

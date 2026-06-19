@@ -192,7 +192,7 @@ class shader_options_holder
     D3D_SHADER_MACRO m_options[128];
 
 public:
-    void add(const xr_vector<D3D_SHADER_MACRO>& macros)
+    void add(const std::vector<D3D_SHADER_MACRO>& macros)
     {
         for (auto macro : macros)
         {

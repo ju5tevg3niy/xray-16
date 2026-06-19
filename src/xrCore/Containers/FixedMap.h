@@ -1,6 +1,14 @@
 #pragma once
 
-#include "xrCommon/xr_allocator.h"
+#include <cstddef>
+#include <type_traits>
+#include <vector>
+#include <memory>
+#include <tracy/Tracy.hpp>
+
+#include "Common/types.hpp"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 
 // Both xr_fixed_map and xr_fixed_map_node doesn't support move operation
 // Trying to do so will result in a crash at some point
@@ -53,7 +61,7 @@ struct xr_fixed_map_node
     }
 };
 
-template <class K, class T, size_t TGrowMultiplier = 2, class allocator = xr_allocator<xr_fixed_map_node<K, T>>>
+template <class K, class T, size_t TGrowMultiplier = 2>
 class xr_fixed_map
 {
     static constexpr size_t SG_REALLOC_ADVANCE = 64;
@@ -67,13 +75,12 @@ public:
     using callback_cmp = bool __fastcall(const value_type& N1, const value_type& N2);
 
     static_assert(TGrowMultiplier >= 1, "Grow multiplier can't be less than 1");
-    static_assert(std::is_same_v<value_type, typename allocator::value_type>,
-        "xr_fixed_map<K, T, allocator> allocator mismatch");
 
 private:
     value_type* nodes;
     size_t pool;
     size_t limit;
+    std::allocator<value_type> allocator;
 
     void resize()
     {
@@ -94,7 +101,7 @@ private:
             VERIFY(newLimit % SG_REALLOC_ADVANCE == 0);
         }
 
-        value_type* newNodes = allocator::allocate(newLimit);
+        value_type* newNodes = allocator.allocate(newLimit);
         R_ASSERT(newNodes);
 
         if constexpr (std::is_pod<T>::value)
@@ -106,7 +113,7 @@ private:
         else
         {
             for (value_type* cur = newNodes; cur != newNodes + newLimit; ++cur)
-                allocator::construct(cur);
+                allocator.construct(cur);
             if (pool)
                 std::copy(first(), last(), newNodes);
         }
@@ -130,7 +137,7 @@ private:
         }
 
         if (nodes)
-            allocator::deallocate(nodes, limit);
+            allocator.deallocate(nodes, limit);
 
         nodes = newNodes;
         limit = newLimit;
@@ -176,7 +183,7 @@ private:
             recurse_right_left(id, N->left, CB);
     }
 
-    void get_left_right(value_type* N, xr_vector<T, xr_allocator<T>>& D)
+    void get_left_right(value_type* N, std::vector<T>& D)
     {
         if (N->left)
             get_left_right(N->left, D);
@@ -185,7 +192,7 @@ private:
             get_left_right(N->right, D);
     }
 
-    void get_right_left(value_type* N, xr_vector<T, xr_allocator<T>>& D)
+    void get_right_left(value_type* N, std::vector<T>& D)
     {
         if (N->right)
             get_right_left(N->right, D);
@@ -194,7 +201,7 @@ private:
             get_right_left(N->left, D);
     }
 
-    void get_left_right_p(value_type* N, xr_vector<value_type*, xr_allocator<value_type*>>& D)
+    void get_left_right_p(value_type* N, std::vector<value_type*>& D)
     {
         if (N->left)
             get_left_right_p(N->left, D);
@@ -203,7 +210,7 @@ private:
             get_left_right_p(N->right, D);
     }
 
-    void get_right_left_p(value_type* N, xr_vector<value_type*, xr_allocator<value_type*>>& D)
+    void get_right_left_p(value_type* N, std::vector<value_type*>& D)
     {
         if (N->right)
             get_right_left_p(N->right, D);
@@ -231,7 +238,7 @@ public:
         {
             for (value_type* cur = begin(); cur != last(); ++cur)
                 cur->~value_type();
-            allocator::deallocate(nodes, limit);
+            allocator.deallocate(nodes, limit);
         }
         nodes = 0;
         pool = 0;
@@ -383,31 +390,31 @@ public:
             CB(*cur);
     }
 
-    void get_left_right(xr_vector<T, xr_allocator<T>>& D)
+    void get_left_right(std::vector<T>& D)
     {
         if (pool)
             get_left_right(nodes, D);
     }
 
-    void get_left_right_p(xr_vector<value_type*, xr_allocator<value_type*>>& D)
+    void get_left_right_p(std::vector<value_type*>& D)
     {
         if (pool)
             get_left_right_p(nodes, D);
     }
 
-    void get_right_left(xr_vector<T, xr_allocator<T>>& D)
+    void get_right_left(std::vector<T>& D)
     {
         if (pool)
             get_right_left(nodes, D);
     }
 
-    void get_right_left_p(xr_vector<value_type*, xr_allocator<value_type*>>& D)
+    void get_right_left_p(std::vector<value_type*>& D)
     {
         if (pool)
             get_right_left_p(nodes, D);
     }
 
-    void get_any_p(xr_vector<value_type*, xr_allocator<value_type*>>& D)
+    void get_any_p(std::vector<value_type*>& D)
     {
         if (empty())
             return;

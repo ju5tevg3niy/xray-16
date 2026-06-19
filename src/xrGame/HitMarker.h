@@ -1,11 +1,10 @@
 #pragma once
-#ifndef __XR_HITMARKER_H__
-#define __XR_HITMARKER_H__
+
+#include <deque>
 
 #include "Include/xrRender/FactoryPtr.h"
 #include "xrUICore/ui_defs.h"
 #include "Common/Noncopyable.hpp"
-#include "xrCommon/xr_deque.h"
 
 class IUIShader;
 class CUIStaticItem;
@@ -50,8 +49,8 @@ public:
     FactoryPtr<IUIShader> hShader2;
     FactoryPtr<IUIShader> hShader_Grenade;
 
-    typedef xr_deque<SHitMark*> HITMARKS;
-    typedef xr_deque<SGrenadeMark*> GRENADEMARKS;
+    typedef std::deque<SHitMark*> HITMARKS;
+    typedef std::deque<SGrenadeMark*> GRENADEMARKS;
 
     HITMARKS m_HitMarks;
     GRENADEMARKS m_GrenadeMarks;
@@ -70,5 +69,3 @@ public:
 
     void net_Relcase(IGameObject* obj);
 };
-
-#endif // __XR_HITMARKER_H__

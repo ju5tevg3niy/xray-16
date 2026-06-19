@@ -177,7 +177,7 @@ CUIGameCustom* game_cl_TeamDeathmatch::createGameUI()
     return m_game_ui;
 }
 
-void game_cl_TeamDeathmatch::GetMapEntities(xr_vector<SZoneMapEntityData>& dst)
+void game_cl_TeamDeathmatch::GetMapEntities(std::vector<SZoneMapEntityData>& dst)
 {
     SZoneMapEntityData D;
     u32 color_self_team = 0xff00ff00;

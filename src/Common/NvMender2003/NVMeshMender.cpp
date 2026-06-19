@@ -27,6 +27,8 @@ Comments:
 
 */
 
+#include <set>
+
 #include "stdafx.h"
 #include "nvMeshMender.h"
 #include "assert.h"
@@ -194,8 +196,8 @@ void MeshMender::UpdateIndices(const size_t oldIndex, const size_t newIndex, Tri
         }
     }
 }
-void MeshMender::ProcessNormals(TriangleList& possibleNeighbors, xr_vector<Vertex>& theVerts,
-    xr_vector<unsigned int>& mappingNewToOldVert, D3DXVECTOR3 workingPosition)
+void MeshMender::ProcessNormals(TriangleList& possibleNeighbors, std::vector<Vertex>& theVerts,
+    std::vector<unsigned int>& mappingNewToOldVert, D3DXVECTOR3 workingPosition)
 {
     NeighborGroupList neighborGroups; // a fresh group for each pass
 
@@ -218,7 +220,7 @@ void MeshMender::ProcessNormals(TriangleList& possibleNeighbors, xr_vector<Verte
         }
     }
 
-    xr_vector<D3DXVECTOR3> groupNormalVectors;
+    std::vector<D3DXVECTOR3> groupNormalVectors;
 
     for (u32 i = 0; i < neighborGroups.size(); ++i)
     {
@@ -238,11 +240,11 @@ void MeshMender::ProcessNormals(TriangleList& possibleNeighbors, xr_vector<Verte
 
     // next step, ensure that triangles in different groups are not
     // sharing vertices. and give the shared vertex their new group vector
-    xr_set<size_t> otherGroupsIndices;
+    std::set<size_t> otherGroupsIndices;
     for (u32 i = 0; i < neighborGroups.size(); ++i)
     {
         TriangleList& curGroup = neighborGroups[i];
-        xr_set<size_t> thisGroupIndices;
+        std::set<size_t> thisGroupIndices;
 
         for (size_t t = 0; t < curGroup.size(); ++t) // for each tri
         {
@@ -277,15 +279,15 @@ void MeshMender::ProcessNormals(TriangleList& possibleNeighbors, xr_vector<Verte
             }
         }
 
-        for (xr_set<size_t>::iterator it = thisGroupIndices.begin(); it != thisGroupIndices.end(); ++it)
+        for (std::set<size_t>::iterator it = thisGroupIndices.begin(); it != thisGroupIndices.end(); ++it)
         {
             otherGroupsIndices.insert(*it);
         }
     }
 }
 
-void MeshMender::ProcessTangents(TriangleList& possibleNeighbors, xr_vector<Vertex>& theVerts,
-    xr_vector<unsigned int>& mappingNewToOldVert, D3DXVECTOR3 workingPosition)
+void MeshMender::ProcessTangents(TriangleList& possibleNeighbors, std::vector<Vertex>& theVerts,
+    std::vector<unsigned int>& mappingNewToOldVert, D3DXVECTOR3 workingPosition)
 {
     NeighborGroupList neighborGroups; // a fresh group for each pass
 
@@ -308,7 +310,7 @@ void MeshMender::ProcessTangents(TriangleList& possibleNeighbors, xr_vector<Vert
         }
     }
 
-    xr_vector<D3DXVECTOR3> groupTangentVectors;
+    std::vector<D3DXVECTOR3> groupTangentVectors;
 
     for (u32 i = 0; i < neighborGroups.size(); ++i)
     {
@@ -324,11 +326,11 @@ void MeshMender::ProcessTangents(TriangleList& possibleNeighbors, xr_vector<Vert
 
     // next step, ensure that triangles in different groups are not
     // sharing vertices. and give the shared vertex their new group vector
-    xr_set<size_t> otherGroupsIndices;
+    std::set<size_t> otherGroupsIndices;
     for (u32 i = 0; i < neighborGroups.size(); ++i)
     {
         TriangleList& curGroup = neighborGroups[i];
-        xr_set<size_t> thisGroupIndices;
+        std::set<size_t> thisGroupIndices;
 
         for (size_t t = 0; t < curGroup.size(); ++t) // for each tri
         {
@@ -363,15 +365,15 @@ void MeshMender::ProcessTangents(TriangleList& possibleNeighbors, xr_vector<Vert
             }
         }
 
-        for (xr_set<size_t>::iterator it = thisGroupIndices.begin(); it != thisGroupIndices.end(); ++it)
+        for (std::set<size_t>::iterator it = thisGroupIndices.begin(); it != thisGroupIndices.end(); ++it)
         {
             otherGroupsIndices.insert(*it);
         }
     }
 }
 
-void MeshMender::ProcessBinormals(TriangleList& possibleNeighbors, xr_vector<Vertex>& theVerts,
-    xr_vector<unsigned int>& mappingNewToOldVert, D3DXVECTOR3 workingPosition)
+void MeshMender::ProcessBinormals(TriangleList& possibleNeighbors, std::vector<Vertex>& theVerts,
+    std::vector<unsigned int>& mappingNewToOldVert, D3DXVECTOR3 workingPosition)
 {
     NeighborGroupList neighborGroups; // a fresh group for each pass
 
@@ -394,7 +396,7 @@ void MeshMender::ProcessBinormals(TriangleList& possibleNeighbors, xr_vector<Ver
         }
     }
 
-    xr_vector<D3DXVECTOR3> groupBinormalVectors;
+    std::vector<D3DXVECTOR3> groupBinormalVectors;
 
     for (u32 i = 0; i < neighborGroups.size(); ++i)
     {
@@ -410,11 +412,11 @@ void MeshMender::ProcessBinormals(TriangleList& possibleNeighbors, xr_vector<Ver
 
     // next step, ensure that triangles in different groups are not
     // sharing vertices. and give the shared vertex their new group vector
-    xr_set<size_t> otherGroupsIndices;
+    std::set<size_t> otherGroupsIndices;
     for (u32 i = 0; i < neighborGroups.size(); ++i)
     {
         TriangleList& curGroup = neighborGroups[i];
-        xr_set<size_t> thisGroupIndices;
+        std::set<size_t> thisGroupIndices;
 
         for (size_t t = 0; t < curGroup.size(); ++t) // for each tri
         {
@@ -449,15 +451,15 @@ void MeshMender::ProcessBinormals(TriangleList& possibleNeighbors, xr_vector<Ver
             }
         }
 
-        for (xr_set<size_t>::iterator it = thisGroupIndices.begin(); it != thisGroupIndices.end(); ++it)
+        for (std::set<size_t>::iterator it = thisGroupIndices.begin(); it != thisGroupIndices.end(); ++it)
         {
             otherGroupsIndices.insert(*it);
         }
     }
 }
 
-bool MeshMender::Mend(xr_vector<Vertex>& theVerts, xr_vector<unsigned int>& theIndices,
-    xr_vector<unsigned int>& mappingNewToOldVert, const float minNormalsCreaseCosAngle,
+bool MeshMender::Mend(std::vector<Vertex>& theVerts, std::vector<unsigned int>& theIndices,
+    std::vector<unsigned int>& mappingNewToOldVert, const float minNormalsCreaseCosAngle,
     const float minTangentsCreaseCosAngle, const float minBinormalsCreaseCosAngle, const float weightNormalsByArea,
     const NormalCalcOption computeNormals, const ExistingSplitOption respectExistingSplits,
     const CylindricalFixOption fixCylindricalWrapping)
@@ -499,7 +501,7 @@ bool MeshMender::Mend(xr_vector<Vertex>& theVerts, xr_vector<unsigned int>& theI
 void MeshMender::BuildGroups(Triangle* tri, // the tri of interest
     TriangleList& possibleNeighbors, // all tris arround a vertex
     NeighborGroupList& neighborGroups, // the neighbor groups to be updated
-    xr_vector<Vertex>& theVerts, CanSmoothChecker* smoothChecker, const float& minCreaseAngle)
+    std::vector<Vertex>& theVerts, CanSmoothChecker* smoothChecker, const float& minCreaseAngle)
 {
     if ((!tri) || (tri->handled))
         return;
@@ -545,12 +547,12 @@ void MeshMender::BuildGroups(Triangle* tri, // the tri of interest
 }
 
 void MeshMender::FindNeighbors(Triangle* tri, TriangleList& possibleNeighbors, Triangle** neighbor1,
-    Triangle** neighbor2, xr_vector<Vertex>& theVerts)
+    Triangle** neighbor2, std::vector<Vertex>& theVerts)
 {
     *neighbor1 = NULL;
     *neighbor2 = NULL;
 
-    xr_vector<Triangle*> theNeighbors;
+    std::vector<Triangle*> theNeighbors;
     for (unsigned int n = 0; n < possibleNeighbors.size(); ++n)
     {
         TriID tID = possibleNeighbors[n];
@@ -610,7 +612,7 @@ bool MeshMender::TriHasEdge(const D3DXVECTOR3& p0, const D3DXVECTOR3& p1, const 
     return false;
 }
 
-bool MeshMender::SharesEdgeRespectSplits(Triangle* triA, Triangle* triB, xr_vector<Vertex>& theVerts)
+bool MeshMender::SharesEdgeRespectSplits(Triangle* triA, Triangle* triB, std::vector<Vertex>& theVerts)
 {
     assert(triA && triB && "invalid data passed to SharesEdgeNoSplit");
     // here we want to compare based solely on indices.
@@ -638,7 +640,7 @@ bool MeshMender::SharesEdgeRespectSplits(Triangle* triA, Triangle* triB, xr_vect
     return false;
 }
 
-bool MeshMender::SharesEdge(Triangle* triA, Triangle* triB, xr_vector<Vertex>& theVerts)
+bool MeshMender::SharesEdge(Triangle* triA, Triangle* triB, std::vector<Vertex>& theVerts)
 {
     assert(triA && triB && "invalid data passed to SharesEdge");
 
@@ -673,8 +675,8 @@ bool MeshMender::SharesEdge(Triangle* triA, Triangle* triB, xr_vector<Vertex>& t
     return false;
 }
 
-void MeshMender::SetUpData(xr_vector<Vertex>& theVerts, const xr_vector<unsigned int>& theIndices,
-    xr_vector<unsigned int>& mappingNewToOldVert, const NormalCalcOption computeNormals)
+void MeshMender::SetUpData(std::vector<Vertex>& theVerts, const std::vector<unsigned int>& theIndices,
+    std::vector<unsigned int>& mappingNewToOldVert, const NormalCalcOption computeNormals)
 {
     assert(((theIndices.size() % 3) == 0) && "expected the indices to be a multiple of 3");
     unsigned int i;
@@ -721,7 +723,7 @@ void MeshMender::SetUpData(xr_vector<Vertex>& theVerts, const xr_vector<unsigned
             else
             {
                 // we didn't find it so join whatever was there.
-                xr_vector<TriID> tmp;
+                std::vector<TriID> tmp;
                 m_VertexChildrenMap[v] = tmp;
                 m_VertexChildrenMap[v].push_back(TriID(i));
             }
@@ -731,7 +733,7 @@ void MeshMender::SetUpData(xr_vector<Vertex>& theVerts, const xr_vector<unsigned
 
 // sets up the normal, binormal, and tangent for a triangle
 // assumes the triangle indices are set to match whats in the verts
-void MeshMender::SetUpFaceVectors(Triangle& t, const xr_vector<Vertex>& verts, const NormalCalcOption computeNormals)
+void MeshMender::SetUpFaceVectors(Triangle& t, const std::vector<Vertex>& verts, const NormalCalcOption computeNormals)
 {
     if (computeNormals == CALCULATE_NORMALS)
     {
@@ -752,7 +754,7 @@ void MeshMender::SetUpFaceVectors(Triangle& t, const xr_vector<Vertex>& verts, c
     GetGradients(verts[t.indices[0]], verts[t.indices[1]], verts[t.indices[2]], t.tangent, t.binormal);
 }
 
-void MeshMender::OrthogonalizeTangentsAndBinormals(xr_vector<Vertex>& theVerts)
+void MeshMender::OrthogonalizeTangentsAndBinormals(std::vector<Vertex>& theVerts)
 {
     // put our tangents and binormals through the final orthogonalization
     // with the final processed normals
@@ -907,7 +909,7 @@ void MeshMender::GetGradients(const MeshMender::Vertex& v0, const MeshMender::Ve
     // see OrthogonalizeTangentsAndBinormals
 }
 
-void MeshMender::UpdateTheIndicesWithFinalIndices(xr_vector<unsigned int>& theIndices)
+void MeshMender::UpdateTheIndicesWithFinalIndices(std::vector<unsigned int>& theIndices)
 {
     // theIndices is assumed to be filled with a copy of the in Indices.
 
@@ -926,7 +928,7 @@ void MeshMender::UpdateTheIndicesWithFinalIndices(xr_vector<unsigned int>& theIn
 }
 
 void MeshMender::FixCylindricalWrapping(
-    xr_vector<Vertex>& theVerts, xr_vector<unsigned int>& theIndices, xr_vector<unsigned int>& mappingNewToOldVert)
+    std::vector<Vertex>& theVerts, std::vector<unsigned int>& theIndices, std::vector<unsigned int>& mappingNewToOldVert)
 {
     // when using cylindrical texture coordinate generation,
     // you can end up with triangles that have <s,t> coordinates like
@@ -943,7 +945,7 @@ void MeshMender::FixCylindricalWrapping(
     for (index = 0; index < theIndices.size(); index += 3)
     {
         // for each triangle
-        xr_set<unsigned int> alreadyDuped;
+        std::set<unsigned int> alreadyDuped;
 
         for (unsigned int begin = 0; begin < 3; ++begin)
         {
@@ -1016,7 +1018,7 @@ void MeshMender::FixCylindricalWrapping(
 }
 
 void MeshMender::AppendToMapping(
-    const size_t oldIndex, const size_t originalNumVerts, xr_vector<unsigned int>& mappingNewToOldVert)
+    const size_t oldIndex, const size_t originalNumVerts, std::vector<unsigned int>& mappingNewToOldVert)
 {
     if (oldIndex >= originalNumVerts)
     {

@@ -42,6 +42,6 @@ public:
     pcstr GetDebugType() override { return "CUIOutfitInfo"; }
 
 protected:
-    xr_unordered_map<ALife::EHitType, CUIOutfitImmunity*> m_items;
+    std::unordered_map<ALife::EHitType, CUIOutfitImmunity*> m_items;
     Fvector2 m_start_pos{};
 }; // class CUIOutfitInfo

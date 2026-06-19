@@ -1,6 +1,13 @@
 #pragma once
 
+#include <vector>
+
+#include "glad/gl.h"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/xrDebug_macros.h"
 #include "xrCore/xr_resource.h"
+#include "xrCore/xrstring.h"
 
 #if defined(USE_DX11)
 #include "Layers/xrRenderDX11/dx11ConstantBuffer.h"
@@ -9,7 +16,7 @@
 namespace xray::render::RENDER_NAMESPACE
 {
 class CBackend;
-class ECORE_API R_constant_setup;
+class R_constant_setup;
 
 enum
 {
@@ -71,7 +78,7 @@ enum // Constant buffer index masks
     CB_BufferComputeShader = 0x60,
 };
 
-struct ECORE_API R_constant_load
+struct R_constant_load
 {
     u16 index; // linear index (pixel)
     u16 cls; // element class
@@ -99,7 +106,7 @@ struct ECORE_API R_constant_load
     }
 };
 
-struct ECORE_API R_constant : public xr_resource
+struct R_constant : public xr_resource
 {
     shared_str name; // HLSL-name
     u16 type; // float=0/integer=1/boolean=2
@@ -164,7 +171,7 @@ struct ECORE_API R_constant : public xr_resource
 typedef resptr_core<R_constant, resptr_base<R_constant>> ref_constant;
 
 // Automatic constant setup
-class ECORE_API XR_NOVTABLE R_constant_setup
+class XR_NOVTABLE R_constant_setup
 {
 public:
     R_constant_setup() = default;
@@ -172,17 +179,17 @@ public:
     virtual ~R_constant_setup() = default;
 };
 
-class ECORE_API R_constant_table : public xr_resource_flagged
+class R_constant_table : public xr_resource_flagged
 {
 public:
     bool dx9compatibility{};
 
-    typedef xr_vector<ref_constant> c_table;
+    typedef std::vector<ref_constant> c_table;
     c_table table;
 
 #if defined(USE_DX11)
     typedef std::pair<u32, ref_cbuffer> cb_table_record;
-    typedef xr_vector<cb_table_record> cb_table;
+    typedef std::vector<cb_table_record> cb_table;
     cb_table m_CBTable[R__NUM_CONTEXTS];
 #endif
 

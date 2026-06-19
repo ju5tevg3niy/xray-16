@@ -1198,7 +1198,7 @@ void CInventoryItem::reinit()
 
 bool CInventoryItem::can_kill() const { return (false); }
 CInventoryItem* CInventoryItem::can_kill(CInventory* inventory) const { return (0); }
-const CInventoryItem* CInventoryItem::can_kill(const xr_vector<const CGameObject*>& items) const { return (0); }
+const CInventoryItem* CInventoryItem::can_kill(const std::vector<const CGameObject*>& items) const { return (0); }
 CInventoryItem* CInventoryItem::can_make_killing(const CInventory* inventory) const { return (0); }
 bool CInventoryItem::ready_to_kill() const { return (false); }
 void CInventoryItem::activate_physic_shell()

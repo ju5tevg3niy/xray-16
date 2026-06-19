@@ -8,8 +8,8 @@ namespace xray::render::RENDER_NAMESPACE
 class CLight_DB
 {
 private:
-    xr_vector<ref_light> v_static;
-    xr_vector<ref_light> v_hemi;
+    std::vector<ref_light> v_static;
+    std::vector<ref_light> v_hemi;
 
 public:
     ref_light sun;

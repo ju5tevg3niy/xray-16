@@ -450,7 +450,7 @@ void xrCompressor::GatherFiles(LPCSTR path) const
     }
     for (const auto& it : *i_list)
     {
-        xr_string tmp_path = xr_string(path) + xr_string(it);
+        std::string tmp_path = std::string(path) + std::string(it);
         if (!testSKIP(tmp_path.c_str()))
         {
             files_list->push_back(xr_strdup(tmp_path.c_str()));
@@ -494,8 +494,8 @@ void xrCompressor::ProcessLTX(CInifile& ltx)
     if (ltx.line_exist("options", "exclude_exts"))
         _SequenceToList(exclude_exts, ltx.r_string("options", "exclude_exts"));
 
-    files_list = xr_new<xr_vector<char*>>();
-    folders_list = xr_new<xr_vector<char*>>();
+    files_list = xr_new<std::vector<char*>>();
+    folders_list = xr_new<std::vector<char*>>();
 
     if (ltx.section_exist("include_folders"))
     {
@@ -530,7 +530,7 @@ void xrCompressor::ProcessLTX(CInifile& ltx)
 
                 for (const auto& it2 : *i_fl_list)
                 {
-                    xr_string tmp_path = xr_string(path) + xr_string(it2);
+                    std::string tmp_path = std::string(path) + std::string(it2);
                     if (IsFolderAccepted(ltx, tmp_path.c_str(), efRecurse))
                     {
                         folders_list->push_back(xr_strdup(tmp_path.c_str()));

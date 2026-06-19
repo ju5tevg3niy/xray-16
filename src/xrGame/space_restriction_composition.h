@@ -21,7 +21,7 @@ public:
 
 protected:
     typedef SpaceRestrictionHolder::CBaseRestrictionPtr CBaseRestrictionPtr;
-    typedef xr_vector<CBaseRestrictionPtr> RESTRICTIONS;
+    typedef std::vector<CBaseRestrictionPtr> RESTRICTIONS;
 
 protected:
     RESTRICTIONS m_restrictions;

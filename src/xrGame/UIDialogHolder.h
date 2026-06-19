@@ -1,11 +1,12 @@
 #pragma once
 
-#include "xrCommon/xr_vector.h"
+#include <vector>
+#include <SDL.h>
+
 #include "xrCore/Math/flags.hpp"
 #include "xrEngine/pure.h"
 #include "xrUICore/ui_debug.h"
 
-#include <SDL.h>
 
 class CUIDialogWnd;
 class CUIWindow;
@@ -35,9 +36,9 @@ public:
 class CDialogHolder : public pureFrame, public CUIDebuggable
 {
     // dialogs
-    xr_vector<recvItem> m_input_receivers;
-    xr_vector<dlgItem> m_dialogsToRender;
-    xr_vector<dlgItem> m_dialogsToRender_new;
+    std::vector<recvItem> m_input_receivers;
+    std::vector<dlgItem> m_dialogsToRender;
+    std::vector<dlgItem> m_dialogsToRender_new;
     u32 m_become_visible_time{};
     bool m_b_in_update;
     bool m_is_foremost{};

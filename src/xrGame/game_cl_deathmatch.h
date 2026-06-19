@@ -23,7 +23,7 @@ public:
     s32 m_s32FragLimit; // dm,tdm,ah
     s32 m_s32TimeLimit; // dm
     bool m_bDamageBlockIndicators;
-    xr_vector<game_TeamState> teams; // dm,tdm,ah
+    std::vector<game_TeamState> teams; // dm,tdm,ah
     u32 m_u32ForceRespawn;
 
     u32 m_cl_dwWarmUp_Time;
@@ -64,7 +64,7 @@ protected:
         };
     };
 
-    using PRESET_ITEMS = xr_vector<PresetItem>;
+    using PRESET_ITEMS = std::vector<PresetItem>;
 
     PRESET_ITEMS PresetItemsTeam0;
     PRESET_ITEMS AdditionalPresetItems;
@@ -140,7 +140,7 @@ public:
     virtual void OnVoteStop(NET_Packet& P);
     virtual void OnVoteEnd(NET_Packet& P);
 
-    virtual void GetMapEntities(xr_vector<SZoneMapEntityData>& dst);
+    virtual void GetMapEntities(std::vector<SZoneMapEntityData>& dst);
 
     virtual void OnRender();
     virtual bool IsEnemy(game_PlayerState* ps);

@@ -1,6 +1,23 @@
 #pragma once
 
+#include <cstddef>
+#include <vector>
+
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCDB/Frustum.h"
+#include "xrCDB/ISpatial.h"
+#include "xrCDB/xrXRC.h"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/fbox.hpp"
+#include "xrCore/xrDebug_macros.h"
+
 #include "r__sector.h"
+#include "r__dsgraph_types.h"
+#include "R_Backend.h"
+#include "Shader.h"
 
 namespace xray::render::RENDER_NAMESPACE
 {
@@ -22,7 +39,7 @@ struct R_dsgraph_structure
 
     R_feedback* val_feedback{}; // feedback for geometry being rendered
     u32 val_feedback_breakp{}; // breakpoint
-    xr_vector<Fbox3>* val_recorder; // coarse structure recorder
+    std::vector<Fbox3>* val_recorder; // coarse structure recorder
     u32 marker{};
     u32 context_id{ INVALID_CONTEXT_ID };
 
@@ -62,19 +79,19 @@ struct R_dsgraph_structure
     R_dsgraph::mapSorted_T mapHUDEmissive;
 #endif
 
-    xr_vector<CSector*> Sectors;
-    xr_vector<CPortal*> Portals;
+    std::vector<CSector*> Sectors;
+    std::vector<CPortal*> Portals;
     CPortalTraverser PortalTraverser;
     xrXRC Sectors_xrc;
 
     // Runtime structures
-    xr_vector<R_dsgraph::mapNormal_T::value_type*> nrmPasses;
-    xr_vector<R_dsgraph::mapMatrix_T::value_type*> matPasses;
-    xr_vector<R_dsgraph::_LodItem> lstLODs;
-    xr_vector<int> lstLODgroups;
-    xr_vector<ISpatial*> lstRenderables;
-    xr_vector<ISpatial*> lstSpatial;
-    xr_vector<dxRender_Visual*> lstVisuals;
+    std::vector<R_dsgraph::mapNormal_T::value_type*> nrmPasses;
+    std::vector<R_dsgraph::mapMatrix_T::value_type*> matPasses;
+    std::vector<R_dsgraph::_LodItem> lstLODs;
+    std::vector<int> lstLODgroups;
+    std::vector<ISpatial*> lstRenderables;
+    std::vector<ISpatial*> lstSpatial;
+    std::vector<dxRender_Visual*> lstVisuals;
 
     CBackend cmd_list{};
 
@@ -86,7 +103,7 @@ struct R_dsgraph_structure
         val_feedback_breakp = id;
         val_feedback = V;
     }
-    void set_Recorder(xr_vector<Fbox3>* dest)
+    void set_Recorder(std::vector<Fbox3>* dest)
     {
         val_recorder = dest;
         if (dest)
@@ -157,7 +174,7 @@ struct R_dsgraph_structure
         o.pmask_wmark = _wm;
     }
 
-    void load(const xr_vector<CSector::level_sector_data_t> &sectors, const xr_vector<CPortal::level_portal_data_t> &portals);
+    void load(const std::vector<CSector::level_sector_data_t> &sectors, const std::vector<CPortal::level_portal_data_t> &portals);
     void unload();
 
     ICF IRender_Portal* get_portal(size_t id) const

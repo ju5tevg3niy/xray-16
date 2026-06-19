@@ -35,7 +35,7 @@ struct SPrimitiveBuffer
 //----------------------------------------------------
 // Utilities
 //----------------------------------------------------
-class ECORE_API CDrawUtilities : public CDUInterface, public pureRender
+class CDrawUtilities : public CDUInterface, public pureRender
 {
     SPrimitiveBuffer m_SolidCone;
     SPrimitiveBuffer m_WireCone;
@@ -194,6 +194,6 @@ public:
 
     virtual void OnRender();
 };
-extern ECORE_API CDrawUtilities DUImpl;
+extern CDrawUtilities DUImpl;
 //----------------------------------------------------
 } // namespace xray::render::RENDER_NAMESPACE

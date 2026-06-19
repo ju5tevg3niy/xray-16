@@ -23,7 +23,7 @@ struct SZoneObjectInfo
     //игнорирование объекта в зоне
     bool zone_ignore{};
     //присоединенные партиклы
-    xr_vector<CParticlesObject*> particles_vector;
+    std::vector<CParticlesObject*> particles_vector;
     //время прибывания в зоне
     u32 dw_time_in_zone{};
     float f_time_affected;
@@ -264,7 +264,7 @@ protected:
     void UpdateBlowoutLight();
 
     //список партиклов для объетов внутри зоны
-    using OBJECT_INFO_VEC = xr_vector<SZoneObjectInfo>;
+    using OBJECT_INFO_VEC = std::vector<SZoneObjectInfo>;
     OBJECT_INFO_VEC m_ObjectInfoMap;
 
     void CreateHit(u16 id_to, u16 id_from, const Fvector& hit_dir, float hit_power, s16 bone_id,
@@ -307,7 +307,7 @@ protected:
     void SpawnArtefact() const;
 
 protected:
-    xr_vector<CArtefact*> m_SpawnedArtefacts;
+    std::vector<CArtefact*> m_SpawnedArtefacts;
 
     //вероятность того, что артефакт засповниться при единичном
     //срабатывании аномалии
@@ -328,7 +328,7 @@ protected:
         float      probability;
     };
 
-    xr_vector<ARTEFACT_SPAWN> m_ArtefactSpawn;
+    std::vector<ARTEFACT_SPAWN> m_ArtefactSpawn;
 
     //расстояние от зоны до текущего актера
     float m_fDistanceToCurEntity;

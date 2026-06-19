@@ -7,7 +7,7 @@ class IWriter;
 
 namespace xray::render::RENDER_NAMESPACE
 {
-class ECORE_API CConstant : public xr_resource_named
+class CConstant : public xr_resource_named
 {
 public:
     enum

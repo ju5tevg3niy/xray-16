@@ -1,6 +1,7 @@
 // HOM.cpp: implementation of the CHOM class.
 //
 //////////////////////////////////////////////////////////////////////
+#include <vector>
 
 #include "stdafx.h"
 
@@ -95,7 +96,7 @@ void CHOM::Load()
     }
 
     // Determine adjacency
-    xr_vector<u32> adjacency;
+    std::vector<u32> adjacency;
     CL.calc_adjacency(adjacency);
 
     // Create RASTER-triangles
@@ -434,7 +435,7 @@ void CHOM::OnRender()
     {
         if (m_pModel)
         {
-            DEFINE_VECTOR(FVF::L, LVec, LVecIt);
+            using LVec = std::vector<FVF::L>;
             static LVec poly;
             poly.resize(m_pModel->get_tris_count() * 3);
             static LVec line;

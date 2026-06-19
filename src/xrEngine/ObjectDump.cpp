@@ -5,7 +5,7 @@
 #include "ObjectDump.h"
 #include "xrCore/dump_string.h"
 
-// XXX: replace std::string with xr_string and optimize
+// XXX: replace std::string with std::string and optimize
 
 std::string dbg_object_base_dump_string(const IGameObject* obj)
 {

@@ -4,17 +4,18 @@
 
 \details Will be useful when you need a system which allows you to handle events with calling the subscribed callbacks.
 */
-
 #pragma once
 
+#include <array>
+#include <vector>
+#include <algorithm>
+#include <limits>
+#include <cstddef>
+
 #include "xrCommon/xr_smart_pointers.h"
-#include "xrCommon/xr_vector.h"
-#include "xrCommon/xr_array.h"
+
 #include "xrCore/Threading/Lock.hpp"
 #include "xrCore/Threading/ScopeLock.hpp"
-
-#include <limits>
-#include <algorithm>
 
 /*!
     \brief Base abstract class for implementing event handling callbacks
@@ -84,7 +85,7 @@ private:
                 executing = false;
             }
         };
-        xr_vector<CCallbackWrapper> m_callbacks;
+        std::vector<CCallbackWrapper> m_callbacks;
         Lock m_lock;
 
         CEventNotifierCallback::CID FindFreeCid()
@@ -168,7 +169,7 @@ private:
         }
     };
 
-    xr_array<CCallbackStorage, CNT> m_callbacks;
+    std::array<CCallbackStorage, CNT> m_callbacks;
 
 public:
     /*! \brief Method for registering an existing event handler.

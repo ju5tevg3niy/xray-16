@@ -4,7 +4,7 @@
 #include "convert.h"
 
 template <typename type_face>
-IC void add_face(xr_vector<unsigned int>& theIndices, const type_face& iF)
+IC void add_face(std::vector<unsigned int>& theIndices, const type_face& iF)
 {
     theIndices.push_back(face_vertex(iF, 0));
     theIndices.push_back(face_vertex(iF, 1));
@@ -20,8 +20,8 @@ IC void set_face(type_face& iF, unsigned int v0, unsigned int v1, unsigned int v
 }
 
 template <typename type_vertex, typename type_face>
-static void fill_mender_input(const xr_vector<type_vertex>& vertices, const xr_vector<type_face>& faces,
-    xr_vector<MeshMender::Vertex>& theVerts, xr_vector<unsigned int>& theIndices)
+static void fill_mender_input(const std::vector<type_vertex>& vertices, const std::vector<type_face>& faces,
+    std::vector<MeshMender::Vertex>& theVerts, std::vector<unsigned int>& theIndices)
 {
     theVerts.clear();
     theIndices.clear();
@@ -36,11 +36,11 @@ static void fill_mender_input(const xr_vector<type_vertex>& vertices, const xr_v
 }
 
 template <typename type_vertex, typename type_face>
-static void retrive_data_from_mender_otput(xr_vector<type_vertex>& vertices, // in-out
-    xr_vector<type_face>& faces, const xr_vector<MeshMender::Vertex>& theVerts,
-    const xr_vector<unsigned int>& theIndices, const xr_vector<unsigned int>& mappingNewToOldVert)
+static void retrive_data_from_mender_otput(std::vector<type_vertex>& vertices, // in-out
+    std::vector<type_face>& faces, const std::vector<MeshMender::Vertex>& theVerts,
+    const std::vector<unsigned int>& theIndices, const std::vector<unsigned int>& mappingNewToOldVert)
 {
-    xr_vector<type_vertex> old_vertices;
+    std::vector<type_vertex> old_vertices;
     {
         old_vertices.clear();
         // save old vertices to retrive through mappingNewToOldVert data that missing in MeshMender::Vertex

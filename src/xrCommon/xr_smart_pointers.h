@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../xrCore/xrMemory.h"
 #include <memory>
-#include <functional>
+
+#include "xrCore/xrMemory.h"
 
 template <typename T>
 struct xr_custom_deleter

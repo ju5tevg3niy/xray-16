@@ -6,6 +6,8 @@
 //	Description : Smart dynamic cast statistics
 ////////////////////////////////////////////////////////////////////////////
 
+#include <set>
+
 #include "StdAfx.h"
 
 #ifdef DEBUG
@@ -36,11 +38,11 @@ private:
     };
 
 private:
-    typedef xr_set<CStats> STATS;
+    typedef std::set<CStats> STATS;
 
 private:
     STATS m_stats;
-    xr_vector<CStats> m_temp;
+    std::vector<CStats> m_temp;
 
 public:
     IC static CSmartCastStats* instance();
@@ -98,8 +100,8 @@ IC void CSmartCastStats::show()
     std::sort(m_temp.begin(), m_temp.end(), CStatsPredicate());
     u32 total = 0;
 
-    xr_vector<CStats>::const_iterator I = m_temp.begin();
-    xr_vector<CStats>::const_iterator E = m_temp.end();
+    std::vector<CStats>::const_iterator I = m_temp.begin();
+    std::vector<CStats>::const_iterator E = m_temp.end();
     for (; I != E; ++I)
         total += (*I).m_count;
 

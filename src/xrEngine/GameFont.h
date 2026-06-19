@@ -1,7 +1,8 @@
 #pragma once
 
+#include <vector>
+
 #include "xrEngine/IGameFont.hpp"
-#include "xrCommon/xr_vector.h"
 #include "xrCore/Math/vector3.hpp"
 #ifdef DEBUG
 #include "xrCore/xrstring.h"
@@ -50,7 +51,7 @@ protected:
     float fYStep;
     float fTCHeight;
     u32 nNumChars{ 256 };
-    xr_vector<String> strings;
+    std::vector<String> strings;
     Fvector* TCMap{};
     IFontRender* pFontRender;
 

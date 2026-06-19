@@ -33,8 +33,8 @@ IC u32 CSpaceRestrictionBridge::accessible_nearest(
 
     float min_dist_sqr = flt_max;
     u32 selected = u32(-1);
-    xr_vector<u32>::const_iterator I = restriction->accessible_neighbour_border(restriction, out_restriction).begin();
-    xr_vector<u32>::const_iterator E = restriction->accessible_neighbour_border(restriction, out_restriction).end();
+    std::vector<u32>::const_iterator I = restriction->accessible_neighbour_border(restriction, out_restriction).begin();
+    std::vector<u32>::const_iterator E = restriction->accessible_neighbour_border(restriction, out_restriction).end();
     for (; I != E; ++I)
     {
         VERIFY2(level_graph.valid_vertex_id(*I), make_string("%d", *I));
@@ -128,7 +128,7 @@ IC u32 CSpaceRestrictionBridge::accessible_nearest(
 }
 
 template <typename T>
-IC const xr_vector<u32>& CSpaceRestrictionBridge::accessible_neighbour_border(T& restriction, bool out_restriction)
+IC const std::vector<u32>& CSpaceRestrictionBridge::accessible_neighbour_border(T& restriction, bool out_restriction)
 {
     return (object().accessible_neighbour_border(restriction, out_restriction));
 }

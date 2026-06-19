@@ -23,7 +23,7 @@ struct SArticleData : CSharedResource
     CUIStatic image{ "Image" };
 
     //текст статьи
-    xr_string text;
+    std::string text;
 
     //секция ltx, откуда читать данные
     //	shared_str ltx;

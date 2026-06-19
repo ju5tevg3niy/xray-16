@@ -2,7 +2,7 @@
 
 #include "Geometry.h"
 
-using GEOM_STORAGE = xr_vector<CODEGeom*>;
+using GEOM_STORAGE = std::vector<CODEGeom*>;
 using GEOM_I = GEOM_STORAGE::iterator;
 using GEOM_CI = GEOM_STORAGE::const_iterator;
 
@@ -115,7 +115,7 @@ private:
 
 template <typename geometry_type>
 void t_get_extensions(
-    const xr_vector<geometry_type*>& geoms, const Fvector& axis, float center_prg, float& lo_ext, float& hi_ext)
+    const std::vector<geometry_type*>& geoms, const Fvector& axis, float center_prg, float& lo_ext, float& hi_ext)
 {
     lo_ext = dInfinity;
     hi_ext = -dInfinity;

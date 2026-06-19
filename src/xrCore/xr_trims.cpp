@@ -108,7 +108,7 @@ pstr _GetItems(pcstr src, int idx_start, int idx_end, pstr dst, char separator)
     return dst;
 }
 
-pcstr _GetItems(pcstr src, int idx_start, int idx_end, xr_string& dst, char separator)
+pcstr _GetItems(pcstr src, int idx_start, int idx_end, std::string& dst, char separator)
 {
     int level = 0;
     for (pcstr p = src; *p != 0; p++)
@@ -167,7 +167,7 @@ pstr _ReplaceItems(pcstr src, int idx_start, int idx_end, pcstr new_items, pstr 
     return dst;
 }
 
-xr_string& _ReplaceItems(pcstr src, int idx_start, int idx_end, pcstr new_items, xr_string& dst, char separator)
+std::string& _ReplaceItems(pcstr src, int idx_start, int idx_end, pcstr new_items, std::string& dst, char separator)
 {
     dst.clear();
     int level = 0;
@@ -224,7 +224,7 @@ pstr _ReplaceItem(pcstr src, int index, pcstr new_item, pstr dst, char separator
     return dst;
 }
 
-xr_string& _ReplaceItem(pcstr src, int index, pcstr new_item, xr_string& dst, char separator)
+std::string& _ReplaceItem(pcstr src, int index, pcstr new_item, std::string& dst, char separator)
 {
     dst.clear();
     int level = 0;
@@ -264,15 +264,15 @@ pstr _ChangeSymbol(pstr name, char src, char dest)
     return name;
 }
 
-xr_string& _ChangeSymbol(xr_string& name, char src, char dest)
+std::string& _ChangeSymbol(std::string& name, char src, char dest)
 {
-    for (xr_string::iterator it = name.begin(); it != name.end(); ++it)
+    for (std::string::iterator it = name.begin(); it != name.end(); ++it)
         if (*it == src)
-            *it = xr_string::value_type(dest);
+            *it = std::string::value_type(dest);
     return name;
 }
 
-void _SequenceToList(xr_vector<pstr>& lst, pcstr in, char separator)
+void _SequenceToList(std::vector<pstr>& lst, pcstr in, char separator)
 {
     int t_cnt = _GetItemCount(in, separator);
     string1024 T;
@@ -285,11 +285,11 @@ void _SequenceToList(xr_vector<pstr>& lst, pcstr in, char separator)
     }
 }
 
-void _SequenceToList(xr_vector<shared_str>& lst, pcstr in, char separator)
+void _SequenceToList(std::vector<shared_str>& lst, pcstr in, char separator)
 {
     lst.clear();
     int t_cnt = _GetItemCount(in, separator);
-    xr_string T;
+    std::string T;
     for (int i = 0; i < t_cnt; i++)
     {
         _GetItem(in, i, T, separator, 0);
@@ -299,11 +299,11 @@ void _SequenceToList(xr_vector<shared_str>& lst, pcstr in, char separator)
     }
 }
 
-void _SequenceToList(xr_vector<xr_string>& lst, pcstr in, char separator)
+void _SequenceToList(std::vector<std::string>& lst, pcstr in, char separator)
 {
     lst.clear();
     const int t_cnt = _GetItemCount(in, separator);
-    xr_string T;
+    std::string T;
     for (int i = 0; i < t_cnt; i++)
     {
         _GetItem(in, i, T, separator, 0);
@@ -313,20 +313,20 @@ void _SequenceToList(xr_vector<xr_string>& lst, pcstr in, char separator)
     }
 }
 
-xr_string _ListToSequence(const xr_vector<xr_string>& lst)
+std::string _ListToSequence(const std::vector<std::string>& lst)
 {
-    static xr_string out; // XXX: can cause crashes on exit
+    static std::string out; // XXX: can cause crashes on exit
     out.clear();
     if (!lst.empty())
     {
         out = lst.front();
         for (auto s_it = lst.cbegin() + 1; s_it != lst.cend(); ++s_it)
-            out += xr_string(",") + (*s_it);
+            out += std::string(",") + (*s_it);
     }
     return out;
 }
 
-xr_string& _TrimLeft(xr_string& str)
+std::string& _TrimLeft(std::string& str)
 {
     pcstr b = str.c_str();
     pcstr p = str.c_str();
@@ -337,7 +337,7 @@ xr_string& _TrimLeft(xr_string& str)
     return str;
 }
 
-xr_string& _TrimRight(xr_string& str)
+std::string& _TrimRight(std::string& str)
 {
     pcstr b = str.c_str();
     size_t l = str.length();
@@ -352,14 +352,14 @@ xr_string& _TrimRight(xr_string& str)
     return str;
 }
 
-xr_string& _Trim(xr_string& str)
+std::string& _Trim(std::string& str)
 {
     _TrimLeft(str);
     _TrimRight(str);
     return str;
 }
 
-pcstr _CopyVal(pcstr src, xr_string& dst, char separator)
+pcstr _CopyVal(pcstr src, std::string& dst, char separator)
 {
     pcstr p;
     std::ptrdiff_t n;
@@ -370,7 +370,7 @@ pcstr _CopyVal(pcstr src, xr_string& dst, char separator)
     return dst.c_str();
 }
 
-pcstr _GetItem(pcstr src, int index, xr_string& dst, char separator, pcstr def, bool trim)
+pcstr _GetItem(pcstr src, int index, std::string& dst, char separator, pcstr def, bool trim)
 {
     pcstr ptr;
     ptr = _SetPos(src, index, separator);
@@ -383,9 +383,9 @@ pcstr _GetItem(pcstr src, int index, xr_string& dst, char separator, pcstr def, 
     return dst.c_str();
 }
 
-shared_str _ListToSequence(const xr_vector<shared_str>& lst)
+shared_str _ListToSequence(const std::vector<shared_str>& lst)
 {
-    xr_string out;
+    std::string out;
     if (lst.size())
     {
         out = lst.front().c_str();

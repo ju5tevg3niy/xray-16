@@ -169,7 +169,7 @@ GSUpdateStatus CGameSpy_Browser::RefreshList_Full(bool Local, const char* Filter
 
         m_bTryingToConnectToMasterServer = true;
 
-        xr_string filter{ FilterStr };
+        std::string filter{ FilterStr };
         Threading::SpawnThread("GS Internet Refresh", [this, filter]
         {
             RefreshListInternet(filter.c_str());

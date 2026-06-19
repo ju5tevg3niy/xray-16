@@ -1,5 +1,8 @@
 #pragma once
 
+#include <stack>
+#include <vector>
+
 #include "ui_defs.h"
 #include "ui_debug.h"
 #include "ui_focus.h"
@@ -7,9 +10,6 @@
 
 #include "xrEngine/pure.h"
 #include "xrEngine/device.h"
-
-#include "xrCommon/xr_vector.h"
-#include "xrCommon/xr_stack.h"
 
 class CUICursor;
 class CUIGameCustom;
@@ -32,7 +32,7 @@ class XRUICORE_API UICore : public CDeviceResetNotifier, public CUIResetNotifier
     Fvector2* m_current_scale;
 
 public:
-    xr_stack<Frect> m_Scissors;
+    std::stack<Frect> m_Scissors;
 
     UICore();
     ~UICore();

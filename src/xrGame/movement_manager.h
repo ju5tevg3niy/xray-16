@@ -109,7 +109,7 @@ private:
     };
 
 protected:
-    typedef xr_vector<IGameObject*> NEAREST_OBJECTS;
+    typedef std::vector<IGameObject*> NEAREST_OBJECTS;
 
 protected:
     NEAREST_OBJECTS m_nearest_objects;
@@ -182,7 +182,7 @@ public:
     IC bool path_completed() const;
     IC const float& old_desirable_speed() const;
     IC void set_desirable_speed(float speed);
-    const xr_vector<CTravelPathPoint>& path() const;
+    const std::vector<CTravelPathPoint>& path() const;
     IC void set_body_orientation(const MonsterSpace::SBoneRotation& orientation);
     IC const CBoneRotation& body_orientation() const;
     void update_path();
@@ -233,7 +233,7 @@ protected:
 
 protected:
     virtual CRestrictedObject* create_restricted_object();
-    xr_vector<u32>& level_path_path();
+    std::vector<u32>& level_path_path();
 
 public:
     virtual void build_level_path();

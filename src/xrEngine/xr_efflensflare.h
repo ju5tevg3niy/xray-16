@@ -41,7 +41,7 @@ public:
         bool ignore_color;
         bool ed_show_params(); // ImGui editor
     };
-    using FlareVec = xr_vector<SFlare>;
+    using FlareVec = std::vector<SFlare>;
 
     FlareVec m_Flares;
 
@@ -110,7 +110,7 @@ protected:
 
     FactoryPtr<ILensFlareRender> m_pRender;
 
-    xr_vector<CLensFlareDescriptor*> m_Palette;
+    std::vector<CLensFlareDescriptor*> m_Palette;
     CLensFlareDescriptor* m_Current;
     CInifile* m_suns_config{};
 

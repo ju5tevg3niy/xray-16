@@ -32,7 +32,7 @@ struct SBoneProtections
         bool BonePassBullet{};
     };
 
-    mutable xr_map<s16, BoneProtection> m_bones_koeff;
+    mutable std::map<s16, BoneProtection> m_bones_koeff;
 
     float m_fHitFrac{ 0.1f };
     HitFractionType m_hitFracType{ HitFractionNPC };

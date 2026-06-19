@@ -13,13 +13,13 @@ protected:
     int m_iIndent;
     float m_fScale;
     Fvector2 m_cell_size;
-    xr_vector<Frect> m_vRects;
+    std::vector<Frect> m_vRects;
     CUIStaticItem m_StaticItem;
 
 public:
     CUIArtefactPanel();
 
-    void InitIcons(const xr_vector<const CArtefact*>& artefacts);
+    void InitIcons(const std::vector<const CArtefact*>& artefacts);
     void InitFromXML(CUIXml& xml, pcstr path, int index);
     void Draw() override;
 

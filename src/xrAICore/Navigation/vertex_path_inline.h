@@ -32,7 +32,7 @@ inline void CVertexPathBuilder::assign_parent(Vertex& neighbour, Vertex* parent,
 TEMPLATE_SPECIALIZATION
 inline void CVertexPathBuilder::update_successors(Vertex& /*tpNeighbour*/) { NODEFAULT; }
 TEMPLATE_SPECIALIZATION
-inline void CVertexPathBuilder::get_node_path(xr_vector<Index>& path, Vertex* best)
+inline void CVertexPathBuilder::get_node_path(std::vector<Index>& path, Vertex* best)
 {
     Vertex *t1 = best, *t2 = best->back();
     size_t i;

@@ -47,9 +47,9 @@ public:
     bool add_time_frame(char const* buffer, u32 const& buffer_size);
 
 public:
-    typedef xr_vector<pcstr> weather_ids_type;
-    typedef xr_vector<pcstr> times_ids_type;
-    typedef xr_vector<weather*> weather_container_type;
+    typedef std::vector<pcstr> weather_ids_type;
+    typedef std::vector<pcstr> times_ids_type;
+    typedef std::vector<weather*> weather_container_type;
 
 public:
     weather_ids_type const& weather_ids() const;

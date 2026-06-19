@@ -1146,7 +1146,7 @@ void ConsoleBindCmds::bind(int dik, LPCSTR n)
 
 void ConsoleBindCmds::unbind(int dik)
 {
-    xr_map<int, con_cmd>::iterator it = m_bindConsoleCmds.find(dik);
+    std::map<int, con_cmd>::iterator it = m_bindConsoleCmds.find(dik);
     if (it == m_bindConsoleCmds.end())
         return;
 
@@ -1157,7 +1157,7 @@ void ConsoleBindCmds::clear() { m_bindConsoleCmds.clear(); }
 
 bool ConsoleBindCmds::execute(int dik)
 {
-    xr_map<int, con_cmd>::iterator it = m_bindConsoleCmds.find(dik);
+    std::map<int, con_cmd>::iterator it = m_bindConsoleCmds.find(dik);
     if (it == m_bindConsoleCmds.end())
         return false;
 
@@ -1167,7 +1167,7 @@ bool ConsoleBindCmds::execute(int dik)
 
 void ConsoleBindCmds::save(IWriter* f)
 {
-    xr_map<int, con_cmd>::iterator it = m_bindConsoleCmds.begin();
+    std::map<int, con_cmd>::iterator it = m_bindConsoleCmds.begin();
 
     for (; it != m_bindConsoleCmds.end(); ++it)
     {

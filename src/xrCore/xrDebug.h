@@ -1,12 +1,12 @@
 #pragma once
 
+#include <string>
+#include <vector>
+
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
-#include "xrCommon/xr_string.h"
-#include "xrCommon/xr_vector.h"
 #include "Threading/Lock.hpp"
 
-#include <string>
 #if defined(XR_PLATFORM_LINUX) || defined(XR_PLATFORM_BSD) || defined(XR_PLATFORM_APPLE)
 #include <cstdio>
 #endif

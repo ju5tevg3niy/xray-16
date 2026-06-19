@@ -361,7 +361,7 @@ void CObjectList::net_Unregister(IGameObject* O)
     if (O->ID() < 0xffff) // demo_spectator can have 0xffff
         map_NETID[O->ID()] = NULL;
     /*
-     xr_map<u32,IGameObject*>::iterator it = map_NETID.find(O->ID());
+     std::map<u32,IGameObject*>::iterator it = map_NETID.find(O->ID());
      if ((it!=map_NETID.end()) && (it->second == O)) {
      // Msg ("-------------------------------- Unregster: %s",O->cName());
      map_NETID.erase(it);
@@ -451,7 +451,7 @@ void CObjectList::net_Import(NET_Packet* Packet)
 IGameObject* CObjectList::net_Find(u16 ID)
 {
 
-xr_map<u32,IGameObject*>::iterator it = map_NETID.find(ID);
+std::map<u32,IGameObject*>::iterator it = map_NETID.find(ID);
 return (it==map_NETID.end())?0:it->second;
 }
 */

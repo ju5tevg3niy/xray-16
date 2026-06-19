@@ -32,7 +32,7 @@ inline void CEdgePathBuilder::assign_parent(Vertex& neighbour, Vertex* parent, c
 }
 
 TEMPLATE_SPECIALIZATION
-inline void CEdgePathBuilder::get_edge_path(xr_vector<TEdge>& path, Vertex* best, bool reverse_order)
+inline void CEdgePathBuilder::get_edge_path(std::vector<TEdge>& path, Vertex* best, bool reverse_order)
 {
     Vertex *t1 = best, *t2 = best->back();
     size_t i;

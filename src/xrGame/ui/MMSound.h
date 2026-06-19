@@ -1,5 +1,13 @@
 #pragma once
 
+#include <array>
+#include <cstddef>
+#include <string>
+#include <vector>
+
+#include "Common/Platform.hpp"
+#include "xrSound/Sound.h"
+
 class CUIXml;
 
 class CMMSound
@@ -23,10 +31,10 @@ protected:
     IC bool check_file(LPCSTR fname);
 
     static constexpr size_t channels_count = 2;
-    xr_array<ref_sound, channels_count> m_music;
+    std::array<ref_sound, channels_count> m_music;
 
     ref_sound m_whell;
     ref_sound m_whell_click;
     bool m_bRandom;
-    xr_vector<xr_string> m_play_list;
+    std::vector<std::string> m_play_list;
 };

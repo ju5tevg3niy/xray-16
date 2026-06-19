@@ -273,7 +273,6 @@ target_sources(xrGame PRIVATE
     BlackDrops.h
     BlackGraviArtifact.cpp
     BlackGraviArtifact.h
-    BlockAllocator.h
     Bolt.cpp
     Bolt.h
     BoneProtections.cpp

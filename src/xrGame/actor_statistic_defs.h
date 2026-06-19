@@ -14,7 +14,7 @@ struct SStatDetailBData : public ISerializable
     virtual void load(IReader& stream);
 };
 
-typedef xr_vector<SStatDetailBData> vStatDetailData;
+typedef std::vector<SStatDetailBData> vStatDetailData;
 
 struct SStatSectionData : public ISerializable
 {
@@ -27,5 +27,5 @@ struct SStatSectionData : public ISerializable
     virtual void load(IReader& stream);
 };
 
-typedef xr_vector<SStatSectionData> vStatSectionData;
+typedef std::vector<SStatSectionData> vStatSectionData;
 typedef CALifeAbstractRegistry<u16, vStatSectionData> CActorStatisticRegistry;

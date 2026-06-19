@@ -1,18 +1,19 @@
 #pragma once
 
+#include <vector>
+#include <deque>
+
 #include "Common/Noncopyable.hpp"
 #include "../NET_Common.h"
 #include "../NET_Shared.h"
-#include "xrCommon/xr_deque.h"
-#include "xrCommon/xr_vector.h"
 #include "xrCore/xrstring.h"
 
 struct ip_address;
 
 class XRNETSERVER_API INetQueue : Noncopyable {
     Lock* pcs;
-    xr_deque<NET_Packet*> ready;
-    xr_vector<NET_Packet*> unused;
+    std::deque<NET_Packet*> ready;
+    std::vector<NET_Packet*> unused;
 
 public:
     INetQueue();
@@ -55,7 +56,7 @@ protected:
     CTimer* device_timer;
 
     Lock* net_csEnumeration;
-    xr_vector<HOST_NODE> net_Hosts;
+    std::vector<HOST_NODE> net_Hosts;
 
     NET_Compressor net_Compressor;
 

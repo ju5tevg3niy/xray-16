@@ -8,7 +8,7 @@
 #include "ParticlesObject.h"
 #include "xrCore/Animation/Bone.hpp"
 
-using PARTICLES_PTR_VECTOR = xr_vector<CParticlesObject*>;
+using PARTICLES_PTR_VECTOR = std::vector<CParticlesObject*>;
 
 class IGameObject;
 class IKinematics;
@@ -24,7 +24,7 @@ public:
         u16 sender_id; // id - объекта, который запустил партиклы
         u32 life_time; //время жизни партикла (-1) - бесконечно
     };
-    using ParticlesInfoList = xr_vector<SParticlesInfo>;
+    using ParticlesInfoList = std::vector<SParticlesInfo>;
 
     //структура для косточки со списком запущенных партиклов
     struct SBoneInfo
@@ -39,7 +39,7 @@ public:
         void StopParticles(const shared_str& ps_name, bool bDestroy);
         void StopParticles(u16 sender_id, bool bDestroy);
     };
-    using BoneInfoVec = xr_vector<SBoneInfo>;
+    using BoneInfoVec = std::vector<SBoneInfo>;
 
 private:
     // список костей

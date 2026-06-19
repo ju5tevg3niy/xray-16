@@ -154,7 +154,7 @@ void CRenderDevice::CalcFrameStats()
 
 int g_svDedicateServerUpdateReate = 100;
 
-xr_list<LOADING_EVENT> g_loading_events;
+std::list<LOADING_EVENT> g_loading_events;
 
 bool CRenderDevice::BeforeFrame()
 {

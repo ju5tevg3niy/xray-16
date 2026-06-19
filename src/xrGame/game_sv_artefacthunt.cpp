@@ -269,8 +269,8 @@ void game_sv_ArtefactHunt::OnPlayerBuySpawn(ClientID sender)
     }
 };
 
-bool game_sv_ArtefactHunt::assign_rp_tmp(game_PlayerState* ps_who, xr_vector<RPoint>& rps, xr_vector<u32>& dest,
-    xr_vector<u32>& rpIDEnemy, xr_vector<ClientID>& EnemyIt, bool force_find)
+bool game_sv_ArtefactHunt::assign_rp_tmp(game_PlayerState* ps_who, std::vector<RPoint>& rps, std::vector<u32>& dest,
+    std::vector<u32>& rpIDEnemy, std::vector<ClientID>& EnemyIt, bool force_find)
 {
     struct rpoints_blocker
     {
@@ -278,8 +278,8 @@ bool game_sv_ArtefactHunt::assign_rp_tmp(game_PlayerState* ps_who, xr_vector<RPo
         game_PlayerState* ps_who;
         RPoint* rp;
         u32 rpoint_number;
-        xr_vector<u32>* rpIDEnemy;
-        xr_vector<ClientID>* EnemyIt;
+        std::vector<u32>* rpIDEnemy;
+        std::vector<ClientID>* EnemyIt;
         bool ffind;
         bool blocked;
         bool teams_not_empty;
@@ -365,10 +365,10 @@ void game_sv_ArtefactHunt::assign_RP(CSE_Abstract* E, game_PlayerState* ps_who)
 #endif // #ifdef DEBUG
     R_ASSERT(rpoints[Team].size());
 
-    xr_vector<RPoint>& rps = rpoints[Team];
-    xr_vector<u32> rpID;
-    xr_vector<u32> rpIDEnemy;
-    xr_vector<ClientID> EnemyIt;
+    std::vector<RPoint>& rps = rpoints[Team];
+    std::vector<u32> rpID;
+    std::vector<u32> rpIDEnemy;
+    std::vector<ClientID> EnemyIt;
 
     if (!assign_rp_tmp(ps_who, rps, rpID, rpIDEnemy, EnemyIt, true))
     {
@@ -622,8 +622,8 @@ void game_sv_ArtefactHunt::OnObjectEnterTeamBase(u16 id, u16 zone_team)
 
             signal_Syncronize();
 
-            xr_vector<u16>& C = eActor->children;
-            xr_vector<u16>::iterator c = std::find(C.begin(), C.end(), m_dwArtefactID);
+            std::vector<u16>& C = eActor->children;
+            std::vector<u16>::iterator c = std::find(C.begin(), C.end(), m_dwArtefactID);
             if (C.end() != c)
             {
                 OnArtefactOnBase(eActor->owner->ID);
@@ -940,8 +940,8 @@ void game_sv_ArtefactHunt::OnCreate(u16 id_who)
 void game_sv_ArtefactHunt::Assign_Artefact_RPoint(CSE_Abstract* E)
 {
     R_ASSERT(E);
-    const xr_vector<RPoint>& rp = Artefact_rpoints;
-    //.	xr_vector<u8>&	rpID		= ArtefactsRPoints_ID;
+    const std::vector<RPoint>& rp = Artefact_rpoints;
+    //.	std::vector<u8>&	rpID		= ArtefactsRPoints_ID;
     RPoint r;
     /*
         if (rpID.empty())
@@ -1531,7 +1531,7 @@ void game_sv_ArtefactHunt::SwapTeams()
 {
     BOOL old_team_swap = g_sv_tdm_bAutoTeamSwap;
     // swap rpoints
-    /*xr_vector<RPoint> tmpRPoints;
+    /*std::vector<RPoint> tmpRPoints;
     tmpRPoints = rpoints[1];
     rpoints[1] = rpoints[2];
     rpoints[2] = tmpRPoints;

@@ -26,9 +26,9 @@ class action;
 class description final : private Noncopyable, public detail::intrusive_base_time
 {
 public:
-    typedef xr_vector<loophole*> Loopholes;
+    typedef std::vector<loophole*> Loopholes;
     typedef smart_cover::transitions::action Action;
-    typedef xr_vector<Action*> ActionsList;
+    typedef std::vector<Action*> ActionsList;
     typedef CGraphAbstract<Loki::EmptyType, float, shared_str, ActionsList> TransitionGraph;
 
 private:

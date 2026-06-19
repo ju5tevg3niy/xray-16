@@ -6,7 +6,7 @@
 
 namespace xray::render::RENDER_NAMESPACE
 {
-int xrSimulate(xr_vector<u16>& indices, int iCacheSize)
+int xrSimulate(std::vector<u16>& indices, int iCacheSize)
 {
     VertexCache C(iCacheSize);
 
@@ -21,21 +21,21 @@ int xrSimulate(xr_vector<u16>& indices, int iCacheSize)
     return count;
 }
 
-void xrStripify(xr_vector<u16>& indices, xr_vector<u16>& perturb, int iCacheSize, int iMinStripLength)
+void xrStripify(std::vector<u16>& indices, std::vector<u16>& perturb, int iCacheSize, int iMinStripLength)
 {
     SetCacheSize(iCacheSize);
     SetMinStripSize(iMinStripLength);
     SetListsOnly(true);
 
     // Generate strips
-    xr_vector<PrimitiveGroup> PGROUP;
+    std::vector<PrimitiveGroup> PGROUP;
     GenerateStrips(&*indices.begin(), indices.size(), PGROUP);
     VERIFY(PGROUP.size() == 1);
     VERIFY(PGROUP[0].type == PT_LIST);
     VERIFY(indices.size() == PGROUP[0].numIndices);
 
     // Remap indices
-    xr_vector<PrimitiveGroup> xPGROUP;
+    std::vector<PrimitiveGroup> xPGROUP;
     RemapIndices(PGROUP, u16(perturb.size()), xPGROUP);
     VERIFY(xPGROUP.size() == 1);
     VERIFY(xPGROUP[0].type == PT_LIST);

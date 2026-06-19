@@ -347,7 +347,7 @@ bool IPureClient::Connect(pcstr options)
             HRESULT res = S_FALSE;
             while (res != S_OK) {
                 if (res != S_OK) {
-                    //			xr_string res =
+                    //			std::string res =
                     // xrDebug::ErrorToString(HostSuccess);
 
                     if (bPortWasSet) {
@@ -386,7 +386,7 @@ bool IPureClient::Connect(pcstr options)
             while (res != S_OK && c_port <= END_PORT) {
 
                 if (res != S_OK) {
-                    // xr_string res = xrDebug::ErrorToString(HostSuccess);
+                    // std::string res = xrDebug::ErrorToString(HostSuccess);
 
                     c_port++;
                 } else

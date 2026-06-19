@@ -1,10 +1,10 @@
 #pragma once
 
 #include <cstring>
+#include <string>
 
 #include "Common/types.hpp"
 #include "client_id.h"
-#include "xrCommon/xr_string.h"
 #include "xrCore/Math/matrix.hpp"
 #include "xrCore/Text/string_funcs_inline.hpp"
 
@@ -253,7 +253,7 @@ public:
 
     void r_sdir(Fvector& A);
     void r_stringZ(pstr S);
-    void r_stringZ(xr_string& dest);
+    void r_stringZ(std::string& dest);
     void r_stringZ(shared_str& dest);
 
     void skip_stringZ();

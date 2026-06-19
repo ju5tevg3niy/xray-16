@@ -1,6 +1,7 @@
+#include <array>
+
 #include "stdafx.h"
 #include "FLOD.h"
-#include "xrCommon/xr_array.h"
 
 #ifdef _EDITOR
 #include "IGame_Persistent.h"
@@ -107,7 +108,7 @@ void R_dsgraph_structure::render_lods(bool _setup_zb, bool _clear)
             // Fill VB
             const FLOD::_face& FA = facets[id_best];
             const FLOD::_face& FB = facets[id_next];
-            xr_array<int, 4> vid = {3, 0, 2, 1};
+            std::array<int, 4> vid = {3, 0, 2, 1};
             for (int id : vid)
             {
                 V->p0.add(FB.v[id].v, shift);

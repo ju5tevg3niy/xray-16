@@ -17,8 +17,8 @@ public:
         shared_str m_name;
         shared_str m_btn_xml_name; // debug
         item* m_parent;
-        xr_vector<item*> m_childs;
-        xr_vector<shared_str> m_items_in_group;
+        std::vector<item*> m_childs;
+        std::vector<shared_str> m_items_in_group;
         CUITabButtonMP* m_button;
         IC u32 ChildCount() const { return m_childs.size(); }
         IC const item& Child(const shared_str& id) const;

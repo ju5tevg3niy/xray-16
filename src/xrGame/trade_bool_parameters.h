@@ -11,7 +11,7 @@
 class CTradeBoolParameters
 {
 public:
-    typedef xr_vector<shared_str> SECTIONS;
+    typedef std::vector<shared_str> SECTIONS;
 
 private:
     SECTIONS m_sections;

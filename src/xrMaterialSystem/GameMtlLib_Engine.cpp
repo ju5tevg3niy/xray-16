@@ -3,14 +3,14 @@
 
 namespace
 {
-void DestroySounds(xr_vector<ref_sound>& lst)
+void DestroySounds(std::vector<ref_sound>& lst)
 {
     for (auto it : lst)
         it.destroy();
 }
 
-void DestroyPSs(xr_vector<shared_str>& lst) {}
-void CreateSounds(xr_vector<ref_sound>& lst, pcstr buf)
+void DestroyPSs(std::vector<shared_str>& lst) {}
+void CreateSounds(std::vector<ref_sound>& lst, pcstr buf)
 {
     string128 tmp;
     const int cnt = _GetItemCount(buf);
@@ -29,7 +29,7 @@ void CreateMarks(IWallMarkArray* pMarks, pcstr buf)
         pMarks->AppendMark(_GetItem(buf, k, tmp));
 }
 
-void CreatePSs(xr_vector<shared_str>& lst, pcstr buf)
+void CreatePSs(std::vector<shared_str>& lst, pcstr buf)
 {
     string256 tmp;
     const int cnt = _GetItemCount(buf);

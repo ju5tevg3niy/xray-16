@@ -1,3 +1,5 @@
+#include <set>
+
 #include "pch.h"
 
 #ifndef WEAPON_COLLECTION
@@ -18,13 +20,13 @@ protected:
 
     CInifileEx* settings;
 
-    xr_vector<shared_str> all_weapons;
-    xr_set<shared_str> remember_yes_keys;
-    xr_set<shared_str> remember_no_keys;
+    std::vector<shared_str> all_weapons;
+    std::set<shared_str> remember_yes_keys;
+    std::set<shared_str> remember_no_keys;
 
 public:
-    typedef std::pair<shared_str, xr_set<shared_str>> tentity_extract_keys;
-    typedef std::map<shared_str, xr_vector<CInifileEx::Sect>> tnew_config_map;
+    typedef std::pair<shared_str, std::set<shared_str>> tentity_extract_keys;
+    typedef std::map<shared_str, std::vector<CInifileEx::Sect>> tnew_config_map;
     typedef std::vector<tentity_extract_keys*> textract_list;
 
     void load_all_mp_weapons();
@@ -35,8 +37,8 @@ public:
     void extract_all_params();
 
     char const* try_extract_from_patch(char const* sect, char const* key);
-    void copy_params_ex(CInifileEx::Sect& dest, CInifileEx::Sect const& from, xr_set<shared_str> const& copy_keys);
-    void build_section(CInifileEx::Sect& dest, CInifileEx::Sect const& orig, xr_set<shared_str> const& extract);
+    void copy_params_ex(CInifileEx::Sect& dest, CInifileEx::Sect const& from, std::set<shared_str> const& copy_keys);
+    void build_section(CInifileEx::Sect& dest, CInifileEx::Sect const& orig, std::set<shared_str> const& extract);
 
     void save_config_to_file(tnew_config_map::const_iterator cfg_iter);
     void save_new_configs();

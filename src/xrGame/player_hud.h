@@ -19,13 +19,13 @@ struct player_hud_motion
 {
     shared_str m_base_name;
     shared_str m_additional_name;
-    xr_vector<motion_descr> m_animations;
+    std::vector<motion_descr> m_animations;
     float m_anim_speed;
 };
 
 struct player_hud_motion_container
 {
-    xr_unordered_map<shared_str, player_hud_motion> m_anims;
+    std::unordered_map<shared_str, player_hud_motion> m_anims;
 
     [[nodiscard]]
     const player_hud_motion* find_motion(const shared_str& name) const;
@@ -167,9 +167,9 @@ private:
 
     Fmatrix m_transform{ Fidentity };
     IKinematicsAnimated* m_model{};
-    xr_vector<u16> m_ancors;
+    std::vector<u16> m_ancors;
     attachable_hud_item* m_attached_items[2]{};
-    xr_unordered_map<shared_str, attachable_hud_item*> m_pool;
+    std::unordered_map<shared_str, attachable_hud_item*> m_pool;
 };
 
 extern player_hud* g_player_hud;

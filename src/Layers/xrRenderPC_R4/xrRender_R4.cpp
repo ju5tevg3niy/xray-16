@@ -17,7 +17,7 @@ constexpr pcstr RENDERER_R4_MODE   = "renderer_r4";   // id 5
 
 class R4RendererModule final : public RendererModule
 {
-    xr_vector<std::pair<pcstr, int>> modes;
+    std::vector<std::pair<pcstr, int>> modes;
 
 public:
     BOOL CheckCanAddMode() const
@@ -30,7 +30,7 @@ public:
         return xrRender_test_hw();
     }
 
-    const xr_vector<std::pair<pcstr, int>>& ObtainSupportedModes() override
+    const std::vector<std::pair<pcstr, int>>& ObtainSupportedModes() override
     {
         ZoneScoped;
 

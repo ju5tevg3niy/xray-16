@@ -10,7 +10,7 @@
 namespace xray::render::RENDER_NAMESPACE
 {
 #pragma pack(push, 4)
-class ECORE_API CBlender_DESC
+class CBlender_DESC
 {
 public:
     CLASS_ID CLS;
@@ -31,7 +31,7 @@ public:
     void Setup(LPCSTR N);
 };
 
-class ECORE_API IBlender : public CPropertyBase
+class IBlender : public CPropertyBase
 {
     friend class CBlender_Compile;
 

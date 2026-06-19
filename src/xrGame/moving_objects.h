@@ -6,8 +6,8 @@
 //	Description : moving objects
 ////////////////////////////////////////////////////////////////////////////
 #pragma once
-#ifndef MOVING_OBJECTS_H
-#define MOVING_OBJECTS_H
+
+#include <set>
 
 #include "quadtree.h"
 #include "obstacles_query.h"
@@ -22,7 +22,7 @@ class moving_objects
 {
 private:
     typedef CQuadTree<moving_object> TREE;
-    typedef xr_vector<IGameObject*> NEAREST_STATIC;
+    typedef std::vector<IGameObject*> NEAREST_STATIC;
 
 public:
     enum possible_actions
@@ -33,14 +33,14 @@ public:
     };
 
 public:
-    typedef xr_vector<moving_object*> NEAREST_MOVING;
+    typedef std::vector<moving_object*> NEAREST_MOVING;
     typedef std::pair<moving_object*, moving_object*> COLLISION;
     typedef std::pair<possible_actions, COLLISION> COLLISION_ACTION;
     typedef std::pair<float, COLLISION_ACTION> COLLISION_TIME;
-    typedef xr_vector<COLLISION_TIME> COLLISIONS;
+    typedef std::vector<COLLISION_TIME> COLLISIONS;
 
 private:
-    typedef xr_vector<ISpatial*> Spatials;
+    typedef std::vector<ISpatial*> Spatials;
 
 public:
     typedef obstacles_query query;
@@ -60,7 +60,7 @@ private:
 
 #ifdef DEBUG
 private:
-    typedef xr_set<moving_object*> OBJECTS;
+    typedef std::set<moving_object*> OBJECTS;
 
 private:
     OBJECTS m_objects;
@@ -120,5 +120,3 @@ public:
 };
 
 #include "moving_objects_inline.h"
-
-#endif // MOVING_OBJECTS_H

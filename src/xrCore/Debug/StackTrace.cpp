@@ -92,7 +92,7 @@ struct StackTraceBuilder
     StackTraceBuilder();
     ~StackTraceBuilder();
 
-    bool GetNextStackFrameString(LPSTACKFRAME stackFrame, PCONTEXT threadCtx, xr_string& frameStr);
+    bool GetNextStackFrameString(LPSTACKFRAME stackFrame, PCONTEXT threadCtx, std::string& frameStr);
 
     bool IsInitialized{};
 };
@@ -119,7 +119,7 @@ StackTraceBuilder::~StackTraceBuilder()
         symCleanup(GetCurrentProcess());
 }
 
-bool StackTraceBuilder::GetNextStackFrameString(LPSTACKFRAME stackFrame, PCONTEXT threadCtx, xr_string& frameStr)
+bool StackTraceBuilder::GetNextStackFrameString(LPSTACKFRAME stackFrame, PCONTEXT threadCtx, std::string& frameStr)
 {
     BOOL result = stackWalk(MACHINE_TYPE, GetCurrentProcess(), GetCurrentThread(), stackFrame, threadCtx, nullptr,
         symFunctionTableAccess, symGetModuleBase, nullptr);
@@ -197,7 +197,7 @@ bool StackTraceBuilder::GetNextStackFrameString(LPSTACKFRAME stackFrame, PCONTEX
     return true;
 }
 
-xr_vector<xr_string> BuildStackTrace(PCONTEXT threadCtx, u16 maxFramesCount)
+std::vector<std::string> BuildStackTrace(PCONTEXT threadCtx, u16 maxFramesCount)
 {
     ScopeLock Lock(&s_dbghelp_lock);
 
@@ -205,8 +205,8 @@ xr_vector<xr_string> BuildStackTrace(PCONTEXT threadCtx, u16 maxFramesCount)
     if (!builder.IsInitialized)
         return {};
 
-    xr_vector<xr_string> traceResult;
-    xr_string frameStr;
+    std::vector<std::string> traceResult;
+    std::string frameStr;
 
     traceResult.reserve(maxFramesCount);
 
@@ -250,7 +250,7 @@ xr_vector<xr_string> BuildStackTrace(PCONTEXT threadCtx, u16 maxFramesCount)
     return traceResult;
 }
 
-xr_vector<xr_string> BuildStackTrace(u16 maxFramesCount)
+std::vector<std::string> BuildStackTrace(u16 maxFramesCount)
 {
     CONTEXT currentThreadCtx = {};
 
@@ -260,9 +260,9 @@ xr_vector<xr_string> BuildStackTrace(u16 maxFramesCount)
     return BuildStackTrace(&currentThreadCtx, maxFramesCount);
 }
 #elif defined(BACKTRACE_AVAILABLE)
-xr_vector<xr_string> BuildStackTrace(u16 maxFramesCount)
+std::vector<std::string> BuildStackTrace(u16 maxFramesCount)
 {
-    xr_vector<xr_string> result;
+    std::vector<std::string> result;
 
     void** array = reinterpret_cast<void**>(xr_alloca(sizeof(void*) * maxFramesCount));
     int nptrs = backtrace(array, maxFramesCount); // get void*'s for all entries on the stack
@@ -300,7 +300,7 @@ xr_vector<xr_string> BuildStackTrace(u16 maxFramesCount)
     return result;
 }
 #else
-xr_vector<xr_string> BuildStackTrace(u16 maxFramesCount)
+std::vector<std::string> BuildStackTrace(u16 maxFramesCount)
 {
 #   pragma todo("Implement stack trace for this platform")
     return { "Stack trace is not implemented for this platform." };

@@ -4,7 +4,7 @@
 
 namespace xray::render::RENDER_NAMESPACE
 {
-class ECORE_API R_hemi
+class R_hemi
 {
 public:
     R_constant* c_pos_faces;

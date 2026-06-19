@@ -35,7 +35,7 @@ void CPortal::OnRender()
     {
         VERIFY(poly.size());
         // draw rect
-        static xr_vector<FVF::L> V;
+        static std::vector<FVF::L> V;
         V.resize(poly.size()*3);
         Fvector vCenter = { 0.0f, 0.0f, 0.0f };
         static u32 portalColor = 0x800000FF;
@@ -89,7 +89,7 @@ void CPortal::OnRender()
 }
 #endif
 //
-void CPortal::setup(const level_portal_data_t& data, const xr_vector<CSector*>& sectors)
+void CPortal::setup(const level_portal_data_t& data, const std::vector<CSector*>& sectors)
 {
     const auto* V = data.vertices.cbegin();
     const auto vcnt = data.vertices.size();
@@ -133,7 +133,7 @@ void CPortal::setup(const level_portal_data_t& data, const xr_vector<CSector*>& 
     */
 }
 
-void CSector::setup(const level_sector_data_t& data, const xr_vector<CPortal*> &portals)
+void CSector::setup(const level_sector_data_t& data, const std::vector<CPortal*> &portals)
 {
     // Assign portal polygons
     const auto num_portals = data.portals_id.size();

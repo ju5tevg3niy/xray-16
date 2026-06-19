@@ -115,7 +115,7 @@ class shader_sources_manager
 {
     pcstr* m_sources{};
     size_t m_sources_lines{};
-    xr_vector<pstr> m_source, m_includes;
+    std::vector<pstr> m_source, m_includes;
 
 public:
     ~shader_sources_manager()
@@ -513,7 +513,7 @@ HRESULT CRender::shader_compile(pcstr name, IReader* fs, pcstr pFunctionName,
         IReader* file = FS.r_open(full_path);
         if (file->length() > 8)
         {
-            xr_string renderer, glVer, shadingVer;
+            std::string renderer, glVer, shadingVer;
             file->r_string(renderer);
             file->r_string(glVer);
             file->r_string(shadingVer);

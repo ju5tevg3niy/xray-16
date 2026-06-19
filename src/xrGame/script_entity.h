@@ -5,11 +5,12 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Script entity class
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
+
+#include <deque>
+
 #include "script_entity_space.h"
 #include "Include/xrRender/KinematicsAnimated.h"
-#include "xrCommon/xr_deque.h"
 
 class CSE_Abstract;
 class CGameObject;
@@ -38,7 +39,7 @@ public:
     };
 
 protected:
-    typedef xr_deque<CScriptEntityAction*> ACTIONS;
+    typedef std::deque<CScriptEntityAction*> ACTIONS;
 
 private:
     CGameObject* m_object;
@@ -60,7 +61,7 @@ public:
 
 protected:
     ref_sound* m_current_sound;
-    xr_vector<CSavedSound> m_saved_sounds;
+    std::vector<CSavedSound> m_saved_sounds;
 
 public:
     CScriptEntity();

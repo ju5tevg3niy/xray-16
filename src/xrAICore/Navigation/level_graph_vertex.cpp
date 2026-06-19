@@ -148,7 +148,7 @@ float CLevelGraph::check_position_in_direction(
 }
 
 float CLevelGraph::mark_nodes_in_direction(u32 start_vertex_id, const Fvector& start_position,
-    const Fvector& tDirection, float fDistance, xr_vector<u32>& tpaStack, xr_vector<bool>* tpaMarks) const
+    const Fvector& tDirection, float fDistance, std::vector<u32>& tpaStack, std::vector<bool>* tpaMarks) const
 {
     Fvector finish_point, direction = tDirection;
     direction.normalize();
@@ -158,14 +158,14 @@ float CLevelGraph::mark_nodes_in_direction(u32 start_vertex_id, const Fvector& s
 }
 
 float CLevelGraph::mark_nodes_in_direction(u32 start_vertex_id, const Fvector& start_position, u32 finish_vertex_id,
-    xr_vector<u32>& tpaStack, xr_vector<bool>* tpaMarks) const
+    std::vector<u32>& tpaStack, std::vector<bool>* tpaMarks) const
 {
     return (mark_nodes_in_direction(
         start_vertex_id, start_position, vertex_position(finish_vertex_id), tpaStack, tpaMarks));
 }
 
 float CLevelGraph::mark_nodes_in_direction(u32 start_vertex_id, const Fvector& start_point, const Fvector& finish_point,
-    xr_vector<u32>& tpaStack, xr_vector<bool>* tpaMarks) const
+    std::vector<u32>& tpaStack, std::vector<bool>* tpaMarks) const
 {
     SContour _contour;
     const_iterator I, E;
@@ -204,7 +204,7 @@ float CLevelGraph::mark_nodes_in_direction(u32 start_vertex_id, const Fvector& s
 }
 
 float CLevelGraph::farthest_vertex_in_direction(u32 start_vertex_id, const Fvector& start_point,
-    const Fvector& finish_point, u32& finish_vertex_id, xr_vector<bool>* tpaMarks, bool check_accessability) const
+    const Fvector& finish_point, u32& finish_vertex_id, std::vector<bool>* tpaMarks, bool check_accessability) const
 {
     SContour _contour;
     const_iterator I, E;
@@ -245,7 +245,7 @@ float CLevelGraph::farthest_vertex_in_direction(u32 start_vertex_id, const Fvect
 }
 
 bool CLevelGraph::create_straight_path(u32 start_vertex_id, const Fvector& start_point, const Fvector& finish_point,
-    xr_vector<Fvector>& tpaOutputPoints, xr_vector<u32>& tpaOutputNodes, bool bAddFirstPoint, bool bClearPath) const
+    std::vector<Fvector>& tpaOutputPoints, std::vector<u32>& tpaOutputNodes, bool bAddFirstPoint, bool bClearPath) const
 {
     return (create_straight_path(start_vertex_id, v2d(start_point), v2d(finish_point), tpaOutputPoints, tpaOutputNodes,
         bAddFirstPoint, bClearPath));
@@ -376,7 +376,7 @@ bool CLevelGraph::check_vertex_in_direction_slow(
 IC Fvector v3d(const Fvector2& vector2d) { return (Fvector().set(vector2d.x, 0.f, vector2d.y)); }
 IC Fvector2 v2d(const Fvector& vector3d) { return (Fvector2().set(vector3d.x, vector3d.z)); }
 bool CLevelGraph::create_straight_path(u32 start_vertex_id, const Fvector2& start_point, const Fvector2& finish_point,
-    xr_vector<Fvector>& tpaOutputPoints, xr_vector<u32>& tpaOutputNodes, bool bAddFirstPoint, bool bClearPath) const
+    std::vector<Fvector>& tpaOutputPoints, std::vector<u32>& tpaOutputNodes, bool bAddFirstPoint, bool bClearPath) const
 {
     if (!valid_vertex_position(v3d(finish_point)))
         return (false);

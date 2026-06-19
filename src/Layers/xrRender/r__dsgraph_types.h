@@ -1,6 +1,11 @@
 #pragma once
 
+#include <vector>
 #include "xrCore/Containers/FixedMap.h"
+#include "xrCore/Math/matrix.hpp"
+#include "xrEngine/IRenderable.h"
+
+#include "Shader.h"
 
 namespace xray::render::RENDER_NAMESPACE
 {
@@ -43,7 +48,7 @@ struct _LodItem
 };
 
 // NORMAL
-using mapNormalDirect = xr_vector<_NormalItem>;
+using mapNormalDirect = std::vector<_NormalItem>;
 
 struct mapNormalItems : public mapNormalDirect
 {
@@ -54,7 +59,7 @@ using mapNormal_T = xr_fixed_map<SPass*, mapNormalItems>;
 using mapNormalPasses_T = mapNormal_T[SHADER_PASSES_MAX];
 
 // MATRIX
-using mapMatrixDirect = xr_vector<_MatrixItem>;
+using mapMatrixDirect = std::vector<_MatrixItem>;
 
 struct mapMatrixItems : public mapMatrixDirect
 {

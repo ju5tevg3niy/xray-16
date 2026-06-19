@@ -47,5 +47,5 @@ protected:
     u32 m_prev_upd_time{};
 
     shared_str m_selected_item_text;
-    xr_vector<game_PlayerState*> m_current_set;
+    std::vector<game_PlayerState*> m_current_set;
 };

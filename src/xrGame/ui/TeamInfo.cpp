@@ -95,7 +95,7 @@ LPCSTR CTeamInfo::GetTeam_color_tag(int team)
 
     // team1_color = color_argb(155,atoi(_GetItem(tm_col, 0, _buff)),atoi(_GetItem(tm_col, 1,
     // _buff)),atoi(_GetItem(tm_col, 2, _buff)));
-    xr_string str;
+    std::string str;
     str = "%c[255,";
     str += _GetItem(tm_col, 0, _buff);
     str += ",";

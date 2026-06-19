@@ -5,12 +5,12 @@
 //	Author		: Dmitriy Iassenev
 //	Description : ALife object class
 ////////////////////////////////////////////////////////////////////////////
+#include <vector>
 
 #include "StdAfx.h"
 #include "xrServer_Objects_ALife.h"
 #include "alife_simulator.h"
 #include "xrServer_Objects_ALife_Items.h"
-#include "xrCommon/xr_vector.h"
 
 void CSE_ALifeObject::spawn_supplies() { spawn_supplies(m_ini_string.c_str()); }
 
@@ -41,7 +41,7 @@ void CSE_ALifeObject::spawn_supplies(LPCSTR ini_string)
     while (ini.section_exist(loadoutSection))
     {
         pcstr itmSection, V;
-        xr_vector<u32> spawnLoadouts;
+        std::vector<u32> spawnLoadouts;
 
         pcstr lname = ai().game_graph().header().level(ai().game_graph().vertex(m_tGraphID)->level_id()).name().c_str();
 

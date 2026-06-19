@@ -72,8 +72,8 @@ bool CSE_ALifeTraderAbstract::check_inventory_consistency	()
 {
 	int							volume = 0;
 	float						mass = 0.f;
-	xr_vector<ALife::_OBJECT_ID>::const_iterator	I = base()->children.begin();
-	xr_vector<ALife::_OBJECT_ID>::const_iterator	E = base()->children.end();
+	std::vector<ALife::_OBJECT_ID>::const_iterator	I = base()->children.begin();
+	std::vector<ALife::_OBJECT_ID>::const_iterator	E = base()->children.end();
 	for ( ; I != E; ++I) {
 		CSE_ALifeDynamicObject	*object = ai().alife().objects().object(*I,true);
 		if (!object)
@@ -211,7 +211,7 @@ void CSE_ALifeTraderAbstract::add_online(const bool& update_registries)
 }
 
 void add_offline_impl(
-    CSE_ALifeDynamicObject* object, const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries)
+    CSE_ALifeDynamicObject* object, const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries)
 {
     for (u32 i = 0, n = saved_children.size(); i < n; ++i)
     {
@@ -255,7 +255,7 @@ void add_offline_impl(
 }
 
 void CSE_ALifeTraderAbstract::add_offline(
-    const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries)
+    const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries)
 {
     CSE_ALifeDynamicObject* object = smart_cast<CSE_ALifeDynamicObject*>(this);
     VERIFY(object);

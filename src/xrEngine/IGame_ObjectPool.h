@@ -13,12 +13,12 @@ class IGame_ObjectPool
     IC bool operator()(const shared_str& x, const shared_str& y) const
     { return xr_strcmp(x,y)<0; }
     };
-    typedef xr_multimap<shared_str,IGameObject*,str_pred> POOL;
+    typedef std::multimap<shared_str,IGameObject*,str_pred> POOL;
     typedef POOL::iterator POOL_IT;
     private:
     POOL map_POOL;
     */
-    using ObjectVec = xr_vector<IGameObject*>;
+    using ObjectVec = std::vector<IGameObject*>;
     ObjectVec m_PrefetchObjects;
 
 public:

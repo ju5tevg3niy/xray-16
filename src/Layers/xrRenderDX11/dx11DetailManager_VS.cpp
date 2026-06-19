@@ -120,7 +120,7 @@ void CDetailManager::hw_Render_dump(CBackend& cmd_list,
     for (u32 O = 0; O < objects.size(); O++)
     {
         CDetail& Object = *objects[O];
-        xr_vector<SlotItemVec*>& vis = list[O];
+        std::vector<SlotItemVec*>& vis = list[O];
         if (!vis.empty())
         {
             for (u32 iPass = 0; iPass < Object.shader->E[lod_id]->passes.size(); ++iPass)

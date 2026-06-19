@@ -1,8 +1,9 @@
 #pragma once
 
+#include <vector>
+
 #include "Common/Noncopyable.hpp"
 #include "Common/types.hpp"
-#include "xrCommon/xr_vector.h"
 #include "xrCore/cpu.hpp"
 #include "log.h"
 #include "Threading/ScopeLock.hpp"
@@ -13,7 +14,7 @@ class CTimer_paused;
 
 class pauseMngr : Noncopyable
 {
-    xr_vector<CTimer_paused*> m_timers;
+    std::vector<CTimer_paused*> m_timers;
     bool paused;
 
 public:

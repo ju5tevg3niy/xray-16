@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCommon/xr_unordered_map.h"
+#include <unordered_map>
 
 #include "xrScriptEngine.hpp"
 #include "ScriptExporter.hpp"
@@ -34,8 +34,8 @@ private:
     CScriptProfilerType m_profiler_type;
     bool m_active;
 
-    xr_unordered_map<shared_str, CScriptProfilerHookPortion> m_hook_profiling_portions;
-    xr_vector<CScriptProfilerSamplingPortion> m_sampling_profiling_log;
+    std::unordered_map<shared_str, CScriptProfilerHookPortion> m_hook_profiling_portions;
+    std::vector<CScriptProfilerSamplingPortion> m_sampling_profiling_log;
     /*
      * Sampling interval for JIT based profiler.
      * Value should be set in ms and defaults to 10ms.

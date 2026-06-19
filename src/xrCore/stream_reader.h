@@ -64,11 +64,11 @@ public:
 
 public:
     //. void r_string (char *dest, u32 tgt_sz);
-    //. void r_string (xr_string& dest);
+    //. void r_string (std::string& dest);
     //. void skip_stringZ ();
     //. void r_stringZ (char *dest, u32 tgt_sz);
     void r_stringZ(shared_str& dest);
-    //. void r_stringZ (xr_string& dest);
+    //. void r_stringZ (std::string& dest);
 
 private:
     using inherited = IReaderBase<CStreamReader>;

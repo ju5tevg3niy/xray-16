@@ -105,14 +105,14 @@ struct BoundingBox
             Merge(&points[i]);
     }
 
-    explicit BoundingBox(const xr_vector<XMFLOAT3>* points)
+    explicit BoundingBox(const std::vector<XMFLOAT3>* points)
         : minPt(1e33f, 1e33f, 1e33f), maxPt(-1e33f, -1e33f, -1e33f)
     {
         for (unsigned int i = 0; i < points->size(); i++)
             Merge(&(*points)[i]);
     }
 
-    explicit BoundingBox(const xr_vector<BoundingBox>* boxes)
+    explicit BoundingBox(const std::vector<BoundingBox>* boxes)
         : minPt(1e33f, 1e33f, 1e33f), maxPt(-1e33f, -1e33f, -1e33f)
     {
         for (unsigned int i = 0; i < boxes->size(); i++)
@@ -212,7 +212,7 @@ struct Frustum
 struct DumbClipper
 {
     CFrustum frustum;
-    xr_vector<XMFLOAT4> planes;
+    std::vector<XMFLOAT4> planes;
     bool clip(XMFLOAT3& p0, XMFLOAT3& p1) // returns true if result meaningfull
     {
         XMVECTOR v0 = XMLoadFloat3(&p0);
@@ -257,7 +257,7 @@ struct DumbClipper
         return XMFLOAT3((i & 1) ? bb.vMin.x : bb.vMax.x, (i & 2) ? bb.vMin.y : bb.vMax.y, (i & 4) ? bb.vMin.z : bb.vMax.z);
     }
 
-    Fbox clipped_AABB(xr_vector<Fbox>& src, Fmatrix& xf)
+    Fbox clipped_AABB(std::vector<Fbox>& src, Fmatrix& xf)
     {
         Fbox3 result;
         result.invalidate();
@@ -301,7 +301,7 @@ struct DumbClipper
     }
 };
 
-inline XMFLOAT2 BuildTSMProjectionMatrix_caster_depth_bounds(FXMMATRIX lightSpaceBasis, const xr_vector<Fbox>& casters)
+inline XMFLOAT2 BuildTSMProjectionMatrix_caster_depth_bounds(FXMMATRIX lightSpaceBasis, const std::vector<Fbox>& casters)
 {
     float min_z = 1e32f, max_z = -1e32f;
 
@@ -340,14 +340,14 @@ struct BoundingBox
             Merge(&points[i]);
     }
 
-    explicit BoundingBox(const xr_vector<glm::vec3>* points)
+    explicit BoundingBox(const std::vector<glm::vec3>* points)
         : minPt(1e33f, 1e33f, 1e33f), maxPt(-1e33f, -1e33f, -1e33f)
     {
         for (const auto& point : *points)
             Merge(&point);
     }
 
-    explicit BoundingBox(const xr_vector<BoundingBox>* boxes)
+    explicit BoundingBox(const std::vector<BoundingBox>* boxes)
         : minPt(1e33f, 1e33f, 1e33f), maxPt(-1e33f, -1e33f, -1e33f)
     {
         for (const auto & box : *boxes)
@@ -482,7 +482,7 @@ inline Fvector3 wform(glm::mat4 const& m, glm::vec3 const& v)
 struct DumbClipper
 {
     CFrustum frustum;
-    xr_vector<glm::vec4> planes;
+    std::vector<glm::vec4> planes;
 
     BOOL clip(glm::vec3& p0, glm::vec3& p1) // returns TRUE if result meaningfull
     {
@@ -520,7 +520,7 @@ struct DumbClipper
         return glm::vec3(i & 1 ? bb.vMin.x : bb.vMax.x, i & 2 ? bb.vMin.y : bb.vMax.y, i & 4 ? bb.vMin.z : bb.vMax.z);
     }
 
-    Fbox clipped_AABB(xr_vector<Fbox>& src, glm::mat4& xf)
+    Fbox clipped_AABB(std::vector<Fbox>& src, glm::mat4& xf)
     {
         Fbox3 result;
         result.invalidate();
@@ -562,7 +562,7 @@ struct DumbClipper
     }
 };
 
-inline glm::vec2 BuildTSMProjectionMatrix_caster_depth_bounds(glm::mat4& lightSpaceBasis, const xr_vector<Fbox>& casters)
+inline glm::vec2 BuildTSMProjectionMatrix_caster_depth_bounds(glm::mat4& lightSpaceBasis, const std::vector<Fbox>& casters)
 {
     float min_z = 1e32f, max_z = -1e32f;
     glm::mat4 minmax_xform = glm::make_mat4x4(&Device.mView.m[0][0]) * lightSpaceBasis;
@@ -592,7 +592,7 @@ class DumbConvexVolume
 public:
     struct _poly
     {
-        xr_vector<int> points;
+        std::vector<int> points;
         Fvector3 planeN;
         float planeD;
         float classify(Fvector3& p) { return planeN.dotproduct(p) + planeD; }
@@ -610,9 +610,9 @@ public:
     };
 
 public:
-    xr_vector<Fvector3> points;
-    xr_vector<_poly> polys;
-    xr_vector<_edge> edges;
+    std::vector<Fvector3> points;
+    std::vector<_poly> polys;
+    std::vector<_edge> edges;
 
 public:
     void compute_planes()
@@ -670,7 +670,7 @@ public:
         }
     }
 
-    void compute_caster_model(xr_vector<Fplane>& dest, Fvector3 direction)
+    void compute_caster_model(std::vector<Fplane>& dest, Fvector3 direction)
     {
         CRenderTarget& T = *RImplementation.Target;
 
@@ -699,7 +699,7 @@ public:
             int marker = (base.planeN.dotproduct(direction) <= 0) ? -1 : 1;
 
             // register edges
-            xr_vector<int>& plist = polys[it].points;
+            std::vector<int>& plist = polys[it].points;
             for (int p = 0; p < int(plist.size()); p++)
             {
                 _edge E(plist[p], plist[(p + 1) % plist.size()], marker);
@@ -776,7 +776,7 @@ public:
         Fplane plane;
     };
 
-    xr_vector<sun::ray> view_frustum_rays;
+    std::vector<sun::ray> view_frustum_rays;
     sun::ray view_ray;
     sun::ray light_ray;
     Fvector3 light_cuboid_points[LIGHT_CUBOIDVERTICES_COUNT];
@@ -813,7 +813,7 @@ public:
     }
 
     void compute_caster_model_fixed(
-        xr_vector<Fplane>& dest, Fvector3& translation, float map_size, bool clip_by_view_near)
+        std::vector<Fplane>& dest, Fvector3& translation, float map_size, bool clip_by_view_near)
     {
         translation.set(0.f, 0.f, 0.f);
 

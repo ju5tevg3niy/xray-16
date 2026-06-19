@@ -31,7 +31,7 @@ pcstr CUIOptionsItem::GetOptStringValue() const
 
 void CUIOptionsItem::SaveOptStringValue(LPCSTR val) const
 {
-    xr_string command = m_entry.c_str();
+    std::string command = m_entry.c_str();
     command += " ";
     command += val;
     Console->Execute(command.c_str());

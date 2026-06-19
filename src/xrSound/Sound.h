@@ -1,11 +1,12 @@
 #pragma once
 
+#include <vector>
+
 #include "Common/types.hpp"
 #include "xrCore/Math/flags.hpp"
 #include "xrCore/xr_resource.h"
 #include "xrCore/Math/vector3.hpp"
 #include "xrCore/xr_token.h"
-#include "xrCommon/xr_vector.h"
 #include "xrAPI/EngineGlobalEnvironment.hpp"
 
 #ifdef XRAY_STATIC_BUILD
@@ -239,7 +240,7 @@ public:
 
 class XRSOUND_API CSoundManager
 {
-    xr_vector<xr_token> soundDevices;
+    std::vector<xr_token> soundDevices;
 
     SoundEnvironment_LIB* soundEnvironment{};
 
@@ -433,7 +434,7 @@ public:
         };
     };
 
-    using item_vec = xr_vector<SItem>;
+    using item_vec = std::vector<SItem>;
     item_vec items;
 
     void clear() { items.clear(); }

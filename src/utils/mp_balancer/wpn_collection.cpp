@@ -1,3 +1,5 @@
+#include <set>
+
 #include "pch.h"
 #include "wpn_collection.hpp"
 
@@ -68,9 +70,9 @@ struct SymbolCountComparator : public std::binary_function<weapon_collection::te
     };
 };
 
-void read_arguments_to_set(xr_set<shared_str>& dest, char const* source_string)
+void read_arguments_to_set(std::set<shared_str>& dest, char const* source_string)
 {
-    xr_string tmp;
+    std::string tmp;
 
     for (int k = 0, cnt = _GetItemCount(source_string); k < cnt; ++k)
     {
@@ -92,7 +94,7 @@ void weapon_collection::load_settings()
         R_ASSERT(line);
         extract_list.push_back(new tentity_extract_keys());
         extract_list.back()->first = line;
-        new_config.insert(std::make_pair(shared_str(line), xr_vector<CInifileEx::Sect>()));
+        new_config.insert(std::make_pair(shared_str(line), std::vector<CInifileEx::Sect>()));
         if (larg)
         {
             read_arguments_to_set(extract_list.back()->second, larg);
@@ -117,9 +119,9 @@ weapon_collection::textract_list::const_iterator weapon_collection::get_extract_
 void weapon_collection::extract_all_params()
 {
     std::cout << "----------------- started to save values -----------------" << std::endl;
-    xr_set<shared_str> no_extract_params;
-    xr_vector<shared_str>::const_iterator ie = all_weapons.end();
-    for (xr_vector<shared_str>::const_iterator i = all_weapons.begin(); i != ie; ++i)
+    std::set<shared_str> no_extract_params;
+    std::vector<shared_str>::const_iterator ie = all_weapons.end();
+    for (std::vector<shared_str>::const_iterator i = all_weapons.begin(); i != ie; ++i)
     {
         textract_list::const_iterator extr_iter = get_extract_keys(i->c_str());
         if (extr_iter == extract_list.end())
@@ -201,7 +203,7 @@ char const* weapon_collection::try_extract_from_patch(char const* sect, char con
 }
 
 void weapon_collection::copy_params_ex(
-    CInifileEx::Sect& dest, CInifileEx::Sect const& from, xr_set<shared_str> const& copy_keys)
+    CInifileEx::Sect& dest, CInifileEx::Sect const& from, std::set<shared_str> const& copy_keys)
 {
     std::cout << "Processing section: " << from.Name.c_str() << std::endl;
     for (CInifileEx::SectCIt i = from.Data.begin(), ie = from.Data.end(); i != ie; ++i)
@@ -265,12 +267,12 @@ void weapon_collection::copy_params_ex(
 }
 
 void weapon_collection::build_section(
-    CInifileEx::Sect& dest, CInifileEx::Sect const& orig, xr_set<shared_str> const& extract_from_base_keys)
+    CInifileEx::Sect& dest, CInifileEx::Sect const& orig, std::set<shared_str> const& extract_from_base_keys)
 {
     dest.Name = orig.Name;
     dest.base_sections = orig.base_sections;
 
-    for (xr_vector<shared_str>::const_iterator bi = orig.base_sections.begin(), bie = orig.base_sections.end();
+    for (std::vector<shared_str>::const_iterator bi = orig.base_sections.begin(), bie = orig.base_sections.end();
          bi != bie; ++bi)
     {
         R_ASSERT2(priquel_config->section_exist(bi->c_str()), "base section not exist");
@@ -282,7 +284,7 @@ void weapon_collection::build_section(
     {
         bool found_key = false;
 
-        for (xr_vector<shared_str>::const_iterator bi = orig.base_sections.begin(), bie = orig.base_sections.end();
+        for (std::vector<shared_str>::const_iterator bi = orig.base_sections.begin(), bie = orig.base_sections.end();
              bi != bie; ++bi)
         {
             if (priquel_config->line_exist(bi->c_str(), i->first.c_str()))
@@ -304,10 +306,10 @@ void weapon_collection::build_section(
 
 void weapon_collection::save_config_to_file(tnew_config_map::const_iterator cfg_iter)
 {
-    xr_set<shared_str> comments_set;
+    std::set<shared_str> comments_set;
     IWriter* new_file = FS.w_open(cfg_iter->first.c_str());
     tnew_config_map::mapped_type const& sect_collection = cfg_iter->second;
-    xr_string temp_string;
+    std::string temp_string;
     temp_string.reserve(1024 * 5);
     char temp_buffer[2096];
     for (tnew_config_map::mapped_type::const_iterator i = sect_collection.begin(), ie = sect_collection.end(); i != ie;
@@ -320,7 +322,7 @@ void weapon_collection::save_config_to_file(tnew_config_map::const_iterator cfg_
         if (i->base_sections.size())
         {
             temp_string.append(":");
-            for (xr_vector<shared_str>::const_iterator bi = i->base_sections.begin(), bie = i->base_sections.end();
+            for (std::vector<shared_str>::const_iterator bi = i->base_sections.begin(), bie = i->base_sections.end();
                  bi != bie; ++bi)
             {
                 temp_string.append(bi->c_str());

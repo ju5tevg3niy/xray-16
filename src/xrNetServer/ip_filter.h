@@ -27,7 +27,7 @@ struct subnet_item
 
 class ip_filter
 {
-    typedef xr_vector<subnet_item*> subnets_coll_t;
+    typedef std::vector<subnet_item*> subnets_coll_t;
     subnets_coll_t m_all_subnets;
 
 public:

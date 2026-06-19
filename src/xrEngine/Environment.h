@@ -1,11 +1,12 @@
 #pragma once
 
+#include <vector>
+#include <map>
+
 #include "Include/xrRender/FactoryPtr.h"
 #include "Include/xrRender/EnvironmentRender.h"
 #include "xrCore/Math/vector3.hpp"
 #include "xrCore/Math/quaternion.hpp"
-#include "xrCommon/xr_vector.h"
-#include "xrCommon/xr_map.h"
 #include "xrSound/Sound.h"
 #include "editor_base.h"
 
@@ -75,7 +76,7 @@ public:
         float wind_blast_strength;
         Fvector wind_blast_direction;
     };
-    using EffectVec = xr_vector<SEffect*>;
+    using EffectVec = std::vector<SEffect*>;
 
     struct SSndChannel
     {
@@ -110,9 +111,9 @@ public:
         auto& sounds() { return m_sounds; }
 
     protected:
-        xr_vector<ref_sound> m_sounds;
+        std::vector<ref_sound> m_sounds;
     };
-    using SSndChannelVec = xr_vector<SSndChannel*>;
+    using SSndChannelVec = std::vector<SSndChannel*>;
 
 protected:
     shared_str m_load_section;
@@ -247,17 +248,17 @@ class CEnvironment : public xray::editor::ide_tool
     };
 
 public:
-    struct EnvVec : xr_vector<CEnvDescriptor*>
+    struct EnvVec : std::vector<CEnvDescriptor*>
     {
         bool soc_style{};
     };
-    using EnvsMap = xr_map<shared_str, EnvVec, str_pred>;
-    using EnvAmbVec = xr_vector<CEnvAmbient*>;
+    using EnvsMap = std::map<shared_str, EnvVec, str_pred>;
+    using EnvAmbVec = std::vector<CEnvAmbient*>;
 
 private:
     // clouds
-    xr_vector<Fvector> CloudsVerts;
-    xr_vector<u16> CloudsIndices;
+    std::vector<Fvector> CloudsVerts;
+    std::vector<u16> CloudsIndices;
 
     float NormalizeTime(float tm);
     float TimeDiff(float prev, float cur);
@@ -306,7 +307,7 @@ public:
 
     EnvsMap WeatherCycles;
     EnvsMap WeatherFXs;
-    xr_vector<CEnvModifier> Modifiers;
+    std::vector<CEnvModifier> Modifiers;
     EnvAmbVec Ambients;
 
     CEffect_Rain* eff_Rain{};

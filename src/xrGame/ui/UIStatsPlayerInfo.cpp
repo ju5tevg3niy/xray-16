@@ -6,7 +6,7 @@
 #include "game_cl_artefacthunt.h"
 #include "Level.h"
 
-CUIStatsPlayerInfo::CUIStatsPlayerInfo(xr_vector<PI_FIELD_INFO>* info, CGameFont* pF, u32 text_col)
+CUIStatsPlayerInfo::CUIStatsPlayerInfo(std::vector<PI_FIELD_INFO>* info, CGameFont* pF, u32 text_col)
     : CUIWindow("CUIStatsPlayerInfo")
 {
     m_field_info = info;
@@ -38,7 +38,7 @@ void CUIStatsPlayerInfo::InitPlayerInfo(Fvector2 pos, Fvector2 size)
     m_pBackground->SetWndSize(size);
     m_pBackground->InitTexture("ui" DELIMITER "ui_mp_frags_selection");
 
-    xr_vector<PI_FIELD_INFO>& field_info = *m_field_info;
+    std::vector<PI_FIELD_INFO>& field_info = *m_field_info;
     for (u32 i = 0; i < field_info.size(); i++)
     {
         bool pic;
@@ -67,7 +67,7 @@ void CUIStatsPlayerInfo::Update()
     if (!m_pPlayerInfo)
         return;
 
-    xr_vector<PI_FIELD_INFO>& field_info = *m_field_info;
+    std::vector<PI_FIELD_INFO>& field_info = *m_field_info;
 
     for (u32 i = 0; i < m_fields.size(); i++)
         m_fields[i]->TextItemControl()->SetText(GetInfoByID(field_info[i].name.c_str()));

@@ -188,8 +188,8 @@ private:
     bool m_bNeed_CrPr = false;
     u32 m_dwNumSteps = 0;
     bool m_bIn_CrPr = false;
-    xr_vector<CGameObject*> pObjects4CrPr;
-    xr_vector<CGameObject*> pActors4CrPr;
+    std::vector<CGameObject*> pObjects4CrPr;
+    std::vector<CGameObject*> pActors4CrPr;
     IGameObject* pCurrentControlEntity = nullptr;
     xrServer::EConnect m_connect_server_err = xrServer::ErrNoError;
 
@@ -216,20 +216,20 @@ public:
 private:
     bool m_bConnectResultReceived;
     bool m_bConnectResult;
-    xr_string m_sConnectResult;
+    std::string m_sConnectResult;
 
 public:
     void OnGameSpyChallenge(NET_Packet* P);
     void OnBuildVersionChallenge();
     void OnConnectResult(NET_Packet* P);
     // Static particles
-    using POVec = xr_vector<CParticlesObject*>;
+    using POVec = std::vector<CParticlesObject*>;
     POVec m_StaticParticles;
     game_cl_GameState* game = nullptr;
     bool m_bGameConfigStarted = false;
     bool game_configured = false;
     NET_Queue_Event* game_events = nullptr;
-    xr_deque<CSE_Abstract*> game_spawn_queue;
+    std::deque<CSE_Abstract*> game_spawn_queue;
     xrServer* Server = nullptr;
     GlobalFeelTouch m_feel_deny;
     CZoneList* hud_zones_list = nullptr;
@@ -237,7 +237,7 @@ public:
 
 private:
     // preload sounds registry
-    using SoundRegistryMap = xr_map<shared_str, ref_sound>;
+    using SoundRegistryMap = std::map<shared_str, ref_sound>;
     SoundRegistryMap sound_registry;
 
 public:
@@ -271,7 +271,7 @@ public:
     bool IsChecksumsEqual(u32 check_sum) const;
 
     // sounds
-    xr_vector<ref_sound*> static_Sounds;
+    std::vector<ref_sound*> static_Sounds;
 
     // startup options
     shared_str m_caServerOptions;
@@ -289,7 +289,7 @@ public:
     void Load_GameSpecific_CFORM(CDB::TRI* T, u32 count) override;
     void Load_GameSpecific_CFORM_Serialize(IWriter& writer) override;
     bool Load_GameSpecific_CFORM_Deserialize(IReader& reader) override;
-    void Load_GameSpecific_CFORM_SetMaterials(CDB::TRI* tris, u32 count, xr_map<u16, shared_str>& gameMtls) override;
+    void Load_GameSpecific_CFORM_SetMaterials(CDB::TRI* tris, u32 count, std::map<u16, shared_str>& gameMtls) override;
 
     // Events
     void OnEvent(EVENT E, u64 P1, u64 P2) override;

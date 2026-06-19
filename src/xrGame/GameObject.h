@@ -90,7 +90,7 @@ private:
     mutable CScriptGameObject* m_lua_game_object;
     int m_script_clsid;
     u32 m_spawn_time;
-    using CALLBACK_MAP = xr_map<GameObject::ECallbackType, CScriptCallbackExVoid>;
+    using CALLBACK_MAP = std::map<GameObject::ECallbackType, CScriptCallbackExVoid>;
     CALLBACK_MAP* m_callbacks;
     ai_obstacle* m_ai_obstacle;
     Fmatrix m_previous_matrix;

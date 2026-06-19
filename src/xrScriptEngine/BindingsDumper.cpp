@@ -140,7 +140,7 @@ void BindingsDumper::FormatMemberFunction(const SignatureFormatterParams& params
 {
     auto refClassName = static_cast<const char*>(params.Context);
     bool stripReturnValue = false; // for constructors and operators
-    xr_string funcName;
+    std::string funcName;
     auto refFuncName = params.Function->name;
     if (refFuncName == "__init")
     {
@@ -173,8 +173,8 @@ void BindingsDumper::FormatMemberFunction(const SignatureFormatterParams& params
             signLen -= offset;
         }
         int argIndex = -signLen + 4 - offset;
-        xr_string arg = lua_tostring(ls, argIndex);
-        xr_string className = refClassName;
+        std::string arg = lua_tostring(ls, argIndex);
+        std::string className = refClassName;
         // check if arg matches 'className[ const]{*|&}'
         std::regex matcher(className + "( const)?(\\*|&)$");
         if (std::regex_match(arg, matcher)) // non-derived member function

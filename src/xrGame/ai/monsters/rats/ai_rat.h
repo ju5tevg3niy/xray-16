@@ -7,6 +7,9 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+
+#include <stack>
+
 #include "CustomMonster.h"
 #include "eatable_item.h"
 #include "seniority_hierarchy_holder.h"
@@ -187,7 +190,7 @@ protected:
     bool m_turning;
 
     // FSM
-    xr_stack<ERatStates> m_tStateStack;
+    std::stack<ERatStates> m_tStateStack;
     ERatStates m_eCurrentState;
     ERatStates m_ePreviousState;
     bool m_bStopThinking;

@@ -3,7 +3,7 @@
 #include "Common/types.hpp"
 #include "xrCore/xrDebug_macros.h"
 
-// deprecated, use xr_array instead
+// deprecated
 template <class T, size_t dim>
 class svector
 {

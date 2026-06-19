@@ -9,10 +9,10 @@
 #pragma once
 
 #include <functional>
+#include <stack>
 
 #include "xrCore/FixedVector.h"
 #include "xrCore/xrstring.h"
-#include "xrCommon/xr_stack.h"
 
 template <typename P>
 struct CComparer
@@ -102,7 +102,7 @@ struct CComparer
     }
 
     template <typename T1, typename T2>
-    IC static bool compare(const xr_stack<T1, T2>& s1, const xr_stack<T1, T2>& s2, const P& p)
+    IC static bool compare(const std::stack<T1, T2>& s1, const std::stack<T1, T2>& s2, const P& p)
     {
         return compare(s1, s2, p, true);
     }

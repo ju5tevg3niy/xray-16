@@ -1,5 +1,6 @@
 #pragma once
-#include "xrCommon/xr_string.h"
+
+#include <string>
 
 enum EMonsterState
 {
@@ -187,4 +188,4 @@ enum EMonsterState
 #define is_state(state, type) (((state & type) == type) && (state != eStateUnknown))
 
 // Lain: added
-xr_string make_xrstr(EMonsterState state) noexcept;
+std::string make_xrstr(EMonsterState state) noexcept;

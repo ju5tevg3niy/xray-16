@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "xrGame/ai/monsters/state.h"
 
-xr_string make_xrstr(EMonsterState state) noexcept
+std::string make_xrstr(EMonsterState state) noexcept
 {
     switch (state)
     {

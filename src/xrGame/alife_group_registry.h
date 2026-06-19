@@ -17,7 +17,7 @@ class CALifeGroupRegistry
 {
 public:
     typedef CSE_ALifeOnlineOfflineGroup OBJECT;
-    typedef xr_map<ALife::_OBJECT_ID, OBJECT*> OBJECTS;
+    typedef std::map<ALife::_OBJECT_ID, OBJECT*> OBJECTS;
 
 protected:
     OBJECTS m_objects;

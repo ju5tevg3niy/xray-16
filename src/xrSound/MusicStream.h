@@ -10,7 +10,7 @@ class CInifile;
 
 class CMusicStream
 {
-    xr_vector<CSoundStream*> streams;
+    std::vector<CSoundStream*> streams;
     int FindEmptySlot();
 
 public:

@@ -2,7 +2,7 @@
 
 namespace xray::render::RENDER_NAMESPACE
 {
-class ECORE_API R_xforms
+class R_xforms
 {
 public:
     Fmatrix m_w; // Basic	- world

@@ -438,7 +438,7 @@ void LevelGraphDebugRender::DrawGameGraph()
         F->OutI(S.x, -S.y, "%d", i);
     }
     {
-        const xr_vector<u32> &path = map_point_path;
+        const std::vector<u32> &path = map_point_path;
         if (path.size())
         {
             Fvector t1 = ai().game_graph().vertex(path.back())->game_point();

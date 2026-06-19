@@ -5,11 +5,13 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Object saver
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
+
 #include <type_traits>
+#include <string>
+#include <stack>
+
 #include "xrCore/xrstring.h"
-#include "xrCommon/xr_string.h"
 
 template <class M, typename P>
 struct CSaver
@@ -81,7 +83,7 @@ struct CSaver
     IC static void save_data(pstr data, M& stream, const P& /*p*/) { stream.w_stringZ(data); }
     IC static void save_data(pcstr data, M& stream, const P& /*p*/) { stream.w_stringZ(data); }
     IC static void save_data(const shared_str& data, M& stream, const P& /*p*/) { stream.w_stringZ(data); }
-    IC static void save_data(const xr_string& data, M& stream, const P& /*p*/) { stream.w_stringZ(data.c_str()); }
+    IC static void save_data(const std::string& data, M& stream, const P& /*p*/) { stream.w_stringZ(data.c_str()); }
     template <typename T1, typename T2>
     IC static void save_data(const std::pair<T1, T2>& data, M& stream, const P& p)
     {
@@ -91,7 +93,7 @@ struct CSaver
             CSaver<M, P>::save_data(data.second, stream, p);
     }
 
-    IC static void save_data(const xr_vector<bool>& data, M& stream, const P& /*p*/)
+    IC static void save_data(const std::vector<bool>& data, M& stream, const P& /*p*/)
     {
         stream.w_u32((u32)data.size());
         auto I = data.cbegin();
@@ -156,7 +158,7 @@ struct CSaver
     }
 
     template <typename T1, typename T2>
-    IC static void save_data(const xr_stack<T1, T2>& data, M& stream, const P& p)
+    IC static void save_data(const std::stack<T1, T2>& data, M& stream, const P& p)
     {
         save_data(data, stream, p, true);
     }

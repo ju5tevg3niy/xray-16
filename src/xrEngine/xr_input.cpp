@@ -517,7 +517,7 @@ void CInput::ControllerUpdate()
     checkAxis(XR_CONTROLLER_AXIS_TRIGGER_RIGHT, controllerState.axis.trigger_right, controllerPrev.axis.trigger_right);
 }
 
-bool KbdKeyToButtonName(const int dik, xr_string& result)
+bool KbdKeyToButtonName(const int dik, std::string& result)
 {
     static std::locale locale("");
 
@@ -534,7 +534,7 @@ bool KbdKeyToButtonName(const int dik, xr_string& result)
     return false;
 }
 
-bool OtherDevicesKeyToButtonName(const int btn, xr_string& /*result*/)
+bool OtherDevicesKeyToButtonName(const int btn, std::string& /*result*/)
 {
     if (btn > CInput::COUNT_KB_BUTTONS)
     {
@@ -547,7 +547,7 @@ bool OtherDevicesKeyToButtonName(const int btn, xr_string& /*result*/)
 
 bool CInput::GetKeyName(const int dik, pstr dest_str, int dest_sz)
 {
-    xr_string keyname;
+    std::string keyname;
     bool result;
 
     if (dik < COUNT_KB_BUTTONS)
@@ -730,7 +730,7 @@ void CInput::iRelease(IInputReceiver* p)
         for (size_t cnt = cbStack.size(); cnt > 0; --cnt)
             if (cbStack[cnt - 1] == p)
             {
-                xr_vector<IInputReceiver*>::iterator it = cbStack.begin();
+                std::vector<IInputReceiver*>::iterator it = cbStack.begin();
                 std::advance(it, cnt - 1);
                 cbStack.erase(it);
                 break;

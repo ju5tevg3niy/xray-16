@@ -1,6 +1,7 @@
 #pragma once
 
-#include "xrCommon/xr_unordered_map.h"
+#include <unordered_map>
+
 #include "xrCore/Threading/Lock.hpp"
 
 class CPHReqBase;
@@ -66,14 +67,14 @@ public:
 #endif
 };
 
-using PHCALL_STORAGE = xr_vector<CPHCall*>;
+using PHCALL_STORAGE = std::vector<CPHCall*>;
 using PHCALL_I = PHCALL_STORAGE::iterator;
 
 class XRPHYSICS_API CPHCommander
 {
     Lock                             lock;
     PHCALL_STORAGE                   m_calls;
-    xr_unordered_map<CPHCall*, bool> m_callsUpdateDeferred;
+    std::unordered_map<CPHCall*, bool> m_callsUpdateDeferred;
 
 public:
     ~CPHCommander();

@@ -32,7 +32,7 @@ void CTelekinesis<_Object>::Activate()
     // получить список объектов
     m_nearest.clear();
     Level().ObjectSpace.GetNearest(m_nearest, control_object->Position(), 10.f);
-    // xr_vector<IGameObject*> &m_nearest		= Level().ObjectSpace.q_nearest;
+    // std::vector<IGameObject*> &m_nearest		= Level().ObjectSpace.q_nearest;
 
     // все объекты внести в список
     for (u32 i = 0; i < m_nearest.size(); i++)

@@ -23,7 +23,7 @@ class animation_action;
 class action final : private Noncopyable
 {
 public:
-    typedef xr_vector<animation_action*> Animations;
+    typedef std::vector<animation_action*> Animations;
 
 private:
     shared_str m_precondition_functor;

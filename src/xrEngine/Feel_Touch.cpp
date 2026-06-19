@@ -32,12 +32,12 @@ void Touch::feel_touch_update(Fvector& C, float R)
     q_nearest.clear();
     q_nearest.reserve(feel_touch.size());
     g_pGameLevel->ObjectSpace.GetNearest(q_nearest, C, R, NULL);
-    xr_vector<IGameObject*>::iterator n_begin = q_nearest.begin();
-    xr_vector<IGameObject*>::iterator n_end = q_nearest.end();
+    std::vector<IGameObject*>::iterator n_begin = q_nearest.begin();
+    std::vector<IGameObject*>::iterator n_end = q_nearest.end();
     if (n_end != n_begin)
     {
         // Process results (NEW)
-        for (xr_vector<IGameObject*>::iterator it = n_begin; it != n_end; ++it)
+        for (std::vector<IGameObject*>::iterator it = n_begin; it != n_end; ++it)
         {
             IGameObject* O = *it;
             if (O->getDestroy())
@@ -85,13 +85,13 @@ void Touch::feel_touch_update(Fvector& C, float R)
 
 void Touch::feel_touch_relcase(IGameObject* O)
 {
-    xr_vector<IGameObject*>::iterator I = std::find(feel_touch.begin(), feel_touch.end(), O);
+    std::vector<IGameObject*>::iterator I = std::find(feel_touch.begin(), feel_touch.end(), O);
     if (I != feel_touch.end())
     {
         feel_touch.erase(I);
         feel_touch_delete(O);
     }
-    xr_vector<DenyTouch>::iterator Id = feel_touch_disable.begin(), IdE = feel_touch_disable.end();
+    std::vector<DenyTouch>::iterator Id = feel_touch_disable.begin(), IdE = feel_touch_disable.end();
     for (; Id != IdE; ++Id)
         if ((*Id).O == O)
         {

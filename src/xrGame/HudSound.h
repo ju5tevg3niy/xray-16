@@ -44,14 +44,14 @@ struct HUD_SOUND_ITEM
     shared_str m_alias;
     SSnd* m_activeSnd;
     bool m_b_exclusive;
-    xr_vector<SSnd> sounds;
+    std::vector<SSnd> sounds;
 
     bool operator==(LPCSTR alias) const { return 0 == xr_stricmp(m_alias.c_str(), alias); }
 };
 
 class HUD_SOUND_COLLECTION
 {
-    //xr_vector<HUD_SOUND_ITEM> m_sound_items;
+    //std::vector<HUD_SOUND_ITEM> m_sound_items;
 
 public:
     ~HUD_SOUND_COLLECTION();
@@ -59,7 +59,7 @@ public:
     HUD_SOUND_COLLECTION() : m_alias(nullptr) {};
     shared_str m_alias; //Alundaio: For use when it's part of a layered Collection
 
-    xr_vector<HUD_SOUND_ITEM> m_sound_items; //Alundaio: made public
+    std::vector<HUD_SOUND_ITEM> m_sound_items; //Alundaio: made public
 
     HUD_SOUND_ITEM* FindSoundItem(LPCSTR alias, bool b_assert); //AVO: made public to check if sound is loaded
 
@@ -77,7 +77,7 @@ public:
 //Alundaio:
 class HUD_SOUND_COLLECTION_LAYERED
 {
-    xr_vector<HUD_SOUND_COLLECTION> m_sound_layered_items;
+    std::vector<HUD_SOUND_COLLECTION> m_sound_layered_items;
 
 public:
     HUD_SOUND_ITEM* FindSoundItem(pcstr alias, bool b_assert);

@@ -23,9 +23,9 @@ public:
         LPCSTR next_phrase_id) const;
     void Action(const CGameObject* pSpeaker1, const CGameObject* pSpeaker2, LPCSTR dialog_id, LPCSTR phrase_id) const;
 
-    using PRECONDITION_VECTOR = xr_vector<shared_str>;
+    using PRECONDITION_VECTOR = std::vector<shared_str>;
     const PRECONDITION_VECTOR& Preconditions() const { return m_Preconditions; }
-    using ACTION_NAME_VECTOR = xr_vector<shared_str>;
+    using ACTION_NAME_VECTOR = std::vector<shared_str>;
     const ACTION_NAME_VECTOR& Actions() const { return m_ScriptActions; }
     void AddPrecondition(LPCSTR str);
     void AddAction(LPCSTR str);
@@ -53,7 +53,7 @@ protected:
     //говорится фраза
     ACTION_NAME_VECTOR m_ScriptActions;
 
-    using INFO_VECTOR = xr_vector<shared_str>;
+    using INFO_VECTOR = std::vector<shared_str>;
 
     INFO_VECTOR m_GiveInfo;
     INFO_VECTOR m_DisableInfo;

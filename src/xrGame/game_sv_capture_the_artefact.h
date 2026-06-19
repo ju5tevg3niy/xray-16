@@ -56,21 +56,21 @@ private:
         bool operator()(const TeamPair& tr, u16 actorId) const;
     };
 
-    typedef xr_map<ETeam, MyTeam> TeamsMap;
+    typedef std::map<ETeam, MyTeam> TeamsMap;
     TeamsMap teams;
 
     // todo: transmit work with anomalies into other class...
     //----------------------------------------------------
-    typedef std::pair<xr_string, u16> TNameGameIDAnomalyPair;
-    typedef xr_vector<TNameGameIDAnomalyPair> TAnomaliesVector;
+    typedef std::pair<std::string, u16> TNameGameIDAnomalyPair;
+    typedef std::vector<TNameGameIDAnomalyPair> TAnomaliesVector;
 
     typedef std::pair<TAnomaliesVector, u8> TAnomalyStartedPair;
-    typedef xr_vector<TAnomalyStartedPair> TAnomalySet;
+    typedef std::vector<TAnomalyStartedPair> TAnomalySet;
 
     typedef std::pair<u16, u8> TGIDCPair; // GameIDCountPair
-    typedef xr_multimap<xr_string, TGIDCPair> TMultiMap;
+    typedef std::multimap<std::string, TGIDCPair> TMultiMap;
 
-    typedef xr_map<ClientID, int>
+    typedef std::map<ClientID, int>
         TGameIDToBoughtFlag; // this map shows what player already bought items when he was dead...
 
     TAnomaliesVector m_AnomaliesPermanent;
@@ -206,7 +206,7 @@ private:
 
 protected:
     virtual void ReadOptions(shared_str& options);
-    virtual void FillDeathActorRejectItems(CSE_ActorMP* actor, xr_vector<CSE_Abstract*>& to_reject);
+    virtual void FillDeathActorRejectItems(CSE_ActorMP* actor, std::vector<CSE_Abstract*>& to_reject);
     shared_str m_not_free_ammo_str;
     virtual bool CanChargeFreeAmmo(char const* ammo_section);
     virtual void WriteGameState(CInifile& ini, LPCSTR sect, bool bRoundResult);

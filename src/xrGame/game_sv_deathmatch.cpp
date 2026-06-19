@@ -794,14 +794,14 @@ void game_sv_Deathmatch::assign_RP(CSE_Abstract* E, game_PlayerState* ps_who)
         return;
     };
     //-------------------------------------------------------------------------------
-    xr_vector<RPoint>& rp = rpoints[Team];
+    std::vector<RPoint>& rp = rpoints[Team];
 
     struct rpoints_controller
     {
         CSE_ALifeCreatureActor* pA;
         game_sv_Deathmatch* m_owner;
-        xr_vector<xrClientData*> pEnemies;
-        xr_vector<xrClientData*> pFriends;
+        std::vector<xrClientData*> pEnemies;
+        std::vector<xrClientData*> pFriends;
 
         void operator()(IClient* client)
         {
@@ -837,7 +837,7 @@ void game_sv_Deathmatch::assign_RP(CSE_Abstract* E, game_PlayerState* ps_who)
     R_ASSERT2(*std::max_element(m_vFreeRPoints[Team].begin(), m_vFreeRPoints[Team].end()) < rp.size(),
         make_string("free rpoints of team [%d] has hell rpoint", Team).c_str());
 
-    xr_vector<RPointData> tmpPoints;
+    std::vector<RPointData> tmpPoints;
     for (u32 i = 0; i < m_vFreeRPoints[Team].size(); i++)
     {
         RPoint& r = rp[m_vFreeRPoints[Team][i]];
@@ -878,8 +878,8 @@ bool game_sv_Deathmatch::IsBuyableItem(LPCSTR ItemName)
     return true;
 };
 
-void game_sv_Deathmatch::CheckItem(game_PlayerState* ps, PIItem pItem, xr_vector<s16>* pItemsDesired,
-    xr_vector<u16>* pItemsToDelete, bool ExactMatch = false)
+void game_sv_Deathmatch::CheckItem(game_PlayerState* ps, PIItem pItem, std::vector<s16>* pItemsDesired,
+    std::vector<u16>* pItemsToDelete, bool ExactMatch = false)
 {
     if (!pItem || !pItemsDesired || !pItemsToDelete)
         return;
@@ -987,7 +987,7 @@ void game_sv_Deathmatch::OnPlayerBuyFinished(ClientID id_who, NET_Packet& P)
     P.r_s32(ps->LastBuyAcount);
     if (ps->LastBuyAcount != 0) ps->m_bClearRun = false;
 
-    xr_vector<s16>		ItemsDesired;
+    std::vector<s16>		ItemsDesired;
 
     u8 NumItems;
     P.r_u8(NumItems);
@@ -1004,7 +1004,7 @@ void game_sv_Deathmatch::OnPlayerBuyFinished(ClientID id_who, NET_Packet& P)
     if (pActor)
     {
         PIItem pItem = NULL;
-        xr_vector<u16>				ItemsToDelete;
+        std::vector<u16>				ItemsToDelete;
 
         bool ExactMatch	= true;
         //проверяем пояс
@@ -1038,8 +1038,8 @@ void game_sv_Deathmatch::OnPlayerBuyFinished(ClientID id_who, NET_Packet& P)
             CheckItem(ps, pItem, &ItemsDesired, &ItemsToDelete, ExactMatch);
         };
 
-        xr_vector<u16>::iterator	IDI = ItemsToDelete.begin();
-        xr_vector<u16>::iterator	EDI = ItemsToDelete.end();
+        std::vector<u16>::iterator	IDI = ItemsToDelete.begin();
+        std::vector<u16>::iterator	EDI = ItemsToDelete.end();
         for ( ; IDI != EDI; ++IDI)
         {
             NET_Packet			P;
@@ -1561,7 +1561,7 @@ void game_sv_Deathmatch::StartAnomalies(int AnomalySet)
     if (AnomalySet != -1 && u32(AnomalySet) >= m_AnomalySetsList.size())
         return;
 
-    xr_vector<u8>& ASetID = m_AnomalySetID;
+    std::vector<u8>& ASetID = m_AnomalySetID;
     if (ASetID.empty())
     {
         u8 Size = (u8)m_AnomalySetsList.size();
@@ -1613,7 +1613,7 @@ BOOL game_sv_Deathmatch::OnTouch(u16 eid_who, u16 eid_what, BOOL bForced)
         if (W)
         {
             // Weapon
-            xr_vector<u16>& C = A->children;
+            std::vector<u16>& C = A->children;
             u8 slot = W->get_slot();
             for (u32 it = 0; it < C.size(); ++it)
             {
@@ -1746,11 +1746,11 @@ void game_sv_Deathmatch::OnDetach(u16 eid_who, u16 eid_what)
     if (e_entity->m_tClassID == CLSID_OBJECT_PLAYERS_BAG && actor)
     {
         // move all items from player to rukzak
-        xr_vector<u16>::const_iterator it = e_parent->children.begin();
-        xr_vector<u16>::const_iterator it_e = e_parent->children.end();
-        xr_vector<CSE_Abstract*> to_transfer;
-        xr_vector<CSE_Abstract*> to_destroy;
-        xr_vector<CSE_Abstract*> to_reject;
+        std::vector<u16>::const_iterator it = e_parent->children.begin();
+        std::vector<u16>::const_iterator it_e = e_parent->children.end();
+        std::vector<CSE_Abstract*> to_transfer;
+        std::vector<CSE_Abstract*> to_destroy;
+        std::vector<CSE_Abstract*> to_reject;
 
         FillDeathActorRejectItems(actor, to_reject);
 
@@ -1775,8 +1775,8 @@ void game_sv_Deathmatch::OnDetach(u16 eid_who, u16 eid_what)
             }
         }
 
-        xr_vector<CSE_Abstract*>::const_iterator tr_it = to_transfer.begin();
-        xr_vector<CSE_Abstract*>::const_iterator tr_it_e = to_transfer.end();
+        std::vector<CSE_Abstract*>::const_iterator tr_it = to_transfer.begin();
+        std::vector<CSE_Abstract*>::const_iterator tr_it_e = to_transfer.end();
 
         NET_Packet EventPack;
         NET_Packet PacketReject;
@@ -2211,7 +2211,7 @@ void game_sv_Deathmatch::OnPlayerFire(ClientID id_who, NET_Packet& P)
 };
 
 #ifdef DEBUG
-xr_vector<u32> xPath;
+std::vector<u32> xPath;
 void game_sv_Deathmatch::OnRender()
 {
     inherited::OnRender();
@@ -2226,8 +2226,8 @@ void game_sv_Deathmatch::OnRender()
     !m_graph_engine->search(*m_level_graph,m_level_graph->vertex(u32(-1),v0),m_level_graph->vertex(u32(-1),v1),&xPath,GraphEngineSpace::CBaseParameters());
             if (failed) continue;
 
-            xr_vector<u32>::const_iterator I = xPath.begin();
-            xr_vector<u32>::const_iterator E = xPath.end();
+            std::vector<u32>::const_iterator I = xPath.begin();
+            std::vector<u32>::const_iterator E = xPath.end();
             for ( ; I != E; ++I) {
                 Level().debug_renderer().draw_aabb(
                     Fvector().set(
@@ -2304,7 +2304,7 @@ void game_sv_Deathmatch::WriteGameState(CInifile& ini, LPCSTR sect, bool bRoundR
     }
 }
 
-void game_sv_Deathmatch::FillDeathActorRejectItems(CSE_ActorMP* actor, xr_vector<CSE_Abstract*>& to_reject)
+void game_sv_Deathmatch::FillDeathActorRejectItems(CSE_ActorMP* actor, std::vector<CSE_Abstract*>& to_reject)
 {
     R_ASSERT(actor);
     CActor* pActor = smart_cast<CActor*>(Level().Objects.net_Find(actor->ID));

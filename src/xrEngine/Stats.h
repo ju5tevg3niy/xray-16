@@ -3,10 +3,11 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <vector>
+
 #include "xrCore/FTimer.h"
 #include "xrCore/Math/flags.hpp"
 #include "xrCore/xrstring.h"
-#include "xrCommon/xr_vector.h"
 #include "xrCommon/xr_smart_pointers.h"
 #include "xrEngine/StatGraph.h"
 #include "xrEngine/pure.h"
@@ -21,7 +22,7 @@ private:
     CGameFont* statsFont;
     CGameFont* fpsFont;
     xr_unique_ptr<CStatGraph> fpsGraph;
-    xr_vector<shared_str> errors;
+    std::vector<shared_str> errors;
 
 public:
     CStats();

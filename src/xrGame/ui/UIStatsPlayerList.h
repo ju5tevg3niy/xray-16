@@ -38,7 +38,7 @@ protected:
     bool m_bSpectator;
     bool m_bStatus_mode;
 
-    xr_vector<PI_FIELD_INFO> m_field_info;
+    std::vector<PI_FIELD_INFO> m_field_info;
 
     CUIStatic* m_header;
     CUIWindow* m_header_team;

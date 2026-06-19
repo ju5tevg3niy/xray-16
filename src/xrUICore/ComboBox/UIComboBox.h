@@ -17,7 +17,7 @@ class XRUICORE_API CUIComboBox final : public CUIWindow, public CUIOptionsItem, 
         LIST_FONDED
     };
 
-    xr_vector<int> m_disabled;
+    std::vector<int> m_disabled;
 
 public:
     CUIComboBox();

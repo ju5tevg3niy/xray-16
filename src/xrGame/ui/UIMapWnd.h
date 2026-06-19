@@ -21,7 +21,7 @@ class CUIXml;
 class UIHint;
 class CUIPropertiesBox;
 
-using GAME_MAPS = xr_map<shared_str, CUICustomMap*>;
+using GAME_MAPS = std::map<shared_str, CUICustomMap*>;
 
 class CUIMapWnd final : public CUIWindow, public CUIWndCallback
 {

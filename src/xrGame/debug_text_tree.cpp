@@ -103,7 +103,7 @@ void log_text_tree(text_tree& tree) { tree.output(detail::texttree_log_helper(),
 // text_tree
 //-----------------------------------------------
 
-text_tree* text_tree::find_node(const xr_string& s1)
+text_tree* text_tree::find_node(const std::string& s1)
 {
     if (strings.size() && (*strings.begin()) == s1)
     {
@@ -121,7 +121,7 @@ text_tree* text_tree::find_node(const xr_string& s1)
     return NULL;
 }
 
-text_tree& text_tree::find_or_add(const xr_string& s1)
+text_tree& text_tree::find_or_add(const std::string& s1)
 {
     if (text_tree* p = find_node(s1))
     {

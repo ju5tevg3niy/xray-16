@@ -7,9 +7,9 @@
 
 namespace xray::render::RENDER_NAMESPACE
 {
-extern ECORE_API Fvector du_box_vertices[];
-extern ECORE_API u16 du_box_faces[];
-extern ECORE_API u16 du_box_lines[];
+extern Fvector du_box_vertices[];
+extern u16 du_box_faces[];
+extern u16 du_box_lines[];
 
-extern ECORE_API Fvector du_box_vertices2[];
+extern Fvector du_box_vertices2[];
 } // namespace xray::render::RENDER_NAMESPACE

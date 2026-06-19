@@ -55,9 +55,9 @@ manager::~manager()
 
 void manager::load()
 {
-    xr_vector<pstr>* file_list = FS.file_list_open("$game_weathers$", "");
+    std::vector<pstr>* file_list = FS.file_list_open("$game_weathers$", "");
     VERIFY(file_list);
-    xr_string id;
+    std::string id;
 
     for (const auto& i : *file_list)
     {

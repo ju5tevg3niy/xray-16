@@ -80,7 +80,7 @@ BOOL motions_value::load(pcstr N, IReader* data, vecBones* bones)
 
     bool bRes = true;
     // Load definitions
-    xr_vector<u16> rm_bones(bones->size(), BI_NONE);
+    std::vector<u16> rm_bones(bones->size(), BI_NONE);
     IReader* MP = data->open_chunk(OGF_S_SMPARAMS);
 
     if (MP)
@@ -101,7 +101,7 @@ BOOL motions_value::load(pcstr N, IReader* data, vecBones* bones)
             PART.Name = xr_strlwr(buf);
             PART.bones.resize(MP->r_u16());
 
-            for (xr_vector<u32>::iterator b_it = PART.bones.begin(); b_it < PART.bones.end(); ++b_it)
+            for (std::vector<u32>::iterator b_it = PART.bones.begin(); b_it < PART.bones.end(); ++b_it)
             {
                 MP->r_stringZ(buf, sizeof(buf));
                 u16 m_idx = u16(MP->r_u32());
@@ -454,7 +454,7 @@ float motion_marks::time_to_next_mark(float time) const
 
 void motion_marks::Load(IReader* R)
 {
-    xr_string tmp;
+    std::string tmp;
     R->r_string(tmp);
     name = tmp.c_str();
     const u32 cnt = R->r_u32();

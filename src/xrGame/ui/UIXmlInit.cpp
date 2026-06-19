@@ -102,9 +102,9 @@ bool CUIXmlInit::InitDragDropListEx(CUIXml& xml_doc, LPCSTR path, int index, CUI
 
     if (tmp != 0)
     {
-        xr_string vc_vert_align = xml_doc.ReadAttrib(path, index, "vc_vert_align", "");
+        std::string vc_vert_align = xml_doc.ReadAttrib(path, index, "vc_vert_align", "");
         pWnd->SetCellsVertAlignment(vc_vert_align);
-        xr_string vc_horiz_align = xml_doc.ReadAttrib(path, index, "vc_horiz_align", "");
+        std::string vc_horiz_align = xml_doc.ReadAttrib(path, index, "vc_horiz_align", "");
         pWnd->SetCellsHorizAlignment(vc_horiz_align);
     }
 

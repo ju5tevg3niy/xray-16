@@ -139,7 +139,7 @@ public:
     void getPathAltitude(Fvector& point, float base_altitude);
     void SetDestPosition(Fvector* pos);
     void goPatrolByPatrolPath(LPCSTR path_name, int start_idx);
-    void CreateRoundPoints(Fvector center, float radius, float start_h, float end_h, xr_vector<STmpPt>& round_points);
+    void CreateRoundPoints(Fvector center, float radius, float start_h, float end_h, std::vector<STmpPt>& round_points);
     void save(NET_Packet& output_packet);
     void load(IReader& input_packet);
     void Load(LPCSTR section);
@@ -267,8 +267,8 @@ protected:
     // general
     EHeliState m_curState;
 
-    xr_map<s16, float> m_hitBones;
-    typedef xr_map<s16, float>::iterator bonesIt;
+    std::map<s16, float> m_hitBones;
+    typedef std::map<s16, float>::iterator bonesIt;
     float m_stepRemains;
 
     void UpdateState();

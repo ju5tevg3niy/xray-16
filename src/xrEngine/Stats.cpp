@@ -244,7 +244,7 @@ void CStats::OnRender()
                     GEnv.DU->DrawSphere(
                         Fidentity, item.params.position, item.params.max_distance, 0x4000FF00, 0xFF008000, true, true);
 
-                xr_string out_txt = (out_txt.size() && g_stats_flags.is(st_sound_info_name)) ? item.name.c_str() : "";
+                std::string out_txt = (out_txt.size() && g_stats_flags.is(st_sound_info_name)) ? item.name.c_str() : "";
 
                 if (item.game_object)
                 {

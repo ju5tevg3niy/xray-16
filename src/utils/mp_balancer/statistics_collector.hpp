@@ -7,7 +7,7 @@ class statistics_collector
 {
 private:
     weapon_collection* m_wpn_collection;
-    typedef xr_vector<shared_str> params_collection;
+    typedef std::vector<shared_str> params_collection;
     typedef AssociativeVector<shared_str, params_collection*> csv_files;
     csv_files m_all_params;
     void save_file(csv_files::value_type const& val);

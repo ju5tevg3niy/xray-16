@@ -180,6 +180,7 @@ set(XRAY_ENABLE_WARNINGS
     #-Wno-newline-eof
     $<$<CXX_COMPILER_ID:GNU>:$<$<COMPILE_LANGUAGE:CXX>:-Wno-class-memaccess>>
     $<$<CXX_COMPILER_ID:GNU>:$<$<COMPILE_LANGUAGE:CXX>:-Wno-interference-size>>
+    $<$<CXX_COMPILER_ID:GNU>:$<$<COMPILE_LANGUAGE:CXX>:-Wno-c++20-extensions>>
 )
 
 set(XRAY_DISABLE_WARNINGS "-w")

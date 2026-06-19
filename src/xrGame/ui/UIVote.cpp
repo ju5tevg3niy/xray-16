@@ -51,7 +51,7 @@ void CUIVote::Update()
     auto I = Game().players.begin();
     auto E = Game().players.end();
 
-    using ItemVec = xr_vector<game_PlayerState*>;
+    using ItemVec = std::vector<game_PlayerState*>;
     ItemVec items;
     for (; I != E; ++I)
         items.push_back(I->second);

@@ -49,10 +49,10 @@ public:
     shared_str unique_collection_id(shared_str const& id) const;
 
 public:
-    typedef xr_vector<thunderbolt*> thunderbolt_container_type;
-    typedef xr_vector<collection*> collection_container_type;
-    typedef xr_vector<pstr> thunderbolts_ids_type;
-    typedef xr_vector<pstr> collections_ids_type;
+    typedef std::vector<thunderbolt*> thunderbolt_container_type;
+    typedef std::vector<collection*> collection_container_type;
+    typedef std::vector<pstr> thunderbolts_ids_type;
+    typedef std::vector<pstr> collections_ids_type;
 
 public:
     thunderbolts_ids_type const& thunderbolts_ids() const;

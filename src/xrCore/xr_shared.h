@@ -1,7 +1,8 @@
 #pragma once
 
+#include <map>
+
 #include "xrstring.h"
-#include "xrCommon/xr_map.h"
 
 class shared_value
 {
@@ -14,7 +15,7 @@ template <class T>
 class shared_container
 {
 protected:
-    typedef xr_map<shared_str, T*> SharedMap;
+    typedef std::map<shared_str, T*> SharedMap;
     typedef typename SharedMap::iterator SharedMapIt;
     SharedMap container;
 

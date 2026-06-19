@@ -2,7 +2,7 @@
 
 namespace xray::render::RENDER_NAMESPACE
 {
-class ECORE_API R_tree
+class R_tree
 {
 public:
     R_constant* c_m_xform_v;

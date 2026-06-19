@@ -5,13 +5,13 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Graph class template
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
+
+#include <map>
 
 #include "xrAICore/Navigation/graph_vertex.h"
 #include "xrAICore/Navigation/graph_edge.h"
 #include "Common/object_broker.h"
-#include "xrCommon/xr_map.h"
 
 #ifndef XR_PLATFORM_WINDOWS // XXX: remove
 #include "xrCore/FS.h"
@@ -27,7 +27,7 @@ public:
     typedef CGraphEdge<_edge_weight_type, CVertex, _edge_data_type> CEdge;
 
 public:
-    typedef xr_map<_vertex_id_type, CVertex*> VERTICES;
+    typedef std::map<_vertex_id_type, CVertex*> VERTICES;
     typedef typename CVertex::EDGES EDGES;
 
 public:

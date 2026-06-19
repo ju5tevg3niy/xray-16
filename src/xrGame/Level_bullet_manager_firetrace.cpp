@@ -357,7 +357,7 @@ void CBulletManager::DynamicObjectHit(CBulletManager::_event& E)
 }
 
 #ifdef DEBUG
-xr_vector<Fvector> g_hit[3];
+std::vector<Fvector> g_hit[3];
 #endif
 
 extern void random_dir(Fvector& tgt_dir, const Fvector& src_dir, float dispersion);

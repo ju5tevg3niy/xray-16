@@ -5,7 +5,7 @@ template <class T, size_t granularity>
 class poolSS
 {
     T* list;
-    xr_vector<T*> blocks;
+    std::vector<T*> blocks;
 
     T** access(T* P) { return (T**)LPVOID(P); }
 

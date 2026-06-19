@@ -50,7 +50,7 @@ void CUIMapInfo::InitMap(LPCSTR map_name, LPCSTR map_ver)
     xml_doc.Load(CONFIG_PATH, UI_PATH, UI_PATH_DEFAULT, "ui_mapinfo.xml");
 
     // try to find file with info
-    xr_string info_path = "text" DELIMITER "map_desc" DELIMITER;
+    std::string info_path = "text" DELIMITER "map_desc" DELIMITER;
     info_path += map_name;
     info_path += ".ltx";
 
@@ -59,13 +59,13 @@ void CUIMapInfo::InitMap(LPCSTR map_name, LPCSTR map_ver)
         string_path ltxPath;
         FS.update_path(ltxPath, CONFIG_PATH, info_path.c_str());
         CInifile ltx(ltxPath);
-        xr_string text;
+        std::string text;
 
         // map name
         auto* st = xr_new<CUIStatic>("Map name");
         CUIXmlInit::InitStatic(xml_doc, "map_name", 0, st);
 
-        xr_string S = StringTable().translate(map_name).c_str();
+        std::string S = StringTable().translate(map_name).c_str();
         if (map_ver)
         {
             S += "[";

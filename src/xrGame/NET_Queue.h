@@ -1,6 +1,8 @@
 #pragma once
+
+#include <deque>
+
 #include "xrMessages.h"
-#include "xrCommon/xr_deque.h"
 
 extern BOOL g_bCheckTime;
 extern int g_dwEventDelay;
@@ -12,7 +14,7 @@ public:
     u32 timestamp;
     u16 type;
     u16 destination;
-    xr_vector<u8> data;
+    std::vector<u8> data;
 
 public:
     void import(NET_Packet& P)
@@ -76,8 +78,8 @@ IC bool operator<(const NET_Event& A, const NET_Event& B) { return A.timestamp <
 class NET_Queue_Event
 {
 public:
-    //	xr_multiset<NET_Event>	queue;
-    xr_deque<NET_Event> queue;
+    // std::multiset<NET_Event> queue;
+    std::deque<NET_Event> queue;
 
 public:
     IC void insert(NET_Packet& P)

@@ -18,7 +18,7 @@ std::mutex CStringTable::pDataMutex;
 xr_unique_ptr<STRING_TABLE_DATA> CStringTable::pData{};
 u32 CStringTable::LanguageID = std::numeric_limits<u32>::max();
 string32 CStringTable::LanguageIDInLTX{};
-xr_vector<xr_token> CStringTable::languagesToken;
+std::vector<xr_token> CStringTable::languagesToken;
 
 void CStringTable::Destroy()
 {
@@ -267,7 +267,7 @@ STRING_VALUE CStringTable::ParseLine(pcstr str)
     constexpr char   ACTION_STR_END[] = "$$";
     constexpr size_t ACTION_STR_END_LEN = std::size(ACTION_STR_END) - 1;
 
-    xr_string string{ str };
+    std::string string{ str };
     string.erase(std::remove_if(string.begin(), string.end(), [](char ch)
     {
         VERIFY2(ch != GAME_ACTION_MARK,"Using of escape symbol is not allowed in localization.");
@@ -276,10 +276,10 @@ STRING_VALUE CStringTable::ParseLine(pcstr str)
 
     size_t actionStartPos = 0;
 
-    while ((actionStartPos = string.find(ACTION_STR, actionStartPos)) != xr_string::npos)
+    while ((actionStartPos = string.find(ACTION_STR, actionStartPos)) != std::string::npos)
     {
         const size_t actionEndPos = string.find(ACTION_STR_END, actionStartPos + ACTION_STR_LEN);
-        const xr_string actionName = string.substr(actionStartPos + ACTION_STR_LEN, actionEndPos - (actionStartPos + ACTION_STR_LEN));
+        const std::string actionName = string.substr(actionStartPos + ACTION_STR_LEN, actionEndPos - (actionStartPos + ACTION_STR_LEN));
 
         if (const auto action = ActionNameToPtr(actionName.c_str())) // if exist, get bindings
         {

@@ -1,8 +1,9 @@
 #pragma once
 
+#include <vector>
+
 #include "xrCore/Threading/Lock.hpp"
 #include "Common/Noncopyable.hpp"
-#include "xrCommon/xr_vector.h"
 
 class CEvent;
 typedef CEvent* EVENT;
@@ -24,8 +25,8 @@ class CEventAPI : private Noncopyable
     };
 
 private:
-    xr_vector<EVENT> Events;
-    xr_vector<Deferred> Events_Deferred;
+    std::vector<EVENT> Events;
+    std::vector<Deferred> Events_Deferred;
     Lock CS;
 
 public:

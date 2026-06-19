@@ -6,7 +6,7 @@
 
 namespace xray::render::RENDER_NAMESPACE
 {
-extern ECORE_API Fvector du_cone_vertices[];
-extern ECORE_API u16 du_cone_faces[];
-extern ECORE_API u16 du_cone_lines[];
+extern Fvector du_cone_vertices[];
+extern u16 du_cone_faces[];
+extern u16 du_cone_lines[];
 } // namespace xray::render::RENDER_NAMESPACE

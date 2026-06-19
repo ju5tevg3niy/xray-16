@@ -6,7 +6,7 @@ class CInventoryOwner;
 class CActorFollowerMngr
 {
     typedef u16						FOLLOWER_T;
-    typedef xr_vector<FOLLOWER_T>	FOLLOWER_V;
+    typedef std::vector<FOLLOWER_T>	FOLLOWER_V;
     typedef FOLLOWER_V::iterator	FOLLOWER_IT;
 
     FOLLOWER_V						m_followers;

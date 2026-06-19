@@ -20,18 +20,18 @@ public:
     // predefind event routines
     virtual bool FvectorRDOnAfterEdit(PropValue* sender, Fvector& edit_val);
     virtual void FvectorRDOnBeforeEdit(PropValue* sender, Fvector& edit_val);
-    virtual void FvectorRDOnDraw(PropValue* sender, xr_string& draw_val);
+    virtual void FvectorRDOnDraw(PropValue* sender, std::string& draw_val);
     virtual bool floatRDOnAfterEdit(PropValue* sender, float& edit_val);
     virtual void floatRDOnBeforeEdit(PropValue* sender, float& edit_val);
-    virtual void floatRDOnDraw(PropValue* sender, xr_string& draw_val);
+    virtual void floatRDOnDraw(PropValue* sender, std::string& draw_val);
     // R-name edit
     virtual void NameBeforeEdit(PropValue* sender, shared_str& edit_val);
     virtual bool NameAfterEdit(PropValue* sender, shared_str& edit_val);
-    virtual void NameDraw(PropValue* sender, xr_string& draw_val);
+    virtual void NameDraw(PropValue* sender, std::string& draw_val);
     // C-name edit
-    virtual void CNameBeforeEdit(PropValue* sender, xr_string& edit_val);
-    virtual bool CNameAfterEdit(PropValue* sender, xr_string& edit_val);
-    virtual void CNameDraw(PropValue* sender, xr_string& draw_val);
+    virtual void CNameBeforeEdit(PropValue* sender, std::string& edit_val);
+    virtual bool CNameAfterEdit(PropValue* sender, std::string& edit_val);
+    virtual void CNameDraw(PropValue* sender, std::string& draw_val);
 
 public:
     virtual CaptionValue* CreateCaption(PropItemVec& items, shared_str key, shared_str val);
@@ -78,7 +78,7 @@ public:
     virtual ColorValue* CreateFColor(PropItemVec& items, shared_str key, Fcolor* val);
     virtual VectorValue* CreateVColor(PropItemVec& items, shared_str key, Fvector* val);
     virtual RTextValue* CreateRText(PropItemVec& items, shared_str key, shared_str* val);
-    virtual STextValue* CreateSText(PropItemVec& items, shared_str key, xr_string* val);
+    virtual STextValue* CreateSText(PropItemVec& items, shared_str key, std::string* val);
     virtual WaveValue* CreateWave(PropItemVec& items, shared_str key, WaveForm* val);
     virtual FloatValue* CreateTime(
         PropItemVec& items, shared_str key, float* val, float mn = 0.f, float mx = 86400.f);
@@ -97,7 +97,7 @@ public:
     // obsolette
     virtual CTextValue* CreateCText(PropItemVec& items, shared_str key, pstr val, u32 sz);
     virtual CListValue* CreateCList(
-        PropItemVec& items, shared_str key, pstr val, u32 sz, xr_string* lst, u32 cnt);
+        PropItemVec& items, shared_str key, pstr val, u32 sz, std::string* lst, u32 cnt);
     virtual CTextValue* CreateCName(PropItemVec& items, shared_str key, pstr val, u32 sz, ListItem* owner);
     virtual TokenValueSH* CreateTokenSH(
         PropItemVec& items, shared_str key, u32* val, const TokenValueSH::Item* lst, u32 cnt);

@@ -13,12 +13,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-
 #pragma once
 
-#include "ui_defs.h"
+#include <list>
 
-#include "xrCommon/xr_list.h"
+#include "ui_defs.h"
 
 class CUIWindow;
 
@@ -38,8 +37,8 @@ enum class FocusDirection : u8
 // Doesn't own CUIWindow* pointers it holds
 class XRUICORE_API CUIFocusSystem : public CUIDebuggable
 {
-    xr_list<const CUIWindow*> m_valuable;
-    xr_list<const CUIWindow*> m_non_valuable;
+    std::list<const CUIWindow*> m_valuable;
+    std::list<const CUIWindow*> m_non_valuable;
 
     const CUIWindow* m_current_focused{};
     const CUIWindow* m_focus_locker{};

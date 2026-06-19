@@ -72,7 +72,7 @@ void CPda::shedule_Update(u32 dt)
 void CPda::UpdateActiveContacts()
 {
     m_active_contacts.clear();
-    xr_vector<IGameObject*>::iterator it = feel_touch.begin();
+    std::vector<IGameObject*>::iterator it = feel_touch.begin();
     for (; it != feel_touch.end(); ++it)
     {
         CEntityAlive* pEA = smart_cast<CEntityAlive*>(*it);
@@ -162,11 +162,11 @@ CInventoryOwner* CPda::GetOriginalOwner()
     return pInvOwner;
 }
 
-void CPda::ActivePDAContacts(xr_vector<CPda*>& res)
+void CPda::ActivePDAContacts(std::vector<CPda*>& res)
 {
     res.clear();
-    xr_vector<IGameObject*>::iterator it = m_active_contacts.begin();
-    xr_vector<IGameObject*>::iterator it_e = m_active_contacts.end();
+    std::vector<IGameObject*>::iterator it = m_active_contacts.begin();
+    std::vector<IGameObject*>::iterator it_e = m_active_contacts.end();
 
     for (; it != it_e; ++it)
     {
@@ -202,7 +202,7 @@ LPCSTR		CPda::Name				()
         CSpecificCharacter spec_char;
         spec_char.Load(m_SpecificChracterOwner);
         m_sFullName += " ";
-        m_sFullName += xr_string(spec_char.Name());
+        m_sFullName += std::string(spec_char.Name());
     }
 
     return m_sFullName.c_str();

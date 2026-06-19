@@ -72,7 +72,7 @@ public:
     }
 };
 
-void ISpatial_DB::q_box(xr_vector<ISpatial*>& R, u32 _o, u32 _mask, const Fvector& _center, const Fvector& _size)
+void ISpatial_DB::q_box(std::vector<ISpatial*>& R, u32 _o, u32 _mask, const Fvector& _center, const Fvector& _size)
 {
     ZoneScoped;
     ScopeLock scope(&cs);
@@ -92,7 +92,7 @@ void ISpatial_DB::q_box(xr_vector<ISpatial*>& R, u32 _o, u32 _mask, const Fvecto
     Stats.Query.End();
 }
 
-void ISpatial_DB::q_sphere(xr_vector<ISpatial*>& R, u32 _o, u32 _mask, const Fvector& _center, const float _radius)
+void ISpatial_DB::q_sphere(std::vector<ISpatial*>& R, u32 _o, u32 _mask, const Fvector& _center, const float _radius)
 {
     ZoneScoped;
     Fvector _size = {_radius, _radius, _radius};

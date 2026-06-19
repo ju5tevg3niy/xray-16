@@ -30,8 +30,8 @@ protected:
     bool m_bArtefactWasTaken;
     bool m_bArtefactWasDropped;
 
-    xr_vector<RPoint> Artefact_rpoints;
-    //.	xr_vector<u8>					ArtefactsRPoints_ID;
+    std::vector<RPoint> Artefact_rpoints;
+    //.	std::vector<u8>					ArtefactsRPoints_ID;
     //.	u8								m_LastRespawnPointID;
     CRandom ArtefactChooserRandom;
 
@@ -65,8 +65,8 @@ protected:
     virtual bool Player_Check_Rank(game_PlayerState* ps);
     // virtual		void			DestroyAllPlayerItems(ClientID id_who);
 
-    bool assign_rp_tmp(game_PlayerState* ps_who, xr_vector<RPoint>& points_vec, xr_vector<u32>& dest,
-        xr_vector<u32>& rpIDEnemy, xr_vector<ClientID>& EnemyIt, bool use_safe_dist);
+    bool assign_rp_tmp(game_PlayerState* ps_who, std::vector<RPoint>& points_vec, std::vector<u32>& dest,
+        std::vector<u32>& rpIDEnemy, std::vector<ClientID>& EnemyIt, bool use_safe_dist);
 
 public:
     game_sv_ArtefactHunt() { m_type = eGameIDArtefactHunt; }

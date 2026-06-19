@@ -1,3 +1,5 @@
+#include <set>
+
 #include "StdAfx.h"
 #include "alife_space.h"
 #include "Hit.h"
@@ -81,7 +83,7 @@ bool CMincer::BlowoutState()
 {
     bool ret = inherited::BlowoutState();
 
-    // xr_set<IGameObject*>::iterator it=m_inZone.begin(),e=m_inZone.end();
+    // std::set<IGameObject*>::iterator it=m_inZone.begin(),e=m_inZone.end();
     // for(;e!=it;++it)
     //{
     //	CEntityAlive * EA = smart_cast<CEntityAlive *>(*it);

@@ -75,7 +75,7 @@ void CSE_ALifeDynamicObject::add_online(const bool& update_registries)
 }
 
 void CSE_ALifeDynamicObject::add_offline(
-    const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries)
+    const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries)
 {
     if (!update_registries)
         return;
@@ -217,7 +217,7 @@ void CSE_ALifeInventoryBox::add_online(const bool& update_registries)
 }
 
 void CSE_ALifeInventoryBox::add_offline(
-    const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries)
+    const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries)
 {
     CSE_ALifeDynamicObjectVisual* object = (this);
 

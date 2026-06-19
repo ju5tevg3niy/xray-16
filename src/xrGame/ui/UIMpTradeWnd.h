@@ -40,7 +40,7 @@ private:
     EItmState m_item_state;
 };
 
-using ITEMS_vec = xr_vector<SBuyItemInfo*>;
+using ITEMS_vec = std::vector<SBuyItemInfo*>;
 
 class CUIMpTradeWnd final : public IBuyWnd, public CUIWndCallback
 {
@@ -183,7 +183,7 @@ private:
 
     void UpdateHelperItems();
     void CreateHelperItems(CUIDragDropListEx* list);
-    void CreateHelperItems(xr_vector<shared_str>& ammo_types);
+    void CreateHelperItems(std::vector<shared_str>& ammo_types);
     void CreateHelperItems(CUIDragDropListEx* list, const CStoreHierarchy::item* shop_level);
     void DeleteHelperItems(CUIDragDropListEx* list);
     void DeleteHelperItems();

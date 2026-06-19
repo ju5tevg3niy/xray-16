@@ -3,7 +3,21 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <utility>
+#include <vector>
+
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCDB/ISpatial.h"
+#include "xrCDB/xrCDB.h"
+#include "xrCore/FixedVector.h"
 #include "xrCore/Math/fbox2.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/plane.hpp"
+#include "xrCore/Math/sphere.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrEngine/pure.h"
 
 namespace xray::render::RENDER_NAMESPACE
 {
@@ -41,7 +55,7 @@ public:
     u32 marker;
     BOOL bDualRender;
 
-    void setup(const level_portal_data_t& data, const xr_vector<CSector*>& portals);
+    void setup(const level_portal_data_t& data, const std::vector<CSector*>& portals);
 
     Poly& getPoly() { return poly; }
     CSector* Back() { return pBack; }
@@ -78,7 +92,7 @@ class CSector : public IRender_Sector
 public:
     struct level_sector_data_t
     {
-        xr_vector<u32> portals_id;
+        std::vector<u32> portals_id;
         u32 root_id;
     };
 
@@ -86,16 +100,16 @@ protected:
     dxRender_Visual* m_root; // whole geometry of that sector
 
 public:
-    xr_vector<CPortal*> m_portals;
-    xr_vector<CFrustum> r_frustums;
-    xr_vector<_scissor> r_scissors;
+    std::vector<CPortal*> m_portals;
+    std::vector<CFrustum> r_frustums;
+    std::vector<_scissor> r_scissors;
     _scissor r_scissor_merged;
     u32 r_marker;
 
 public:
     // Main interface
     dxRender_Visual* root() { return m_root; }
-    void setup(const level_sector_data_t& data, const xr_vector<CPortal*>& portals);
+    void setup(const level_sector_data_t& data, const std::vector<CPortal*>& portals);
 
     CSector() { m_root = nullptr; }
     virtual ~CSector() = default;
@@ -119,8 +133,8 @@ public:
     Fmatrix i_mXFORM; // input:	4x4 xform
     Fmatrix i_mXFORM_01; //
     CSector* i_start; // input:	starting point
-    xr_vector<CSector*> r_sectors; // result
-    xr_vector<std::pair<CPortal*, float>> f_portals; //
+    std::vector<CSector*> r_sectors; // result
+    std::vector<std::pair<CPortal*, float>> f_portals; //
 
 public:
     CPortalTraverser();

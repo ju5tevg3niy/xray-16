@@ -32,8 +32,8 @@ public:
     };
 
 public:
-    typedef xr_vector<CGraphPointInfo> GRAPH_REGISTRY;
-    typedef xr_vector<GameGraph::_GRAPH_ID> TERRAIN_REGISTRY;
+    typedef std::vector<CGraphPointInfo> GRAPH_REGISTRY;
+    typedef std::vector<GameGraph::_GRAPH_ID> TERRAIN_REGISTRY;
 
 protected:
     GRAPH_REGISTRY m_objects;
@@ -41,7 +41,7 @@ protected:
     CALifeLevelRegistry* m_level;
     CSE_ALifeCreatureActor* m_actor;
     float m_process_time;
-    xr_vector<CSE_ALifeDynamicObject*> m_temp;
+    std::vector<CSE_ALifeDynamicObject*> m_temp;
 
 protected:
     void setup_current_level();

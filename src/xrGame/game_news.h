@@ -23,4 +23,4 @@ struct GAME_NEWS_DATA : public ISerializable
     ALife::_TIME_ID receive_time;
 };
 
-using GAME_NEWS_VECTOR = xr_vector<GAME_NEWS_DATA>;
+using GAME_NEWS_VECTOR = std::vector<GAME_NEWS_DATA>;

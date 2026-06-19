@@ -4,7 +4,7 @@
 
 namespace xray::render::RENDER_NAMESPACE
 {
-class ECORE_API _VertexStream
+class _VertexStream
 {
     VertexStreamBuffer pVB;
     u32 mSize{}; // size in bytes
@@ -45,7 +45,7 @@ private:
     }
 };
 
-class ECORE_API _IndexStream
+class _IndexStream
 {
     IndexStreamBuffer pIB;
     u32 mSize{}; // real size (usually mCount, aligned on 512b boundary)

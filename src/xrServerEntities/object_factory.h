@@ -46,7 +46,7 @@ protected:
     };
 
 public:
-    typedef xr_vector<CObjectItemAbstract*> OBJECT_ITEM_STORAGE;
+    typedef std::vector<CObjectItemAbstract*> OBJECT_ITEM_STORAGE;
     typedef OBJECT_ITEM_STORAGE::iterator iterator;
     typedef OBJECT_ITEM_STORAGE::const_iterator const_iterator;
 

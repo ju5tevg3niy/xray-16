@@ -11,7 +11,7 @@ class XRSCRIPTENGINE_API CDbgScriptThreads
 {
 private:
     CScriptEngine* scriptEngine;
-    xr_vector<SScriptThread> m_threads;
+    std::vector<SScriptThread> m_threads;
 
 public:
     CScriptDebugger* m_debugger;

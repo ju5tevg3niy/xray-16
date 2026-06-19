@@ -28,7 +28,7 @@ typedef intrusive_ptr<CSpaceRestrictionBridge, RestrictionSpace::CTimeIntrusiveB
 class CSpaceRestrictionHolder
 {
 public:
-    typedef xr_map<shared_str, CSpaceRestrictionBridge*> RESTRICTIONS;
+    typedef std::map<shared_str, CSpaceRestrictionBridge*> RESTRICTIONS;
 
     static constexpr u32 TIME_TO_REMOVE_GARBAGE = 300000;
 

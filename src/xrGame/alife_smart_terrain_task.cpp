@@ -38,7 +38,7 @@ static const CPatrolPath* TryToNotCrash(const shared_str& patrol_path_name)
         int number = strtol(almostEnd, nullptr, 10);
         if (number == 0 || errno == ERANGE)
             break;
-        xr_string temp(path_name, almostEnd);
+        std::string temp(path_name, almostEnd);
         temp += std::to_string(--number);
 
         patrol_path = const_cast<CPatrolPathStorage&>(ai().patrol_paths()).add_alias_if_exist(temp.c_str(), patrol_path_name);

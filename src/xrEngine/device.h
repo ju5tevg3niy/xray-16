@@ -1,5 +1,8 @@
 #pragma once
 
+#include <list>
+#include <SDL.h>
+
 // Note:
 // ZNear - always 0.0f
 // ZFar  - always 1.0f
@@ -8,7 +11,6 @@
 
 #include "xrCore/FTimer.h"
 #include "Stats.h"
-#include "xrCommon/xr_list.h"
 #include "xrCore/Threading/Event.hpp"
 #include "xrCore/fastdelegate.h"
 #include "xrCore/ModuleLookup.hpp"
@@ -20,8 +22,6 @@
 #include "Render.h"
 
 #include "xrScriptEngine/ScriptExporter.hpp"
-
-#include <SDL.h>
 
 // refs
 class Task;
@@ -98,7 +98,7 @@ public:
     MessageRegistry<pureFrame> seqFrameMT;
     MessageRegistry<pureDeviceReset> seqDeviceReset;
     MessageRegistry<pureUIReset> seqUIReset;
-    xr_vector<fastdelegate::FastDelegate0<>> seqParallel;
+    std::vector<fastdelegate::FastDelegate0<>> seqParallel;
 
 private:
     struct RenderDeviceStatistics
@@ -255,7 +255,7 @@ public:
 
     ICF void remove_from_seq_parallel(const fastdelegate::FastDelegate0<>& delegate)
     {
-        xr_vector<fastdelegate::FastDelegate0<>>::iterator I =
+        std::vector<fastdelegate::FastDelegate0<>>::iterator I =
             std::find(seqParallel.begin(), seqParallel.end(), delegate);
         if (I != seqParallel.end())
             seqParallel.erase(I);
@@ -313,7 +313,7 @@ extern CRenderDevice Device;
 extern bool g_bBenchmark;
 
 typedef fastdelegate::FastDelegate0<bool> LOADING_EVENT;
-extern xr_list<LOADING_EVENT> g_loading_events;
+extern std::list<LOADING_EVENT> g_loading_events;
 
 class CLoadScreenRenderer : public pureFrame, public pureRender
 {

@@ -1,12 +1,13 @@
 #pragma once
 
+#include <vector>
+
 #include "xrCore/Math/obb.hpp"
 #include "xrCore/Math/sphere.hpp"
 #include "xrCore/Math/cylinder.hpp"
 #include "xrCore/Math/flags.hpp"
 #include "xrCore/FixedVector.h"
 #include "xrCore/xrstring.h"
-#include "xrCommon/xr_vector.h"
 
 // refs
 class CBone;
@@ -275,7 +276,7 @@ public:
 
 // refs
 class CBone;
-using BoneVec = xr_vector<CBone*>;
+using BoneVec = std::vector<CBone*>;
 
 class CBone final : public CBoneInstance, public IBoneData
 {
@@ -427,7 +428,7 @@ private:
 //*** Shared Bone Data ****************************************************************************
 class CBoneData;
 // t-defs
-typedef xr_vector<CBoneData*> vecBones;
+typedef std::vector<CBoneData*> vecBones;
 typedef vecBones::iterator vecBonesIt;
 
 class CBoneData final : public IBoneData
@@ -452,8 +453,8 @@ public:
 
     vecBones children; // bones which are slaves to this
 
-    using FacesVec = xr_vector<u16>;
-    using ChildFacesVec = xr_vector<FacesVec>;
+    using FacesVec = std::vector<u16>;
+    using ChildFacesVec = std::vector<FacesVec>;
     ChildFacesVec child_faces; // shared
 
     explicit CBoneData(u16 ID) : SelfID(ID) { VERIFY(SelfID != BI_NONE); }

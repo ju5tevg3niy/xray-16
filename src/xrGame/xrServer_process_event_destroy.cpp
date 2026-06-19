@@ -10,7 +10,7 @@
 #include "xrNetServer/NET_Messages.h"
 #include "xrServerEntities/xrMessages.h"
 
-xr_string xrServer::ent_name_safe(u16 eid)
+std::string xrServer::ent_name_safe(u16 eid)
 {
     string1024 buff;
     CSE_Abstract* e_dest = game->get_entity_from_eid(eid);

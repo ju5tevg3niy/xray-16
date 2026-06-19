@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "FHierrarhyVisual.h"
 #include "xrCore/Animation/Bone.hpp"
 #include "Include/xrRender/Kinematics.h"
@@ -43,7 +45,7 @@ public:
         u16 bone_id[3][4];
         float weight[3][3];
     };
-    using WMFacesVec = xr_vector<WMFace>;
+    using WMFacesVec = std::vector<WMFace>;
     WMFacesVec m_Faces; // 16
 public:
     Fsphere m_Bounds; // 16     world space
@@ -76,7 +78,7 @@ public:
     const Fvector3& ContactPoint() { return m_ContactPoint; }
     ref_shader Shader() { return m_Shader; }
 };
-using SkeletonWMVec = xr_vector<intrusive_ptr<CSkeletonWallmark>>;
+using SkeletonWMVec = std::vector<intrusive_ptr<CSkeletonWallmark>>;
 
 // sanity check
 #ifdef DEBUG
@@ -105,7 +107,8 @@ class CKinematics : public FHierrarhyVisual, public IKinematics
     friend class CSkeletonX;
 
 protected: //--#SM+#--
-    DEFINE_VECTOR(KinematicsABT::additional_bone_transform, BONE_TRANSFORM_VECTOR, BONE_TRANSFORM_VECTOR_IT)
+    using BONE_TRANSFORM_VECTOR = std::vector<KinematicsABT::additional_bone_transform>;
+    using BONE_TRANSFORM_VECTOR_IT = BONE_TRANSFORM_VECTOR::iterator;
     BONE_TRANSFORM_VECTOR m_bones_offsets;
 
 public:
@@ -133,7 +136,7 @@ protected:
     SkeletonWMVec wallmarks;
     u32 wm_frame;
 
-    xr_vector<dxRender_Visual*> children_invisible;
+    std::vector<dxRender_Visual*> children_invisible;
 
     // Globals
     CInifile* pUserData;
@@ -240,8 +243,8 @@ public:
         return (*bones)[bone_id]->obb;
     }
     const Fbox& GetBox() const override { return vis.box; }
-    void LL_GetBindTransform(xr_vector<Fmatrix>& matrices) override;
-    int LL_GetBoneGroups(xr_vector<xr_vector<u16>>& groups) override;
+    void LL_GetBindTransform(std::vector<Fmatrix>& matrices) override;
+    int LL_GetBoneGroups(std::vector<std::vector<u16>>& groups) override;
 
     u16 LL_GetBoneRoot() override { return iRoot; }
     void LL_SetBoneRoot(u16 bone_id) override

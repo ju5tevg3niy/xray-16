@@ -408,7 +408,7 @@ void NET_Packet::r_stringZ(pstr S)
     }
 }
 
-void NET_Packet::r_stringZ(xr_string& dest)
+void NET_Packet::r_stringZ(std::string& dest)
 {
     if (!inistream)
     {

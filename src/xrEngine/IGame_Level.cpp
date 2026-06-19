@@ -94,7 +94,7 @@ bool deserialize_callback(IReader& reader)
     return g_pGameLevel->Load_GameSpecific_CFORM_Deserialize(reader);
 }
 
-void remapping_materials_callback(CDB::TRI* T, u32 Tcnt, xr_map<u16, shared_str>& gameMtls)
+void remapping_materials_callback(CDB::TRI* T, u32 Tcnt, std::map<u16, shared_str>& gameMtls)
 {
     g_pGameLevel->Load_GameSpecific_CFORM_SetMaterials(T, Tcnt, gameMtls);
 }

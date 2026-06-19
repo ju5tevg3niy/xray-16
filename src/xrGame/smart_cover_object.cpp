@@ -99,7 +99,7 @@ void object::OnRender()
     Fmatrix l_ball, l_box;
     u32 Color = color_xrgb(0, 255, 0);
 
-    typedef xr_vector<CCF_Shape::shape_def> Shapes;
+    typedef std::vector<CCF_Shape::shape_def> Shapes;
     Shapes& l_shapes = ((CCF_Shape*)GetCForm())->Shapes();
     Shapes::iterator l_pShape;
     CDebugRenderer& renderer = Level().debug_renderer();
@@ -148,7 +148,7 @@ bool object::inside(Fvector const& position) const
     CCF_Shape* shape = static_cast<CCF_Shape*>(GetCForm());
     VERIFY(shape);
 
-    typedef xr_vector<CCF_Shape::shape_def> Shapes;
+    typedef std::vector<CCF_Shape::shape_def> Shapes;
     Shapes::const_iterator i = shape->shapes.begin();
     Shapes::const_iterator e = shape->shapes.end();
     for (; i != e; ++i)

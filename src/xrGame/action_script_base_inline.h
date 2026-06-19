@@ -14,8 +14,8 @@
 #define CScriptBaseAction CActionScriptBase<_object_type>
 
 TEMPLATE_SPECIALIZATION
-IC CScriptBaseAction::CActionScriptBase(const xr_vector<COperatorCondition>& conditions,
-    const xr_vector<COperatorCondition>& effects, _object_type* object, LPCSTR action_name)
+IC CScriptBaseAction::CActionScriptBase(const std::vector<COperatorCondition>& conditions,
+    const std::vector<COperatorCondition>& effects, _object_type* object, LPCSTR action_name)
     : inherited(conditions, effects, object ? object->lua_game_object() : 0, action_name)
 {
     m_object = object;

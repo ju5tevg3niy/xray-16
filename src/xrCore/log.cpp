@@ -14,7 +14,7 @@ Lock logCS(MUTEX_PROFILE_ID(log));
 #else // CONFIG_PROFILE_LOCKS
 Lock logCS;
 #endif // CONFIG_PROFILE_LOCKS
-xr_vector<xr_string> LogFile;
+std::vector<std::string> LogFile;
 LogCallback LogCB = nullptr;
 
 bool ForceFlushLog = false;
@@ -234,7 +234,7 @@ void CreateLog(bool nl)
     if (!unique_logs)
     {
         // Alun: Backup existing log
-        const xr_string backup_logFName = EFS.ChangeFileExt(log_file_name, ".bkp");
+        const std::string backup_logFName = EFS.ChangeFileExt(log_file_name, ".bkp");
         FS.file_rename(log_file_name, backup_logFName.c_str(), true);
         //-Alun
     }

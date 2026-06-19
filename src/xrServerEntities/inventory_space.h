@@ -1,5 +1,7 @@
 #pragma once
-#include "xrCommon/xr_vector.h"
+
+#include <vector>
+
 #include "xrCore/xrstring.h"
 
 #define CMD_START (1 << 0)
@@ -31,7 +33,7 @@ class CInventoryItem;
 class CInventory;
 
 typedef CInventoryItem* PIItem;
-typedef xr_vector<PIItem> TIItemContainer;
+typedef std::vector<PIItem> TIItemContainer;
 
 enum eItemPlace
 {

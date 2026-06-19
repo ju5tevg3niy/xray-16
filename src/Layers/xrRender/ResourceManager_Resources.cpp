@@ -195,7 +195,7 @@ SGeometry* CResourceManager::CreateGeom(const VertexElement* decl, VertexBufferH
 
 SGeometry* CResourceManager::CreateGeom(u32 FVF, VertexBufferHandle vb, IndexBufferHandle ib)
 {
-    thread_local xr_vector<VertexElement> decl;
+    thread_local std::vector<VertexElement> decl;
     [[maybe_unused]] const bool result = ::FVF::CreateDeclFromFVF(FVF, decl);
     VERIFY(result);
     SGeometry* g = CreateGeom(decl.data(), vb, ib);

@@ -1,13 +1,13 @@
 // Level_Bullet_Manager.h:  для обеспечения полета пули по траектории
 //							все пули и осколки передаются сюда
 //////////////////////////////////////////////////////////////////////
-
 #pragma once
+
+#include <vector>
 
 #include "WeaponAmmo.h"
 #include "Tracer.h"
 #include "xrCDB/xr_collide_defs.h"
-#include "xrCommon/xr_vector.h"
 #include "xrSound/Sound.h"
 
 //коэфициенты и параметры патрона
@@ -129,20 +129,20 @@ class CBulletManager
     static void CalculateNewVelocity(Fvector& dest_new_vel, Fvector const& old_velocity, float ar, float life_time);
 
 protected:
-    xr_vector<ref_sound> m_WhineSounds;
-    xr_vector<shared_str> m_ExplodeParticles;
+    std::vector<ref_sound> m_WhineSounds;
+    std::vector<shared_str> m_ExplodeParticles;
 
     //список пуль находящихся в данный момент на уровне
     //.	Lock		m_Lock				;
 
-    xr_vector<SBullet> m_Bullets; // working set, locked
-    xr_vector<SBullet> m_BulletsRendered; // copy for rendering
-    xr_vector<_event> m_Events;
+    std::vector<SBullet> m_Bullets; // working set, locked
+    std::vector<SBullet> m_BulletsRendered; // copy for rendering
+    std::vector<_event> m_Events;
 
 #ifdef DEBUG
     std::thread::id m_thread_id;
 
-    typedef xr_vector<Fvector> BulletPoints;
+    typedef std::vector<Fvector> BulletPoints;
     BulletPoints m_bullet_points;
 #endif // #ifdef DEBUG
 

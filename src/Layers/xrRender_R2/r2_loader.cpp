@@ -206,8 +206,8 @@ void CRender::LoadBuffers(CStreamReader* base_fs, bool alternative)
     // Vertex buffers
     {
         ZoneScopedN("Load VBs");
-        xr_vector<VertexDeclarator>& decls = alternative ? xDC : nDC;
-        xr_vector<VertexStagingBuffer>& vbuffers = alternative ? xVB : nVB;
+        std::vector<VertexDeclarator>& decls = alternative ? xDC : nDC;
+        std::vector<VertexStagingBuffer>& vbuffers = alternative ? xVB : nVB;
 
         // Use DX9-style declarators
         CStreamReader* fs = base_fs->open_chunk(fsL_VB);
@@ -252,7 +252,7 @@ void CRender::LoadBuffers(CStreamReader* base_fs, bool alternative)
     // Index buffers
     {
         ZoneScopedN("Load IBs");
-        xr_vector<IndexStagingBuffer>& ibuffers = alternative ? xIB : nIB;
+        std::vector<IndexStagingBuffer>& ibuffers = alternative ? xIB : nIB;
 
         CStreamReader* fs = base_fs->open_chunk(fsL_IB);
         const u32 count = fs->r_u32();
@@ -316,10 +316,10 @@ void CRender::LoadSectors(IReader* fs)
     R_ASSERT(0 == size % sizeof(CPortal::level_portal_data_t));
 
     const u32 portals_count = size / sizeof(CPortal::level_portal_data_t);
-    xr_vector<CPortal::level_portal_data_t> portals_data{portals_count};
+    std::vector<CPortal::level_portal_data_t> portals_data{portals_count};
 
     // load sectors
-    xr_vector<CSector::level_sector_data_t> sectors_data;
+    std::vector<CSector::level_sector_data_t> sectors_data;
 
     float largest_sector_vol = 0.0f;
     IReader* S = fs->open_chunk(fsL_SECTORS);

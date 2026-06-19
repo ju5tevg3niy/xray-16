@@ -189,7 +189,7 @@ BOOL COMotion::NormalizeKeys(float from_time, float to_time, float speed)
     CEnvelope* E = Envelope(ctPositionX);
     float new_tm = 0;
     float t0 = E->keys.front()->time;
-    xr_vector<float> tms;
+    std::vector<float> tms;
     tms.push_back(t0);
     for (KeyIt it = E->keys.begin() + 1; it != E->keys.end(); ++it)
     {

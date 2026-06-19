@@ -24,7 +24,7 @@ struct CGameClMpScriptWrapperBase : public T, public luabind::wrap_base
     DEFINE_LUA_WRAPPER_METHOD_R2P1_V1(net_import_state, NET_Packet)
     DEFINE_LUA_WRAPPER_METHOD_0(createGameUI, CUIGameCustom*)
     DEFINE_LUA_WRAPPER_METHOD_V1(shedule_Update, u32)
-    DEFINE_LUA_WRAPPER_METHOD_R2P1_V1(GetMapEntities, xr_vector<SZoneMapEntityData>)
+    DEFINE_LUA_WRAPPER_METHOD_R2P1_V1(GetMapEntities, std::vector<SZoneMapEntityData>)
 
     game_PlayerState* createPlayerState() override
     {

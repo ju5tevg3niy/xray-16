@@ -1,11 +1,10 @@
 #pragma once
-#ifndef UIGAMECTA
-#define UIGAMECTA
+
+#include <vector>
 
 #include "UIGameMP.h"
 #include "game_base.h"
 #include "Inventory.h"
-#include "xrCommon/xr_vector.h"
 #include "xrCore/buffer_vector.h"
 
 class UITeamPanels;
@@ -82,7 +81,7 @@ class CUIGameCTA : public UIGameMP
         };
     };
 
-    using PRESET_ITEMS = xr_vector<PresetItem>;
+    using PRESET_ITEMS = std::vector<PresetItem>;
 
     PRESET_ITEMS PlayerDefItems;
 
@@ -103,7 +102,7 @@ class CUIGameCTA : public UIGameMP
 
 public:
     typedef std::pair<u8, u8> BuyMenuItemPair;
-    typedef xr_vector<BuyMenuItemPair> BuyMenuItemsCollection;
+    typedef std::vector<BuyMenuItemPair> BuyMenuItemsCollection;
 
     CUIGameCTA();
     virtual ~CUIGameCTA();
@@ -167,5 +166,3 @@ public:
     void SetVoteMessage(LPCSTR str);
     void SetVoteTimeResultMsg(LPCSTR str);
 };
-
-#endif

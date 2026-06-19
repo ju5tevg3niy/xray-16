@@ -1,7 +1,7 @@
 #ifndef TOOLS_HPP
 #define TOOLS_HPP
 
-inline u32 get_string_collection(shared_str const& src, xr_vector<shared_str>& dest_collection)
+inline u32 get_string_collection(shared_str const& src, std::vector<shared_str>& dest_collection)
 {
     u32 cnt = _GetItemCount(src.c_str());
     string1024 _one;
@@ -14,10 +14,10 @@ inline u32 get_string_collection(shared_str const& src, xr_vector<shared_str>& d
     return cnt;
 }
 
-inline void get_string_from_collection(xr_vector<shared_str> const& src_collection, xr_string& dest_string)
+inline void get_string_from_collection(std::vector<shared_str> const& src_collection, std::string& dest_string)
 {
-    xr_vector<shared_str>::const_iterator ie = src_collection.end();
-    for (xr_vector<shared_str>::const_iterator i = src_collection.begin(); i != ie; ++i)
+    std::vector<shared_str>::const_iterator ie = src_collection.end();
+    for (std::vector<shared_str>::const_iterator i = src_collection.begin(); i != ie; ++i)
     {
         dest_string.append(i->c_str());
         if ((i + 1) != ie)

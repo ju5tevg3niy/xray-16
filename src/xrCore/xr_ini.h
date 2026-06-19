@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "Common/types.hpp"
 #include "fastdelegate.h"
 #include "xrCore/xrstring.h"
@@ -9,7 +11,6 @@
 #include "xrCore/Math/vector3.hpp"
 #include "xrCore/Math/vector4.hpp"
 #include "xrCore/clsid.hpp"
-#include "xrCommon/xr_vector.h"
 
 constexpr pcstr OPENXRAY_INI_SECTION = "openxray";
 
@@ -36,7 +37,7 @@ public:
               {};
     };
 
-    using Items = xr_vector<Item>;
+    using Items = std::vector<Item>;
 
     struct Sect
     {
@@ -46,7 +47,7 @@ public:
         bool line_exist(pcstr line, pcstr* value = nullptr);
     };
 
-    using Root = xr_vector<Sect*>;
+    using Root = std::vector<Sect*>;
 
     using allow_include_func_t = fastdelegate::FastDelegate1<pcstr, bool>;
 
@@ -67,7 +68,7 @@ private:
     Flags8 m_flags;
     string_path m_file_name;
     Root DATA;
-    xr_vector<xr_string> m_includes;
+    std::vector<std::string> m_includes;
 
     void Load(IReader* F, pcstr path, allow_include_func_t allow_include_func = nullptr);
 

@@ -22,7 +22,7 @@ protected:
     CUI3tButton* CancelButton;
 
 private:
-    xr_vector<NamedButton> buttons;
+    std::vector<NamedButton> buttons;
 
 protected:
     ButtonListDialog(pcstr window_name);
@@ -49,7 +49,7 @@ private:
         shared_str Time;
     };
 
-    xr_vector<WeatherDesc> weathers;
+    std::vector<WeatherDesc> weathers;
 
 public:
     ChangeWeatherDialog() : ButtonListDialog(ChangeWeatherDialog::GetDebugType()) {}
@@ -68,7 +68,7 @@ private:
 class ChangeGameTypeDialog final : public ButtonListDialog
 {
 private:
-    xr_vector<shared_str> gameTypes;
+    std::vector<shared_str> gameTypes;
 
 public:
     ChangeGameTypeDialog() : ButtonListDialog(ChangeGameTypeDialog::GetDebugType()) {}

@@ -16,7 +16,7 @@ public:
         char* Param;
     };
     char* Name;
-    xr_vector<MenuItem> Items;
+    std::vector<MenuItem> Items;
 
 public:
     ~CContextMenu();

@@ -1,13 +1,22 @@
 #pragma once
 
+#include <imgui.h>
+
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/fastdelegate.h"
 #include "xrCore/xr_resource.h"
+#include "xrCore/xrstring.h"
+#include "glad/gl.h"
+
+#include "r_constants.h"
 
 class CAviPlayerCustom;
 class CTheoraSurface;
 
 namespace xray::render::RENDER_NAMESPACE
 {
-class ECORE_API CTexture : public xr_resource_named
+class CTexture : public xr_resource_named
 {
 public:
     enum	MaxTextures
@@ -181,7 +190,7 @@ private:
     ID3DBaseTexture* pSurface{};
     ID3DBaseTexture* pTempSurface{};
     // Sequence data
-    xr_vector<ID3DBaseTexture*> seqDATA;
+    std::vector<ID3DBaseTexture*> seqDATA;
 
     // Description
     u32 m_width;
@@ -192,7 +201,7 @@ private:
     GLuint pSurface;
     GLuint pBuffer;
     // Sequence data
-    xr_vector<GLuint> seqDATA;
+    std::vector<GLuint> seqDATA;
     // Description
     GLint m_width;
     GLint m_height;
@@ -205,9 +214,9 @@ private:
 #if defined(USE_DX11)
     ID3DShaderResourceView* m_pSRView{ nullptr };
     ID3DShaderResourceView* srv_all{ nullptr };
-    xr_vector<ID3DShaderResourceView*> srv_per_slice;
+    std::vector<ID3DShaderResourceView*> srv_per_slice;
     // Sequence view data
-    xr_vector<ID3DShaderResourceView*> m_seqSRView;
+    std::vector<ID3DShaderResourceView*> m_seqSRView;
 #endif
 };
 

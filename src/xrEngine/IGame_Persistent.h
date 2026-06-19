@@ -1,9 +1,9 @@
 #pragma once
 
-#include "xrServerEntities/gametype_chooser.h"
+#include <set>
+#include <vector>
 
-#include "xrCommon/xr_set.h"
-#include "xrCommon/xr_vector.h"
+#include "xrServerEntities/gametype_chooser.h"
 
 #include "xrCore/xr_trims.h"
 
@@ -77,9 +77,9 @@ public:
     params m_game_params;
 
 public:
-    xr_set<CPS_Instance*> ps_active;
-    xr_vector<CPS_Instance*> ps_destroy;
-    xr_vector<CPS_Instance*> ps_needtoplay;
+    std::set<CPS_Instance*> ps_active;
+    std::vector<CPS_Instance*> ps_destroy;
+    std::vector<CPS_Instance*> ps_needtoplay;
 
 public:
     void destroy_particles(const bool& all_particles);
@@ -104,7 +104,7 @@ private:
         char* name;
     };
 
-    xr_vector<sLevelInfo> Levels;
+    std::vector<sLevelInfo> Levels;
     u32 Level_Current{ u32(-1) };
 
     void Level_Append(pcstr lname);

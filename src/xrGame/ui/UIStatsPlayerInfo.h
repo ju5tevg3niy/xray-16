@@ -14,7 +14,7 @@ typedef struct
 class CUIStatsPlayerInfo final : public CUIWindow
 {
 public:
-    CUIStatsPlayerInfo(xr_vector<PI_FIELD_INFO>* info, CGameFont* pF, u32 text_col);
+    CUIStatsPlayerInfo(std::vector<PI_FIELD_INFO>* info, CGameFont* pF, u32 text_col);
     ~CUIStatsPlayerInfo() override;
 
     pcstr GetDebugType() override { return "CUIStatsPlayerInfo"; }
@@ -28,8 +28,8 @@ protected:
     const char* GetInfoByID(const char* id);
     game_PlayerState* m_pPlayerInfo;
 
-    xr_vector<CUIStatic*> m_fields;
-    xr_vector<PI_FIELD_INFO>* m_field_info;
+    std::vector<CUIStatic*> m_fields;
+    std::vector<PI_FIELD_INFO>* m_field_info;
     CGameFont* m_pF;
     u32 m_text_col;
     CUIStatic* m_pBackground;

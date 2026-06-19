@@ -46,7 +46,7 @@ void dx113DFluidEmitters::DestroyShaders()
 
 void dx113DFluidEmitters::RenderDensity(const dx113DFluidData& FluidData)
 {
-    const xr_vector<CEmitter>& Emitters = FluidData.GetEmittersList();
+    const std::vector<CEmitter>& Emitters = FluidData.GetEmittersList();
     u32 iNumEmitters = Emitters.size();
 
     for (u32 i = 0; i < iNumEmitters; ++i)
@@ -59,7 +59,7 @@ void dx113DFluidEmitters::RenderDensity(const dx113DFluidData& FluidData)
 
 void dx113DFluidEmitters::RenderVelocity(const dx113DFluidData& FluidData)
 {
-    const xr_vector<CEmitter>& Emitters = FluidData.GetEmittersList();
+    const std::vector<CEmitter>& Emitters = FluidData.GetEmittersList();
     u32 iNumEmitters = Emitters.size();
 
     for (u32 i = 0; i < iNumEmitters; ++i)

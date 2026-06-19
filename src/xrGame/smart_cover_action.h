@@ -26,7 +26,7 @@ private:
     };
 
 public:
-    typedef xr_vector<shared_str> Animations;
+    typedef std::vector<shared_str> Animations;
     typedef AssociativeVector<shared_str, Animations*, animation_predicate> AnimationList;
 
 private:

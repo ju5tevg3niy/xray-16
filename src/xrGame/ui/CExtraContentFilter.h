@@ -6,10 +6,10 @@ class CExtraContentFilter
     {
         shared_str sPackName;
         bool bEnabled;
-        xr_vector<shared_str> aContent;
+        std::vector<shared_str> aContent;
     };
 
-    xr_vector<PackData*> aDataPacks;
+    std::vector<PackData*> aDataPacks;
 
     bool CheckPackKey(LPCSTR KeyName);
 

@@ -16,7 +16,7 @@
 #ifdef FS_DEBUG
 u32 g_file_mapped_memory = 0;
 u32 g_file_mapped_count = 0;
-typedef xr_map<u32, std::pair<u32, shared_str>> FILE_MAPPINGS;
+typedef std::map<u32, std::pair<u32, shared_str>> FILE_MAPPINGS;
 FILE_MAPPINGS g_file_mappings;
 
 void register_file_mapping(void* address, const u32& size, pcstr file_name)
@@ -410,7 +410,7 @@ void IReader::r_string(char* dest, size_t tgt_sz)
     strncpy_s(dest, tgt_sz, src, sz);
     dest[sz] = 0;
 }
-void IReader::r_string(xr_string& dest)
+void IReader::r_string(std::string& dest)
 {
     char* src = (char*)data + Pos;
     size_t sz = advance_term_string();
@@ -431,7 +431,7 @@ void IReader::r_stringZ(shared_str& dest)
     dest = (char*)(data + Pos);
     Pos += (dest.size() + 1);
 }
-void IReader::r_stringZ(xr_string& dest)
+void IReader::r_stringZ(std::string& dest)
 {
     dest = (char*)(data + Pos);
     Pos += dest.size() + 1;

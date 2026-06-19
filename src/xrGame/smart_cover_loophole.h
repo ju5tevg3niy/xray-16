@@ -31,7 +31,7 @@ private:
 
 public:
     typedef AssociativeVector<shared_str, action*, action_predicate> ActionList;
-    typedef xr_vector<shared_str> TransitionData;
+    typedef std::vector<shared_str> TransitionData;
     typedef smart_cover::action::Animations Animations;
     typedef CGraphAbstract<Loki::EmptyType, float, shared_str, TransitionData> TransitionGraph;
 

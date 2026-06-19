@@ -5,16 +5,17 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Script token list class
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
-#include "xrCommon/xr_vector.h"
+
+#include <vector>
+
 #include "xrCore/xr_token.h"
 
 class CScriptTokenList
 {
 protected:
     // XXX: tamlin: See if it's possible to place the vector in an impl.
-    using TOKEN_LIST = xr_vector<xr_token>;
+    using TOKEN_LIST = std::vector<xr_token>;
     using iterator = TOKEN_LIST::iterator;
     using const_iterator = TOKEN_LIST::const_iterator;
 

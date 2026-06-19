@@ -28,8 +28,8 @@ class CSoundMemoryManager
 {
 public:
     typedef MemorySpace::CSoundObject CSoundObject;
-    typedef xr_vector<CSoundObject> SOUNDS;
-    typedef xr_unordered_map<ESoundTypes, u32> PRIORITIES;
+    typedef std::vector<CSoundObject> SOUNDS;
+    typedef std::unordered_map<ESoundTypes, u32> PRIORITIES;
 
 private:
     struct CDelayedSoundObject
@@ -39,7 +39,7 @@ private:
     };
 
 private:
-    typedef xr_vector<CDelayedSoundObject> DELAYED_SOUND_OBJECTS;
+    typedef std::vector<CDelayedSoundObject> DELAYED_SOUND_OBJECTS;
 
 private:
     CCustomMonster* m_object;

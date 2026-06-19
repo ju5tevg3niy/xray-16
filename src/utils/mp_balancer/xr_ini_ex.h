@@ -22,7 +22,7 @@ public:
 #endif
                   {};
     };
-    typedef xr_vector<Item> Items;
+    typedef std::vector<Item> Items;
     typedef Items::const_iterator SectCIt;
     typedef Items::iterator SectIt_;
     struct Sect
@@ -30,11 +30,11 @@ public:
         shared_str Name;
         Items Data;
 #ifdef DEBUG
-        xr_vector<shared_str> base_sections;
+        std::vector<shared_str> base_sections;
 #endif
         BOOL line_exist(LPCSTR L, LPCSTR* val = 0);
     };
-    typedef xr_vector<Sect*> Root;
+    typedef std::vector<Sect*> Root;
     typedef Root::iterator RootIt;
 
     static CInifileEx* Create(LPCSTR szFileName, BOOL ReadOnly = TRUE);

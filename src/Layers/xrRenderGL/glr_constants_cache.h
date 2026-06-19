@@ -2,7 +2,7 @@
 
 namespace xray::render::RENDER_NAMESPACE
 {
-class ECORE_API R_constants
+class R_constants
 {
 private:
     // fp, non-array versions

@@ -12,9 +12,9 @@ void SZoneMapEntityData::script_register(lua_State* luaState)
             .def_readwrite("pos", &SZoneMapEntityData::pos)
             .def_readwrite("color", &SZoneMapEntityData::color),
 
-        class_<xr_vector<SZoneMapEntityData>>("ZoneMapEntities")
-            .def("push_back", (void (xr_vector<SZoneMapEntityData>::*)(const SZoneMapEntityData&))
-                (&xr_vector<SZoneMapEntityData>::push_back))
+        class_<std::vector<SZoneMapEntityData>>("ZoneMapEntities")
+            .def("push_back", (void (std::vector<SZoneMapEntityData>::*)(const SZoneMapEntityData&))
+                (&std::vector<SZoneMapEntityData>::push_back))
     ];
 }
 

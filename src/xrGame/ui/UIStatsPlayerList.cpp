@@ -204,7 +204,7 @@ void CUIStatsPlayerList::Update()
     if (m_prev_upd_time > Device.dwTimeContinual - 100)
         return;
 
-    using ItemVec = xr_vector<game_PlayerState*>;
+    using ItemVec = std::vector<game_PlayerState*>;
     ItemVec items;
 
     m_prev_upd_time = Device.dwTimeContinual;

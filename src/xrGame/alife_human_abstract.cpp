@@ -61,7 +61,7 @@ void CSE_ALifeHumanAbstract::add_online(const bool& update_registries)
 }
 
 void CSE_ALifeHumanAbstract::add_offline(
-    const xr_vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries)
+    const std::vector<ALife::_OBJECT_ID>& saved_children, const bool& update_registries)
 {
     CSE_ALifeTraderAbstract::add_offline(saved_children, update_registries);
     brain().on_switch_offline();

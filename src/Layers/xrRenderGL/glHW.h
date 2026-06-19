@@ -63,5 +63,5 @@ public:
     bool ComputeShadersSupported;
 };
 
-extern ECORE_API CHW HW;
+extern CHW HW;
 } // namespace xray::render::RENDER_NAMESPACE

@@ -68,7 +68,7 @@ void CScriptZone::net_Relcase(IGameObject* O)
     if (!l_tpGameObject)
         return;
 
-    xr_vector<IGameObject*>::iterator I = std::find(feel_touch.begin(), feel_touch.end(), O);
+    std::vector<IGameObject*>::iterator I = std::find(feel_touch.begin(), feel_touch.end(), O);
     if (I != feel_touch.end())
     {
         callback(GameObject::eZoneExit)(lua_game_object(), l_tpGameObject->lua_game_object());
@@ -86,8 +86,8 @@ void CScriptZone::OnRender()
     Fvector l_half;
     l_half.set(.5f, .5f, .5f);
     Fmatrix l_ball, l_box;
-    xr_vector<CCF_Shape::shape_def>& l_shapes = ((CCF_Shape*)GetCForm())->Shapes();
-    xr_vector<CCF_Shape::shape_def>::iterator l_pShape;
+    std::vector<CCF_Shape::shape_def>& l_shapes = ((CCF_Shape*)GetCForm())->Shapes();
+    std::vector<CCF_Shape::shape_def>::iterator l_pShape;
 
     for (l_pShape = l_shapes.begin(); l_shapes.end() != l_pShape; ++l_pShape)
     {
@@ -116,8 +116,8 @@ void CScriptZone::OnRender()
 
 bool CScriptZone::active_contact(u16 id) const
 {
-    xr_vector<IGameObject*>::const_iterator I = feel_touch.begin();
-    xr_vector<IGameObject*>::const_iterator E = feel_touch.end();
+    std::vector<IGameObject*>::const_iterator I = feel_touch.begin();
+    std::vector<IGameObject*>::const_iterator E = feel_touch.end();
     for (; I != E; ++I)
         if ((*I)->ID() == id)
             return (true);

@@ -38,13 +38,13 @@ public:
         Fvector P0, P1;
         u32 color;
     };
-    xr_vector<std::pair<Fsphere, Fcolor>> dbg_spheres;
-    xr_vector<dbg_line_t> dbg_lines;
-    xr_vector<Fplane> dbg_planes;
+    std::vector<std::pair<Fsphere, Fcolor>> dbg_spheres;
+    std::vector<dbg_line_t> dbg_lines;
+    std::vector<Fplane> dbg_planes;
 #endif
 
     // Base targets
-    xr_vector<ref_rt> rt_Base;
+    std::vector<ref_rt> rt_Base;
     ref_rt rt_Base_Depth;
 
     // MRT-path

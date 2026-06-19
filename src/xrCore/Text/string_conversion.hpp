@@ -1,10 +1,10 @@
 #pragma once
 
 #include <locale>
+#include <string>
 
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCommon/xr_string.h"
 
 typedef u16 xr_wide_char;  // Don't replace it with wchar_t, it won't work
                            // correctly, I don't know why.
@@ -44,6 +44,6 @@ IC bool IsAlphaCharacter(xr_wide_char wc) {
           ((wc >= 0xFF41) && (wc <= 0xFF5A)));
 }
 
-xr_string StringFromUTF8(const char* string, const std::locale& locale);
+std::string StringFromUTF8(const char* string, const std::locale& locale);
 
-xr_string StringToUTF8(const char* string, const std::locale& locale);
+std::string StringToUTF8(const char* string, const std::locale& locale);

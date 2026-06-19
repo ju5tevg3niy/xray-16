@@ -184,9 +184,9 @@ private:
     int mouseAxisState[COUNT_MOUSE_AXIS];
     ControllerState controllerState;
 
-    xr_vector<IInputReceiver*> cbStack;
+    std::vector<IInputReceiver*> cbStack;
 
-    xr_vector<SDL_GameController*> controllers;
+    std::vector<SDL_GameController*> controllers;
 
     void SetCurrentInputType(InputType type);
 

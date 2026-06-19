@@ -137,7 +137,7 @@ HUD_SOUND_COLLECTION::~HUD_SOUND_COLLECTION()
 
 HUD_SOUND_ITEM* HUD_SOUND_COLLECTION::FindSoundItem(LPCSTR alias, bool b_assert)
 {
-    xr_vector<HUD_SOUND_ITEM>::iterator it = std::find(m_sound_items.begin(), m_sound_items.end(), alias);
+    std::vector<HUD_SOUND_ITEM>::iterator it = std::find(m_sound_items.begin(), m_sound_items.end(), alias);
 
     if (it != m_sound_items.end())
         return &*it;

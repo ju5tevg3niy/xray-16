@@ -110,8 +110,8 @@ void CStoreHierarchy::InitItemsInGroup(const shared_str& sect, item* _itm)
 
 bool CStoreHierarchy::item::HasItem(const shared_str& name_sect) const
 {
-    xr_vector<shared_str>::const_iterator it = m_items_in_group.begin();
-    xr_vector<shared_str>::const_iterator it_e = m_items_in_group.end();
+    std::vector<shared_str>::const_iterator it = m_items_in_group.begin();
+    std::vector<shared_str>::const_iterator it_e = m_items_in_group.end();
     for (; it != it_e; ++it)
     {
         if (*it == name_sect)
@@ -122,8 +122,8 @@ bool CStoreHierarchy::item::HasItem(const shared_str& name_sect) const
 
 const CStoreHierarchy::item& CStoreHierarchy::item::Child(const shared_str& name) const
 {
-    xr_vector<CStoreHierarchy::item*>::const_iterator it = m_childs.begin();
-    xr_vector<CStoreHierarchy::item*>::const_iterator it_e = m_childs.end();
+    std::vector<CStoreHierarchy::item*>::const_iterator it = m_childs.begin();
+    std::vector<CStoreHierarchy::item*>::const_iterator it_e = m_childs.end();
     for (; it != it_e; ++it)
     {
         if ((*it)->m_name == name)
@@ -135,8 +135,8 @@ const CStoreHierarchy::item& CStoreHierarchy::item::Child(const shared_str& name
 
 int CStoreHierarchy::item::GetItemIdx(const shared_str& name_sect) const
 {
-    xr_vector<shared_str>::const_iterator it = m_items_in_group.begin();
-    xr_vector<shared_str>::const_iterator it_e = m_items_in_group.end();
+    std::vector<shared_str>::const_iterator it = m_items_in_group.begin();
+    std::vector<shared_str>::const_iterator it_e = m_items_in_group.end();
 
     for (int idx = 0; it != it_e; ++it, ++idx)
     {
@@ -154,8 +154,8 @@ CStoreHierarchy::item* CStoreHierarchy::FindItem(const shared_str& name_sect, CS
     if (recurse_from->HasSubLevels())
     { // recurse
         VERIFY(recurse_from->m_items_in_group.size() == 0);
-        xr_vector<CStoreHierarchy::item*>::const_iterator it = recurse_from->m_childs.begin();
-        xr_vector<CStoreHierarchy::item*>::const_iterator it_e = recurse_from->m_childs.end();
+        std::vector<CStoreHierarchy::item*>::const_iterator it = recurse_from->m_childs.begin();
+        std::vector<CStoreHierarchy::item*>::const_iterator it_e = recurse_from->m_childs.end();
 
         for (; it != it_e; ++it)
             if (FindItem(name_sect, *it))
@@ -163,8 +163,8 @@ CStoreHierarchy::item* CStoreHierarchy::FindItem(const shared_str& name_sect, CS
     }
     else
     {
-        xr_vector<shared_str>::const_iterator it = recurse_from->m_items_in_group.begin();
-        xr_vector<shared_str>::const_iterator it_e = recurse_from->m_items_in_group.end();
+        std::vector<shared_str>::const_iterator it = recurse_from->m_items_in_group.begin();
+        std::vector<shared_str>::const_iterator it_e = recurse_from->m_items_in_group.end();
 
         for (; it != it_e; ++it)
             if (*it == name_sect)

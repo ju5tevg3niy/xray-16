@@ -14,7 +14,7 @@ extern char const* active_params_section;
 class mp_config_sections
 {
 public:
-    typedef xr_vector<shared_str> mp_sections_t;
+    typedef std::vector<shared_str> mp_sections_t;
 
     mp_config_sections();
     ~mp_config_sections();

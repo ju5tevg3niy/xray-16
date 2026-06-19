@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "xrCommon/xr_unordered_map.h"
+#include <unordered_map>
 
 #include "xrCore/Containers/AssociativeVector.hpp"
 #include "xrCore/Threading/Lock.hpp"
@@ -65,7 +65,7 @@ public:
 
 private:
     static Lock stateMapLock;
-    static xr_unordered_map<lua_State*, CScriptEngine*> stateMap;
+    static std::unordered_map<lua_State*, CScriptEngine*> stateMap;
     lua_State* m_virtual_machine;
     CScriptThread* m_current_thread;
     bool m_reload_modules;

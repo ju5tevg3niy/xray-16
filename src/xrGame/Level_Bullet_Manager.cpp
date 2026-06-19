@@ -134,7 +134,7 @@ void CBulletManager::Load()
     LPCSTR whine_sounds = pSettings->r_string(bullet_manager_sect, "whine_sounds");
     int cnt = _GetItemCount(whine_sounds);
     m_WhineSounds.reserve(cnt);
-    xr_string tmp;
+    std::string tmp;
     for (int k = 0; k < cnt; ++k)
     {
         m_WhineSounds.push_back(ref_sound());
@@ -830,7 +830,7 @@ void CBulletManager::Render()
     // 2-пробивание материала
     if (g_bDrawBulletHit)
     {
-        extern xr_vector<Fvector> g_hit[];
+        extern std::vector<Fvector> g_hit[];
         u32 C[3] = {0xffff0000, 0xff00ff00, 0xff0000ff};
         // RCache.set_xform_world(Fidentity);
         GEnv.DRender->CacheSetXformWorld(Fidentity);

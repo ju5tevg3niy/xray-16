@@ -839,7 +839,7 @@ void CEnvironment::load_weathers()
     FS.file_list(weathers, "$game_weathers$", FS_ListFiles, "*.ltx");
 
     // CoP style weather config
-    xr_string id;
+    std::string id;
     for (const auto& file : weathers)
     {
         pcstr fileName = file.name.c_str();
@@ -912,7 +912,7 @@ void CEnvironment::load_weather_effects()
     FS_FileSet weathersEffects;
     FS.file_list(weathersEffects, "$game_weather_effects$", FS_ListFiles, "*.ltx");
 
-    xr_string id;
+    std::string id;
     for (const auto& file : weathersEffects)
     {
         pcstr fileName = file.name.c_str();

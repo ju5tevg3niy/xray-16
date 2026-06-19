@@ -1,5 +1,6 @@
 #pragma once
-#include "xrCommon/xr_vector.h"
+
+#include <vector>
 
 // messages
 constexpr int REG_PRIORITY_LOW = 0x11111111;
@@ -34,7 +35,7 @@ class MessageRegistry
         int Prio;
     };
 
-    xr_vector<MessageObject> messages;
+    std::vector<MessageObject> messages;
     bool changed, inProcess;
 
 public:

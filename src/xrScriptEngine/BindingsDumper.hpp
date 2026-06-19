@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stack>
+
 #include "xrScriptEngine.hpp"
 
 class BindingsDumper
@@ -17,10 +19,10 @@ private:
     lua_State* ls;
     Options options;
     int shiftLevel;
-    xr_stack<luabind::iterator> functions;
-    xr_stack<luabind::iterator> classes;
-    xr_stack<luabind::iterator> namespaces;
-    xr_map<luabind::string, const char*> operatorSubst;
+    std::stack<luabind::iterator> functions;
+    std::stack<luabind::iterator> classes;
+    std::stack<luabind::iterator> namespaces;
+    std::map<luabind::string, const char*> operatorSubst;
 
 private:
     struct SignatureFormatterParams

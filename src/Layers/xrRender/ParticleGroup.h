@@ -8,7 +8,7 @@ namespace PS
 {
 class CParticleEffect;
 
-class ECORE_API CPGDef
+class CPGDef
 {
 public:
     shared_str m_Name;
@@ -43,7 +43,7 @@ public:
 #endif
     };
 
-    using EffectVec = xr_vector<SEffect*>;
+    using EffectVec = std::vector<SEffect*>;
     EffectVec m_Effects;
 #ifdef _EDITOR
     // change Equal if variables changed
@@ -72,7 +72,7 @@ public:
 #endif
 };
 
-class ECORE_API CParticleGroup : public dxParticleCustom
+class CParticleGroup : public dxParticleCustom
 {
     const CPGDef* m_Def{};
     float m_CurrentTime{};
@@ -80,7 +80,7 @@ class ECORE_API CParticleGroup : public dxParticleCustom
     Lock render_lock{};
 
 public:
-    using VisualVec = xr_vector<dxRender_Visual*>;
+    using VisualVec = std::vector<dxRender_Visual*>;
     struct SItem
     {
         dxRender_Visual* _effect;
@@ -90,7 +90,7 @@ public:
         void Set(dxRender_Visual* e);
         void Clear();
 
-        u32 GetVisuals(xr_vector<dxRender_Visual*>& visuals)
+        u32 GetVisuals(std::vector<dxRender_Visual*>& visuals)
         {
             visuals.reserve(_children_related.size() + _children_free.size() + 1);
             if (_effect)
@@ -115,7 +115,7 @@ public:
         void Play();
         void Stop(BOOL def_stop);
     };
-    using SItemVec = xr_vector<SItem>;
+    using SItemVec = std::vector<SItem>;
     SItemVec items;
 
 public:

@@ -5,14 +5,14 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Stalker animation manager
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
+
+#include <deque>
 
 #include "stalker_animation_pair.h"
 #include "stalker_animation_script.h"
 #include "ai_monster_space.h"
 #include "xrAICore/Navigation/graph_engine_space.h"
-#include "xrCommon/xr_deque.h"
 
 class CMotionDef;
 class CBlend;
@@ -25,7 +25,7 @@ class CStalkerAnimationData;
 class CStalkerAnimationManager
 {
 public:
-    typedef xr_deque<CStalkerAnimationScript> SCRIPT_ANIMATIONS;
+    typedef std::deque<CStalkerAnimationScript> SCRIPT_ANIMATIONS;
     typedef MonsterSpace::EMovementDirection EMovementDirection;
     typedef MonsterSpace::EBodyState EBodyState;
     typedef GraphEngineSpace::_solver_value_type _value_type;
@@ -132,7 +132,7 @@ private:
     bool need_look_back() const;
 
 private:
-    MotionID aim_animation(const u32& slot, const xr_vector<CAniVector>& animation, const u32& index) const;
+    MotionID aim_animation(const u32& slot, const std::vector<CAniVector>& animation, const u32& index) const;
     MotionID no_object_animation(const EBodyState& body_state) const;
     MotionID unknown_object_animation(u32 slot, const EBodyState& body_state) const;
     MotionID weapon_animation(u32 slot, const EBodyState& body_state);

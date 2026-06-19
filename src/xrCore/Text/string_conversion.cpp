@@ -3,7 +3,6 @@
 #include <string>
 
 #include "Common/types.hpp"
-#include "xrCommon/xr_string.h"
 #include "xrCore/xrDebug.h"
 #include "xrCore/xrDebug_macros.h"
 
@@ -162,16 +161,16 @@ u16 mbhMulti2Wide(xr_wide_char* WideStr,
   return dpos;
 }
 
-xr_string StringFromUTF8(const char* in, const std::locale& locale) {
+std::string StringFromUTF8(const char* in, const std::locale& locale) {
   using wcvt = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>;
   auto wstr = wcvt{}.from_bytes(in);
-  xr_string result(wstr.size(), '\0');
+  std::string result(wstr.size(), '\0');
   std::use_facet<std::ctype<wchar_t>>(locale).narrow(
       wstr.data(), wstr.data() + wstr.size(), '?', &result[0]);
   return result;
 }
 
-xr_string StringToUTF8(const char* in, const std::locale& locale) {
+std::string StringToUTF8(const char* in, const std::locale& locale) {
   using wcvt = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>;
   std::wstring wstr(xr_strlen(in), L'\0');
   std::use_facet<std::ctype<wchar_t>>(locale).widen(in, in + xr_strlen(in),

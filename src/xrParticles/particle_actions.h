@@ -23,7 +23,7 @@ struct PARTICLES_API ParticleAction
     virtual void Save(IWriter& F) = 0;
 };
 
-using PAVec = xr_vector<ParticleAction*>;
+using PAVec = std::vector<ParticleAction*>;
 using PAVecIt = PAVec::iterator;
 
 class ParticleActions

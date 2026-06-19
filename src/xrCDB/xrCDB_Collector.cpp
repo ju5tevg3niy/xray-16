@@ -85,7 +85,7 @@ struct edge
 };
 #pragma pack(pop)
 
-void Collector::calc_adjacency(xr_vector<u32>& dest) const
+void Collector::calc_adjacency(std::vector<u32>& dest) const
 {
     ZoneScoped;
 #if 1
@@ -166,7 +166,7 @@ void Collector::calc_adjacency(xr_vector<u32>& dest) const
         }
     }
 #if 0
-		xr_vector<u32>	test = dest;
+		std::vector<u32>	test = dest;
 
 		dest.assign		(faces.size()*3,0xffffffff);
 		// Dumb algorithm O(N^2) :)
@@ -200,9 +200,9 @@ void Collector::calc_adjacency(xr_vector<u32>& dest) const
 		}
 
 		{
-			xr_vector<u32>::const_iterator	I = test.begin();
-			xr_vector<u32>::const_iterator	E = test.end();
-			xr_vector<u32>::const_iterator	J = dest.begin();
+			std::vector<u32>::const_iterator	I = test.begin();
+			std::vector<u32>::const_iterator	E = test.end();
+			std::vector<u32>::const_iterator	J = dest.begin();
 			for ( ; I != E; ++I, ++J) {
 				VERIFY	(*I == *J);
 			}

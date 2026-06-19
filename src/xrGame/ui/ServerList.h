@@ -127,7 +127,7 @@ protected:
     std::array<CUIFrameLineWnd, 4> m_header2;
     std::array<CUIFrameLineWnd, LST_COLUMN_COUNT> m_header_frames;
     CUIEditBox m_edit_gs_filter;
-    xr_string m_playerName;
+    std::string m_playerName;
     bool m_bShowServerInfo;
     bool m_bAnimation;
     float m_fListH[2];
@@ -139,7 +139,7 @@ protected:
 
     ESortingMode m_sort_mode;
     bool m_sort_ascending;
-    xr_vector<int> m_tmp_srv_lst;
+    std::vector<int> m_tmp_srv_lst;
     struct SrvItem
     {
         CUIListItemServer* m_ui_item;
@@ -154,7 +154,7 @@ protected:
     void DestroySrvItems();
     void ClearSrvItems();
 
-    typedef xr_vector<SrvItem> SrvItems;
+    typedef std::vector<SrvItem> SrvItems;
     typedef SrvItems::iterator SrvItems_It;
     SrvItems m_items_cache;
     u32 m_last_retreived_index;

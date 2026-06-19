@@ -100,7 +100,7 @@ public:
     using CALLBACK_VECTOR = svector<visual_callback, 6>;
     using CALLBACK_VECTOR_IT = CALLBACK_VECTOR::iterator;
     using CScriptCallbackExVoid = CScriptCallbackEx<void>;
-    // typedef xr_map<GameObject::ECallbackType, CScriptCallbackExVoid> CALLBACK_MAP;
+    // typedef std::map<GameObject::ECallbackType, CScriptCallbackExVoid> CALLBACK_MAP;
     // typedef CALLBACK_MAP::iterator CALLBACK_MAP_IT;
 
     virtual ~IGameObject() = 0;

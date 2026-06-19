@@ -17,7 +17,7 @@ void vec_clear(T*& p)
 class rnd_motion
 {
 private:
-    xr_vector<MotionID> motions;
+    std::vector<MotionID> motions;
 
 public:
     rnd_motion();
@@ -54,7 +54,7 @@ public:
     static edirection dir(CEntityAlive& ea, const SHit& H, float& angle);
 
 private:
-    xr_vector<rnd_motion*> anims;
+    std::vector<rnd_motion*> anims;
 };
 
 class death_anims
@@ -68,7 +68,7 @@ public:
 
 private:
     static const u16 types_number = 7;
-    xr_vector<type_motion*> anims;
+    std::vector<type_motion*> anims;
     rnd_motion rnd_anims;
 };
 

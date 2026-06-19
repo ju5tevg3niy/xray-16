@@ -33,9 +33,9 @@ private:
     static constexpr u32 iInvalidHandle = 0xFFFFFFFF;
 
     bool enabled{ true };
-    xr_vector<Query> pool; // sorted (max ... min), insertions are usually at the end
-    xr_vector<Query> used; // id's are generated from this and it is cleared from back only
-    xr_vector<u32> fids; // free id's
+    std::vector<Query> pool; // sorted (max ... min), insertions are usually at the end
+    std::vector<Query> used; // id's are generated from this and it is cleared from back only
+    std::vector<u32> fids; // free id's
 
     Lock render_lock{};
 public:

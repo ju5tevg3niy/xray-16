@@ -149,7 +149,7 @@ void dx113DFluidObstacles::ProcessStaticObstacles(const dx113DFluidData& FluidDa
 {
     RCache.set_Element(m_ObstacleTechnique[OS_OOBB]);
 
-    const xr_vector<Fmatrix>& Obstacles = FluidData.GetObstaclesList();
+    const std::vector<Fmatrix>& Obstacles = FluidData.GetObstaclesList();
     int iObstNum = Obstacles.size();
     for (int i = 0; i < iObstNum; ++i)
     {

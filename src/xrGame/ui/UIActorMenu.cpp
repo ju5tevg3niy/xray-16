@@ -757,7 +757,7 @@ void CUIActorMenu::highlight_ammo_for_weapon(PIItem weapon_item, CUIDragDropList
 {
     VERIFY(weapon_item);
     VERIFY(ddlist);
-    static xr_vector<shared_str> ammo_types;
+    static std::vector<shared_str> ammo_types;
     ammo_types.clear();
 
     CWeapon* weapon = smart_cast<CWeapon*>(weapon_item);
@@ -780,7 +780,7 @@ void CUIActorMenu::highlight_ammo_for_weapon(PIItem weapon_item, CUIDragDropList
     {
         return;
     }
-    xr_vector<shared_str>::iterator ite = ammo_types.end();
+    std::vector<shared_str>::iterator ite = ammo_types.end();
 
     u32 const cnt = ddlist->ItemsCount();
     for (u32 i = 0; i < cnt; ++i)
@@ -799,7 +799,7 @@ void CUIActorMenu::highlight_ammo_for_weapon(PIItem weapon_item, CUIDragDropList
         }
         shared_str const& ammo_name = item->object().cNameSect();
 
-        xr_vector<shared_str>::iterator itb = ammo_types.begin();
+        std::vector<shared_str>::iterator itb = ammo_types.begin();
         for (; itb != ite; ++itb)
         {
             if (ammo_name._get() == (*itb)._get())
@@ -838,8 +838,8 @@ void CUIActorMenu::highlight_weapons_for_ammo(PIItem ammo_item, CUIDragDropListE
             continue;
         }
 
-        xr_vector<shared_str>::iterator itb = weapon->m_ammoTypes.begin();
-        xr_vector<shared_str>::iterator ite = weapon->m_ammoTypes.end();
+        std::vector<shared_str>::iterator itb = weapon->m_ammoTypes.begin();
+        std::vector<shared_str>::iterator ite = weapon->m_ammoTypes.end();
         for (; itb != ite; ++itb)
         {
             if (ammo_name._get() == (*itb)._get())

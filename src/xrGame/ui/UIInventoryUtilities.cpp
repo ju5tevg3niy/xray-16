@@ -38,7 +38,7 @@ ui_shader* g_WeaponUpgradeIconsShader = NULL;
 //static CUIStatic* GetUIStatic();
 
 typedef std::pair<CHARACTER_RANK_VALUE, shared_str> CharInfoStringID;
-using CharInfoStrings = xr_map<CHARACTER_RANK_VALUE, shared_str>;
+using CharInfoStrings = std::map<CHARACTER_RANK_VALUE, shared_str>;
 
 CharInfoStrings* charInfoReputationStrings = NULL;
 CharInfoStrings* charInfoRankStrings = NULL;
@@ -103,7 +103,7 @@ bool InventoryUtilities::FreeRoom_inBelt(TIItemContainer& item_list, PIItem _ite
 
     found_place = true;
 
-    for (xr_vector<PIItem>::iterator it = item_list.begin(); (item_list.end() != it) && found_place; ++it)
+    for (std::vector<PIItem>::iterator it = item_list.begin(); (item_list.end() != it) && found_place; ++it)
     {
         PIItem pItem = *it;
         Ivector2 iWH = pItem->GetInvGridRect().rb;

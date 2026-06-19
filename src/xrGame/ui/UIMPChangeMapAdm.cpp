@@ -66,9 +66,9 @@ void CUIMpChangeMapAdm::OnItemSelect()
     const shared_str& name = M.m_map_names[idx].map_name;
     pstr map_ver = NULL;
     STRCONCAT(map_ver, "[", M.m_map_names[idx].map_ver.c_str() ? M.m_map_names[idx].map_ver.c_str() : "unknown", "]");
-    xr_string map_name = "intro" DELIMITER "intro_map_pic_";
+    std::string map_name = "intro" DELIMITER "intro_map_pic_";
     map_name += name.c_str();
-    xr_string full_name = map_name + ".dds";
+    std::string full_name = map_name + ".dds";
     Frect orig_rect = map_pic->GetTextureRect();
     if (FS.exist("$game_textures$", full_name.c_str()))
         map_pic->InitTexture(map_name.c_str());

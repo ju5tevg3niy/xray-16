@@ -52,8 +52,8 @@ public:
     effects::manager const& effects_manager() const;
     sound_channels::manager const& sounds_manager() const;
 
-    using ambient_container_type = xr_vector<ambient*>;
-    using ambients_ids_type = xr_vector<pstr>;
+    using ambient_container_type = std::vector<ambient*>;
+    using ambients_ids_type = std::vector<pstr>;
 
     ambients_ids_type const& ambients_ids() const;
 

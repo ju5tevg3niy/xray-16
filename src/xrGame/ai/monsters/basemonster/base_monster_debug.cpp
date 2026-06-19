@@ -324,7 +324,7 @@ void CBaseMonster::debug_fsm()
 // defined in stalker_debug.cpp
 extern CActor* g_debug_actor;
 
-xr_string make_xrstr(TSoundDangerValue value)
+std::string make_xrstr(TSoundDangerValue value)
 {
     switch (value)
     {
@@ -354,7 +354,7 @@ xr_string make_xrstr(TSoundDangerValue value)
     }
 }
 
-xr_string make_xrstr(EMemberGoalType value)
+std::string make_xrstr(EMemberGoalType value)
 {
     switch (value)
     {
@@ -369,7 +369,7 @@ xr_string make_xrstr(EMemberGoalType value)
     }
 }
 
-xr_string make_xrstr(ESquadCommandType value)
+std::string make_xrstr(ESquadCommandType value)
 {
     switch (value)
     {
@@ -414,14 +414,14 @@ void add_debug_info(debug::text_tree& root_s, SoundElem& sound_elem, bool danger
     root_s.add_line("Dangerous", dangerous);
 }
 
-void add_debug_info_restrictions(debug::text_tree& root_s, const xr_string& restr)
+void add_debug_info_restrictions(debug::text_tree& root_s, const std::string& restr)
 {
     size_t cur_i = 0;
 
     do
     {
         size_t pos = restr.find(',', cur_i);
-        if (pos == xr_string::npos)
+        if (pos == std::string::npos)
         {
             pos = restr.size() - 1;
         }
@@ -904,14 +904,14 @@ void CBaseMonster::add_debug_info(debug::text_tree& root_s)
 
     TextTree& now_playing_s = sound_player_s.add_line("Objects", object_count);
 
-    typedef xr_vector<CSoundPlayer::CSoundSingle>::const_iterator SoundSingleIterator;
+    typedef std::vector<CSoundPlayer::CSoundSingle>::const_iterator SoundSingleIterator;
 
     index = 1;
     for (SoundSingleIterator i = sound().playing_sounds().begin(), e = sound().playing_sounds().end(); i != e; ++i)
     {
-        xr_string source = (*i).m_sound->_handle() ? (*i).m_sound->_handle()->file_name() : "no source";
+        std::string source = (*i).m_sound->_handle() ? (*i).m_sound->_handle()->file_name() : "no source";
 
-        xr_string status = "not yet started";
+        std::string status = "not yet started";
         if (Device.dwTimeGlobal >= (*i).m_start_time)
         {
             status = (*i).m_sound->_feedback() ? "playing" : "already played";

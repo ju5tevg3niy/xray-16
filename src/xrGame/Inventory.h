@@ -1,4 +1,7 @@
 #pragma once
+
+#include <set>
+
 #include "inventory_item.h"
 
 class CInventory;
@@ -24,10 +27,10 @@ public:
     bool is_item_in_group(shared_str const& section_name) const;
 
 private:
-    xr_set<shared_str> m_sections;
+    std::set<shared_str> m_sections;
 }; // class priority_group
 
-typedef xr_vector<CInventorySlot> TISlotArr;
+typedef std::vector<CInventorySlot> TISlotArr;
 
 class CInventory
 {
@@ -62,7 +65,7 @@ public:
 
     void Activate(u16 slot, /*EActivationReason reason=eGeneral, */ bool bForce = false);
 
-    xr_vector<shared_str> m_available_grenade_types;
+    std::vector<shared_str> m_available_grenade_types;
     bool m_isActivatingNextGrenade;
     bool HasNextGrenade() { return m_available_grenade_types.size() > 1; };
     PIItem GetNextGrenade();
@@ -186,11 +189,11 @@ private:
 
     priority_group m_groups[qs_priorities_count];
     priority_group m_null_priority;
-    typedef xr_set<PIItem> except_next_items_t;
+    typedef std::set<PIItem> except_next_items_t;
     except_next_items_t m_next_items_exceptions;
     u32 m_next_item_iteration_time{};
 
-    xr_vector<u8> m_blocked_slots;
+    std::vector<u8> m_blocked_slots;
     bool IsSlotBlocked(u16 slot_id) const;
     void TryActivatePrevSlot();
     void TryDeactivateActiveSlot();

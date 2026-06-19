@@ -29,7 +29,7 @@ struct CObjectSpaceData
 {
     thread_local static xrXRC xrc;
     thread_local static collide::rq_results r_temp;
-    thread_local static xr_vector<ISpatial*> r_spatial;
+    thread_local static std::vector<ISpatial*> r_spatial;
 };
 #endif
 
@@ -97,11 +97,11 @@ public:
     bool RayQuery(collide::rq_results& dest, ICollisionForm* target, const collide::ray_defs& rq);
 
     bool BoxQuery(Fvector const& box_center, Fvector const& box_z_axis, Fvector const& box_y_axis,
-        Fvector const& box_sizes, xr_vector<Fvector>* out_tris);
+        Fvector const& box_sizes, std::vector<Fvector>* out_tris);
 
-    int GetNearest(xr_vector<IGameObject*>& q_nearest, ICollisionForm* obj, float range);
-    int GetNearest(xr_vector<IGameObject*>& q_nearest, const Fvector& point, float range, IGameObject* ignore_object);
-    int GetNearest(xr_vector<ISpatial*>& q_spatial, xr_vector<IGameObject*>& q_nearest, const Fvector& point,
+    int GetNearest(std::vector<IGameObject*>& q_nearest, ICollisionForm* obj, float range);
+    int GetNearest(std::vector<IGameObject*>& q_nearest, const Fvector& point, float range, IGameObject* ignore_object);
+    int GetNearest(std::vector<ISpatial*>& q_spatial, std::vector<IGameObject*>& q_nearest, const Fvector& point,
         float range, IGameObject* ignore_object);
 
     CDB::TRI* GetStaticTris() { return Static.get_tris(); }

@@ -170,7 +170,7 @@ bool CUIMapWnd::Init(cpcstr xml_name, cpcstr start_from, bool critical /*= true*
     m_currentZoom = m_GlobalMap->GetCurrentZoom().x;
 
     // initialize local maps
-    xr_string sect_name;
+    std::string sect_name;
     if (IsGameTypeSingle())
         sect_name = "level_maps_single";
     else

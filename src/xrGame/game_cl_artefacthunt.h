@@ -45,7 +45,7 @@ public:
     virtual CUIGameCustom* createGameUI();
     virtual void SetGameUI(CUIGameCustom*);
     virtual void net_import_state(NET_Packet& P);
-    virtual void GetMapEntities(xr_vector<SZoneMapEntityData>& dst);
+    virtual void GetMapEntities(std::vector<SZoneMapEntityData>& dst);
     pcstr getTeamSection(int Team) override;
     virtual bool PlayerCanSprint(CActor* pActor);
 

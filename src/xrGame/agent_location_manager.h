@@ -20,7 +20,7 @@ class CAgentLocationManager
 {
 public:
     typedef intrusive_ptr<CDangerLocation> CDangerLocationPtr;
-    typedef xr_vector<CDangerLocationPtr> LOCATIONS;
+    typedef std::vector<CDangerLocationPtr> LOCATIONS;
 
 private:
     CAgentManager* m_object;

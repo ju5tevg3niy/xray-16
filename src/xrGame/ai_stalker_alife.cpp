@@ -273,7 +273,7 @@ bool CAI_Stalker::can_sell(CInventoryItem* item)
         return (tradable_item(item, ID()));
 
     update_sell_info();
-    xr_vector<CTradeItem>::const_iterator I = std::find(m_temp_items.begin(), m_temp_items.end(), item->object().ID());
+    std::vector<CTradeItem>::const_iterator I = std::find(m_temp_items.begin(), m_temp_items.end(), item->object().ID());
     VERIFY(I != m_temp_items.end());
     return ((*I).m_new_owner_id != ID());
 }
@@ -367,8 +367,8 @@ void CAI_Stalker::remove_personal_only_ammo(const CInventoryItem* item)
     const CWeapon* weapon = smart_cast<const CWeapon*>(item);
     VERIFY(weapon);
 
-    xr_vector<shared_str>::const_iterator I = weapon->m_ammoTypes.begin();
-    xr_vector<shared_str>::const_iterator E = weapon->m_ammoTypes.end();
+    std::vector<shared_str>::const_iterator I = weapon->m_ammoTypes.begin();
+    std::vector<shared_str>::const_iterator E = weapon->m_ammoTypes.end();
     for (; I != E; ++I)
     {
         bool found = false;

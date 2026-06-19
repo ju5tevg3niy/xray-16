@@ -204,9 +204,9 @@ void CUIMpTradeWnd::UpdateHelperItems()
     }
 }
 
-void CUIMpTradeWnd::CreateHelperItems(xr_vector<shared_str>& ammo_types)
+void CUIMpTradeWnd::CreateHelperItems(std::vector<shared_str>& ammo_types)
 {
-    for (xr_vector<shared_str>::iterator it = ammo_types.begin(); it != ammo_types.end(); ++it)
+    for (std::vector<shared_str>::iterator it = ammo_types.begin(); it != ammo_types.end(); ++it)
     {
         const shared_str& ammo_name = *it;
         if (!m_store_hierarchy->FindItem(ammo_name))
@@ -222,7 +222,7 @@ void CUIMpTradeWnd::CreateHelperItems(xr_vector<shared_str>& ammo_types)
 
 void CUIMpTradeWnd::CreateHelperItems(CUIDragDropListEx* list, const CStoreHierarchy::item* shop_level)
 {
-    for (xr_vector<shared_str>::const_iterator it = shop_level->m_items_in_group.begin();
+    for (std::vector<shared_str>::const_iterator it = shop_level->m_items_in_group.begin();
          it != shop_level->m_items_in_group.end(); ++it)
     {
         shared_str item_name = *it;
@@ -305,7 +305,7 @@ void CUIMpTradeWnd::UpdateCorrespondingItemsForList(CUIDragDropListEx* _list)
 
     DeleteHelperItems(dependent_list);
 
-    xr_list<SBuyItemInfo*> _tmp_list;
+    std::list<SBuyItemInfo*> _tmp_list;
     while (dependent_list->ItemsCount() != 0)
     {
         CUICellItem* ci = dependent_list->GetItemIdx(0);
@@ -345,7 +345,7 @@ void CUIMpTradeWnd::UpdateCorrespondingItemsForList(CUIDragDropListEx* _list)
 
     while (!_tmp_list.empty())
     {
-        xr_list<SBuyItemInfo*>::iterator _curr = _tmp_list.begin();
+        std::list<SBuyItemInfo*>::iterator _curr = _tmp_list.begin();
         SBuyItemInfo* bi = *(_curr);
 
         CUIDragDropListEx* _owner_list = bi->m_cell_item->OwnerList();
@@ -377,7 +377,7 @@ void CUIMpTradeWnd::UpdateCorrespondingItemsForList(CUIDragDropListEx* _list)
             // sell
             SBuyItemInfo* res_info = nullptr;
             TryToSellItem(bi, true, res_info);
-            xr_list<SBuyItemInfo*>::iterator tmp_it = find(_tmp_list.begin(), _tmp_list.end(), res_info);
+            std::list<SBuyItemInfo*>::iterator tmp_it = find(_tmp_list.begin(), _tmp_list.end(), res_info);
             VERIFY(tmp_it != _tmp_list.end());
             _tmp_list.erase(tmp_it);
         }

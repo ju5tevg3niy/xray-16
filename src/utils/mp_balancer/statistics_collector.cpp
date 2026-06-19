@@ -65,7 +65,7 @@ void statistics_collector::save_file(csv_files::value_type const& val)
     strconcat(sizeof(new_file_name), new_file_name, val.first.c_str(), ".csv");
 
     char temp_string[1024];
-    xr_string dest_string;
+    std::string dest_string;
     dest_string.reserve(4096);
 
     dest_string.append("\"section_name\",");
@@ -77,7 +77,7 @@ void statistics_collector::save_file(csv_files::value_type const& val)
     dest_string.erase(dest_string.end() - 1);
     dest_string.append("\r\n");
 
-    for (xr_vector<shared_str>::const_iterator i = m_wpn_collection->all_weapons.begin(),
+    for (std::vector<shared_str>::const_iterator i = m_wpn_collection->all_weapons.begin(),
                                                ie = m_wpn_collection->all_weapons.end();
          i != ie; ++i)
     {

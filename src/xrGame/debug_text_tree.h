@@ -9,7 +9,7 @@
 #ifndef AI_DEBUG_TEXT_TREE_H_INCLUDED
 #define AI_DEBUG_TEXT_TREE_H_INCLUDED
 
-IC xr_string __cdecl make_xrstr(pcstr format, ...)
+IC std::string __cdecl make_xrstr(pcstr format, ...)
 {
     va_list args;
     va_start(args, format);
@@ -18,23 +18,23 @@ IC xr_string __cdecl make_xrstr(pcstr format, ...)
     vsprintf_s(temp, sizeof(temp), format, args);
 
     va_end(args);
-    return xr_string(temp);
+    return std::string(temp);
 }
 
-IC xr_string __cdecl make_xrstr(bool b) { return b ? "+" : "-"; }
-IC xr_string __cdecl make_xrstr(float f) { return make_xrstr("%f", f); }
+IC std::string __cdecl make_xrstr(bool b) { return b ? "+" : "-"; }
+IC std::string __cdecl make_xrstr(float f) { return make_xrstr("%f", f); }
 
-IC xr_string __cdecl make_xrstr(int d) { return make_xrstr("%i", d); }
-IC xr_string __cdecl make_xrstr(unsigned int d) { return make_xrstr("%u", d); }
+IC std::string __cdecl make_xrstr(int d) { return make_xrstr("%i", d); }
+IC std::string __cdecl make_xrstr(unsigned int d) { return make_xrstr("%u", d); }
 
-IC xr_string __cdecl make_xrstr(long d) { return make_xrstr("%li", d); }
-IC xr_string __cdecl make_xrstr(unsigned long d) { return make_xrstr("%lu", d); }
+IC std::string __cdecl make_xrstr(long d) { return make_xrstr("%li", d); }
+IC std::string __cdecl make_xrstr(unsigned long d) { return make_xrstr("%lu", d); }
 
-IC xr_string __cdecl make_xrstr(long long d) { return make_xrstr("%lli", d); }
-IC xr_string __cdecl make_xrstr(unsigned long long d) { return make_xrstr("%llu", d); }
+IC std::string __cdecl make_xrstr(long long d) { return make_xrstr("%lli", d); }
+IC std::string __cdecl make_xrstr(unsigned long long d) { return make_xrstr("%llu", d); }
 
-IC xr_string __cdecl make_xrstr(Fvector3 v) { return make_xrstr("[%f][%f][%f]", v.x, v.y, v.z); }
-IC xr_string __cdecl make_xrstr(const xr_string& s) { return s; }
+IC std::string __cdecl make_xrstr(Fvector3 v) { return make_xrstr("[%f][%f][%f]", v.x, v.y, v.z); }
+IC std::string __cdecl make_xrstr(const std::string& s) { return s; }
 
 namespace debug
 {
@@ -46,9 +46,9 @@ public: // START INTERFACE
     void toggle_show(int group_id);
 
     // finds node by first string
-    text_tree* find_node(const xr_string& s1);
+    text_tree* find_node(const std::string& s1);
     // adds if cant find
-    text_tree& find_or_add(const xr_string& s1);
+    text_tree& find_or_add(const std::string& s1);
 
     // add_text appends text to this node
     // add_line makes child nodes
@@ -74,9 +74,9 @@ public: // START INTERFACE
 
     virtual ~text_tree() { clear(); }
 private: // END INTERFACE
-    typedef xr_list<text_tree*> Children;
-    typedef xr_vector<int> Columns;
-    typedef xr_vector<xr_string> Strings;
+    typedef std::list<text_tree*> Children;
+    typedef std::vector<int> Columns;
+    typedef std::vector<std::string> Strings;
 
     template <class OutFunc>
     void output(int current_indent, int indent, Columns& columns, OutFunc func);

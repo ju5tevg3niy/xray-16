@@ -22,7 +22,7 @@ public:
     _object_type* m_object;
 
 public:
-    IC CActionScriptBase(const xr_vector<COperatorCondition>& conditions, const xr_vector<COperatorCondition>& effects,
+    IC CActionScriptBase(const std::vector<COperatorCondition>& conditions, const std::vector<COperatorCondition>& effects,
         _object_type* object = 0, LPCSTR action_name = "");
     IC CActionScriptBase(_object_type* object = 0, LPCSTR action_name = "");
     virtual ~CActionScriptBase();

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Common/Platform.hpp"
+
 /* Macro to deal with LP64 <=> LLP64 differences in numeric constants with 'l' modifier */
 #ifndef __MSABI_LONG
 # if defined(_MSC_VER) || defined(__MINGW32__) || defined(__CYGWIN__)

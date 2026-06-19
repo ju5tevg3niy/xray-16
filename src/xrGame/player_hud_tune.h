@@ -34,12 +34,12 @@ private:
         MAIN_ITEM = 0,
         OFFHAND_ITEM,
     };
-    xr_map<hud_item_idx, pcstr> hud_item_mode
+    std::map<hud_item_idx, pcstr> hud_item_mode
     {
         { MAIN_ITEM, "Main hand item" },
         { OFFHAND_ITEM, "Off hand item" },
     };
-    xr_map<hud_adj_mode_keys, pcstr> hud_adj_modes =
+    std::map<hud_adj_mode_keys, pcstr> hud_adj_modes =
     {
         { HUD_POS, "Hud Position (Default)" },
         { HUD_ROT, "Hud Rotation (Default)" },

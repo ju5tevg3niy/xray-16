@@ -60,8 +60,8 @@ IC bool CProblemSolverAbstract::actual() const
     if (!m_actuality)
         return (false);
 
-    typename xr_vector<_operator_condition>::const_iterator I = current_state().conditions().begin();
-    typename xr_vector<_operator_condition>::const_iterator E = current_state().conditions().end();
+    typename std::vector<_operator_condition>::const_iterator I = current_state().conditions().begin();
+    typename std::vector<_operator_condition>::const_iterator E = current_state().conditions().end();
     typename EVALUATORS::const_iterator i = evaluators().begin();
     typename EVALUATORS::const_iterator e = evaluators().end();
     for (; I != E; ++I)
@@ -187,8 +187,8 @@ IC const typename CProblemSolverAbstract::EVALUATORS& CProblemSolverAbstract::ev
 }
 
 TEMPLATE_SPECIALIZATION
-IC void CProblemSolverAbstract::evaluate_condition(typename xr_vector<_operator_condition>::const_iterator& I,
-    typename xr_vector<_operator_condition>::const_iterator& E, const condition_type& condition_id) const
+IC void CProblemSolverAbstract::evaluate_condition(typename std::vector<_operator_condition>::const_iterator& I,
+    typename std::vector<_operator_condition>::const_iterator& E, const condition_type& condition_id) const
 {
     size_t index = I - m_current_state.conditions().begin();
     m_current_state.add_condition(I, _operator_condition(condition_id, evaluator(condition_id)->evaluate()));
@@ -252,14 +252,14 @@ TEMPLATE_SPECIALIZATION
 IC bool CProblemSolverAbstract::is_goal_reached_impl(const _index_type& vertex_index) const
 {
     static_assert(!reverse_search, "This function cannot be used in the REVERSE search.");
-    typename xr_vector<_operator_condition>::const_iterator I = vertex_index.conditions().begin();
-    typename xr_vector<_operator_condition>::const_iterator E = vertex_index.conditions().end();
-    typename xr_vector<_operator_condition>::const_iterator i = target_state().conditions().begin();
-    typename xr_vector<_operator_condition>::const_iterator e = target_state().conditions().end();
+    typename std::vector<_operator_condition>::const_iterator I = vertex_index.conditions().begin();
+    typename std::vector<_operator_condition>::const_iterator E = vertex_index.conditions().end();
+    typename std::vector<_operator_condition>::const_iterator i = target_state().conditions().begin();
+    typename std::vector<_operator_condition>::const_iterator e = target_state().conditions().end();
 
     {
-        typename xr_vector<_operator_condition>::const_iterator II = current_state().conditions().begin();
-        typename xr_vector<_operator_condition>::const_iterator EE = current_state().conditions().end();
+        typename std::vector<_operator_condition>::const_iterator II = current_state().conditions().begin();
+        typename std::vector<_operator_condition>::const_iterator EE = current_state().conditions().end();
         for (; (i != e) && (I != E);)
         {
             if ((*I).condition() < (*i).condition())
@@ -318,10 +318,10 @@ TEMPLATE_SPECIALIZATION
 IC bool CProblemSolverAbstract::is_goal_reached_impl(const _index_type& vertex_index, bool) const
 {
     static_assert(reverse_search, "This function cannot be used in the STRAIGHT search.");
-    typename xr_vector<_operator_condition>::const_iterator I = m_current_state.conditions().begin();
-    typename xr_vector<_operator_condition>::const_iterator E = m_current_state.conditions().end();
-    typename xr_vector<_operator_condition>::const_iterator i = vertex_index.conditions().begin();
-    typename xr_vector<_operator_condition>::const_iterator e = vertex_index.conditions().end();
+    typename std::vector<_operator_condition>::const_iterator I = m_current_state.conditions().begin();
+    typename std::vector<_operator_condition>::const_iterator E = m_current_state.conditions().end();
+    typename std::vector<_operator_condition>::const_iterator i = vertex_index.conditions().begin();
+    typename std::vector<_operator_condition>::const_iterator e = vertex_index.conditions().end();
     for (; i != e;)
     {
         if ((I == E) || ((*I).condition() > (*i).condition()))
@@ -341,7 +341,7 @@ IC bool CProblemSolverAbstract::is_goal_reached_impl(const _index_type& vertex_i
 }
 
 TEMPLATE_SPECIALIZATION
-IC const xr_vector<_operator_id_type>& CProblemSolverAbstract::solution() const
+IC const std::vector<_operator_id_type>& CProblemSolverAbstract::solution() const
 {
     return (m_solution);
 }
@@ -389,10 +389,10 @@ IC typename CProblemSolverAbstract::edge_value_type CProblemSolverAbstract::esti
 {
     static_assert(!reverse_search, "This function cannot be used in the REVERSE search.");
     edge_value_type result = 0;
-    typename xr_vector<_operator_condition>::const_iterator I = target_state().conditions().begin();
-    typename xr_vector<_operator_condition>::const_iterator E = target_state().conditions().end();
-    typename xr_vector<_operator_condition>::const_iterator i = condition.conditions().begin();
-    typename xr_vector<_operator_condition>::const_iterator e = condition.conditions().end();
+    typename std::vector<_operator_condition>::const_iterator I = target_state().conditions().begin();
+    typename std::vector<_operator_condition>::const_iterator E = target_state().conditions().end();
+    typename std::vector<_operator_condition>::const_iterator i = condition.conditions().begin();
+    typename std::vector<_operator_condition>::const_iterator e = condition.conditions().end();
     for (; (I != E) && (i != e);)
         if ((*I).condition() < (*i).condition())
         {
@@ -417,10 +417,10 @@ IC typename CProblemSolverAbstract::edge_value_type CProblemSolverAbstract::esti
 {
     static_assert(reverse_search, "This function cannot be used in the STRAIGHT search.");
     edge_value_type result = 0;
-    typename xr_vector<_operator_condition>::const_iterator I = current_state().conditions().begin();
-    typename xr_vector<_operator_condition>::const_iterator E = current_state().conditions().end();
-    typename xr_vector<_operator_condition>::const_iterator i = condition.conditions().begin();
-    typename xr_vector<_operator_condition>::const_iterator e = condition.conditions().end();
+    typename std::vector<_operator_condition>::const_iterator I = current_state().conditions().begin();
+    typename std::vector<_operator_condition>::const_iterator E = current_state().conditions().end();
+    typename std::vector<_operator_condition>::const_iterator i = condition.conditions().begin();
+    typename std::vector<_operator_condition>::const_iterator e = condition.conditions().end();
     for (; (i != e);)
     {
         if ((I == E) || ((*I).condition() > (*i).condition()))

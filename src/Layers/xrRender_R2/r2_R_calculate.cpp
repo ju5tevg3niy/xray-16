@@ -110,7 +110,7 @@ void CRender::Calculate()
     Lights.Update();
 
     // Check if we touch some light even trough portal
-    static xr_vector<ISpatial*> spatial_lights;
+    static std::vector<ISpatial*> spatial_lights;
     g_pGamePersistent->SpatialSpace.q_sphere(spatial_lights, 0, STYPE_LIGHTSOURCE, Device.vCameraPosition, EPS_L);
     for (auto spatial : spatial_lights)
     {

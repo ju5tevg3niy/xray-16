@@ -1,11 +1,12 @@
 #pragma once
 
-#include "xrCommon/xr_vector.h"
-#include "xrCommon/xr_string.h"
+#include <cstddef>
+#include <string>
+#include <vector>
 
-// fwd. decl.
-template <class T> struct _vector3; typedef _vector3<float> Fvector;
-struct Fmatrix;
+#include "Common/types.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/vector3.hpp"
 
 #define VPUSH(a) ((a).x), ((a).y), ((a).z)
 
@@ -44,5 +45,5 @@ void InitLog();
 void CloseLog();
 void FlushLog();
 
-extern xr_vector<xr_string> LogFile;
+extern std::vector<std::string> LogFile;
 extern bool LogExecCB;

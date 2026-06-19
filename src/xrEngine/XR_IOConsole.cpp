@@ -641,7 +641,7 @@ bool CConsole::add_internal_cmds(pcstr in_str, vecTipsEx& out_v)
 
     bool res = false;
     // word in begin
-    xr_string name2;
+    std::string name2;
 
     for (const auto [name, command] : Console->Commands)
     {

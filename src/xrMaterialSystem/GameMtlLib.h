@@ -1,8 +1,9 @@
 #pragma once
 
+#include <vector>
+
 #include "xrCore/xrstring.h"
 #include "xrCore/Math/flags.hpp"
-#include "xrCommon/xr_vector.h"
 
 #include "xrSound/Sound.h"
 #include "Include/xrRender/WallMarkArray.h"
@@ -174,10 +175,10 @@ public:
     Flags32 OwnProps;
 
 public:
-    xr_vector<ref_sound> BreakingSounds;
-    xr_vector<ref_sound> StepSounds;
-    xr_vector<ref_sound> CollideSounds;
-    xr_vector<shared_str> CollideParticles;
+    std::vector<ref_sound> BreakingSounds;
+    std::vector<ref_sound> StepSounds;
+    std::vector<ref_sound> CollideSounds;
+    std::vector<shared_str> CollideParticles;
     FactoryPtr<IWallMarkArray> CollideMarks;
 
 public:
@@ -234,7 +235,7 @@ public:
 #endif
 };
 
-using GameMtlPairVec = xr_vector<SGameMtlPair*>;
+using GameMtlPairVec = std::vector<SGameMtlPair*>;
 using GameMtlPairIt = GameMtlPairVec::iterator;
 
 class MTL_EXPORT_API CGameMtlLibrary
@@ -243,7 +244,7 @@ private:
     int material_index;
     int material_pair_index;
 
-    xr_vector<SGameMtl*> materials;
+    std::vector<SGameMtl*> materials;
     GameMtlPairVec material_pairs;
     GameMtlPairVec material_pairs_rt;
 

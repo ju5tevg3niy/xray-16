@@ -207,7 +207,7 @@ namespace FVF
     }
 
     _Success_(return)
-    inline bool CreateDeclFromFVF(uint32_t fvfCode, xr_vector<D3DVERTEXELEMENT9>& decl)
+    inline bool CreateDeclFromFVF(uint32_t fvfCode, std::vector<D3DVERTEXELEMENT9>& decl)
     {
         static constexpr size_t s_texCoordSizes[] =
         {
@@ -362,7 +362,7 @@ namespace FVF
 
 #ifdef __d3d11_h__
     _Success_(return)
-        inline bool CreateInputLayoutFromFVF(uint32_t fvfCode, xr_vector<D3D11_INPUT_ELEMENT_DESC>& il)
+        inline bool CreateInputLayoutFromFVF(uint32_t fvfCode, std::vector<D3D11_INPUT_ELEMENT_DESC>& il)
     {
         static constexpr DXGI_FORMAT s_blendFormats[] =
         {
@@ -505,7 +505,7 @@ namespace FVF
 
 #ifdef __d3d12_h__
     _Success_(return)
-        inline bool CreateInputLayoutFromFVF(uint32_t fvfCode, xr_vector<D3D12_INPUT_ELEMENT_DESC>& il)
+        inline bool CreateInputLayoutFromFVF(uint32_t fvfCode, std::vector<D3D12_INPUT_ELEMENT_DESC>& il)
     {
         static constexpr DXGI_FORMAT s_blendFormats[] =
         {

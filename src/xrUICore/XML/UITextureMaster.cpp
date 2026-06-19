@@ -18,8 +18,8 @@
 #include "xrCore/Threading/ScopeLock.hpp"
 #include <iostream>
 
-xr_map<shared_str, TEX_INFO> CUITextureMaster::m_textures;
-xr_map<sh_pair, ui_shader> CUITextureMaster::m_shaders;
+std::map<shared_str, TEX_INFO> CUITextureMaster::m_textures;
+std::map<sh_pair, ui_shader> CUITextureMaster::m_shaders;
 
 void CUITextureMaster::FreeTexInfo()
 {
@@ -105,11 +105,11 @@ bool CUITextureMaster::IsSh(const shared_str& texture_name)
 bool CUITextureMaster::InitTexture(
     const shared_str& texture_name, const shared_str& shader_name, ui_shader& out_shader, Frect& out_rect)
 {
-    xr_map<shared_str, TEX_INFO>::iterator it = m_textures.find(texture_name);
+    std::map<shared_str, TEX_INFO>::iterator it = m_textures.find(texture_name);
     if (it != m_textures.end())
     {
         sh_pair p = {it->second.file, shader_name};
-        xr_map<sh_pair, ui_shader>::iterator sh_it = m_shaders.find(p);
+        std::map<sh_pair, ui_shader>::iterator sh_it = m_shaders.find(p);
         if (sh_it == m_shaders.end())
             m_shaders[p]->create(shader_name.c_str(), it->second.file.c_str());
 
@@ -124,11 +124,11 @@ bool CUITextureMaster::InitTexture(
 
 bool CUITextureMaster::InitTexture(const shared_str& texture_name, CUIStaticItem* tc, const shared_str& shader_name)
 {
-    xr_map<shared_str, TEX_INFO>::iterator it = m_textures.find(texture_name);
+    std::map<shared_str, TEX_INFO>::iterator it = m_textures.find(texture_name);
     if (it != m_textures.end())
     {
         sh_pair p = {it->second.file, shader_name};
-        xr_map<sh_pair, ui_shader>::iterator sh_it = m_shaders.find(p);
+        std::map<sh_pair, ui_shader>::iterator sh_it = m_shaders.find(p);
         if (sh_it == m_shaders.end())
             m_shaders[p]->create(shader_name.c_str(), it->second.file.c_str());
 

@@ -22,7 +22,7 @@ class INetLog : Noncopyable
 
     Lock* m_pcs;
 
-    xr_vector<SLogPacket> m_aLogPackets;
+    std::vector<SLogPacket> m_aLogPackets;
 
     void FlushLog();
 

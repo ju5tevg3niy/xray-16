@@ -31,7 +31,7 @@ struct ALDeviceDesc
 
 class ALDeviceList
 {
-    xr_vector<ALDeviceDesc> m_devices;
+    std::vector<ALDeviceDesc> m_devices;
     string256 m_defaultDeviceName;
 
     void Enumerate();

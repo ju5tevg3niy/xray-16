@@ -3,8 +3,8 @@
 #include "xrCore/xr_token.h"
 #include "xr_input.h"
 
-xr_vector<xr_token> vid_monitor_token;
-xr_map<u32, xr_vector<xr_token>> vid_mode_token;
+std::vector<xr_token> vid_monitor_token;
+std::map<u32, std::vector<xr_token>> vid_mode_token;
 
 void FillResolutionsForMonitor(const int monitorID)
 {

@@ -93,6 +93,6 @@ protected:
     int m_nLine; // for run_to_line_number
     HANDLE m_mailSlot;
     BOOL m_bIdePresent;
-    xr_vector<SBreakPoint> m_breakPoints;
+    std::vector<SBreakPoint> m_breakPoints;
     string_path m_curr_connected_mslot;
 };

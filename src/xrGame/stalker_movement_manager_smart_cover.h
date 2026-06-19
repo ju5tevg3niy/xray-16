@@ -133,7 +133,7 @@ private:
     IC animation_action const& current_transition_animation() const;
 
 private:
-    typedef xr_vector<shared_str> LoopholePath;
+    typedef std::vector<shared_str> LoopholePath;
 
 private:
     void loophole_path(

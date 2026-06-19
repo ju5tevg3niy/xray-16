@@ -36,8 +36,8 @@ public:
     friend class CConsole;
     typedef char TInfo[256];
     typedef char TStatus[256];
-    typedef xr_vector<shared_str> vecTips;
-    typedef xr_vector<shared_str> vecLRU;
+    typedef std::vector<shared_str> vecTips;
+    typedef std::vector<shared_str> vecLRU;
 
 protected:
     pcstr cName;

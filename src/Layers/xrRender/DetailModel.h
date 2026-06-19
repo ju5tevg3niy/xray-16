@@ -4,7 +4,7 @@
 
 namespace xray::render::RENDER_NAMESPACE
 {
-class ECORE_API CDetail : public IRender_DetailModel
+class CDetail : public IRender_DetailModel
 {
 private:
     void transfer_indices(u16* iDest, u32 iOffset);

@@ -12,7 +12,7 @@ class CStateMonsterHitObject : public CState<_Object>
 private:
     typedef CState<_Object> inherited;
 
-    xr_vector<IGameObject*> m_nearest_objects;
+    std::vector<IGameObject*> m_nearest_objects;
     CPhysicsShellHolder* target;
     bool m_hitted;
 

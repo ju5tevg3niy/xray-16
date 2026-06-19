@@ -16,7 +16,7 @@ private:
     bool currentActual;
     Fvector currentCenter;
     Fvector currentRadius;
-    xr_vector<CCoverPoint*> coverPointCache;
+    std::vector<CCoverPoint*> coverPointCache;
 
 private:
     Fvector ConvertPosition(const Fvector& pos);

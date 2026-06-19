@@ -63,9 +63,9 @@ class manager;
 class manager : public ::CEnvironment
 {
 public:
-    typedef xr_vector<pcstr> shader_ids_type;
-    typedef xr_vector<pcstr> particle_ids_type;
-    typedef xr_vector<pcstr> light_animator_ids_type;
+    typedef std::vector<pcstr> shader_ids_type;
+    typedef std::vector<pcstr> particle_ids_type;
+    typedef std::vector<pcstr> light_animator_ids_type;
 
 public:
     manager();
@@ -78,7 +78,7 @@ public:
     virtual SThunderboltDesc* thunderbolt_description(const CInifile& config, shared_str const& section);
     virtual SThunderboltCollection* thunderbolt_collection(CInifile const* pIni, CInifile const* thunderbolts, pcstr section);
     virtual SThunderboltCollection* thunderbolt_collection(
-        xr_vector<SThunderboltCollection*>& collection, shared_str const& id);
+        std::vector<SThunderboltCollection*>& collection, shared_str const& id);
     void save();
     shader_ids_type const& shader_ids() const;
     particle_ids_type const& particle_ids() const;

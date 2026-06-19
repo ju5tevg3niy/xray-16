@@ -1,3 +1,5 @@
+#include <set>
+
 #include "StdAfx.h"
 #include "Inventory.h"
 #include "Weapon.h"
@@ -9,7 +11,7 @@ static u32 const ammo_to_cost_map_koef = 3;
 class next_weapon_searcher
 {
 public:
-    typedef xr_set<PIItem> exception_items_t;
+    typedef std::set<PIItem> exception_items_t;
     next_weapon_searcher(priority_group& pg, PIItem& best_fit, exception_items_t& except_set, bool ignore_ammo)
         : m_prior_group(pg),  m_except_set(except_set), m_best_fit(best_fit), m_ignore_ammo(ignore_ammo)
     {

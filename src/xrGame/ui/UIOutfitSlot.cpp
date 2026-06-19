@@ -34,13 +34,13 @@ void CUIOutfitDragDropList::SetOutfit(CUICellItem* itm)
     {
         IGameObject* pActor = smart_cast<CActor*>(Level().CurrentEntity());
 
-        xr_string iconName;
+        std::string iconName;
         if (pActor)
             iconName = pActor->cNameVisual().c_str();
         else
             iconName = m_default_outfit.c_str();
 
-        xr_string::iterator it = std::find(iconName.rbegin(), iconName.rend(), '\\').base();
+        std::string::iterator it = std::find(iconName.rbegin(), iconName.rend(), '\\').base();
 
         // Cut leading full path
         if (it != iconName.begin())

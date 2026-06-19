@@ -1,12 +1,13 @@
 #pragma once
 
+#include <vector>
+#include <list>
+
 #include "CameraDefs.h"
 #include "xrCore/PostProcess/PPInfo.hpp"
-#include "xrCommon/xr_list.h"
-#include "xrCommon/xr_vector.h"
 
-using EffectorCamVec = xr_list<CEffectorCam*>;
-using EffectorPPVec = xr_vector<CEffectorPP*>;
+using EffectorCamVec = std::list<CEffectorCam*>;
+using EffectorPPVec = std::vector<CEffectorPP*>;
 
 #define effCustomEffectorStartID 10000
 

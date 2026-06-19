@@ -7,7 +7,7 @@ class CEntity;
 
 class CTrade
 {
-    xr_vector<IGameObject*> m_nearest;
+    std::vector<IGameObject*> m_nearest;
 
     bool TradeState; // режим торговли. true - включен
     u32 m_dwLastTradeTime;

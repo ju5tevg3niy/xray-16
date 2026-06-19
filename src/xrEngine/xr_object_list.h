@@ -33,7 +33,7 @@ public:
 
 private:
     IGameObject* map_NETID[0xffff];
-    typedef xr_vector<IGameObject*> Objects;
+    typedef std::vector<IGameObject*> Objects;
     Objects destroy_queue;
     Objects objects_active;
     Objects objects_sleeping;
@@ -42,7 +42,7 @@ private:
      * @brief m_secondary_crows - list of items of the secondary thread
      */
     Objects m_primary_crows;
-    xr_vector<Objects> m_secondary_crows;
+    std::vector<Objects> m_secondary_crows;
     ObjectUpdateStatistics stats;
     u32 statsFrame;
 
@@ -55,7 +55,7 @@ public:
         SRelcasePair(int* id, RELCASE_CALLBACK cb) : m_ID(id), m_Callback(cb) {}
         bool operator==(const RELCASE_CALLBACK& cb) const { return m_Callback == cb; }
     };
-    typedef xr_vector<SRelcasePair> RELCASE_CALLBACK_VEC;
+    typedef std::vector<SRelcasePair> RELCASE_CALLBACK_VEC;
     RELCASE_CALLBACK_VEC m_relcase_callbacks;
 
     void relcase_register(RELCASE_CALLBACK, int*);

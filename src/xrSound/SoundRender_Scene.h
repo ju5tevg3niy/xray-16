@@ -45,10 +45,10 @@ public:
     auto& get_emitters() { return s_emitters; }
 
 private:
-    xr_vector<CSoundRender_Emitter*> s_emitters;
+    std::vector<CSoundRender_Emitter*> s_emitters;
 
     using event = std::pair<ref_sound, float>;
-    xr_vector<event> s_events;
+    std::vector<event> s_events;
     size_t s_events_prev_count{};
 
     sound_event* sound_event_handler{};

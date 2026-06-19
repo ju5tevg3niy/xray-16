@@ -45,8 +45,8 @@ private:
     void add(CInifile& config, shared_str const& sun);
 
 public:
-    typedef xr_vector<sun*> container_type;
-    typedef xr_vector<pstr> suns_ids_type;
+    typedef std::vector<sun*> container_type;
+    typedef std::vector<pstr> suns_ids_type;
 
 public:
     suns_ids_type const& suns_ids() const;

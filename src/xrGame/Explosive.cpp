@@ -406,7 +406,7 @@ void CExplosive::Explode()
     //взрывная волна
     ////////////////////////////////
     //---------------------------------------------------------------------
-    xr_vector<ISpatial*> ISpatialResult;
+    std::vector<ISpatial*> ISpatialResult;
     g_pGamePersistent->SpatialSpace.q_sphere(ISpatialResult, 0, STYPE_COLLIDEABLE, pos, m_fBlastRadius);
 
     m_blasted_objects.clear();

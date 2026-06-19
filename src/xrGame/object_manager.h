@@ -12,7 +12,7 @@ template <typename T>
 class CObjectManager
 {
 public:
-    typedef xr_vector<T*> OBJECTS;
+    typedef std::vector<T*> OBJECTS;
 
 protected:
     OBJECTS m_objects;

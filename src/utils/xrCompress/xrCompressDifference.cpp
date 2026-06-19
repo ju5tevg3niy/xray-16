@@ -131,7 +131,7 @@ int ProcessDifference()
     auto file_list_old = FS_old->file_list_open("$target_folder$", FS_ListFiles);
     auto folder_list_old = FS_old->file_list_open("$target_folder$", FS_ListFolders);
 
-    xr_vector<LPCSTR> target_file_list;
+    std::vector<LPCSTR> target_file_list;
     target_file_list.reserve(file_list_new->size());
 
     for (const auto& file : *file_list_new)

@@ -142,7 +142,7 @@ void CUIMMShniaga::InitShniaga(CUIXml& xml_doc, LPCSTR path)
 
 void CUIMMShniaga::OnDeviceReset() {}
 
-void CUIMMShniaga::CreateList(xr_vector<CUIStatic*>& lst, CUIXml& xml_doc, LPCSTR path, bool required /*= true*/)
+void CUIMMShniaga::CreateList(std::vector<CUIStatic*>& lst, CUIXml& xml_doc, LPCSTR path, bool required /*= true*/)
 {
     u32 color;
     CGameFont* pF;
@@ -189,7 +189,7 @@ void CUIMMShniaga::CreateList(xr_vector<CUIStatic*>& lst, CUIXml& xml_doc, LPCST
 void CUIMMShniaga::SetPage(enum_page_id page_id, LPCSTR xml_file, LPCSTR xml_path)
 {
     VERIFY(m_page != page_id);
-    xr_vector<CUIStatic*>* lst = nullptr;
+    std::vector<CUIStatic*>* lst = nullptr;
     switch (page_id)
     {
     case epi_main:             lst = &m_buttons;             break;

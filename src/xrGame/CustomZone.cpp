@@ -877,13 +877,13 @@ void CCustomZone::PlayBoltEntranceParticles()
     CCF_Shape* Sh = (CCF_Shape*)GetCForm();
     const Fmatrix& XF = XFORM();
     Fmatrix PXF;
-    xr_vector<CCF_Shape::shape_def>& Shapes = Sh->Shapes();
+    std::vector<CCF_Shape::shape_def>& Shapes = Sh->Shapes();
     Fvector sP0, sP1, vel;
 
     CParticlesObject* pParticles = NULL;
 
-    xr_vector<CCF_Shape::shape_def>::iterator it = Shapes.begin();
-    xr_vector<CCF_Shape::shape_def>::iterator it_e = Shapes.end();
+    std::vector<CCF_Shape::shape_def>::iterator it = Shapes.begin();
+    std::vector<CCF_Shape::shape_def>::iterator it_e = Shapes.end();
 
     for (; it != it_e; ++it)
     {
@@ -1579,14 +1579,14 @@ void CCustomZone::CalcDistanceTo(const Fvector& P, float& dist, float& radius)
     */
     // full test
     const Fmatrix& XF = XFORM();
-    xr_vector<CCF_Shape::shape_def>& Shapes = Sh->Shapes();
+    std::vector<CCF_Shape::shape_def>& Shapes = Sh->Shapes();
     CCF_Shape::shape_def* nearest_s = NULL;
     float nearest = flt_max;
 
     Fvector sP;
 
-    xr_vector<CCF_Shape::shape_def>::iterator it = Shapes.begin();
-    xr_vector<CCF_Shape::shape_def>::iterator it_e = Shapes.end();
+    std::vector<CCF_Shape::shape_def>::iterator it = Shapes.begin();
+    std::vector<CCF_Shape::shape_def>::iterator it_e = Shapes.end();
     for (; it != it_e; ++it)
     {
         CCF_Shape::shape_def& s = *it;

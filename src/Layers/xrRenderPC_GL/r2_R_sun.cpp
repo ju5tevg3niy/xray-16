@@ -71,7 +71,7 @@ void render_sun_old::render_sun()
     // Compute volume(s) - something like a frustum for infinite directional light
     // Also compute virtual light position and sector it is inside
     CFrustum cull_frustum;
-    xr_vector<Fplane> cull_planes;
+    std::vector<Fplane> cull_planes;
     Fvector3 cull_COP;
     glm::mat4 cull_xform;
     {
@@ -135,7 +135,7 @@ void render_sun_old::render_sun()
     }
 
     // Begin SMAP-render
-    xr_vector<Fbox3>& s_receivers = RImplementation.main_coarse_structure;
+    std::vector<Fbox3>& s_receivers = RImplementation.main_coarse_structure;
     s_casters.reserve(s_receivers.size());
 
     auto& dsgraph = RImplementation.get_context(context_id);
@@ -541,7 +541,7 @@ void render_sun_old::render_sun_near()
     // Compute volume(s) - something like a frustum for infinite directional light
     // Also compute virtual light position and sector it is inside
     CFrustum cull_frustum;
-    xr_vector<Fplane> cull_planes;
+    std::vector<Fplane> cull_planes;
     Fvector3 cull_COP;
     glm::mat4 cull_xform;
     {

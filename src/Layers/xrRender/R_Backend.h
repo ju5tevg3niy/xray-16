@@ -57,7 +57,7 @@ struct R_statistics
     R_statistics_element s_dynamic_4B;
 };
 
-class ECORE_API CBackend
+class CBackend
 {
 public:
     enum

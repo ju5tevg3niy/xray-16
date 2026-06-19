@@ -1,4 +1,7 @@
 #pragma once
+
+#include <set>
+
 #include "game_base.h"
 #include "xrServer_Object_Base.h"
 #include "xrCore/Containers/AssociativeVector.hpp"
@@ -28,10 +31,10 @@ private:
         u16 count_of_ammo;
     };
 
-    typedef xr_vector<spawn_item> respawn_collection;
+    typedef std::vector<spawn_item> respawn_collection;
     typedef respawn_collection::iterator respawn_iter;
 
-    typedef xr_vector<section_item> section_items;
+    typedef std::vector<section_item> section_items;
     typedef section_items::iterator section_items_iter;
     typedef AssociativeVector<shared_str, section_items*> respawn_sections_map;
     typedef respawn_sections_map::iterator respawn_section_iter;
@@ -49,7 +52,7 @@ private:
 
     CSE_Abstract* make_respawn_entity(shared_str const& section_name, u8 addons, u16 count_of_ammo);
 
-    xr_set<u16> level_items_respawn;
+    std::set<u16> level_items_respawn;
     void clear_level_items();
 
 public:

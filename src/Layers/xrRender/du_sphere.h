@@ -7,8 +7,8 @@
 
 namespace xray::render::RENDER_NAMESPACE
 {
-extern ECORE_API Fvector du_sphere_vertices[];
-extern ECORE_API u16 du_sphere_faces[];
-extern ECORE_API Fvector du_sphere_verticesl[];
-extern ECORE_API u16 du_sphere_lines[];
+extern Fvector du_sphere_vertices[];
+extern u16 du_sphere_faces[];
+extern Fvector du_sphere_verticesl[];
+extern u16 du_sphere_lines[];
 } // namespace xray::render::RENDER_NAMESPACE

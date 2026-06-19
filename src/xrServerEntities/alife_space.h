@@ -5,10 +5,10 @@
 //  Author      : Dmitriy Iassenev
 //  Description : ALife space
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
-#include "xrCommon/xr_vector.h"
-#include "xrCommon/xr_map.h"
+
+#include <vector>
+#include <map>
 
 // ALife objects, events and tasks
 #define ALIFE_VERSION 0x0007
@@ -158,13 +158,13 @@ enum EWeaponAddonStatus
 EHitType g_tfString2HitType(LPCSTR caHitType);
 pcstr g_cafHitType2String(EHitType tHitType);
 
-using INT_VECTOR = xr_vector<int>;
-using OBJECT_VECTOR = xr_vector<_OBJECT_ID>;
+using INT_VECTOR = std::vector<int>;
+using OBJECT_VECTOR = std::vector<_OBJECT_ID>;
 using OBJECT_IT = OBJECT_VECTOR::iterator;
-using ITEM_P_VECTOR = xr_vector<CSE_ALifeInventoryItem*>;
-using WEAPON_P_VECTOR = xr_vector<CSE_ALifeItemWeapon*>;
-using SCHEDULE_P_VECTOR = xr_vector<CSE_ALifeSchedulable*>;
+using ITEM_P_VECTOR = std::vector<CSE_ALifeInventoryItem*>;
+using WEAPON_P_VECTOR = std::vector<CSE_ALifeItemWeapon*>;
+using SCHEDULE_P_VECTOR = std::vector<CSE_ALifeSchedulable*>;
 
-using D_OBJECT_P_MAP = xr_map<_OBJECT_ID, CSE_ALifeDynamicObject*>;
-using STORY_P_MAP = xr_map<_STORY_ID, CSE_ALifeDynamicObject*>;
+using D_OBJECT_P_MAP = std::map<_OBJECT_ID, CSE_ALifeDynamicObject*>;
+using STORY_P_MAP = std::map<_STORY_ID, CSE_ALifeDynamicObject*>;
 }

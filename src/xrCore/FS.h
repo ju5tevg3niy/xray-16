@@ -1,8 +1,6 @@
 #pragma once
 
-// FS.h: interface for the CFS class.
-//
-//////////////////////////////////////////////////////////////////////
+#include <stack>
 
 #include "Common/types.hpp"
 #include "xrCore/Math/bitwise.hpp"
@@ -13,7 +11,6 @@
 #include "xrCore/Math/color.hpp"
 #include "xrCore/Math/math_funcs.hpp"
 #include "xrCore/xrstring.h"
-#include "xrCommon/xr_stack.h"
 
 #define CFS_CompressMark (1ul << 31ul)
 #define CFS_HeaderChunkID (666)
@@ -36,10 +33,10 @@ extern void unregister_file_mapping(void* address, const u32& size);
 class IWriter
 {
 private:
-    xr_stack<size_t> chunk_pos;
+    std::stack<size_t> chunk_pos;
 
 public:
-    xr_string fName;
+    std::string fName;
 
 public:
     IWriter() = default;
@@ -77,7 +74,7 @@ public:
         w(p.c_str() ? p.c_str() : "", p.size());
         w_u8(0);
     }
-    IC void w_stringZ(const xr_string& p)
+    IC void w_stringZ(const std::string& p)
     {
         w(p.c_str(), p.size());
         w_u8(0);
@@ -388,13 +385,13 @@ public:
     void r(void* p, size_t cnt) override;
 
     void r_string(char* dest, size_t tgt_sz);
-    void r_string(xr_string& dest);
+    void r_string(std::string& dest);
 
     void skip_stringZ();
 
     void r_stringZ(char* dest, size_t tgt_sz);
     void r_stringZ(shared_str& dest);
-    void r_stringZ(xr_string& dest);
+    void r_stringZ(std::string& dest);
 
     // Same as r_string but with the difference that it returns 'false' if the read string is longer than 'tgt_sz' and
     // 'true' if it is shorter

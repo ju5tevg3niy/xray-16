@@ -333,7 +333,7 @@ void CBurer::UpdateGraviObject()
         {
             // check for visibility
             bool b_enemy_visible = false;
-            xr_vector<IGameObject*> visible_objects;
+            std::vector<IGameObject*> visible_objects;
             feel_vision_get(visible_objects);
 
             // find object
@@ -382,7 +382,7 @@ void CBurer::UpdateGraviObject()
     // hit objects
     m_nearest.clear();
     Level().ObjectSpace.GetNearest(m_nearest, m_gravi_object.cur_pos, m_gravi.radius, NULL);
-    // xr_vector<IGameObject*> &m_nearest = Level().ObjectSpace.q_nearest;
+    // std::vector<IGameObject*> &m_nearest = Level().ObjectSpace.q_nearest;
 
     for (u32 i = 0; i < m_nearest.size(); i++)
     {

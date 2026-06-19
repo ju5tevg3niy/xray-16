@@ -18,7 +18,7 @@ class storage final : private Noncopyable
     static constexpr u32 TIME_TO_REMOVE_GARBAGE = 300000;
 
 public:
-    typedef xr_vector<smart_cover::description*> Descriptions;
+    typedef std::vector<smart_cover::description*> Descriptions;
     typedef cover::DescriptionPtr DescriptionPtr;
 
 private:

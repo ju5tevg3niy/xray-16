@@ -24,10 +24,10 @@ struct clQueryTri
 
 struct clQueryCollision
 {
-    xr_vector<IGameObject*> objects; // affected objects
-    xr_vector<clQueryTri> tris; // triangles (if queried)
-    xr_vector<Fobb> boxes; // boxes/ellipsoids (if queried)
-    xr_vector<Fvector4> spheres; // spheres (if queried)
+    std::vector<IGameObject*> objects; // affected objects
+    std::vector<clQueryTri> tris; // triangles (if queried)
+    std::vector<Fobb> boxes; // boxes/ellipsoids (if queried)
+    std::vector<Fvector4> spheres; // spheres (if queried)
 
     IC void Clear()
     {
@@ -142,7 +142,7 @@ public:
         bool valid() const { return (elem_id != (u16(-1))) && (type != 0); }
         void center(Fvector& center) const;
     };
-    using ElementVec = xr_vector<SElement>;
+    using ElementVec = std::vector<SElement>;
 
 private:
     u64 vis_mask;
@@ -199,7 +199,7 @@ public:
         int type;
         shape_data data;
     };
-    xr_vector<shape_def> shapes;
+    std::vector<shape_def> shapes;
 
     CCF_Shape(IGameObject* _owner);
 
@@ -210,5 +210,5 @@ public:
     void add_box(Fmatrix& B);
     void ComputeBounds();
     bool Contact(IGameObject* O);
-    xr_vector<shape_def>& Shapes() { return shapes; }
+    std::vector<shape_def>& Shapes() { return shapes; }
 };

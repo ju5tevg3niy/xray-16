@@ -1,8 +1,14 @@
 #pragma once
+
+#include <set>
+#include <deque>
+#include <vector>
+
 #include "Common/Noncopyable.hpp"
-#include "xrCommon/xr_deque.h"
-#include "xrCommon/xr_vector.h"
-#include "xrCommon/xr_set.h"
+#include "Common/types.hpp"
+#include "xrCore/client_id.h"
+#include "xrCore/fastdelegate.h"
+#include "xrCore/net_utils.h"
 
 class Lock;
 
@@ -17,9 +23,9 @@ struct GameEvent
 class GameEventQueue : Noncopyable
 {
     Lock* pcs;
-    xr_deque<GameEvent*> ready;
-    xr_vector<GameEvent*> unused;
-    xr_set<ClientID> m_blocked_clients;
+    std::deque<GameEvent*> ready;
+    std::vector<GameEvent*> unused;
+    std::set<ClientID> m_blocked_clients;
 
 public:
     typedef fastdelegate::FastDelegate1<GameEvent*, bool> event_predicate;

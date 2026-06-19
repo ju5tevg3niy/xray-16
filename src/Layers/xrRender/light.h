@@ -47,7 +47,7 @@ public:
     float attenuation2; // Quadratic attenuation
 
     light* omnipart[6];
-    xr_vector<light_indirect> indirect;
+    std::vector<light_indirect> indirect;
     u32 indirect_photons;
 
     smapvis svis[R__NUM_CONTEXTS]; // used for 6-cubemap faces

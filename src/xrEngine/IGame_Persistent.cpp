@@ -123,7 +123,7 @@ void IGame_Persistent::Level_Scan()
     }
     Levels.clear();
 
-    xr_vector<char*>* folder = FS.file_list_open("$game_levels$", FS_ListFolders | FS_RootOnly);
+    std::vector<char*>* folder = FS.file_list_open("$game_levels$", FS_ListFolders | FS_RootOnly);
     if (!folder)
     {
         Log("! No levels found in game data");

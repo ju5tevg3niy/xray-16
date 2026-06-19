@@ -238,7 +238,7 @@ void CScriptProfiler::LogHookReport(u32 entries_limit)
     u64 total_count = 0;
     u64 total_duration = 0;
 
-    xr_vector<decltype(m_hook_profiling_portions)::iterator> entries;
+    std::vector<decltype(m_hook_profiling_portions)::iterator> entries;
     entries.reserve(m_hook_profiling_portions.size());
 
     for (auto it = m_hook_profiling_portions.begin(); it != m_hook_profiling_portions.end(); it++)
@@ -321,7 +321,7 @@ void CScriptProfiler::LogSamplingReport(u32 entries_limit)
     }
 
     u64 total_count = 0;
-    xr_unordered_map<shared_str, CScriptProfilerSamplingPortion> sampling_portions;
+    std::unordered_map<shared_str, CScriptProfilerSamplingPortion> sampling_portions;
 
     for (auto& it : m_sampling_profiling_log)
     {
@@ -333,7 +333,7 @@ void CScriptProfiler::LogSamplingReport(u32 entries_limit)
             sampling_portions.emplace(it.m_name, it.cloned());
     }
 
-    xr_vector<decltype(sampling_portions)::iterator> entries;
+    std::vector<decltype(sampling_portions)::iterator> entries;
     entries.reserve(sampling_portions.size());
 
     for (auto it = sampling_portions.begin(); it != sampling_portions.end(); it++)
@@ -404,7 +404,7 @@ void CScriptProfiler::SaveHookReport(shared_str filename)
     Msg("[P] Saving hook report to %s", filename.c_str());
     IWriter* file = FS.w_open(filename.c_str());
 
-    xr_vector<decltype(m_hook_profiling_portions)::iterator> entries;
+    std::vector<decltype(m_hook_profiling_portions)::iterator> entries;
     entries.reserve(m_hook_profiling_portions.size());
 
     for (auto it = m_hook_profiling_portions.begin(); it != m_hook_profiling_portions.end(); it++)

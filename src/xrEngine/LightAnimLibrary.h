@@ -7,9 +7,9 @@
 class CLAItem
 {
 public:
-    xr_string cName;
+    std::string cName;
     float fFPS;
-    using KeyMap = xr_map<int, u32>;
+    using KeyMap = std::map<int, u32>;
     KeyMap Keys;
     int iFrameCount;
 
@@ -39,7 +39,7 @@ public:
         return (it != Keys.end()) ? &(it->second) : 0;
     }
 };
-using LAItemVec = xr_vector<CLAItem*>;
+using LAItemVec = std::vector<CLAItem*>;
 using LAItemIt = LAItemVec::iterator;
 
 class ELightAnimLibrary

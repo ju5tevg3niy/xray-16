@@ -137,7 +137,7 @@ void CMovementManager::set_level_dest_vertex(u32 const& level_vertex_id)
 }
 
 u32 CMovementManager::level_dest_vertex_id() const { return (level_path().dest_vertex_id()); }
-const xr_vector<DetailPathManager::STravelPathPoint>& CMovementManager::path() const { return (detail().path()); }
+const std::vector<DetailPathManager::STravelPathPoint>& CMovementManager::path() const { return (detail().path()); }
 void CMovementManager::update_path()
 {
     if (!enabled() || wait_for_distributed_computation())
@@ -374,7 +374,7 @@ void CMovementManager::build_level_path()
 Fvector CMovementManager::predict_position(
     const float& time_delta, const Fvector& start_position, u32& current_travel_point, const float& velocity) const
 {
-    typedef xr_vector<DetailPathManager::STravelPathPoint> PATH;
+    typedef std::vector<DetailPathManager::STravelPathPoint> PATH;
     const PATH& path = detail().path();
     if (path.empty())
         return (start_position);

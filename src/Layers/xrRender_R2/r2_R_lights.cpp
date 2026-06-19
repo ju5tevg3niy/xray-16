@@ -11,7 +11,7 @@ void CRender::render_lights(light_Package& LP)
     // 1. calculate area + sort in descending order
     // const	u16		smap_unassigned		= u16(-1);
     {
-        xr_vector<light*>& source = LP.v_shadowed;
+        std::vector<light*>& source = LP.v_shadowed;
         for (u32 it = 0; it < source.size(); it++)
         {
             light* L = source[it];
@@ -30,8 +30,8 @@ void CRender::render_lights(light_Package& LP)
 
     // 2. refactor - infact we could go from the backside and sort in ascending order
     {
-        xr_vector<light*>& source = LP.v_shadowed;
-        xr_vector<light*> refactored;
+        std::vector<light*>& source = LP.v_shadowed;
+        std::vector<light*> refactored;
         refactored.reserve(source.size());
         const size_t total = source.size();
 
@@ -84,7 +84,7 @@ void CRender::render_lights(light_Package& LP)
     //	}
     //	if (left_some_lights_that_doesn't cast shadows)
     //		accumulate them
-    static xr_vector<light*> L_spot_s;
+    static std::vector<light*> L_spot_s;
 
     struct task_data_t
     {
@@ -92,7 +92,7 @@ void CRender::render_lights(light_Package& LP)
         Task* task{};
         u32 batch_id{};
     };
-    static xr_vector<task_data_t> lights_queue{};
+    static std::vector<task_data_t> lights_queue{};
     lights_queue.reserve(R__NUM_SUN_CASCADES);
 
     const auto& flush_lights = [&]()
@@ -151,7 +151,7 @@ void CRender::render_lights(light_Package& LP)
 
         // generate spot shadowmap
         Target->phase_smap_spot_clear(cmd_list);
-        xr_vector<light*>& source = LP.v_shadowed;
+        std::vector<light*>& source = LP.v_shadowed;
         light* L = source.back();
         const u16 sid = L->vis.smap_ID;
         while (true)
@@ -273,7 +273,7 @@ void CRender::render_lights(light_Package& LP)
     // Point lighting (unshadowed, if left)
     if (!LP.v_point.empty())
     {
-        xr_vector<light*>& Lvec = LP.v_point;
+        std::vector<light*>& Lvec = LP.v_point;
         for (light* p_light : Lvec)
         {
             p_light->vis_update();
@@ -290,7 +290,7 @@ void CRender::render_lights(light_Package& LP)
     // Spot lighting (unshadowed, if left)
     if (!LP.v_spot.empty())
     {
-        xr_vector<light*>& Lvec = LP.v_spot;
+        std::vector<light*>& Lvec = LP.v_spot;
         for (light* p_light : Lvec)
         {
             p_light->vis_update();
@@ -317,7 +317,7 @@ void CRender::render_indirect(light* L) const
     LIGEN.set_shadow(false);
     LIGEN.set_cone(PI_DIV_2 * 2.f);
 
-    const xr_vector<light_indirect>& Lvec = L->indirect;
+    const std::vector<light_indirect>& Lvec = L->indirect;
     if (Lvec.empty())
         return;
     const float LE = L->color.intensity();

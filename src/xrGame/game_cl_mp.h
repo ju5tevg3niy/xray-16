@@ -47,7 +47,7 @@ struct cl_TeamStruct
     float Indicator_r2;
 };
 
-using CL_TEAM_DATA_LIST = xr_deque<cl_TeamStruct>;
+using CL_TEAM_DATA_LIST = std::deque<cl_TeamStruct>;
 
 struct cl_Message_Sound
 {
@@ -55,19 +55,19 @@ struct cl_Message_Sound
     ref_sound mSound_Radio;
 };
 
-using TEAMSOUND = xr_vector<cl_Message_Sound>;
+using TEAMSOUND = std::vector<cl_Message_Sound>;
 
 struct cl_Menu_Message
 {
     shared_str pMessage;
-    using SOUND_VARIANTS = xr_vector<TEAMSOUND>;
+    using SOUND_VARIANTS = std::vector<TEAMSOUND>;
     SOUND_VARIANTS aVariants;
 };
 
 struct cl_MessageMenu
 {
     CUISpeechMenu* m_pSpeechMenu;
-    using MENUMESSAGES = xr_vector<cl_Menu_Message>;
+    using MENUMESSAGES = std::vector<cl_Menu_Message>;
     MENUMESSAGES m_aMessages;
 
     bool operator==(CUISpeechMenu* pMenu) { return pMenu == m_pSpeechMenu; }
@@ -81,7 +81,7 @@ struct Bonus_Struct
     int Money;
     ui_shader IconShader;
     // ref_shader	IconShader;
-    xr_vector<Frect> IconRects;
+    std::vector<Frect> IconRects;
     Bonus_Struct()
     {
         BonusTypeName = "";
@@ -114,13 +114,13 @@ class game_cl_mp : public game_cl_GameState
 protected:
     CL_TEAM_DATA_LIST TeamList;
 
-    using SNDMESSAGES = xr_vector<SND_Message*>;
+    using SNDMESSAGES = std::vector<SND_Message*>;
     SNDMESSAGES m_pSndMessages;
     bool m_bJustRestarted;
-    using SNDMESSAGESINPLAY = xr_vector<SND_Message*>;
+    using SNDMESSAGESINPLAY = std::vector<SND_Message*>;
     SNDMESSAGESINPLAY m_pSndMessagesInPlay;
 
-    using BONUSES = xr_vector<Bonus_Struct>;
+    using BONUSES = std::vector<Bonus_Struct>;
     BONUSES m_pBonusList;
 
     bool m_bVotingActive;
@@ -293,7 +293,7 @@ public:
 
 private:
     fr_callback_binder m_client_receiver_cbs[MAX_PLAYERS_COUNT];
-    typedef xr_vector<detected_cheater_t> cheaters_collection_t;
+    typedef std::vector<detected_cheater_t> cheaters_collection_t;
     cheaters_collection_t m_detected_cheaters;
     bool m_ready_to_open_buy_menu;
 
@@ -310,8 +310,8 @@ public:
 
     void sending_screenshot_callback(file_transfer::sending_status_t status, u32 bytes_sent, u32 data_size);
     //-------------------------------------------------------------------------------------------------
-    static xr_string generate_file_name(const xr_string& base_name, const time_t* date_time = nullptr);
-    static xr_string sanitize_filename(const xr_string& base_name);
+    static std::string generate_file_name(const std::string& base_name, const time_t* date_time = nullptr);
+    static std::string sanitize_filename(const std::string& base_name);
 //-------------------------------------------------------------------------------------------------
 #include "game_cl_mp_messages_menu.h"
 

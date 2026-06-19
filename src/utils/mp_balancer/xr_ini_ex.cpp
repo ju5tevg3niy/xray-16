@@ -260,7 +260,7 @@ void CInifileEx::Load(IReader* F, LPCSTR path)
 
                 for (int k = 0; k < cnt; ++k)
                 {
-                    xr_string tmp;
+                    std::string tmp;
                     _GetItem(inherited_names, k, tmp);
 #ifdef DEBUG
                     Current->base_sections.push_back(tmp.c_str());

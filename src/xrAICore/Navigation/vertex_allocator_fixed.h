@@ -21,7 +21,7 @@ struct CVertexAllocatorFixed
     {
     public:
         using Index = typename TCompoundVertex::Index;
-        using VertexContainer = xr_vector<TCompoundVertex>;
+        using VertexContainer = std::vector<TCompoundVertex>;
 
     protected:
         u32 m_vertex_count;

@@ -11,7 +11,7 @@ class IClient;
 
 class PlayersMonitor
 {
-    using players_collection_t = xr_vector<IClient*>;
+    using players_collection_t = std::vector<IClient*>;
     Lock csPlayers;
     players_collection_t net_Players;
     players_collection_t net_Players_disconnected;

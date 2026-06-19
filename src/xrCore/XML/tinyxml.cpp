@@ -250,7 +250,7 @@ const char* TiXmlElement::Attribute(const char* name) const
 }
 
 //#ifdef TIXML_USE_STL
-// const xr_string* TiXmlElement::Attribute( const xr_string& name ) const
+// const std::string* TiXmlElement::Attribute( const std::string& name ) const
 //{
 //	const TiXmlAttribute* node = attributeSet.Find( name );
 //	if ( node )
@@ -423,7 +423,7 @@ TiXmlDeclaration::TiXmlDeclaration(const char* _version, const char* _encoding, 
 }
 
 #ifdef TIXML_USE_STL
-TiXmlDeclaration::TiXmlDeclaration(const xr_string& _version, const xr_string& _encoding, const xr_string& _standalone)
+TiXmlDeclaration::TiXmlDeclaration(const std::string& _version, const std::string& _encoding, const std::string& _standalone)
     : TiXmlNode(TiXmlNode::DECLARATION)
 {
     version = _version;
@@ -480,7 +480,7 @@ void TiXmlAttributeSet::Remove(TiXmlAttribute* removeMe)
 }
 
 #ifdef TIXML_USE_STL
-const TiXmlAttribute* TiXmlAttributeSet::Find(const xr_string& name) const
+const TiXmlAttribute* TiXmlAttributeSet::Find(const std::string& name) const
 {
     for (const TiXmlAttribute* node = sentinel.next; node != &sentinel; node = node->next)
     {

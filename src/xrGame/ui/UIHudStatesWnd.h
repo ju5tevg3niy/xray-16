@@ -26,8 +26,8 @@ private:
     CUIStatic* m_static_armor;
     CUIStatic* m_static_weapon;
 
-    xr_map<ALife::EInfluenceType, CUIStatic*> m_resist_back;
-    xr_map<ALife::EInfluenceType, CUIStatic*> m_indik;
+    std::map<ALife::EInfluenceType, CUIStatic*> m_resist_back;
+    std::map<ALife::EInfluenceType, CUIStatic*> m_indik;
 
     CUIStatic* m_ui_weapon_cur_ammo;
     CUIStatic* m_ui_weapon_fmj_ammo;

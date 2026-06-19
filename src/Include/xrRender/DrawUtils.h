@@ -4,11 +4,6 @@
 // tamlin WIP
 //#include "xrCore/Math/vector3.hpp"
 
-#ifndef ECORE_API
-#pragma message("ECORE_API not defined. Invoking ugly hack to enable compilation.")
-#define ECORE_API
-#endif
-
 template <class T>
 struct _vector3;
 typedef _vector3<float> Fvector;
@@ -18,7 +13,7 @@ struct Fobb;
 //----------------------------------------------------
 // Utilities
 //----------------------------------------------------
-class ECORE_API CDUInterface
+class CDUInterface
 {
 public:
     //----------------------------------------------------

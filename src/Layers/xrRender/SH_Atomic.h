@@ -16,7 +16,7 @@ namespace xray::render::RENDER_NAMESPACE
 // Atomic resources
 //////////////////////////////////////////////////////////////////////////
 #if defined(USE_DX11)
-struct ECORE_API SInputSignature : public xr_resource_flagged
+struct SInputSignature : public xr_resource_flagged
 {
     ID3DBlob* signature;
     SInputSignature(ID3DBlob* pBlob);
@@ -25,7 +25,7 @@ struct ECORE_API SInputSignature : public xr_resource_flagged
 typedef resptr_core<SInputSignature, resptr_base<SInputSignature>> ref_input_sign;
 #endif // USE_DX11
 //////////////////////////////////////////////////////////////////////////
-struct ECORE_API SVS : public xr_resource_named
+struct SVS : public xr_resource_named
 {
 #if defined(USE_DX11)
     ID3DVertexShader* sh;
@@ -44,7 +44,7 @@ struct ECORE_API SVS : public xr_resource_named
 typedef resptr_core<SVS, resptr_base<SVS>> ref_vs;
 
 //////////////////////////////////////////////////////////////////////////
-struct ECORE_API SPS : public xr_resource_named
+struct SPS : public xr_resource_named
 {
 #if defined(USE_DX11)
     ID3DPixelShader* sh;
@@ -59,7 +59,7 @@ struct ECORE_API SPS : public xr_resource_named
 typedef resptr_core<SPS, resptr_base<SPS>> ref_ps;
 
 //////////////////////////////////////////////////////////////////////////
-struct ECORE_API SGS : public xr_resource_named
+struct SGS : public xr_resource_named
 {
 #if defined(USE_DX11)
     ID3DGeometryShader* sh;
@@ -73,7 +73,7 @@ struct ECORE_API SGS : public xr_resource_named
 };
 typedef resptr_core<SGS, resptr_base<SGS>> ref_gs;
 
-struct ECORE_API SHS : public xr_resource_named
+struct SHS : public xr_resource_named
 {
 #if defined(USE_DX11)
 	ID3D11HullShader* sh;
@@ -87,7 +87,7 @@ struct ECORE_API SHS : public xr_resource_named
 };
 typedef resptr_core<SHS, resptr_base<SHS>> ref_hs;
 
-struct ECORE_API SDS : public xr_resource_named
+struct SDS : public xr_resource_named
 {
 #if defined(USE_DX11)
     ID3D11DomainShader* sh;
@@ -101,7 +101,7 @@ struct ECORE_API SDS : public xr_resource_named
 };
 typedef resptr_core<SDS, resptr_base<SDS>> ref_ds;
 
-struct ECORE_API SCS : public xr_resource_named
+struct SCS : public xr_resource_named
 {
 #if defined(USE_DX11)
     ID3D11ComputeShader* sh;
@@ -116,7 +116,7 @@ struct ECORE_API SCS : public xr_resource_named
 typedef resptr_core<SCS, resptr_base<SCS>> ref_cs;
 
 #if defined(USE_OGL)
-struct ECORE_API SPP : public xr_resource_named
+struct SPP : public xr_resource_named
 {
     // Program pipeline object
     // or shader program if ARB_separate_shader_objects is unavailabe
@@ -131,7 +131,7 @@ typedef resptr_core<SPP, resptr_base<SPP>> ref_pp;
 #endif // USE_OGL
 
 //////////////////////////////////////////////////////////////////////////
-struct ECORE_API SState : public xr_resource_flagged
+struct SState : public xr_resource_flagged
 {
     ID3DState* state;
     SimulatorStates state_code;
@@ -141,12 +141,12 @@ struct ECORE_API SState : public xr_resource_flagged
 typedef resptr_core<SState, resptr_base<SState>> ref_state;
 
 //////////////////////////////////////////////////////////////////////////
-struct ECORE_API SDeclaration : public xr_resource_flagged
+struct SDeclaration : public xr_resource_flagged
 {
 #if defined(USE_DX11)
     //	Maps input signature to input layout
-    xr_map<ID3DBlob*, ID3DInputLayout*> vs_to_layout;
-    xr_vector<D3D_INPUT_ELEMENT_DESC> dx11_dcl_code;
+    std::map<ID3DBlob*, ID3DInputLayout*> vs_to_layout;
+    std::vector<D3D_INPUT_ELEMENT_DESC> dx11_dcl_code;
 #elif defined(USE_OGL)
     GLuint dcl;
 #else
@@ -154,7 +154,7 @@ struct ECORE_API SDeclaration : public xr_resource_flagged
 #endif
 
     //	Use this for DirectX10 to cache DX9 declaration for comparison purpose only
-    xr_vector<VertexElement> dcl_code;
+    std::vector<VertexElement> dcl_code;
     SDeclaration() = default;
     ~SDeclaration();
 };

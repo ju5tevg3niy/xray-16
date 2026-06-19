@@ -133,7 +133,7 @@ protected:
         u32 time;
         bool operator<(const SDefNewsMsg& other) const { return time > other.time; }
     };
-    xr_vector<SDefNewsMsg> m_defferedMessages;
+    std::vector<SDefNewsMsg> m_defferedMessages;
     void UpdateDefferedMessages();
 
 public:
@@ -211,7 +211,7 @@ protected:
     ref_sound m_BloodSnd;
     ref_sound m_DangerSnd;
 
-    xr_vector<const CArtefact*> m_ArtefactsOnBelt;
+    std::vector<const CArtefact*> m_ArtefactsOnBelt;
 protected:
     // Death
     float m_hit_slowmo;
@@ -220,7 +220,7 @@ protected:
 
     // media
     SndShockEffector* m_sndShockEffector;
-    xr_vector<ref_sound> sndHit[ALife::eHitTypeMax];
+    std::vector<ref_sound> sndHit[ALife::eHitTypeMax];
     ref_sound sndDie[SND_DIE_COUNT];
 
     float m_fLandingTime;
@@ -550,7 +550,7 @@ public:
     virtual bool net_SaveRelevant();
 
 protected:
-    xr_deque<net_update> NET;
+    std::deque<net_update> NET;
     Fvector NET_SavedAccel;
     net_update NET_Last;
     BOOL NET_WasInterpolating; // previous update was by interpolation or by extrapolation
@@ -567,7 +567,7 @@ protected:
     virtual bool can_validate_position_on_spawn() { return false; }
     ///////////////////////////////////////////////////////
     // апдайт с данными физики
-    xr_deque<net_update_A> NET_A;
+    std::deque<net_update_A> NET_A;
 
     //---------------------------------------------
     //	bool					m_bHasUpdate;
@@ -577,7 +577,7 @@ protected:
     Fvector IPosS, IPosH, IPosL; //положение актера после интерполяции Бизье, Эрмита, линейной
 
 #ifdef DEBUG
-    using VIS_POSITION = xr_deque<Fvector>;
+    using VIS_POSITION = std::deque<Fvector>;
 
     VIS_POSITION LastPosS;
     VIS_POSITION LastPosH;
@@ -599,7 +599,7 @@ protected:
     u32 m_dwILastUpdateTime;
 
     //---------------------------------------------
-    using PH_STATES = xr_deque<SPHNetState>;
+    using PH_STATES = std::deque<SPHNetState>;
     PH_STATES m_States;
     u16 m_u16NumBones;
     void net_ExportDeadBody(NET_Packet& P);
@@ -758,7 +758,7 @@ public:
 private:
     collide::rq_results RQR;
     BOOL CanPickItem(const CFrustum& frustum, const Fvector& from, IGameObject* item);
-    xr_vector<ISpatial*> ISpatialResult;
+    std::vector<ISpatial*> ISpatialResult;
 
 private:
     CLocationManager* m_location_manager;

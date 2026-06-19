@@ -95,7 +95,7 @@ void render_sun::calculate()
 
     // Compute volume(s) - something like a frustum for infinite directional light
     // Also compute virtual light position and sector it is inside
-    xr_vector<Fplane> cull_planes;
+    std::vector<Fplane> cull_planes;
 
     CFrustum cull_frustum[R__NUM_SUN_CASCADES];
     Fvector3 cull_COP[R__NUM_SUN_CASCADES];

@@ -66,8 +66,8 @@ public:
     CUIHudStatesWnd* get_hud_states() { return m_ui_hud_states; } // temp
     void OnSectorChanged(IRender_Sector::sector_id_t sector);
 
-    xr_vector<CUIStatic*> m_quick_slots_icons;
-    xr_vector<CUIStatic*> m_quick_slots_texts;
+    std::vector<CUIStatic*> m_quick_slots_icons;
+    std::vector<CUIStatic*> m_quick_slots_texts;
 
 protected:
     // 5 статиков для отображения иконок:
@@ -111,7 +111,7 @@ public:
     void TurnOffWarningIcon(EWarningIcons icon);
 
     // Пороги изменения цвета индикаторов, загружаемые из system.ltx
-    typedef xr_map<EWarningIcons, xr_vector<float>> Thresholds;
+    typedef std::map<EWarningIcons, std::vector<float>> Thresholds;
     typedef Thresholds::iterator Thresholds_it;
     Thresholds m_Thresholds;
 
@@ -142,7 +142,7 @@ protected:
     //	void				SetAmmoIcon						(const shared_str& seсt_name);
 
     // first - иконка, second - анимация
-    using FlashingIcons = xr_map<EFlashingIcons, CUIStatic*>;
+    using FlashingIcons = std::map<EFlashingIcons, CUIStatic*>;
     FlashingIcons m_FlashingIcons;
 
     //	CMissile*			m_pGrenade{};

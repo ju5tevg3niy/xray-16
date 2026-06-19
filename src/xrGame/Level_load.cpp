@@ -204,7 +204,7 @@ void CLevel::Load_GameSpecific_CFORM(CDB::TRI* tris, u32 count)
 {
     ZoneScoped;
 
-    typedef xr_vector<translation_pair> ID_INDEX_PAIRS;
+    typedef std::vector<translation_pair> ID_INDEX_PAIRS;
     ID_INDEX_PAIRS translator;
     translator.reserve(GMLib.CountMaterial());
     u16 default_id = (u16)GMLib.GetMaterialIdx("default");
@@ -270,10 +270,10 @@ void CLevel::Load_GameSpecific_CFORM(CDB::TRI* tris, u32 count)
     }
 }
 
-void CLevel::Load_GameSpecific_CFORM_SetMaterials(CDB::TRI* tris, u32 count, xr_map<u16, shared_str>& gameMtls)
+void CLevel::Load_GameSpecific_CFORM_SetMaterials(CDB::TRI* tris, u32 count, std::map<u16, shared_str>& gameMtls)
 {
     // SkyLoader: reassing material indexes because they could have changed after various gamemtl.xr edits
-    xr_vector<translation_struct> translator;
+    std::vector<translation_struct> translator;
     translator.reserve(gameMtls.size());
     for (const auto& [id, mtlName] : gameMtls)
     {

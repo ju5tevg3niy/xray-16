@@ -23,7 +23,7 @@
 
 #include "xrNetServer/NET_Messages.h"
 
-typedef xr_vector<std::pair<shared_str, int>> STORY_PAIRS;
+typedef std::vector<std::pair<shared_str, int>> STORY_PAIRS;
 typedef STORY_PAIRS SPAWN_STORY_PAIRS;
 LPCSTR _INVALID_STORY_ID = "INVALID_STORY_ID";
 LPCSTR _INVALID_SPAWN_STORY_ID = "INVALID_SPAWN_STORY_ID";
@@ -414,7 +414,7 @@ void set_process_time(CALifeSimulator* self, int micro)
     self->set_process_time(micro);
 }
 
-xr_vector<u16>& get_children(const CALifeSimulator* self, CSE_Abstract* object)
+std::vector<u16>& get_children(const CALifeSimulator* self, CSE_Abstract* object)
 {
     VERIFY(self);
     return object->children;

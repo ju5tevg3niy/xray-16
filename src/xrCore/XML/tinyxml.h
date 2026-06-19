@@ -25,13 +25,14 @@ distribution.
 #ifndef TINYXML_INCLUDED
 #define TINYXML_INCLUDED
 
+#include <string>
+
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
 
-#include "xrCommon/xr_string.h"
 
 // Help out windows:
 #if defined(_DEBUG) && !defined(DEBUG)
@@ -42,7 +43,7 @@ distribution.
 
 #ifdef TIXML_USE_STL
 #include <string>
-#define TIXML_STRING xr_string
+#define TIXML_STRING std::string
 #else
 #include "tinystr.h"
 #define TIXML_STRING TiXmlString
@@ -192,7 +193,7 @@ public:
     TiXmlBase() : userData(0) {}
     virtual ~TiXmlBase() {}
     /**	All TinyXml classes can print themselves to a filestream
-        or the string class (TiXmlString in non-STL mode, xr_string
+        or the string class (TiXmlString in non-STL mode, std::string
         in STL mode.) Either or both cfile and str can be null.
 
         This is a formatted print, and will insert
@@ -425,8 +426,8 @@ public:
     */
     //	    friend std::ostream& operator<< (std::ostream& out, const TiXmlNode& base);
 
-    /// Appends the XML node or attribute to a xr_string.
-    friend xr_string& operator<<(xr_string& out, const TiXmlNode& base);
+    /// Appends the XML node or attribute to a std::string.
+    friend std::string& operator<<(std::string& out, const TiXmlNode& base);
 
 #endif
 
@@ -460,11 +461,11 @@ public:
     */
     const char* Value() const { return value.c_str(); }
 #ifdef TIXML_USE_STL
-    /** Return Value() as a xr_string. If you only use STL,
+    /** Return Value() as a std::string. If you only use STL,
         this is more efficient than calling Value().
         Only available in STL mode.
     */
-    const xr_string& ValueStr() const { return value; }
+    const std::string& ValueStr() const { return value; }
 #endif
 
     const TIXML_STRING& ValueTStr() const { return value; }
@@ -479,8 +480,8 @@ public:
     */
     void SetValue(const char* _value) { value = _value; }
 #ifdef TIXML_USE_STL
-    /// STL xr_string form.
-    void SetValue(const xr_string& _value) { value = _value; }
+    /// STL std::string form.
+    void SetValue(const std::string& _value) { value = _value; }
 #endif
 
     /// Delete all the children of this node. Does not affect 'this'.
@@ -517,16 +518,16 @@ public:
     }
 
 #ifdef TIXML_USE_STL
-    const TiXmlNode* FirstChild(const xr_string& _value) const
+    const TiXmlNode* FirstChild(const std::string& _value) const
     {
         return FirstChild(_value.c_str());
-    } ///< STL xr_string form.
-    TiXmlNode* FirstChild(const xr_string& _value) { return FirstChild(_value.c_str()); } ///< STL xr_string form.
-    const TiXmlNode* LastChild(const xr_string& _value) const
+    } ///< STL std::string form.
+    TiXmlNode* FirstChild(const std::string& _value) { return FirstChild(_value.c_str()); } ///< STL std::string form.
+    const TiXmlNode* LastChild(const std::string& _value) const
     {
         return LastChild(_value.c_str());
-    } ///< STL xr_string form.
-    TiXmlNode* LastChild(const xr_string& _value) { return LastChild(_value.c_str()); } ///< STL xr_string form.
+    } ///< STL std::string form.
+    TiXmlNode* LastChild(const std::string& _value) { return LastChild(_value.c_str()); } ///< STL std::string form.
 #endif
 
     /** An alternate way to walk the children of a node.
@@ -559,14 +560,14 @@ public:
     }
 
 #ifdef TIXML_USE_STL
-    const TiXmlNode* IterateChildren(const xr_string& _value, const TiXmlNode* previous) const
+    const TiXmlNode* IterateChildren(const std::string& _value, const TiXmlNode* previous) const
     {
         return IterateChildren(_value.c_str(), previous);
-    } ///< STL xr_string form.
-    TiXmlNode* IterateChildren(const xr_string& _value, const TiXmlNode* previous)
+    } ///< STL std::string form.
+    TiXmlNode* IterateChildren(const std::string& _value, const TiXmlNode* previous)
     {
         return IterateChildren(_value.c_str(), previous);
-    } ///< STL xr_string form.
+    } ///< STL std::string form.
 #endif
 
     TiXmlNode* LinkEndChild(TiXmlNode* addThis);
@@ -582,19 +583,19 @@ public:
     }
 
 #ifdef TIXML_USE_STL
-    const TiXmlNode* PreviousSibling(const xr_string& _value) const
+    const TiXmlNode* PreviousSibling(const std::string& _value) const
     {
         return PreviousSibling(_value.c_str());
-    } ///< STL xr_string form.
-    TiXmlNode* PreviousSibling(const xr_string& _value)
+    } ///< STL std::string form.
+    TiXmlNode* PreviousSibling(const std::string& _value)
     {
         return PreviousSibling(_value.c_str());
-    } ///< STL xr_string form.
-    const TiXmlNode* NextSibling(const xr_string& _value) const
+    } ///< STL std::string form.
+    const TiXmlNode* NextSibling(const std::string& _value) const
     {
         return NextSibling(_value.c_str());
-    } ///< STL xr_string form.
-    TiXmlNode* NextSibling(const xr_string& _value) { return NextSibling(_value.c_str()); } ///< STL xr_string form.
+    } ///< STL std::string form.
+    TiXmlNode* NextSibling(const std::string& _value) { return NextSibling(_value.c_str()); } ///< STL std::string form.
 #endif
 
     /// Navigate to a sibling node.
@@ -628,14 +629,14 @@ public:
     }
 
 #ifdef TIXML_USE_STL
-    const TiXmlElement* NextSiblingElement(const xr_string& _value) const
+    const TiXmlElement* NextSiblingElement(const std::string& _value) const
     {
         return NextSiblingElement(_value.c_str());
-    } ///< STL xr_string form.
-    TiXmlElement* NextSiblingElement(const xr_string& _value)
+    } ///< STL std::string form.
+    TiXmlElement* NextSiblingElement(const std::string& _value)
     {
         return NextSiblingElement(_value.c_str());
-    } ///< STL xr_string form.
+    } ///< STL std::string form.
 #endif
 
     /// Convenience function to get through elements.
@@ -653,14 +654,14 @@ public:
     }
 
 #ifdef TIXML_USE_STL
-    const TiXmlElement* FirstChildElement(const xr_string& _value) const
+    const TiXmlElement* FirstChildElement(const std::string& _value) const
     {
         return FirstChildElement(_value.c_str());
-    } ///< STL xr_string form.
-    TiXmlElement* FirstChildElement(const xr_string& _value)
+    } ///< STL std::string form.
+    TiXmlElement* FirstChildElement(const std::string& _value)
     {
         return FirstChildElement(_value.c_str());
-    } ///< STL xr_string form.
+    } ///< STL std::string form.
 #endif
 
     /** Query the type (as an enumerated value, above) of this node.
@@ -794,8 +795,8 @@ public:
     }
 
     //#ifdef TIXML_USE_STL
-    ///// xr_string constructor.
-    // TiXmlAttribute( const xr_string& _name, const xr_string& _value )
+    ///// std::string constructor.
+    // TiXmlAttribute( const std::string& _name, const std::string& _value )
     //{
     //	name = _name;
     //	value = _value;
@@ -816,7 +817,7 @@ public:
     const char* Name() const { return name.c_str(); } ///< Return the name of this attribute.
     const char* Value() const { return value.c_str(); } ///< Return the value of this attribute.
 #ifdef TIXML_USE_STL
-    const xr_string& ValueStr() const { return value; } ///< Return the value of this attribute.
+    const std::string& ValueStr() const { return value; } ///< Return the value of this attribute.
 #endif
     int IntValue() const; ///< Return the value of this attribute, converted to an integer.
     double DoubleValue() const; ///< Return the value of this attribute, converted to a double.
@@ -842,10 +843,10 @@ public:
     void SetDoubleValue(double _value); ///< Set the value from a double.
 
 #ifdef TIXML_USE_STL
-    /// STL xr_string form.
-    void SetName(const xr_string& _name) { name = _name; }
-    /// STL xr_string form.
-    void SetValue(const xr_string& _value) { value = _value; }
+    /// STL std::string form.
+    void SetName(const std::string& _name) { name = _name; }
+    /// STL std::string form.
+    void SetValue(const std::string& _value) { value = _value; }
 #endif
 
     /// Get the next sibling attribute in the DOM. Returns null at end.
@@ -909,8 +910,8 @@ public:
         return const_cast<TiXmlAttribute*>((const_cast<const TiXmlAttributeSet*>(this))->Find(_name));
     }
 #ifdef TIXML_USE_STL
-    const TiXmlAttribute* Find(const xr_string& _name) const;
-    TiXmlAttribute* Find(const xr_string& _name)
+    const TiXmlAttribute* Find(const std::string& _name) const;
+    TiXmlAttribute* Find(const std::string& _name)
     {
         return const_cast<TiXmlAttribute*>((const_cast<const TiXmlAttributeSet*>(this))->Find(_name));
     }
@@ -1105,7 +1106,7 @@ public:
     virtual ~TiXmlText() {}
 #ifdef TIXML_USE_STL
     /// Constructor.
-    TiXmlText(const xr_string& initValue) : TiXmlNode(TiXmlNode::TEXT)
+    TiXmlText(const std::string& initValue) : TiXmlNode(TiXmlNode::TEXT)
     {
         SetValue(initValue);
         cdata = false;
@@ -1157,7 +1158,7 @@ public:
     TiXmlDeclaration() : TiXmlNode(TiXmlNode::DECLARATION) {}
 #ifdef TIXML_USE_STL
     /// Constructor.
-    TiXmlDeclaration(const xr_string& _version, const xr_string& _encoding, const xr_string& _standalone);
+    TiXmlDeclaration(const std::string& _version, const std::string& _encoding, const std::string& _standalone);
 #endif
 
     /// Construct.

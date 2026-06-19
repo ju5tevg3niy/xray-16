@@ -14,7 +14,7 @@ protected:
     int mOctaves{ 2 };
     float mFrequency{ 1.0f };
     float mAmplitude{ 1.0f };
-    xr_vector<float> mTimes;
+    std::vector<float> mTimes;
 
 public:
     CPerlinNoiseCustom(int seed) : mSeed(seed) {}

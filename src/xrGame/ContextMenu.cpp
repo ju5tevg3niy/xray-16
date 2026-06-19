@@ -6,7 +6,7 @@
 
 CContextMenu::~CContextMenu()
 {
-    for (xr_vector<MenuItem>::iterator I = Items.begin(); Items.end() != I; ++I)
+    for (std::vector<MenuItem>::iterator I = Items.begin(); Items.end() != I; ++I)
     {
         Engine.Event.Destroy(I->Event);
         xr_free(I->Name);

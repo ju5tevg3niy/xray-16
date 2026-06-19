@@ -70,6 +70,6 @@ private:
     CUIStatic* m_pMapPic;
     CUIMapInfo* m_pMapInfo;
 
-    xr_string m_command;
-    xr_string m_srv_params;
+    std::string m_command;
+    std::string m_srv_params;
 };

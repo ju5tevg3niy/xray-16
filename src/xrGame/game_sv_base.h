@@ -76,7 +76,7 @@ public:
     virtual void OnRender() = 0;
     virtual void OnSwitchPhase(u32 oldPhase, u32 newPhase) = 0;
     virtual u32 get_alive_count(u32 team) = 0;
-    virtual xr_vector<u16>* get_children(ClientID id) = 0;
+    virtual std::vector<u16>* get_children(ClientID id) = 0;
     virtual BOOL OnPreCreate(CSE_Abstract* entity) = 0;
     virtual void OnCreate(u16 idWho) = 0;
     virtual void OnPostCreate(u16 idWho) = 0;
@@ -139,7 +139,7 @@ protected:
         shared_str map_name;
         shared_str map_ver;
     };
-    using MAP_ROTATION_LIST = xr_deque<SMapRot>;
+    using MAP_ROTATION_LIST = std::deque<SMapRot>;
     bool m_bMapRotation;
     bool m_bMapNeedRotation;
     bool m_bMapSwitched;
@@ -154,8 +154,8 @@ public:
 
     BOOL sv_force_sync;
     float rpoints_MinDist[TEAM_COUNT];
-    xr_vector<RPoint> rpoints[TEAM_COUNT];
-    using RPRef = xr_vector<RPoint*>;
+    std::vector<RPoint> rpoints[TEAM_COUNT];
+    using RPRef = std::vector<RPoint*>;
     RPRef rpointsBlocked;
 
     virtual void SaveMapList() override;
@@ -217,7 +217,7 @@ public:
     s32 get_option_i(LPCSTR lst, LPCSTR name, s32 def = 0);
     string64& get_option_s(LPCSTR lst, LPCSTR name, LPCSTR def = 0);
     virtual u32 get_alive_count(u32 team);
-    virtual xr_vector<u16>* get_children(ClientID id_who);
+    virtual std::vector<u16>* get_children(ClientID id_who);
     void u_EventGen(NET_Packet& P, u16 type, u16 dest);
     void u_EventSend(NET_Packet& P, u32 dwFlags = 0x0008 /*DPNSEND_GUARANTEED*/);
 

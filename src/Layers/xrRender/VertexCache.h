@@ -21,7 +21,7 @@ public:
     void Set(int index, int value);
 
 private:
-    xr_vector<int> entries;
+    std::vector<int> entries;
 };
 
 IC bool VertexCache::InCache(int entry)

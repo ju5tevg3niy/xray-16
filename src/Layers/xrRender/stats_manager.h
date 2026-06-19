@@ -46,7 +46,7 @@ private:
         _D3DPOOL location;
     }; // stats_item
 
-    xr_vector<stats_item> m_buffers_list;
+    std::vector<stats_item> m_buffers_list;
 #endif
 }; // class stats_manager
 

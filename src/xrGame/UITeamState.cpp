@@ -285,8 +285,8 @@ void UITeamState::Update()
 {
     if (toDeletePlayers.size())
     {
-        xr_vector<ClientID>::iterator ie = toDeletePlayers.end();
-        for (xr_vector<ClientID>::iterator i = toDeletePlayers.begin(); i != ie; ++i)
+        std::vector<ClientID>::iterator ie = toDeletePlayers.end();
+        for (std::vector<ClientID>::iterator i = toDeletePlayers.begin(); i != ie; ++i)
         {
             MapClientIdToUIPlayer::iterator tempIter = myPlayers.find(*i);
             VERIFY2(tempIter != myPlayers.end(), "player not found while deleting");

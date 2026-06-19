@@ -1,5 +1,11 @@
 #pragma once
 
+#include <vector>
+
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Layers/xrRenderGL/CommonTypes.h"
+
 #if defined(USE_OGL)
 #include "../xrRenderGL/glState.h"
 #endif
@@ -40,7 +46,7 @@ private:
     };
 
 private:
-    xr_vector<State> States;
+    std::vector<State> States;
 
 public:
     SimulatorStates() = default;

@@ -37,7 +37,7 @@ private:
         void save(CInifile* ini, char const* name_sect);
     };
     void erase_expired_ban_items();
-    typedef xr_vector<banned_client*> ban_list_t;
+    typedef std::vector<banned_client*> ban_list_t;
 
     ban_list_t m_ban_list;
 }; // class cdkey_ban_list

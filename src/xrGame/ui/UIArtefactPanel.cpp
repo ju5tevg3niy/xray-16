@@ -22,7 +22,7 @@ void CUIArtefactPanel::InitFromXML(CUIXml& xml, pcstr path, int index)
     m_iIndent     = xml.ReadAttribInt(path, index, "indent", 1);
 }
 
-void CUIArtefactPanel::InitIcons(const xr_vector<const CArtefact*>& artefacts)
+void CUIArtefactPanel::InitIcons(const std::vector<const CArtefact*>& artefacts)
 {
     m_StaticItem.SetShader(InventoryUtilities::GetEquipmentIconsShader());
     m_vRects.clear();

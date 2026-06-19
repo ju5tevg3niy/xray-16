@@ -115,7 +115,7 @@ void CEncyclopediaArticle::load_shared(LPCSTR)
     };
 
     // Тип статьи
-    xr_string atricle_type = pXML->ReadAttrib(pNode, "article_type", "encyclopedia");
+    std::string atricle_type = pXML->ReadAttrib(pNode, "article_type", "encyclopedia");
     if (0 == xr_stricmp(atricle_type.c_str(), "encyclopedia"))
     {
         data()->articleType = ARTICLE_DATA::eEncyclopediaArticle;

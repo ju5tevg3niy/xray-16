@@ -14,7 +14,7 @@ class CGSUpdateStatusAccumulator
 {
 protected:
     mutable Lock lock;
-    xr_vector<GSUpdateStatus> accumulator;
+    std::vector<GSUpdateStatus> accumulator;
 
 public:
     /*! Creates the accumulator and puts argument as the first status of the series */
@@ -60,7 +60,7 @@ protected:
         bool active;
         bool reportedFailure;
     };
-    xr_vector<SBrowserInfo> browsers;
+    std::vector<SBrowserInfo> browsers;
 
     struct SServerDescription
     {
@@ -68,12 +68,12 @@ protected:
         size_t idx;
         void* gs_data;
     };
-    xr_vector<SServerDescription> servers;
+    std::vector<SServerDescription> servers;
 
     // Lock it before accessing 'browsers' or 'servers' members
     Lock servers_lock;
 
-    xr_vector<UpdateCallback> updates_subscriptions;
+    std::vector<UpdateCallback> updates_subscriptions;
     // Lock it before accessing 'updates_subscriptions' member
     Lock updates_subscriptions_lock;
 

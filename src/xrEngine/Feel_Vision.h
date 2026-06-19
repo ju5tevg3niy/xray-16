@@ -20,11 +20,11 @@ class Vision : private pure_relcase
     friend class pure_relcase;
 
 private:
-    xr_vector<IGameObject*> seen;
-    xr_vector<IGameObject*> query;
-    xr_vector<IGameObject*> diff;
+    std::vector<IGameObject*> seen;
+    std::vector<IGameObject*> query;
+    std::vector<IGameObject*> diff;
     collide::rq_results RQR;
-    xr_vector<ISpatial*> r_spatial;
+    std::vector<ISpatial*> r_spatial;
     IGameObject const* m_owner;
 
     void o_new(IGameObject* E);
@@ -46,24 +46,24 @@ public:
         float Cache_vis;
         u16 bone_id;
     };
-    xr_vector<feel_visible_Item> feel_visible;
+    std::vector<feel_visible_Item> feel_visible;
 
 public:
     void feel_vision_clear();
     void feel_vision_query(Fmatrix& mFull, Fvector& P);
     void feel_vision_update(IGameObject* parent, Fvector& P, float dt, float vis_threshold);
     void feel_vision_relcase(IGameObject* object);
-    void feel_vision_get(xr_vector<IGameObject*>& R)
+    void feel_vision_get(std::vector<IGameObject*>& R)
     {
         R.clear();
-        xr_vector<feel_visible_Item>::iterator I = feel_visible.begin(), E = feel_visible.end();
+        std::vector<feel_visible_Item>::iterator I = feel_visible.begin(), E = feel_visible.end();
         for (; I != E; ++I)
             if (positive(I->fuzzy))
                 R.push_back(I->O);
     }
     Fvector feel_vision_get_vispoint(IGameObject* _O)
     {
-        xr_vector<feel_visible_Item>::iterator I = feel_visible.begin(), E = feel_visible.end();
+        std::vector<feel_visible_Item>::iterator I = feel_visible.begin(), E = feel_visible.end();
         for (; I != E; ++I)
             if (_O == I->O)
             {

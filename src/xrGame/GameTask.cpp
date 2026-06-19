@@ -401,10 +401,10 @@ void SGameTaskObjective::CreateMapLocation(bool on_load)
 
     if (on_load)
     {
-        xr_vector<CMapLocation*> res;
+        std::vector<CMapLocation*> res;
         Level().MapManager().GetMapLocations(m_map_location, m_map_object_id, res);
-        xr_vector<CMapLocation*>::iterator it = res.begin();
-        xr_vector<CMapLocation*>::iterator it_e = res.end();
+        std::vector<CMapLocation*>::iterator it = res.begin();
+        std::vector<CMapLocation*>::iterator it_e = res.end();
         for (; it != it_e; ++it)
         {
             CMapLocation* ml = *it;
@@ -505,10 +505,10 @@ ETaskState SGameTaskObjective::UpdateState()
     return GetTaskState();
 }
 
-bool SGameTaskObjective::CheckInfo(const xr_vector<shared_str>& v) const
+bool SGameTaskObjective::CheckInfo(const std::vector<shared_str>& v) const
 {
     bool res = false;
-    xr_vector<shared_str>::const_iterator it = v.begin();
+    std::vector<shared_str>::const_iterator it = v.begin();
     for (; it != v.end(); ++it)
     {
         res = Actor()->HasInfo(*it);
@@ -542,9 +542,9 @@ void SGameTaskObjective::CallAllFuncs(const task_state_functors& v)
     }
 }
 
-void SGameTaskObjective::SendInfo(const xr_vector<shared_str>& v)
+void SGameTaskObjective::SendInfo(const std::vector<shared_str>& v)
 {
-    xr_vector<shared_str>::const_iterator it = v.begin();
+    std::vector<shared_str>::const_iterator it = v.begin();
     for (; it != v.end(); ++it)
         Actor()->TransferInfo((*it), true);
 }
@@ -665,7 +665,7 @@ void SGameTaskObjective::CommitScriptHelperContents()
     m_pScriptHelper.init_functors(m_pScriptHelper.m_s_lua_functions_on_fail, m_lua_functions_on_fail);
 }
 
-void SScriptTaskHelper::init_functors(xr_vector<shared_str>& v_src, task_state_functors& v_dest)
+void SScriptTaskHelper::init_functors(std::vector<shared_str>& v_src, task_state_functors& v_dest)
 {
     auto it = v_src.begin();
     auto it_e = v_src.end();

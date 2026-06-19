@@ -23,7 +23,7 @@ enum ETaskType
 using TASK_ID = shared_str;
 using TASK_OBJECTIVE_ID = u16;
 
-using TASK_ID_VECTOR = xr_vector<TASK_ID>;
+using TASK_ID_VECTOR = std::vector<TASK_ID>;
 
 constexpr auto ROOT_TASK_OBJECTIVE = static_cast<TASK_OBJECTIVE_ID>(0); // task itself
 
@@ -42,7 +42,7 @@ struct SGameTaskKey : public ISerializable, public IPureDestroyableObject
     virtual void destroy();
 };
 
-using vGameTasks = xr_vector<SGameTaskKey>;
+using vGameTasks = std::vector<SGameTaskKey>;
 
 struct CGameTaskRegistry : public CALifeAbstractRegistry<u16, vGameTasks>
 {

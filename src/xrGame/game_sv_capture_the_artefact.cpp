@@ -1,3 +1,5 @@
+#include <set>
+
 #include "StdAfx.h"
 #include "game_sv_capture_the_artefact.h"
 #include "xrServer_Objects_ALife_Monsters.h"
@@ -1065,7 +1067,7 @@ void game_sv_CaptureTheArtefact::ReStartRandomAnomaly()
 {
     typedef TAnomalySet::size_type TAnomSize;
     typedef TAnomalySet::iterator TAnomIter;
-    typedef xr_set<TAnomSize> TSAnomsSet;
+    typedef std::set<TAnomSize> TSAnomsSet;
 
     if (!m_AnomalySet.size())
         return;
@@ -1853,7 +1855,7 @@ BOOL game_sv_CaptureTheArtefact::OnActivate(u16 eid_who, u16 eid_target)
     return FALSE;
 }
 
-void game_sv_CaptureTheArtefact::FillDeathActorRejectItems(CSE_ActorMP* actor, xr_vector<CSE_Abstract*>& to_reject)
+void game_sv_CaptureTheArtefact::FillDeathActorRejectItems(CSE_ActorMP* actor, std::vector<CSE_Abstract*>& to_reject)
 {
     R_ASSERT(actor);
 
@@ -1903,15 +1905,15 @@ void game_sv_CaptureTheArtefact::OnDetachItem(CSE_ActorMP* actor, CSE_Abstract* 
     if (item->m_tClassID == CLSID_OBJECT_PLAYERS_BAG)
     {
         // move all items from player to rukzak
-        xr_vector<u16>::const_iterator it_e = actor->children.end();
+        std::vector<u16>::const_iterator it_e = actor->children.end();
 
-        xr_vector<CSE_Abstract*> to_transfer;
-        xr_vector<CSE_Abstract*> to_destroy;
-        xr_vector<CSE_Abstract*> to_reject;
+        std::vector<CSE_Abstract*> to_transfer;
+        std::vector<CSE_Abstract*> to_destroy;
+        std::vector<CSE_Abstract*> to_reject;
         // may be there is a sense to move next invokation into the ProcessDeath method...
         FillDeathActorRejectItems(actor, to_reject);
 
-        for (xr_vector<u16>::const_iterator it = actor->children.begin(); it != it_e; ++it)
+        for (std::vector<u16>::const_iterator it = actor->children.begin(); it != it_e; ++it)
         {
             u16 ItemID = *it;
             CSE_Abstract* e_item = get_entity_from_eid(ItemID);
@@ -1934,14 +1936,14 @@ void game_sv_CaptureTheArtefact::OnDetachItem(CSE_ActorMP* actor, CSE_Abstract* 
             }
         }
 
-        xr_vector<CSE_Abstract*>::const_iterator tr_it_e = to_transfer.end();
+        std::vector<CSE_Abstract*>::const_iterator tr_it_e = to_transfer.end();
 
         NET_Packet EventPack;
         NET_Packet PacketReject;
         NET_Packet PacketTake;
         EventPack.w_begin(M_EVENT_PACK);
 
-        for (xr_vector<CSE_Abstract*>::const_iterator tr_it = to_transfer.begin(); tr_it != tr_it_e; ++tr_it)
+        for (std::vector<CSE_Abstract*>::const_iterator tr_it = to_transfer.begin(); tr_it != tr_it_e; ++tr_it)
         {
             m_server->Perform_transfer(PacketReject, PacketTake, *tr_it, actor, item);
             EventPack.w_u8(u8(PacketReject.B.count));

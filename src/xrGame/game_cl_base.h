@@ -84,7 +84,7 @@ public:
     u32 GetPlayersCount() const { return players.size(); };
     virtual CUIGameCustom* createGameUI() { return NULL; };
     virtual void SetGameUI(CUIGameCustom*){};
-    virtual void GetMapEntities(xr_vector<SZoneMapEntityData>& dst){};
+    virtual void GetMapEntities(std::vector<SZoneMapEntityData>& dst){};
 
     static void StartStopMenu(CUIDialogWnd* pDialog, bool bDoHideIndicators);
     virtual void shedule_Update(u32 dt);

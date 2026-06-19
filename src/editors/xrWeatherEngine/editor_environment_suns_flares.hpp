@@ -31,7 +31,7 @@ class flare;
 class flares : private Noncopyable
 {
 public:
-    typedef xr_vector<flare*> flares_type;
+    typedef std::vector<flare*> flares_type;
     flares();
     virtual ~flares();
     void load(CInifile& config, shared_str const& section);

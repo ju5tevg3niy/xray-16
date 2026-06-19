@@ -261,7 +261,7 @@ void CPHMovementControl::UpdateCollisionDamage()
 #include "xrCore/Math/vector3_ext.hpp"
 
 bool CPHMovementControl::MakeJumpPath(
-    xr_vector<DetailPathManager::STravelPathPoint>& out_path, u32& travel_point, Fvector& out_deviation)
+    std::vector<DetailPathManager::STravelPathPoint>& out_path, u32& travel_point, Fvector& out_deviation)
 {
     if (!m_character->JumpState())
         return false;
@@ -318,7 +318,7 @@ bool CPHMovementControl::MakeJumpPath(
 }
 
 void CPHMovementControl::Calculate(
-    const xr_vector<DetailPathManager::STravelPathPoint>& in_path, float speed, u32& travel_point, float& precision)
+    const std::vector<DetailPathManager::STravelPathPoint>& in_path, float speed, u32& travel_point, float& precision)
 {
 #ifdef DEBUG
     if (debug_output().ph_dbg_draw_mask1().test(ph_m1_DbgTrackObject) && (!!pObject->cName()) &&
@@ -331,11 +331,11 @@ void CPHMovementControl::Calculate(
     }
 #endif
 
-    xr_vector<DetailPathManager::STravelPathPoint> replacing_path;
+    std::vector<DetailPathManager::STravelPathPoint> replacing_path;
     Fvector deviation = {0, 0, 0};
     bool const add_deviation = MakeJumpPath(replacing_path, travel_point, deviation);
 
-    xr_vector<DetailPathManager::STravelPathPoint> const& path = add_deviation ? replacing_path : in_path;
+    std::vector<DetailPathManager::STravelPathPoint> const& path = add_deviation ? replacing_path : in_path;
 
     if (bNonInteractiveMode)
     {
@@ -504,7 +504,7 @@ void CPHMovementControl::Calculate(
     // m_character->Reinit();
 }
 
-void CPHMovementControl::PathNearestPoint(const xr_vector<DetailPathManager::STravelPathPoint>& path, // in path
+void CPHMovementControl::PathNearestPoint(const std::vector<DetailPathManager::STravelPathPoint>& path, // in path
     const Fvector& new_position, // in position
     int& index, // in start from; out nearest
     bool& near_line // out type
@@ -591,7 +591,7 @@ void CPHMovementControl::PathNearestPoint(const xr_vector<DetailPathManager::STr
     return;
 }
 
-void CPHMovementControl::PathNearestPointFindUp(const xr_vector<DetailPathManager::STravelPathPoint>& path, // in path
+void CPHMovementControl::PathNearestPointFindUp(const std::vector<DetailPathManager::STravelPathPoint>& path, // in path
     const Fvector& new_position, // in position
     int& index, // in start from; out nearest
     float radius, // out m_path_distance in exit radius
@@ -677,7 +677,7 @@ void CPHMovementControl::PathNearestPointFindUp(const xr_vector<DetailPathManage
     return;
 }
 
-void CPHMovementControl::PathNearestPointFindDown(const xr_vector<DetailPathManager::STravelPathPoint>& path, // in path
+void CPHMovementControl::PathNearestPointFindDown(const std::vector<DetailPathManager::STravelPathPoint>& path, // in path
     const Fvector& new_position, // in position
     int& index, // in start from; out nearest
     float radius, // out m_path_distance in exit radius
@@ -765,7 +765,7 @@ void CPHMovementControl::PathNearestPointFindDown(const xr_vector<DetailPathMana
 }
 
 void CPHMovementControl::CorrectPathDir(const Fvector& real_path_dir,
-    const xr_vector<DetailPathManager::STravelPathPoint>& path, int index, Fvector& corrected_path_dir)
+    const std::vector<DetailPathManager::STravelPathPoint>& path, int index, Fvector& corrected_path_dir)
 {
     const float epsilon = 0.1f;
     float plane_motion = dXZMag(real_path_dir);
@@ -793,7 +793,7 @@ void CPHMovementControl::CorrectPathDir(const Fvector& real_path_dir,
         corrected_path_dir.set(real_path_dir);
     }
 }
-void CPHMovementControl::PathDIrLine(const xr_vector<DetailPathManager::STravelPathPoint>& path, int index,
+void CPHMovementControl::PathDIrLine(const std::vector<DetailPathManager::STravelPathPoint>& path, int index,
     float distance, float precesition, Fvector& dir)
 {
     Fvector to_path_point;
@@ -815,7 +815,7 @@ void CPHMovementControl::PathDIrLine(const xr_vector<DetailPathManager::STravelP
     dir.normalize_safe();
 }
 
-void CPHMovementControl::PathDIrPoint(const xr_vector<DetailPathManager::STravelPathPoint>& path, int index,
+void CPHMovementControl::PathDIrPoint(const std::vector<DetailPathManager::STravelPathPoint>& path, int index,
     float distance, float precesition, Fvector& dir)
 {
     Fvector to_path_point;

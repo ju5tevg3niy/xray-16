@@ -43,7 +43,7 @@ protected:
     void InitSkins();
     void UpdateSkins();
 
-    xr_vector<CUIStatix*> m_pImage;
+    std::vector<CUIStatix*> m_pImage;
     CUI3tButton* m_pButtons[2];
     CUIAnimatedStatic* m_pAnims[2];
     CUI3tButton* m_pBtnAutoSelect;
@@ -53,8 +53,8 @@ protected:
     shared_str m_strSection;
     shared_str m_shader;
     int m_iActiveIndex;
-    xr_vector<xr_string> m_skins;
-    xr_vector<int> m_skinsEnabled;
+    std::vector<std::string> m_skins;
+    std::vector<int> m_skinsEnabled;
     int m_firstSkin;
     s16 m_team;
 };

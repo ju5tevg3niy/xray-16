@@ -81,8 +81,8 @@ struct ServerInfo
     bool ReturnPlayers;
     bool BearerCantSprint;
 
-    xr_vector<PlayerInfo> m_aPlayers;
-    xr_vector<TeamInfo> m_aTeams;
+    std::vector<PlayerInfo> m_aPlayers;
+    std::vector<TeamInfo> m_aTeams;
 
     int Index;
 

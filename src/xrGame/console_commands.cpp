@@ -589,7 +589,7 @@ bool valid_saved_game_name(LPCSTR file_name)
     return (true);
 }
 
-void get_files_list(xr_vector<shared_str>& files, LPCSTR dir, LPCSTR file_ext)
+void get_files_list(std::vector<shared_str>& files, LPCSTR dir, LPCSTR file_ext)
 {
     VERIFY(dir && file_ext);
     files.clear();
@@ -1647,7 +1647,7 @@ struct CCC_DbgBullets : public CCC_Integer
 
     virtual void Execute(LPCSTR args)
     {
-        extern xr_vector<Fvector> g_hit[];
+        extern std::vector<Fvector> g_hit[];
         g_hit[0].clear();
         g_hit[1].clear();
         g_hit[2].clear();

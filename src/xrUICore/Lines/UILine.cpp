@@ -16,10 +16,10 @@ void CUILine::ProcessNewLines()
     for (u32 i = 0; i < m_subLines.size(); i++)
     {
         auto pos = m_subLines[i].m_text.find("\\n");
-        //		if (pos != xr_string::npos)
+        //		if (pos != std::string::npos)
         //			pos = m_subLines[i].m_text.find('\r');
 
-        if (pos != xr_string::npos)
+        if (pos != std::string::npos)
         {
             CUISubLine sbLine;
             if (pos)

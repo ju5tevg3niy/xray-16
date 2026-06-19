@@ -1,5 +1,6 @@
+#include <vector>
+
 #include "stdafx.h"
-#include "xrCommon/xr_vector.h"
 
 bool g_bEnableStatGather = false;
 

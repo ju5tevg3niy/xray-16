@@ -31,7 +31,7 @@ class dxRender_Visual;
 // TODO: move it into separate file.
 struct i_render_phase
 {
-    explicit i_render_phase(const xr_string& name_in)
+    explicit i_render_phase(const std::string& name_in)
         : name(name_in)
     {
         o.active = false;
@@ -104,7 +104,7 @@ struct i_render_phase
     } o;
     Task* main_task{ nullptr };
     Task* draw_task{ nullptr };
-    xr_string name{ "<UNKNOWN>" };
+    std::string name{ "<UNKNOWN>" };
 };
 
 struct render_main : public i_render_phase
@@ -162,8 +162,8 @@ struct render_sun_old : public i_render_phase
     void render_sun_near();
     void render_sun_filtered() const;
 
-    xr_vector<sun::cascade> m_sun_cascades;
-    xr_vector<Fbox> s_casters;
+    std::vector<sun::cascade> m_sun_cascades;
+    std::vector<Fbox> s_casters;
     light* sun{ nullptr };
     u32 context_id{ R_dsgraph_structure::INVALID_CONTEXT_ID };
 };
@@ -307,13 +307,13 @@ public:
     R_occlusion HWOCC;
 
     // Global vertex-buffer container
-    xr_vector<FSlideWindowItem> SWIs;
-    xr_vector<ref_shader> Shaders;
+    std::vector<FSlideWindowItem> SWIs;
+    std::vector<ref_shader> Shaders;
     typedef svector<VertexElement, MAXD3DDECLLENGTH + 1> VertexDeclarator;
-    xr_vector<VertexDeclarator> nDC, xDC;
-    xr_vector<VertexStagingBuffer> nVB, xVB;
-    xr_vector<IndexStagingBuffer> nIB, xIB;
-    xr_vector<dxRender_Visual*> Visuals;
+    std::vector<VertexDeclarator> nDC, xDC;
+    std::vector<VertexStagingBuffer> nVB, xVB;
+    std::vector<IndexStagingBuffer> nIB, xIB;
+    std::vector<dxRender_Visual*> Visuals;
     CPSLibrary PSLibrary;
 
     CDetailManager* Details;
@@ -324,12 +324,12 @@ public:
 
     CLight_DB Lights;
     CLight_Compute_XFORM_and_VIS LR;
-    xr_vector<light*> Lights_LastFrame;
+    std::vector<light*> Lights_LastFrame;
     SMAP_Allocator LP_smap_pool;
     light_Package LP_normal;
     light_Package LP_pending;
 
-    xr_vector<Fbox3> main_coarse_structure;
+    std::vector<Fbox3> main_coarse_structure;
 
     R_sync_point q_sync_point;
 
@@ -513,9 +513,9 @@ public:
 
 private:
 #if defined(USE_DX11)
-    xr_vector<D3D_SHADER_MACRO> m_ShaderOptions;
+    std::vector<D3D_SHADER_MACRO> m_ShaderOptions;
 #elif defined(USE_OGL)
-    xr_string m_ShaderOptions;
+    std::string m_ShaderOptions;
 #else
 #   error No graphics API selected or enabled!
 #endif

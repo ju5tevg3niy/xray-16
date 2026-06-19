@@ -109,7 +109,7 @@ void CSoundRender_Scene::set_geometry_env(IReader* I)
         return;
 
     // Associate names
-    xr_vector<u16> ids;
+    std::vector<u16> ids;
     IReader* names = I->open_chunk(0);
     while (!names->eof())
     {

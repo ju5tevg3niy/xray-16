@@ -33,7 +33,7 @@ struct CEdgePath
         inline virtual ~CDataStorage();
         inline void assign_parent(Vertex& neighbour, Vertex* parent);
         inline void assign_parent(Vertex& neighbour, Vertex* parent, const TEdge& edge);
-        inline void get_edge_path(xr_vector<TEdge>& path, Vertex* best, bool reverse_order = false);
+        inline void get_edge_path(std::vector<TEdge>& path, Vertex* best, bool reverse_order = false);
     };
 };
 

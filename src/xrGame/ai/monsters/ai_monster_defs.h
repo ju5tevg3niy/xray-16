@@ -373,7 +373,7 @@ struct SAAParam
     float dist;
 };
 
-using AA_VECTOR = xr_vector<SAAParam>;
+using AA_VECTOR = std::vector<SAAParam>;
 
 struct SCurrentAnimationInfo
 {
@@ -426,8 +426,8 @@ struct t_fx_index
     s8 back;
 };
 
-using SEQ_VECTOR = xr_vector<EMotionAnim>;
-using VELOCITY_CHAIN_VEC = xr_vector<SEQ_VECTOR>;
+using SEQ_VECTOR = std::vector<EMotionAnim>;
+using VELOCITY_CHAIN_VEC = std::vector<SEQ_VECTOR>;
 
 struct SVelocity
 {
@@ -500,7 +500,7 @@ struct SMonsterEnemy
 
 class CEntityAlive;
 
-using ENEMIES_MAP = xr_map<const CEntityAlive *, SMonsterEnemy>;
+using ENEMIES_MAP = std::map<const CEntityAlive *, SMonsterEnemy>;
 using ENEMIES_MAP_IT = ENEMIES_MAP::iterator;
 
 struct SMonsterCorpse
@@ -510,7 +510,7 @@ struct SMonsterCorpse
     TTime time;
 };
 
-using CORPSE_MAP = xr_map<const CEntityAlive *, SMonsterCorpse>;
+using CORPSE_MAP = std::map<const CEntityAlive *, SMonsterCorpse>;
 using CORPSE_MAP_IT = CORPSE_MAP::iterator;
 
 struct SMonsterHit
@@ -523,7 +523,7 @@ struct SMonsterHit
     bool operator==(const IGameObject* obj) const { return (object == obj); }
 };
 
-using MONSTER_HIT_VECTOR = xr_vector<SMonsterHit>;
+using MONSTER_HIT_VECTOR = std::vector<SMonsterHit>;
 
 enum EDangerType : u8
 {
@@ -534,4 +534,4 @@ enum EDangerType : u8
     eNone
 };
 
-using ANIM_TO_MOTION_MAP = xr_map<MotionID, shared_str>;
+using ANIM_TO_MOTION_MAP = std::map<MotionID, shared_str>;

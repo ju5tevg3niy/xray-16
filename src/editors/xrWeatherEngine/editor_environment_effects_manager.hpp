@@ -40,8 +40,8 @@ public:
 
     editor::environment::manager& environment() const { return m_environment; }
 
-    using effect_container_type = xr_vector<effect*>;
-    using effects_ids_type = xr_vector<pstr>;
+    using effect_container_type = std::vector<effect*>;
+    using effects_ids_type = std::vector<pstr>;
 
     effects_ids_type const& effects_ids() const;
 

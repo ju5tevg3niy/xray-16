@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xrCommon/xr_string.h"
+#include <string>
 
 namespace xray
 {
@@ -69,8 +69,8 @@ private:
         static pcstr get_cstr(pcstr string) { return string; }
         static size_t get_length(shared_str const& string) { return string.size(); }
         static pcstr get_cstr(shared_str const& string) { return string.c_str(); }
-        static size_t get_length(xr_string const& string) { return string.size(); }
-        static pcstr get_cstr(xr_string const& string) { return string.c_str(); }
+        static size_t get_length(std::string const& string) { return string.size(); }
+        static pcstr get_cstr(std::string const& string) { return string.c_str(); }
 
         template <typename TType>
         static void add_string(string_tupples& self, TType p)

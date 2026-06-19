@@ -138,7 +138,7 @@ float CRadioactiveZone::nearest_shape_radius(SZoneObjectInfo* O)
     }
     else
     {
-        xr_vector<CCF_Shape::shape_def>& Shapes = Sh->Shapes();
+        std::vector<CCF_Shape::shape_def>& Shapes = Sh->Shapes();
         CCF_Shape::shape_def& s = Shapes[0];
         return s.data.sphere.R;
     }

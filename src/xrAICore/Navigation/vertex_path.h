@@ -5,11 +5,11 @@
 //  Author      : Dmitriy Iassenev
 //  Description : Vertex path class
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
+#include <vector>
+
 #include "Common/types.hpp"
-#include "xrCommon/xr_vector.h"
 
 template <bool EuclidianHeuristics = true>
 struct CVertexPath
@@ -36,7 +36,7 @@ struct CVertexPath
         template <typename T>
         inline void assign_parent(Vertex& neighbour, Vertex* parent, const T&);
         inline void update_successors(Vertex& neighbour);
-        inline void get_node_path(xr_vector<Index>& path, Vertex* best);
+        inline void get_node_path(std::vector<Index>& path, Vertex* best);
     };
 };
 

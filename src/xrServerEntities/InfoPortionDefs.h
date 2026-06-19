@@ -25,4 +25,4 @@ public:
     bool operator()(const INFO_DATA& data) const { return data.info_id == element; }
 };
 
-using KNOWN_INFO_VECTOR = xr_vector<INFO_DATA>;
+using KNOWN_INFO_VECTOR = std::vector<INFO_DATA>;

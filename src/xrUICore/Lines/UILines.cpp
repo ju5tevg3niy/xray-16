@@ -409,17 +409,17 @@ float CUILines::GetVIndentByAlign()
 // %c[255,255,255,255]
 // %c[default]
 // %c[color_name]
-u32 CUILines::GetColorFromText(const xr_string& str) const
+u32 CUILines::GetColorFromText(const std::string& str) const
 {
     auto begin = str.find(COLOR_TAG_BEGIN);
     const auto end = str.find(COLOR_TAG_END, begin);
 
     // Check if there even is a valid color tag
-    if (begin == xr_string::npos || end == xr_string::npos || end - begin < 3)
+    if (begin == std::string::npos || end == std::string::npos || end - begin < 3)
         return m_dwTextColor;
 
     // Extract color tag value
-    const xr_string color_tag = str.substr(begin + 3, end - begin - 3);
+    const std::string color_tag = str.substr(begin + 3, end - begin - 3);
 
     // Try default color
     if (color_tag == "default")
@@ -434,10 +434,10 @@ u32 CUILines::GetColorFromText(const xr_string& str) const
     const auto comma1_pos = str.find(',', begin);
     const auto comma2_pos = str.find(',', comma1_pos + 1);
     const auto comma3_pos = str.find(',', comma2_pos + 1);
-    if (comma1_pos == xr_string::npos || comma2_pos == xr_string::npos || comma3_pos == xr_string::npos)
+    if (comma1_pos == std::string::npos || comma2_pos == std::string::npos || comma3_pos == std::string::npos)
         return m_dwTextColor;
 
-    xr_string single_color;
+    std::string single_color;
 
     begin += 3;
 
@@ -455,40 +455,40 @@ u32 CUILines::GetColorFromText(const xr_string& str) const
 
 CUILine CUILines::ParseTextToColoredLine(const std::string_view& str)
 {
-    xr_string tmp{ str };
+    std::string tmp{ str };
 
     CUILine line;
     do
     {
         u32 color;
-        xr_string entry = CutFirstColoredTextEntry(color, tmp);
+        std::string entry = CutFirstColoredTextEntry(color, tmp);
         line.AddSubLine({ std::move(entry), subst_alpha(color, color_get_A(GetTextColor())) });
     } while (!tmp.empty());
 
     return line;
 }
 
-xr_string CUILines::CutFirstColoredTextEntry(u32& color, xr_string& text) const
+std::string CUILines::CutFirstColoredTextEntry(u32& color, std::string& text) const
 {
-    xr_string entry;
+    std::string entry;
 
     auto begin = text.find(COLOR_TAG_BEGIN);
     auto end = text.find(COLOR_TAG_END, begin);
-    if (xr_string::npos == end)
+    if (std::string::npos == end)
         begin = end;
     auto begin2 = text.find(COLOR_TAG_BEGIN, end);
     auto end2 = text.find(COLOR_TAG_END, begin2);
-    if (xr_string::npos == end2)
+    if (std::string::npos == end2)
         begin2 = end2;
 
     // if we do not have any color entry or it is single with 0 position
-    if (xr_string::npos == begin)
+    if (std::string::npos == begin)
     {
         entry = text;
         color = m_dwTextColor;
         text.clear();
     }
-    else if (0 == begin && xr_string::npos == begin2)
+    else if (0 == begin && std::string::npos == begin2)
     {
         entry = text;
         color = GetColorFromText(entry);
@@ -503,7 +503,7 @@ xr_string CUILines::CutFirstColoredTextEntry(u32& color, xr_string& text) const
         text.replace(0, begin, "");
     }
     // if we have two color entries. and first has 0 position
-    else if (0 == begin && xr_string::npos != begin2)
+    else if (0 == begin && std::string::npos != begin2)
     {
         entry = text.substr(0, begin2);
         color = GetColorFromText(entry);

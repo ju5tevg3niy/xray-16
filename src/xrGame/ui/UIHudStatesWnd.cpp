@@ -558,7 +558,7 @@ void CUIHudStatesWnd::UpdateZones()
     CPda* const pda = actor->GetPDA();
     if (pda)
     {
-        typedef xr_vector<IGameObject*> monsters;
+        typedef std::vector<IGameObject*> monsters;
         for (monsters::const_iterator it = pda->feel_touch.begin(); it != pda->feel_touch.end(); ++it)
         {
             CBaseMonster* const monster = smart_cast<CBaseMonster*>(*it);

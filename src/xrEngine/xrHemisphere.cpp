@@ -132,7 +132,7 @@ const Fvector hemi_3[HEMI3_VERTS] = {
     {-0.3993, +0.0799, -0.2901}, {-0.1517, +0.0952, -0.4668}, {+0.1525, +0.0799, -0.4694}, {+0.3971, +0.0952, -0.2885},
 };
 
-void ECORE_API xrHemisphereBuild(int quality, float energy, xrHemisphereIterator* iterator, LPVOID param)
+void xrHemisphereBuild(int quality, float energy, xrHemisphereIterator* iterator, LPVOID param)
 {
     const Fvector* hemi = 0;
     int h_count = xrHemisphereVertices(quality, hemi);
@@ -155,7 +155,7 @@ void ECORE_API xrHemisphereBuild(int quality, float energy, xrHemisphereIterator
     }
 }
 
-int ECORE_API xrHemisphereVertices(int quality, const Fvector*& verts)
+int xrHemisphereVertices(int quality, const Fvector*& verts)
 {
     // SELECT table
     int h_count = 0;
@@ -179,7 +179,7 @@ int ECORE_API xrHemisphereVertices(int quality, const Fvector*& verts)
     return h_count;
 }
 
-int ECORE_API xrHemisphereIndices(int quality, const u16*& indices)
+int xrHemisphereIndices(int quality, const u16*& indices)
 {
     // SELECT table
     int h_count = 0;

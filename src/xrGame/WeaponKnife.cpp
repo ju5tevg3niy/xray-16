@@ -1,3 +1,5 @@
+#include <array>
+
 #include "StdAfx.h"
 
 #include "WeaponKnife.h"
@@ -70,7 +72,7 @@ void CWeaponKnife::Load(LPCSTR section)
 
     // array of <name, fallbackName, type, variable>
     constexpr u32 elementsCount = 10;
-    const xr_array<std::tuple<pcstr, pcstr, FieldTypes, void*>, elementsCount> fields =
+    const std::array<std::tuple<pcstr, pcstr, FieldTypes, void*>, elementsCount> fields =
     {{
         { "splash1_direction", nullptr, FieldTypes::t_fvector3, &m_Hit1SpashDir },
         { "splash2_direction", nullptr, FieldTypes::t_fvector3, &m_Hit2SpashDir },

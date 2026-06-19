@@ -14,7 +14,7 @@
 #include "xrCDB/xr_collide_defs.h"
 
 class IRender_Light;
-using BLASTED_OBJECTS_V = xr_vector<CPhysicsShellHolder*>;
+using BLASTED_OBJECTS_V = std::vector<CPhysicsShellHolder*>;
 
 class CExplosive : public IDamageSource
 {

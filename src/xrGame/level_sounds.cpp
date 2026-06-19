@@ -10,7 +10,7 @@
 void SStaticSound::Load(IReader& F)
 {
     R_ASSERT(F.find_chunk(0));
-    xr_string wav_name;
+    std::string wav_name;
     F.r_stringZ(wav_name);
     m_Source.create(wav_name.c_str(), st_Effect, sg_SourceType);
     F.r_fvector3(m_Position);
@@ -245,7 +245,7 @@ void CLevelSoundManager::Update()
     {
         if (m_CurrentTrack < 0 && engine_time > m_NextTrackTime)
         {
-            xr_vector<u32> indices;
+            std::vector<u32> indices;
             for (u32 k = 0; k < m_MusicTracks.size(); ++k)
             {
                 SMusicTrack& T = m_MusicTracks[k];

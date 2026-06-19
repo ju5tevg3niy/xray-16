@@ -19,7 +19,7 @@ public:
     };
 private:
     EState m_current_state;
-    xr_map<EState, CUIStatic*> m_states;
+    std::map<EState, CUIStatic*> m_states;
     CUIProgressBar* m_power_progress;
 
     CUIProgressShape* m_luminosity_progress_shape;
@@ -34,7 +34,7 @@ private:
         bool operator==(const u16& _id) { return id == _id; }
         bool operator<(const _npc_visibility& m) const { return (value < m.value); }
     };
-    xr_vector<_npc_visibility> m_npc_visibility;
+    std::vector<_npc_visibility> m_npc_visibility;
     bool m_bchanged;
     float m_luminosity;
     float m_cur_pos;

@@ -52,7 +52,7 @@ struct physicsBone
         element = NULL;
     }
 };
-using BONE_P_MAP = xr_map<u16, physicsBone>;
+using BONE_P_MAP = std::map<u16, physicsBone>;
 using BONE_P_PAIR_CIT = const BONE_P_MAP::iterator;
 // ABSTRACT:
 class CPhysicsBase;
@@ -441,7 +441,7 @@ XRPHYSICS_API CPhysicsElement* P_create_Element();
 XRPHYSICS_API CPhysicsShell* P_create_Shell();
 XRPHYSICS_API CPhysicsShell* P_create_splited_Shell();
 XRPHYSICS_API CPhysicsShell* P_build_Shell(IPhysicsShellHolder* obj, bool not_active_state, LPCSTR fixed_bones);
-XRPHYSICS_API CPhysicsShell* P_build_Shell(IPhysicsShellHolder* obj, bool not_active_state, xr_vector<u16>& fixed_bones);
+XRPHYSICS_API CPhysicsShell* P_build_Shell(IPhysicsShellHolder* obj, bool not_active_state, std::vector<u16>& fixed_bones);
 XRPHYSICS_API CPhysicsShell* P_build_Shell(
     IPhysicsShellHolder* obj, bool not_active_state, BONE_P_MAP* bone_map, LPCSTR fixed_bones);
 

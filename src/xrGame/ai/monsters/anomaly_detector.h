@@ -29,7 +29,7 @@ class CAnomalyDetector
         }
     };
 
-    using ANOMALY_INFO_VEC = xr_vector<SAnomalyInfo>;
+    using ANOMALY_INFO_VEC = std::vector<SAnomalyInfo>;
     ANOMALY_INFO_VEC m_storage;
 
 public:

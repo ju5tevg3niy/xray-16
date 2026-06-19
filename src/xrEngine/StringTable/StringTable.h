@@ -4,16 +4,16 @@
 
 #pragma once
 
-#include "xrCommon/xr_map.h"
+#include <map>
+#include <mutex>
+
 #include "xrCore/xrstring.h"
 #include "xrCore/xr_token.h"
-
-#include <mutex>
 
 using STRING_ID = shared_str;
 using STRING_VALUE = shared_str;
 
-using STRING_TABLE_MAP = xr_map<STRING_ID, STRING_VALUE>;
+using STRING_TABLE_MAP = std::map<STRING_ID, STRING_VALUE>;
 
 struct STRING_TABLE_DATA
 {
@@ -60,7 +60,7 @@ private:
 
     static std::mutex pDataMutex;
     static xr_unique_ptr<STRING_TABLE_DATA> pData;
-    static xr_vector<xr_token> languagesToken;
+    static std::vector<xr_token> languagesToken;
 };
 
 CStringTable& StringTable();

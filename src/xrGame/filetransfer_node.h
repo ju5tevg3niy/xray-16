@@ -1,14 +1,12 @@
 #pragma once
-#ifndef FILETRANSFER_NODE
-#define FILETRANSFER_NODE
+
+#include <deque>
 
 #include "filetransfer_common.h"
 #include "Common/Noncopyable.hpp"
-#include "xrCommon/xr_deque.h"
 
 // fwd. decl.
 template <typename T> class buffer_vector;
-
 
 namespace file_transfer
 {
@@ -68,7 +66,7 @@ private:
     void accumulate_size();
     void read_from_current_buf(NET_Packet& dest, u32 read_size);
 
-    typedef xr_deque<mutable_buffer_t> buffers_vector_t;
+    typedef std::deque<mutable_buffer_t> buffers_vector_t;
 
     buffers_vector_t m_buffers;
     u32 m_current_buf_offs;
@@ -128,5 +126,3 @@ public:
 }; // class filetransfer_node
 
 } // namespace file_transfer
-
-#endif //#ifndef FILETRANSFER_NODE

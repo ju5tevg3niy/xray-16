@@ -1,11 +1,11 @@
 #pragma once
 
+#include <set>
 #include <ctime>
+#include <string>
 
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
-#include "xrCommon/xr_set.h"
-#include "xrCommon/xr_string.h"
 #include "xrCore/Math/flags.hpp"
 #include "xrCore/xrstring.h"
 
@@ -58,17 +58,17 @@ struct FS_File
     unsigned attrib;
     time_t time_write;
     long size;
-    xr_string name; // low-case name
-    void set(const xr_string& nm, long sz, time_t modif, unsigned attr);
+    std::string name; // low-case name
+    void set(const std::string& nm, long sz, time_t modif, unsigned attr);
 
 public:
     FS_File() : attrib(0), time_write(0), size(0) {}
-    FS_File(const xr_string& nm);
+    FS_File(const std::string& nm);
     FS_File(const _FINDDATA_T& f);
-    FS_File(const xr_string& nm, const _FINDDATA_T& f);
-    FS_File(const xr_string& nm, long sz, time_t modif, unsigned attr);
+    FS_File(const std::string& nm, const _FINDDATA_T& f);
+    FS_File(const std::string& nm, long sz, time_t modif, unsigned attr);
     bool operator<(const FS_File& other) const { return xr_strcmp(name.c_str(), other.name.c_str()) < 0; }
 };
-using FS_FileSet = xr_set<FS_File>;
+using FS_FileSet = std::set<FS_File>;
 
 extern bool PatternMatch(pcstr s, pcstr mask);

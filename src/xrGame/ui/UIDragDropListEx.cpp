@@ -598,7 +598,7 @@ CUICellItem* CUIDragDropListEx::GetItemIdx(u32 idx)
 }
 
 void CUIDragDropListEx::clear_select_armament() { m_container->clear_select_armament(); }
-void CUIDragDropListEx::SetCellsVertAlignment(xr_string alignment)
+void CUIDragDropListEx::SetCellsVertAlignment(std::string alignment)
 {
     if (strchr(alignment.c_str(), 't'))
     {
@@ -612,7 +612,7 @@ void CUIDragDropListEx::SetCellsVertAlignment(xr_string alignment)
     }
     m_virtual_cells_alignment.y = 1;
 }
-void CUIDragDropListEx::SetCellsHorizAlignment(xr_string alignment)
+void CUIDragDropListEx::SetCellsHorizAlignment(std::string alignment)
 {
     if (strchr(alignment.c_str(), 'l'))
     {

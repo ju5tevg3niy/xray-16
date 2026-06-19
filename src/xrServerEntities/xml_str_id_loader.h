@@ -16,7 +16,7 @@ struct ITEM_DATA
     int pos_in_file;
     CUIXml* _xml;
 };
-typedef xr_vector<ITEM_DATA> T_VECTOR;
+typedef std::vector<ITEM_DATA> T_VECTOR;
 
 void _destroy_item_data_vector_cont(T_VECTOR* vec);
 
@@ -133,7 +133,7 @@ void CSXML_IdToIndex::InitInternal(bool crashOnFail /*= true*/, bool ignoreMissi
         _GetItem(file_str, it, xml_file);
 
         CUIXml* uiXml = xr_new<CUIXml>();
-        xr_string xml_file_full;
+        std::string xml_file_full;
         xml_file_full = xml_file;
         xml_file_full += ".xml";
 

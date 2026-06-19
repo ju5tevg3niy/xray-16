@@ -158,8 +158,8 @@ bool CBlackGraviArtefact::feel_touch_contact(IGameObject* O)
 
 void CBlackGraviArtefact::GraviStrike()
 {
-    xr_list<s16> elements_list;
-    xr_list<Fvector> bone_position_list;
+    std::list<s16> elements_list;
+    std::list<Fvector> bone_position_list;
 
     Fvector object_pos;
     Fvector strike_dir;

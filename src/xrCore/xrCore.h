@@ -14,8 +14,6 @@
 //#include "_stl_extensions.h"
 #include "xrCore/Math/rect.hpp"
 #include "xrCore/Math/matrix.hpp"
-#include "xrCommon/xr_vector.h"
-#include "xrCommon/xr_set.h"
 #include "xrsharedmem.h"
 #include "xrstring.h"
 #include "xr_resource.h"

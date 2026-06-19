@@ -1,8 +1,9 @@
 // LevelFogOfWar.h:  для карты уровня в одиночном режиме игры
 //
 //////////////////////////////////////////////////////////////////////
-
 #pragma once
+
+#include <vector>
 
 #include "ui/UIWindow.h"
 #include "alife_abstract_registry.h"
@@ -19,7 +20,7 @@ public:
     shared_str m_level_name;
     Frect m_levelRect;
     u32 m_rowNum, m_colNum;
-    xr_vector<bool> m_cells;
+    std::vector<bool> m_cells;
 
 public:
     CLevelFogOfWar();
@@ -38,7 +39,7 @@ public:
     virtual void load(IReader& stream);
 };
 
-DEFINE_VECTOR(CLevelFogOfWar, FOG_STORAGE_T, FOG_STORAGE_IT);
+using FOG_STORAGE_T = std::vector<CLevelFogOfWar>;
 
 typedef CALifeAbstractRegistry<u16, FOG_STORAGE_T> CFogOfWarRegistry;
 

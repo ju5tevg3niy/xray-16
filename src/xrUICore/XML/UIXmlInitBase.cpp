@@ -1090,7 +1090,7 @@ void CUIXmlInitBase::ApplyAlign(float& x, float& y, u32 align)
 bool CUIXmlInitBase::InitAlignment(const CUIXml& xml_doc, const char* path, int index, float& x, float& y, CUIWindow* pWnd)
 {
     // Alignment: top: "t", right: "r", bottom: "b", left: "l", center: "c"
-    const xr_string wnd_alignment = xml_doc.ReadAttrib(path, index, "alignment", "");
+    const std::string wnd_alignment = xml_doc.ReadAttrib(path, index, "alignment", "");
 
     switch (strhash(wnd_alignment))
     {

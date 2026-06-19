@@ -267,7 +267,7 @@ void CResourceManager::CompatibilityCheck()
     {
         IReader* skinh = open_shader("skin.h");
         R_ASSERT3(skinh, "Can't open shader", "skin.h");
-        xr_string str(static_cast<pcstr>(skinh->pointer()), skinh->length());
+        std::string str(static_cast<pcstr>(skinh->pointer()), skinh->length());
 
         bool hq_skinning = true;
         // search for (12.f / 32768.f)
@@ -435,7 +435,7 @@ void CResourceManager::_GetMemoryUsage(u32& m_base, u32& c_base, u32& m_lmaps, u
 }
 void CResourceManager::_DumpMemoryUsage()
 {
-    xr_multimap<u32, std::pair<u32, shared_str>> mtex;
+    std::multimap<u32, std::pair<u32, shared_str>> mtex;
 
     // sort
     {
@@ -451,8 +451,8 @@ void CResourceManager::_DumpMemoryUsage()
 
     // dump
     {
-        xr_multimap<u32, std::pair<u32, shared_str>>::iterator I = mtex.begin();
-        xr_multimap<u32, std::pair<u32, shared_str>>::iterator E = mtex.end();
+        std::multimap<u32, std::pair<u32, shared_str>>::iterator I = mtex.begin();
+        std::multimap<u32, std::pair<u32, shared_str>>::iterator E = mtex.end();
         for (; I != E; ++I)
             Msg("* %4.1f : [%4d] %s", float(I->first) / 1024.f, I->second.first, I->second.second.c_str());
     }

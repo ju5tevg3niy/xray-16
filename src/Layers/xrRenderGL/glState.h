@@ -2,6 +2,8 @@
 
 #include "../xrRender/SH_Texture.h"
 
+#include "Common/d3d9compat.hpp"
+
 namespace xray::render::RENDER_NAMESPACE
 {
 typedef struct

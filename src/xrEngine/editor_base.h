@@ -119,6 +119,6 @@ private:
     };
     ImGuiBackend m_imgui_backend{};
 
-    xr_vector<ide_tool*> m_tools;
+    std::vector<ide_tool*> m_tools;
 };
 } // namespace xray::editor

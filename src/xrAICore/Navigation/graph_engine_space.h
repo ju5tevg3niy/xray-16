@@ -61,7 +61,7 @@ struct CSolverConditionValue
     bool operator==(const _solver_condition_type& condition) const { return condition == m_condition; }
 };
 
-using CSolverConditionStorage = xr_vector<CSolverConditionValue>;
+using CSolverConditionStorage = std::vector<CSolverConditionValue>;
 
 using CWorldProperty = COperatorConditionAbstract<_solver_condition_type, _solver_value_type>;
 

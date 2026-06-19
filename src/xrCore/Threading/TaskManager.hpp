@@ -19,10 +19,10 @@
 #include <cstddef>
 #include <mutex>
 #include <thread>
+#include <vector>
 
 #include "Common/Platform.hpp"
 #include "xrCommon/xr_smart_pointers.h"
-#include "xrCommon/xr_vector.h"
 
 #include "Event.hpp"
 #include "Task.hpp"
@@ -31,8 +31,8 @@ class TaskWorker;
 
 class TaskManager final {
  private:
-  xr_vector<TaskWorker*> workers;
-  xr_vector<std::thread> workerThreads;
+  std::vector<TaskWorker*> workers;
+  std::vector<std::thread> workerThreads;
   std::mutex workersLock;
 
   inline static Event newWorkArrived;

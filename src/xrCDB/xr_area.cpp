@@ -13,7 +13,7 @@
 //----------------------------------------------------------------------
 thread_local xrXRC CObjectSpaceData::xrc("object space");
 thread_local collide::rq_results CObjectSpaceData::r_temp;
-thread_local xr_vector<ISpatial*> CObjectSpaceData::r_spatial;
+thread_local std::vector<ISpatial*> CObjectSpaceData::r_spatial;
 
 using namespace collide;
 
@@ -40,7 +40,7 @@ CObjectSpace::~CObjectSpace()
 //----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
-int CObjectSpace::GetNearest(xr_vector<ISpatial*>& q_spatial, xr_vector<IGameObject*>& q_nearest, const Fvector& point,
+int CObjectSpace::GetNearest(std::vector<ISpatial*>& q_spatial, std::vector<IGameObject*>& q_nearest, const Fvector& point,
     float range, IGameObject* ignore_object)
 {
     ZoneScoped;
@@ -72,13 +72,13 @@ int CObjectSpace::GetNearest(xr_vector<ISpatial*>& q_spatial, xr_vector<IGameObj
 
 //----------------------------------------------------------------------
 int CObjectSpace::GetNearest(
-    xr_vector<IGameObject*>& q_nearest, const Fvector& point, float range, IGameObject* ignore_object)
+    std::vector<IGameObject*>& q_nearest, const Fvector& point, float range, IGameObject* ignore_object)
 {
     return (GetNearest(r_spatial, q_nearest, point, range, ignore_object));
 }
 
 //----------------------------------------------------------------------
-int CObjectSpace::GetNearest(xr_vector<IGameObject*>& q_nearest, ICollisionForm* obj, float range)
+int CObjectSpace::GetNearest(std::vector<IGameObject*>& q_nearest, ICollisionForm* obj, float range)
 {
     IGameObject* O = obj->Owner();
     return GetNearest(q_nearest, O->GetSpatialData().sphere.P, range + O->GetSpatialData().sphere.R, O);
@@ -166,7 +166,7 @@ void CObjectSpace::Create(Fvector* verts, CDB::TRI* tris, const hdrCFORM& H,
         Static.load_geom(verts, H.vertcount, tris, H.facecount);
 
         // Read game material list
-        xr_map<u16, shared_str> gameMtls;
+        std::map<u16, shared_str> gameMtls;
         u32 cnt = cacheStream->r_u32();
         for (u32 i = 0; i < cnt; i++)
         {

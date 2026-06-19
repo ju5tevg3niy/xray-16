@@ -5,10 +5,8 @@
 //  Author      : Dmitriy Iassenev
 //  Description : AI space class
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
-#include "xrCommon/xr_array.h"
 #include "xrCommon/xr_smart_pointers.h"
 #include "xrCore/Events/Notifier.h"
 #include "xrAICore/AISpaceBase.hpp"

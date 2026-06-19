@@ -141,7 +141,7 @@ void xrDebug::SetBugReportFile(const char* fileName) { xr_strcpy(BugReportFile, 
 
 void xrDebug::LogStackTrace(const char* header)
 {
-    xr_vector<xr_string> stackTrace = BuildStackTrace();
+    std::vector<std::string> stackTrace = BuildStackTrace();
     Msg("%s", header);
     for (const auto& frame : stackTrace)
     {
@@ -202,7 +202,7 @@ void xrDebug::GatherInfo(char* assertionInfo, size_t bufferSize, const ErrorLoca
     Log("stack trace:\n");
     buffer += xr_sprintf(buffer, oneAboveBuffer - buffer, "stack trace:\n\n");
 
-    xr_vector<xr_string> stackTrace = BuildStackTrace();
+    std::vector<std::string> stackTrace = BuildStackTrace();
     for (size_t i = 2; i < stackTrace.size(); i++)
     {
         Log(stackTrace[i].c_str());
@@ -513,7 +513,7 @@ LONG WINAPI xrDebug::UnhandledFilter(EXCEPTION_POINTERS* exPtrs)
     if (!ErrorAfterDialog && !strstr(GetCommandLine(), "-no_call_stack_assert"))
     {
         CONTEXT save = *exPtrs->ContextRecord;
-        xr_vector<xr_string> stackTrace = BuildStackTrace(exPtrs->ContextRecord, 1024);
+        std::vector<std::string> stackTrace = BuildStackTrace(exPtrs->ContextRecord, 1024);
         *exPtrs->ContextRecord = save;
         Msg("stack trace:\n");
 #ifdef DEBUG

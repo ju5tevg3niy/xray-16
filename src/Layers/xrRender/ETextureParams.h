@@ -5,7 +5,7 @@ struct xr_token;
 namespace xray::render::RENDER_NAMESPACE
 {
 #pragma pack(push, 1)
-struct ECORE_API STextureParams
+struct STextureParams
 {
     enum ETType
     {
@@ -169,7 +169,7 @@ struct ECORE_API STextureParams
     void FillProp(LPCSTR base_name, PropItemVec& items, PropValue::TOnChange OnChangeEvent);
     LPCSTR FormatString();
     u32 MemoryUsage(LPCSTR base_name);
-    BOOL similar(STextureParams& tp1, xr_vector<AnsiString>& sel_params);
+    BOOL similar(STextureParams& tp1, std::vector<AnsiString>& sel_params);
 
 #endif
 };

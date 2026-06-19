@@ -384,7 +384,7 @@ void StaticDrawableWrapper::Update()
 
 CMapListHelper gMapListHelper;
 
-void CMapListHelper::LoadMapInfo(const char* cfgName, const xr_string& levelName, const char* levelVer /*= "1.0"*/)
+void CMapListHelper::LoadMapInfo(const char* cfgName, const std::string& levelName, const char* levelVer /*= "1.0"*/)
 {
     CInifile levelCfg(cfgName);
     if (levelCfg.section_exist("map_usage"))
@@ -438,7 +438,7 @@ void CMapListHelper::Load()
     // scan all not loaded archieves
     LPCSTR tempRoot = "temporary_gamedata" DELIMITER;
     FS_Path* levelsPath = FS.get_path("$game_levels$");
-    xr_string prevRoot = levelsPath->m_Root;
+    std::string prevRoot = levelsPath->m_Root;
     levelsPath->_set_root(tempRoot);
     for (CLocatorAPI::archive& arch : FS.m_archives)
     {
@@ -515,7 +515,7 @@ const SGameTypeMaps& CMapListHelper::GetMapListFor(const EGameIDs gameId)
     return m_storage[0];
 }
 
-const xr_vector<MPWeatherDesc>& CMapListHelper::GetGameWeathers()
+const std::vector<MPWeatherDesc>& CMapListHelper::GetGameWeathers()
 {
     if (m_weathers.empty())
         Load();

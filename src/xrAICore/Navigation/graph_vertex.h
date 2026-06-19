@@ -5,11 +5,11 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Graph vertex base class template
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
+#include <vector>
+
 #include "Common/object_broker.h"
-#include "xrCommon/xr_vector.h"
 
 template <typename _data_type, typename _vertex_id_type, typename _graph_type>
 class CGraphVertex
@@ -18,8 +18,8 @@ public:
     typedef _vertex_id_type vertex_id_type;
     typedef typename _graph_type::CEdge edge_type;
     typedef typename _graph_type::CEdge::edge_weight_type edge_weight_type;
-    typedef xr_vector<edge_type> EDGES;
-    typedef xr_vector<CGraphVertex*> VERTICES;
+    typedef std::vector<edge_type> EDGES;
+    typedef std::vector<CGraphVertex*> VERTICES;
 
 private:
     _vertex_id_type m_vertex_id;
