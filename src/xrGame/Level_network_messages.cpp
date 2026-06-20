@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "StdAfx.h"
 #include "Entity.h"
 #include "xrServer_Objects.h"

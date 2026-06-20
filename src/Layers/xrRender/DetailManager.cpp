@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 // DetailManager.cpp: implementation of the CDetailManager class.
 //
 //////////////////////////////////////////////////////////////////////

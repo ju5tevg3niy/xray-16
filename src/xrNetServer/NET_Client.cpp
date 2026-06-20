@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 #include "NET_Common.h"
 #include "NET_Client.h"

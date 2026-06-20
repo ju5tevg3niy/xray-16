@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 
 #if defined(XR_PLATFORM_LINUX) || defined(XR_PLATFORM_BSD)

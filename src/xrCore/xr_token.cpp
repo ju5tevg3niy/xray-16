@@ -1,5 +1,6 @@
-#include "stdafx.h"
 #include "xr_token.h"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
 
 pcstr get_token_name(const xr_token* tokens, int key)
 {

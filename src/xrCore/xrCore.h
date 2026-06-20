@@ -6,8 +6,6 @@
 #define CONCATENIZE_HELPER(a, b) a##b
 #define CONCATENIZE(a, b) CONCATENIZE_HELPER(a, b)
 
-#include <tracy/Tracy.hpp>
-
 #include "xrDebug.h"
 #include "xrMemory.h"
 

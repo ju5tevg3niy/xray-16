@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "StdAfx.h"
 #include "Level.h"
 #include "xrCore/Compression/ppmd_compressor.h"

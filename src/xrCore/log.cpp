@@ -1,10 +1,28 @@
-#include "stdafx.h"
-#pragma hdrstop
-
-#include <time.h>
-#include "resource.h"
 #include "log.h"
-#include "xrCore/Threading/Lock.hpp"
+#include <chrono>
+#include <cstdarg>
+#include <cstdio>
+#include <cstring>
+#include <ctime>
+#include <string>
+#include <tracy/Tracy.hpp>
+#include <vector>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "FS.h"
+#include "FileSystem.h"
+#include "LocatorAPI.h"
+#include "Math/matrix.hpp"
+#include "Math/vector3.hpp"
+#include "Text/string_funcs_inline.hpp"
+#include "Threading/Lock.hpp"
+#include "Threading/ScopeLock.hpp"
+#include "resource.h"
+#include "string_concatenations.h"
+#include "xrCore.h"
+#include "xrDebug.h"
+#include "xrstring.h"
 
 bool LogExecCB = true;
 string_path log_file_name{};

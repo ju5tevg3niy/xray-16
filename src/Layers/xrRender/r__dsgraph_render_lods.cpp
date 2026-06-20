@@ -1,3 +1,4 @@
+#include <tracy/Tracy.hpp>
 #include <array>
 
 #include "stdafx.h"

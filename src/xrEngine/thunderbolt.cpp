@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 
 #ifndef _EDITOR

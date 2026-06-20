@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "pch.hpp"
 #include "BindingsDumper.hpp"
 #include <regex>

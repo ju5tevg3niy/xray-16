@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "pch.hpp"
 #include "AISpaceBase.hpp"
 #include "Navigation/game_graph.h"

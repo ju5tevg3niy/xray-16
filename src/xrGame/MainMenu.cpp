@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "StdAfx.h"
 #include "MainMenu.h"
 #include "ui/UIDialogWnd.h"

@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "pch_script.h"
 #include "xrEngine/XR_IOConsole.h"
 #include "xrEngine/xr_ioc_cmd.h"

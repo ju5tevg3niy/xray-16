@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 
 #include "particle_manager.h"

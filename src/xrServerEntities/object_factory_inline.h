@@ -1,3 +1,6 @@
+#pragma once
+#include <tracy/Tracy.hpp>
+
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: object_factory_inline.h
 //	Created 	: 27.05.2004
@@ -6,7 +9,6 @@
 //	Description : Object factory inline functions
 ////////////////////////////////////////////////////////////////////////////
 
-#pragma once
 #include <algorithm>
 #include "ai_space.h"
 #include "xrCore/Events/Notifier.h"

@@ -1,6 +1,11 @@
-#include "stdafx.h"
-
+#include "xrMemory.h"
 #include <SDL.h>
+#include <cstddef>
+#include <new>
+#include "Common/types.hpp"
+#include "xrDebug_macros.h"
+#include "xrsharedmem.h"
+#include "xrstring.h"
 
 #if defined(XR_PLATFORM_WINDOWS)
 #include <Psapi.h>

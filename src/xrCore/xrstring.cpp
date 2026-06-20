@@ -1,13 +1,18 @@
-#include "stdafx.h"
-#pragma hdrstop // Huh?
-
 #include "xrstring.h"
+#include <SDL.h>
+#include <cstddef>
+#include <cstdio>
+#include <cstring>
+#include <utility>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "FS.h"
 #include "Threading/Lock.hpp"
+#include "log.h"
 #include "xrCore/Text/string_funcs_inline.hpp"
 #include "xrCore/crc32.hpp"
-
-#include "FS_impl.h"
-#include <SDL.h>
+#include "xrDebug_macros.h"
+#include "xrMemory.h"
 
 str_container* g_pStringContainer = nullptr;
 

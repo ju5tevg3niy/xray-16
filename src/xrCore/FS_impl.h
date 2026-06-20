@@ -1,4 +1,6 @@
 #pragma once
+#include <cstddef>
+#include "Common/Platform.hpp"
 
 // 1: default
 // 1.5: check next chunk first heuristics

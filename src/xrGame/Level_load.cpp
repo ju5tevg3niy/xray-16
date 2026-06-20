@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "StdAfx.h"
 #include "Common/LevelGameDef.h"
 #include "ai_space.h"

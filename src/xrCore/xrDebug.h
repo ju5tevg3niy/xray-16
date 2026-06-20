@@ -1,15 +1,11 @@
 #pragma once
-
+#include <cstdio>
 #include <string>
 #include <vector>
-
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
 #include "Threading/Lock.hpp"
-
-#if defined(XR_PLATFORM_LINUX) || defined(XR_PLATFORM_BSD) || defined(XR_PLATFORM_APPLE)
-#include <cstdio>
-#endif
 
 struct SDL_Window;
 

@@ -1,4 +1,5 @@
 #pragma once
+#include <tracy/Tracy.hpp>
 
 #include "xr_3da/resource.h"
 

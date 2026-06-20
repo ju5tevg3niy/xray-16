@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "pch_script.h"
 #include "GamePersistent.h"
 #include "xrCore/FMesh.hpp"

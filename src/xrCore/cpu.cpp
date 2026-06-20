@@ -1,19 +1,17 @@
+#include "cpu.hpp"
 #include <SDL_cpuinfo.h>
 #include <SDL_timer.h>
 #include <SDL_version.h>
 #include <thread>
 #include <tracy/Tracy.hpp>
-
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "xrCore/Math/compressed_normal.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "xrCore/Math/random.hpp"
 #include "xrCore/Text/string_funcs_inline.hpp"
-#include "xrCore/xrDebug.h"
 #include "xrCore/log.h"
-
-#include "cpu.hpp"
+#include "xrCore/xrDebug.h"
 
 // Initialized on startup
 Fmatrix Fidentity;
@@ -24,15 +22,11 @@ namespace CPU
 bool HasSSE     = SDL_HasSSE();
 bool HasSSE2    = SDL_HasSSE2();
 bool HasSSE42   = SDL_HasSSE42();
-
 bool HasAVX     = SDL_HasAVX();
-
 bool HasAVX2    = SDL_HasAVX2();
-
 bool HasAVX512F = SDL_HasAVX512F();
 
 u64 qpc_freq = SDL_GetPerformanceFrequency();
-
 u32 qpc_counter = 0;
 
 u64 QPC() noexcept

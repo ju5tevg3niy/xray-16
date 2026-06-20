@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "pch_script.h"
 #include "UIGameCustom.h"
 #include "Level.h"

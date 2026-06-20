@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "pch_script.h"
 #include "xrServer_Objects_ALife_All.h"
 #include "Level.h"

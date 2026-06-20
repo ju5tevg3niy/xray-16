@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "pch.hpp"
 #include "ui_styles.h"
 

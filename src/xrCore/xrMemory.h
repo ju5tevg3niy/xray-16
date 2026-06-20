@@ -1,8 +1,6 @@
 #pragma once
-
 #include <cstddef>
 #include <new>
-
 #include "Common/types.hpp"
 #include "Common/Platform.hpp"
 
@@ -152,6 +150,7 @@ void xr_delete(T* const& ptr) noexcept
 }
 
 void* xr_malloc(size_t size);
+
 void* xr_realloc(void* ptr, size_t size);
 
 pstr xr_strdup(pcstr string);

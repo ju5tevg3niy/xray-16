@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "pch_script.h"
 #include "ai_space.h"
 #include "object_factory.h"

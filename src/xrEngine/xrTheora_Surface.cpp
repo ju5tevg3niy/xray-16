@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 #include "xrTheora_Surface.h"
 #include "xrTheora_Stream.h"

@@ -9,6 +9,14 @@
 #include <SDL_timer.h>
 #include <SDL_version.h>
 #include <SDL_video.h>
+#include <errno.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <math.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <algorithm>
 #include <array>
 #include <atomic>

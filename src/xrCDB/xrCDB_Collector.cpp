@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 //.#include "xrCore/xrCore.h"
 #pragma hdrstop // ???

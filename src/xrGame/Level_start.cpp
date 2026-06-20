@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "StdAfx.h"
 #include "Level.h"
 #include "Level_Bullet_Manager.h"

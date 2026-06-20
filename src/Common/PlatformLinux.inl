@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <cstdint>
 #include <cstring>
-#include <stdlib.h> // for malloc
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
 #include <unistd.h> // for rmdir
 #ifndef __HAIKU__
 #include <sys/fcntl.h>
@@ -10,14 +13,9 @@
 #include <sys/param.h>
 #include <errno.h>
 #include <stdarg.h>
-#include <ctype.h>
 #include <limits.h> // for PAGESIZE...
 #include <math.h>
 #include <sched.h>
-
-#include <algorithm> // for min max
-
-#include <string>
 #include <alloca.h>
 #include <pthread.h>
 #include <fcntl.h>
@@ -99,7 +97,6 @@ inline void _splitpath(const char* path, // Path Input
         strcpy(ext, end);
 }
 
-#include <iostream>
 inline void OutputDebugString(const char *str) // for linux debugger
 {
     std::cerr << str;

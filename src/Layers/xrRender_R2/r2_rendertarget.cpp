@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 #include "Layers/xrRender/ResourceManager.h"
 #include "Layers/xrRender/blenders/blender_light_occq.h"

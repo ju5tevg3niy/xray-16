@@ -1,12 +1,14 @@
 #pragma once
-
+#include <cctype>
+#include <cstdarg>
+#include <cstddef>
 #include <cstdio>
-
+#include <cstring>
+#include <functional>
+#include <utility>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "xrMemory.h"
-
-#include <cstring>
 
 #pragma pack(push, 4)
 struct str_value

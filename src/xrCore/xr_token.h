@@ -1,4 +1,5 @@
 #pragma once
+#include "Common/types.hpp"
 
 struct alignas(alignof(pcstr)) xr_token
 {
@@ -8,7 +9,9 @@ struct alignas(alignof(pcstr)) xr_token
     pcstr name;
     int id;
 };
+
 static_assert(sizeof(xr_token) == sizeof(pcstr) * 2, "xr_token should be aligned, otherwise it may have problems on RISC (e.g. ARM) architectures, which require aligned pointers.");
 
 pcstr get_token_name(const xr_token* tokens, int key);
+
 int get_token_id(const xr_token* tokens, pcstr key);

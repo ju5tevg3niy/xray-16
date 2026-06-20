@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 // occRasterizer.cpp: implementation of the occRasterizer class.
 //
 //////////////////////////////////////////////////////////////////////

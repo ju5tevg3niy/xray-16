@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 // XR_IOConsole.cpp: implementation of the CConsole class.
 // modify 15.05.2008 sea
 

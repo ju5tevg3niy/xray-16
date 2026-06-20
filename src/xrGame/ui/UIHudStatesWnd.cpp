@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "StdAfx.h"
 #include "UIHudStatesWnd.h"
 #include "Actor.h"

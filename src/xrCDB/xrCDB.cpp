@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 // xrCDB.cpp : Defines the entry point for the DLL application.
 //
 

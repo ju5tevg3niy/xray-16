@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 
 // EngineAPI.cpp: implementation of the CEngineAPI class.
 //

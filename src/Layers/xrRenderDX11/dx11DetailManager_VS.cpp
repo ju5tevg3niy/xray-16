@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 #include "Layers/xrRender/DetailManager.h"
 #include "xrEngine/IGame_Persistent.h"

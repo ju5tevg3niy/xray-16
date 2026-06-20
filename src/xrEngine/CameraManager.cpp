@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 // CameraManager.cpp: implementation of the CCameraManager class.
 //
 //////////////////////////////////////////////////////////////////////

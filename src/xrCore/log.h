@@ -1,9 +1,7 @@
 #pragma once
-
 #include <cstddef>
 #include <string>
 #include <vector>
-
 #include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "xrCore/Math/vector3.hpp"

@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 #include "IGame_Level.h"
 #include "xr_collide_form.h"

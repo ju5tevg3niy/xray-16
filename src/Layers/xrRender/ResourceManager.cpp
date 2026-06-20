@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 // TextureManager.cpp: implementation of the CResourceManager class.
 //
 //////////////////////////////////////////////////////////////////////

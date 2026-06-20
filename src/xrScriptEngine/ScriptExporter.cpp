@@ -1,3 +1,4 @@
+#include <tracy/Tracy.hpp>
 #include <unordered_map>
 
 #include "pch.hpp"

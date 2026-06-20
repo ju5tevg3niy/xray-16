@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 #include "Include/xrRender/DrawUtils.h"
 #include "Render.h"

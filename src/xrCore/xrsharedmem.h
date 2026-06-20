@@ -1,10 +1,10 @@
 #pragma once
-
+#include <cstring>
 #include <vector>
-
 #include "Common/Noncopyable.hpp"
 #include "Common/types.hpp"
 #include "Common/Platform.hpp"
+#include "xrCore/Threading/Lock.hpp"
 
 // fwd. decl.
 class Lock;

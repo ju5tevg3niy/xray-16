@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "stdafx.h"
 
 #ifdef IMGUI_ENABLE_VIEWPORTS

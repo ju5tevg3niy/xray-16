@@ -1,3 +1,5 @@
+#include <tracy/Tracy.hpp>
+
 #include "StdAfx.h"
 #include "level_debug.h"
 #include "xrEngine/xr_object.h"
