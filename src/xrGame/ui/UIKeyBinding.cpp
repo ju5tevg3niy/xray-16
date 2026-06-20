@@ -55,7 +55,7 @@ void CUIKeyBinding::FillUpList(CUIXml& xml_doc_ui, LPCSTR path_ui)
     {
         // add group
         shared_str grp_name = xml_doc.ReadAttrib("group", i, "name");
-        R_ASSERT(xr_strlen(grp_name));
+        R_ASSERT(grp_name.size());
 
         CUIStatic* item = xr_new<CUIStatic>(grp_name.c_str());
         CUIXmlInit::InitStatic(xml_doc_ui, strconcat(sizeof(buf), buf, path_ui, ":scroll_view:item_group"), 0, item);

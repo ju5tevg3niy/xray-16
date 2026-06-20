@@ -29,3 +29,11 @@ target_precompile_headers(
     PUBLIC
     "$<$<COMPILE_LANGUAGE:CXX>:pch/xrCore_pch.hpp>"
 )
+
+# jj-fork: I hate it
+target_precompile_headers(
+    xrGame
+    PRIVATE
+    "$<$<COMPILE_LANGUAGE:CXX>:xrGame/StdAfx.h>"
+    "$<$<COMPILE_LANGUAGE:CXX>:xrServerEntities/pch_script.h>"
+)

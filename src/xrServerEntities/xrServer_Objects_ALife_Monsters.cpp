@@ -233,7 +233,7 @@ void CSE_ALifeTraderAbstract::STATE_Read(NET_Packet& tNetPacket, u16 size)
 #else
             m_sCharacterProfile = "default";
 #endif
-            VERIFY(xr_strlen(m_sCharacterProfile));
+            VERIFY(m_sCharacterProfile.size());
         }
         else if (m_wVersion > 95)
             tNetPacket.r_stringZ(m_sCharacterProfile);

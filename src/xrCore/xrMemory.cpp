@@ -1,8 +1,10 @@
 #include "xrMemory.h"
 #include <SDL.h>
 #include <cstddef>
+#include <cstdlib>
 #include <new>
 #include "Common/types.hpp"
+#include "Text/string_funcs_inline.hpp"
 #include "xrDebug_macros.h"
 #include "xrsharedmem.h"
 #include "xrstring.h"
@@ -141,7 +143,6 @@ void xrMemory::mem_free(void* ptr, size_t alignment)
     xr_internal_free_aligned(ptr, alignment);
 }
 
-// xr_strdup
 pstr xr_strdup(pcstr string)
 {
     VERIFY(string);

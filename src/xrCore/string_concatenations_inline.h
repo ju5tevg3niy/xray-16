@@ -1,6 +1,12 @@
 #pragma once
-
+#include <cstring>
 #include <string>
+#include <tuple>
+#include <utility>
+#include "Common/types.hpp"
+#include "Text/string_funcs_inline.hpp"
+#include "xrDebug_macros.h"
+#include "xrstring.h"
 
 namespace xray
 {

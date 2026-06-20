@@ -262,7 +262,7 @@ void game_cl_ArtefactHunt::TranslateGameMessage(u32 msg, NET_Packet& P)
         u16 ArtefactID = P.r_u16();
         //-------------------------------------------
         IGameObject* pObj = Level().Objects.net_Find(ArtefactID);
-        if (pObj && xr_strlen(m_Eff_Af_Disappear))
+        if (pObj && m_Eff_Af_Disappear.size())
             PlayParticleEffect(m_Eff_Af_Disappear.c_str(), pObj->Position());
         //-------------------------------------------
         if (CurrentGameUI())
@@ -691,7 +691,7 @@ void game_cl_ArtefactHunt::OnSpawn(IGameObject* pObj)
     CArtefact* pArtefact = smart_cast<CArtefact*>(pObj);
     if (pArtefact)
     {
-        if (xr_strlen(m_Eff_Af_Spawn))
+        if (m_Eff_Af_Spawn.size())
             PlayParticleEffect(m_Eff_Af_Spawn.c_str(), pObj->Position());
     };
 }

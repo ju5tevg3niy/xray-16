@@ -214,7 +214,6 @@ IC bool operator<(shared_str const& a, shared_str const& b) { return a._get() < 
 IC bool operator>(shared_str const& a, shared_str const& b) { return a._get() > b._get(); }
 // externally visible standard functionality
 IC void swap(shared_str& lhs, shared_str& rhs) noexcept { lhs.swap(rhs); }
-IC size_t xr_strlen(const shared_str& a) noexcept { return a.size(); }
 
 ICF int xr_strcmp(const char* S1, const char* S2)
 {

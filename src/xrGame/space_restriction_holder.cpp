@@ -27,7 +27,7 @@ void CSpaceRestrictionHolder::clear()
 
 shared_str CSpaceRestrictionHolder::normalize_string(shared_str space_restrictors)
 {
-    u32 n = xr_strlen(space_restrictors);
+    u32 n = space_restrictors.size();
     if (!n)
         return ("");
 
@@ -86,7 +86,7 @@ shared_str CSpaceRestrictionHolder::normalize_string(shared_str space_restrictor
 
 SpaceRestrictionHolder::CBaseRestrictionPtr CSpaceRestrictionHolder::restriction(shared_str space_restrictors)
 {
-    if (!xr_strlen(space_restrictors))
+    if (!space_restrictors.size())
         return (0);
 
     space_restrictors = normalize_string(space_restrictors);
@@ -119,7 +119,7 @@ void CSpaceRestrictionHolder::register_restrictor(
             NODEFAULT;
         temp1 = *temp;
 
-        if (xr_strlen(*temp) && xr_strlen(space_restrictors))
+        if (temp->size() && space_restrictors.size())
             strconcat(sizeof(m_temp_string), m_temp_string, (*temp).c_str(), ",", space_restrictors.c_str());
         else
             strconcat(sizeof(m_temp_string), m_temp_string, (*temp).c_str(), space_restrictors.c_str());

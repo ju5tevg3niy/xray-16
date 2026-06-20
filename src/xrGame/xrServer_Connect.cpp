@@ -44,7 +44,7 @@ xrServer::EConnect xrServer::Connect(shared_str& session_name, GameDescriptionDa
         return ErrConnect;
 
     string1024 options;
-    R_ASSERT2(xr_strlen(session_name) <= sizeof(options), "session_name too BIIIGGG!!!");
+    R_ASSERT2(session_name.size() <= sizeof(options), "session_name too BIIIGGG!!!");
     xr_strcpy(options, strchr(session_name.c_str(), '/') + 1);
 
     // Parse game type

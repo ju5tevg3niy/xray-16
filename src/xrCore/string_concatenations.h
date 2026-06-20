@@ -1,4 +1,8 @@
 #pragma once
+#include <cstddef>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrDebug_macros.h"
 
 #if !defined(XR_PLATFORM_WINDOWS)
 // XXX: remove or cleanup

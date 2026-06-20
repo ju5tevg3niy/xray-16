@@ -83,7 +83,7 @@ bool CAI_Stalker::bfAssignWatch(CScriptEntityAction* tpEntityAction)
     {
     case CScriptWatchAction::eGoalTypeObject:
     {
-        if (!xr_strlen(l_tWatchAction.m_bone_to_watch))
+        if (!(l_tWatchAction.m_bone_to_watch.size()))
             l_tWatchAction.m_tpObjectToWatch->Center(l_tWatchAction.m_tWatchVector);
         else
         {
@@ -326,7 +326,7 @@ bool CAI_Stalker::bfAssignAnimation(CScriptEntityAction* tpEntityAction)
     if (!inherited::bfAssignAnimation(tpEntityAction))
         return (false);
 
-    if (xr_strlen(tpEntityAction->m_tAnimationAction.m_caAnimationToPlay))
+    if (tpEntityAction->m_tAnimationAction.m_caAnimationToPlay.size())
     {
 #ifdef _DEBUG
 //		Msg				("%6d Assigning animation :

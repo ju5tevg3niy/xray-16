@@ -165,7 +165,7 @@ CSpaceRestrictionManager::CRestrictionPtr CSpaceRestrictionManager::restriction(
     shared_str out_restrictors, shared_str in_restrictors)
 {
     string4096 m_temp;
-    if (!xr_strlen(out_restrictors) && !xr_strlen(in_restrictors))
+    if (!(out_restrictors.size()) && !(in_restrictors.size()))
         return (0);
 
     out_restrictors = normalize_string(out_restrictors);

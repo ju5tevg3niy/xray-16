@@ -981,7 +981,7 @@ void game_cl_Deathmatch::OnSpawn(IGameObject* pObj)
     CActor* pActor = smart_cast<CActor*>(pObj);
     if (pActor)
     {
-        if (xr_strlen(Actor_Spawn_Effect))
+        if (Actor_Spawn_Effect.size())
             PlayParticleEffect(Actor_Spawn_Effect.c_str(), pObj->Position());
     };
     if (smart_cast<CWeapon*>(pObj))

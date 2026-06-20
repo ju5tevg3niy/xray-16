@@ -480,7 +480,7 @@ bool CGameObject::net_Spawn(CSE_Abstract* DC)
     VERIFY(_valid(renderable.xform));
     VERIFY(!fis_zero(DET(renderable.xform)));
     CSE_ALifeObject* O = smart_cast<CSE_ALifeObject*>(E);
-    if (O && xr_strlen(O->m_ini_string))
+    if (O && O->m_ini_string.size())
     {
         IReader reader((void*)((O->m_ini_string).c_str()), O->m_ini_string.size());
         m_ini_file = xr_new<CInifile>(&reader, FS.get_path("$game_config$")->m_Path);

@@ -47,7 +47,7 @@ void CUIPdaKillMessage::Init(KillMessageStruct& msg, CGameFont* F)
 
 float CUIPdaKillMessage::InitText(CUIStatic& refStatic, float x, ColoredName& info)
 {
-    if (0 == xr_strlen(info.m_name))
+    if (0 == info.m_name.size())
         return 0.0f;
 
     CGameFont* pFont = refStatic.GetFont();

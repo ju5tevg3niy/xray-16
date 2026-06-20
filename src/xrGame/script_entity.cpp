@@ -193,7 +193,7 @@ void ActionCallback(IKinematics* tpKinematics)
 void CScriptEntity::vfUpdateParticles()
 {
     CScriptParticleAction& l_tParticleAction = GetCurrentAction()->m_tParticleAction;
-    if (xr_strlen(l_tParticleAction.m_caBoneName))
+    if (l_tParticleAction.m_caBoneName.size())
     {
         CParticlesObject* l_tpParticlesObject = l_tParticleAction.m_tpParticleSystem;
         l_tpParticlesObject->UpdateParent(
@@ -206,7 +206,7 @@ void CScriptEntity::vfUpdateParticles()
 void CScriptEntity::vfUpdateSounds()
 {
     CScriptSoundAction& l_tSoundAction = GetCurrentAction()->m_tSoundAction;
-    if (xr_strlen(l_tSoundAction.m_caBoneName) && m_current_sound && m_current_sound->_feedback())
+    if (l_tSoundAction.m_caBoneName.size() && m_current_sound && m_current_sound->_feedback())
         m_current_sound->_feedback()->set_position(
             GetUpdatedMatrix(l_tSoundAction.m_caBoneName, l_tSoundAction.m_tSoundPosition, Fvector().set(0, 0, 0)).c);
 }
@@ -341,7 +341,7 @@ bool CScriptEntity::bfAssignAnimation(CScriptEntityAction* tpEntityAction)
     if (GetCurrentAction() && GetCurrentAction()->m_tAnimationAction.m_bCompleted)
         return (false);
 
-    if (!xr_strlen(GetCurrentAction()->m_tAnimationAction.m_caAnimationToPlay))
+    if (!(GetCurrentAction()->m_tAnimationAction.m_caAnimationToPlay.size()))
         return (true);
 
     IKinematicsAnimated& tVisualObject = *(smart_cast<IKinematicsAnimated*>(object().Visual()));
@@ -358,7 +358,7 @@ const Fmatrix CScriptEntity::GetUpdatedMatrix(
     l_tMatrix.setHPB(VPUSH(tAngleOffset));
     l_tMatrix.c = tPositionOffset;
 
-    if (xr_strlen(caBoneName))
+    if (caBoneName.size())
     {
         CBoneInstance& l_tBoneInstance = smart_cast<IKinematics*>(
             object().Visual())->LL_GetBoneInstance(smart_cast<IKinematics*>(object().Visual())->LL_BoneID(caBoneName));
@@ -398,7 +398,7 @@ bool CScriptEntity::bfAssignSound(CScriptEntityAction* tpEntityAction)
     }
     else
     {
-        if (xr_strlen(l_tSoundAction.m_caSoundToPlay))
+        if (l_tSoundAction.m_caSoundToPlay.size())
         {
             m_current_sound = xr_new<ref_sound>();
             m_current_sound->create(l_tSoundAction.m_caSoundToPlay.c_str(), st_Effect, l_tSoundAction.m_sound_type);
@@ -615,7 +615,7 @@ bool CScriptEntity::bfScriptAnimation()
         ProcessScripts();
 
     if (GetScriptControl() && GetCurrentAction() && !GetCurrentAction()->m_tAnimationAction.m_bCompleted &&
-        xr_strlen(GetCurrentAction()->m_tAnimationAction.m_caAnimationToPlay))
+        GetCurrentAction()->m_tAnimationAction.m_caAnimationToPlay.size())
     {
         if (m_tpScriptAnimation == m_tpNextAnimation)
             return (true);

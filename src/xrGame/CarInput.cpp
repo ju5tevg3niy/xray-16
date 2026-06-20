@@ -69,7 +69,7 @@ bool CCar::bfAssignMovement(CScriptEntityAction* tpEntityAction)
 bool CCar::bfAssignObject(CScriptEntityAction* tpEntityAction)
 {
     CScriptObjectAction& l_tObjectAction = tpEntityAction->m_tObjectAction;
-    if (l_tObjectAction.m_bCompleted || !xr_strlen(l_tObjectAction.m_caBoneName))
+    if (l_tObjectAction.m_bCompleted || !l_tObjectAction.m_caBoneName.size())
         return ((l_tObjectAction.m_bCompleted = true) == false);
 
     s16 l_sBoneID = smart_cast<IKinematics*>(Visual())->LL_BoneID(l_tObjectAction.m_caBoneName);

@@ -167,7 +167,7 @@ void Player_Statistic::Write(FILE* pFile)
     if (!pFile)
         return;
     //----------------------------------------------
-    fwrite(PName.c_str(), xr_strlen(PName) + 1, 1, pFile);
+    fwrite(PName.c_str(), PName.size() + 1, 1, pFile);
     fwrite(&m_dwTotalShots, 4, 1, pFile);
     fwrite(m_dwTotalAliveTime, 4, 3, pFile);
     fwrite(m_dwTotalMoneyRound, 4, 3, pFile);
@@ -249,8 +249,8 @@ void Weapon_Statistic::Write(FILE* pFile)
     if (!pFile)
         return;
     //----------------------------------------------
-    fwrite(WName.c_str(), xr_strlen(WName) + 1, 1, pFile);
-    fwrite(InvName.c_str(), xr_strlen(InvName) + 1, 1, pFile);
+    fwrite(WName.c_str(), WName.size() + 1, 1, pFile);
+    fwrite(InvName.c_str(), InvName.size() + 1, 1, pFile);
     //----------------------------------------------
     fwrite(&NumBought, 4, 1, pFile);
     fwrite(&m_dwRoundsFired, 4, 1, pFile);
@@ -329,6 +329,6 @@ void HitData::Write(FILE* pFile)
     fwrite(&BoneID, 2, 1, pFile);
     fwrite(&Deadly, 1, 1, pFile);
 
-    fwrite(TargetName.c_str(), xr_strlen(TargetName) + 1, 1, pFile);
-    fwrite(BoneName.c_str(), xr_strlen(BoneName) + 1, 1, pFile);
+    fwrite(TargetName.c_str(), TargetName.size() + 1, 1, pFile);
+    fwrite(BoneName.c_str(), BoneName.size() + 1, 1, pFile);
 };

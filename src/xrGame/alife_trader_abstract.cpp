@@ -43,9 +43,9 @@ void CSE_ALifeTraderAbstract::spawn_supplies()
         //то не вызывать spawn из selected_char.SupplySpawn()
         bool specific_character_supply = true;
 
-        if (xr_strlen(dynamic_object->m_ini_string))
+        if (dynamic_object->m_ini_string.size())
         {
-            IReader reader((void*)dynamic_object->m_ini_string.c_str(), xr_strlen(dynamic_object->m_ini_string));
+            IReader reader((void*)dynamic_object->m_ini_string.c_str(), dynamic_object->m_ini_string.size());
             CInifile ini(&reader, FS.get_path("$game_config$")->m_Path);
 
             if (ini.section_exist("dont_spawn_character_supplies"))
