@@ -2,6 +2,7 @@
 
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
+#include "Common/types_limits.hpp"
 
 #include "bitwise.hpp"
 #include "math_funcs_inline.hpp"

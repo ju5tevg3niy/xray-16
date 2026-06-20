@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Common/types_limits.hpp"
 #include "alife_space.h"
 #include "xrCore/xrstring.h"
 

@@ -1,6 +1,6 @@
 #include <cmath>
 
-#include "Common/types.hpp"
+#include "Common/types_limits.hpp"
 #include "xrCore/xrDebug_macros.h"
 
 #include "math_funcs_inline.hpp"

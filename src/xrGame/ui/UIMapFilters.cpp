@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 
+#include "Common/types_limits.hpp"
 #include "UIMapFilters.h"
 #include "UIHelper.h"
 #include "xrUICore/Buttons/UICheckButton.h"

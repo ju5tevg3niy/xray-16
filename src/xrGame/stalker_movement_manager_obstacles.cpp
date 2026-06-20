@@ -7,6 +7,8 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "StdAfx.h"
+
+#include "Common/types_limits.hpp"
 #include "stalker_movement_manager_obstacles.h"
 #include "stalker_movement_manager_space.h"
 #include "ai_space.h"

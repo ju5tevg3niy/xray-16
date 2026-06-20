@@ -13,17 +13,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-
 #include "pch.hpp"
 
+#include <array>
+
+#include "Common/types_limits.hpp"
 #include "ui_focus.h"
 #include "Windows/UIWindow.h"
 #include "Cursor/UICursor.h"
 
 #include "xrCore/buffer_vector.h"
 #include "xrEngine/editor_helper.h"
-
-#include <array>
 
 namespace
 {

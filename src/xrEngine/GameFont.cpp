@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#pragma hdrstop
 
+#include "Common/types_limits.hpp"
 #include "GameFont.h"
 #include "xr_level_controller.h"
 #include "xrCore/Text/string_conversion.hpp"

@@ -2,6 +2,7 @@
 
 #include "dxFontRender.h"
 
+#include "Common/types_limits.hpp"
 #include "xrEngine/GameFont.h"
 #include "xrCore/Text/string_conversion.hpp"
 

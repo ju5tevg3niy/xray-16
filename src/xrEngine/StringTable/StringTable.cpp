@@ -1,4 +1,6 @@
 #include "stdafx.h"
+
+#include "Common/types_limits.hpp"
 #include "StringTable.h"
 
 #include "xr_level_controller.h"

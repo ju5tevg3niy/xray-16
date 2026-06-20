@@ -3,8 +3,19 @@
 // темплейтовый класс, который загружает из ini файла
 // квадратную таблицу для элементов
 ///////////////////////////////////////////////////////////////
-
 #pragma once
+
+#include <cstdlib>
+#include <type_traits>
+#include <vector>
+
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_limits.hpp"
+#include "xrCore/xrDebug.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xr_trims.h"
 
 // T_ITEM		-	тип элемента таблицы
 //

@@ -1,7 +1,7 @@
 #include <cmath>
 #include <limits>
 
-#include "Common/types.hpp"
+#include "Common/types_limits.hpp"
 #include "xrCore/xrDebug_macros.h"
 
 #include "constants.hpp"

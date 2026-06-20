@@ -5,8 +5,11 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Base path manager parameters
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
+
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_limits.hpp"
 
 template <typename _dist_type, typename _index_type, typename _iteration_type>
 struct SBaseParameters
