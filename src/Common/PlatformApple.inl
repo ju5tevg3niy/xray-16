@@ -393,9 +393,6 @@ inline int _mkdir(const char *dir) { return mkdir(dir, S_IRWXU); }
 #define _isalpha_l isalpha_l
 #define _create_locale(category, arg) newlocale(category, arg, (locale_t) 0)
 
-#define ZeroMemory(p, sz) memset((p), 0, (sz))
-#define CopyMemory(d, s, n) memcpy(d, s, n)
-
 #define RGB(r,g,b) ( ((DWORD)(uint8_t)r)|((DWORD)((uint8_t)g)<<8)|((DWORD)((uint8_t)b)<<16) )
 #define SUCCEEDED(hr) (((HRESULT)(hr)) >= 0)
 #define FAILED(hr) (((HRESULT)(hr)) < 0)
