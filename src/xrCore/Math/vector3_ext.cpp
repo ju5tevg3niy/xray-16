@@ -1,8 +1,7 @@
+#include "vector3_ext.hpp"
 #include <cmath>
-
 #include "math_funcs_inline.hpp"
 #include "vector3.hpp"
-#include "vector3_ext.hpp"
 
 float dotproduct(const Fvector& v1, const Fvector& v2) {
   return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;

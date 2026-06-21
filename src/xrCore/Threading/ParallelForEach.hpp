@@ -1,3 +1,7 @@
+#pragma once
+#include "ParallelFor.hpp"
+#include "Task.hpp"
+
 /*
     Copyright (c) 2014-2021 OpenXRay
 
@@ -13,10 +17,6 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-#pragma once
-
-#include "ParallelFor.hpp"
-#include "Task.hpp"
 
 namespace detail {
 class ParallelForEach {

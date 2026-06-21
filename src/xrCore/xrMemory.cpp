@@ -3,12 +3,12 @@
 #include <cstddef>
 #include <cstdlib>
 #include <new>
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Text/string_funcs_inline.hpp"
 #include "xrDebug_macros.h"
 #include "xrsharedmem.h"
 #include "xrstring.h"
-
 #if defined(XR_PLATFORM_WINDOWS)
 #include <Psapi.h>
 #elif defined(XR_PLATFORM_LINUX)

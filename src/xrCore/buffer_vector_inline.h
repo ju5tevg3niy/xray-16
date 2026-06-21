@@ -1,3 +1,7 @@
+#pragma once
+#include "xrCore/buffer_vector.h"
+#include "xrCore/xrDebug_macros.h"
+
 ////////////////////////////////////////////////////////////////////////////
 // Module : buffer_vector_inline.h
 // Created : 10.10.2007
@@ -5,11 +9,6 @@
 // Author : Dmitriy Iassenev
 // Description : buffer vector template class inline functions
 ////////////////////////////////////////////////////////////////////////////
-
-#pragma once
-
-#include "xrCore/buffer_vector.h"
-#include "xrCore/xrDebug_macros.h"
 
 #define TEMPLATE_SPECIALIZATION template <typename T>
 #define buffer_vector_specialized buffer_vector<T>

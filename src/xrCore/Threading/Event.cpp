@@ -1,7 +1,6 @@
-#include <cstddef>
-
-#include "Common/Platform.hpp"
 #include "Event.hpp"
+#include <cstddef>
+#include "Common/Platform.hpp"
 
 Event::Event(std::nullptr_t) noexcept {
   handle = nullptr;

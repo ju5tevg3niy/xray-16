@@ -1,9 +1,7 @@
 #pragma once
-
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_limits.hpp"
-
 #include "constants.hpp"
 #include "math_funcs_inline.hpp"
 #include "vector2.hpp"

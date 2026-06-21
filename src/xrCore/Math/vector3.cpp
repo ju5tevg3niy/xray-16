@@ -1,14 +1,12 @@
+#include "vector3.hpp"
 #include <cmath>
 #include <limits>
-
 #include "Common/types_limits.hpp"
-#include "xrCore/xrDebug_macros.h"
-
 #include "constants.hpp"
 #include "math_funcs.hpp"
 #include "math_funcs_inline.hpp"
 #include "random.hpp"
-#include "vector3.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 template <typename T>
 _vector3<T>& _vector3<T>::set_length(T l) {

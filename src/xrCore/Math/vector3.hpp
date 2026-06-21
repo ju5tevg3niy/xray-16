@@ -1,11 +1,8 @@
 #pragma once
-
 #include <algorithm>
 #include <cstddef>
-
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-
 #include "constants.hpp"
 #include "math_funcs_inline.hpp"
 #include "random.hpp"

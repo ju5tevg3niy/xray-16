@@ -1,14 +1,11 @@
 #pragma once
-
 #include <cstddef>
 #include <vector>
-
 #include "Common/FSMacros.hpp"
 #include "Common/Noncopyable.hpp"
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
 #include "xrCore/xrstring.h"
-
 #include "tinyxml.h"
 
 // XXX: interesting idea is to have variable configs folder. Need we?

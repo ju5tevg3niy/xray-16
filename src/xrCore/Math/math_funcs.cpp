@@ -1,8 +1,7 @@
+#include "math_funcs.hpp"
 #include "Common/Platform.hpp"
-
 #include "bitwise.hpp"
 #include "constants.hpp"
-#include "math_funcs.hpp"
 #include "math_funcs_inline.hpp"
 
 // normalize angle (0..2PI)

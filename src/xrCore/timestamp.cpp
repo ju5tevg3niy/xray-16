@@ -1,8 +1,6 @@
-#include <ctime>
-
-#include "Common/types.hpp"
-
 #include "timestamp.hpp"
+#include <ctime>
+#include "Common/types.hpp"
 
 char *timestamp(string64 &dest) {
   time_t now = time(nullptr);

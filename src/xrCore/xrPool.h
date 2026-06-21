@@ -1,4 +1,7 @@
 #pragma once
+#include <cstddef>
+#include <vector>
+#include "Common/Platform.hpp"
 #include "xrDebug_macros.h"
 
 template <class T, size_t granularity>

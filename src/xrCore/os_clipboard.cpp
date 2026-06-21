@@ -1,3 +1,18 @@
+#include "os_clipboard.h"
+#include <SDL_clipboard.h>
+#include <SDL_error.h>
+#include <SDL_stdinc.h>
+#include <cctype>
+#include <cstddef>
+#include <locale>
+#include <string>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/Text/string_conversion.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/log.h"
+#include "xrCore/xrDebug_macros.h"
+
 ////////////////////////////////////////////////////////////////////////////
 // Module : os_clipboard.cpp
 // Created : 21.02.2008
@@ -7,22 +22,6 @@
 // Modified : 24.07.2018
 // Modified by : Xottab_DUTY
 ////////////////////////////////////////////////////////////////////////////
-#include <SDL_clipboard.h>
-#include <SDL_error.h>
-#include <SDL_stdinc.h>
-#include <cctype>
-#include <cstddef>
-#include <string>
-#include <locale>
-
-#include "Common/Platform.hpp"
-#include "Common/types.hpp"
-#include "xrCore/Text/string_conversion.hpp"
-#include "xrCore/Text/string_funcs_inline.hpp"
-#include "xrCore/log.h"
-#include "xrCore/xrDebug_macros.h"
-
-#include "os_clipboard.h"
 
 void os_clipboard::copy_to_clipboard(pcstr buf, bool alreadyUTF8 /*= false*/)
 {

@@ -1,3 +1,14 @@
+#pragma once
+#include <algorithm>
+#include <atomic>
+#include <cstddef>
+#include <limits>
+#include <new>
+#include <type_traits>
+#include "Common/Noncopyable.hpp"
+#include "Common/Platform.hpp"
+#include "xrCore/xrDebug_macros.h"
+
 /*
     Copyright (c) 2014-2021 OpenXRay
 
@@ -13,18 +24,6 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-#pragma once
-
-#include <algorithm>
-#include <atomic>
-#include <cstddef>
-#include <limits>
-#include <new>
-#include <type_traits>
-
-#include "Common/Noncopyable.hpp"
-#include "Common/Platform.hpp"
-#include "xrCore/xrDebug_macros.h"
 
 #if defined(XR_ARCHITECTURE_X86) || defined(XR_ARCHITECTURE_ARM) || \
     defined(XR_ARCHITECTURE_PPC)

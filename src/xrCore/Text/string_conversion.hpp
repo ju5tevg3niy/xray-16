@@ -1,8 +1,6 @@
 #pragma once
-
 #include <locale>
 #include <string>
-
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 

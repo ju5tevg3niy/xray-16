@@ -1,3 +1,11 @@
+#pragma once
+#include <cstddef>
+#include <iterator>
+#include <thread>
+#include "Task.hpp"
+#include "TaskManager.hpp"
+#include "xrCore/xrDebug_macros.h"
+
 /*
     Copyright (c) 2014-2021 OpenXRay
 
@@ -13,16 +21,6 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-#pragma once
-
-#include <cstddef>
-#include <iterator>
-#include <thread>
-
-#include "xrCore/xrDebug_macros.h"
-
-#include "Task.hpp"
-#include "TaskManager.hpp"
 
 class TaskWorker;
 

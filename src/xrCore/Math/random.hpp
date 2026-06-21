@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "xrCore/xrDebug_macros.h"

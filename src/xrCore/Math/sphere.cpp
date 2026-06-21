@@ -1,7 +1,6 @@
-#include <list>
-
-#include "math_funcs_inline.hpp"
 #include "sphere.hpp"
+#include <list>
+#include "math_funcs_inline.hpp"
 #include "vector3.hpp"
 
 class Miniball;

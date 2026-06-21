@@ -1,5 +1,4 @@
 #pragma once
-
 #include "vector3.hpp"
 
 inline Fvector cr_fvector3(float f) {

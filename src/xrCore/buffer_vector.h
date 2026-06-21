@@ -1,3 +1,7 @@
+#pragma once
+#include <cstddef>
+#include <iterator>
+
 ////////////////////////////////////////////////////////////////////////////
 // Module : buffer_vector.h
 // Created : 10.10.2007
@@ -5,11 +9,6 @@
 // Author : Dmitriy Iassenev
 // Description : buffer vector template class
 ////////////////////////////////////////////////////////////////////////////
-
-#pragma once
-
-#include <cstddef>
-#include <iterator>
 
 template <typename T>
 class buffer_vector

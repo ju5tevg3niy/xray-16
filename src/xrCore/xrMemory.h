@@ -1,8 +1,8 @@
 #pragma once
 #include <cstddef>
 #include <new>
-#include "Common/types.hpp"
 #include "Common/Platform.hpp"
+#include "Common/types.hpp"
 
 class xrMemory
 {

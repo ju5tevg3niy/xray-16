@@ -1,15 +1,12 @@
 #pragma once
-
 #include <cmath>
-
 #include "Common/Platform.hpp"
-#include "xrCore/xrDebug_macros.h"
-
 #include "constants.hpp"
 #include "math_funcs_inline.hpp"
 #include "vector2.hpp"
 #include "vector3.hpp"
 #include "vector4.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 /*
  * DirectX-compliant, ie row-column order, ie m[Row][Col].

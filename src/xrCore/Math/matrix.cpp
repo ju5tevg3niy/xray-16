@@ -1,12 +1,10 @@
-#include <cmath>
-
-#include "Common/types_limits.hpp"
-#include "xrCore/xrDebug_macros.h"
-
-#include "math_funcs_inline.hpp"
 #include "matrix.hpp"
+#include <cmath>
+#include "Common/types_limits.hpp"
+#include "math_funcs_inline.hpp"
 #include "quaternion.hpp"
 #include "vector3.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 Fmatrix& Fmatrix::rotation(const Fquaternion& Q) {
   float xx = Q.x * Q.x;

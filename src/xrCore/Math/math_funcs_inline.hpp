@@ -1,10 +1,7 @@
 #pragma once
-
 #include <cmath>
-
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-
 #include "bitwise.hpp"
 #include "constants.hpp"
 

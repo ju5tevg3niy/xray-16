@@ -1,7 +1,5 @@
 #pragma once
-
 #include "Common/types.hpp"
-
 #include "math_funcs_inline.hpp"
 #include "vector3.hpp"
 

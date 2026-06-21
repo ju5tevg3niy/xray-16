@@ -1,5 +1,4 @@
-#ifndef COMPRESSION_PPMD_STREAM_INLINE_H
-#define COMPRESSION_PPMD_STREAM_INLINE_H
+#pragma once
 
 namespace compression
 {
@@ -40,5 +39,3 @@ inline u32 stream::tell() const
 
 } // namespace ppmd
 } // namespace compression
-
-#endif // COMPRESSION_PPMD_STREAM_INLINE_H

@@ -1,3 +1,14 @@
+#pragma once
+#include <atomic>
+#include <cstddef>
+#include <mutex>
+#include <thread>
+#include <vector>
+#include "Common/Platform.hpp"
+#include "Event.hpp"
+#include "Task.hpp"
+#include "xrCommon/xr_smart_pointers.h"
+
 /*
     Copyright (c) 2014-2021 OpenXRay
 
@@ -13,19 +24,6 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-#pragma once
-
-#include <atomic>
-#include <cstddef>
-#include <mutex>
-#include <thread>
-#include <vector>
-
-#include "Common/Platform.hpp"
-#include "xrCommon/xr_smart_pointers.h"
-
-#include "Event.hpp"
-#include "Task.hpp"
 
 class TaskWorker;
 

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Common/types.hpp"
 
 template <class T>

@@ -1,6 +1,5 @@
-#include "Common/types.hpp"
-
 #include "ThreadUtil.hpp"
+#include "Common/types.hpp"
 
 #if defined(XR_PLATFORM_POSIX)
 #include <pthread.h>

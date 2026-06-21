@@ -1,11 +1,9 @@
 #pragma once
-
 #include <cstdarg>
 #include <cstdint>
 #include <cstdio>
 #include <cstring>
 #include <string_view>
-
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 

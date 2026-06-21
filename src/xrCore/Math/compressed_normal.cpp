@@ -1,12 +1,10 @@
-#include <tracy/Tracy.hpp>
-
-#include "Common/types.hpp"
-#include "xrCore/xrDebug_macros.h"
-
-#include "bitwise.hpp"
 #include "compressed_normal.hpp"
+#include <tracy/Tracy.hpp>
+#include "Common/types.hpp"
+#include "bitwise.hpp"
 #include "math_funcs_inline.hpp"
 #include "vector3.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 // upper 3 bits
 #define pvSIGN_MASK 0xe000

@@ -1,3 +1,9 @@
+#pragma once
+#include <cstdint>
+#include <limits>
+#include "Common/types.hpp"
+#include "xrCore/xrDebug_macros.h"
+
 ///////////////////////////////////////////////////////////////////////////
 /// @file   fast_lc16.hpp
 /// @author Sultan Uramaev (Xottab_DUTY)
@@ -5,15 +11,8 @@
 ///         which is authored by Intel Corporation
 ///         and licenced by Apache licence
 ///////////////////////////////////////////////////////////////////////////
-#pragma once
-
-#include <cstdint>
-#include <limits>
-
-#include "Common/types.hpp"
-#include "xrCore/xrDebug_macros.h"
-
 //! A fast random number generator.
+
 /** Uses linear congruential method. */
 class fast_lc16 final {
   u32 x, c;

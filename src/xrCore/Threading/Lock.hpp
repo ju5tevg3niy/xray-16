@@ -1,5 +1,4 @@
 #pragma once
-
 #include <atomic>
 
 #ifdef CONFIG_PROFILE_LOCKS

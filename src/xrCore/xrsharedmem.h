@@ -2,12 +2,9 @@
 #include <cstring>
 #include <vector>
 #include "Common/Noncopyable.hpp"
-#include "Common/types.hpp"
 #include "Common/Platform.hpp"
+#include "Common/types.hpp"
 #include "xrCore/Threading/Lock.hpp"
-
-// fwd. decl.
-class Lock;
 
 #pragma pack(push, 4)
 //////////////////////////////////////////////////////////////////////////

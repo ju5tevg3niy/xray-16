@@ -1,13 +1,11 @@
+#include "string_conversion.hpp"
 #include <codecvt>
 #include <locale>
 #include <string>
-
 #include "Common/types.hpp"
+#include "string_funcs_inline.hpp"
 #include "xrCore/xrDebug.h"
 #include "xrCore/xrDebug_macros.h"
-
-#include "string_conversion.hpp"
-#include "string_funcs_inline.hpp"
 
 #define BITS1_MASK 0x80  // 10000000b
 #define BITS2_MASK 0xC0  // 11000000b

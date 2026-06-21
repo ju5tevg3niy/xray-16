@@ -1,14 +1,11 @@
 #pragma once
-
 #include <cmath>
-
 #include "Common/Platform.hpp"
-#include "xrCore/xrDebug.h"
-#include "xrCore/xrDebug_macros.h"
-
 #include "constants.hpp"
 #include "math_funcs_inline.hpp"
 #include "vector3.hpp"
+#include "xrCore/xrDebug.h"
+#include "xrCore/xrDebug_macros.h"
 
 /***************************************************************************
  The quaternion module contains basic support for a quaternion object.

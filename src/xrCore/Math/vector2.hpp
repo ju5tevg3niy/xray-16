@@ -1,10 +1,7 @@
 #pragma once
-
 #include <algorithm>
 #include <cstddef>
-
 #include "Common/Platform.hpp"
-
 #include "constants.hpp"
 #include "math_funcs_inline.hpp"
 

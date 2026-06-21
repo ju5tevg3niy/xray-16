@@ -1,8 +1,6 @@
 #pragma once
-
 #include "Common/Platform.hpp"
 #include "Common/types_limits.hpp"
-
 #include "matrix.hpp"
 #include "matrix33.hpp"
 #include "vector3.hpp"

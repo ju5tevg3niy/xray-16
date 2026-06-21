@@ -1,12 +1,12 @@
 #pragma once
-
 #include <limits>
-
 #include "Common/GUID.hpp"
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_limits.hpp"
-#include "Common/Platform.hpp"
 #include "xrCore/Math/fbox.hpp"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 
 constexpr cpcstr LEVEL_GRAPH_NAME = "level.ai";
 

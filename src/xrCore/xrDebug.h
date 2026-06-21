@@ -1,13 +1,13 @@
 #pragma once
+#include <SDL_video.h>
 #include <cstdio>
 #include <string>
 #include <vector>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
+#include "Text/string_funcs_inline.hpp"
 #include "Threading/Lock.hpp"
-
-struct SDL_Window;
 
 enum class AssertionResult : int
 {
@@ -124,10 +124,6 @@ private:
     static void WINAPI PreErrorHandler(INT_PTR);
 };
 
-// forward declaration
-// Definition is in xrCore/Text/string_funcs_inline.hpp
-inline int __cdecl xr_sprintf(pstr destination, size_t const buffer_size, pcstr format_string, ...);
-
 // for debug purposes only
 template<typename... Args>
 std::string make_string(cpcstr format, Args... args)
@@ -136,5 +132,3 @@ std::string make_string(cpcstr format, Args... args)
     xr_sprintf(log, std::size(log), format, std::forward<Args>(args)...);
     return log;
 }
-
-#include "xrDebug_macros.h"

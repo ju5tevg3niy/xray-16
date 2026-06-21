@@ -1,12 +1,10 @@
 #pragma once
-
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCore/xrDebug_macros.h"
-
 #include "constants.hpp"
 #include "math_funcs_inline.hpp"
 #include "vector3.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 struct Fsphere {
   Fvector3 P;

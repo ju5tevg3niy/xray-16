@@ -1,17 +1,32 @@
-#include <tracy/Tracy.hpp>
-
-#include "stdafx.h"
-#pragma hdrstop
-
 #include "xrDebug.h"
-#include "Debug/StackTrace.h"
-#include "os_clipboard.h"
-#include "log.h"
-#include "Threading/ScopeLock.hpp"
-
-#include <SDL.h>
-
+#include <SDL_assert.h>
+#include <SDL_error.h>
+#include <SDL_messagebox.h>
+#include <SDL_stdinc.h>
+#include <SDL_video.h>
 #include <csignal>
+#include <cstdarg>
+#include <cstddef>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <exception>
+#include <string>
+#include <tracy/Tracy.hpp>
+#include <vector>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "Debug/StackTrace.h"
+#include "Text/string_funcs_inline.hpp"
+#include "Threading/ScopeLock.hpp"
+#include "log.h"
+#include "os_clipboard.h"
+#include "xrCore.h"
+#include "xrDebug_macros.h"
+#include "xrMemory.h"
+#include "xrsharedmem.h"
+#include "xrstring.h"
 
 #if defined(XR_PLATFORM_WINDOWS)
 #   include <dbghelp.h>

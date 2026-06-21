@@ -1,3 +1,7 @@
+#pragma once
+#include <cstddef>
+#include "Common/types.hpp"
+
 ////////////////////////////////////////////////////////////////////////////
 // Module : os_clipboard.h
 // Created : 21.02.2008
@@ -5,11 +9,6 @@
 // Author : Evgeniy Sokolov
 // Description : os clipboard class
 ////////////////////////////////////////////////////////////////////////////
-#pragma once
-
-#include <cstddef>
-
-#include "Common/types.hpp"
 
 namespace os_clipboard
 {

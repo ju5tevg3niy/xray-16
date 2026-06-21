@@ -1,13 +1,10 @@
 #pragma once
-
 #include <cstddef>
-
 #include "Common/Platform.hpp"
-#include "xrCore/xrMemory.h"
-
 #include "math_funcs_inline.hpp"
 #include "matrix.hpp"
 #include "vector3.hpp"
+#include "xrCore/xrMemory.h"
 
 struct Fmatrix33 {
  public:

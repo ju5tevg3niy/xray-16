@@ -10,7 +10,7 @@ target_sources(
     Math/matrix.cpp
     Math/quaternion.cpp
     Math/sphere.cpp
-    Math/vector.cpp
+    Math/vector3.cpp
     Math/vector3_ext.cpp
     Text/string_conversion.cpp
     Threading/Event.cpp

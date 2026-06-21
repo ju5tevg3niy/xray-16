@@ -1,6 +1,6 @@
 #pragma once
-
-#include "xrDebug.h"
+#include "Common/Platform.hpp"  // IWYU pragma: keep
+#include "xrDebug.h"            // IWYU pragma: keep
 
 #define DEBUG_INFO {__FILE__, __LINE__, __FUNCTION__}
 #define CHECK_OR_EXIT(expr, message)\
