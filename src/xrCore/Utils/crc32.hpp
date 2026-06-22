@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Common/types.hpp"
 
 extern u32 crc32(const void* P, u32 len);

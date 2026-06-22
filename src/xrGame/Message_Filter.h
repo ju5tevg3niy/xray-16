@@ -1,7 +1,5 @@
-#ifndef DEMO_MESSAGE_FILER
-#define DEMO_MESSAGE_FILER
-
-#include "xrCore/fastdelegate.h"
+#pragma once
+#include "xrCore/Utils/fastdelegate.hpp"
 #include "xrCore/net_utils.h"
 #include "xrCore/Containers/AssociativeVector.hpp"
 
@@ -48,5 +46,3 @@ private:
     string256 m_last_string;
     u32 m_strrepeat_count;
 }; // class message_filter
-
-#endif //#ifndef DEMO_MESSAGE_FILER

@@ -3,7 +3,7 @@
 #include <thread>
 #include <utility>
 #include "Common/types.hpp"
-#include "xrCore/cpu.hpp"
+#include "xrCore/Utils/cpu.hpp"
 
 namespace Threading {
 enum class priority_class {

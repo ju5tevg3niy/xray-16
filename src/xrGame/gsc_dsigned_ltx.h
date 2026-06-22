@@ -1,7 +1,5 @@
-#ifndef GSC_DSINGNED_LTX_INCLUDED
-#define GSC_DSINGNED_LTX_INCLUDED
-
-#include "xrCore/fastdelegate.h"
+#pragma once
+#include "xrCore/Utils/fastdelegate.hpp"
 #include "xrCore/Crypto/xr_dsa_signer.h"
 #include "xrCore/Crypto/xr_dsa_verifyer.h"
 
@@ -33,5 +31,3 @@ public:
 private:
     CInifile* m_ltx;
 }; // class gsc_dsigned_ltx_reader
-
-#endif //#ifndef GSC_DSINGNED_LTX_INCLUDED

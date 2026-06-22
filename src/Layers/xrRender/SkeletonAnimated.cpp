@@ -1,17 +1,13 @@
 #include <tracy/Tracy.hpp>
-
 //---------------------------------------------------------------------------
 #include "stdafx.h"
-#pragma hdrstop
-
 #include "SkeletonAnimated.h"
-
 #include "AnimationKeyCalculate.h"
 #include "SkeletonX.h"
 #include "xrCore/FMesh.hpp"
 #include "xrCore/xr_token.h"
 #ifdef DEBUG
-#include "xrCore/dump_string.h"
+#include "xrCore/Utils/dump_string.hpp"
 #endif
 
 extern shared_str current_player_hud_sect;

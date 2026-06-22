@@ -4,16 +4,14 @@
 // Support for extension DLLs
 //****************************************************************************
 #pragma once
-
 #include <array>
 #include <cstddef>
 #include <utility>
 #include <vector>
 #include <map>
-
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCore/clsid.hpp"
+#include "xrCore/Utils/clsid.hpp"
 
 class IGame_Persistent;
 

@@ -1,27 +1,22 @@
 #pragma once
-
 #include <list>
 #include <SDL.h>
+#include "pure.h"
+#include "xrCore/FTimer.h"
+#include "Stats.h"
+#include "xrCore/Threading/Event.hpp"
+#include "xrCore/Utils/fastdelegate.hpp"
+#include "xrCore/ModuleLookup.hpp"
+#include "editor_base.h"
+#include "Include/xrRender/FactoryPtr.h"
+#include "Render.h"
+#include "xrScriptEngine/ScriptExporter.hpp"
 
 // Note:
 // ZNear - always 0.0f
 // ZFar  - always 1.0f
 
-#include "pure.h"
-
-#include "xrCore/FTimer.h"
-#include "Stats.h"
-#include "xrCore/Threading/Event.hpp"
-#include "xrCore/fastdelegate.h"
-#include "xrCore/ModuleLookup.hpp"
-
 #define DEVICE_RESET_PRECACHE_FRAME_COUNT 10
-
-#include "editor_base.h"
-#include "Include/xrRender/FactoryPtr.h"
-#include "Render.h"
-
-#include "xrScriptEngine/ScriptExporter.hpp"
 
 // refs
 class Task;

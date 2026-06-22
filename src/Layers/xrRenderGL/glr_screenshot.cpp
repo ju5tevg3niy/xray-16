@@ -1,9 +1,7 @@
 #include "stdafx.h"
-
-//#include "xr_effgamma.h"
 #include "xrCore/Media/Image.hpp"
 #include "xrEngine/xrImage_Resampler.h"
-#include "xrCore/timestamp.hpp"
+#include "xrCore/Utils/timestamp.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {

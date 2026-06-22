@@ -1,12 +1,10 @@
 #include <tracy/Tracy.hpp>
-
 #include "stdafx.h"
-
 #include "xr_area.h"
 #include "xrEngine/xr_object.h"
 #include "Common/LevelStructure.hpp"
 #include "xrEngine/xr_collide_form.h"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 
 
 //----------------------------------------------------------------------

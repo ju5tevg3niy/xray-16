@@ -1,9 +1,5 @@
 #pragma once
-#ifndef MIXED_DELEGATE_INCLUDED
-#define MIXED_DELEGATE_INCLUDED
-
-#include "xrCore/fastdelegate.h"
-//#include "pch_script.h" // Don't include PCH headers from a header. It frequently creates circular dependencies!
+#include "xrCore/Utils/fastdelegate.hpp"
 #include "xrScriptEngine/script_callback_ex.h"
 #include "mixed_delegate_unique_tags.h"
 
@@ -110,5 +106,3 @@ private:
                 .def("clear", &type::clear) \
         ]; \
     }
-
-#endif //#ifndef MIXED_DELEGATE_INCLUDED

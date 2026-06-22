@@ -1,10 +1,8 @@
 #pragma once
-
 #include <thread>
-
 #include "NET_Shared.h"
 #include "NET_Common.h"
-#include "xrCore/fastdelegate.h"
+#include "xrCore/Utils/fastdelegate.hpp"
 #include "xrCore/Threading/Lock.hpp"
 
 class IClient;

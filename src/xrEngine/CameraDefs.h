@@ -1,8 +1,6 @@
 #pragma once
-
-#include "xrCore/fastdelegate.h"
+#include "xrCore/Utils/fastdelegate.hpp"
 #include "xrCore/Math/vector3.hpp"
-
 #include "device.h"
 
 struct SBaseEffector

@@ -1,9 +1,9 @@
+#include "clsid.hpp"
 #include <cstddef>
+#include <cstring>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCore/Text/string_funcs_inline.hpp"
 #include "xrCore/xrDebug_macros.h"
-#include "clsid.hpp"
 
 void CLSID2TEXT(CLASS_ID id, pstr text)
 {

@@ -5,10 +5,8 @@
 #include "trade.h"
 #include "Weapon.h"
 #include "Grenade.h"
-
 #include "ui/UIInventoryUtilities.h"
 #include "ui/UIActorMenu.h"
-
 #include "eatable_item.h"
 #include "xrScriptEngine/script_engine.hpp"
 #include "xrMessages.h"
@@ -22,7 +20,7 @@
 #include "static_cast_checked.hpp"
 #include "player_hud.h"
 #include "xrNetServer/NET_Messages.h"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 
 using namespace InventoryUtilities;
 

@@ -1,9 +1,7 @@
+#include "crc32.hpp"
 #include <array>
-
 #include "Common/FSMacros.hpp"
 #include "Common/types.hpp"
-
-#include "crc32.hpp"
 
 // Reflects CRC bits in the lookup table
 constexpr u32 reflect(u32 ref, char ch) noexcept

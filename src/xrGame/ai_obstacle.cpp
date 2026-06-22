@@ -5,7 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : ai obstacle class inline functions
 ////////////////////////////////////////////////////////////////////////////
-
 #include "StdAfx.h"
 #include "ai_obstacle.h"
 #include "ai_space.h"
@@ -13,7 +12,7 @@
 #include "GameObject.h"
 #include "Include/xrRender/Kinematics.h"
 #include "xrCore/Animation/Bone.hpp"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 
 const bool use_additional_radius = true;
 

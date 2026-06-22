@@ -1,7 +1,6 @@
 #pragma once
-
 #include "Layers/xrRenderDX11/dx11StateUtils.h"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {

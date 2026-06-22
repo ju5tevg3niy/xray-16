@@ -99,7 +99,7 @@
 #include "xrCore/Crypto/xr_dsa_verifyer.h" // ~70, very heavy to compile
 #include "xrServerEntities/restriction_space.h" // only ~110, so small it's worth it
 #include "xrAICore/Components/condition_state.h" // only ~100, but it includes more
-//#include "xrCore/dump_string.h" // ~260
+//#include "xrCore/Utils/dump_string.hpp" // ~260
 //#include "xrCore/Math/Random32.hpp" // ~220
 //#include "xrEngine/LightAnimLibrary.h" // ~200
 #include "xrUICore/Cursor/UICursor.h"

@@ -1,8 +1,6 @@
-#ifndef SERVER_INFO_UPLOADER
-#define SERVER_INFO_UPLOADER
-
+#pragma once
 #include "Common/Noncopyable.hpp"
-#include "xrCore/fastdelegate.h"
+#include "xrCore/Utils/fastdelegate.hpp"
 #include "file_transfer.h"
 
 typedef fastdelegate::FastDelegate<void(ClientID const&)> svinfo_upload_complete_cb;
@@ -37,5 +35,3 @@ public:
         svinfo_upload_complete_cb const& complete_cb);
     void upload_server_info_callback(file_transfer::sending_status_t status, u32 uploaded, u32 total);
 }; // class server_info_uploader
-
-#endif //#ifndef SERVER_INFO_UPLOADER

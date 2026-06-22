@@ -1,8 +1,6 @@
 #pragma once
-
 #include <vector>
-
-#include "xrCore/fastdelegate.h"
+#include "xrCore/Utils/fastdelegate.hpp"
 
 struct SCallbackInfo;
 class CUIWindow;

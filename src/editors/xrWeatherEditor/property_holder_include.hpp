@@ -5,13 +5,11 @@
 //	Author		: Dmitriy Iassenev
 //	Description : property holder correct include
 ////////////////////////////////////////////////////////////////////////////
-
-#ifndef PROPERTY_HOLDER_INCLUDE_HPP_INCLUDED
-#define PROPERTY_HOLDER_INCLUDE_HPP_INCLUDED
+#pragma once
 
 #pragma unmanaged
 #include "Common/Noncopyable.hpp"
-#include "xrCore/fastdelegate.h"
+#include "xrCore/Utils/fastdelegate.hpp"
 #include <utility>
 #include "Include/editor/property_holder_base.hpp"
 #pragma managed
@@ -32,5 +30,3 @@ public:
 private:
     T& m_value;
 };
-
-#endif // ifndef PROPERTY_HOLDER_INCLUDE_HPP_INCLUDED

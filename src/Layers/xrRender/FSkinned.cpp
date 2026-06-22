@@ -1,5 +1,4 @@
 #include "stdafx.h"
-
 #include "xrCore/FMesh.hpp"
 #include "FSkinned.h"
 #include "FSkinnedTypes.h"
@@ -17,7 +16,7 @@
 #endif
 
 #ifdef DEBUG
-#include "xrCore/dump_string.h"
+#include "xrCore/Utils/dump_string.hpp"
 #endif
 
 namespace xray::render::RENDER_NAMESPACE

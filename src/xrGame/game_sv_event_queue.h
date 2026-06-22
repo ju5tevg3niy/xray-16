@@ -1,13 +1,11 @@
 #pragma once
-
 #include <set>
 #include <deque>
 #include <vector>
-
 #include "Common/Noncopyable.hpp"
 #include "Common/types.hpp"
 #include "xrCore/client_id.h"
-#include "xrCore/fastdelegate.h"
+#include "xrCore/Utils/fastdelegate.hpp"
 #include "xrCore/net_utils.h"
 
 class Lock;

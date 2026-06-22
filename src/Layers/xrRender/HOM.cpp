@@ -1,19 +1,15 @@
 #include <tracy/Tracy.hpp>
-
 // HOM.cpp: implementation of the CHOM class.
 //
 //////////////////////////////////////////////////////////////////////
 #include <vector>
-
 #include "stdafx.h"
-
 #include "xrCore/Threading/ParallelFor.hpp"
-
 #include "HOM.h"
 #include "occRasterizer.h"
 #include "xrEngine/GameFont.h"
 #include "xrEngine/PerformanceAlert.hpp"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {

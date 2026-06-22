@@ -1,5 +1,4 @@
 #pragma once
-
 #include "game_cl_base.h"
 #include "xrUICore/ui_defs.h"
 #include "Spectator.h"
@@ -7,7 +6,7 @@
 #include "configs_dumper.h"
 #include "configs_dump_verifyer.h"
 #include "screenshot_server.h"
-#include "xrCore/fastdelegate.h"
+#include "xrCore/Utils/fastdelegate.hpp"
 
 class CUIWindow;
 class CUISpeechMenu;

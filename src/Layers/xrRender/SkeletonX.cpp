@@ -1,15 +1,12 @@
 // SkeletonX.cpp: implementation of the CSkeletonX class.
 //
 //////////////////////////////////////////////////////////////////////
-
 #include "stdafx.h"
-#pragma hdrstop
-
 #include "SkeletonX.h"
 #include "SkeletonXSkinXW.h"
 #include "xrCore/FMesh.hpp"
 #include "xrCDB/Intersect.hpp"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {

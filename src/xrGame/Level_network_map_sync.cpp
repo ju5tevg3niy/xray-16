@@ -1,5 +1,4 @@
 #include <tracy/Tracy.hpp>
-
 #include "StdAfx.h"
 #include "Level.h"
 #include "xrServerMapSync.h"
@@ -7,7 +6,7 @@
 #include "MainMenu.h"
 #include "xrEngine/XR_IOConsole.h"
 #include "xrNetServer/NET_Messages.h"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 
 static const u32 r_buffer_size = 131072; // 128 Kb
 void CLevel::CalculateLevelCrc32()

@@ -1,13 +1,8 @@
 #include <tracy/Tracy.hpp>
-
-// xrCDB.cpp : Defines the entry point for the DLL application.
-//
-
 #include "stdafx.h"
-
 #include "xrCDB.h"
 #include "xrCore/Threading/Lock.hpp"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 
 namespace Opcode
 {

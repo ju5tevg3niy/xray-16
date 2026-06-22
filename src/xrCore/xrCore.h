@@ -46,7 +46,7 @@ struct xr_rtoken
 #endif
 #include "FileSystem.h"
 #include "FTimer.h"
-#include "fastdelegate.h"
+#include "Utils/fastdelegate.hpp"
 #ifdef XR_PLATFORM_WINDOWS
 #include "intrusive_ptr.h"
 #endif

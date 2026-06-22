@@ -1,14 +1,12 @@
 #include <tracy/Tracy.hpp>
-
 #include "stdafx.h"
-
 #include "Layers/xrRender/ResourceManager.h"
 #include "Layers/xrRender/FBasicVisual.h"
 #include "xrCore/FMesh.hpp"
 #include "Common/LevelStructure.hpp"
 #include "xrEngine/IGame_Persistent.h"
 #include "xrCore/stream_reader.h"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 
 #if defined(USE_DX11)
 #include "Layers/xrRender/FHierrarhyVisual.h"

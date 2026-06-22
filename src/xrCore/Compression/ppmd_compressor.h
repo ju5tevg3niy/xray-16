@@ -1,6 +1,5 @@
 #pragma once
-
-#include "xrCore/fastdelegate.h"
+#include "xrCore/Utils/fastdelegate.hpp"
 
 namespace compression
 {

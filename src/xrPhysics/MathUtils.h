@@ -1,12 +1,12 @@
 #pragma once
-
 #include "xrCore/Math/fbox.hpp"
 #include "xrCore/Math/obb.hpp"
 #include "xrPhysics.h"
 #include "xrCore/Text/string_funcs_inline.hpp"
 #ifdef DEBUG
-#include "xrCore/dump_string.h"
+#include "xrCore/Utils/dump_string.hpp"
 #endif
+
 constexpr float phInfinity = std::numeric_limits<float>::infinity();
 
 struct Fquaternion;

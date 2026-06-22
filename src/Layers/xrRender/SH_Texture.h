@@ -1,10 +1,8 @@
 #pragma once
-
 #include <imgui.h>
-
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCore/fastdelegate.h"
+#include "xrCore/Utils/fastdelegate.hpp"
 #include "xrCore/xr_resource.h"
 #include "xrCore/xrstring.h"
 #include "glad/gl.h"

@@ -5,11 +5,9 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Object item abstract class
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
-
 #include "object_factory_space.h"
-#include "xrCore/clsid.hpp"
+#include "xrCore/Utils/clsid.hpp"
 #include "xrCore/xrstring.h"
 
 class CObjectItemAbstract

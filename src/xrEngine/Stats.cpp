@@ -10,7 +10,7 @@
 
 #include "Include/xrRender/DrawUtils.h" // for CStats::OnRender
 #include "xr_input.h"
-#include "xrCore/cdecl_cast.hpp"
+#include "xrCore/Utils/cdecl_cast.hpp"
 #include "PerformanceAlert.hpp"
 #include "xrCore/Threading/TaskManager.hpp"
 

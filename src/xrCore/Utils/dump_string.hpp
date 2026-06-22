@@ -1,11 +1,10 @@
 #pragma once
-#ifdef DEBUG
 #include <string>
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/fbox.hpp"
 
-// fwd. decl.
-template <class T> struct _vector3; typedef _vector3<float> Fvector;
-struct Fmatrix;
-struct Fbox3; using Fbox = Fbox3;
+#ifdef DEBUG
 
 std::string get_string(bool v);
 std::string get_string(const Fvector& v);
@@ -14,6 +13,7 @@ std::string get_string(const Fbox& box);
 
 std::string dump_string(const char* name, const Fvector& v);
 std::string dump_string(const char* name, const Fmatrix& form);
+
 void dump(const char* name, const Fmatrix& form);
 void dump(const char* name, const Fvector& v);
 

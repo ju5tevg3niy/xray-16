@@ -3,7 +3,6 @@ add_library(xrCore)
 target_sources(
     xrCore
     PRIVATE
-    cpu.cpp
     Math/compressed_normal.cpp
     Math/cylinder.cpp
     Math/math_funcs.cpp
@@ -18,7 +17,11 @@ target_sources(
     Threading/ScopeLock.cpp
     Threading/TaskManager.cpp
     Threading/ThreadUtil.cpp
-    timestamp.cpp
+    Utils/clsid.cpp
+    Utils/cpu.cpp
+    Utils/crc32.cpp
+    Utils/dump_string.cpp
+    Utils/timestamp.cpp
 )
 
 target_sources_grouped(
@@ -217,7 +220,6 @@ target_sources_grouped(
     TARGET xrCore
     NAME "Kernel"
     FILES
-    cdecl_cast.hpp
     FTimer.cpp
     FTimer.h
     ModuleLookup.cpp
@@ -232,7 +234,6 @@ target_sources_grouped(
     TARGET xrCore
     NAME "Math"
     FILES
-    dump_string.cpp
 )
 
 target_sources_grouped(
@@ -241,7 +242,6 @@ target_sources_grouped(
     FILES
     #ChooseTypes.H
     #client_id.h
-    clsid.cpp
     fastdelegate.h
     xr_token.cpp
     xr_token.h
@@ -313,7 +313,6 @@ target_sources_grouped(
     TARGET xrCore
     NAME "shared memory/string library"
     FILES
-    crc32.cpp
     string_concatenations.cpp
     string_concatenations.h
     string_concatenations_inline.h

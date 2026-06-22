@@ -10,7 +10,7 @@
 #include "Threading/Lock.hpp"
 #include "log.h"
 #include "xrCore/Text/string_funcs_inline.hpp"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 #include "xrDebug_macros.h"
 #include "xrMemory.h"
 

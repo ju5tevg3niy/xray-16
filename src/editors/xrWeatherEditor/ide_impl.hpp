@@ -5,12 +5,10 @@
 //	Author		: Dmitriy Iassenev
 //	Description : IDE implementation class
 ////////////////////////////////////////////////////////////////////////////
-
-#ifndef IDE_IMPL_HPP_INCLUDED
-#define IDE_IMPL_HPP_INCLUDED
+#pragma once
 
 #pragma unmanaged
-#include "xrCore/fastdelegate.h"
+#include "xrCore/Utils/fastdelegate.hpp"
 #include <utility>
 #include "include/editor/ide.hpp"
 #pragma managed
@@ -71,5 +69,3 @@ private:
 }; // class ide
 } //namespace Editor
 } //namespace XRay
-
-#endif // ifndef IDE_IMPL_HPP_INCLUDED

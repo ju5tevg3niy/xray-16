@@ -5,15 +5,13 @@
 //  Author      : Oles Shyshkovtsov, Alexander Maksimchuk, Victor Reutskiy and Dmitriy Iassenev
 //  Description : Server base object
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
-
 #include "xrServer_Objects_Abstract.h"
 #include "Common/object_interfaces.h"
 #include "script_value_container.h"
 #include "alife_space.h"
 #include "xrCore/client_id.h"
-#include "xrCore/clsid.hpp"
+#include "xrCore/Utils/clsid.hpp"
 
 class NET_Packet;
 class xrClientData;

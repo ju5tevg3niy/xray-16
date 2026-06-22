@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "xrCompress.h"
-#include "xrCore/crc32.hpp"
+#include "xrCore/Utils/crc32.hpp"
 
 xrCompressor::~xrCompressor()
 {
