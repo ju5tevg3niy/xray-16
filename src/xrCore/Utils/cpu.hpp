@@ -1,8 +1,7 @@
 #pragma once
 #include "Common/types.hpp"
 
-namespace CPU
-{
+namespace CPU {
 extern bool HasSSE;
 extern bool HasSSE2;
 extern bool HasSSE42;
@@ -16,7 +15,7 @@ extern u32 qpc_counter;
 extern u64 QPC() noexcept;
 
 u32 GetTicks();
-}
+}  // namespace CPU
 
 extern void _initialize_cpu();
 extern void _initialize_cpu_thread();

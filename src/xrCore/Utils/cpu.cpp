@@ -17,89 +17,83 @@
 Fmatrix Fidentity;
 CRandom Random;
 
-namespace CPU
-{
-bool HasSSE     = SDL_HasSSE();
-bool HasSSE2    = SDL_HasSSE2();
-bool HasSSE42   = SDL_HasSSE42();
-bool HasAVX     = SDL_HasAVX();
-bool HasAVX2    = SDL_HasAVX2();
+namespace CPU {
+bool HasSSE = SDL_HasSSE();
+bool HasSSE2 = SDL_HasSSE2();
+bool HasSSE42 = SDL_HasSSE42();
+bool HasAVX = SDL_HasAVX();
+bool HasAVX2 = SDL_HasAVX2();
 bool HasAVX512F = SDL_HasAVX512F();
 
 u64 qpc_freq = SDL_GetPerformanceFrequency();
 u32 qpc_counter = 0;
 
-u64 QPC() noexcept
-{
-    u64 _dest = SDL_GetPerformanceCounter();
-    qpc_counter++;
-    return _dest;
+u64 QPC() noexcept {
+  u64 _dest = SDL_GetPerformanceCounter();
+  qpc_counter++;
+  return _dest;
 }
 
-u32 GetTicks()
-{
-    return SDL_GetTicks();
+u32 GetTicks() {
+  return SDL_GetTicks();
 }
-} // namespace CPU
+}  // namespace CPU
 
 //------------------------------------------------------------------------------------
-void _initialize_cpu()
-{
-    ZoneScoped;
+void _initialize_cpu() {
+  ZoneScoped;
 
-    // General CPU identification
-    string256 features{};
+  // General CPU identification
+  string256 features{};
 
-    const auto listFeature = [&](pcstr featureName, bool hasFeature)
-    {
-        if (hasFeature)
-        {
-            if (!features[0])
-                xr_strcpy(features, featureName);
-            else
-            {
-                xr_strcat(features, ", ");
-                xr_strcat(features, featureName);
-            }
-        }
-    };
+  const auto listFeature = [&](pcstr featureName, bool hasFeature) {
+    if (hasFeature) {
+      if (!features[0])
+        xr_strcpy(features, featureName);
+      else {
+        xr_strcat(features, ", ");
+        xr_strcat(features, featureName);
+      }
+    }
+  };
 
-    // x86
-    listFeature("RDTSC",   SDL_HasRDTSC());
-    listFeature("MMX",     SDL_HasMMX());
-    listFeature("3DNow!",  SDL_Has3DNow());
-    listFeature("SSE",     SDL_HasSSE());
-    listFeature("SSE2",    CPU::HasSSE2);
-    listFeature("SSE3",    SDL_HasSSE3());
-    listFeature("SSE41",   SDL_HasSSE41());
-    listFeature("SSE42",   CPU::HasSSE42);
-    listFeature("AVX",     CPU::HasAVX);
-    listFeature("AVX2",    CPU::HasAVX2);
-    listFeature("AVX512F", CPU::HasAVX512F);
+  // x86
+  listFeature("RDTSC", SDL_HasRDTSC());
+  listFeature("MMX", SDL_HasMMX());
+  listFeature("3DNow!", SDL_Has3DNow());
+  listFeature("SSE", SDL_HasSSE());
+  listFeature("SSE2", CPU::HasSSE2);
+  listFeature("SSE3", SDL_HasSSE3());
+  listFeature("SSE41", SDL_HasSSE41());
+  listFeature("SSE42", CPU::HasSSE42);
+  listFeature("AVX", CPU::HasAVX);
+  listFeature("AVX2", CPU::HasAVX2);
+  listFeature("AVX512F", CPU::HasAVX512F);
 
-    // Other architectures
-    listFeature("AltiVec", SDL_HasAltiVec());
-    listFeature("ARMSIMD", SDL_HasARMSIMD());
-    listFeature("NEON",    SDL_HasNEON());
+  // Other architectures
+  listFeature("AltiVec", SDL_HasAltiVec());
+  listFeature("ARMSIMD", SDL_HasARMSIMD());
+  listFeature("NEON", SDL_HasNEON());
 #if SDL_VERSION_ATLEAST(2, 24, 0)
-    listFeature("LSX",     SDL_HasLSX());
-    listFeature("LASX",    SDL_HasLASX());
+  listFeature("LSX", SDL_HasLSX());
+  listFeature("LASX", SDL_HasLASX());
 #endif
 
-    Msg("* CPU features: %s", features);
-    Msg("* CPU threads: %d", std::thread::hardware_concurrency());
+  Msg("* CPU features: %s", features);
+  Msg("* CPU threads: %d", std::thread::hardware_concurrency());
 
-    Log("");
-    Fidentity.identity(); // Identity matrix
-    Random.seed(u32(CPU::QPC() % (s64(1) << s32(32))));
+  Log("");
+  Fidentity.identity();  // Identity matrix
+  Random.seed(u32(CPU::QPC() % (s64(1) << s32(32))));
 
-    pvInitializeStatics(); // Lookup table for compressed normals
+  pvInitializeStatics();  // Lookup table for compressed normals
 
-    _initialize_cpu_thread();
+  _initialize_cpu_thread();
 }
 
 // per-thread initialization
-#if defined(XR_ARCHITECTURE_ARM) || defined(XR_ARCHITECTURE_ARM64) || defined(XR_ARCHITECTURE_PPC64)
+#if defined(XR_ARCHITECTURE_ARM) || defined(XR_ARCHITECTURE_ARM64) || \
+    defined(XR_ARCHITECTURE_PPC64)
 #define _MM_SET_FLUSH_ZERO_MODE(mode)
 #define _MM_SET_DENORMALS_ZERO_MODE(mode)
 #else
@@ -109,36 +103,26 @@ void _initialize_cpu()
 static BOOL _denormals_are_zero_supported = TRUE;
 extern void __cdecl _terminate();
 
-void _initialize_cpu_thread()
-{
-    xrDebug::OnThreadSpawn();
+void _initialize_cpu_thread() {
+  xrDebug::OnThreadSpawn();
 
-    if (CPU::HasSSE)
-    {
-        //_mm_setcsr ( _mm_getcsr() | (_MM_FLUSH_ZERO_ON+_MM_DENORMALS_ZERO_ON) );
-        _MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON);
-        if (_denormals_are_zero_supported)
-        {
+  if (CPU::HasSSE) {
+    //_mm_setcsr ( _mm_getcsr() | (_MM_FLUSH_ZERO_ON+_MM_DENORMALS_ZERO_ON) );
+    _MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON);
+    if (_denormals_are_zero_supported) {
 #if defined(XR_PLATFORM_WINDOWS)
-            __try
-            {
-                _MM_SET_DENORMALS_ZERO_MODE(_MM_DENORMALS_ZERO_ON);
-            }
-            __except (EXCEPTION_EXECUTE_HANDLER)
-            {
-                _denormals_are_zero_supported = FALSE;
-            }
+      __try {
+        _MM_SET_DENORMALS_ZERO_MODE(_MM_DENORMALS_ZERO_ON);
+      } __except (EXCEPTION_EXECUTE_HANDLER) {
+        _denormals_are_zero_supported = FALSE;
+      }
 #else
-            try
-            {
-                _MM_SET_DENORMALS_ZERO_MODE(_MM_DENORMALS_ZERO_ON);
-            }
-            catch (...)
-            {
-                _denormals_are_zero_supported = FALSE;
-            }
+      try {
+        _MM_SET_DENORMALS_ZERO_MODE(_MM_DENORMALS_ZERO_ON);
+      } catch (...) {
+        _denormals_are_zero_supported = FALSE;
+      }
 #endif
-        }
-
     }
+  }
 }

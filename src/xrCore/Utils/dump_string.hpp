@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
+#include "xrCore/Math/fbox.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "xrCore/Math/vector3.hpp"
-#include "xrCore/Math/fbox.hpp"
 
 #ifdef DEBUG
 
