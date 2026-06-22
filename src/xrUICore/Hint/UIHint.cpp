@@ -44,7 +44,7 @@ void UIHint::init_from_xml(CUIXml& xml, LPCSTR path)
 
 void UIHint::set_text(LPCSTR text)
 {
-    if (!text || !xr_strlen(text))
+    if (!text || !strlen(text))
     {
         m_visible = false;
         return;

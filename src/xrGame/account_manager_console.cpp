@@ -10,7 +10,7 @@
 
 void CCC_CreateGameSpyAccount::Execute(LPCSTR args)
 {
-    if (!args || (xr_strlen(args) == 0))
+    if (!args || (strlen(args) == 0))
     {
         TInfo tmp_info;
         Info(tmp_info);
@@ -41,7 +41,7 @@ void CCC_CreateGameSpyAccount::Execute(LPCSTR args)
 
 void CCC_GapySpyListProfiles::Execute(LPCSTR args)
 {
-    if (!args || (xr_strlen(args) == 0))
+    if (!args || (strlen(args) == 0))
     {
         TInfo tmp_info;
         Info(tmp_info);
@@ -62,7 +62,7 @@ void CCC_GapySpyListProfiles::Execute(LPCSTR args)
 
 void CCC_GameSpyLogin::Execute(LPCSTR args)
 {
-    if (!args || (xr_strlen(args) == 0))
+    if (!args || (strlen(args) == 0))
     {
         TInfo tmp_info;
         Info(tmp_info);

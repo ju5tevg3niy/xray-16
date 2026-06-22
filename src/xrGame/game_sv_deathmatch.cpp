@@ -1175,7 +1175,7 @@ void game_sv_Deathmatch::SetSkin(CSE_Abstract* E, u16 Team, u16 ID)
     };
     xr_strcat(SkinName, ".ogf");
     Msg("* Skin - %s", SkinName);
-    int len = xr_strlen(SkinName);
+    int len = strlen(SkinName);
     R_ASSERT2(len < 64, "Skin Name is too LONG!!!");
     pV->set_visual(SkinName);
     //-------------------------------------------
@@ -2355,7 +2355,7 @@ bool game_sv_Deathmatch::CanChargeFreeAmmo(char const* ammo_section)
     if (!ammo_section)
         return true;
 
-    if (!xr_strlen(ammo_section))
+    if (!strlen(ammo_section))
         return true;
 
     if (strstr(m_not_free_ammo_str.c_str(), ammo_section))

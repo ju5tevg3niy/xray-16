@@ -463,7 +463,7 @@ void CResourceManager::LS_Unload() { ScriptEngine.unload(); }
 BOOL CResourceManager::_lua_HasShader(LPCSTR s_shader)
 {
     string256 undercorated;
-    for (int i = 0, l = xr_strlen(s_shader) + 1; i < l; i++)
+    for (int i = 0, l = strlen(s_shader) + 1; i < l; i++)
         undercorated[i] = ('\\' == s_shader[i]) ? '_' : s_shader[i];
 
     ScopeLock scope(&ScriptEngineLock);
@@ -482,7 +482,7 @@ Shader* CResourceManager::_lua_Create(LPCSTR d_shader, LPCSTR s_textures)
 
     // undecorate
     string256 undercorated;
-    for (int i = 0, l = xr_strlen(d_shader) + 1; i < l; i++)
+    for (int i = 0, l = strlen(d_shader) + 1; i < l; i++)
         undercorated[i] = ('\\' == d_shader[i]) ? '_' : d_shader[i];
     LPCSTR s_shader = undercorated;
 

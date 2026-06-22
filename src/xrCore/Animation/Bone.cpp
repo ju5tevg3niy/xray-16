@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "Bone.hpp"
 #include "xrCore/xrDebug_macros.h"

@@ -89,7 +89,7 @@ struct str_container_impl
                 string32 crc_str;
                 R_ASSERT3(crc == value->dwCRC, "CorePanic: read-only memory corruption (shared_strings)",
                     xr_itoa(value->dwCRC, crc_str, 16));
-                R_ASSERT3(value->dwLength == xr_strlen(value->value),
+                R_ASSERT3(value->dwLength == strlen(value->value),
                     "CorePanic: read-only memory corruption (shared_strings, internal structures)", value->value);
                 value = value->next;
             }
@@ -161,7 +161,7 @@ str_value* str_container::dock(pcstr value) const
     str_value* result = nullptr;
 
     // calc len
-    const auto s_len = xr_strlen(value);
+    const auto s_len = strlen(value);
     const auto s_len_with_zero = s_len + 1;
     VERIFY(sizeof(str_value) + s_len_with_zero < 4096);
 
@@ -292,7 +292,7 @@ str_value* str_container::dock(str_c value)
     str_value* result = 0;
 
     // calc len
-    u32 s_len = xr_strlen(value);
+    u32 s_len = strlen(value);
     u32 s_len_with_zero = (u32)s_len + 1;
     VERIFY(sizeof(str_value) + s_len_with_zero < 4096);
 
@@ -397,7 +397,7 @@ void str_container::verify()
         string32 crc_str;
         R_ASSERT3(crc == sv->dwCRC,
             "CorePanic: read-only memory corruption (shared_strings)", xr_itoa(sv->dwCRC, crc_str, 16));
-        R_ASSERT3(sv->dwLength == xr_strlen(sv->value),
+        R_ASSERT3(sv->dwLength == strlen(sv->value),
             "CorePanic: read-only memory corruption (shared_strings, internal structures)", sv->value);
     }
     impl->cs.Leave();

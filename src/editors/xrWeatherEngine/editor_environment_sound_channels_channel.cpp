@@ -82,7 +82,7 @@ void channel::save(CInifile& config)
 
     u32 count = 1;
     for (const auto& i : m_sounds)
-        count += xr_strlen(i->id()) + 2;
+        count += strlen(i->id()) + 2;
 
     pstr temp = (pstr)xr_alloca(count * sizeof(char));
     *temp = '\0';

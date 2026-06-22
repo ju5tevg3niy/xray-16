@@ -4,7 +4,6 @@
 #include <tuple>
 #include <utility>
 #include "Common/types.hpp"
-#include "Text/string_funcs_inline.hpp"
 #include "xrDebug_macros.h"
 #include "xrstring.h"
 
@@ -71,7 +70,7 @@ private:
     template <u32 index>
     struct helper
     {
-        static size_t get_length(pcstr string) { return string ? xr_strlen(string) : 0; }
+        static size_t get_length(pcstr string) { return string ? strlen(string) : 0; }
         static pcstr get_cstr(pcstr string) { return string; }
         static size_t get_length(shared_str const& string) { return string.size(); }
         static pcstr get_cstr(shared_str const& string) { return string.c_str(); }

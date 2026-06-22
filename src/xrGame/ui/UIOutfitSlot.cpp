@@ -46,7 +46,7 @@ void CUIOutfitDragDropList::SetOutfit(CUICellItem* itm)
         if (it != iconName.begin())
             iconName.erase(iconName.begin(), it);
         // Cut trailing ".ogf"
-        R_ASSERT(xr_strlen(iconName.c_str()) > 4);
+        R_ASSERT(strlen(iconName.c_str()) > 4);
         if ('.' == iconName[iconName.size() - 4])
             iconName.erase(iconName.size() - 4);
 

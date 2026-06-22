@@ -38,24 +38,24 @@ u32 CutStringByLength(CGameFont* font, LPCSTR src, pstr dst, u32 dst_size, float
     {
         float text_len = font->SizeOf_(src);
         UI().ClientToScreenScaledWidth(text_len);
-        VERIFY(xr_strlen(src) <= dst_size);
+        VERIFY(strlen(src) <= dst_size);
         xr_strcpy(dst, dst_size, src);
 
         while (text_len > length)
         {
-            dst[xr_strlen(dst) - 1] = 0;
-            VERIFY(xr_strlen(dst));
+            dst[strlen(dst) - 1] = 0;
+            VERIFY(strlen(dst));
             text_len = font->SizeOf_(dst);
             UI().ClientToScreenScaledWidth(text_len);
         }
 
-        return xr_strlen(dst);
+        return strlen(dst);
     }
 }
 
 void CUIEditKeyBind::SetText(const char* text)
 {
-    if (!text || 0 == xr_strlen(text))
+    if (!text || 0 == strlen(text))
         TextItemControl()->SetText("---");
     else
     {

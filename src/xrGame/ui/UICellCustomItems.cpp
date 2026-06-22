@@ -617,7 +617,7 @@ bool CUIWeaponCellItem::EqualTo(CUICellItem* itm)
 CBuyItemCustomDrawCell::CBuyItemCustomDrawCell(LPCSTR str, CGameFont* pFont)
 {
     m_pFont = pFont;
-    VERIFY(xr_strlen(str) < 16);
+    VERIFY(strlen(str) < 16);
     xr_strcpy(m_string, str);
 }
 

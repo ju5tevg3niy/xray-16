@@ -55,7 +55,7 @@ void CUICDkey::paste_from_clipboard()
 {
     string32 temp;
     os_clipboard::paste_from_clipboard(&temp[0], sizeof(temp));
-    pstr const new_end = std::remove_if(&temp[0], &temp[0] + xr_strlen(temp), inappropriate_characters());
+    pstr const new_end = std::remove_if(&temp[0], &temp[0] + strlen(temp), inappropriate_characters());
     *new_end = 0;
     temp[16] = 0;
 
@@ -82,7 +82,7 @@ void CUICDkey::OnFocusLost()
 void CUICDkey::Draw()
 {
     LPCSTR edt_str = ec().str_edit();
-    u32 edt_size = xr_strlen(edt_str);
+    u32 edt_size = strlen(edt_str);
 
     if (edt_size == 0)
     {
@@ -105,7 +105,7 @@ void CUICDkey::Draw()
     UI().ClientToScreenScaled(pos);
 
     string64 xx_str = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-    edt_size = xr_strlen(edt_str);
+    edt_size = strlen(edt_str);
     if (edt_size > 63)
     {
         edt_size = 63;
@@ -114,7 +114,7 @@ void CUICDkey::Draw()
 
     string64 xx_str1 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     LPCSTR edt_str1 = ec().str_before_cursor();
-    u32 edt_size1 = xr_strlen(edt_str1);
+    u32 edt_size1 = strlen(edt_str1);
     if (edt_size1 > 63)
     {
         edt_size1 = 63;
@@ -134,7 +134,7 @@ void CUICDkey::Draw()
         out.y = rect.top + (m_wndSize.y - _h) / 2.0f;
 
         float w_tmp = 0.0f;
-        int i = (int)xr_strlen(res1);
+        int i = (int)strlen(res1);
         w_tmp = TextItemControl()->GetFont()->SizeOf_(res1);
         UI().ClientToScreenScaledWidth(w_tmp);
         out.x = rect.left + w_tmp;
@@ -212,7 +212,7 @@ void CUIMPPlayerName::OnFocusLost()
 void GetCDKey_FromRegistry(char* cdkey)
 {
     ReadRegistry_StrValue(REGISTRY_VALUE_GSCDKEY, cdkey);
-    if (xr_strlen(cdkey) > 64)
+    if (strlen(cdkey) > 64)
     {
         cdkey[64] = 0;
     }
@@ -220,7 +220,7 @@ void GetCDKey_FromRegistry(char* cdkey)
 
 void WriteCDKey_ToRegistry(pstr cdkey)
 {
-    if (xr_strlen(cdkey) > 64)
+    if (strlen(cdkey) > 64)
     {
         cdkey[64] = 0;
     }
@@ -257,11 +257,11 @@ void GetPlayerName_FromRegistry(char* name, u32 const name_size)
     }
 
     u32 const max_name_length = GP_UNIQUENICK_LEN - 1;
-    if (xr_strlen(name) > max_name_length)
+    if (strlen(name) > max_name_length)
     {
         name[max_name_length] = 0;
     }
-    if (xr_strlen(name) == 0)
+    if (strlen(name) == 0)
     {
         Msg("! Player name in registry is empty! (%s)", REGISTRY_VALUE_USERNAME);
     }
@@ -272,7 +272,7 @@ void GetPlayerName_FromRegistry(char* name, u32 const name_size)
 void WritePlayerName_ToRegistry(pstr name)
 {
     u32 const max_name_length = GP_UNIQUENICK_LEN - 1;
-    if (xr_strlen(name) > max_name_length)
+    if (strlen(name) > max_name_length)
     {
         name[max_name_length] = 0;
     }

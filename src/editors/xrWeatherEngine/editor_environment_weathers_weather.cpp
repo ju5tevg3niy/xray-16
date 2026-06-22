@@ -224,7 +224,7 @@ shared_str weather::generate_unique_id(shared_str const& start) const
     string16 id;
     xr_strcpy(id, start.c_str());
 
-    VERIFY(xr_strlen(id) == 8);
+    VERIFY(strlen(id) == 8);
     VERIFY(is_digit(id[0]));
     VERIFY(is_digit(id[1]));
     VERIFY(id[2] == ':');

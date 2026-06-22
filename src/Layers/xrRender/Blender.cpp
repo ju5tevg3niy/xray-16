@@ -15,7 +15,7 @@ namespace xray::render::RENDER_NAMESPACE
 void CBlender_DESC::Setup(LPCSTR N)
 {
     // Name
-    VERIFY(xr_strlen(N) < 128);
+    VERIFY(strlen(N) < 128);
     VERIFY(nullptr == strchr(N, '.'));
     xr_strcpy(cName, N);
     xr_strlwr(cName);

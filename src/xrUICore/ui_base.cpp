@@ -265,7 +265,7 @@ void UICore::ReadTextureInfo()
             string_path path, name;
             _splitpath(file.name.c_str(), nullptr, path, name, nullptr);
             xr_strcat(name, ".xml");
-            path[xr_strlen(path) - 1] = '\0'; // cut the latest '\\'
+            path[strlen(path) - 1] = '\0'; // cut the latest '\\'
 
             CUITextureMaster::ParseShTexInfo(path, name);
         }

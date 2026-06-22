@@ -26,7 +26,7 @@
 CRestrictedObject::~CRestrictedObject() {}
 IC void construct_string(pstr result, u32 const result_size, const std::vector<ALife::_OBJECT_ID>& restrictions)
 {
-    u32 count = xr_strlen(result) ? _GetItemCount(result) : 0;
+    u32 count = strlen(result) ? _GetItemCount(result) : 0;
     std::vector<ALife::_OBJECT_ID>::const_iterator I = restrictions.begin();
     std::vector<ALife::_OBJECT_ID>::const_iterator E = restrictions.end();
     for (; I != E; ++I)

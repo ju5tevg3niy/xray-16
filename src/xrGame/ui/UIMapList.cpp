@@ -218,16 +218,16 @@ const char* CUIMapList::GetCommandLine(LPCSTR player_name)
     m_command += ")";
 
     m_command += " client(localhost/name=";
-    if (player_name == NULL || 0 == xr_strlen(player_name))
+    if (player_name == NULL || 0 == strlen(player_name))
     {
         string64 player_name2;
         GetPlayerName_FromRegistry(player_name2, sizeof(player_name2));
 
-        if (xr_strlen(player_name2) == 0)
+        if (strlen(player_name2) == 0)
         {
-            xr_strcpy(player_name2, xr_strlen(Core.UserName) ? Core.UserName : Core.CompName);
+            xr_strcpy(player_name2, strlen(Core.UserName) ? Core.UserName : Core.CompName);
         }
-        VERIFY(xr_strlen(player_name2));
+        VERIFY(strlen(player_name2));
 
         m_command += player_name2;
     }

@@ -115,7 +115,7 @@ void cdkey_ban_list::ban_player(xrClientData const* player_data, s32 end_time_se
 void cdkey_ban_list::ban_player_ll(char const* hexstr_digest, s32 end_time_sec, xrClientData const* admin)
 {
     banned_client* tmp_client = xr_new<banned_client>();
-    if (!xr_strlen(hexstr_digest))
+    if (!strlen(hexstr_digest))
     {
         Msg("! ERROR: Can't ban client without unique digest, try to ban by IP address.");
         xr_delete(tmp_client);

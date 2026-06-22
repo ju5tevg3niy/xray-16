@@ -49,7 +49,7 @@ xrServer::EConnect xrServer::Connect(shared_str& session_name, GameDescriptionDa
 
     // Parse game type
     string1024 type;
-    R_ASSERT2(xr_strlen(options) <= sizeof(type), "options too BIIIGGG!!!");
+    R_ASSERT2(strlen(options) <= sizeof(type), "options too BIIIGGG!!!");
     xr_strcpy(type, options);
     if (strchr(type, '/'))
         *strchr(type, '/') = 0;

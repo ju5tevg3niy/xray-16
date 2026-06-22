@@ -84,7 +84,7 @@ public:
     // TiXmlString constructor, based on a string
     TIXML_EXPLICIT TiXmlString(const char* copy) : rep_(0)
     {
-        init(static_cast<size_type>(xr_strlen(copy)));
+        init(static_cast<size_type>(strlen(copy)));
         memcpy(start(), copy, length());
     }
 
@@ -98,11 +98,11 @@ public:
     // TiXmlString destructor
     ~TiXmlString() { quit(); }
     // = operator
-    TiXmlString& operator=(const char* copy) { return assign(copy, (size_type)xr_strlen(copy)); }
+    TiXmlString& operator=(const char* copy) { return assign(copy, (size_type)strlen(copy)); }
     // = operator
     TiXmlString& operator=(const TiXmlString& copy) { return assign(copy.start(), copy.length()); }
     // += operator. Maps to append
-    TiXmlString& operator+=(const char* suffix) { return append(suffix, static_cast<size_type>(xr_strlen(suffix))); }
+    TiXmlString& operator+=(const char* suffix) { return append(suffix, static_cast<size_type>(strlen(suffix))); }
     // += operator. Maps to append
     TiXmlString& operator+=(char single) { return append(&single, 1); }
     // += operator. Maps to append

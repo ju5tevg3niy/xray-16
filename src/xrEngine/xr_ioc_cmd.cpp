@@ -166,9 +166,9 @@ public:
     virtual void Execute(pcstr args)
     {
         string_path cfg_full_name;
-        xr_strcpy(cfg_full_name, (xr_strlen(args) > 0) ? args : Console->ConfigFile);
+        xr_strcpy(cfg_full_name, (strlen(args) > 0) ? args : Console->ConfigFile);
 
-        bool b_abs_name = xr_strlen(cfg_full_name) > 2 && cfg_full_name[1] == ':';
+        bool b_abs_name = strlen(cfg_full_name) > 2 && cfg_full_name[1] == ':';
 
         if (!b_abs_name)
             FS.update_path(cfg_full_name, "$app_data_root$", cfg_full_name);
@@ -245,7 +245,7 @@ class CCC_Start : public IConsole_Command
     {
         dest[0] = 0;
         if (strstr(args, name))
-            sscanf(strstr(args, name) + xr_strlen(name), "(%[^)])", dest);
+            sscanf(strstr(args, name) + strlen(name), "(%[^)])", dest);
     }
 
     void protect_Name_strlwr(pstr str)
@@ -256,18 +256,18 @@ class CCC_Start : public IConsole_Command
 
         pcstr name_str = "name=";
         pcstr name1 = strstr(str, name_str);
-        if (!name1 || !xr_strlen(name1))
+        if (!name1 || !strlen(name1))
         {
             return;
         }
-        int begin_p = xr_strlen(str) - xr_strlen(name1) + xr_strlen(name_str);
+        int begin_p = strlen(str) - strlen(name1) + strlen(name_str);
         if (begin_p < 1)
         {
             return;
         }
 
         pcstr name2 = strchr(name1, '/');
-        int end_p = xr_strlen(str) - ((name2) ? xr_strlen(name2) : 0);
+        int end_p = strlen(str) - ((name2) ? strlen(name2) : 0);
         if (begin_p >= end_p)
         {
             return;
@@ -301,7 +301,7 @@ public:
         if (!op_client[0] && strstr(op_server, "single"))
             xr_strcpy(op_client, "localhost");
 
-        if ((0 == xr_strlen(op_client)) && (0 == xr_strlen(op_demo)))
+        if ((0 == strlen(op_client)) && (0 == strlen(op_demo)))
         {
             Log("! Can't start game without client. Arguments: '%s'.", args);
             return;
@@ -309,14 +309,14 @@ public:
         if (g_pGameLevel)
             Engine.Event.Defer("KERNEL:disconnect");
 
-        if (xr_strlen(op_demo))
+        if (strlen(op_demo))
         {
             Engine.Event.Defer("KERNEL:start_mp_demo", u64(xr_strdup(op_demo)), 0);
         }
         else
         {
             Engine.Event.Defer(
-                "KERNEL:start", u64(xr_strlen(op_server) ? xr_strdup(op_server) : 0), u64(xr_strdup(op_client)));
+                "KERNEL:start", u64(strlen(op_server) ? xr_strdup(op_server) : 0), u64(xr_strdup(op_client)));
         }
     }
 };

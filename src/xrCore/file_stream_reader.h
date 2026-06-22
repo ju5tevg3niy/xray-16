@@ -1,6 +1,7 @@
-#ifndef FILE_STREAM_READER_H
-#define FILE_STREAM_READER_H
-
+#pragma once
+#include <cstddef>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
 #include "stream_reader.h"
 
 class CFileStreamReader : public CStreamReader
@@ -20,5 +21,3 @@ public:
     virtual void construct(pcstr file_name, const size_t& window_size);
     void destroy() override;
 };
-
-#endif // FILE_STREAM_READER_H

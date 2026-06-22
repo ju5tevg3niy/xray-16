@@ -283,7 +283,7 @@ shared_str door::get_initiators_ids() const
     actors_type::const_iterator i = m_initiators.begin();
     actors_type::const_iterator const e = m_initiators.end();
     for (; i != e; ++i)
-        buffer_size += xr_strlen((*i)->get_name()) + 2;
+        buffer_size += strlen((*i)->get_name()) + 2;
 
     pstr const result = (pstr)xr_alloca(buffer_size);
     *result = 0;
@@ -291,7 +291,7 @@ shared_str door::get_initiators_ids() const
     u32 left_size = buffer_size;
     for (i = m_initiators.begin(); i != e; ++i)
     {
-        u32 const length = xr_strlen((*i)->get_name());
+        u32 const length = strlen((*i)->get_name());
         memcpy(j, (*i)->get_name(), length);
         j += length;
         *j++ = ',';

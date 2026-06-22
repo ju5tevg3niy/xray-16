@@ -63,7 +63,7 @@ class shader_name_holder
 public:
     void append(cpcstr string)
     {
-        const size_t size = xr_strlen(string);
+        const size_t size = strlen(string);
         for (size_t i = 0; i < size; ++i)
         {
             name[pos] = string[i];

@@ -226,7 +226,7 @@ XML_NODE XMLDocument::NavigateToNode(CONST_XML_NODE start_node, pcstr path, cons
     R_ASSERT3(start_node && path, "NavigateToNode failed in XML file ", m_xml_file_name);
     CONST_XML_NODE node{};
     string_path buf_str;
-    VERIFY(xr_strlen(path) < 200);
+    VERIFY(strlen(path) < 200);
     buf_str[0] = 0;
     xr_strcpy(buf_str, path);
 

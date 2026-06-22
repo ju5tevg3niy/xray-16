@@ -97,7 +97,7 @@ void game_sv_mp_script::SpawnPlayer(ClientID id, LPCSTR N, LPCSTR SkinName, RPoi
     {
         pA->s_team = u8(ps_who->team);
 
-        if (xr_strlen(SkinName) != 0)
+        if (strlen(SkinName) != 0)
             pA->set_visual(SkinName);
 
         ps_who->resetFlag(GAME_PLAYER_FLAG_VERY_VERY_DEAD);

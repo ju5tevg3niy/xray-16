@@ -251,7 +251,7 @@ CApplication::CApplication(pcstr commandLine, GameModule* game, const std::array
     string_path fsgame = "";
     if (strstr(commandLine, fsltx))
     {
-        const size_t sz = xr_strlen(fsltx);
+        const size_t sz = strlen(fsltx);
         sscanf(strstr(commandLine, fsltx) + sz, "%[^ ] ", fsgame);
     }
 
@@ -343,7 +343,7 @@ CApplication::~CApplication()
 #endif
 
     // check for need to execute something external
-    if (/*xr_strlen(g_sLaunchOnExit_params) && */ xr_strlen(g_sLaunchOnExit_app))
+    if (/*strlen(g_sLaunchOnExit_params) && */ strlen(g_sLaunchOnExit_app))
     {
 #if defined(XR_PLATFORM_WINDOWS)
         // CreateProcess need to return results to next two structures
@@ -351,7 +351,7 @@ CApplication::~CApplication()
         si.cb = sizeof(si);
         PROCESS_INFORMATION pi = {};
         // We use CreateProcess to setup working folder
-        pcstr tempDir = xr_strlen(g_sLaunchWorkingFolder) ? g_sLaunchWorkingFolder : nullptr;
+        pcstr tempDir = strlen(g_sLaunchWorkingFolder) ? g_sLaunchWorkingFolder : nullptr;
         CreateProcess(g_sLaunchOnExit_app, g_sLaunchOnExit_params, nullptr, nullptr, FALSE, 0, nullptr, tempDir, &si, &pi);
 #endif
     }

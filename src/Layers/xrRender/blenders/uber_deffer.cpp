@@ -47,8 +47,8 @@ void uber_deffer(CBlender_Compile& C, bool hq, LPCSTR _vspec, LPCSTR _pspec, BOO
             bHasDetailBump = true;
             xr_strcpy(texDetailBump, sizeof(texDetailBump), detail_bump_texture);
             xr_strcpy(texDetailBumpX, sizeof(texDetailBumpX), detail_bump_texture);
-            VERIFY(xr_strlen(texDetailBump) > 2);
-            VERIFY(xr_strlen(texDetailBumpX) > 2);
+            VERIFY(strlen(texDetailBump) > 2);
+            VERIFY(strlen(texDetailBumpX) > 2);
             xr_strcat(texDetailBumpX, "#");
         }
     }
@@ -197,8 +197,8 @@ void uber_deffer(CBlender_Compile& C, bool hq, LPCSTR _vspec, LPCSTR _pspec, BOO
     {
         C.r_dx11Texture("s_detailBump", texDetailBump);
         C.r_dx11Texture("s_detailBumpX", texDetailBumpX);
-        VERIFY(xr_strlen(texDetailBump) > 2);
-        VERIFY(xr_strlen(texDetailBumpX) > 2);
+        VERIFY(strlen(texDetailBump) > 2);
+        VERIFY(strlen(texDetailBumpX) > 2);
     }
     C.r_dx11Sampler("smp_base");
     if (lmap)
@@ -213,13 +213,13 @@ void uber_deffer(CBlender_Compile& C, bool hq, LPCSTR _vspec, LPCSTR _pspec, BOO
     VERIFY(C.L_textures[0].size());
     if (bump)
     {
-        VERIFY2(xr_strlen(fnameB), C.L_textures[0].c_str());
-        VERIFY2(xr_strlen(fnameA), C.L_textures[0].c_str());
+        VERIFY2(strlen(fnameB), C.L_textures[0].c_str());
+        VERIFY2(strlen(fnameA), C.L_textures[0].c_str());
     }
     if (bHasDetailBump)
     {
-        VERIFY2(xr_strlen(texDetailBump), C.L_textures[0].c_str());
-        VERIFY2(xr_strlen(texDetailBumpX), C.L_textures[0].c_str());
+        VERIFY2(strlen(texDetailBump), C.L_textures[0].c_str());
+        VERIFY2(strlen(texDetailBumpX), C.L_textures[0].c_str());
     }
     C.r_Sampler(
         "s_base", C.L_textures[0], false, D3DTADDRESS_WRAP, D3DTEXF_ANISOTROPIC, D3DTEXF_LINEAR, D3DTEXF_ANISOTROPIC);

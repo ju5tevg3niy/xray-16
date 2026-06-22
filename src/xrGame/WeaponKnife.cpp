@@ -109,7 +109,7 @@ void CWeaponKnife::Load(LPCSTR section)
 
         if (!nameToRead)
         {
-            if (xr_strlen(missingFields))
+            if (strlen(missingFields))
                 xr_strcat(missingFields, ", ");
             xr_strcat(missingFields, name);
             return;

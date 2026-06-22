@@ -257,7 +257,7 @@ void CALifeUpdateManager::load(LPCSTR game_name, bool no_assert, bool new_only)
 
     if (new_only || !CALifeStorageManager::load(game_name))
     {
-        R_ASSERT3(new_only || (no_assert && xr_strlen(game_name)), "Cannot find the specified saved game ", game_name);
+        R_ASSERT3(new_only || (no_assert && strlen(game_name)), "Cannot find the specified saved game ", game_name);
         new_game(game_name);
     }
 

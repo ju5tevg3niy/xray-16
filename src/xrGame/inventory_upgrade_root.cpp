@@ -29,7 +29,7 @@ void Root::construct(const shared_str& root_id, Manager& manager_r)
         return;
     }
     LPCSTR upgrade_groups_str = pSettings->r_string(root_id, "upgrades");
-    if (!upgrade_groups_str || !xr_strlen(upgrade_groups_str))
+    if (!upgrade_groups_str || !strlen(upgrade_groups_str))
     {
         return;
     }
@@ -66,7 +66,7 @@ bool Root::is_root() { return true; }
 
 void Root::log_hierarchy(LPCSTR nest)
 {
-    u32 sz = (xr_strlen(nest) + 4) * sizeof(char);
+    u32 sz = (strlen(nest) + 4) * sizeof(char);
     PSTR nest2 = (PSTR)xr_alloca(sz);
     xr_strcpy(nest2, sz, nest);
     Msg("%s[r] %s", nest2, id_str());

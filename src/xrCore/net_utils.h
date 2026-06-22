@@ -1,19 +1,14 @@
 #pragma once
-
 #include <cstring>
 #include <string>
-
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
+#include "Math/vector3.hpp"
+#include "Math/vector4.hpp"
 #include "client_id.h"
 #include "xrCore/Math/matrix.hpp"
-#include "xrCore/Text/string_funcs_inline.hpp"
-
-// fwd. decl.
-template <class T> struct _vector3;
-typedef _vector3<float> Fvector;
-template <class T> struct _vector4;
-typedef _vector4<float> Fvector4;
-class shared_str;
+#include "xrDebug_macros.h"
+#include "xrstring.h"
 
 #pragma pack(push, 1)
 
@@ -192,7 +187,7 @@ public:
     void w_stringZ(pcstr S)
     {
         W_guard g(&w_allow);
-        w(S, (u32)xr_strlen(S) + 1);
+        w(S, (u32)strlen(S) + 1);
         INI_W(w_stringZ(S));
     }
     void w_stringZ(const shared_str& p);

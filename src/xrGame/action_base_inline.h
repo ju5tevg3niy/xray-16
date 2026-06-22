@@ -29,7 +29,7 @@ void CBaseAction::init(_object_type* object, LPCSTR action_name)
 #ifdef LOG_ACTION
     m_use_log = false;
     m_switched = false;
-//	if (xr_strlen(m_action_name))
+//	if (strlen(m_action_name))
 //		debug_log		(eActionStateConstructed);
 #endif
 }
@@ -44,7 +44,7 @@ void CBaseAction::setup(_object_type* object, CPropertyStorage* storage)
     m_inertia_time = 0;
 #ifdef LOG_ACTION
     m_switched = false;
-    if (m_use_log && xr_strlen(m_action_name))
+    if (m_use_log && strlen(m_action_name))
         debug_log(eActionStateSetup);
 #endif
 }
@@ -55,7 +55,7 @@ void CBaseAction::initialize()
 #ifdef LOG_ACTION
     VERIFY3(!m_switched, m_action_name, "::initialize()");
     m_switched = true;
-    if (m_use_log && xr_strlen(m_action_name))
+    if (m_use_log && strlen(m_action_name))
         debug_log(eActionStateInitialized);
 #endif
     m_start_level_time = Device.dwTimeGlobal;
@@ -67,7 +67,7 @@ void CBaseAction::execute()
 {
     m_first_time = false;
 #ifdef LOG_ACTION
-    if (m_use_log && xr_strlen(m_action_name) && m_switched)
+    if (m_use_log && strlen(m_action_name) && m_switched)
         debug_log(eActionStateExecuted);
     m_switched = false;
 #endif
@@ -78,7 +78,7 @@ void CBaseAction::finalize()
 {
 #ifdef LOG_ACTION
     VERIFY3(!m_switched, m_action_name, "::finalize()");
-    if (m_use_log && xr_strlen(m_action_name))
+    if (m_use_log && strlen(m_action_name))
         debug_log(eActionStateFinalized);
 #endif
 }

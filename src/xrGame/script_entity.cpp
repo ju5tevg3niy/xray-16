@@ -92,7 +92,7 @@ void CScriptEntity::reinit()
 void CScriptEntity::SetScriptControl(const bool bScriptControl, shared_str caSciptName)
 {
     if (!(((m_bScriptControl && !bScriptControl) || (!m_bScriptControl && bScriptControl)) &&
-            (bScriptControl || (xr_strlen(m_caScriptName.c_str()) && !xr_strcmp(caSciptName, m_caScriptName)))))
+            (bScriptControl || (strlen(m_caScriptName.c_str()) && !xr_strcmp(caSciptName, m_caScriptName)))))
     {
         GEnv.ScriptEngine->script_log(
             LuaMessageType::Error, "Invalid sequence of taking an entity under script control");

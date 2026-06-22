@@ -1,4 +1,15 @@
-#include "stdafx.h"
+#include <cstring>
+#include <ctime>
+#include <string>
+#include "Common/FSMacros.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "LocatorAPI.h"
+#include "Text/string_funcs_inline.hpp"
+#include "string_concatenations.h"
+#include "xrDebug_macros.h"
+#include "xrMemory.h"
 #pragma hdrstop
 
 #include "LocatorAPI_defs.h"
@@ -40,7 +51,7 @@ FS_Path::FS_Path(pcstr _Root, pcstr _Add, pcstr _DefExt, pcstr _FilterCaption, u
     xr_strcpy(temp, sizeof(temp), _Root);
     if (_Add)
         xr_strcat(temp, _Add);
-    if (temp[0] && temp[xr_strlen(temp) - 1] != _DELIMITER && temp[xr_strlen(temp) - 1] != '/')
+    if (temp[0] && temp[strlen(temp) - 1] != _DELIMITER && temp[strlen(temp) - 1] != '/')
         xr_strcat(temp, DELIMITER);
     restore_path_separators(temp);
     m_Path = xr_fs_strlwr(xr_strdup(temp));
@@ -74,7 +85,7 @@ void FS_Path::_set(pcstr add)
     // m_Path
     string_path temp;
     strconcat(sizeof(temp), temp, m_Root, m_Add);
-    if (temp[xr_strlen(temp) - 1] != _DELIMITER)
+    if (temp[strlen(temp) - 1] != _DELIMITER)
         xr_strcat(temp, DELIMITER);
     xr_free(m_Path);
     m_Path = xr_fs_strlwr(xr_strdup(temp));
@@ -84,14 +95,14 @@ void FS_Path::_set_root(pcstr root)
 {
     string_path temp;
     xr_strcpy(temp, root);
-    if (*temp && temp[xr_strlen(temp) - 1] != _DELIMITER)
+    if (*temp && temp[strlen(temp) - 1] != _DELIMITER)
         xr_strcat(temp, DELIMITER);
     xr_free(m_Root);
     m_Root = xr_fs_strlwr(xr_strdup(temp));
 
     // m_Path
     strconcat(sizeof(temp), temp, m_Root, m_Add ? m_Add : "");
-    if (*temp && temp[xr_strlen(temp) - 1] != _DELIMITER)
+    if (*temp && temp[strlen(temp) - 1] != _DELIMITER)
         xr_strcat(temp, DELIMITER);
     xr_free(m_Path);
     m_Path = xr_fs_strlwr(xr_strdup(temp));

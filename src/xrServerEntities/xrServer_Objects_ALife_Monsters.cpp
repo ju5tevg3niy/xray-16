@@ -401,7 +401,7 @@ void CSE_ALifeTraderAbstract::set_specific_character(shared_str new_spec_char)
     {
         CSE_Visual* visual = smart_cast<CSE_Visual*>(base());
         VERIFY(visual);
-        if (xr_strlen(selected_char.Visual()) > 0)
+        if (strlen(selected_char.Visual()) > 0)
             visual->set_visual(selected_char.Visual());
     }
 
@@ -436,7 +436,7 @@ void CSE_ALifeTraderAbstract::set_specific_character(shared_str new_spec_char)
     if (strstr(m_character_name.c_str(), gen_name))
     {
         // select name and lastname
-        std::string subset = m_character_name.c_str() + xr_strlen(gen_name);
+        std::string subset = m_character_name.c_str() + strlen(gen_name);
 
         string_path t1;
         strconcat(sizeof(t1), t1, "stalker_names_", subset.c_str());

@@ -62,7 +62,7 @@ void create_unpack_name(string_path& dst_src_path)
     char* ext_pos = strstr(dst_src_path, ".cltx");
     if (ext_pos)
     {
-        xr_strcpy(ext_pos, xr_strlen(ext_pos), ".ltx");
+        xr_strcpy(ext_pos, strlen(ext_pos), ".ltx");
         return;
     }
     xr_strcat(dst_src_path, ".ltx");

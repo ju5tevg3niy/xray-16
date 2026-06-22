@@ -1333,7 +1333,7 @@ void game_cl_mp::OnGameRoundStarted()
 void game_cl_mp::SendPlayerStarted()
 {
     LPCSTR map_name = Level().name().c_str();
-    R_ASSERT2(map_name && (xr_strlen(map_name) > 0), "map name not present");
+    R_ASSERT2(map_name && (strlen(map_name) > 0), "map name not present");
 
     NET_Packet P;
     u_EventGen(P, GE_GAME_EVENT, 0);

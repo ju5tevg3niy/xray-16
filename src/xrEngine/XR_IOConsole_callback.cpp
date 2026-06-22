@@ -23,7 +23,7 @@ int CConsole::InputCallback(ImGuiInputTextCallbackData* data)
 
             pcstr edt = data->Buf;
             const bool b_ra = edt == strstr(edt, radmin_cmd_name);
-            const size_t offset = b_ra ? xr_strlen(radmin_cmd_name) : 0;
+            const size_t offset = b_ra ? strlen(radmin_cmd_name) : 0;
 
             vecCMD_IT it = Commands.lower_bound(edt + offset);
             if (it != Commands.begin())
@@ -31,7 +31,7 @@ int CConsole::InputCallback(ImGuiInputTextCallbackData* data)
                 --it;
                 IConsole_Command& cc = *it->second;
                 pcstr name_cmd = cc.Name();
-                size_t name_cmd_size = xr_strlen(name_cmd);
+                size_t name_cmd_size = strlen(name_cmd);
                 const size_t size = offset + name_cmd_size + 2;
                 pstr new_str = static_cast<pstr>(xr_alloca(size * sizeof(char)));
 
@@ -119,7 +119,7 @@ void CConsole::Next_cmd() // SDL_SCANCODE_DOWN + Ctrl
 
 void CConsole::Prev_tip() // SDL_SCANCODE_UP
 {
-    if (xr_strlen(m_edit_string) == 0 || m_disable_tips)
+    if (strlen(m_edit_string) == 0 || m_disable_tips)
     {
         prev_cmd_history_idx();
         SelectCommand();
@@ -130,7 +130,7 @@ void CConsole::Prev_tip() // SDL_SCANCODE_UP
 
 void CConsole::Next_tip() // SDL_SCANCODE_DOWN + Ctrl
 {
-    if (xr_strlen(m_edit_string) == 0 || m_disable_tips)
+    if (strlen(m_edit_string) == 0 || m_disable_tips)
     {
         next_cmd_history_idx();
         SelectCommand();

@@ -301,7 +301,7 @@ public:
             xr_strcpy(cdkey, arguments);
         }
 
-        u32 cdkey_len = xr_strlen(cdkey);
+        u32 cdkey_len = strlen(cdkey);
         if ((cdkey_len > 0) && g_pGamePersistent && MainMenu())
         {
             if ((cdkey_len > 5) && cdkey[4] != '-')
@@ -339,7 +339,7 @@ public:
         if (!OnServer())
             return;
 
-        if (!xr_strlen(args))
+        if (!strlen(args))
             return;
         if (strchr(args, '/'))
         {
@@ -348,7 +348,7 @@ public:
         }
         string4096 PlayerName = "";
         u32 const max_name_length = GP_UNIQUENICK_LEN - 1;
-        if (xr_strlen(args) > max_name_length)
+        if (strlen(args) > max_name_length)
         {
             strncpy_s(PlayerName, args, max_name_length);
             PlayerName[max_name_length] = 0;
@@ -394,7 +394,7 @@ public:
         if (!g_pGameLevel || !Level().Server || !Level().Server->GetGameState())
             return;
 
-        u32 len = xr_strlen(args);
+        u32 len = strlen(args);
         if ((len == 0) || (len >= 128)) // one digit and raid:%u
             return;
         ClientID client_id(0);
@@ -486,7 +486,7 @@ public:
     {
         if (!g_pGameLevel || !Level().Server || !Level().Server->GetGameState())
             return;
-        u32 len = xr_strlen(args_);
+        u32 len = strlen(args_);
         if ((len == 0) || (len >= 256)) // two digits and raid:%u
             return;
 
@@ -534,7 +534,7 @@ public:
     {
         if (!g_pGameLevel || !Level().Server || !Level().Server->GetGameState())
             return;
-        u32 len = xr_strlen(args_);
+        u32 len = strlen(args_);
         if ((len == 0) || (len >= 256)) // two digits and raid:%u
             return;
 
@@ -887,7 +887,7 @@ public:
         if (!tmp_sv_game)
             return;
 
-        u32 len = xr_strlen(args_);
+        u32 len = strlen(args_);
         if ((len == 0) || (len >= 256)) // two digits and raid:%u
             return;
 
@@ -952,7 +952,7 @@ public:
         if (!tmp_sv_game)
             return;
 
-        u32 len = xr_strlen(args_);
+        u32 len = strlen(args_);
         if ((len == 0) || (len >= 256))
             return;
 
@@ -988,7 +988,7 @@ public:
         game_sv_mp* tmp_sv_game = smart_cast<game_sv_mp*>(Level().Server->GetGameState());
         if (!tmp_sv_game)
             return;
-        u32 len = xr_strlen(args_);
+        u32 len = strlen(args_);
         if ((len == 0) || (len >= 64)) // one digit and raid:%u
             return;
 
@@ -1030,7 +1030,7 @@ public:
             return;
         string4096 buff;
         xr_strcpy(buff, args_);
-        u32 len = xr_strlen(buff);
+        u32 len = strlen(buff);
 
         if (0 == len)
             return;
@@ -1046,7 +1046,7 @@ public:
         R_ASSERT(p >= buff);
         xr_strcpy(digits, p);
         *p = 0;
-        if (!xr_strlen(buff))
+        if (!strlen(buff))
         {
             Msg("incorrect parameter passed. bad name.");
             return;
@@ -1060,7 +1060,7 @@ public:
         }
         string4096 PlayerName = "";
         u32 const max_name_length = GP_UNIQUENICK_LEN - 1;
-        if (xr_strlen(buff) > max_name_length)
+        if (strlen(buff) > max_name_length)
         {
             strncpy_s(PlayerName, buff, max_name_length);
             PlayerName[max_name_length] = 0;
@@ -1098,7 +1098,7 @@ public:
         string4096 buff;
         exclude_raid_from_args(args_, buff, sizeof(buff)); // xr_strcpy(buff, args_);
 
-        u32 len = xr_strlen(buff);
+        u32 len = strlen(buff);
         if (0 == len)
             return;
 
@@ -1113,7 +1113,7 @@ public:
         R_ASSERT(p >= buff);
         xr_strcpy(digits, p);
         *p = 0;
-        if (!xr_strlen(buff))
+        if (!strlen(buff))
         {
             Msg("incorrect parameter passed. bad IP address.");
             return;
@@ -1148,12 +1148,12 @@ public:
         if (!g_pGameLevel || !Level().Server)
             return;
 
-        if (!xr_strlen(args))
+        if (!strlen(args))
             return;
 
         string4096 buff;
         exclude_raid_from_args(args, buff, sizeof(buff)); // xr_strcpy(buff, args_);
-        if (!xr_strlen(buff))
+        if (!strlen(buff))
             return;
 
         ip_address Address;
@@ -1209,10 +1209,10 @@ public:
         PlayersEnumerator tmp_functor;
         string512 filter_string;
         string512 tmp_dest;
-        if (xr_strlen(args))
+        if (strlen(args))
         {
             exclude_raid_from_args(args, tmp_dest, sizeof(tmp_dest));
-            if (xr_strlen(tmp_dest))
+            if (strlen(tmp_dest))
             {
                 sscanf(tmp_dest, "%s", filter_string);
                 tmp_functor.filter_string = filter_string;
@@ -1268,7 +1268,7 @@ public:
             return;
         }
 
-        if (!xr_strlen(args))
+        if (!strlen(args))
             return;
         if (strchr(args, '/'))
         {
@@ -1277,7 +1277,7 @@ public:
         }
         string4096 NewName = "";
         u32 const max_name_length = GP_UNIQUENICK_LEN - 1;
-        if (xr_strlen(args) > max_name_length)
+        if (strlen(args) > max_name_length)
         {
             strncpy_s(NewName, args, max_name_length);
             NewName[max_name_length] = 0;
@@ -1309,7 +1309,7 @@ public:
         string512 tmp_dest;
         string512 filter_dest = "";
         exclude_raid_from_args(args, tmp_dest, sizeof(tmp_dest));
-        if (xr_strlen(tmp_dest))
+        if (strlen(tmp_dest))
         {
             sscanf(tmp_dest, "%s", filter_dest);
         }
@@ -1331,7 +1331,7 @@ public:
     {
         if (!OnServer())
             return;
-        if (!xr_strlen(args))
+        if (!strlen(args))
         {
             Msg("Changing level, version and game type. Arguments: <level name> <level version> <game type>");
             return;
@@ -1427,7 +1427,7 @@ public:
     {
         if (!OnServer())
             return;
-        if (!xr_strlen(args))
+        if (!strlen(args))
         {
             Msg("Changing Game Type. Arguments: <level name> <level version>");
             return;
@@ -1886,7 +1886,7 @@ public:
     CCC_RadminCmd(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = false; };
     virtual void Execute(LPCSTR arguments)
     {
-        if (IsGameTypeSingle() || xr_strlen(arguments) >= 512)
+        if (IsGameTypeSingle() || strlen(arguments) >= 512)
         {
             return;
         }
@@ -1895,7 +1895,7 @@ public:
         {
             string512 user;
             string512 pass;
-            if (2 == sscanf(arguments + xr_strlen("login") + 1, "%s %s", user, pass))
+            if (2 == sscanf(arguments + strlen("login") + 1, "%s %s", user, pass))
             {
                 NET_Packet P;
                 P.w_begin(M_REMOTE_CONTROL_AUTH);
@@ -1994,7 +1994,7 @@ public:
             {
                 pstr msg;
                 STRCONCAT(msg, args);
-                if (xr_strlen(msg) > 256)
+                if (strlen(msg) > 256)
                 {
                     msg[256] = 0;
                 }

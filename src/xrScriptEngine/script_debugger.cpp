@@ -379,7 +379,7 @@ bool CScriptDebugger::HasBreakPoint(const char* fileName, s32 lineNum)
     char dir[_MAX_DIR];
     char ext[_MAX_EXT];
     _splitpath(fileName, drive, dir, sFileName, ext);
-    const size_t filenameLength = xr_strlen(sFileName);
+    const size_t filenameLength = strlen(sFileName);
     for (size_t i = 0; i < m_breakPoints.size(); i++)
     {
         SBreakPoint bp(m_breakPoints[i]);

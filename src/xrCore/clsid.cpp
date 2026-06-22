@@ -17,11 +17,11 @@ void CLSID2TEXT(CLASS_ID id, pstr text)
 
 CLASS_ID TEXT2CLSID(pcstr text)
 {
-    VERIFY3(xr_strlen(text) <= 8, "Beer from creator CLASS_ID:", text);
+    VERIFY3(strlen(text) <= 8, "Beer from creator CLASS_ID:", text);
     char buf[9];
     buf[8] = 0;
     strncpy_s(buf, sizeof(buf), text, 8);
-    size_t need = 8 - xr_strlen(buf);
+    size_t need = 8 - strlen(buf);
     while (need)
     {
         buf[8 - need] = ' ';

@@ -1012,7 +1012,7 @@ bool game_sv_CaptureTheArtefact::LoadAnomaliesItems(LPCSTR ini_set_id, TAnomalie
     if (!items_count)
         return false;
 
-    u32 const str_size = xr_strlen(anomaly_string);
+    u32 const str_size = strlen(anomaly_string);
     u32 const buffer_size = (str_size + 1) * sizeof(char);
     PSTR temp_str = static_cast<PSTR>(xr_alloca(buffer_size));
     for (u32 i = 0; i < items_count; ++i)

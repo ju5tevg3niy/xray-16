@@ -146,7 +146,7 @@ void xrMemory::mem_free(void* ptr, size_t alignment)
 pstr xr_strdup(pcstr string)
 {
     VERIFY(string);
-    size_t len = xr_strlen(string) + 1;
+    size_t len = strlen(string) + 1;
     auto memory = static_cast<char*>(xr_malloc(len));
     CopyMemory(memory, string, len);
     return memory;

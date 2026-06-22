@@ -680,7 +680,7 @@ void CMainMenu::OnSessionTerminate(LPCSTR reason)
     LPCSTR str = StringTable().translate("ui_st_kicked_by_server").c_str();
     pstr text;
 
-    if (reason && xr_strlen(reason) && reason[0] == '@')
+    if (reason && strlen(reason) && reason[0] == '@')
     {
         STRCONCAT(text, reason + 1);
     }
@@ -728,7 +728,7 @@ LPCSTR AddHyphens(LPCSTR c)
 {
     static string64 buf;
 
-    u32 sz = xr_strlen(c);
+    u32 sz = strlen(c);
     u32 j = 0;
 
     for (u32 i = 1; i <= 3; ++i)
@@ -750,7 +750,7 @@ LPCSTR DelHyphens(LPCSTR c)
 {
     static string64 buf;
 
-    u32 sz = xr_strlen(c);
+    u32 sz = strlen(c);
     u32 sz1 = _min(iFloor(sz / 4.0f), 3);
 
     u32 j = 0;
@@ -775,7 +775,7 @@ bool CMainMenu::IsCDKeyIsValid()
     GetCDKey_FromRegistry(CDKey);
 
 #ifndef DEMO_BUILD
-    if (!xr_strlen(CDKey))
+    if (!strlen(CDKey))
         return true;
 #endif
 

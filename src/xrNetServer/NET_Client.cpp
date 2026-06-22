@@ -435,7 +435,7 @@ bool IPureClient::Connect(pcstr options)
         if (xr_stricmp(server_name, "localhost") == 0)
         {
             WCHAR SessionPasswordUNICODE[4096];
-            if (xr_strlen(password_str))
+            if (strlen(password_str))
             {
                 CHK_DX(MultiByteToWideChar(CP_ACP, 0, password_str, -1, SessionPasswordUNICODE, 4096));
                 dpAppDesc.dwFlags |= DPNSESSION_REQUIREPASSWORD;
@@ -518,7 +518,7 @@ bool IPureClient::Connect(pcstr options)
             string64 EnumData;
             EnumData[0] = 0;
             xr_strcat(EnumData, "ToConnect");
-            u32 EnumSize = xr_strlen(EnumData) + 1;
+            u32 EnumSize = strlen(EnumData) + 1;
             // We now have the host address so lets enum
             u32 c_port = psCL_Port;
             HRESULT res = S_FALSE;
@@ -583,7 +583,7 @@ bool IPureClient::Connect(pcstr options)
             }
 
             WCHAR SessionPasswordUNICODE[4096];
-            if (xr_strlen(password_str))
+            if (strlen(password_str))
             {
                 CHK_DX(MultiByteToWideChar(CP_ACP, 0, password_str, -1, SessionPasswordUNICODE, 4096));
                 dpAppDesc.dwFlags |= DPNSESSION_REQUIREPASSWORD;

@@ -50,7 +50,7 @@ void UIWarState::ClearInfo()
 
 bool UIWarState::UpdateInfo(LPCSTR icon, LPCSTR hint_text)
 {
-    if (!icon || !xr_strlen(icon))
+    if (!icon || !strlen(icon))
     {
         return false;
     }
@@ -60,7 +60,7 @@ bool UIWarState::UpdateInfo(LPCSTR icon, LPCSTR hint_text)
     SetVisible(true);
     m_static->InitTexture(icon);
 
-    if (!hint_text || !xr_strlen(hint_text))
+    if (!hint_text || !strlen(hint_text))
     {
         set_hint_text_ST("");
     }

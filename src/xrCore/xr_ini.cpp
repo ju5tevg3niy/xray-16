@@ -580,7 +580,7 @@ void CInifile::Load(IReader* F, pcstr path, allow_include_func_t allow_include_f
                                 }
                             }
 
-                            if (!(xr_strlen(value_raw) + xr_strlen(str_add_raw) < sizeof value_raw)
+                            if (!(strlen(value_raw) + strlen(str_add_raw) < sizeof value_raw)
                                 || incorrectFormat)
                             {
                                 Msg("! Incorrect inifile format: section[%s], variable[%s]. Odd number of quotes "
@@ -793,7 +793,7 @@ shared_str CInifile::r_string_wb(pcstr S, pcstr L) const
 
     string4096 _original;
     xr_strcpy(_original, sizeof _original, _base);
-    u32 _len = xr_strlen(_original);
+    u32 _len = strlen(_original);
     if (0 == _len)
         return shared_str("");
     if ('"' == _original[_len - 1])
@@ -928,7 +928,7 @@ Fvector4 CInifile::r_fvector4(pcstr S, pcstr L) const
 bool CInifile::r_bool(pcstr S, pcstr L) const
 {
     pcstr C = r_string(S, L);
-    VERIFY2(C && xr_strlen(C) <= 5, make_string("\"%s\" is not a valid bool value, section[%s], line[%s]", C, S, L));
+    VERIFY2(C && strlen(C) <= 5, make_string("\"%s\" is not a valid bool value, section[%s], line[%s]", C, S, L));
     char B[8];
     xr_strcpy(B, 7, C);
     B[7] = 0;

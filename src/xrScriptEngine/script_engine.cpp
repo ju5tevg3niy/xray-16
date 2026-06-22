@@ -290,7 +290,7 @@ bool CScriptEngine::parse_namespace(pcstr caNamespaceName, pstr b, size_t b_size
     pstr S = S2;
     for (int i = 0;; i++)
     {
-        if (!xr_strlen(S))
+        if (!strlen(S))
         {
             script_log(LuaMessageType::Error, "the namespace name %s is incorrect!", caNamespaceName);
             return false;
@@ -323,7 +323,7 @@ lua_State* L, LPCSTR caBuffer, size_t tSize, LPCSTR caScriptName, LPCSTR caNameS
         if (!parse_namespace(caNameSpaceName, a, sizeof(a), b, sizeof(b)))
             return false;
         xr_sprintf(insert, header, caNameSpaceName, a, b);
-        const size_t str_len = xr_strlen(insert);
+        const size_t str_len = strlen(insert);
         const size_t total_size = str_len + tSize;
         if (total_size >= scriptBufferSize)
         {
@@ -418,7 +418,7 @@ bool CScriptEngine::namespace_loaded(LPCSTR name, bool remove_from_stack)
     pstr S = S2;
     for (;;)
     {
-        if (!xr_strlen(S))
+        if (!strlen(S))
         {
             VERIFY(lua_gettop(lua()) >= 1);
             lua_pop(lua(), 1);
@@ -490,7 +490,7 @@ bool CScriptEngine::object(LPCSTR namespace_name, LPCSTR identifier, int type)
 {
     [[maybe_unused]] int start = lua_gettop(lua());
 
-    if (xr_strlen(namespace_name) && !namespace_loaded(namespace_name, false))
+    if (strlen(namespace_name) && !namespace_loaded(namespace_name, false))
     {
         VERIFY(lua_gettop(lua()) == start);
         return false;
@@ -508,7 +508,7 @@ luabind::object CScriptEngine::name_space(LPCSTR namespace_name)
     luabind::object lua_namespace = luabind::globals(lua());
     for (;;)
     {
-        if (!xr_strlen(S))
+        if (!strlen(S))
             return lua_namespace;
         pstr I = strchr(S, '.');
         if (!I)
@@ -930,7 +930,7 @@ bool CScriptEngine::load_file(const char* scriptName, const char* namespaceName)
 
 bool CScriptEngine::process_file_if_exists(LPCSTR file_name, bool warn_if_not_exist)
 {
-    const size_t string_length = xr_strlen(file_name);
+    const size_t string_length = strlen(file_name);
     if (!warn_if_not_exist && no_file_exists(file_name, string_length))
         return false;
     string_path S, S1;
@@ -969,7 +969,7 @@ bool CScriptEngine::process_file(LPCSTR file_name, bool reload_modules)
 
 bool CScriptEngine::function_object(LPCSTR function_to_call, luabind::object& object, int type)
 {
-    if (!xr_strlen(function_to_call))
+    if (!strlen(function_to_call))
         return false;
     string256 name_space = { 0 }, function = { 0 };
     parse_script_namespace(function_to_call, name_space, sizeof(name_space), function, sizeof(function));

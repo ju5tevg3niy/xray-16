@@ -1,15 +1,26 @@
-//----------------------------------------------------
-// file: FileSystem.cpp
-//----------------------------------------------------
-
-#include "stdafx.h"
-#pragma hdrstop
-
+#include "FileSystem.h"
+#include <cstring>
+#include <string>
+#include "Common/FSMacros.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "LocatorAPI.h"
+#include "Text/string_funcs_inline.hpp"
+#include "string_concatenations.h"
+#include "xrCommon/xr_smart_pointers.h"
+#include "xrDebug_macros.h"
+#include "xr_trims.h"
+#include "xrstring.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #include "cderr.h"
 #include "commdlg.h"
 #include "vfw.h"
 #endif
+
+//----------------------------------------------------
+// file: FileSystem.cpp
+//----------------------------------------------------
 
 xr_unique_ptr<EFS_Utils> xr_EFS;
 //----------------------------------------------------
@@ -39,7 +50,7 @@ std::string EFS_Utils::ExcludeBasePath(pcstr full_path, pcstr excl_path)
 {
     pcstr sub = strstr(full_path, excl_path);
     if (0 != sub)
-        return std::string(sub + xr_strlen(excl_path));
+        return std::string(sub + strlen(excl_path));
     else
         return std::string(full_path);
 }
@@ -132,7 +143,7 @@ bool EFS_Utils::GetOpenNameInternal(
     OPENFILENAME ofn;
     memset(&ofn, 0, sizeof(ofn));
 
-    if (xr_strlen(buffer))
+    if (strlen(buffer))
     {
         string_path dr;
         if (!(buffer[0] == _DELIMITER && buffer[1] == _DELIMITER)) // if !network
@@ -233,7 +244,7 @@ bool EFS_Utils::GetSaveName(pcstr initial, string_path& buffer, pcstr offset, in
     MakeFilter(flt, P.m_FilterCaption ? P.m_FilterCaption : "", def_ext);
     OPENFILENAME ofn;
     memset(&ofn, 0, sizeof(ofn));
-    if (xr_strlen(buffer))
+    if (strlen(buffer))
     {
         string_path dr;
         if (!(buffer[0] == _DELIMITER && buffer[1] == _DELIMITER)) // if !network

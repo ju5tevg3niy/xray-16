@@ -57,7 +57,7 @@ dx11ConstantBuffer::dx11ConstantBuffer(ID3DShaderReflectionConstantBuffer* pTabl
 #ifdef DEBUG
     if (m_pBuffer)
     {
-        m_pBuffer->SetPrivateData(WKPDID_D3DDebugObjectName, xr_strlen(Desc.Name), Desc.Name);
+        m_pBuffer->SetPrivateData(WKPDID_D3DDebugObjectName, strlen(Desc.Name), Desc.Name);
     }
 #endif
 }

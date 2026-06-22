@@ -101,7 +101,7 @@ void CMapLocation::LoadSpot(pcstr type)
     if (node)
     {
         pcstr str = uiXml.ReadAttrib(path, 0, "spot", "");
-        if (xr_strlen(str))
+        if (strlen(str))
         {
             if (!m_level_spot)
             {
@@ -118,7 +118,7 @@ void CMapLocation::LoadSpot(pcstr type)
         m_spot_border_names[1] = uiXml.ReadAttrib(path, 0, "spot_na", "");
 
         str = uiXml.ReadAttrib(path, 0, "pointer", "");
-        if (xr_strlen(str))
+        if (strlen(str))
         {
             if (!m_level_spot_pointer)
             {
@@ -142,7 +142,7 @@ void CMapLocation::LoadSpot(pcstr type)
     if (node)
     {
         pcstr str = uiXml.ReadAttrib(path, 0, "spot", "");
-        if (xr_strlen(str))
+        if (strlen(str))
         {
             if (!m_minimap_spot)
             {
@@ -158,7 +158,7 @@ void CMapLocation::LoadSpot(pcstr type)
         m_spot_border_names[3] = uiXml.ReadAttrib(path, 0, "spot_na", "");
 
         str = uiXml.ReadAttrib(path, 0, "pointer", "");
-        if (xr_strlen(str))
+        if (strlen(str))
         {
             if (!m_minimap_spot_pointer)
             {
@@ -182,7 +182,7 @@ void CMapLocation::LoadSpot(pcstr type)
     if (node)
     {
         pcstr str = uiXml.ReadAttrib(path, 0, "spot", "");
-        if (xr_strlen(str))
+        if (strlen(str))
         {
             if (!m_complex_spot)
             {
@@ -198,7 +198,7 @@ void CMapLocation::LoadSpot(pcstr type)
         m_spot_border_names[5] = uiXml.ReadAttrib(path, 0, "spot_na", "");
 
         str = uiXml.ReadAttrib(path, 0, "pointer", "");
-        if (xr_strlen(str))
+        if (strlen(str))
         {
             if (!m_complex_spot_pointer)
             {

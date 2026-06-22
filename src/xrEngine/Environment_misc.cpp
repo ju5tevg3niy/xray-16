@@ -845,7 +845,7 @@ void CEnvironment::load_weathers()
     for (const auto& file : weathers)
     {
         pcstr fileName = file.name.c_str();
-        const size_t length = xr_strlen(fileName);
+        const size_t length = strlen(fileName);
         id.assign(fileName, length - 4);
         EnvVec& env = WeatherCycles[id.c_str()];
 
@@ -918,7 +918,7 @@ void CEnvironment::load_weather_effects()
     for (const auto& file : weathersEffects)
     {
         pcstr fileName = file.name.c_str();
-        const size_t length = xr_strlen(fileName);
+        const size_t length = strlen(fileName);
         id.assign(fileName, length - 4);
         EnvVec& env = WeatherFXs[id.c_str()];
 
@@ -1101,7 +1101,7 @@ void CEnvironment::save_weathers(CInifile* environment_config /*= nullptr*/) con
             if (soc_style)
             {
                 strconcat(time_sect, "weather_", name.c_str(), "_", desc->m_identifier.c_str());
-                std::replace(time_sect, time_sect + xr_strlen(time_sect), ':', '_');
+                std::replace(time_sect, time_sect + strlen(time_sect), ':', '_');
                 config->w_string(weather_sect, desc->m_identifier.c_str(), time_sect);
             }
             desc->save(*config, soc_style ? time_sect : nullptr);
@@ -1149,7 +1149,7 @@ void CEnvironment::save_weather_effects(CInifile* environment_config /*= nullptr
             if (soc_style)
             {
                 strconcat(time_sect, "weather_", name.c_str(), "_", desc->m_identifier.c_str());
-                std::replace(time_sect, time_sect + xr_strlen(time_sect), ':', '_');
+                std::replace(time_sect, time_sect + strlen(time_sect), ':', '_');
                 config->w_string(weather_sect, desc->m_identifier.c_str(), time_sect);
             }
             desc->save(*config, soc_style ? time_sect : nullptr);

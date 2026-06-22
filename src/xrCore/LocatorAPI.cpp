@@ -1,12 +1,41 @@
+#include "LocatorAPI.h"
+#include <SDL_filesystem.h>
+#include <SDL_stdinc.h>
+#include <algorithm>
+#include <cstddef>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <limits>
 #include <tracy/Tracy.hpp>
-
-// LocatorAPI.cpp: implementation of the CLocatorAPI class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#include "stdafx.h"
-#pragma hdrstop // huh?
-
+#include <utility>
+#include <vector>
+#include "Common/FSMacros.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "Compression/rt_compressor.h"
+#include "Crypto/trivial_encryptor.h"
+#include "FS.h"
+#include "FS_internal.h"
+#include "FTimer.h"
+#include "LocatorAPI_defs.h"
+#include "Text/string_funcs_inline.hpp"
+#include "file_stream_reader.h"
+#include "log.h"
+#include "lzhuf.h"
+#include "stream_reader.h"
+#include "string_concatenations.h"
+#include "xrCommon/xr_smart_pointers.h"
+#include "xrCore.h"
+#include "xrCore/Threading/Lock.hpp"
+#include "xrDebug.h"
+#include "xrDebug_macros.h"
+#include "xrMemory.h"
+#include "xr_ini.h"
+#include "xr_trims.h"
+#include "xrstring.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #include <direct.h>
 #include <sys/stat.h>
@@ -16,11 +45,9 @@
 #include <glob.h>
 #endif
 
-#include "FS_internal.h"
-#include "stream_reader.h"
-#include "file_stream_reader.h"
-#include "xrCore/Threading/Lock.hpp"
-#include "Crypto/trivial_encryptor.h"
+// LocatorAPI.cpp: implementation of the CLocatorAPI class.
+//
+//////////////////////////////////////////////////////////////////////
 
 constexpr size_t VFS_STANDARD_FILE = std::numeric_limits<size_t>::max();
 
@@ -261,8 +288,8 @@ const CLocatorAPI::file* CLocatorAPI::Register(
             R_ASSERT4(I2.second, failureDescription, path, I2.first->name);
         }
         xr_strcpy(temp, sizeof temp, folder);
-        if (xr_strlen(temp))
-            temp[xr_strlen(temp) - 1] = 0;
+        if (strlen(temp))
+            temp[strlen(temp) - 1] = 0;
     }
     return &*result;
 }
@@ -429,7 +456,7 @@ void CLocatorAPI::LoadArchive(archive& A, pcstr entrypoint)
                 // R_ASSERT3 (root, "path not found ", alias_name);
                 xr_strcpy(fs_entry_point, sizeof fs_entry_point, root->m_Path);
             }
-            xr_strcat(fs_entry_point, sizeof fs_entry_point, read_path.c_str() + xr_strlen(alias_name) + 1);
+            xr_strcat(fs_entry_point, sizeof fs_entry_point, read_path.c_str() + strlen(alias_name) + 1);
         }
     }
     else
@@ -634,7 +661,7 @@ void CLocatorAPI::ProcessOne(pcstr path, const _finddata_t& entry)
             return;
         if (0 == xr_strcmp(entry.name, ".."))
             return;
-        if (path[xr_strlen(path) - 1] != _DELIMITER || path[xr_strlen(path) - 1] != '/')
+        if (path[strlen(path) - 1] != _DELIMITER || path[strlen(path) - 1] != '/')
             xr_strcat(N, DELIMITER);
         Register(N, VFS_STANDARD_FILE, 0, 0, entry.size, entry.size, (u32)entry.time_write);
         Recurse(N);
@@ -1164,13 +1191,13 @@ std::vector<pstr>* CLocatorAPI::file_list_open(pcstr _path, u32 flags)
 
     std::vector<char*>* dest = xr_new<std::vector<char*>>();
 
-    size_t base_len = xr_strlen(N);
+    size_t base_len = strlen(N);
     for (++I; I != m_files.end(); ++I)
     {
         const file& entry = *I;
         if (0 != strncmp(entry.name, N, base_len))
             break; // end of list
-        const char* end_symbol = entry.name + xr_strlen(entry.name) - 1;
+        const char* end_symbol = entry.name + strlen(entry.name) - 1;
         if (*end_symbol != _DELIMITER)
         {
             // file
@@ -1234,13 +1261,13 @@ size_t CLocatorAPI::file_list(FS_FileSet& dest, pcstr path, u32 flags /*= FS_Lis
     _SequenceToList(masks, mask);
     bool b_mask = !masks.empty();
 
-    size_t base_len = xr_strlen(N);
+    size_t base_len = strlen(N);
     for (++I; I != m_files.end(); ++I)
     {
         const file& entry = *I;
         if (0 != strncmp(entry.name, N, base_len))
             break; // end of list
-        pcstr end_symbol = entry.name + xr_strlen(entry.name) - 1;
+        pcstr end_symbol = entry.name + strlen(entry.name) - 1;
         if (*end_symbol != _DELIMITER)
         {
             // file
@@ -1301,9 +1328,9 @@ void CLocatorAPI::check_cached_files(pstr fname, const size_t& fname_size, const
         return;
 
     pcstr path_base = get_path("$server_root$")->m_Path;
-    size_t len_base = xr_strlen(path_base);
+    size_t len_base = strlen(path_base);
     pcstr path_file = fname;
-    const size_t len_file = xr_strlen(path_file);
+    const size_t len_file = strlen(path_file);
     if (len_file <= len_base)
         return;
 
@@ -1483,7 +1510,7 @@ void CLocatorAPI::copy_file_to_build(T*& r, pcstr source_name)
     update_path(fs_root, "$fs_root$", "");
     pcstr const position = strstr(source_name, fs_root);
     if (position == source_name)
-        update_path(cpy_name, "$build_copy$", source_name + xr_strlen(fs_root));
+        update_path(cpy_name, "$build_copy$", source_name + strlen(fs_root));
     else
         update_path(cpy_name, "$build_copy$", source_name);
 
@@ -1508,7 +1535,7 @@ void CLocatorAPI::copy_file_to_build(T*& r, pcstr source_name)
     if (0 == xr_strcmp(ext, ".dds"))
     {
         P = get_path("$game_textures$");
-        update_path(e_cpy_name, "$textures$", source_name + xr_strlen(P->m_Path));
+        update_path(e_cpy_name, "$textures$", source_name + strlen(P->m_Path));
         // tga
         *strext(e_cpy_name) = 0;
         xr_strcat(e_cpy_name, ".tga");
@@ -1523,7 +1550,7 @@ void CLocatorAPI::copy_file_to_build(T*& r, pcstr source_name)
     if (0 == xr_strcmp(ext, ".ogg"))
     {
         P = get_path("$game_sounds$");
-        update_path(e_cpy_name, "$sounds$", source_name + xr_strlen(P->m_Path));
+        update_path(e_cpy_name, "$sounds$", source_name + strlen(P->m_Path));
         // wav
         *strext(e_cpy_name) = 0;
         xr_strcat(e_cpy_name, ".wav");
@@ -1688,7 +1715,7 @@ CLocatorAPI::files_it CLocatorAPI::file_find_it(pcstr fname)
 
     file desc_f;
     string_path file_name;
-    VERIFY(xr_strlen(fname) * sizeof(char) < sizeof(file_name));
+    VERIFY(strlen(fname) * sizeof(char) < sizeof(file_name));
     xr_strcpy(file_name, sizeof file_name, fname);
     desc_f.name = file_name;
 
@@ -1709,7 +1736,7 @@ bool CLocatorAPI::dir_delete(pcstr initial, pcstr nm, bool remove_files)
     I = file_find_it(fpath);
     if (I != m_files.end())
     {
-        size_t base_len = xr_strlen(fpath);
+        size_t base_len = strlen(fpath);
         for (; I != m_files.end();)
         {
             files_it cur_item = I;
@@ -1718,7 +1745,7 @@ bool CLocatorAPI::dir_delete(pcstr initial, pcstr nm, bool remove_files)
             ++I;
             if (0 != strncmp(entry.name, fpath, base_len))
                 break; // end of list
-            const char* end_symbol = entry.name + xr_strlen(entry.name) - 1;
+            const char* end_symbol = entry.name + strlen(entry.name) - 1;
             if (*end_symbol != _DELIMITER)
             {
                 // const char* entry_begin = entry.name+base_len;
@@ -1737,7 +1764,7 @@ bool CLocatorAPI::dir_delete(pcstr initial, pcstr nm, bool remove_files)
     files_set::reverse_iterator r_it = folders.rbegin();
     for (; r_it != folders.rend(); ++r_it)
     {
-        const char* end_symbol = r_it->name + xr_strlen(r_it->name) - 1;
+        const char* end_symbol = r_it->name + strlen(r_it->name) - 1;
         if (*end_symbol == _DELIMITER)
         {
             _rmdir(r_it->name);
@@ -1927,7 +1954,7 @@ void CLocatorAPI::rescan_path(pcstr full_path, bool bRecurse)
     if (I == m_files.end())
         return;
 
-    size_t base_len = xr_strlen(full_path);
+    size_t base_len = strlen(full_path);
     for (; I != m_files.end();)
     {
         files_it cur_item = I;
@@ -1989,7 +2016,7 @@ bool CLocatorAPI::can_write_to_folder(pcstr path)
     {
         string_path temp;
         pcstr fn = "$!#%TEMP%#!$.$$$";
-        strconcat(sizeof temp, temp, path, path[xr_strlen(path) - 1] != _DELIMITER ? DELIMITER : "", fn);
+        strconcat(sizeof temp, temp, path, path[strlen(path) - 1] != _DELIMITER ? DELIMITER : "", fn);
         FILE* hf = fopen(temp, "wb");
         if (hf == nullptr)
             return false;
@@ -2052,7 +2079,7 @@ CLocatorAPI::archive_file_header::archive_file_header(IWriter& writer,
       crc(crc_sum),
       ptr(pointer)
 {
-    const size_t file_name_size = (xr_strlen(file_name) + 0) * sizeof(char);
+    const size_t file_name_size = (strlen(file_name) + 0) * sizeof(char);
     const size_t buffer_size = file_name_size + ELEMENTS_SIZE;
     VERIFY(buffer_size <= size_t(u16(-1)));
     size = u16(buffer_size);

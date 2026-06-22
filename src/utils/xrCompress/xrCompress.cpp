@@ -14,7 +14,7 @@ bool is_tail(LPCSTR name, LPCSTR tail, const u32 tlen)
     if (!p)
         return false;
 
-    const u32 nlen = xr_strlen(name);
+    const u32 nlen = strlen(name);
     return (p == name + nlen - tlen);
 }
 
@@ -508,7 +508,7 @@ void xrCompressor::ProcessLTX(CInifile& ltx)
             string_path path;
             const LPCSTR _path = 0 == xr_strcmp(it.first.c_str(), ".\\") ? "" : it.first.c_str();
             xr_strcpy(path, _path);
-            const size_t path_len = xr_strlen(path);
+            const size_t path_len = strlen(path);
             if ((0 != path_len) && (path[path_len - 1] != '\\'))
                 xr_strcat(path, "\\");
 

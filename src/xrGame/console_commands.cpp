@@ -316,8 +316,8 @@ public:
 
         float v = Level().GetGameTimeFactor();
         xr_sprintf(S, sizeof(S), "%3.5f", v);
-        while (xr_strlen(S) && ('0' == S[xr_strlen(S) - 1]))
-            S[xr_strlen(S) - 1] = 0;
+        while (strlen(S) && ('0' == S[strlen(S) - 1]))
+            S[strlen(S) - 1] = 0;
     }
     virtual void Info(TInfo& I)
     {
@@ -579,7 +579,7 @@ public:
 bool valid_saved_game_name(LPCSTR file_name)
 {
     LPCSTR I = file_name;
-    LPCSTR E = file_name + xr_strlen(file_name);
+    LPCSTR E = file_name + strlen(file_name);
     for (; I != E; ++I)
     {
         if (!strchr("/" DELIMITER ":*?\"<>|^()[]%", *I))
@@ -606,7 +606,7 @@ void get_files_list(std::vector<shared_str>& files, LPCSTR dir, LPCSTR file_ext)
 
     FS_FileSet files_set;
     FS.file_list(files_set, dir, FS_ListFiles, fext);
-    u32 len_str_ext = xr_strlen(file_ext);
+    u32 len_str_ext = strlen(file_ext);
 
     auto itb = files_set.begin();
     auto ite = files_set.end();
@@ -614,9 +614,9 @@ void get_files_list(std::vector<shared_str>& files, LPCSTR dir, LPCSTR file_ext)
     for (; itb != ite; ++itb)
     {
         LPCSTR fn_ext = (*itb).name.c_str();
-        VERIFY(xr_strlen(fn_ext) > len_str_ext);
+        VERIFY(strlen(fn_ext) > len_str_ext);
         string_path fn;
-        strncpy_s(fn, sizeof(fn), fn_ext, xr_strlen(fn_ext) - len_str_ext);
+        strncpy_s(fn, sizeof(fn), fn_ext, strlen(fn_ext) - len_str_ext);
         files.push_back(fn);
     }
     FS.m_Flags.set(CLocatorAPI::flNeedCheck, FALSE);
@@ -657,7 +657,7 @@ public:
         CTimer timer;
         timer.Start();
 #endif
-        if (!xr_strlen(S))
+        if (!strlen(S))
         {
             strconcat(sizeof(S), S, Core.UserName, " - ", "quicksave");
             NET_Packet net_packet;
@@ -727,7 +727,7 @@ public:
             return;
         }
 
-        if (!xr_strlen(saved_game))
+        if (!strlen(saved_game))
         {
             Log("! Specify file name!");
             return;
@@ -1099,7 +1099,7 @@ public:
     virtual void Execute(LPCSTR args)
     {
         string128 param1, param2;
-        VERIFY(xr_strlen(args) < sizeof(string128));
+        VERIFY(strlen(args) < sizeof(string128));
 
         _GetItem(args, 0, param1, ' ');
         _GetItem(args, 1, param2, ' ');
@@ -1131,7 +1131,7 @@ public:
     virtual void Execute(LPCSTR args)
     {
         string128 param1, param2;
-        VERIFY(xr_strlen(args) < sizeof(string128));
+        VERIFY(strlen(args) < sizeof(string128));
 
         _GetItem(args, 0, param1, ' ');
         _GetItem(args, 1, param2, ' ');
@@ -1216,8 +1216,8 @@ public:
             xr_sprintf(S, "%3.5f", physics_world()->Gravity());
         else
             xr_sprintf(S, "%3.5f", default_world_gravity);
-        while (xr_strlen(S) && ('0' == S[xr_strlen(S) - 1]))
-            S[xr_strlen(S) - 1] = 0;
+        while (strlen(S) && ('0' == S[strlen(S) - 1]))
+            S[strlen(S) - 1] = 0;
     }
 };
 #endif // DEBUG
@@ -1354,7 +1354,7 @@ public:
     CCC_Script(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = false; };
     virtual void Execute(LPCSTR args)
     {
-        if (!xr_strlen(args))
+        if (!strlen(args))
         {
             Log("* Specify script name!");
         }
@@ -1381,7 +1381,7 @@ public:
     CCC_ScriptCommand(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = false; bLowerCaseArgs = false; }
     virtual void Execute(LPCSTR args)
     {
-        if (!xr_strlen(args))
+        if (!strlen(args))
             Log("* Specify string to run!");
         else
         {
@@ -1394,7 +1394,7 @@ public:
             string4096 S;
             shared_str m_script_name = "console command";
             xr_sprintf(S, "%s\n", args);
-            int l_iErrorCode = luaL_loadbuffer(GEnv.ScriptEngine->lua(), S, xr_strlen(S), "@console_command");
+            int l_iErrorCode = luaL_loadbuffer(GEnv.ScriptEngine->lua(), S, strlen(S), "@console_command");
             if (!l_iErrorCode)
             {
                 l_iErrorCode = lua_pcall(GEnv.ScriptEngine->lua(), 0, 0, 0);
@@ -1485,7 +1485,7 @@ public:
     virtual void Execute(LPCSTR args)
     {
         bool bWhatToDo = TRUE;
-        if (0 == xr_strlen(args))
+        if (0 == strlen(args))
         {
             bWhatToDo = !MainMenu()->IsActive();
         };

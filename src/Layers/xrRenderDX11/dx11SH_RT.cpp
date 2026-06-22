@@ -200,7 +200,7 @@ void CRT::create(LPCSTR Name, u32 w, u32 h, D3DFORMAT f, u32 SampleCount /*= 1*/
         {
             char name[128];
             xr_sprintf(name, "%s:all", Name);
-            dsv_all->SetPrivateData(WKPDID_D3DDebugObjectName, xr_strlen(name), name);
+            dsv_all->SetPrivateData(WKPDID_D3DDebugObjectName, strlen(name), name);
         }
 #endif
 
@@ -222,7 +222,7 @@ void CRT::create(LPCSTR Name, u32 w, u32 h, D3DFORMAT f, u32 SampleCount /*= 1*/
             {
                 char name[128];
                 xr_sprintf(name, "%s:s%d", Name, idx);
-                dsv_per_slice[idx]->SetPrivateData(WKPDID_D3DDebugObjectName, xr_strlen(name), name);
+                dsv_per_slice[idx]->SetPrivateData(WKPDID_D3DDebugObjectName, strlen(name), name);
             }
 #endif
         }

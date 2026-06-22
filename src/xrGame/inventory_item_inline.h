@@ -19,7 +19,7 @@ IC bool CInventoryItem::process_if_exists(
         return false;
     }
     pcstr str = pSettings->r_string(section, name);
-    if (!str || !xr_strlen(str))
+    if (!str || !strlen(str))
     {
         return false;
     }
@@ -40,7 +40,7 @@ IC bool CInventoryItem::process_if_exists_set(
         return false;
     }
     pcstr str = pSettings->r_string(section, name);
-    if (!str || !xr_strlen(str))
+    if (!str || !strlen(str))
     {
         return false;
     }

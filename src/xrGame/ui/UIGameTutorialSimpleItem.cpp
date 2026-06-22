@@ -212,7 +212,7 @@ void CUISequenceSimpleItem::Update()
             s.Stop();
     }
 
-    if (g_pGameLevel && 0 == xr_strlen(m_pda_section))
+    if (g_pGameLevel && 0 == strlen(m_pda_section))
     {
         CUIGameSP* ui_game_sp = smart_cast<CUIGameSP*>(CurrentGameUI());
 

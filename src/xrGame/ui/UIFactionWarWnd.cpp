@@ -260,13 +260,13 @@ bool CUIFactionWarWnd::InitFactions()
     {
         return false;
     }
-    u32   size_temp   = (xr_strlen(vs_teams) + 1) * sizeof(char);
+    u32   size_temp   = (strlen(vs_teams) + 1) * sizeof(char);
     PSTR  our_fract   = (PSTR)xr_alloca( size_temp );
     PSTR  enemy_fract = (PSTR)xr_alloca( size_temp );
     _GetItem( vs_teams, 0, our_fract );
     _GetItem( vs_teams, 1, enemy_fract );
 
-    if ( xr_strlen(our_fract) == 0 || xr_strlen(enemy_fract) == 0 )
+    if ( strlen(our_fract) == 0 || strlen(enemy_fract) == 0 )
     {
         return false;
     }*/
@@ -300,7 +300,7 @@ void CUIFactionWarWnd::UpdateInfo()
     m_target_desc->SetWndPos( pos );
     m_target_desc->SetText( m_our_faction.get_target_desc() );
 
-    if ( m_enemy_faction.get_faction_id2().size() == 0 || m_our_faction.member_count == 0 || xr_strlen( m_our_faction.get_name() )==0 )
+    if ( m_enemy_faction.get_faction_id2().size() == 0 || m_our_faction.member_count == 0 || strlen( m_our_faction.get_name() )==0 )
     {
         ShowInfo( false );
         return;

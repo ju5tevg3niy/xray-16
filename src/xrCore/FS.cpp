@@ -1,9 +1,22 @@
-#include "stdafx.h"
-#pragma hdrstop
-
-#include "FS_internal.h"
+#include "FS.h"
+#include <cstdarg>
+#include <cstdio>
+#include <cstring>
+#include <string>
+#include <tuple>
+#include "Common/FSMacros.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
 #include "FS_impl.h"
-
+#include "FS_internal.h"
+#include "LocatorAPI.h"
+#include "Math/vector3.hpp"
+#include "lzhuf.h"
+#include "stdafx.h"
+#include "xrDebug.h"
+#include "xrDebug_macros.h"
+#include "xrMemory.h"
+#include "xrstring.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #include <io.h>
 #include <direct.h>
@@ -286,7 +299,7 @@ void IWriter::VPrintf(const char* format, va_list args)
 {
     char buf[1024];
     std::vsnprintf(buf, sizeof(buf), format, args);
-    w(buf, xr_strlen(buf));
+    w(buf, strlen(buf));
 }
 
 //---------------------------------------------------
@@ -419,7 +432,7 @@ void IReader::r_string(std::string& dest)
 void IReader::r_stringZ(char* dest, size_t tgt_sz)
 {
     char* src = (char*)data;
-    size_t sz = xr_strlen(src);
+    size_t sz = strlen(src);
     R_ASSERT2(sz < tgt_sz, "Dest string less than needed.");
     while ((src[Pos] != 0) && (!eof()))
         *dest++ = src[Pos++];

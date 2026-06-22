@@ -61,7 +61,7 @@ void manager::load()
 
     for (const auto& i : *file_list)
     {
-        u32 length = xr_strlen(i);
+        u32 length = strlen(i);
         if (length <= 4)
             continue;
 

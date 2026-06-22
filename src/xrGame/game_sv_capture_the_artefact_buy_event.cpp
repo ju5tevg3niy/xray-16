@@ -116,7 +116,7 @@ bool game_sv_CaptureTheArtefact::CanChargeFreeAmmo(char const* ammo_section)
     if (!ammo_section)
         return true;
 
-    if (!xr_strlen(ammo_section))
+    if (!strlen(ammo_section))
         return true;
 
     if (strstr(m_not_free_ammo_str.c_str(), ammo_section))

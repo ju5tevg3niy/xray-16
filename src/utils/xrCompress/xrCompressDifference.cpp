@@ -101,7 +101,7 @@ int ProcessDifference()
     }
 
     sscanf(strstr(params, "-diff ") + 6, "%[^ ] ", new_folder);
-    sscanf(strstr(params, "-diff ") + 6 + xr_strlen(new_folder) + 1, "%[^ ] ", old_folder);
+    sscanf(strstr(params, "-diff ") + 6 + strlen(new_folder) + 1, "%[^ ] ", old_folder);
     sscanf(strstr(params, "-out ") + 5, "%[^ ] ", target_folder);
 
     if (strstr(params, "-nofileage"))

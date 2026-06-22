@@ -142,7 +142,7 @@ void gen_logo_name(string_path& dest, pcstr level_name, int num = -1)
 {
     strconcat(sizeof(dest), dest, "intro" DELIMITER "intro_", level_name);
 
-    const auto len = xr_strlen(dest);
+    const auto len = strlen(dest);
     if (dest[len - 1] == _DELIMITER)
         dest[len - 1] = 0;
 

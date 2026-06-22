@@ -398,7 +398,7 @@ IPureServer::EConnect IPureServer::Connect(pcstr options, GameDescriptionData& g
         dpAppDesc.dwApplicationReservedDataSize = sizeof(game_descr);
 
         WCHAR SessionPasswordUNICODE[4096];
-        if (xr_strlen(password_str))
+        if (strlen(password_str))
         {
             CHK_DX(MultiByteToWideChar(CP_ACP, 0, password_str, -1, SessionPasswordUNICODE, 4096));
             dpAppDesc.dwFlags |= DPNSESSION_REQUIREPASSWORD;
@@ -819,7 +819,7 @@ bool IPureServer::DisconnectClient(IClient* C)
         return false;
 
     string64 Reason = "st_kicked_by_server";
-    HRESULT res = NET->DestroyClient(C->ID.value(), Reason, xr_strlen(Reason) + 1, 0);
+    HRESULT res = NET->DestroyClient(C->ID.value(), Reason, strlen(Reason) + 1, 0);
     CHK_DX(res);
     return true;
 }
@@ -830,7 +830,7 @@ bool IPureServer::DisconnectClient(IClient* C, pcstr Reason)
     if (!C)
         return false;
 
-    HRESULT res = NET->DestroyClient(C->ID.value(), Reason, xr_strlen(Reason) + 1, 0);
+    HRESULT res = NET->DestroyClient(C->ID.value(), Reason, strlen(Reason) + 1, 0);
     CHK_DX(res);
     return true;
 }

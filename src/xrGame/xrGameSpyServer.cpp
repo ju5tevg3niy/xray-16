@@ -292,7 +292,7 @@ void xrGameSpyServer::GetServerInfo(CServerInfo* si)
     }
     else
     {
-        if (xr_strlen(res) == 0)
+        if (strlen(res) == 0)
             xr_strcat(res, "free");
     }
     si->AddItem("Access to server", res, RGB(200, 155, 155));

@@ -20,7 +20,7 @@ pstr _TrimLeft(pstr str, char whatToTrim /*= ' '*/)
 
 pstr _TrimRight(pstr str, char whatToTrim /*= ' '*/)
 {
-    pstr p = str + xr_strlen(str);
+    pstr p = str + strlen(str);
     while ((p != str) && (u8(*p) <= u8(whatToTrim)))
         p--;
     *(++p) = 0;
@@ -51,7 +51,7 @@ pcstr _CopyVal(pcstr src, pstr dst, char separator)
     pcstr p;
     size_t n;
     p = strchr(src, separator);
-    n = (p != nullptr) ? (p - src) : xr_strlen(src);
+    n = (p != nullptr) ? (p - src) : strlen(src);
     strncpy(dst, src, n);
     dst[n] = 0;
     return dst;
@@ -72,7 +72,7 @@ int _GetItemCount(pcstr src, char separator)
             if (res[0] == separator)
                 break;
         }
-        if (xr_strlen(last_res))
+        if (strlen(last_res))
             cnt++;
     }
     return cnt;
@@ -280,7 +280,7 @@ void _SequenceToList(std::vector<pstr>& lst, pcstr in, char separator)
     {
         _GetItem(in, i, T, separator, 0);
         _Trim(T);
-        if (xr_strlen(T) != 0)
+        if (strlen(T) != 0)
             lst.push_back(xr_strdup(T));
     }
 }
@@ -364,7 +364,7 @@ pcstr _CopyVal(pcstr src, std::string& dst, char separator)
     pcstr p;
     std::ptrdiff_t n;
     p = strchr(src, separator);
-    n = (p != nullptr) ? (p - src) : xr_strlen(src);
+    n = (p != nullptr) ? (p - src) : strlen(src);
     dst = src;
     dst = dst.erase(n, dst.length());
     return dst.c_str();

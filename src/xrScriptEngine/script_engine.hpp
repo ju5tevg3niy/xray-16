@@ -175,8 +175,8 @@ public:
 
             auto [logHeader, luaLogHeader] = get_message_headers(message);
             Log(logHeader, log);
-            m_output.w(luaLogHeader, xr_strlen(luaLogHeader));
-            m_output.w(log, xr_strlen(log));
+            m_output.w(luaLogHeader, strlen(luaLogHeader));
+            m_output.w(log, strlen(log));
             m_output.w("\r\n", sizeof("\r\n"));
         }
 

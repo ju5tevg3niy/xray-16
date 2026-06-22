@@ -41,7 +41,7 @@ CALifeSimulator::CALifeSimulator(IPureServer* server, shared_str* command_line)
     typedef IGame_Persistent::params params;
     params& p = g_pGamePersistent->m_game_params;
 
-    R_ASSERT2(xr_strlen(p.m_game_or_spawn) && !xr_strcmp(p.m_alife, "alife") && !xr_strcmp(p.m_game_type, "single"),
+    R_ASSERT2(strlen(p.m_game_or_spawn) && !xr_strcmp(p.m_alife, "alife") && !xr_strcmp(p.m_game_type, "single"),
         "Invalid server options!");
 
     string256 temp;

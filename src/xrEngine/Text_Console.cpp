@@ -230,13 +230,13 @@ void CTextConsole::DrawLog(HDC hDC, RECT* pRect)
     pcstr s_edt = ec().str_edit();
     pcstr s_cur = ec().str_before_cursor();
 
-    u32 cur_len = xr_strlen(s_cur) + xr_strlen(ch_cursor) + 1;
+    u32 cur_len = strlen(s_cur) + strlen(ch_cursor) + 1;
     PSTR buf = (PSTR)xr_alloca(cur_len * sizeof(char));
     xr_strcpy(buf, cur_len, s_cur);
     xr_strcat(buf, cur_len, ch_cursor);
     buf[cur_len - 1] = 0;
 
-    u32 cur0_len = xr_strlen(s_cur);
+    u32 cur0_len = strlen(s_cur);
 
     int xb = 25;
 
@@ -248,10 +248,10 @@ void CTextConsole::DrawLog(HDC hDC, RECT* pRect)
     TextOut(hDC, xb, Height - tm.tmHeight - 1, buf, cur0_len);
 
     SetTextColor(hDC, RGB(255, 255, 255));
-    TextOut(hDC, 0, Height - tm.tmHeight - 3, ioc_prompt, xr_strlen(ioc_prompt)); // ">>> "
+    TextOut(hDC, 0, Height - tm.tmHeight - 3, ioc_prompt, strlen(ioc_prompt)); // ">>> "
 
     SetTextColor(hDC, (COLORREF)bgr2rgb(get_mark_color(mark11)));
-    TextOut(hDC, xb, Height - tm.tmHeight - 3, s_edt, xr_strlen(s_edt));
+    TextOut(hDC, xb, Height - tm.tmHeight - 3, s_edt, strlen(s_edt));
 
     SetTextColor(hDC, RGB(205, 205, 225));
     u32 log_line = LogFile.size() - 1;
@@ -260,7 +260,7 @@ void CTextConsole::DrawLog(HDC hDC, RECT* pRect)
     xr_strcpy(q2, sizeof(q2), "[");
     xr_strcat(q2, sizeof(q2), q);
     xr_strcat(q2, sizeof(q2), "]");
-    u32 qn = xr_strlen(q2);
+    u32 qn = strlen(q2);
 
     TextOut(hDC, Width - 8 * qn, Height - tm.tmHeight - tm.tmHeight, q2, qn);
 
@@ -284,7 +284,7 @@ void CTextConsole::DrawLog(HDC hDC, RECT* pRect)
         u8 b = (is_mark(cm)) ? 2 : 0;
         pcstr pOut = ls + b;
 
-        bool res = !!TextOut(hDC, 10, ypos, pOut, xr_strlen(pOut));
+        bool res = !!TextOut(hDC, 10, ypos, pOut, strlen(pOut));
         if (!res)
         {
             R_ASSERT2(0, "TextOut(..) return NULL");
@@ -303,7 +303,7 @@ void CTextConsole::DrawLog(HDC hDC, RECT* pRect)
     for (u32 i = 0; i < m_server_info.Size(); ++i)
     {
         SetTextColor(hDC, m_server_info[i].color);
-        TextOut(hDC, 10, ypos, m_server_info[i].name, xr_strlen(m_server_info[i].name));
+        TextOut(hDC, 10, ypos, m_server_info[i].name, strlen(m_server_info[i].name));
 
         ypos += tm.tmHeight;
         if (ypos > y_top_max)

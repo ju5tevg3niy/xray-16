@@ -726,7 +726,7 @@ void CUIGameCTA::ShowBuySpawn(s32 spawn_cost)
 
     LPCSTR format_str = StringTable().translate("mp_press_yes2pay").c_str();
     VERIFY(format_str);
-    size_t pay_frm_size = xr_strlen(format_str) * sizeof(char) + 64;
+    size_t pay_frm_size = strlen(format_str) * sizeof(char) + 64;
     PSTR pay_frm_str = static_cast<char*>(xr_alloca(pay_frm_size));
 
     xr_sprintf(pay_frm_str, pay_frm_size, format_str, abs(Game().local_player->money_for_round), abs(spawn_cost));

@@ -319,7 +319,7 @@ void __cdecl login_manager::wslogin_cb(GHTTPResult httpResult, WSLoginResponse* 
 
 void login_manager::save_email_to_registry(char const* email)
 {
-    if (!email || (xr_strlen(email) == 0))
+    if (!email || (strlen(email) == 0))
     {
         Msg("! ERROR: email is empty");
         return;
@@ -339,7 +339,7 @@ static const u32 pass_key_seed = 0x07071984;
 void login_manager::save_password_to_registry(char const* password)
 {
     using namespace secure_messaging;
-    if (!password || (xr_strlen(password) == 0))
+    if (!password || (strlen(password) == 0))
     {
         Msg("! ERROR: password is empty");
         return;
@@ -347,7 +347,7 @@ void login_manager::save_password_to_registry(char const* password)
 
     secure_messaging::key_t pass_key;
     generate_key(pass_key_seed, pass_key);
-    u32 buffer_size = xr_strlen(password) + 1;
+    u32 buffer_size = strlen(password) + 1;
     u8* buffer = static_cast<u8*>(xr_alloca(buffer_size));
     xr_strcpy((char*)buffer, buffer_size, password);
     buffer[buffer_size - 1] = 0;

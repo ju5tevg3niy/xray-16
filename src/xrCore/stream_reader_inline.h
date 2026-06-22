@@ -1,6 +1,11 @@
-#ifndef STREAM_READER_INLINE_H
-#define STREAM_READER_INLINE_H
-
+#pragma once
+#include <cstddef>
+#include <cstdint>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrDebug_macros.h"
+#include "stream_reader.h"
+#include "xrMemory.h"
 #if defined(XR_PLATFORM_POSIX)
 #include <sys/mman.h>
 #endif
@@ -48,5 +53,3 @@ IC void CStreamReader::close()
     CStreamReader* self = this;
     xr_delete(self);
 }
-
-#endif // STREAM_READER_INLINE_H

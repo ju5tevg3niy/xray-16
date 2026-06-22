@@ -42,7 +42,7 @@ struct logical_string_predicate
         VERIFY(buffer);
         VERIFY(buffer_size);
 
-        u32 cCharacters = xr_strlen(pszA) + 1;
+        u32 cCharacters = strlen(pszA) + 1;
         VERIFY(cCharacters * 2 <= buffer_size);
 
         if (MultiByteToWideChar(CP_ACP, 0, pszA, cCharacters, (LPOLESTR)buffer, cCharacters))
@@ -53,11 +53,11 @@ struct logical_string_predicate
 
     bool operator()(LPCSTR const& first, LPCSTR const& second) const
     {
-        u32 buffer_size0 = (xr_strlen(first) + 1) * 2;
+        u32 buffer_size0 = (strlen(first) + 1) * 2;
         LPCWSTR buffer0 = (LPCWSTR)xr_alloca(buffer_size0);
         AnsiToUnicode(first, (LPVOID)buffer0, buffer_size0);
 
-        u32 buffer_size1 = (xr_strlen(second) + 1) * 2;
+        u32 buffer_size1 = (strlen(second) + 1) * 2;
         LPCWSTR buffer1 = (LPCWSTR)xr_alloca(buffer_size1);
         AnsiToUnicode(second, (LPVOID)buffer1, buffer_size1);
 

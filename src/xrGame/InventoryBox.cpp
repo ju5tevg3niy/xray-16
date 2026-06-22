@@ -122,7 +122,7 @@ void CInventoryBox::set_closed(bool status, LPCSTR reason)
 {
     m_closed = status;
 
-    if (reason && xr_strlen(reason))
+    if (reason && strlen(reason))
     {
         set_tip_text(reason);
     }

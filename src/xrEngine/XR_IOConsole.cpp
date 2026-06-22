@@ -420,7 +420,7 @@ void CConsole::IR_OnTextInput(pcstr text)
 
 void CConsole::ExecuteCommand(pcstr cmd_str, bool record_cmd)
 {
-    u32 str_size = xr_strlen(cmd_str);
+    u32 str_size = strlen(cmd_str);
     pstr edt = (pstr)xr_alloca((str_size + 1) * sizeof(char));
     pstr first = (pstr)xr_alloca((str_size + 1) * sizeof(char));
     pstr last = (pstr)xr_alloca((str_size + 1) * sizeof(char));
@@ -554,7 +554,7 @@ void CConsole::SelectCommand()
 void CConsole::Execute(pcstr cmd) { ExecuteCommand(cmd, false); }
 void CConsole::ExecuteScript(pcstr str)
 {
-    u32 str_size = xr_strlen(str);
+    u32 str_size = strlen(str);
     pstr buf = (pstr)xr_alloca((str_size + 10) * sizeof(char));
     xr_strcpy(buf, str_size + 10, "cfg_load ");
     xr_strcat(buf, str_size + 10, str);
@@ -567,7 +567,7 @@ IConsole_Command* CConsole::find_next_cmd(pcstr in_str, shared_str& out_str)
 {
     pcstr radmin_cmd_name = "ra ";
     bool b_ra = (in_str == strstr(in_str, radmin_cmd_name));
-    u32 offset = (b_ra) ? xr_strlen(radmin_cmd_name) : 0;
+    u32 offset = (b_ra) ? strlen(radmin_cmd_name) : 0;
 
     pstr t2;
     STRCONCAT(t2, in_str + offset, " ");
@@ -577,7 +577,7 @@ IConsole_Command* CConsole::find_next_cmd(pcstr in_str, shared_str& out_str)
     {
         IConsole_Command* cc = it->second;
         pcstr name_cmd = cc->Name();
-        u32 name_cmd_size = xr_strlen(name_cmd);
+        u32 name_cmd_size = strlen(name_cmd);
         pstr new_str = (pstr)xr_alloca((offset + name_cmd_size + 2) * sizeof(char));
 
         xr_strcpy(new_str, offset + name_cmd_size + 2, (b_ra) ? radmin_cmd_name : "");
@@ -639,7 +639,7 @@ bool CConsole::add_internal_cmds(pcstr in_str, vecTipsEx& out_v)
     {
         return false;
     }
-    u32 in_sz = xr_strlen(in_str);
+    u32 in_sz = strlen(in_str);
 
     bool res = false;
     // word in begin
@@ -647,7 +647,7 @@ bool CConsole::add_internal_cmds(pcstr in_str, vecTipsEx& out_v)
 
     for (const auto [name, command] : Console->Commands)
     {
-        u32 name_sz = xr_strlen(name);
+        u32 name_sz = strlen(name);
         if (name_sz >= in_sz)
         {
             name2.assign(name, in_sz);
@@ -680,8 +680,8 @@ bool CConsole::add_internal_cmds(pcstr in_str, vecTipsEx& out_v)
             const bool dup = (std::find(out_v.begin(), out_v.end(), temp) != out_v.end());
             if (!dup)
             {
-                u32 name_sz = xr_strlen(name);
-                int fd_sz = name_sz - xr_strlen(fd_str);
+                u32 name_sz = strlen(name);
+                int fd_sz = name_sz - strlen(fd_str);
                 out_v.emplace_back(temp, fd_sz, fd_sz + in_sz);
                 res = true;
             }
@@ -707,7 +707,7 @@ void CConsole::update_tips()
     }
 
     pcstr cur = m_edit_string;
-    u32 cur_length = xr_strlen(cur);
+    u32 cur_length = strlen(cur);
 
     if (cur_length == 0)
     {
@@ -725,7 +725,7 @@ void CConsole::update_tips()
     pstr last = (pstr)xr_alloca((cur_length + 1) * sizeof(char));
     text_editor::split_cmd(first, last, cur);
 
-    u32 first_lenght = xr_strlen(first);
+    u32 first_lenght = strlen(first);
 
     if ((first_lenght > 2) && (first_lenght + 1 <= cur_length)) // param
     {
@@ -791,8 +791,8 @@ void CConsole::select_for_filter(pcstr filter_str, const vecTips& in_v, vecTipsE
     if (in_count == 0 || !filter_str)
         return;
 
-    const bool all = xr_strlen(filter_str) == 0;
-    const size_t filter_str_len = xr_strlen(filter_str);
+    const bool all = strlen(filter_str) == 0;
+    const size_t filter_str_len = strlen(filter_str);
 
     for (const auto& str : in_v)
     {
@@ -802,7 +802,7 @@ void CConsole::select_for_filter(pcstr filter_str, const vecTips& in_v, vecTipsE
         {
             if (cpcstr fd_str = strstr(str.c_str(), filter_str))
             {
-                size_t fd_sz = str.size() - xr_strlen(fd_str);
+                size_t fd_sz = str.size() - strlen(fd_str);
                 out_v.emplace_back(str, fd_sz, fd_sz + filter_str_len);
             }
         }

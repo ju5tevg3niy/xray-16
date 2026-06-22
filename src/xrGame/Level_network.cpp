@@ -485,7 +485,7 @@ void CLevel::OnConnectResult(NET_Packet* P)
         break;
         case ecr_have_been_banned:
         {
-            if (!xr_strlen(ResultStr))
+            if (!strlen(ResultStr))
             {
                 MainMenu()->OnSessionTerminate(StringTable().translate("st_you_have_been_banned").c_str());
             }
@@ -497,7 +497,7 @@ void CLevel::OnConnectResult(NET_Packet* P)
         break;
         case ecr_profile_error:
         {
-            if (!xr_strlen(ResultStr))
+            if (!strlen(ResultStr))
             {
                 MainMenu()->OnSessionTerminate(StringTable().translate("st_profile_error").c_str());
             }

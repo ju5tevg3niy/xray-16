@@ -146,7 +146,7 @@ void CUIDragDropReferenceList::ReloadReferences(CInventoryOwner* pActor)
         {
             CUIStatic* ref = m_references[cellsCapacity.x * j + i];
             LPCSTR item_name = ACTOR_DEFS::g_quick_use_slots[cellsCapacity.x * j + i];
-            if (item_name && xr_strlen(item_name))
+            if (item_name && strlen(item_name))
             {
                 PIItem itm = pActor->inventory().GetAny(item_name);
                 if (itm)

@@ -294,7 +294,7 @@ void CInifileEx::Load(IReader* F, LPCSTR path)
                             strcat_s(value_raw, sizeof(value_raw), "\r\n");
                             string4096 str_add_raw;
                             F->r_string(str_add_raw, sizeof(str_add_raw));
-                            R_ASSERT2(xr_strlen(value_raw) + xr_strlen(str_add_raw) < sizeof(value_raw),
+                            R_ASSERT2(strlen(value_raw) + strlen(str_add_raw) < sizeof(value_raw),
                                 make_string("Incorrect inifile format: section[%s], variable[%s]. Odd number of quotes "
                                             "(\") found, but "
                                             "should be even.",
@@ -491,7 +491,7 @@ shared_str CInifileEx::r_string_wb(LPCSTR S, LPCSTR L)
 
     string4096 _original;
     strcpy_s(_original, _base);
-    u32 _len = xr_strlen(_original);
+    u32 _len = strlen(_original);
     if (0 == _len)
         return shared_str("");
     if ('"' == _original[_len - 1])
@@ -611,7 +611,7 @@ Fvector4 CInifileEx::r_fvector4(LPCSTR S, LPCSTR L)
 BOOL CInifileEx::r_bool(LPCSTR S, LPCSTR L)
 {
     LPCSTR C = r_string(S, L);
-    VERIFY2(xr_strlen(C) <= 5, make_string("\"%s\" is not a valid bool value, section[%s], line[%s]", C, S, L));
+    VERIFY2(strlen(C) <= 5, make_string("\"%s\" is not a valid bool value, section[%s], line[%s]", C, S, L));
     char B[8];
     strncpy(B, C, 7);
     B[7] = 0;

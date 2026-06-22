@@ -318,7 +318,7 @@ void CLevel::ClientReceive()
             {
                 string256 saved_name;
                 P->r_stringZ_s(saved_name);
-                if (xr_strlen(saved_name) && ai().get_alife())
+                if (strlen(saved_name) && ai().get_alife())
                 {
                     CSavedGameWrapper wrapper(saved_name);
                     if (wrapper.level_id() == ai().level_graph().level_id())

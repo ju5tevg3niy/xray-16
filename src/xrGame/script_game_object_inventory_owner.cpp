@@ -133,7 +133,7 @@ void _give_news(LPCSTR caption, LPCSTR text, LPCSTR texture_name, int delay, int
     if (show_time != 0)
         news_data.show_time = show_time; // override default
 
-    VERIFY(xr_strlen(texture_name) > 0);
+    VERIFY(strlen(texture_name) > 0);
 
     news_data.texture_name = texture_name;
 

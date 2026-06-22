@@ -165,7 +165,7 @@ void CDemoPlay::stat_Stop()
     {
         string_path fname;
 
-        if (xr_strlen(g_sBenchmarkName))
+        if (strlen(g_sBenchmarkName))
             xr_sprintf(fname, sizeof(fname), "%s.result", g_sBenchmarkName);
         else
             xr_strcpy(fname, sizeof(fname), "benchmark.result");

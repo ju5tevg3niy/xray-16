@@ -73,7 +73,7 @@ type_motion* type_motion::setup(IKinematicsAnimated* k, CInifile const* ini, LPC
 #endif
             return this;
         }
-        R_ASSERT(xr_strlen(line) < 1023);
+        R_ASSERT(strlen(line) < 1023);
         const int num = _GetItemCount(line, '/');
 #ifdef DEBUG
         if (death_anim_debug && num == 0)

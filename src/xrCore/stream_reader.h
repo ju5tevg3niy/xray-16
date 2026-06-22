@@ -1,4 +1,11 @@
 #pragma once
+#include <cstddef>
+#include <cstdint>
+#include "Common/Noncopyable.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "FS.h"
+#include "xrstring.h"
 
 class CStreamReader : public IReaderBase<CStreamReader>, Noncopyable
 {

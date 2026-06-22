@@ -641,7 +641,7 @@ T* CResourceManager::CreateShader(cpcstr name, pcstr filename /*= nullptr*/, u32
                 filename = name;
 
             pcstr pchr = strchr(filename, '(');
-            ptrdiff_t size = pchr ? pchr - filename : xr_strlen(filename);
+            ptrdiff_t size = pchr ? pchr - filename : strlen(filename);
             strncpy(shName, filename, size);
             shName[size] = 0;
         }

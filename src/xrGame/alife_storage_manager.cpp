@@ -36,7 +36,7 @@ void CALifeStorageManager::save(LPCSTR save_name_no_check, bool update_name)
 
     string_path save_name;
     strncpy_s(save_name, sizeof(save_name), save_name_no_check,
-        sizeof(save_name) - 5 - xr_strlen(gameSaveExtension) - xr_strlen(game_saves_path));
+        sizeof(save_name) - 5 - strlen(gameSaveExtension) - strlen(game_saves_path));
 
     xr_strcpy(g_last_saved_game, save_name);
 
@@ -48,7 +48,7 @@ void CALifeStorageManager::save(LPCSTR save_name_no_check, bool update_name)
     }
     else
     {
-        if (!xr_strlen(m_save_name))
+        if (!strlen(m_save_name))
         {
             Log("There is no file name specified!");
             return;
@@ -161,7 +161,7 @@ bool CALifeStorageManager::load(LPCSTR save_name_no_check)
 
     string_path save_name;
     strncpy_s(save_name, sizeof(save_name), save_name_no_check,
-        sizeof(save_name) - 5 - xr_strlen(gameSaveExtension) - xr_strlen(game_saves_path));
+        sizeof(save_name) - 5 - strlen(gameSaveExtension) - strlen(game_saves_path));
 
     CTimer timer;
     timer.Start();
@@ -170,7 +170,7 @@ bool CALifeStorageManager::load(LPCSTR save_name_no_check)
     xr_strcpy(saveBackup, m_save_name);
     if (!save_name[0])
     {
-        if (!xr_strlen(m_save_name))
+        if (!strlen(m_save_name))
         {
             Log("There is no file name specified!");
             return false;

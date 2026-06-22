@@ -405,7 +405,7 @@ void CUIHudStatesWnd::UpdateActiveItemInfo(CActor* actor)
                 }
                 else
                 {
-                    if (xr_strlen(temp) > 5)
+                    if (strlen(temp) > 5)
                     {
                         pFont = pFont22;
                     }

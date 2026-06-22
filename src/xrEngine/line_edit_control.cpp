@@ -275,7 +275,7 @@ void line_edit_control::clear_inserted() { m_inserted[0] = m_inserted[1] = 0; m_
 bool line_edit_control::empty_inserted() const { return m_inserted_pos == 0; }
 void line_edit_control::set_edit(pcstr str)
 {
-    size_t str_size = xr_strlen(str);
+    size_t str_size = strlen(str);
     clamp<size_t>(str_size, 0, m_buffer_size - 1);
     strncpy_s(m_edit_str, m_buffer_size, str, str_size);
     m_edit_str[str_size] = 0;
@@ -477,7 +477,7 @@ void line_edit_control::update_bufs()
     m_buf2[0] = 0;
     m_buf3[0] = 0;
 
-    const size_t edit_size = xr_strlen(m_edit_str);
+    const size_t edit_size = strlen(m_edit_str);
     const u8 ds = (m_cursor_view && m_insert_mode && m_p2 < edit_size) ? 1 : 0;
     strncpy_s(m_buf0, m_buffer_size, m_edit_str, m_cur_pos);
     strncpy_s(m_buf1, m_buffer_size, m_edit_str, m_p1);
@@ -497,7 +497,7 @@ void line_edit_control::add_inserted_text()
         return;
     }
 
-    const size_t old_edit_size = xr_strlen(m_edit_str);
+    const size_t old_edit_size = strlen(m_edit_str);
     for (size_t i = 0; i < old_edit_size; ++i)
     {
         if ((m_edit_str[i] == '\n') || (m_edit_str[i] == '\t'))
@@ -511,11 +511,11 @@ void line_edit_control::add_inserted_text()
     strncpy_s(buf, m_buffer_size, m_edit_str, m_p1); // part 1
     strncpy_s(m_undo_buf, m_buffer_size, m_edit_str + m_p1, m_p2 - m_p1);
 
-    size_t new_size = xr_strlen(m_inserted);
+    size_t new_size = strlen(m_inserted);
     if (m_buffer_size - 1 < m_p1 + new_size)
     {
         m_inserted[m_buffer_size - 1 - m_p1] = 0;
-        new_size = xr_strlen(m_inserted);
+        new_size = strlen(m_inserted);
     }
     strncpy_s(buf + m_p1, m_buffer_size - m_p1, m_inserted, _min(new_size, m_buffer_size - m_p1)); // part 2
 
@@ -542,7 +542,7 @@ void line_edit_control::copy_to_clipboard()
     {
         return;
     }
-    const size_t edit_len = xr_strlen(m_edit_str);
+    const size_t edit_len = strlen(m_edit_str);
     auto buf = (pstr)xr_alloca((edit_len + 1) * sizeof(char));
     strncpy_s(buf, edit_len + 1, m_edit_str + m_p1, m_p2 - m_p1);
     buf[edit_len] = 0;
@@ -553,7 +553,7 @@ void line_edit_control::copy_to_clipboard()
 void line_edit_control::paste_from_clipboard()
 {
     os_clipboard::paste_from_clipboard(m_inserted, m_buffer_size - 1);
-    m_inserted_pos += xr_strlen(m_inserted);
+    m_inserted_pos += strlen(m_inserted);
 }
 void line_edit_control::cut_to_clipboard()
 {
@@ -572,7 +572,7 @@ void line_edit_control::undo_buf()
 void line_edit_control::select_all_buf()
 {
     m_select_start = 0;
-    m_cur_pos = xr_strlen(m_edit_str);
+    m_cur_pos = strlen(m_edit_str);
     m_mark = false;
 }
 
@@ -582,7 +582,7 @@ void line_edit_control::delete_selected_forward() { delete_selected(false); }
 void line_edit_control::delete_selected(bool back)
 {
     clamp_cur_pos();
-    const size_t edit_len = xr_strlen(m_edit_str);
+    const size_t edit_len = strlen(m_edit_str);
     if (edit_len > 0)
     {
         if (back)
@@ -628,7 +628,7 @@ void line_edit_control::delete_word_forward()
 }
 
 void line_edit_control::move_pos_home() { m_cur_pos = 0; }
-void line_edit_control::move_pos_end() { m_cur_pos = xr_strlen(m_edit_str); }
+void line_edit_control::move_pos_end() { m_cur_pos = strlen(m_edit_str); }
 void line_edit_control::move_pos_left()
 {
     if (m_cur_pos > 0)
@@ -656,7 +656,7 @@ void line_edit_control::move_pos_left_word()
 
 void line_edit_control::move_pos_right_word()
 {
-    const size_t edit_len = xr_strlen(m_edit_str);
+    const size_t edit_len = strlen(m_edit_str);
     size_t i = m_cur_pos + 1;
 
     while (i < edit_len && !terminate_char(m_edit_str[i], true))
@@ -686,7 +686,7 @@ void line_edit_control::compute_positions()
         m_p2 = m_select_start;
 }
 
-void line_edit_control::clamp_cur_pos() { clamp<size_t>(m_cur_pos, 0, xr_strlen(m_edit_str)); }
+void line_edit_control::clamp_cur_pos() { clamp<size_t>(m_cur_pos, 0, strlen(m_edit_str)); }
 void line_edit_control::SwitchKL()
 {
     cpcstr hint = SDL_GetHint(SDL_HINT_GRAB_KEYBOARD);
@@ -702,7 +702,7 @@ void line_edit_control::SwitchKL()
 
 void remove_spaces(pstr str)
 {
-    const size_t str_size = xr_strlen(str);
+    const size_t str_size = strlen(str);
     if (str_size < 1)
     {
         return;
@@ -743,7 +743,7 @@ void split_cmd(pstr first, pstr second, pcstr str)
     first[0] = 0;
     second[0] = 0;
 
-    const size_t str_size = xr_strlen(str);
+    const size_t str_size = strlen(str);
     if (str_size < 1)
         return;
 

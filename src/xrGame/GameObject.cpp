@@ -704,7 +704,7 @@ void CGameObject::spawn_supplies()
 
     for (u32 k = 0, j; spawn_ini()->r_line("spawn", k, &N, &V); k++)
     {
-        VERIFY(xr_strlen(N));
+        VERIFY(strlen(N));
         if (!pSettings->section_exist(N)) //Alundaio: Validate section exists
             continue;
 
@@ -712,7 +712,7 @@ void CGameObject::spawn_supplies()
         p = 1.f;
 
         float f_cond = 1.0f;
-        if (V && xr_strlen(V))
+        if (V && strlen(V))
         {
             int n = _GetItemCount(V);
             string16 temp;

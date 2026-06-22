@@ -397,7 +397,7 @@ bool allow_game_intro()
 
 void CGamePersistent::start_logo_intro()
 {
-    const bool notLoadingLevel = xr_strlen(m_game_params.m_game_or_spawn) == 0 && g_pGameLevel == nullptr;
+    const bool notLoadingLevel = strlen(m_game_params.m_game_or_spawn) == 0 && g_pGameLevel == nullptr;
     if (!allow_intro())
     {
         m_intro_event = nullptr;

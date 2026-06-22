@@ -198,7 +198,7 @@ public:
             if (I[0])
                 xr_strcat(I, "/");
 
-            const auto name_size = (std::intptr_t)xr_strlen(tok->name);
+            const auto name_size = (std::intptr_t)strlen(tok->name);
             if (name_size > available_size)
             {
                 if (available_size >= 3)
@@ -267,8 +267,8 @@ public:
     virtual void GetStatus(TStatus& S)
     {
         xr_sprintf(S, sizeof(S), "%3.5f", *value);
-        while (xr_strlen(S) && ('0' == S[xr_strlen(S) - 1]))
-            S[xr_strlen(S) - 1] = 0;
+        while (strlen(S) && ('0' == S[strlen(S) - 1]))
+            S[strlen(S) - 1] = 0;
     }
     virtual void Info(TInfo& I) { xr_sprintf(I, sizeof(I), "float value in range [%3.3f,%3.3f]", min, max); }
     virtual void fill_tips(vecTips& tips, u32 mode)

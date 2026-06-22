@@ -400,7 +400,7 @@ bool IPureClient::Connect(pcstr options)
             }
 
             //WCHAR SessionPasswordUNICODE[4096];
-            //if (xr_strlen(password_str)) {
+            //if (strlen(password_str)) {
             //}
 
             net_csEnumeration->Enter();

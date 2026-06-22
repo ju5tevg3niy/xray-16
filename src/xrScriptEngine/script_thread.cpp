@@ -46,7 +46,7 @@ CScriptThread::CScriptThread(CScriptEngine* scriptEngine, LPCSTR caNamespaceName
         {
             m_script_name = "console command";
             xr_sprintf(S, "function %s()\n%s\nend\n", main_function, caNamespaceName);
-            int l_iErrorCode = luaL_loadbuffer(engineLua, S, xr_strlen(S), "@console_command");
+            int l_iErrorCode = luaL_loadbuffer(engineLua, S, strlen(S), "@console_command");
             if (!l_iErrorCode)
             {
                 l_iErrorCode = lua_pcall(engineLua, 0, 0, 0);
@@ -78,7 +78,7 @@ CScriptThread::CScriptThread(CScriptEngine* scriptEngine, LPCSTR caNamespaceName
             xr_sprintf(S, "%s.main()", caNamespaceName);
         else
             xr_sprintf(S, "%s()", main_function);
-        if (!scriptEngine->load_buffer(lua(), S, xr_strlen(S), "@_thread_main"))
+        if (!scriptEngine->load_buffer(lua(), S, strlen(S), "@_thread_main"))
             return;
         m_active = true;
     }

@@ -315,7 +315,7 @@ void CUIActorStaticticHeader::Init(CUIXml* xml, LPCSTR path, int idx_in_xml)
 #ifndef PRIQUEL
     m_id = xml->ReadAttrib(xml->GetLocalRoot(), "id", nullptr);
 #else
-    pcstr _id = strstr(path, "master_part_") + xr_strlen("master_part_");
+    pcstr _id = strstr(path, "master_part_") + strlen("master_part_");
     m_id = _id;
 #endif
 

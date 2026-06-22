@@ -401,7 +401,7 @@ public:
         string_path name;
         name[0] = 0;
         sscanf(args, "%s", name);
-        LPCSTR image = xr_strlen(name) ? name : 0;
+        LPCSTR image = strlen(name) ? name : 0;
         RImplementation.Screenshot(IRender::SM_NORMAL, image);
     }
 };

@@ -22,7 +22,7 @@ public:
         xr_strcpy(str, arguments);
 
         u32 const max_name_length = GP_UNIQUENICK_LEN - 1;
-        if (xr_strlen(str) > max_name_length)
+        if (strlen(str) > max_name_length)
             str[max_name_length] = 0;
 
         CCC_String::Execute(str);

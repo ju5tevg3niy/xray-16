@@ -327,7 +327,7 @@ bool CDbgLuaHelper::Eval(const char* szCode, char* szRet, int szret_size)
 {
     CoverGlobals();
     int top = lua_gettop(L);
-    int status = luaL_loadbuffer(L, szCode, xr_strlen(szCode), szCode);
+    int status = luaL_loadbuffer(L, szCode, strlen(szCode), szCode);
     if (status)
         xr_sprintf(szRet, szret_size, "%s", luaL_checkstring(L, -1));
     else

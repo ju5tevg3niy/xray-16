@@ -1,8 +1,14 @@
-#ifndef FS_internalH
-#define FS_internalH
 #pragma once
-
+#include <cerrno>
+#include <cstddef>
+#include <cstdio>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "FS.h"
+#include "log.h"
 #include "lzhuf.h"
+#include "xrDebug_macros.h"
+#include "xrMemory.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #include <io.h>
 #endif
@@ -157,5 +163,3 @@ public:
     CVirtualFileReader(pcstr cFileName);
     ~CVirtualFileReader() override;
 };
-
-#endif

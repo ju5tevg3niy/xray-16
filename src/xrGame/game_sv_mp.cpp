@@ -694,7 +694,7 @@ void game_sv_mp::SetSkin(CSE_Abstract* E, u16 Team, u16 ID)
     };
     xr_strcat(SkinName, ".ogf");
     Msg("* Skin - %s", SkinName);
-    int len = xr_strlen(SkinName);
+    int len = strlen(SkinName);
     R_ASSERT2(len < 64, "Skin Name is too LONG!!!");
     pV->set_visual(SkinName);
     //-------------------------------------------
@@ -994,14 +994,14 @@ _votecommands votecommands[] =
 
 s32 game_sv_mp::ExcludeBanTimeFromVoteStr(char const* vote_string, char* new_vote_str, u32 new_vote_str_size)
 {
-    if (!vote_string || !xr_strlen(vote_string))
+    if (!vote_string || !strlen(vote_string))
         return 0;
 
     s32 ret_time = 0;
     strncpy_s(new_vote_str, new_vote_str_size, vote_string, new_vote_str_size - 1);
-    new_vote_str[xr_strlen(vote_string)] = 0;
+    new_vote_str[strlen(vote_string)] = 0;
     char* start_time_str = strrchr(new_vote_str, ' ');
-    if (!start_time_str || !xr_strlen(++start_time_str))
+    if (!start_time_str || !strlen(++start_time_str))
         return 0;
     ret_time = atoi(start_time_str);
     *(start_time_str - 1) = 0;
@@ -1019,10 +1019,10 @@ void game_sv_mp::OnVoteStart(LPCSTR VoteCommand, ClientID sender)
     string1024 resVoteCommand = "";
 
     sscanf(VoteCommand, "%255s ", CommandName);
-    u32 tmp_command_len = xr_strlen(CommandName) + 1; // + ' '
-    if ((tmp_command_len < 256) && (tmp_command_len < xr_strlen(VoteCommand)))
+    u32 tmp_command_len = strlen(CommandName) + 1; // + ' '
+    if ((tmp_command_len < 256) && (tmp_command_len < strlen(VoteCommand)))
     {
-        strncpy_s(CommandParams, VoteCommand + xr_strlen(CommandName) + 1, 255);
+        strncpy_s(CommandParams, VoteCommand + strlen(CommandName) + 1, 255);
         CommandParams[255] = 0;
     }
 
@@ -2077,7 +2077,7 @@ void game_sv_mp::StartToDumpStatistics()
     if (!g_sv_mp_iDumpStatsPeriod)
         return;
 
-    if (xr_strlen(round_statistics_dump_fn))
+    if (strlen(round_statistics_dump_fn))
     {
         StopToDumpStatistics();
     }
@@ -2094,7 +2094,7 @@ void game_sv_mp::StartToDumpStatistics()
 
 void game_sv_mp::StopToDumpStatistics()
 {
-    if (xr_strlen(round_statistics_dump_fn))
+    if (strlen(round_statistics_dump_fn))
     {
         remove(round_statistics_dump_fn);
     }
@@ -2106,7 +2106,7 @@ void game_sv_mp::DumpRoundStatistics()
 {
     if (!g_sv_mp_iDumpStatsPeriod)
         return;
-    if (!xr_strlen(round_statistics_dump_fn))
+    if (!strlen(round_statistics_dump_fn))
         return;
 
     CInifile ini(round_statistics_dump_fn, FALSE, FALSE, TRUE);
@@ -2227,7 +2227,7 @@ void game_sv_mp::SvSendChatMessage(LPCSTR str)
 
 bool game_sv_mp::IsPlayerBanned(char const* hexstr_digest, shared_str& by_who)
 {
-    if (!hexstr_digest || !xr_strlen(hexstr_digest))
+    if (!hexstr_digest || !strlen(hexstr_digest))
         return false;
     return m_cdkey_ban_list.is_player_banned(hexstr_digest, by_who);
 }

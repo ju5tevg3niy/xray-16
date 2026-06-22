@@ -27,7 +27,7 @@ static HRESULT create_shader(DWORD const* buffer, size_t const buffer_size, LPCS
 #ifdef DEBUG
     if (result->sh)
     {
-        result->sh->SetPrivateData(WKPDID_D3DDebugObjectName, xr_strlen(file_name), file_name);
+        result->sh->SetPrivateData(WKPDID_D3DDebugObjectName, strlen(file_name), file_name);
     }
 #endif
 
@@ -164,7 +164,7 @@ class shader_name_holder
 public:
     void append(cpcstr string)
     {
-        const size_t size = xr_strlen(string);
+        const size_t size = strlen(string);
         for (size_t i = 0; i < size; ++i)
         {
             name[pos] = string[i];

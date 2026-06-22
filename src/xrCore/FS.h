@@ -2,6 +2,7 @@
 #include <cstdarg>
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <stack>
 #include <string>
 #include "Common/Platform.hpp"
@@ -14,7 +15,6 @@
 #include "Math/vector2.hpp"
 #include "Math/vector3.hpp"
 #include "Math/vector4.hpp"
-#include "Text/string_funcs_inline.hpp"
 #include "xrDebug_macros.h"
 #include "xrMemory.h"
 #include "xrstring.h"
@@ -66,11 +66,11 @@ public:
     IC void w_float(float d) { w(&d, sizeof(float)); }
     IC void w_string(const char* p)
     {
-        w(p, xr_strlen(p));
+        w(p, strlen(p));
         w_u8(13);
         w_u8(10);
     }
-    IC void w_stringZ(const char* p) { w(p, xr_strlen(p) + 1); }
+    IC void w_stringZ(const char* p) { w(p, strlen(p) + 1); }
     IC void w_stringZ(const shared_str& p)
     {
         w(p.c_str() ? p.c_str() : "", p.size());

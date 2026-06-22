@@ -51,7 +51,7 @@ void ALDeviceList::IterateAndAddDevicesString(pcstr devices)
                 // if new actual device name isn't already in the list, then add it...
                 pcstr actualDeviceName = alcGetString(device, enumerateAllPresent ? ALC_ALL_DEVICES_SPECIFIER : ALC_DEVICE_SPECIFIER);
 
-                if (actualDeviceName != nullptr && xr_strlen(actualDeviceName) > 0)
+                if (actualDeviceName != nullptr && strlen(actualDeviceName) > 0)
                 {
                     int major, minor;
                     alcGetIntegerv(device, ALC_MAJOR_VERSION, sizeof(int), &major);
@@ -74,7 +74,7 @@ void ALDeviceList::IterateAndAddDevicesString(pcstr devices)
             }
             alcCloseDevice(device);
         }
-        devices += xr_strlen(devices) + 1;
+        devices += strlen(devices) + 1;
     }
 }
 

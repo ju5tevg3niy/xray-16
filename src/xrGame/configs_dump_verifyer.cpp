@@ -20,7 +20,7 @@ configs_verifyer::configs_verifyer()
 configs_verifyer::~configs_verifyer() {}
 static char* search_info_section(u8* buffer, u32 buffer_size)
 {
-    u32 sstr_size = xr_strlen(cd_info_secion);
+    u32 sstr_size = strlen(cd_info_secion);
     VERIFY(buffer_size >= sstr_size);
     u8* rbegin = buffer + (buffer_size - sstr_size);
     int r_size = static_cast<int>(buffer_size - sstr_size);
@@ -43,7 +43,7 @@ bool configs_verifyer::verify_dsign(u8* data, u32 data_size, crypto::xr_sha1::ha
         return false;
 
     --tmp_info_sect;
-    u32 tmp_info_sect_size = xr_strlen(tmp_info_sect);
+    u32 tmp_info_sect_size = strlen(tmp_info_sect);
     IReader tmp_reader(tmp_info_sect, tmp_info_sect_size);
     CInifile tmp_ini(&tmp_reader);
 
@@ -67,7 +67,7 @@ bool configs_verifyer::verify_dsign(u8* data, u32 data_size, crypto::xr_sha1::ha
     shared_str tmp_dsign = tmp_ini.r_string(cd_info_secion, cd_digital_sign_key);
 
     xr_strcat(dst_buffer, dst_size, add_str);
-    src_data_size += xr_strlen(dst_buffer) + 1; // zero ending
+    src_data_size += strlen(dst_buffer) + 1; // zero ending
 
     auto hash = m_verifyer.verify(data, src_data_size, tmp_dsign);
     if (!hash)

@@ -1,9 +1,9 @@
 #include "string_conversion.hpp"
 #include <codecvt>
+#include <cstring>
 #include <locale>
 #include <string>
 #include "Common/types.hpp"
-#include "string_funcs_inline.hpp"
 #include "xrCore/xrDebug.h"
 #include "xrCore/xrDebug_macros.h"
 
@@ -170,8 +170,8 @@ std::string StringFromUTF8(const char* in, const std::locale& locale) {
 
 std::string StringToUTF8(const char* in, const std::locale& locale) {
   using wcvt = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>;
-  std::wstring wstr(xr_strlen(in), L'\0');
-  std::use_facet<std::ctype<wchar_t>>(locale).widen(in, in + xr_strlen(in),
+  std::wstring wstr(strlen(in), L'\0');
+  std::use_facet<std::ctype<wchar_t>>(locale).widen(in, in + strlen(in),
                                                     &wstr[0]);
   std::string result = wcvt{}.to_bytes(wstr.data(), wstr.data() + wstr.size());
   return result.data();

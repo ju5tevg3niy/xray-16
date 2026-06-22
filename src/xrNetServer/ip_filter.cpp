@@ -58,7 +58,7 @@ u32 ip_filter::load()
         pcstr address;
         pcstr line;
         ini.r_line(SUBNET_LIST_SECT_NAME, i, &address, &line);
-        if (!xr_strlen(address))
+        if (!strlen(address))
             continue;
 
         subnet_item* tmp_item = xr_new<subnet_item>();

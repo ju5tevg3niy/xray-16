@@ -33,7 +33,7 @@ void gsc_dsigned_ltx_writer::sign_and_save(IWriter& writer)
 
 static char* search_dsign_section(u8* buffer, u32 buffer_size)
 {
-    u32 sstr_size = xr_strlen(dsign_secion);
+    u32 sstr_size = strlen(dsign_secion);
     VERIFY(buffer_size >= sstr_size);
     u8* rbegin = buffer + (buffer_size - sstr_size);
     int r_size = static_cast<int>(buffer_size - sstr_size);
@@ -74,7 +74,7 @@ bool gsc_dsigned_ltx_reader::load_and_verify(u8* buffer, u32 const size)
 
     *dsign_section = 0;
     xr_strcat(dsign_section, dsign_sect_size, ltx_date.c_str());
-    u32 new_size = size - dsign_sect_size + ltx_date.size() + 1; // xr_strlen(buffer)
+    u32 new_size = size - dsign_sect_size + ltx_date.size() + 1; // strlen(buffer)
     if (!verify(buffer, new_size, ltx_dsign))
         return false;
 

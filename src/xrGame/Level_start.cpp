@@ -34,11 +34,11 @@ bool CLevel::net_Start(const char* op_server, const char* op_client)
     string64 player_name;
     GetPlayerName_FromRegistry(player_name, sizeof(player_name));
 
-    if (xr_strlen(player_name) == 0)
+    if (strlen(player_name) == 0)
     {
-        xr_strcpy(player_name, xr_strlen(Core.UserName) ? Core.UserName : Core.CompName);
+        xr_strcpy(player_name, strlen(Core.UserName) ? Core.UserName : Core.CompName);
     }
-    VERIFY(xr_strlen(player_name));
+    VERIFY(strlen(player_name));
 
     // make Client Name if options doesn't have it
     LPCSTR NameStart = strstr(op_client, "/name=");
@@ -53,9 +53,9 @@ bool CLevel::net_Start(const char* op_server, const char* op_client)
     else
     {
         string1024 ret = "";
-        LPCSTR begin = NameStart + xr_strlen("/name=");
+        LPCSTR begin = NameStart + strlen("/name=");
         sscanf(begin, "%[^/]", ret);
-        if (!xr_strlen(ret))
+        if (!strlen(ret))
         {
             string1024 tmpstr;
             xr_strcpy(tmpstr, op_client);
@@ -204,7 +204,7 @@ bool CLevel::net_start3()
     if (strstr(m_caClientOptions.c_str(), "/cdkey="))
     {
         string64 CDKey;
-        const char* start = strstr(m_caClientOptions.c_str(), "/cdkey=") + xr_strlen("/cdkey=");
+        const char* start = strstr(m_caClientOptions.c_str(), "/cdkey=") + strlen("/cdkey=");
         sscanf(start, "%[^/]", CDKey);
         string128 cmd;
         xr_sprintf(cmd, "cdkey %s", xr_strupr(CDKey));

@@ -5,7 +5,7 @@
 #include <regex>
 
 int BindingsDumper::GetIdentSize() const { return options.ShiftWidth * shiftLevel; }
-void BindingsDumper::Print(const char* s) { writer->w(s, xr_strlen(s)); }
+void BindingsDumper::Print(const char* s) { writer->w(s, strlen(s)); }
 void BindingsDumper::Print(const char* s, int len) { writer->w(s, len); }
 void BindingsDumper::Printf(const char* format, ...)
 {

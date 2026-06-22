@@ -176,7 +176,7 @@ void CUICustomEdit::Draw()
         float ui_width = GetWidth();
 
         LPCSTR cursor_str = ec().str_before_cursor();
-        u32 cursor_str_size = xr_strlen(cursor_str);
+        u32 cursor_str_size = strlen(cursor_str);
 
         LPCSTR istr = cursor_str;
         float str_length = font->SizeOf_(istr);
@@ -192,7 +192,7 @@ void CUICustomEdit::Draw()
         }
         istr = cursor_str + ix;
         LPCSTR astr = ec().str_edit() + ix;
-        u32 str_size = xr_strlen(ec().str_edit());
+        u32 str_size = strlen(ec().str_edit());
 
         u32 jx = 1;
         strncpy_s(m_out_str, sizeof(m_out_str), astr, jx);
@@ -266,7 +266,7 @@ void CUICustomEdit::nothing(){};
 
 void CUICustomEdit::press_escape()
 {
-    if (xr_strlen(ec().str_edit()) != 0)
+    if (strlen(ec().str_edit()) != 0)
     {
         if (!m_read_mode)
         {

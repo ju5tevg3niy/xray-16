@@ -9,7 +9,7 @@ static bool process_if_exists_deg2rad(LPCSTR section, LPCSTR name, float& value,
         return false;
     }
     LPCSTR str = pSettings->r_string(section, name);
-    if (!str || !xr_strlen(str))
+    if (!str || !strlen(str))
     {
         return false;
     }

@@ -1,3 +1,5 @@
+#include <cstring>
+
 #include "stdafx.h"
 #pragma hdrstop
 
@@ -399,7 +401,7 @@ void NET_Packet::r_stringZ(pstr S)
     if (!inistream)
     {
         pcstr data = pcstr(&B.data[r_pos]);
-        size_t len = xr_strlen(data);
+        size_t len = strlen(data);
         r(S, (u32)len + 1);
     }
     else
@@ -443,7 +445,7 @@ void NET_Packet::skip_stringZ()
     if (!inistream)
     {
         pcstr data = pcstr(&B.data[r_pos]);
-        u32 len = xr_strlen(data);
+        u32 len = strlen(data);
         r_advance(len + 1);
     }
     else
@@ -480,7 +482,7 @@ void NET_Packet::r_stringZ_s(pstr string, u32 const size)
     }
 
     pcstr data = pcstr(B.data + r_pos);
-    u32 length = xr_strlen(data);
+    u32 length = strlen(data);
     R_ASSERT2((length + 1) <= size, "buffer overrun");
     r(string, length + 1);
 }

@@ -248,7 +248,7 @@ dxRender_Visual* CModelPool::Create(const char* name, IReader* data)
         return 0;
 #endif
     string_path low_name;
-    VERIFY(xr_strlen(name) < sizeof(low_name));
+    VERIFY(strlen(name) < sizeof(low_name));
     xr_strcpy(low_name, name);
     xr_strlwr(low_name);
     if (strext(low_name))
@@ -294,7 +294,7 @@ dxRender_Visual* CModelPool::Create(const char* name, IReader* data)
 dxRender_Visual* CModelPool::CreateChild(LPCSTR name, IReader* data)
 {
     string256 low_name;
-    VERIFY(xr_strlen(name) < 256);
+    VERIFY(strlen(name) < 256);
     xr_strcpy(low_name, name);
     xr_strlwr(low_name);
     if (strext(low_name))

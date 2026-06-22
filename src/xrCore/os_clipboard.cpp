@@ -65,7 +65,7 @@ void os_clipboard::paste_from_clipboard(pstr buffer, size_t buffer_size)
 
     strncpy_s(buffer, buffer_size, string.c_str(), buffer_size - 1);
 
-    const size_t length = xr_strlen(buffer);
+    const size_t length = strlen(buffer);
     for (size_t i = 0; i < length; ++i)
     {
         const char c = buffer[i];
@@ -102,7 +102,7 @@ void os_clipboard::update_clipboard(pcstr string)
     static std::locale locale("");
     const std::string stringInUTF8 = StringToUTF8(string, locale);
 
-    const size_t clipLength = xr_strlen(clipData);
+    const size_t clipLength = strlen(clipData);
     const size_t stringLength = stringInUTF8.size();
 
     const size_t bufferSize = (clipLength + stringLength + 1) * sizeof(char);

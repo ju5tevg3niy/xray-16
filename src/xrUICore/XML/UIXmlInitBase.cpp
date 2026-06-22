@@ -422,10 +422,10 @@ bool CUIXmlInitBase::InitSound(const CUIXml& xml_doc, pcstr path, int index, CUI
     cpcstr sound_h_result = xml_doc.Read(sound_h, index, "");
     cpcstr sound_t_result = xml_doc.Read(sound_t, index, "");
 
-    if (xr_strlen(sound_h_result) != 0)
+    if (strlen(sound_h_result) != 0)
         pWnd->InitSoundH(sound_h_result);
 
-    if (xr_strlen(sound_t_result) != 0)
+    if (strlen(sound_t_result) != 0)
         pWnd->InitSoundT(sound_t_result);
 
     return true;

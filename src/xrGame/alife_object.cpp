@@ -19,7 +19,7 @@ void CSE_ALifeObject::spawn_supplies(LPCSTR ini_string)
     if (!ini_string)
         return;
 
-    if (!xr_strlen(ini_string))
+    if (!strlen(ini_string))
         return;
 
     luabind::functor<bool> funct;
@@ -29,7 +29,7 @@ void CSE_ALifeObject::spawn_supplies(LPCSTR ini_string)
             return;
     }
 
-    IReader reader((void*)ini_string, xr_strlen(ini_string));
+    IReader reader((void*)ini_string, strlen(ini_string));
     CInifile ini(&reader, FS.get_path("$game_config$")->m_Path);
     u8 loadoutIndex = 0;
     string32 loadoutSection = "spawn_loadout";
@@ -64,7 +64,7 @@ void CSE_ALifeObject::spawn_supplies(LPCSTR ini_string)
             s32 sel = Random.randI(0, spawnLoadouts.size());
             if (ini.r_line(loadoutSection, spawnLoadouts.at(sel), &itmSection, &V))
             {
-                VERIFY(xr_strlen(itmSection));
+                VERIFY(strlen(itmSection));
                 if (pSettings->section_exist(itmSection))
                 {
                     u32 spawnCount = 1;
@@ -74,7 +74,7 @@ void CSE_ALifeObject::spawn_supplies(LPCSTR ini_string)
                     float fCond = 1.0f;
                     int iAmmoType = 0, n = 0;
 
-                    if (V && xr_strlen(V))
+                    if (V && strlen(V))
                     {
                         n = _GetItemCount(V);
                         if (n > 0)
@@ -118,7 +118,7 @@ void CSE_ALifeObject::spawn_supplies(LPCSTR ini_string)
                                 if (i == iAmmoType)
                                     break;
                             }
-                            if (xr_strlen(ammoSec) && pSettings->section_exist(ammoSec))
+                            if (strlen(ammoSec) && pSettings->section_exist(ammoSec))
                                 for (u32 i = 1; i <= spawnCount; ++i)
                                     alife().spawn_item(ammoSec, o_Position, m_tNodeID, m_tGraphID, ID);
                         }
@@ -147,7 +147,7 @@ void CSE_ALifeObject::spawn_supplies(LPCSTR ini_string)
         float p;
         for (u32 k = 0, j; ini.r_line("spawn", k, &N, &V); k++)
         {
-            VERIFY(xr_strlen(N));
+            VERIFY(strlen(N));
 
             if (pSettings->section_exist(N)) //Alundaio: verify item section exists!
             {
@@ -159,7 +159,7 @@ void CSE_ALifeObject::spawn_supplies(LPCSTR ini_string)
                 j = 1;
                 p = 1.f;
 
-                if (V && xr_strlen(V))
+                if (V && strlen(V))
                 {
                     string64 buf;
                     j = atoi(_GetItem(V, 0, buf));

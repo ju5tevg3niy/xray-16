@@ -509,7 +509,7 @@ bool IPureServer::DisconnectClient(IClient* C)
     if (!C) return false;
 
     string64 Reason = "st_kicked_by_server";
-    HRESULT res = NET->DestroyClient(C->ID.value(), Reason, xr_strlen(Reason) + 1, 0);
+    HRESULT res = NET->DestroyClient(C->ID.value(), Reason, strlen(Reason) + 1, 0);
     CHK_DX(res);
     return true;
 }

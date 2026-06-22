@@ -12,10 +12,6 @@ IC char* strext(const char* S) {
   return (char*)strrchr(S, '.');
 }
 
-IC size_t xr_strlen(const char* S) {
-  return strlen(S);
-}
-
 #ifndef MASTER_GOLD
 
 inline int xr_strcpy(pstr destination,
@@ -59,7 +55,7 @@ inline int xr_strcpy(pstr destination,
 }
 
 inline int xr_strcat(pstr destination, size_t const buffer_size, pcstr source) {
-  size_t const destination_length = xr_strlen(destination);
+  size_t const destination_length = strlen(destination);
   pstr i = destination + destination_length;
   pstr const e = destination + buffer_size - 1;
   if (i > e)

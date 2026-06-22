@@ -484,7 +484,7 @@ public:
     {
         if (0 != xr_strcmp(value, val))
         {
-            xr_strcpy(value, xr_strlen(val) + 1, val);
+            xr_strcpy(value, strlen(val) + 1, val);
             return true;
         }
         return false;

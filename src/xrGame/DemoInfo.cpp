@@ -145,7 +145,7 @@ void demo_info::load_from_game()
     m_game_type = GameTypeToString(tmp_game->Type(), true);
     string32 tmp_score_dest;
     m_game_score = tmp_game->GetGameScore(tmp_score_dest);
-    if (tmp_game->local_player && (xr_strlen(tmp_game->local_player->getName()) > 0))
+    if (tmp_game->local_player && (strlen(tmp_game->local_player->getName()) > 0))
     {
         m_author_name = tmp_game->local_player->getName();
     }

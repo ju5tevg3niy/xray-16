@@ -922,7 +922,7 @@ void WeaponUsageStatistic::SVUpdateAliveTimes()
             game_PlayerState* ps = tmp_client->ps;
             if (ps && !ps->testFlag(GAME_PLAYER_FLAG_VERY_VERY_DEAD))
             {
-                if (xr_strlen(ps->getName()))
+                if (strlen(ps->getName()))
                 {
                     Player_Statistic& pstat = *(owner.FindPlayer(ps->getName()));
                     u8 team = owner.ConvertToTeamIndex(ps->team);
@@ -975,7 +975,7 @@ void WeaponUsageStatistic::OnUpdateRequest(NET_Packet*)
     statistic_sync_quard syncg(m_mutex);
 
     game_PlayerState* local_player = Game().local_player;
-    if (!xr_strlen(local_player->getName()))
+    if (!strlen(local_player->getName()))
         return;
 
     Player_Statistic& PS = *(FindPlayer(local_player->getName()));

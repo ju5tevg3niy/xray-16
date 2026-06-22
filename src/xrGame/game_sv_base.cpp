@@ -185,7 +185,7 @@ s32 game_sv_GameState::get_option_i(LPCSTR lst, LPCSTR name, s32 def)
     string64 op;
     strconcat(sizeof(op), op, "/", name, "=");
     if (strstr(lst, op))
-        return atoi(strstr(lst, op) + xr_strlen(op));
+        return atoi(strstr(lst, op) + strlen(op));
     else
         return def;
 }
@@ -199,10 +199,10 @@ float game_sv_GameState::get_option_f(LPCSTR lst, LPCSTR name, float def)
     if (found)
     {
         float val;
-        [[maybe_unused]] int cnt = sscanf(found + xr_strlen(op), "%f", &val);
+        [[maybe_unused]] int cnt = sscanf(found + strlen(op), "%f", &val);
         VERIFY(cnt == 1);
         return val;
-        //.		return atoi	(strstr(lst,op)+xr_strlen(op));
+        //.		return atoi	(strstr(lst,op)+strlen(op));
     }
     else
         return def;
@@ -217,7 +217,7 @@ string64& game_sv_GameState::get_option_s(LPCSTR lst, LPCSTR name, LPCSTR def)
     LPCSTR start = strstr(lst, op);
     if (start)
     {
-        LPCSTR begin = start + xr_strlen(op);
+        LPCSTR begin = start + strlen(op);
         sscanf(begin, "%[^/]", ret);
     }
     else
@@ -445,7 +445,7 @@ void game_sv_GameState::Create(shared_str& options)
     if (strstr(Core.Params, svcfg_ltx_name))
     {
         string_path svcfg_name = "";
-        int sz = xr_strlen(svcfg_ltx_name);
+        int sz = strlen(svcfg_ltx_name);
         sscanf(strstr(Core.Params, svcfg_ltx_name) + sz, "%[^ ] ", svcfg_name);
         //		if (FS.exist(svcfg_name))
         {
@@ -1050,7 +1050,7 @@ shared_str game_sv_GameState::parse_level_version(const shared_str& server_optio
     string128 result_version;
     if (map_ver)
     {
-        map_ver += xr_strlen(map_ver_string);
+        map_ver += strlen(map_ver_string);
         if (strchr(map_ver, '/'))
             strncpy_s(result_version, map_ver, strchr(map_ver, '/') - map_ver);
         else
@@ -1209,7 +1209,7 @@ bool game_sv_GameState::FindPlayerName(char const* name, IClient const* to_exclu
 
 void game_sv_GameState::GenerateNewName(char const* old_name, char* dest, u32 const dest_size)
 {
-    u32 old_name_size = xr_strlen(old_name);
+    u32 old_name_size = strlen(old_name);
     R_ASSERT(old_name && old_name_size);
 
     static char const suffix_symbol = '#';
@@ -1251,7 +1251,7 @@ void game_sv_GameState::CheckPlayerName(xrClientData* CL)
         current_name = CL->name.c_str();
         CL->ps->m_account.set_player_name(current_name);
     }
-    u32 current_name_length = xr_strlen(current_name);
+    u32 current_name_length = strlen(current_name);
 
     u32 new_name_dest_size = current_name_length + 16;
     char* new_name_dest = static_cast<char*>(xr_alloca(new_name_dest_size));

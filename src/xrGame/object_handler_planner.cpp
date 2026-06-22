@@ -508,7 +508,7 @@ LPCSTR CObjectHandlerPlanner::property2string(const _condition_type& id)
     }
     case ObjectHandlerSpace::eWorldPropertyItemID:
     {
-        m_temp_string[xr_strlen(m_temp_string) - 1] = 0;
+        m_temp_string[strlen(m_temp_string) - 1] = 0;
         break;
     }
     default: NODEFAULT;

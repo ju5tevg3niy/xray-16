@@ -430,7 +430,7 @@ bool CUITalkWnd::OnControllerAction(int axis, const ControllerAxisState& state, 
 
 void CUITalkWnd::PlaySnd(LPCSTR text)
 {
-    u32 text_len = xr_strlen(text);
+    u32 text_len = strlen(text);
     if (text_len == 0)
     {
         return;
@@ -440,15 +440,15 @@ void CUITalkWnd::PlaySnd(LPCSTR text)
 
     LPCSTR path = "characters_voice" DELIMITER "dialogs" DELIMITER;
     LPCSTR ext = ".ogg";
-    u32 tsize = sizeof(fn) - xr_strlen(path) - xr_strlen(ext) - 1;
+    u32 tsize = sizeof(fn) - strlen(path) - strlen(ext) - 1;
     if (text_len > tsize)
     {
         text_len = tsize;
     }
 
-    strncpy_s(fn, sizeof(fn), path, xr_strlen(path));
+    strncpy_s(fn, sizeof(fn), path, strlen(path));
     strncat_s(fn, sizeof(fn), text, text_len);
-    strncat_s(fn, sizeof(fn), ext, xr_strlen(ext));
+    strncat_s(fn, sizeof(fn), ext, strlen(ext));
 
     //	strconcat( sizeof(fn), fn, "characters_voice" DELIMITER "dialogs" DELIMITER, text2, ".ogg" );
 

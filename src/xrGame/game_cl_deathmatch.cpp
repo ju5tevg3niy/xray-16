@@ -133,7 +133,7 @@ void game_cl_Deathmatch::net_import_state(NET_Packet& P)
     case GAME_PHASE_PLAYER_SCORES:
     {
         P.r_stringZ(WinnerName);
-        bool NeedSndMessage = (xr_strlen(WinnerName) != 0);
+        bool NeedSndMessage = (strlen(WinnerName) != 0);
         if (NeedSndMessage && local_player && !xr_strcmp(WinnerName, local_player->getName()))
         {
             PlaySndMessage(ID_YOU_WON);
@@ -823,7 +823,7 @@ void game_cl_Deathmatch::OnVoteStart(NET_Packet& P)
             xr_sprintf(NewCmd, "%s %s", st.translate("mp_kick").c_str(), CmdParams[0]);
             for (size_t i = 1; i < MAX_VOTE_PARAMS; i++)
             {
-                if (xr_strlen(CmdParams[i]))
+                if (strlen(CmdParams[i]))
                 {
                     xr_strcat(NewCmd, " ");
                     xr_strcat(NewCmd, CmdParams[i]);
@@ -835,7 +835,7 @@ void game_cl_Deathmatch::OnVoteStart(NET_Packet& P)
             xr_sprintf(NewCmd, "%s %s", st.translate("mp_ban").c_str(), CmdParams[0]);
             for (size_t i = 1; i < MAX_VOTE_PARAMS; i++)
             {
-                if (xr_strlen(CmdParams[i]))
+                if (strlen(CmdParams[i]))
                 {
                     xr_strcat(NewCmd, " ");
                     xr_strcat(NewCmd, CmdParams[i]);

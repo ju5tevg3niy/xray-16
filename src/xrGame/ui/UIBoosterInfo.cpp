@@ -216,7 +216,7 @@ void UIBoosterInfoItem::Init(CUIXml& xml, LPCSTR section)
     m_unit_str._set(StringTable().translate(unit_str));
 
     LPCSTR texture_minus = xml.Read("texture_minus", 0, "");
-    if (texture_minus && xr_strlen(texture_minus))
+    if (texture_minus && strlen(texture_minus))
     {
         m_texture_minus._set(texture_minus);
 

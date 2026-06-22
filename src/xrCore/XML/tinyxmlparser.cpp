@@ -515,7 +515,7 @@ const char* TiXmlBase::GetEntity(const char* p, char* value, int* length, TiXmlE
     {
         if (strncmp(entity[i].str, p, entity[i].strLength) == 0)
         {
-            assert(xr_strlen(entity[i].str) == entity[i].strLength);
+            assert(strlen(entity[i].str) == entity[i].strLength);
             *value = entity[i].chr;
             *length = 1;
             return (p + entity[i].strLength);
@@ -620,7 +620,7 @@ const char* TiXmlBase::ReadText(const char* p, TIXML_STRING* text, bool trimWhit
         }
     }
     if (p)
-        p += xr_strlen(endTag);
+        p += strlen(endTag);
     return p;
 }
 
@@ -1292,7 +1292,7 @@ const char* TiXmlComment::Parse(TiXmlDocument* document, const char* p, TiXmlPar
         document->SetError(TIXML_ERROR_PARSING_COMMENT, p, data, encoding);
         return 0;
     }
-    p += xr_strlen(startTag);
+    p += strlen(startTag);
 
     // [ 1475201 ] TinyXML parses entities in comments
     // Oops - ReadText doesn't work, because we don't want to parse the entities.
@@ -1320,7 +1320,7 @@ const char* TiXmlComment::Parse(TiXmlDocument* document, const char* p, TiXmlPar
         ++p;
     }
     if (p)
-        p += xr_strlen(endTag);
+        p += strlen(endTag);
 
     return p;
 }
@@ -1431,7 +1431,7 @@ const char* TiXmlText::Parse(TiXmlDocument* document, const char* p, TiXmlParsin
             document->SetError(TIXML_ERROR_PARSING_CDATA, p, data, encoding);
             return 0;
         }
-        p += xr_strlen(startTag);
+        p += strlen(startTag);
 
         // Keep all the white space, ignore the encoding, etc.
         while (p && *p && !StringEqual(p, endTag, false, encoding))

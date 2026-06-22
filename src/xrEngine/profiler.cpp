@@ -58,7 +58,7 @@ IC	u32 compute_string_length		(pcstr str)
 		j = i					= i + 1;
 		++count;
 	}
-	return						(count*xr_strlen(indent) + xr_strlen(j));
+	return						(count*strlen(indent) + strlen(j));
 }
 
 IC	void CProfiler::convert_string	(pcstr str, shared_str &out, u32 max_string_size)
@@ -74,7 +74,7 @@ IC	void CProfiler::convert_string	(pcstr str, shared_str &out, u32 max_string_si
 	for (u32 k = 0; k<count; ++k)
 		xr_strcat					(m_temp,indent);
 	xr_strcat						(m_temp,j);
-	count						= xr_strlen(m_temp);
+	count						= strlen(m_temp);
 	for ( ; count < max_string_size; ++count)
 		m_temp[count]			= white_character;
 	m_temp[max_string_size]		= 0;
