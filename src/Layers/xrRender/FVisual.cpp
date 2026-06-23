@@ -1,6 +1,5 @@
+#include "xrCore/Utils/destructor.hpp"
 #include "stdafx.h"
-#pragma hdrstop
-
 #include "xrCore/FMesh.hpp"
 #include "FVisual.h"
 #include "Layers/xrRender/BufferUtils.h"

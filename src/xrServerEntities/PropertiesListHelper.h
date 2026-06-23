@@ -1,11 +1,8 @@
-//---------------------------------------------------------------------------
-#ifndef PropertiesListHelperH
-#define PropertiesListHelperH
+#pragma once
+#include "xrCore/Text/xr_rtoken.hpp"
 
-// refs
 class ListItem;
 
-//---------------------------------------------------------------------------
 class CPropHelper : public IPropHelper
 {
     PropItem* CreateItem(PropItemVec& items, const shared_str& key, EPropType type, u32 item_flags = 0);
@@ -103,5 +100,3 @@ public:
         PropItemVec& items, shared_str key, u32* val, const TokenValueSH::Item* lst, u32 cnt);
     virtual CTextValue* CreateTexture(PropItemVec& items, shared_str key, pstr val, u32 sz);
 };
-//---------------------------------------------------------------------------
-#endif

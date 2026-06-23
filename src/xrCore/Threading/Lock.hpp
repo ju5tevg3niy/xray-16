@@ -2,6 +2,8 @@
 #include <atomic>
 
 #ifdef CONFIG_PROFILE_LOCKS
+#include "xrCore/Text/string_macro_utils.hpp"
+
 typedef void (*add_profile_portion_callback)(pcstr id, const u64& time);
 void set_add_profile_portion(add_profile_portion_callback callback);
 

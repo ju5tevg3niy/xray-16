@@ -1,6 +1,5 @@
+#include "xrCore/Utils/destructor.hpp"
 #include "stdafx.h"
-#pragma hdrstop
-
 #include "Motion.hpp"
 #include "xrCore/Animation/Envelope.hpp"
 

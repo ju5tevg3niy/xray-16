@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 #pragma once
-#include "xrCore/intrusive_ptr.h"
+#include "xrCore/Utils/intrusive_ptr.hpp"
 #include "xrEngine/Render.h"
 
 namespace xray::render::RENDER_NAMESPACE

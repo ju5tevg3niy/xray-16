@@ -5,8 +5,8 @@
 //  Author      : Oles Shyshkovtsov, Alexander Maksimchuk, Victor Reutskiy and Dmitriy Iassenev
 //  Description : Server objects for ALife simulator
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
+#include "xrCore/Text/xr_rtoken.hpp"
 
 #include "xrServer_Objects.h"
 #include "alife_space.h"

@@ -211,13 +211,6 @@ target_sources_grouped(
 
 target_sources_grouped(
     TARGET xrCore
-    NAME "intrusive_ptr"
-    FILES
-    intrusive_ptr.h
-)
-
-target_sources_grouped(
-    TARGET xrCore
     NAME "Kernel"
     FILES
     FTimer.cpp
@@ -232,21 +225,10 @@ target_sources_grouped(
 
 target_sources_grouped(
     TARGET xrCore
-    NAME "Math"
-    FILES
-)
-
-target_sources_grouped(
-    TARGET xrCore
     NAME "Math\\Extensions"
     FILES
-    #ChooseTypes.H
-    #client_id.h
-    fastdelegate.h
     xr_token.cpp
-    xr_token.h
     xr_trims.cpp
-    xr_trims.h
 )
 
 target_sources_grouped(

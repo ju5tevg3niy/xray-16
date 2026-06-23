@@ -1,3 +1,7 @@
+#pragma once
+#include <cstddef>
+#include "Common/Platform.hpp"
+
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: intrusive_ptr.h
 //	Created 	: 30.07.2004
@@ -5,8 +9,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Intrusive pointer template
 ////////////////////////////////////////////////////////////////////////////
-
-#pragma once
 
 struct intrusive_base
 {

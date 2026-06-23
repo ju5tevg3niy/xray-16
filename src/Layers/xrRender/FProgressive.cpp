@@ -1,10 +1,5 @@
-// FProgressive.cpp: implementation of the FProgressive class.
-//
-//////////////////////////////////////////////////////////////////////
-
+#include "xrCore/Utils/destructor.hpp"
 #include "stdafx.h"
-#pragma hdrstop
-
 #include "xrCore/FMesh.hpp"
 #include "FProgressive.h"
 

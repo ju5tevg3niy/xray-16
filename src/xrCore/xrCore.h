@@ -1,11 +1,5 @@
 #pragma once
 
-#define MACRO_TO_STRING_HELPER(a) #a
-#define MACRO_TO_STRING(a) MACRO_TO_STRING_HELPER(a)
-
-#define CONCATENIZE_HELPER(a, b) a##b
-#define CONCATENIZE(a, b) CONCATENIZE_HELPER(a, b)
-
 #include "xrDebug.h"
 #include "xrMemory.h"
 
@@ -19,19 +13,6 @@
 #include "xr_shared.h"
 #include "string_concatenations.h"
 #include "xrCore/Math/flags.hpp"
-
-// stl ext
-struct xr_rtoken
-{
-    shared_str name;
-    int id;
-
-    xr_rtoken(pcstr _nm, int _id)
-        : name(_nm), id(_id) {}
-
-    void rename(pcstr _nm) { name = _nm; }
-    bool equal(pcstr _nm) const { return (0 == xr_strcmp(name.c_str(), _nm)); }
-};
 
 #include "xr_shortcut.h"
 
@@ -47,24 +28,9 @@ struct xr_rtoken
 #include "FileSystem.h"
 #include "FTimer.h"
 #include "Utils/fastdelegate.hpp"
-#ifdef XR_PLATFORM_WINDOWS
-#include "intrusive_ptr.h"
-#endif
 
 #include "net_utils.h"
 #include "xrCore/Threading/ThreadUtil.hpp"
-
-// destructor
-template <class T>
-class destructor
-{
-    T* ptr;
-
-public:
-    destructor(T* p) { ptr = p; }
-    ~destructor() { xr_delete(ptr); }
-    T& operator()() { return *ptr; }
-};
 
 // ***** The Core definition *****
 class xrCore

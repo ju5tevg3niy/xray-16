@@ -5,9 +5,8 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Restriction space
 ////////////////////////////////////////////////////////////////////////////
-
 #pragma once
-#include "xrCore/intrusive_ptr.h"
+#include "xrCore/Utils/intrusive_ptr.hpp"
 
 namespace RestrictionSpace
 {

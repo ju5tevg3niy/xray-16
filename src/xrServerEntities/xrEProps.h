@@ -1,6 +1,5 @@
 #pragma once
-#ifndef xrEPropsH
-#define xrEPropsH
+#include "xrCore/Text/xr_rtoken.hpp"
 
 #ifdef XR_EPROPS_EXPORTS
 #define XR_EPROPS_API XR_EXPORT
@@ -177,6 +176,4 @@ public:
 
 #ifdef __BORLANDC__
 extern "C" XR_EPROPS_API IListHelper& LHelper();
-#endif
-
 #endif
