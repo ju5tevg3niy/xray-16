@@ -72,7 +72,7 @@ public:
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void SetEmpty()
     {
-        Point p(flt_min, flt_min, flt_min);
+        Point p(-INFINITY, -INFINITY, -INFINITY);
         mMin = -p;
         mMax = p;
     }
@@ -346,7 +346,7 @@ public:
     void SetEmpty()
     {
         mCenter.Zero();
-        mExtents.Set(flt_min, flt_min, flt_min);
+        mExtents.Set(-INFINITY, -INFINITY, -INFINITY);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -577,8 +577,8 @@ inline_ void ComputeAABB(AABB& aabb, const Point* list, udword nbpts)
 {
     if (list)
     {
-        Point Maxi(flt_min, flt_min, flt_min);
-        Point Mini(flt_max, flt_max, flt_max);
+        Point Maxi(-INFINITY, -INFINITY, -INFINITY);
+        Point Mini(+INFINITY, +INFINITY, +INFINITY);
         while (nbpts--)
         {
             ComputeMinMax(*list++, Mini, Maxi);

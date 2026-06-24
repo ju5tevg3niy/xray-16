@@ -1,10 +1,5 @@
 #pragma once
 
-#include "xrDebug.h"
-#include "xrMemory.h"
-
-//#include "_stl_extensions.h"
-#include "xrCore/Math/rect.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "xrsharedmem.h"
 #include "xrstring.h"

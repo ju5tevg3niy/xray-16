@@ -1,17 +1,18 @@
-// Shader.h: interface for the CShader class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #pragma once
-
-#include "r_constants.h"
-#include "xrCore/xr_resource.h"
-
+#include <utility>
+#include <vector>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Layers/xrRenderGL/CommonTypes.h"
 #include "SH_Atomic.h"
-#include "SH_Texture.h"
-#include "SH_Matrix.h"
 #include "SH_Constant.h"
+#include "SH_Matrix.h"
 #include "SH_RT.h"
+#include "SH_Texture.h"
+#include "r_constants.h"
+#include "xrCore/FixedVector.h"
+#include "xrCore/xr_resource.h"
+#include "xrCore/xrstring.h"
 
 namespace xray::render::RENDER_NAMESPACE
 {

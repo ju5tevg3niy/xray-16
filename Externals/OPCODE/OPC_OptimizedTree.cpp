@@ -314,8 +314,8 @@ bool AABBNoLeafTree::Build(AABBTree* tree)
 // Find max values (could use the first node only with min/max boxes)
 #define FIND_MAX_VALUES\
     /* Get max values */\
-    Point CMax(flt_min, flt_min, flt_min);\
-    Point EMax(flt_min, flt_min, flt_min);\
+    Point CMax(-INFINITY, -INFINITY, -INFINITY);\
+    Point EMax(-INFINITY, -INFINITY, -INFINITY);\
     for (udword i = 0; i < mNbNodes; i++)\
     {\
         if (_abs(Nodes[i].mAABB.mCenter.x) > CMax.x)\

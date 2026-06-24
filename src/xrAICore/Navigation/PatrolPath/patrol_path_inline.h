@@ -1,3 +1,7 @@
+#pragma once
+#include <cmath>
+#include "Common/Platform.hpp"
+
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: patrol_path_inline.h
 //	Created 	: 15.06.2004
@@ -5,8 +9,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Patrol path inline functions
 ////////////////////////////////////////////////////////////////////////////
-
-#pragma once
 
 IC const CPatrolPath::CVertex* CPatrolPath::point(shared_str name) const
 {
@@ -22,7 +24,7 @@ template <typename T>
 IC const CPatrolPath::CVertex* CPatrolPath::point(const Fvector& position, const T& evaluator) const
 {
     const CPatrolPath::CVertex* nearest = 0;
-    float best_distance = flt_max;
+    float best_distance = +INFINITY;
     const_vertex_iterator I = vertices().begin();
     const_vertex_iterator E = vertices().end();
     for (; I != E; ++I)

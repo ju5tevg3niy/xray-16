@@ -1,4 +1,5 @@
 #pragma once
+#include "glad/gl.h"
 
 // TODO: Get rid of D3D types.
 #if defined(XR_PLATFORM_WINDOWS)

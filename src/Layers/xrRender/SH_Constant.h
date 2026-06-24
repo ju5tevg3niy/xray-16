@@ -1,5 +1,8 @@
 #pragma once
-
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/Math/color.hpp"
+#include "xrCore/xr_resource.h"
 #include "xrEngine/WaveForm.h"
 
 class IReader;

@@ -1,6 +1,13 @@
 #pragma once
-
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Layers/xrRender/R_Backend.h"
 #include "glStateUtils.h"
+#include "glad/gl.h"
+#include "xrCore/Math/color.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/rect.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 namespace xray::render::RENDER_NAMESPACE
 {

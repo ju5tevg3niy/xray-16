@@ -58,13 +58,13 @@ public:
     //! + infinity
     inline_ Point& SetPlusInfinity()
     {
-        x = y = z = flt_max;
+        x = y = z = +INFINITY;
         return *this;
     }
     //! - infinity
     inline_ Point& SetMinusInfinity()
     {
-        x = y = z = flt_min;
+        x = y = z = -INFINITY;
         return *this;
     }
 

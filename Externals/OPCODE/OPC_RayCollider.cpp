@@ -208,7 +208,7 @@ RayCollider::RayCollider()
 #else
       mFaces(nullptr), mVerts(nullptr),
 #endif
-      mStabbedFaces(nullptr), mMaxDist(flt_max)
+      mStabbedFaces(nullptr), mMaxDist(+INFINITY)
 {
 }
 

@@ -1,3 +1,4 @@
+#include <cmath>
 #include "stdafx.h"
 
 #include "SoundRender_Core.h"
@@ -10,7 +11,7 @@ void CSoundRender_Core::i_start(CSoundRender_Emitter* E) const
     R_ASSERT1_CURE(E, { return; });
 
     // Search lowest-priority target
-    float Ptarget = flt_max;
+    float Ptarget = +INFINITY;
     CSoundRender_Target* T = nullptr;
     for (const auto Ttest : s_targets)
     {

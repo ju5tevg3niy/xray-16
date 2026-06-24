@@ -1,20 +1,20 @@
 #pragma once
-
-//#define RBackend_PGO
-
-#ifdef RBackend_PGO
-#define PGO(a) a
-#else
-#define PGO(a)
-#endif
-
+#include "Common/Platform.hpp"
+#include "Common/d3d9compat.hpp"
+#include "Common/types.hpp"
+#include "SH_Matrix.h"
+#include "SH_Texture.h"
+#include "Shader.h"
+#include "glad/gl.h"
+#include "xrCore/Math/color.hpp"
+#include "xrCore/Math/rect.hpp"
 #include "Layers/xrRender/BufferUtils.h"
 #include "R_DStreams.h"
 #include "r_constants_cache.h"
 #include "R_Backend_xform.h"
 #include "R_Backend_hemi.h"
 #include "R_Backend_tree.h"
-
+#include "FVF.h"
 #ifdef USE_DX11
 #include "Layers/xrRenderPC_R4/r_backend_lod.h"
 #include "Layers/xrRenderDX11/StateManager/dx11StateManager.h"
@@ -22,7 +22,11 @@
 #include "Layers/xrRenderDX11/StateManager/dx11StateCache.h"
 #endif
 
-#include "FVF.h"
+#ifdef RBackend_PGO
+#define PGO(a) a
+#else
+#define PGO(a)
+#endif
 
 namespace xray::render::RENDER_NAMESPACE
 {

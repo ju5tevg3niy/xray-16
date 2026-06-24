@@ -1,4 +1,12 @@
 #pragma once
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/Math/bitwise.hpp"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/rect.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 #pragma pack(push, 1)
 

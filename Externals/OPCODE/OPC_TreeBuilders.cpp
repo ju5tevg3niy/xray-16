@@ -107,8 +107,8 @@ bool AABBTreeOfTrianglesBuilder::ComputeGlobalBox(const udword* primitives, udwo
         return false;
 
     // Initialize global box
-    Point Min(flt_max, flt_max, flt_max);
-    Point Max(flt_min, flt_min, flt_min);
+    Point Min(+INFINITY, +INFINITY, +INFINITY);
+    Point Max(-INFINITY, -INFINITY, -INFINITY);
 
     // Loop through triangles
     for (udword i = 0; i < nb_prims; i++)

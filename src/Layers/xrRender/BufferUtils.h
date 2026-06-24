@@ -1,4 +1,10 @@
 #pragma once
+#include <cstring>
+#include <vector>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Layers/xrRenderGL/CommonTypes.h"
+#include "xrCore/xrDebug_macros.h"
 
 namespace xray::render::RENDER_NAMESPACE
 {
