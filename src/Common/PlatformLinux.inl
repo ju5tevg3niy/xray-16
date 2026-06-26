@@ -1,10 +1,10 @@
-#include <stdio.h>
+#include <cstdio>
 #include <cstdint>
 #include <cstring>
 #include <iostream>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h> // for rmdir
+#include <cstdlib>
+#include <cstring>
+#include <unistd.h>
 #ifndef __HAIKU__
 #include <sys/fcntl.h>
 #endif
@@ -13,13 +13,13 @@
 #include <sys/param.h>
 #include <errno.h>
 #include <stdarg.h>
-#include <limits.h> // for PAGESIZE...
+#include <limits.h>
 #include <math.h>
 #include <sched.h>
 #include <alloca.h>
 #include <pthread.h>
 #include <fcntl.h>
-#include <sys/mman.h> // for mmap / munmap
+#include <sys/mman.h>
 #include <dirent.h>
 #include <utime.h>
 #include <ctime>

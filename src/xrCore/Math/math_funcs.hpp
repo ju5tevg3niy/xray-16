@@ -34,6 +34,4 @@ float angle_inertion_var(float src,
                          float clmp,
                          float dt);
 
-double rsqrt(double v) noexcept;
-
 bool exact_normalize(float* a);
