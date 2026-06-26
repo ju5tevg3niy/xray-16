@@ -1,10 +1,10 @@
+#include <climits>
 #include <tracy/Tracy.hpp>
 
 //----------------------------------------------------
 // file: TempObject.cpp
 //----------------------------------------------------
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "PS_instance.h"
 #include "IGame_Persistent.h"
@@ -15,7 +15,7 @@ CPS_Instance::CPS_Instance(bool destroy_on_game_load)
     g_pGamePersistent->ps_active.insert(this);
     renderable.pROS_Allowed = false;
 
-    m_iLifeTime = int_max;
+    m_iLifeTime = INT_MAX;
     m_bAutoRemove = true;
     m_bDead = false;
 }

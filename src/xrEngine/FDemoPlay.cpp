@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "IGame_Level.h"
 #include "FDemoPlay.h"
+#include <cmath>
 #include "XR_IOConsole.h"
 #include "xrCore/Animation/Motion.hpp"
 #include "Render.h"
@@ -109,8 +110,8 @@ void CDemoPlay::stat_Stop()
     rfps_average = float(dwFramesTotal) / stat_total;
 
     // min/max/average
-    rfps_min = flt_max;
-    rfps_max = flt_min;
+    rfps_min = +INFINITY;
+    rfps_max = -INFINITY;
     rfps_middlepoint = 0;
 
     // Filtered FPS

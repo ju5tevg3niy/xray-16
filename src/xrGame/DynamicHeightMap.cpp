@@ -1,7 +1,7 @@
 // DynamicHeightMap.cpp: implementation of the CDynamicHeightMap class.
 //
 //////////////////////////////////////////////////////////////////////
-
+#include <cmath>
 #include "StdAfx.h"
 #include "DynamicHeightMap.h"
 #include "xrCDB/Intersect.hpp"
@@ -211,7 +211,7 @@ float CHM_Static::Query(float x, float z)
 
 //
 void CHM_Dynamic::Update() {}
-float CHM_Dynamic::Query(float x, float z) { return flt_min; }
+float CHM_Dynamic::Query(float x, float z) { return -INFINITY; }
 //
 float CHeightMap::Query(float x, float z)
 {

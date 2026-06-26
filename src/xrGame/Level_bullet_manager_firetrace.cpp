@@ -3,6 +3,7 @@
 //								(для просчета столкновений и их визуализации)
 //////////////////////////////////////////////////////////////////////
 
+#include <cfloat>
 #include "StdAfx.h"
 #include "Level_Bullet_Manager.h"
 #include "Entity.h"
@@ -230,7 +231,7 @@ void CBulletManager::FireShotmark(SBullet* bullet, const Fvector& vDir, const Fv
     if ((ps_name && ShowMark) || (bullet->flags.explosive && bStatic))
     {
         VERIFY2((particle_dir.x * particle_dir.x + particle_dir.y * particle_dir.y + particle_dir.z * particle_dir.z) >
-                flt_zero,
+                0.0,
             make_string("[%f][%f][%f]", VPUSH(particle_dir)));
         Fmatrix pos;
         pos.k.normalize(particle_dir);

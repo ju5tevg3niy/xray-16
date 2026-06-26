@@ -8,6 +8,7 @@
 #include "pch_script.h"
 
 #include "inventory_upgrade_manager.h"
+#include <cmath>
 #include "inventory_upgrade_base.h"
 #include "inventory_upgrade.h"
 #include "inventory_upgrade_root.h"
@@ -454,8 +455,8 @@ LPCSTR Manager::get_upgrade_by_index(CInventoryItem& item, Ivector2 const& index
 
 bool Manager::compute_range(LPCSTR parameter, float& low, float& high)
 {
-    low = flt_max;
-    high = flt_min;
+    low = +INFINITY;
+    high = -INFINITY;
 
     Roots_type::iterator ib = m_roots.begin();
     Roots_type::iterator ie = m_roots.end();
@@ -471,7 +472,7 @@ bool Manager::compute_range(LPCSTR parameter, float& low, float& high)
         compute_range_section(((*uib).second)->section(), parameter, low, high);
     }
 
-    return (low != flt_max) && (high != flt_min);
+    return (low != +INFINITY) && (high != -INFINITY);
 }
 
 void Manager::compute_range_section(LPCSTR section, LPCSTR parameter, float& low, float& high)

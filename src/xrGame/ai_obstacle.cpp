@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 #include "StdAfx.h"
 #include "ai_obstacle.h"
+#include <cmath>
 #include "ai_space.h"
 #include "xrAICore/Navigation/level_graph.h"
 #include "GameObject.h"
@@ -136,8 +137,8 @@ void ai_obstacle::compute_matrix(Fmatrix& result, const Fvector& additional)
 
 void ai_obstacle::prepare_inside(Fvector& min, Fvector& max)
 {
-    min = Fvector().set(flt_max, flt_max, flt_max);
-    max = Fvector().set(flt_min, flt_min, flt_min);
+    min = Fvector().set(+INFINITY, +INFINITY, +INFINITY);
+    max = Fvector().set(-INFINITY, -INFINITY, -INFINITY);
 
     Fmatrix matrix;
     float half_cell_size = (use_additional_radius ? 1.f : 0.f) * ai().level_graph().header().cell_size() * .5f;

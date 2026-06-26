@@ -1,4 +1,5 @@
 #include "matrix.hpp"
+#include <cfloat>
 #include <cmath>
 #include "Common/types_limits.hpp"
 #include "math_funcs_inline.hpp"
@@ -172,7 +173,7 @@ Fmatrix& Fmatrix::invert(
                    a._12 * (a._21 * a._33 - a._23 * a._31) +
                    a._13 * (a._21 * a._32 - a._22 * a._31));
 
-  VERIFY(_abs(fDetInv) > flt_zero);
+  VERIFY(_abs(fDetInv) > 0.0);
   fDetInv = 1.0f / fDetInv;
 
   _11 = fDetInv * (a._22 * a._33 - a._23 * a._32);
@@ -205,7 +206,7 @@ bool Fmatrix::invert_b(
                    a._12 * (a._21 * a._33 - a._23 * a._31) +
                    a._13 * (a._21 * a._32 - a._22 * a._31));
 
-  if (_abs(fDetInv) <= flt_zero)
+  if (_abs(fDetInv) <= 0.0)
     return false;
   fDetInv = 1.0f / fDetInv;
 
@@ -250,7 +251,7 @@ Fmatrix& Fmatrix::invert_44(const Fmatrix& a) {
   float A14 = -(a21 * mn3 - a22 * mn5 + a23 * mn6);
 
   float detInv = a11 * A11 + a12 * A12 + a13 * A13 + a14 * A14;
-  VERIFY(_abs(detInv) > flt_zero);
+  VERIFY(_abs(detInv) > 0.0);
 
   detInv = 1.f / detInv;
 
@@ -564,7 +565,7 @@ Fmatrix& Fmatrix::setHPB(float h, float p, float b) {
 
 void Fmatrix::getHPB(float& h, float& p, float& b) const {
   float cy = _sqrt(j.y * j.y + i.y * i.y);
-  if (cy > 16.0f * type_epsilon<float>) {
+  if (cy > 16.0f * FLT_EPSILON) {
     h = -atan2(k.x, k.z);
     p = -atan2(-k.y, cy);
     b = -atan2(i.y, j.y);

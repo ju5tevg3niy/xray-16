@@ -1,11 +1,11 @@
+#include <cfloat>
 #include <tracy/Tracy.hpp>
-
+#include "Common/Platform.hpp"
 #include "stdafx.h"
 #include "ISpatial.h"
 #include "xrCore/Math/fbox.hpp"
 #include "xrCore/Threading/Lock.hpp"
 #include "xrCore/Threading/ScopeLock.hpp"
-
 #if defined(XR_ARCHITECTURE_X86) || defined(XR_ARCHITECTURE_X64) || defined(XR_ARCHITECTURE_E2K) || defined(XR_ARCHITECTURE_PPC64)
 #include <xmmintrin.h>
 #elif defined(XR_ARCHITECTURE_ARM) || defined(XR_ARCHITECTURE_ARM64)
@@ -39,6 +39,7 @@ struct alignas(16) ray_t
 };
 
 ICF u32& uf(float& x) { return (u32&)x; }
+
 ICF bool isect_fpu(const Fvector& min, const Fvector& max, const ray_t& ray, Fvector& coord)
 {
     Fvector MaxT;
@@ -232,21 +233,18 @@ public:
         if constexpr (!b_use_sse)
         {
             // for FPU - zero out inf
-            if (_abs(_dir.x) > flt_eps)
+            if (_abs(_dir.x) <= FLT_EPSILON)
             {
-            }
-            else
                 ray.inv_dir.x = 0;
-            if (_abs(_dir.y) > flt_eps)
-            {
             }
-            else
+            if (_abs(_dir.y) <= FLT_EPSILON)
+            {
                 ray.inv_dir.y = 0;
-            if (_abs(_dir.z) > flt_eps)
-            {
             }
-            else
+            if (_abs(_dir.z) <= FLT_EPSILON)
+            {
                 ray.inv_dir.z = 0;
+            }
         }
         range = _range;
         range2 = _range * _range;

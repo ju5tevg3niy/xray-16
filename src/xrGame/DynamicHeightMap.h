@@ -4,7 +4,9 @@
 
 #if !defined(AFX_DYNAMICHEIGHTMAP_H__5A5BD0B8_1FC7_4067_A5A4_D40422E8B6D1__INCLUDED_)
 #define AFX_DYNAMICHEIGHTMAP_H__5A5BD0B8_1FC7_4067_A5A4_D40422E8B6D1__INCLUDED_
+
 #pragma once
+#include <cmath>
 
 const int dhm_line = 4;
 const int dhm_matrix = (dhm_line + 1 + dhm_line); // 9x9 array
@@ -31,7 +33,7 @@ class CHM_Static
         {
             for (u32 i = 0; i < dhm_precision; ++i)
                 for (u32 j = 0; j < dhm_precision; ++j)
-                    data[i][j] = flt_min;
+                    data[i][j] = -INFINITY;
         }
         Slot()
         {

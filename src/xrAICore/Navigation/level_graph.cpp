@@ -8,6 +8,7 @@
 
 #include "pch.hpp"
 #include "level_graph.h"
+#include <cmath>
 #include "xrEngine/profiler.h"
 
 CLevelGraph::CLevelGraph(const char* fileName)
@@ -46,7 +47,7 @@ u32 CLevelGraph::vertex(const Fvector& position) const
 {
     CLevelGraph::CPosition _node_position;
     vertex_position(_node_position, position);
-    float min_dist = flt_max;
+    float min_dist = +INFINITY;
     u32 selected;
     set_invalid_vertex(selected);
     for (u32 i = 0; i < header().vertex_count(); ++i)

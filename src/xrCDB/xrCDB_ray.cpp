@@ -1,11 +1,9 @@
+#include <cfloat>
 #include <tracy/Tracy.hpp>
-
+#include "Common/Platform.hpp"
 #include "stdafx.h"
-#pragma hdrstop // ???
-
 #include "xrCore/Math/fbox.hpp"
 #include "xrCDB.h"
-
 #if defined(XR_ARCHITECTURE_X86) || defined(XR_ARCHITECTURE_X64) || defined(XR_ARCHITECTURE_E2K) || defined(XR_ARCHITECTURE_PPC64)
 #include <xmmintrin.h>
 #elif defined(XR_ARCHITECTURE_ARM) || defined(XR_ARCHITECTURE_ARM64)
@@ -40,6 +38,7 @@ struct alignas(16) ray_t
 };
 
 ICF u32& uf(float& x) { return (u32&)x; }
+
 ICF bool isect_fpu(const Fvector& min, const Fvector& max, const ray_t& ray, Fvector& coord)
 {
     Fvector MaxT;
@@ -238,21 +237,18 @@ public:
         if constexpr (!bUseSSE)
         {
             // for FPU - zero out inf
-            if (_abs(D.x) > flt_eps)
+            if (_abs(D.x) <= FLT_EPSILON)
             {
-            }
-            else
                 ray.inv_dir.x = 0;
-            if (_abs(D.y) > flt_eps)
-            {
             }
-            else
+            if (_abs(D.y) <= FLT_EPSILON)
+            {
                 ray.inv_dir.y = 0;
-            if (_abs(D.z) > flt_eps)
-            {
             }
-            else
+            if (_abs(D.z) <= FLT_EPSILON)
+            {
                 ray.inv_dir.z = 0;
+            }
         }
     }
 
