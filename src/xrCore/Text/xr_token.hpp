@@ -1,16 +1,17 @@
 #pragma once
 #include "Common/types.hpp"
 
-struct alignas(alignof(pcstr)) xr_token
-{
-    xr_token(): name(nullptr), id(-1) {}
-    xr_token(const pcstr _name, const int _id) : name(_name), id(_id) {}
+struct alignas(alignof(pcstr)) xr_token {
+  xr_token() : name(nullptr), id(-1) {}
+  xr_token(const pcstr _name, const int _id) : name(_name), id(_id) {}
 
-    pcstr name;
-    int id;
+  pcstr name;
+  int id;
 };
 
-static_assert(sizeof(xr_token) == sizeof(pcstr) * 2, "xr_token should be aligned, otherwise it may have problems on RISC (e.g. ARM) architectures, which require aligned pointers.");
+static_assert(sizeof(xr_token) == sizeof(pcstr) * 2,
+              "xr_token should be aligned, otherwise it may have problems on "
+              "RISC (e.g. ARM) architectures, which require aligned pointers.");
 
 pcstr get_token_name(const xr_token* tokens, int key);
 
