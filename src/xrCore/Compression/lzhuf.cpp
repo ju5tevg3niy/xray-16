@@ -1,8 +1,10 @@
-// LzHuf.cpp : Defines the entry point for the console application.
-//
+#include "lzhuf.hpp"
+#include <cstdio>
+#include <cstring>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrMemory.h"
 
-#include "stdafx.h"
-#pragma hdrstop
 #if defined(XR_PLATFORM_WINDOWS)
 #include <io.h>
 #endif

@@ -11,7 +11,7 @@
 #include "FS_internal.h"
 #include "LocatorAPI.h"
 #include "Math/vector3.hpp"
-#include "lzhuf.h"
+#include "Compression/lzhuf.hpp"
 #include "stdafx.h"
 #include "xrDebug.h"
 #include "xrDebug_macros.h"

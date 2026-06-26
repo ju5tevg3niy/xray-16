@@ -1,7 +1,7 @@
 #include "dump_string.hpp"
 #include <string>
-#include "Math/matrix.hpp"
-#include "Math/vector3.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/vector3.hpp"
 #include "xrCore/Math/fbox.hpp"
 #include "xrCore/log.h"
 #include "xrCore/xrDebug.h"

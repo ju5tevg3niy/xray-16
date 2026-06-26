@@ -1,6 +1,6 @@
+#include "FTimer.h"
+#include <algorithm>
 #include <vector>
-
-#include "stdafx.h"
 
 bool g_bEnableStatGather = false;
 
@@ -25,7 +25,10 @@ pauseMngr& g_pauseMngr()
     return manager;
 }
 
-pauseMngr::pauseMngr() : paused(false) { m_timers.reserve(3); }
+pauseMngr::pauseMngr() : paused(false) {
+    m_timers.reserve(3);
+}
+
 void pauseMngr::Pause(const bool b)
 {
     if (paused == b)
@@ -39,7 +42,9 @@ void pauseMngr::Pause(const bool b)
     paused = b;
 }
 
-void pauseMngr::Register(CTimer_paused& t) { m_timers.push_back(&t); }
+void pauseMngr::Register(CTimer_paused& t) {
+    m_timers.push_back(&t);
+}
 
 void pauseMngr::UnRegister(CTimer_paused& t)
 {

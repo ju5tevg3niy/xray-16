@@ -6,7 +6,6 @@
 #include "Common/types.hpp"
 #include "FS.h"
 #include "log.h"
-#include "lzhuf.h"
 #include "xrDebug_macros.h"
 #include "xrMemory.h"
 #if defined(XR_PLATFORM_WINDOWS)

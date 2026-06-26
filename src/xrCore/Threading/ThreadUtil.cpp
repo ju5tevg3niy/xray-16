@@ -1,5 +1,7 @@
 #include "ThreadUtil.hpp"
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
+#include "xrCore/log.h"
 
 #if defined(XR_PLATFORM_POSIX)
 #include <pthread.h>

@@ -1,4 +1,6 @@
 #pragma once
+#include <cstddef>
+#include "Common/types.hpp"
 
 extern size_t _writeLZ(int hf, void* d, size_t size);
 extern size_t _readLZ(int hf, void*& d, size_t size);

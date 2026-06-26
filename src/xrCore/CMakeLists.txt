@@ -22,6 +22,7 @@ target_sources(
     Utils/crc32.cpp
     Utils/dump_string.cpp
     Utils/timestamp.cpp
+    Compression/lzhuf.cpp
 )
 
 target_sources_grouped(
@@ -39,14 +40,6 @@ target_sources_grouped(
     Animation/SkeletonMotionDefs.hpp
     Animation/SkeletonMotions.cpp
     Animation/SkeletonMotions.hpp
-)
-
-target_sources_grouped(
-    TARGET xrCore
-    NAME "Compression\\lz"
-    FILES
-    LzHuf.cpp
-    lzhuf.h
 )
 
 target_sources_grouped(

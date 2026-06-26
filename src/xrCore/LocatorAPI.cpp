@@ -24,7 +24,7 @@
 #include "Text/string_funcs_inline.hpp"
 #include "file_stream_reader.h"
 #include "log.h"
-#include "lzhuf.h"
+#include "Compression/lzhuf.hpp"
 #include "stream_reader.h"
 #include "string_concatenations.h"
 #include "xrCommon/xr_smart_pointers.h"
