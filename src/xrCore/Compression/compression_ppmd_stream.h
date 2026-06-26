@@ -1,5 +1,4 @@
-#ifndef COMPRESSION_PPMD_STREAM_H
-#define COMPRESSION_PPMD_STREAM_H
+#pragma once
 
 namespace compression
 {
@@ -25,5 +24,3 @@ public:
 } // namespace compression
 
 #include "compression_ppmd_stream_inline.h"
-
-#endif // COMPRESSION_PPMD_STREAM_H

@@ -1,6 +1,4 @@
 #pragma once
-#ifndef xr_resourceH
-#define xr_resourceH
 #include "xrstring.h"
 
 // resource itself, the base class for all derived resources
@@ -202,5 +200,3 @@ resptr_core<T, D> dynamic_pointer_cast(resptr_core<U, D> const& p)
 {
     return dynamic_cast<T*>(p.get());
 }
-
-#endif // xr_resourceH

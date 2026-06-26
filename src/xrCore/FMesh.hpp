@@ -1,5 +1,3 @@
-#ifndef fmeshH
-#define fmeshH
 #pragma once
 
 // BOOL ValidateIndices (u32 vCount, u32 iCount, u16* pIndices);
@@ -157,5 +155,3 @@ struct FSlideWindowItem
 // xform : matrix4x4
 // scale : vec4
 // bias : vec4
-
-#endif // fmeshH

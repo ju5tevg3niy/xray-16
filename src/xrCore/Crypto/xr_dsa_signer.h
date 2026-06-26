@@ -1,5 +1,4 @@
 #pragma once
-
 #include "xr_dsa.h"
 #include "xr_sha.h"
 

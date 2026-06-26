@@ -1,5 +1,4 @@
 #pragma once
-
 #include "xrCore/xrCore.h"
 #include "xrCore/Animation/Envelope.hpp"
 #include "xrCore/PostProcess/PPInfo.hpp"

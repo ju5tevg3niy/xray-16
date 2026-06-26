@@ -1,3 +1,6 @@
+#pragma once
+#include <stdio.h>
+
 /****************************************************************************
  *  This file is part of PPMd project                                       *
  *  Written and distributed to public domain by Dmitry Shkarin 1997,        *
@@ -5,10 +8,6 @@
  *  Contents: compilation parameters and miscelaneous definitions           *
  *  Comments: system & compiler dependent file                              *
  ****************************************************************************/
-#if !defined(_PPMDTYPE_H_)
-#define _PPMDTYPE_H_
-
-#include <stdio.h>
 
 #if defined(XR_PLATFORM_WINDOWS)
 #define _WIN32_ENVIRONMENT_
@@ -102,5 +101,3 @@ typedef PRIME_STREAM _PPMD_FILE;
 #define _PPMD_D_GETC(pps)   (pps)->get()
 #define _PPMD_D_PUTC(c,pps) (pps)->put(c)
 **************************  End of example  *********************************/
-
-#endif /* !defined(_PPMDTYPE_H_) */

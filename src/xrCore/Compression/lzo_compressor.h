@@ -1,5 +1,4 @@
 #pragma once
-
 #include "xrCore/xrCore.h"
 
 int lzo_compress_dict(

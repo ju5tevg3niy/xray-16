@@ -1,21 +1,19 @@
+#pragma once
+#include <array>
+#include <vector>
+#include <algorithm>
+#include <limits>
+#include <cstddef>
+#include "xrCommon/xr_smart_pointers.h"
+#include "xrCore/Threading/Lock.hpp"
+#include "xrCore/Threading/ScopeLock.hpp"
+
 /*!
 \file
 \brief Implementation of simple thread-safe event processing and notifying system
 
 \details Will be useful when you need a system which allows you to handle events with calling the subscribed callbacks.
 */
-#pragma once
-
-#include <array>
-#include <vector>
-#include <algorithm>
-#include <limits>
-#include <cstddef>
-
-#include "xrCommon/xr_smart_pointers.h"
-
-#include "xrCore/Threading/Lock.hpp"
-#include "xrCore/Threading/ScopeLock.hpp"
 
 /*!
     \brief Base abstract class for implementing event handling callbacks

@@ -1,3 +1,6 @@
+#pragma once
+#include <utility>
+
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: AssociativeVectorComparer.hpp
 //	Created 	: 14.10.2005
@@ -5,9 +8,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : associative vector compare predicate template class
 ////////////////////////////////////////////////////////////////////////////
-
-#pragma once
-#include <utility>
 
 template <typename TKey, typename TValue, typename TComparer>
 class AssociativeVectorComparer : public TComparer

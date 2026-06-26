@@ -1,3 +1,6 @@
+#pragma once
+#include "xrCore/xrCore.h"
+
 //--------------------------------------------------------------------------------------
 // File: DXErr.h
 //
@@ -12,9 +15,6 @@
 //--------------------------------------------------------------------------------------
 
 // This version only supports UNICODE.
-
-#pragma once
-#include "xrCore/xrCore.h"
 
 #if !defined(NOMINMAX)
 #define NOMINMAX

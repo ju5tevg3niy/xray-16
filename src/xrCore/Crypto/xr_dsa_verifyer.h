@@ -1,7 +1,5 @@
 #pragma once
-
 #include <optional>
-
 #include "xr_dsa.h"
 #include "xr_sha.h"
 

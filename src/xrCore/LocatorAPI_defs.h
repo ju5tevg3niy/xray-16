@@ -1,9 +1,7 @@
 #pragma once
-
 #include <set>
 #include <ctime>
 #include <string>
-
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
 #include "xrCore/Math/flags.hpp"

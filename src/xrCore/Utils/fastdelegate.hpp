@@ -1,3 +1,5 @@
+#pragma once
+
 //      FastDelegate.h
 // Efficient delegates in C++ that generate only two lines of asm code!
 //  Documentation is found at http://www.codeproject.com/cpp/FastDelegate.asp
@@ -53,12 +55,6 @@
 //                can be 0 on MWCC!
 //                * More optimal assignment,== and != operators for static
 //                function pointers.
-
-#ifndef FASTDELEGATE_H
-#define FASTDELEGATE_H
-#if _MSC_VER > 1000
-#pragma once
-#endif  // _MSC_VER > 1000
 
 #include <memory.h>  // to allow <,> comparisons
 #include <type_traits>
@@ -950,5 +946,3 @@ FastDelegate<RetType(Arguments...)> MakeDelegate(
   return FastDelegate<RetType(Arguments...)>(x, func);
 }
 }  // namespace fastdelegate
-
-#endif  // !defined(FASTDELEGATE_H)

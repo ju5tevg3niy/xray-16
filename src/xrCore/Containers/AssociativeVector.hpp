@@ -1,3 +1,11 @@
+#pragma once
+#include <algorithm>
+#include <functional>
+#include <utility>
+#include <vector>
+#include "xrCore/xrCore.h"
+#include "AssociativeVectorComparer.hpp"
+
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: AssociativeVector.h
 //	Created 	: 14.10.2005
@@ -5,16 +13,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : associative vector container
 ////////////////////////////////////////////////////////////////////////////
-
-#pragma once
-
-#include <algorithm>
-#include <functional>
-#include <utility>
-#include <vector>
-
-#include "xrCore/xrCore.h"
-#include "AssociativeVectorComparer.hpp"
 
 template <typename TKey, typename TValue, typename TKeyComparer = std::less<TKey>>
 class AssociativeVector : protected std::vector<std::pair<TKey, TValue>>,

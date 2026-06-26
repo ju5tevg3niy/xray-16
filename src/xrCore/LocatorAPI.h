@@ -1,18 +1,15 @@
 #pragma once
-
 #include <set>
 #include <map>
-
-#if defined(XR_PLATFORM_WINDOWS)
-#include <io.h>
-#endif
-
 #include "Common/Util.hpp"
 #include "LocatorAPI_defs.h"
 #include "xrCommon/xr_smart_pointers.h"
 #include "xrCommon/predicates.h"
 #include "Common/Noncopyable.hpp"
 #include "xrCore/xr_ini.h"
+#if defined(XR_PLATFORM_WINDOWS)
+#include <io.h>
+#endif
 
 #if defined(XR_PLATFORM_POSIX)
 #include <stdint.h>

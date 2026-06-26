@@ -1,3 +1,5 @@
+#pragma once
+
 /****************************************************************************
  *  This file is part of PPMd project                                       *
  *  Written and distributed to public domain by Dmitry Shkarin 1997,        *
@@ -6,8 +8,6 @@
  *  Comments: this file can be used as an interface to PPMd module          *
  *  (consisting of Model.cpp) from external program               *
  ****************************************************************************/
-#if !defined(_PPMD_H_)
-#define _PPMD_H_
 
 #include "PPMdType.h"
 
@@ -51,5 +51,3 @@ void _STDCALL PrintInfo(_PPMD_FILE* DecodedFile, _PPMD_FILE* EncodedFile);
 #ifdef __cplusplus
 }
 #endif
-
-#endif /* !defined(_PPMD_H_) */

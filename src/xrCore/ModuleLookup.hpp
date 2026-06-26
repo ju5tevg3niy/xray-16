@@ -1,5 +1,4 @@
 #pragma once
-
 #include "xrCommon/xr_smart_pointers.h"
 
 namespace XRay

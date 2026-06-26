@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Bone.hpp"
 #include "SkeletonMotionDefs.hpp"
 #include "xrCore/Math/quaternion.hpp"

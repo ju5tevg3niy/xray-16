@@ -1,5 +1,4 @@
 #pragma once
-
 #include "xrCore/Math/matrix.hpp"
 #include "xrsharedmem.h"
 #include "xrstring.h"
@@ -8,9 +7,7 @@
 #include "xr_shared.h"
 #include "string_concatenations.h"
 #include "xrCore/Math/flags.hpp"
-
 #include "xr_shortcut.h"
-
 #include "FS.h"
 #include "log.h"
 #include "xr_trims.h"
@@ -23,7 +20,6 @@
 #include "FileSystem.h"
 #include "FTimer.h"
 #include "Utils/fastdelegate.hpp"
-
 #include "net_utils.h"
 #include "xrCore/Threading/ThreadUtil.hpp"
 

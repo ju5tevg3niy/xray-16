@@ -1,7 +1,5 @@
 #pragma once
-
 #include <vector>
-
 #include "xrCore/Animation/Bone.hpp"
 #include "xrCore/Text/string_funcs_inline.hpp"
 

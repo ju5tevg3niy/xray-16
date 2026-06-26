@@ -1,5 +1,4 @@
 #pragma once
-
 #include "xrCore/Math/flags.hpp"
 
 #pragma pack(push, 1)

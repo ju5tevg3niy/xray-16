@@ -1,7 +1,5 @@
 #pragma once
-
 #include <vector>
-
 #include "xrCore/Math/obb.hpp"
 #include "xrCore/Math/sphere.hpp"
 #include "xrCore/Math/cylinder.hpp"

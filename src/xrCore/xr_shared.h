@@ -1,7 +1,5 @@
 #pragma once
-
 #include <map>
-
 #include "xrstring.h"
 
 class shared_value
