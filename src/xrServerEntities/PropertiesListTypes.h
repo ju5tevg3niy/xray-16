@@ -7,9 +7,9 @@
 #include "xrEngine/WaveForm.h"
 #include "gametype_chooser.h"
 #include "xrCore/Math/rect.hpp"
-#include "xrCore/xr_trims.h"
+#include "xrCore/Text/xr_trims.hpp"
 #include "xrCore/xr_shortcut.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 //#include "xrCore/xrCore.h"
 
 #ifdef __BORLANDC__

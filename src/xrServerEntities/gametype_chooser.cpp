@@ -3,7 +3,7 @@
 
 #include "gametype_chooser.h"
 #include "xrServer_Objects_Abstract.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 // old
 enum ERPGameType

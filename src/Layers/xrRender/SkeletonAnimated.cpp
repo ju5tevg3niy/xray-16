@@ -5,7 +5,7 @@
 #include "AnimationKeyCalculate.h"
 #include "SkeletonX.h"
 #include "xrCore/FMesh.hpp"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 #ifdef DEBUG
 #include "xrCore/Utils/dump_string.hpp"
 #endif

@@ -7,7 +7,7 @@
 #include "ai_space.h"
 #include "alife_simulator.h"
 #include "alife_time_manager.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 ESingleGameDifficulty g_SingleGameDifficulty = egdStalker;
 

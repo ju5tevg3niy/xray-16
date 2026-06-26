@@ -5,7 +5,7 @@
 
 #include "xrServerEntities/gametype_chooser.h"
 
-#include "xrCore/xr_trims.h"
+#include "xrCore/Text/xr_trims.hpp"
 
 #include "xrCDB/ISpatial.h"
 

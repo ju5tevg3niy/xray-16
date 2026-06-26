@@ -9,7 +9,7 @@
 
 #include <vector>
 
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 class CScriptTokenList
 {

@@ -10,7 +10,7 @@
 #include "xr_shortcut.h"
 #include "FS.h"
 #include "log.h"
-#include "xr_trims.h"
+#include "Text/xr_trims.hpp"
 #include "xr_ini.h"
 #ifdef NO_FS_SCAN
 #include "ELocatorAPI.h"

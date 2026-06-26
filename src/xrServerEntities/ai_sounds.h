@@ -9,7 +9,7 @@
 #pragma once
 #ifndef ai_soundsH
 #define ai_soundsH
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 enum ESoundTypes : u32
 {

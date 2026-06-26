@@ -2,7 +2,7 @@
 #pragma hdrstop
 
 #include "ETextureParams.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 #ifdef _EDITOR
 #include "xrServerEntities/PropertiesListHelper.h"

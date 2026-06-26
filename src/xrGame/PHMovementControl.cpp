@@ -20,7 +20,7 @@
 #include "CaptureBoneCallback.h"
 #include "Level.h"
 #include "PhysicsShellHolder.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 #ifdef DEBUG
 #include "PHDebug.h"
 #endif

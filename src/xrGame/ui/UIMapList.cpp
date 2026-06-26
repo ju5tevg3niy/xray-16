@@ -14,7 +14,7 @@
 #include "Common/object_broker.h"
 #include "game_base.h"
 #include "ui/UICDkey.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 #include "xrCore/buffer_vector.h"
 
 extern string512 g_sLaunchOnExit_app;

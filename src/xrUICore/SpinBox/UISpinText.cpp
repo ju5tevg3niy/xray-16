@@ -1,7 +1,7 @@
 #include "pch.hpp"
 #include "UISpinText.h"
 #include "Lines/UILines.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 CUISpinText::CUISpinText() : m_curItem(-1) {}
 void CUISpinText::AddItem_(const char* item, int id)

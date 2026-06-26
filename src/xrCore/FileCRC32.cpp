@@ -5,7 +5,7 @@
 #include "xrCore/Utils/crc32.hpp"
 #include "xrCore/FS.h"
 #include "xrCore/FileSystem.h"
-#include "xr_trims.h"
+#include "xrCore/Text/xr_trims.hpp"
 #include "FileCRC32.hpp"
 
 void getFileCrc32(IReader* F, pcstr filePath, u32& outCrc, bool parseIncludes)

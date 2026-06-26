@@ -34,7 +34,7 @@
 #include "xrDebug_macros.h"
 #include "xrMemory.h"
 #include "xr_ini.h"
-#include "xr_trims.h"
+#include "xrCore/Text/xr_trims.hpp"
 #include "xrstring.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #include <direct.h>

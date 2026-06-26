@@ -10,7 +10,7 @@
 #include "EngineAPI.h"
 #include "XR_IOConsole.h"
 
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 #include "xrScriptEngine/ScriptExporter.hpp"
 #include "xrScriptEngine/script_space.hpp"

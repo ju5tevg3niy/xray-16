@@ -3,7 +3,7 @@
 #include "stdafx.h"
 
 #include "FileSystem.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 CInifile const* pSettings = nullptr;
 CInifile const* pSettingsAuth = nullptr;

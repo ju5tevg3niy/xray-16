@@ -26,7 +26,7 @@
 #include "ui/UIXmlInit.h"
 #include "Torch.h"
 #include "xrNetServer/NET_Messages.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 #include "GamePersistent.h"
 
 #define WEAPON_REMOVE_TIME 60000

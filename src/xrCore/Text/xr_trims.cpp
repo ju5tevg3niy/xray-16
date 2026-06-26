@@ -1,7 +1,14 @@
-#include "stdafx.h"
-
-#include "xrCore/xr_token.h"
-#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xr_trims.hpp"
+#include <cstddef>
+#include <cstring>
+#include <string>
+#include <vector>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "string_funcs_inline.hpp"
+#include "xrCore/xrMemory.h"
+#include "xr_token.hpp"
+#include "xrCore/xrstring.h"
 
 pstr _TrimLeft(pstr str, char whatToTrim /*= ' '*/)
 {

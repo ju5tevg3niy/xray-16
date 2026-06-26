@@ -4,7 +4,7 @@
 #include "xrCore/Math/math_funcs.hpp"
 #include "xrCore/xrDebug_macros.h"
 #include "xrCore/xr_ini.h"
-#include "xrCore/xr_trims.h"
+#include "xrCore/Text/xr_trims.hpp"
 #include "xrEngine/device.h"
 
 // проверить, находится ли объект entity на ноде

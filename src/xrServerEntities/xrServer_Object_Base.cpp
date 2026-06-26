@@ -12,7 +12,7 @@
 #include "game_base_space.h"
 #include "script_value_container_impl.h"
 #include "clsid_game.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 #ifndef AI_COMPILER
 #include "object_factory.h"

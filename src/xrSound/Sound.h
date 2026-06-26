@@ -6,7 +6,7 @@
 #include "xrCore/Math/flags.hpp"
 #include "xrCore/xr_resource.h"
 #include "xrCore/Math/vector3.hpp"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 #include "xrAPI/EngineGlobalEnvironment.hpp"
 
 #ifdef XRAY_STATIC_BUILD

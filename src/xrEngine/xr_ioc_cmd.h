@@ -26,7 +26,7 @@
         Console->AddCommand(&x##cls);      \
     }
 
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 extern bool renderer_allow_override; // allows to change renderer setting
 

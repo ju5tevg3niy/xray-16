@@ -12,7 +12,7 @@
 #include "game_base_space.h"
 #include "Common/object_broker.h"
 #include "restriction_space.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 #ifndef AI_COMPILER
 #include "character_info.h"

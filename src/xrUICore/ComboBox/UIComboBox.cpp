@@ -3,7 +3,7 @@
 #include "XML/UITextureMaster.h"
 #include "ScrollBar/UIScrollBar.h"
 #include "ListBox/UIListBoxItem.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 #define CB_HEIGHT 20.0f
 

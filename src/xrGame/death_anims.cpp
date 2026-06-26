@@ -2,7 +2,7 @@
 #include "death_anims.h"
 #include "Include/xrRender/KinematicsAnimated.h"
 #include "entity_alive.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 #ifdef DEBUG
 BOOL death_anim_debug = FALSE;

@@ -1,8 +1,9 @@
 #pragma once
+#include <string>
+#include <vector>
+#include "Common/types.hpp"
 #include "xrCore/xrstring.h"
-
-// refs
-struct xr_token;
+#include "xr_token.hpp"
 
 int _GetItemCount(pcstr, char separator = ',');
 pstr _GetItem(pcstr, int, pstr, u32 const dst_size, char separator = ',', pcstr = "", bool trim = true);

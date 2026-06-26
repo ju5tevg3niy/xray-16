@@ -15,7 +15,7 @@
 #include "xrCore/xrDebug.h"
 #include "xrCore/xr_ini.h"
 #include "xrCore/xrDebug_macros.h"
-#include "xrCore/xr_trims.h"
+#include "xrCore/Text/xr_trims.hpp"
 
 // T_ITEM		-	тип элемента таблицы
 //

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "dx113DFluidData.h"
 #include "dx113DFluidManager.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 namespace xray::render::RENDER_NAMESPACE
 {

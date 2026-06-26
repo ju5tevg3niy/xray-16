@@ -73,7 +73,7 @@
 #include "ui/UIActorMenu.h"
 #include "ActorHelmet.h"
 #include "ui/UIDragDropReferenceList.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 
 #include "xrEngine/Rain.h"
 

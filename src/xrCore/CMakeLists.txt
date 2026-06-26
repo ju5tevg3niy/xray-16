@@ -3,6 +3,7 @@ add_library(xrCore)
 target_sources(
     xrCore
     PRIVATE
+    Compression/lzhuf.cpp
     Math/compressed_normal.cpp
     Math/cylinder.cpp
     Math/math_funcs.cpp
@@ -12,6 +13,8 @@ target_sources(
     Math/vector3.cpp
     Math/vector3_ext.cpp
     Text/string_conversion.cpp
+    Text/xr_token.cpp
+    Text/xr_trims.cpp
     Threading/Event.cpp
     Threading/Lock.cpp
     Threading/ScopeLock.cpp
@@ -22,7 +25,6 @@ target_sources(
     Utils/crc32.cpp
     Utils/dump_string.cpp
     Utils/timestamp.cpp
-    Compression/lzhuf.cpp
 )
 
 target_sources_grouped(
@@ -214,14 +216,6 @@ target_sources_grouped(
     xr_shortcut.h
     xrCore.cpp
     xrCore.h
-)
-
-target_sources_grouped(
-    TARGET xrCore
-    NAME "Math\\Extensions"
-    FILES
-    xr_token.cpp
-    xr_trims.cpp
 )
 
 target_sources_grouped(

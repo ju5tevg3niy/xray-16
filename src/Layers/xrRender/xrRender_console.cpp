@@ -4,7 +4,7 @@
 #pragma hdrstop
 
 #include "xrRender_console.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 #include "xrCore/Animation/SkeletonMotions.hpp"
 
 #include "xrEngine/XR_IOConsole.h"

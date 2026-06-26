@@ -10,7 +10,7 @@
 #include "string_concatenations.h"
 #include "xrCommon/xr_smart_pointers.h"
 #include "xrDebug_macros.h"
-#include "xr_trims.h"
+#include "xrCore/Text/xr_trims.hpp"
 #include "xrstring.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #include "cderr.h"

@@ -10,7 +10,7 @@
 #include "WeaponMagazined.h"
 #include "CharacterPhysicsSupport.h"
 #include "animation_utils.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 #ifdef DEBUG
 extern const xr_token motion_dirs[];
 #endif

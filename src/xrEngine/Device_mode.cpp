@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 #include "xr_input.h"
 
 std::vector<xr_token> vid_monitor_token;

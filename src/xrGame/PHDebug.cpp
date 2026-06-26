@@ -19,7 +19,7 @@
 #include "Include/xrRender/KinematicsAnimated.h"
 #include "xrCore/Animation/Bone.hpp"
 #include "xrEngine/IPHdebug.h"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 #include "xrEngine/GameFont.h"
 
 #include "xrUICore/ui_base.h"

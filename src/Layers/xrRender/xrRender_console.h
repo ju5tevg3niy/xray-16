@@ -4,7 +4,7 @@
 #include "Common/types.hpp"
 #include "xrCore/Math/flags.hpp"
 #include "xrCore/Math/vector3.hpp"
-#include "xrCore/xr_token.h"
+#include "xrCore/Text/xr_token.hpp"
 #include "xrEngine/Engine.h"
 
 extern int ps_r__Supersample;
