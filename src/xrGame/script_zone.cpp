@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: script_zone.cpp
 //	Created 	: 10.10.2003

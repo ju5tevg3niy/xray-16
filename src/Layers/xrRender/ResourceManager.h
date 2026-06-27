@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 // TextureManager.h: interface for the CTextureManager class.
 //
 //////////////////////////////////////////////////////////////////////

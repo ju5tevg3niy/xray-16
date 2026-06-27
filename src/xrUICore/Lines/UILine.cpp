@@ -1,3 +1,4 @@
+#include <string>
 // File:		UILine.cpp
 // Description:	Single text line
 // Created:		05.04.2005

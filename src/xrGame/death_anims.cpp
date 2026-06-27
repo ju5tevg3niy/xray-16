@@ -1,3 +1,4 @@
+#include <vector>
 #include "StdAfx.h"
 #include "death_anims.h"
 #include "Include/xrRender/KinematicsAnimated.h"

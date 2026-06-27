@@ -1,3 +1,4 @@
+#include <vector>
 #include "stdafx.h"
 #include "IGame_Level.h"
 #include "Feel_Touch.h"

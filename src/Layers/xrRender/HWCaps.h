@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #define CAP_VERSION(a, b) (u32(a) * 10 + u32(b))

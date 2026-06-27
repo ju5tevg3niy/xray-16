@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #ifndef NET_SERVER_IP_FILTER
 #define NET_SERVER_IP_FILTER

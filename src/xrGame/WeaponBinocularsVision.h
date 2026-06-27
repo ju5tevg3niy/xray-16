@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #include "xrUICore/Static/UIStatic.h"
 #include "HudSound.h"

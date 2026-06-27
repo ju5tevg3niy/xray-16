@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UITeamPanels.h"
 #include "ui/UIStatsIcon.h"

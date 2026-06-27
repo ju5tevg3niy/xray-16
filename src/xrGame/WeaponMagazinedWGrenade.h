@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #include "WeaponMagazined.h"
 #include "RocketLauncher.h"

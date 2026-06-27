@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "xrUICore/Windows/UIFrameWindow.h"
 #include "xrCore/Containers/AssociativeVector.hpp"

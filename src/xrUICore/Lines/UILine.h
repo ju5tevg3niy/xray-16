@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include <vector>
+#include <string>
 // File:		UILine.h
 // Description:	Single text line
 // Created:		11.03.2005

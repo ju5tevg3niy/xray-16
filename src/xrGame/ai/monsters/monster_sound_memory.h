@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 #include "ai_monster_defs.h"

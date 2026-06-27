@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 
 #include "character_shell_control.h"

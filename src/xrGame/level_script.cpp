@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: level_script.cpp
 //	Created 	: 28.06.2004

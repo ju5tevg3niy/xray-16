@@ -1,3 +1,4 @@
+#include <cstddef>
 #include "stdafx.h"
 #pragma hdrstop
 

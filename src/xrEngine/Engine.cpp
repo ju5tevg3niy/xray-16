@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <tracy/Tracy.hpp>
 
 // Engine.cpp: implementation of the CEngine class.

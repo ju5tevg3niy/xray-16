@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "Level.h"
 #include "xrCDB/Frustum.h"

@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #include "lzhuf.hpp"
 #include <cstdio>
 #include <cstring>

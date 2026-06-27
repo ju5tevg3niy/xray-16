@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
 #include "stdafx.h"
 
 #include "dxEnvironmentRender.h"

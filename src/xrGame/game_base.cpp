@@ -1,3 +1,4 @@
+#include "Common/types_paths.hpp"
 #include "pch_script.h"
 #include "game_base.h"
 #include "ai_space.h"

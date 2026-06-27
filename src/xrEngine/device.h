@@ -1,3 +1,7 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include <vector>
 #pragma once
 #include <list>
 #include <SDL.h>

@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : xrServer_Objects_ALife.h
 //  Created     : 19.09.2002

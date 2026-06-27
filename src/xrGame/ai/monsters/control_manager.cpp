@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "control_manager.h"
 #include "control_combase.h"

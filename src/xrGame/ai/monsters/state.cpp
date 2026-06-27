@@ -1,3 +1,4 @@
+#include <string>
 #include "StdAfx.h"
 #include "xrGame/ai/monsters/state.h"
 

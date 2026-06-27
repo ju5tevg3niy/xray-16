@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
 #include "StdAfx.h"
 #include "traffic_optimization.h"
 

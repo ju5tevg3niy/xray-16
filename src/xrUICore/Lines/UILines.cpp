@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <string>
 // File:		UILines.cpp
 // Description:	Multi-line Text Control
 // Created:		12.03.2005

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef MONSTER_AURA_H_INCLUDED
 #define MONSTER_AURA_H_INCLUDED
 

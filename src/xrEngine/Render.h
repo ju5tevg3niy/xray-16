@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
 #pragma once
 
 #include "xrEngine/Engine.h"

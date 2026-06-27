@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 namespace xray::render::RENDER_NAMESPACE

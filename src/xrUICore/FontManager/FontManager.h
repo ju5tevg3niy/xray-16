@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 struct XRUICORE_API CFontManager : public CUIResetNotifier

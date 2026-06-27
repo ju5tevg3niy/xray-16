@@ -1,3 +1,5 @@
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
 // CameraBase.cpp: implementation of the CCameraBase class.
 //
 //////////////////////////////////////////////////////////////////////

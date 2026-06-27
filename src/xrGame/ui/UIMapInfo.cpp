@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include <string>
 #include "StdAfx.h"
 #include "UIMapInfo.h"
 #include "xrUICore/ScrollView/UIScrollView.h"

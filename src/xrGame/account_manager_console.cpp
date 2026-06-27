@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "account_manager_console.h"
 #include "xrGameSpy/GameSpy_Full.h"

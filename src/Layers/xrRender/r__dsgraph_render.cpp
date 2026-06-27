@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
+#include <cstddef>
 #include <tracy/Tracy.hpp>
 
 #include "stdafx.h"

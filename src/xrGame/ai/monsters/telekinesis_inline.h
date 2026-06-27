@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 template <typename _Object>

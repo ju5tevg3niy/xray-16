@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: base_client_classes_wrappers.h
 //	Created 	: 20.12.2004

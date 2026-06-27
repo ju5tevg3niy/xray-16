@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 ///////////////////////////////////////////////////////////////
 // GraviArtifact.cpp
 // GraviArtefact - гравитационный артефакт, прыгает на месте

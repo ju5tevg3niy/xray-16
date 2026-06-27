@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <string>
 #include "stdafx.h"
 #include "GameFont.h"
 #pragma hdrstop

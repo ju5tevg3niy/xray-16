@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
 #include "stdafx.h"
 #include "file_stream_reader.h"
 

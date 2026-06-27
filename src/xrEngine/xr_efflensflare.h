@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #pragma once
 
 #include "xrCDB/xr_collide_defs.h"

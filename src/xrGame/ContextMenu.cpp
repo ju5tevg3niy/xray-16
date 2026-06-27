@@ -1,3 +1,4 @@
+#include <vector>
 #include "StdAfx.h"
 #include "ContextMenu.h"
 #include "../xrEngine/GameFont.h"

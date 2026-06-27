@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 #include "StdAfx.h"
 
 #include "UIInventoryUtilities.h"

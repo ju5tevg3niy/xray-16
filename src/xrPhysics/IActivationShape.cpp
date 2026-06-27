@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "IActivationShape.h"
 #include "PHActivationShape.h"

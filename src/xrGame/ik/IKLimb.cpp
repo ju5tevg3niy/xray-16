@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "IKLimb.h"
 #include "Common/Noncopyable.hpp"

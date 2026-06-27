@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 ///////////////////////////////////////////////////////////////
 // BastArtifact.cpp
 // BastArtefact - артефакт мочалка

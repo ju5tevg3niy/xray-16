@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "Lock.hpp"
 #include <atomic>
 #include <mutex>

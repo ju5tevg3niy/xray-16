@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "xrServer.h"
 #include "game_sv_single.h"

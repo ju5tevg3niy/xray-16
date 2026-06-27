@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <string>
 #include "StdAfx.h"
 #include "specific_character.h"
 

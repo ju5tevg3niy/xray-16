@@ -1,3 +1,5 @@
+#include "Common/Platform.hpp"
+#include <vector>
 #pragma once
 #include "Common/object_interfaces.h"
 #include "map_location_defs.h"

@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include <string>
 #include <tracy/Tracy.hpp>
 
 // XR_IOConsole.cpp: implementation of the CConsole class.

@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: script_engine.h
 //	Created 	: 01.04.2004

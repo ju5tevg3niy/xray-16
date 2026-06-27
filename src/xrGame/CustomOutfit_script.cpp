@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 #include "pch_script.h"
 
 #include "CustomOutfit.h"

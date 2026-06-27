@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "xrUICore/Static/UILanimController.h"
 #include "xrUICore/Static/UIStaticItem.h"

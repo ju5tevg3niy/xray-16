@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "BreakableObject.h"
 #include "xrServer_Objects_ALife.h"

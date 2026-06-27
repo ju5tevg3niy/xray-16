@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include <vector>
+#include <string>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: debug_text_tree.h
 //	Created 	: 02.04.2008

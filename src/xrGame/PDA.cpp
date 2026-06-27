@@ -1,3 +1,5 @@
+#include <vector>
+#include <string>
 #include "pch_script.h"
 #include "PDA.h"
 #include "xrPhysics/PhysicsShell.h"

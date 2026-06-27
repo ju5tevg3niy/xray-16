@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #ifndef CDKEY_BAN_LIST_H
 #define CDKEY_BAN_LIST_H
 

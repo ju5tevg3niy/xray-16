@@ -1,3 +1,4 @@
+#include <string>
 #include "StdAfx.h"
 #include "UIXmlInit.h"
 #include "Level.h"

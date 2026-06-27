@@ -1,3 +1,4 @@
+#include "Common/Platform.hpp"
 #pragma once
 // XXX: Identify what parts of xrGame requires only "core", ui, ai, and finally script.
 // Split up source (PCH-wise) accordingly.

@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 // PHDynamicData.h: interface for the PHDynamicData class.
 //
 //////////////////////////////////////////////////////////////////////

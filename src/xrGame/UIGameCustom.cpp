@@ -1,3 +1,6 @@
+#include "Common/types_paths.hpp"
+#include <vector>
+#include <string>
 #include <tracy/Tracy.hpp>
 
 #include "pch_script.h"

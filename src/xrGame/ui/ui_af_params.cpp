@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "ui_af_params.h"
 #include "xrUICore/Static/UIStatic.h"

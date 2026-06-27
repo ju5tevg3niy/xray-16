@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_spawn_registry.cpp
 //	Created 	: 15.01.2003

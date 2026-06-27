@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 // Level_Bullet_Manager.cpp:	для обеспечения полета пули по траектории
 //								все пули и осколки передаются сюда
 //								(для просчета столкновений и их визуализации)

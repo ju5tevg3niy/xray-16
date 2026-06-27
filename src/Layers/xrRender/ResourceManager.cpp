@@ -1,3 +1,6 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include <string>
 #include <tracy/Tracy.hpp>
 
 // TextureManager.cpp: implementation of the CResourceManager class.

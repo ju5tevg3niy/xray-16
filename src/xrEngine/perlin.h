@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 #define PERLIN_SAMPLE_SIZE 256

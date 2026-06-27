@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #include "stdafx.h"
 
 #include "Common/types_limits.hpp"

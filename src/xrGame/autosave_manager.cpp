@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/Platform.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: autosave_manager.cpp
 //	Created 	: 04.11.2004

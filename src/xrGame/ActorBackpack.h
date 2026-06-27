@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "inventory_item_object.h"
 

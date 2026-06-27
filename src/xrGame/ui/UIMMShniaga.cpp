@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "UIMMShniaga.h"
 #include "xrUICore/Cursor/UICursor.h"

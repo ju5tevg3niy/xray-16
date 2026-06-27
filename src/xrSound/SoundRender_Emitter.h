@@ -1,3 +1,6 @@
+#include <cstddef>
+#include <atomic>
+#include <vector>
 #pragma once
 
 #include "xrCore/Text/string_funcs_inline.hpp"

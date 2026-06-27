@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/Platform.hpp"
 #include "StdAfx.h"
 #include "Level.h"
 #include "UIGameDM.h"

@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "xrEngine/xr_level_controller.h"
 #include "map_manager.h"

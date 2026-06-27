@@ -1,3 +1,8 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include <vector>
+#include <string>
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : xrServer_Objects_ALife.h
 //  Created     : 19.09.2002

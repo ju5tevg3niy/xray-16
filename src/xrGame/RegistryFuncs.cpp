@@ -1,3 +1,4 @@
+#include "Common/Platform.hpp"
 #include "StdAfx.h"
 #include "RegistryFuncs.h"
 #include "xrGameSpy/xrGameSpy_MainDefs.h"

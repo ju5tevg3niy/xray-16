@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #ifndef ParticleCustom_included
 #define ParticleCustom_included
 #pragma once

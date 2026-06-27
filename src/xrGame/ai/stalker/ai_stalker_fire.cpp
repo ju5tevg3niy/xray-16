@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: ai_stalker_fire.cpp
 //	Created 	: 25.02.2003

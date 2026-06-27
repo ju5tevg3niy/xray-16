@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
 #include "stdafx.h"
 #include "dx113DFluidRenderer.h"
 #include "dx113DFluidBlenders.h"

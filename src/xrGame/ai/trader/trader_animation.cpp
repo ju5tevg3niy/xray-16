@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "pch_script.h"
 #include "trader_animation.h"
 #include "ai_trader.h"

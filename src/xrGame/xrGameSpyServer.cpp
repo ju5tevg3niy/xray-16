@@ -1,3 +1,6 @@
+#include "Common/types_paths.hpp"
+#include "Common/Platform.hpp"
+#include <string>
 #include "StdAfx.h"
 #include "xrMessages.h"
 #include "xrGameSpyServer.h"

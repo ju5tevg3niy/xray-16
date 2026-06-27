@@ -1,3 +1,7 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include <vector>
 #include "pch.hpp"
 #include "script_profiler.hpp"
 #include "script_engine.hpp"

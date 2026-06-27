@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "ai_monster_utils.h"
 #include "Entity.h"

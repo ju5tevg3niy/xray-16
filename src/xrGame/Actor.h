@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
+#include <vector>
 #pragma once
 
 #include "xrEngine/Feel_Touch.h"

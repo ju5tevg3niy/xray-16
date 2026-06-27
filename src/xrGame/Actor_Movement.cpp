@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types_paths.hpp"
 #include "StdAfx.h"
 
 #include "Actor.h"

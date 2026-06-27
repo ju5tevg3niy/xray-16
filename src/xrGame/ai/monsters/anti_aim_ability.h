@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #ifndef ANTI_AIM_ABILITY_H_INCLUDED
 #define ANTI_AIM_ABILITY_H_INCLUDED
 

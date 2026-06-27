@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: script_properties_list_helper.cpp
 //	Created 	: 14.07.2004

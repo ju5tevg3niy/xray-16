@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 /*
 Copyright (c) 2014 OpenXRay
 

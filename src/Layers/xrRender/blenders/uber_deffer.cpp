@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "uber_deffer.h"
 

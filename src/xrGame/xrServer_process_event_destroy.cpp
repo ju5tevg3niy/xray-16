@@ -1,3 +1,4 @@
+#include <string>
 #include "StdAfx.h"
 #include "xrServer.h"
 #include "game_sv_single.h"

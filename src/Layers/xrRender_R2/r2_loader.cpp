@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include <vector>
 #include <tracy/Tracy.hpp>
 #include "stdafx.h"
 #include "Layers/xrRender/ResourceManager.h"

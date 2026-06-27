@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
+#include <string>
 #pragma once
 
 #include "dx113DFluidEmitters.h"

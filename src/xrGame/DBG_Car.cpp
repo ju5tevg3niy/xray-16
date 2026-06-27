@@ -1,3 +1,4 @@
+#include <vector>
 #include "StdAfx.h"
 #ifdef DEBUG
 #include "PHDebug.h"

@@ -1,3 +1,5 @@
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
 #include "stdafx.h"
 
 #include "SoundRender_EffectsA_EAX.h"

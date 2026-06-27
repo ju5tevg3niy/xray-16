@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : xrServer_Object_Base.h
 //  Created     : 19.09.2002

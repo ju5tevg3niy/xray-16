@@ -1,3 +1,7 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include <string>
 #include "StdAfx.h"
 #include "game_cl_mp.h"
 #include "xrEngine/xr_level_controller.h"

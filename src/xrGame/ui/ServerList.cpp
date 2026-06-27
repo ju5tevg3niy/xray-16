@@ -1,3 +1,5 @@
+#include <vector>
+#include <string>
 #include "StdAfx.h"
 #include "ServerList.h"
 #include "UIXmlInit.h"

@@ -1,3 +1,4 @@
+#include "Common/Platform.hpp"
 #pragma once
 #pragma pack(push, 1)
 

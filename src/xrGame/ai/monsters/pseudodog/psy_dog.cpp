@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "ai/monsters/pseudodog/psy_dog.h"
 #include "xrAICore/Navigation/level_graph.h"

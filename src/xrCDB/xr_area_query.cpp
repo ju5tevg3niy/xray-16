@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 #include <tracy/Tracy.hpp>
 
 #include "stdafx.h"

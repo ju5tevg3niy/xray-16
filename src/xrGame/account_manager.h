@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #ifndef ACCOUNT_MANAGER
 #define ACCOUNT_MANAGER

@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #include "xrCore/Utils/destructor.hpp"
 #include "stdafx.h"
 #include "Motion.hpp"

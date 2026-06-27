@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: xrServer_Objects.h
 //	Created 	: 19.09.2002

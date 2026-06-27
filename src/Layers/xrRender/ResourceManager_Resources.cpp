@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include <vector>
 #include "stdafx.h"
 
 #include <FlexibleVertexFormat.h>

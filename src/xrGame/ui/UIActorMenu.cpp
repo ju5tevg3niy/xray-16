@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "UIActorMenu.h"
 #include "UIActorStateInfo.h"

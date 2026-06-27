@@ -1,3 +1,5 @@
+#include "Common/Noncopyable.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: inventory_upgrade_property.h
 //	Created 	: 22.11.2007

@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UITalkWnd.h"
 #include "UITalkDialogWnd.h"

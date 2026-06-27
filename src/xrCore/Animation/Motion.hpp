@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include <vector>
 #include "xrCore/Animation/Bone.hpp"

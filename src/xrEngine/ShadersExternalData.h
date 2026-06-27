@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #pragma once
 
 // Хранилище внешних шейдерных параметров, которые читаются в Blender_Recorder_StandartBinding.cpp

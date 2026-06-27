@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/Platform.hpp"
 #include "StdAfx.h"
 #include "configs_dumper.h"
 #include "configs_common.h"

@@ -1,3 +1,4 @@
+#include "Common/Noncopyable.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: steering_behaviour_cohesion.h
 //	Created 	: 07.11.2007

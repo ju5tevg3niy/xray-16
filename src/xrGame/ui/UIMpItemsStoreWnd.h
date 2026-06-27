@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #include "Common/object_interfaces.h"
 #include "UIBuyWndShared.h"

@@ -1,3 +1,4 @@
+#include <vector>
 // ActorCondition.h: класс состояния игрока
 //
 

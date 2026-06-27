@@ -1,3 +1,4 @@
+#include <cstddef>
 #pragma once
 
 #include "xrAICore/Navigation/level_graph_space.h"

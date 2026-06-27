@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include <vector>
+#include <string>
 #include "StdAfx.h"
 #include "map_location.h"
 #include "map_spot.h"

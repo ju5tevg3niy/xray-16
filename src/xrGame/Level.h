@@ -1,3 +1,7 @@
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
+#include <vector>
+#include <string>
 #pragma once
 
 #include "xrEngine/IGame_Level.h"

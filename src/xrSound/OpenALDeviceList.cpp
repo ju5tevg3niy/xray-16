@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
 /*
  * Copyright (c) 2005, Creative Labs Inc.
  * All rights reserved.

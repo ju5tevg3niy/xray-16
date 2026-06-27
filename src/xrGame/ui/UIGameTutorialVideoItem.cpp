@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #include "pch_script.h"
 #include "UIGameTutorial.h"
 #include "xrUICore/Windows/UIWindow.h"

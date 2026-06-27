@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 #include "Include/xrRender/particles_systems_library_interface.hpp"

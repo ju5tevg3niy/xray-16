@@ -1,3 +1,4 @@
+#include <vector>
 #include <cfloat>
 #include <tracy/Tracy.hpp>
 #include "Common/Platform.hpp"

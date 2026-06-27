@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 #ifndef xrPROPERTIES_H
 #define xrPROPERTIES_H
 

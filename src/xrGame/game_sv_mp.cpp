@@ -1,3 +1,7 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
 #include "StdAfx.h"
 #include "game_sv_mp.h"
 #include "xrServer.h"

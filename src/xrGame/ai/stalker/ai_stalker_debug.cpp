@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: ai_stalker_debug.cpp
 //	Created 	: 05.07.2005

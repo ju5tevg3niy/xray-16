@@ -1,3 +1,5 @@
+#include <atomic>
+#include <vector>
 #pragma once
 #include <cstddef>
 #include "Common/Platform.hpp"

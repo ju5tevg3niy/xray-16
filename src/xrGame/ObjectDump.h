@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <string>
 #pragma once
 #ifdef DEBUG
 std::string get_string(bool v);

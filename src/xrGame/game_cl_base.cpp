@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "pch_script.h"
 #include "game_cl_base.h"
 #include "Level.h"

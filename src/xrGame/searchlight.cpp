@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "searchlight.h"
 #include "xrEngine/LightAnimLibrary.h"

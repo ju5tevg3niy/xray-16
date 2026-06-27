@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "poltergeist.h"
 #include "poltergeist_state_manager.h"

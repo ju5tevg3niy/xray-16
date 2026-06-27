@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "cdkey_ban_list.h"
 #include "Common/object_broker.h"

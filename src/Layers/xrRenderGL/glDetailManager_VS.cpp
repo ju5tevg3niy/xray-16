@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 #include "stdafx.h"
 #include "Layers/xrRender/DetailManager.h"
 #include "xrEngine/IGame_Persistent.h"

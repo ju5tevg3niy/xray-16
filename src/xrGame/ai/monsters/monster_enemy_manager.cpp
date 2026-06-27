@@ -1,3 +1,4 @@
+#include <cstddef>
 #include "StdAfx.h"
 #include "monster_enemy_manager.h"
 #include "basemonster/base_monster.h"

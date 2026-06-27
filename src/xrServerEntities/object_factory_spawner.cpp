@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include <string>
 #include "StdAfx.h"
 
 

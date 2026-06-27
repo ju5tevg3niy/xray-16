@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UIBoosterInfo.h"
 #include "xrUICore/Static/UIStatic.h"

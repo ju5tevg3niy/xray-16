@@ -1,3 +1,6 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include <vector>
 #include <tracy/Tracy.hpp>
 
 // xrServer.cpp: implementation of the xrServer class.

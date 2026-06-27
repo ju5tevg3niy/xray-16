@@ -1,3 +1,7 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include <vector>
+#include <string>
 #include <tracy/Tracy.hpp>
 
 #include "stdafx.h"

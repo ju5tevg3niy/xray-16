@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #include "pch_script.h"
 #include "GameTask.h"
 #include "xrUICore/XML/xrUIXmlParser.h"

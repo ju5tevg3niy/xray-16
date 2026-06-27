@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #include <set>
 
 #include "stdafx.h"

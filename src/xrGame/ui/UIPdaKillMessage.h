@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // File:		UIPdaKillMessage.h
 // Description:	HUD message about player death. Implementation of visual behavior
 // Created:		10.03.2005

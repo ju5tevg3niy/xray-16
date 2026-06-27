@@ -1,3 +1,4 @@
+#include <vector>
 #include "StdAfx.h"
 #include "UIStatsPlayerList.h"
 #include "game_cl_base.h"

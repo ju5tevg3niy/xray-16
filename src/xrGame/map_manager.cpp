@@ -1,3 +1,4 @@
+#include <vector>
 #include <tracy/Tracy.hpp>
 
 #include "pch_script.h"

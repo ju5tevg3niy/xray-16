@@ -1,3 +1,7 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
+#include <cstddef>
+#include "Common/types_paths.hpp"
 #include <tracy/Tracy.hpp>
 // HOM.cpp: implementation of the CHOM class.
 //

@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
 #include "stdafx.h"
 #include "xrCore/FMesh.hpp"
 #include "FSkinned.h"

@@ -1,3 +1,4 @@
+#include "Common/types_paths.hpp"
 #include "StdAfx.h"
 #include "Level.h"
 #include "xrServer_updates_compressor.h"

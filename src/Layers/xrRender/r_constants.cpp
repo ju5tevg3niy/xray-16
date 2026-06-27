@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include <vector>
 #include "stdafx.h"
 
 #include "r_constants.h"

@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #pragma hdrstop
 

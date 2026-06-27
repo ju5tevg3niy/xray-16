@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: space_restrictor.cpp
 //	Created 	: 17.08.2004

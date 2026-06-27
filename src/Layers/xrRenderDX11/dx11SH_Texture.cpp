@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
 #include <tracy/Tracy.hpp>
 
 #include "stdafx.h"

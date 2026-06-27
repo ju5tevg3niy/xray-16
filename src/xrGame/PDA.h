@@ -1,3 +1,5 @@
+#include <vector>
+#include <string>
 #pragma once
 
 #include "xrEngine/Feel_Touch.h"

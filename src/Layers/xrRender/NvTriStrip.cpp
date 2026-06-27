@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #include "stdafx.h"
 #include "NvTriStripObjects.h"
 #include "NvTriStrip.h"

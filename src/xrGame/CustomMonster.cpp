@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 // CustomMonster.cpp: implementation of the CCustomMonster class.
 //
 //////////////////////////////////////////////////////////////////////

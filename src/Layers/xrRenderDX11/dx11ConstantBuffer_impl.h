@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
 #pragma once
 
 namespace xray::render::RENDER_NAMESPACE

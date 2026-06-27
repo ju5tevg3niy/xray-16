@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 #pragma once
 
 #if !defined(USE_OGL)

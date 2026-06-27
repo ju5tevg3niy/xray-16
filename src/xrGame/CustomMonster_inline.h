@@ -1,3 +1,4 @@
+#include "Common/Platform.hpp"
 #pragma once
 
 IC bool CCustomMonster::angle_lerp_bounds(float& a, float b, float c, float d)

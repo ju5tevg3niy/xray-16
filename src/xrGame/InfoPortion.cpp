@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #include "pch_script.h"
 #include "xml_str_id_loader.h"
 #include "Common/object_broker.h"

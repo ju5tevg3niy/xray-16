@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #pragma once
 
 #define SQRT2PI 2.506628274631000502415765284811045253006f

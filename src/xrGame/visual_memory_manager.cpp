@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: visual_memory_manager.cpp
 //	Created 	: 02.10.2001

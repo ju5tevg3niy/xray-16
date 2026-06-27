@@ -1,3 +1,4 @@
+#include <string>
 #include "LocatorAPI.h"
 #include <SDL_filesystem.h>
 #include <SDL_stdinc.h>

@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <string>
 #include "StdAfx.h"
 #include "UIMapWnd.h"
 #include "UIMap.h"

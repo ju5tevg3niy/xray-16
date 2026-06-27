@@ -1,3 +1,6 @@
+#include <cstddef>
+#include <vector>
+#include <string>
 #pragma once
 
 #include "dx113DFluidRenderer.h"

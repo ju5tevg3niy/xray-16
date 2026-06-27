@@ -1,3 +1,6 @@
+#include "Common/Noncopyable.hpp"
+#include "Common/types.hpp"
+#include <vector>
 #pragma once
 
 class XRUICORE_API UIStyleManager : Noncopyable

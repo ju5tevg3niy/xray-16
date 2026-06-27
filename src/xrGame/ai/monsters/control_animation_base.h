@@ -1,3 +1,6 @@
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include <vector>
 #pragma once
 
 #include "control_combase.h"

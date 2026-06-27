@@ -1,3 +1,4 @@
+#include "Common/types_paths.hpp"
 // FHierrarhyVisual.cpp: implementation of the FHierrarhyVisual class.
 //
 //////////////////////////////////////////////////////////////////////

@@ -1,3 +1,6 @@
+#include "Common/Platform.hpp"
+#include <cstddef>
+#include "Common/types.hpp"
 #include "stdafx.h"
 
 #include "editor_base.h"

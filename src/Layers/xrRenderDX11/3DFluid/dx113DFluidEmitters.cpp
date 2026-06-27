@@ -1,3 +1,4 @@
+#include <vector>
 #include "stdafx.h"
 #include "dx113DFluidEmitters.h"
 

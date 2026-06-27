@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : vertex_path_inline.h
 //  Created     : 21.03.2002

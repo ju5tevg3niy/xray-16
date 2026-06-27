@@ -1,3 +1,4 @@
+#include <cstddef>
 #include "StdAfx.h"
 #include "filetransfer_node.h"
 #include "Level.h"

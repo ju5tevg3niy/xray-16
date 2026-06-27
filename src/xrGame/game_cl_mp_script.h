@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 #include "game_cl_mp.h"

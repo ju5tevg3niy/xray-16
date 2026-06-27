@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // File:		UIDebugFonts.h
 // Description:	Output list of all fonts
 // Created:		22.03.2005

@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 ///////////////////////////////////////////////////////////////
 // BlackGraviArtifact.cpp
 // BlackGraviArtefact - гравитационный артефакт,

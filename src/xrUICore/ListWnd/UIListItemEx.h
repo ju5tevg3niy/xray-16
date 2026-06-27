@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // File:        UIListWndEx.cpp
 // Description: Extended ListItem
 //              Required to use feature "Selected Item"

@@ -1,3 +1,7 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include <string>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: xrServer_Object_Base.cpp
 //	Created 	: 19.09.2002

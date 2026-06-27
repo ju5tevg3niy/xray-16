@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types_paths.hpp"
 #include "pch_script.h"
 #include "GameObject.h"
 

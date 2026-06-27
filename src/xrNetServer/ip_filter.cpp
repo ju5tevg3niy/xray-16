@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "ip_filter.h"
 #include "xrCore/xr_ini.h"

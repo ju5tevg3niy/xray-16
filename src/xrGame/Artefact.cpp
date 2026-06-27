@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "Artefact.h"
 #include "xrPhysics/PhysicsShell.h"

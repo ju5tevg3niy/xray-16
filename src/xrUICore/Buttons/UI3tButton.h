@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // File:        UI3tButton.cpp
 // Description: Button with 3 texutres (for <enabled>, <disabled> and <touched> states)
 // Created:     07.12.2004

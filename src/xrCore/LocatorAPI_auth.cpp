@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include <vector>
 #include "stdafx.h"
 #include "xrCore/Threading/Lock.hpp"
 #include "xrCore/Utils/crc32.hpp"

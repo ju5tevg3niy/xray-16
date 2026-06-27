@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #pragma once
 #include "xrCore/Math/matrix.hpp"
 #include "xrsharedmem.h"

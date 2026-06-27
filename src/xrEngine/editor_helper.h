@@ -1,3 +1,6 @@
+#include "Common/Noncopyable.hpp"
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #pragma once
 
 namespace xray::imgui

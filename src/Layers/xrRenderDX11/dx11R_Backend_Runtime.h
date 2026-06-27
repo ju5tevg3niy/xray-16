@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
+#include <cstddef>
 #pragma once
 
 #include "StateManager/dx11ShaderResourceStateCache.h"

@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <string>
 #pragma once
 #include "xrUICore/Windows/UIWindow.h"
 #include "gametype_chooser.h"

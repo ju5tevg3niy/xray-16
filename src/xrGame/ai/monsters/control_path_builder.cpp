@@ -1,3 +1,4 @@
+#include <vector>
 #include "StdAfx.h"
 #include "control_path_builder.h"
 #include "control_manager.h"

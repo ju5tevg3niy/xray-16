@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #include "ai/monsters/control_animation_base.h"
 #include "ai/monsters/ai_monster_defs.h"

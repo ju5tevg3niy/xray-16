@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #pragma once
 #include "xrUICore/EditBox/UIEditBox.h"
 #include "xrUICore/ListBox/UIListBox.h"

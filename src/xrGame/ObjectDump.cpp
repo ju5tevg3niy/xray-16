@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <string>
 #include "StdAfx.h"
 
 #ifdef DEBUG

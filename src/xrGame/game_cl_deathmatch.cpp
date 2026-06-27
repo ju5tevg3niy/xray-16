@@ -1,3 +1,7 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
+#include "Common/types.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "game_cl_deathmatch.h"
 #include "xrMessages.h"

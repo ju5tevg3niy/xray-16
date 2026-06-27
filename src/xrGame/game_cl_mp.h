@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include <vector>
+#include <string>
 #pragma once
 #include "game_cl_base.h"
 #include "xrUICore/ui_defs.h"

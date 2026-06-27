@@ -1,3 +1,4 @@
+#include "Common/types_paths.hpp"
 #pragma once
 
 #include <vector>

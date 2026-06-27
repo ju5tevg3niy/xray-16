@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_movement_manager_smart_cover_loopholes.cpp
 //	Created 	: 14.02.2008

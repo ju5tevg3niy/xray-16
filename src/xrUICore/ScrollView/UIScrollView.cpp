@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "pch.hpp"
 #include "UIScrollView.h"
 #include "ScrollBar/UIScrollBar.h"

@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: UIRankingWnd.cpp
 //	Created 	: 17.01.2008

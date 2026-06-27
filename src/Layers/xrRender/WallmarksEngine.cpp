@@ -1,3 +1,7 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
+#include <cstddef>
+#include <vector>
 // WallmarksEngine.cpp: implementation of the CWallmarksEngine class.
 //
 //////////////////////////////////////////////////////////////////////

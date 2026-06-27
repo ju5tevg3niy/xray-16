@@ -1,3 +1,4 @@
+#include "Common/types_paths.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : xrServer_Objects_Abstract.cpp
 //  Created     : 19.09.2002

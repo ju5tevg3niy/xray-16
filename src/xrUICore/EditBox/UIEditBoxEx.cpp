@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "pch.hpp"
 #include "UIEditBoxEx.h"
 #include "Windows/UIFrameWindow.h"

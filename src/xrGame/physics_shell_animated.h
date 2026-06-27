@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #pragma once
 class CPhysicsShell;
 class CPhysicsShellHolder;

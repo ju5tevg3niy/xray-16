@@ -1,3 +1,7 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include <vector>
 #include "stdafx.h"
 #include "r2.h"
 #include "Layers/xrRender/ShaderResourceTraits.h"

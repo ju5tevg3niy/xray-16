@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/Platform.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: graph_abstract.h
 //	Created 	: 14.01.2004

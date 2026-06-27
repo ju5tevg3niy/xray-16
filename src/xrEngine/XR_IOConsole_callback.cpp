@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 // Module : XR_IOConsole_callback.cpp
 // Created : 17.05.2008

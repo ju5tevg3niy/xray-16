@@ -1,3 +1,7 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "game_cl_artefacthunt.h"
 #include "xrMessages.h"

@@ -1,3 +1,5 @@
+#include "Common/Noncopyable.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_movement_manager_base.cpp
 //	Created 	: 27.12.2003

@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Created		: 24.06.2009
 //	Author		: Dmitriy Iassenev

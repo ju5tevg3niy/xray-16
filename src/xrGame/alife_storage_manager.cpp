@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_storage_manager.cpp
 //	Created 	: 25.12.2002

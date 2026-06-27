@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 // ModelPool.h: interface for the CModelPool class.
 //////////////////////////////////////////////////////////////////////
 #pragma once

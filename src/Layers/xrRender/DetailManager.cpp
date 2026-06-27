@@ -1,3 +1,5 @@
+#include "Common/Platform.hpp"
+#include "Common/types_paths.hpp"
 #include <tracy/Tracy.hpp>
 
 // DetailManager.cpp: implementation of the CDetailManager class.

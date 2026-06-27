@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UICellItem.h"
 #include "xrUICore/Cursor/UICursor.h"

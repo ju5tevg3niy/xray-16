@@ -1,3 +1,8 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include <vector>
+#include <string>
 #pragma once
 
 #include "Layers/xrRender/D3DXRenderBase.h"

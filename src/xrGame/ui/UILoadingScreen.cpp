@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //  Created     : 19.06.2018
 //  Authors     : Xottab_DUTY (OpenXRay project)

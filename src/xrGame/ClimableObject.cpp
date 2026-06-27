@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "ClimableObject.h"
 #include "xrPhysics/IPHStaticGeomShell.h"

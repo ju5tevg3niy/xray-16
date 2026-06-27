@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "quaternion.hpp"
 #include "math_funcs_inline.hpp"
 #include "matrix.hpp"

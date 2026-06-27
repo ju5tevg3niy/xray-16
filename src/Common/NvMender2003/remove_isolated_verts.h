@@ -1,3 +1,4 @@
+#include <vector>
 #ifndef _REMOVE_ISOLATED_VERTS_H_
 #define _REMOVE_ISOLATED_VERTS_H_
 

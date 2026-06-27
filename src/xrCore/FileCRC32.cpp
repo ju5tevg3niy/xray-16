@@ -1,3 +1,4 @@
+#include "Common/types_paths.hpp"
 #include <string>
 #include "Common/types.hpp"
 #include "xrCore/LocatorAPI.h"

@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "WeaponRPG7.h"
 #include "xrServer_Objects_ALife_Items.h"

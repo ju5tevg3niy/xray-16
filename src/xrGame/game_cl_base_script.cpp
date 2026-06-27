@@ -1,3 +1,4 @@
+#include <vector>
 #include "pch_script.h"
 #include "game_cl_base.h"
 

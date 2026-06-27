@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
+#include <vector>
 #include "StdAfx.h"
 #include "Car.h"
 //#if 0

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "pch_script.h"
 #include "script_game_object.h"
 #include "script_game_object_impl.h"

@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types_paths.hpp"
 // CDemoPlay.cpp: implementation of the CDemoPlay class.
 //
 //////////////////////////////////////////////////////////////////////

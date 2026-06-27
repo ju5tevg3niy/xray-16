@@ -1,3 +1,4 @@
+#include <vector>
 #include "StdAfx.h"
 #include "UIMpItemsStoreWnd.h"
 #include "UIXmlInit.h"

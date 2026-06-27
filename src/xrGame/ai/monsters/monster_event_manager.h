@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #include "monster_event_manager_defs.h"
 

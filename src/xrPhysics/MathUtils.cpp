@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "MathUtils.h"
 #include "xrCore/Math/cylinder.hpp"

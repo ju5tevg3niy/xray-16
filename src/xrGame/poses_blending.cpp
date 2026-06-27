@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "poses_blending.h"
 #include "xrCore/Math/quaternion.hpp"

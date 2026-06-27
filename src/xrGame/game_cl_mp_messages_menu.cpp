@@ -1,3 +1,4 @@
+#include "Common/types_paths.hpp"
 #include "StdAfx.h"
 #include "game_cl_mp.h"
 #include "ui/UISpeechMenu.h"

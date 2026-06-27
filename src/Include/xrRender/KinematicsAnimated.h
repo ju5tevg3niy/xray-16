@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
 #ifndef KinematicsAnimated_included
 #define KinematicsAnimated_included
 #pragma once

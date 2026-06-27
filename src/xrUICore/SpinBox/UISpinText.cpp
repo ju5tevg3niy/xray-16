@@ -1,3 +1,4 @@
+#include <string>
 #include "pch.hpp"
 #include "UISpinText.h"
 #include "Lines/UILines.h"

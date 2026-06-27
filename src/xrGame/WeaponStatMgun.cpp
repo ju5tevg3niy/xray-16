@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "WeaponStatMgun.h"
 #include "Include/xrRender/Kinematics.h"

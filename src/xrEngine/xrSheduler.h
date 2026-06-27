@@ -1,3 +1,5 @@
+#include "Common/Platform.hpp"
+#include <vector>
 #pragma once
 
 #include "xrCore/xrstring.h"

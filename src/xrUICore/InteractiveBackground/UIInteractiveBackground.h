@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // File:        UIInteractiveBackground.h
 // Description: template class designed for UI controls to represent their state;
 //              there are 4 states: Enabled, Disabled, Hightlighted and Touched.

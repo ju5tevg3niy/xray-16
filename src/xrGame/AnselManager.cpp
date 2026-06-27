@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
 #include "StdAfx.h"
 
 #ifdef XR_PLATFORM_WINDOWS

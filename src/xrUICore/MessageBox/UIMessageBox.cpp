@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <string>
 #include "pch.hpp"
 #include "UIMessageBox.h"
 #include "XML/UIXmlInitBase.h"

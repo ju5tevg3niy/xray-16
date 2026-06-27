@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types_paths.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "Common/LevelGameDef.h"
 #include "xrScriptEngine/script_process.hpp"

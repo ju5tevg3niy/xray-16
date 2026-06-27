@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <string>
 #include <array>
 #include <cstdlib>
 #include <cstring>

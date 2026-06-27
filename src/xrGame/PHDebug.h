@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 #ifndef PH_DEBUG_H
 #define PH_DEBUG_H
 #ifdef DEBUG

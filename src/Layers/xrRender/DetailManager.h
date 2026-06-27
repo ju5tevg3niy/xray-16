@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
+#include <vector>
 // DetailManager.h: interface for the CDetailManager class.
 //
 //////////////////////////////////////////////////////////////////////

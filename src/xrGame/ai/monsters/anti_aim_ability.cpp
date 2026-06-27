@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "anti_aim_ability.h"
 #include "basemonster/base_monster.h"

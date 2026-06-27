@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #include <tracy/Tracy.hpp>
 #include <unordered_map>
 

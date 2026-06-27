@@ -1,3 +1,4 @@
+#include "Common/Platform.hpp"
 #include "StdAfx.h"
 #include "UICDkey.h"
 #include "xrUICore/Lines/UILines.h"

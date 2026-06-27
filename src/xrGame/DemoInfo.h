@@ -1,3 +1,4 @@
+#include <vector>
 #ifndef DEMOINFO_H
 #define DEMOINFO_H
 

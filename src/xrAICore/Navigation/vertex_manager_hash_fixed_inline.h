@@ -1,3 +1,4 @@
+#include "Common/Platform.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : vertex_manager_hash_fixed_inline.h
 //  Created     : 21.03.2002

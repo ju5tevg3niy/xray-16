@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include <tracy/Tracy.hpp>
 
 // CameraManager.cpp: implementation of the CCameraManager class.

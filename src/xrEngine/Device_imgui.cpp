@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include "Common/Platform.hpp"
 #include <tracy/Tracy.hpp>
 
 #include "stdafx.h"

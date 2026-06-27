@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <string>
 #include "NET_Client.h"
 #include "NET_Common.h"
 #include "NET_Log.h"

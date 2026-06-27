@@ -1,3 +1,4 @@
+#include <vector>
 ///////////////////////////////////////////////////////////////
 // BlackGraviArtifact.h
 // BlackGraviArtefact - гравитационный артефакт,

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef UITEAMPANELS
 #define UITEAMPANELS
 

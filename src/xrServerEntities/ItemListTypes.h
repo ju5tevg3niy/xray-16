@@ -1,3 +1,4 @@
+#include <vector>
 //---------------------------------------------------------------------------
 #ifndef ItemListTypesH
 #define ItemListTypesH

@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include <vector>
+#include <string>
 #pragma once
 
 #include "game_sv_mp.h"

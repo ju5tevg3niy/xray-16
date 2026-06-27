@@ -1,3 +1,7 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
+#include <vector>
 #include "pch_script.h"
 
 #include "xrCore/LocatorAPI.h"

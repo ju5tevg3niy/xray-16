@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
 #include "StdAfx.h"
 #include "UIFrameRect.h"
 #include "HUDManager.h"

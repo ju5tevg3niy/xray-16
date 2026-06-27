@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_movement_manager_obstacles.cpp
 //	Created 	: 27.03.2007

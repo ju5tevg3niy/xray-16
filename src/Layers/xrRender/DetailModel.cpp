@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 #include "stdafx.h"
 #pragma hdrstop
 #include "DetailModel.h"

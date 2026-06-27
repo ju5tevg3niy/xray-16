@@ -1,3 +1,4 @@
+#include <string>
 #include "stdafx.h"
 #include "GameSpy_Browser.h"
 #include "xrServerEntities/gametype_chooser.h"

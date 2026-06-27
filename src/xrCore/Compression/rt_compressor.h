@@ -1,3 +1,4 @@
+#include <cstddef>
 #pragma once
 
 extern void rtc_initialize();

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: xrServer_Objects_ALife_Monsters_script.cpp
 //	Created 	: 19.09.2002

@@ -1,3 +1,4 @@
+#include <cstddef>
 #include "StdAfx.h"
 #include "xrMessages.h"
 #include "file_transfer.h"

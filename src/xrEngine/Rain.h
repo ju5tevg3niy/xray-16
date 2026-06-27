@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 // Rain.h: interface for the CRain class.
 //
 //////////////////////////////////////////////////////////////////////

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <tracy/Tracy.hpp>
 
 // glHW.cpp: implementation of the OpenGL specialisation of CHW.

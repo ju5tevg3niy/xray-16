@@ -1,3 +1,4 @@
+#include <vector>
 #include "StdAfx.h"
 #include "UISkinSelector.h"
 #include "UIXmlInit.h"

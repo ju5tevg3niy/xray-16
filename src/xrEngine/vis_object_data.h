@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #pragma once
 
 // Структура, хранящие уникальные данные для конкретного визуала --#SM+#--

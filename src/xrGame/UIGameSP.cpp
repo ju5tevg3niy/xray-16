@@ -1,3 +1,4 @@
+#include <cstddef>
 #include "pch_script.h"
 #include "UIGameSP.h"
 #include "Actor.h"

@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
 #pragma once
 
 #include "xrEngine/Render.h"

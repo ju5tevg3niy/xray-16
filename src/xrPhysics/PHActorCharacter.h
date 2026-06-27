@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #include "PHSimpleCharacter.h"
 #include "PHActorCharacterInline.h"

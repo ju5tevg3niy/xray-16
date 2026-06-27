@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #pragma once
 
 #include "Include/xrRender/KinematicsAnimated.h"

@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
 #pragma once
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"

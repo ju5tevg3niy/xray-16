@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <string>
 #pragma once
 #include "xrUICore/Static/UIStatic.h"
 

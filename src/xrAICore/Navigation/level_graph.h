@@ -1,3 +1,5 @@
+#include "Common/Platform.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: level_graph.h
 //	Created 	: 02.10.2001

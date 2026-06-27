@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/Platform.hpp"
 #pragma once
 #include <tracy/Tracy.hpp>
 

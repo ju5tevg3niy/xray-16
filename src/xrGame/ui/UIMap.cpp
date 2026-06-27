@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "Level.h"
 #include "map_location.h"

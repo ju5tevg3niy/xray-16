@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: game_graph_space.h
 //	Created 	: 18.02.2003

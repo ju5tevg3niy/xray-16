@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // File:		UI_IB_Static.h
 // Description:	Inheritance of UIInteractiveBackground template class with some
 //				CUIStatic features

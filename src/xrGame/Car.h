@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
+#include <vector>
 #pragma once
 
 //#if 0

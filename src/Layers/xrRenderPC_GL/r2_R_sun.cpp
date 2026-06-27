@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
+#include <vector>
 #include "stdafx.h"
 
 #include "r2_R_sun_support.h"

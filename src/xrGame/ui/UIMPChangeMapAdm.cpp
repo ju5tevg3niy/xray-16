@@ -1,3 +1,4 @@
+#include <string>
 #include "StdAfx.h"
 #include "UIMPChangeMapAdm.h"
 #include "UIXmlInit.h"

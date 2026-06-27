@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
 #pragma once
 #include "Common/Platform.hpp"
 #include "Common/d3d9compat.hpp"

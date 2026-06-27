@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "xrUICore/Buttons/UI3tButton.h"

@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "stdafx.h"
 
 #include "SH_Matrix.h"

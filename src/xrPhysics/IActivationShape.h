@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #pragma once
 class IPhysicsShellHolder;
 XRPHYSICS_API void ActivateShapeExplosive(

@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types_paths.hpp"
+#include <string>
 #include "stdafx.h"
 #include "dx113DFluidData.h"
 #include "dx113DFluidManager.h"

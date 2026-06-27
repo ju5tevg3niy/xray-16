@@ -1,3 +1,5 @@
+#include "Common/Platform.hpp"
+#include <vector>
 // LightTrack.h: interface for the CLightTrack class.
 //
 //////////////////////////////////////////////////////////////////////

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UIMoneyIndicator.h"
 #include "xrUICore/XML/xrUIXmlParser.h"

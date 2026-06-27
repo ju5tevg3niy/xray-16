@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <string>
 #include "pch_script.h"
 
 #include "PhysicsShellHolder.h"

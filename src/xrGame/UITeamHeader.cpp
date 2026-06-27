@@ -1,3 +1,4 @@
+#include <cstddef>
 #include "StdAfx.h"
 #include "UITeamHeader.h"
 #include "UITeamState.h"

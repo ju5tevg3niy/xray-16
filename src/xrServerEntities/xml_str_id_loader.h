@@ -1,3 +1,7 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include <vector>
+#include <string>
 #pragma once
 
 #include "Common/object_broker.h"

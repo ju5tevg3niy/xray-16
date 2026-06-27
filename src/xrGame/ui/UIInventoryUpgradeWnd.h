@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: UIInventoryUpgradeWnd.h
 //	Created 	: 06.10.2007

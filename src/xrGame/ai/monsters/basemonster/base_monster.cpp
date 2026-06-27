@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "base_monster.h"
 #include "xrPhysics/PhysicsShell.h"

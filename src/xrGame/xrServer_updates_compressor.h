@@ -1,3 +1,6 @@
+#include "Common/Noncopyable.hpp"
+#include <cstddef>
+#include <vector>
 #ifndef XRSERVER_UPDATES_COMPRESSOR_INCLUDED
 #define XRSERVER_UPDATES_COMPRESSOR_INCLUDED
 

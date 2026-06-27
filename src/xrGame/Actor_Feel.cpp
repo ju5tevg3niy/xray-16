@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "Actor.h"
 #include "Weapon.h"

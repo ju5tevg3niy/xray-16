@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
 ////////////////////////////////////////////////////////////////////////////
 // Module : line_edit_control.cpp
 // Created : 21.02.2008

@@ -1,3 +1,7 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
+#include "Common/types.hpp"
+#include <string>
 #include <cstring>
 
 #include "stdafx.h"

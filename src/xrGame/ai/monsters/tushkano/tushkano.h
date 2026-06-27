@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "ai/monsters/basemonster/base_monster.h"
 #include "ai/monsters/controlled_entity.h"

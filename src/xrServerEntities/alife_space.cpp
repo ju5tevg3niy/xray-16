@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "alife_space.h"
 #include "xrCore/Text/xr_token.hpp"

@@ -1,3 +1,4 @@
+#include <string>
 #include "stdafx.h"
 #include "xrEngine/xr_object.h"
 #ifdef DEBUG

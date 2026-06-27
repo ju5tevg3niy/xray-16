@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "Include/xrRender/FontRender.h"

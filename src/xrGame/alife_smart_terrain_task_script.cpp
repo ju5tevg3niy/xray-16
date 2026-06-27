@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_smart_terrain_task_script.cpp
 //	Created 	: 20.09.2005

@@ -1,3 +1,4 @@
+#include <cstddef>
 #pragma once
 #include "Common/types.hpp"
 #include "xrCore/xrDebug_macros.h"

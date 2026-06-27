@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "xrSheduler.h"
 #include "xr_object.h"

@@ -1,3 +1,7 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
+#include "Common/types.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "xrEngine/XR_IOConsole.h"
 #include "CustomZone.h"

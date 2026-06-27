@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "stdafx.h"
 
 namespace xray::render::RENDER_NAMESPACE

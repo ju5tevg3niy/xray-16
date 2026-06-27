@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
 #include "stdafx.h"
 #include "Common/_d3d_extensions.h"
 #include "Common/LevelStructure.hpp"

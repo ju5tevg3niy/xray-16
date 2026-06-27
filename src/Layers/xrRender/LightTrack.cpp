@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #include <tracy/Tracy.hpp>
 
 // LightTrack.cpp: implementation of the CROS_impl class.

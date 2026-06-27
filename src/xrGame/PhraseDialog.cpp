@@ -1,3 +1,4 @@
+#include <vector>
 #include "pch_script.h"
 #include "PhraseDialog.h"
 #include "PhraseDialogManager.h"

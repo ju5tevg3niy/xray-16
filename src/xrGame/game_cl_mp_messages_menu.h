@@ -1,3 +1,4 @@
+#include <vector>
 protected:
 using MESSAGEMENUS = std::vector<cl_MessageMenu>;
 MESSAGEMENUS m_aMessageMenus;

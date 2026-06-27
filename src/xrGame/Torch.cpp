@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "Torch.h"
 #include "Entity.h"

@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 #include "stdafx.h"
 #include "xrEngine/IGame_Persistent.h"
 #include "xrEngine/Environment.h"

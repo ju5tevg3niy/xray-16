@@ -1,3 +1,4 @@
+#include "Common/types_paths.hpp"
 #include <set>
 
 #include "StdAfx.h"

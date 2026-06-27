@@ -1,3 +1,4 @@
+#include <cstddef>
 // File:		UISubLine.cpp
 // Description:	Text line. Owns color attribute
 // Created:		04.04.2005

@@ -1,3 +1,5 @@
+#include <vector>
+#include <string>
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : xrServer_Objects_ALife.h
 //  Created     : 19.09.2002

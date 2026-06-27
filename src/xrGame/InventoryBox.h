@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #include "inventory_space.h"
 #include "GameObject.h"

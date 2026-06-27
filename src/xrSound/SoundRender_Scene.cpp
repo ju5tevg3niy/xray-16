@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/Platform.hpp"
+#include <vector>
 #include <tracy/Tracy.hpp>
 
 #include "stdafx.h"

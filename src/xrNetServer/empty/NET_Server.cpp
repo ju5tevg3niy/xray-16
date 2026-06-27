@@ -1,3 +1,6 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include <string>
 #include "NET_Server.h"
 #include "NET_Common.h"
 #include "NET_Log.h"

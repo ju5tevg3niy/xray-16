@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "monster_aura.h"
 #include "basemonster/base_monster.h"

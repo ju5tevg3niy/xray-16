@@ -1,3 +1,4 @@
+#include <cstddef>
 /* coherent noise function over 1, 2 or 3 dimensions */
 /* (copyright Ken CPerlinNoise) */
 

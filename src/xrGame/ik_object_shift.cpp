@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "ik_object_shift.h"
 #include "pose_extrapolation.h"

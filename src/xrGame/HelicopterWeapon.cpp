@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "helicopter.h"
 #include "ExplosiveRocket.h"

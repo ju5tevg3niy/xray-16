@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: UIInvUpgradeProperty.h
 //	Created 	: 22.11.2007

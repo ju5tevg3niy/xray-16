@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "stdafx.h"
 
 #include "r__pixel_calculator.h"

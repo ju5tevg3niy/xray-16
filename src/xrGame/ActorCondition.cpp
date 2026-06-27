@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #include "pch_script.h"
 #include "ActorCondition.h"
 #include "Actor.h"

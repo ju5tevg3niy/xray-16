@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types_paths.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: sound_player.cpp
 //	Created 	: 27.12.2003

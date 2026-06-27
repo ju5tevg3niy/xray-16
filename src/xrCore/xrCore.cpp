@@ -1,3 +1,7 @@
+#include <cstddef>
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
 #include <tracy/Tracy.hpp>
 
 // xrCore.cpp : Defines the entry point for the DLL application.

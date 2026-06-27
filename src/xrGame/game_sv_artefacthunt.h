@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #pragma once
 
 #include "game_sv_teamdeathmatch.h"

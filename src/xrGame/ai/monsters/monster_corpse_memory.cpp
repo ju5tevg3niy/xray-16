@@ -1,3 +1,4 @@
+#include <vector>
 #include "StdAfx.h"
 #include "monster_corpse_memory.h"
 #include "basemonster/base_monster.h"

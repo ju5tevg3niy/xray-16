@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_animation_callbacks.cpp
 //	Created 	: 25.02.2003

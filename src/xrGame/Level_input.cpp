@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "xrEngine/XR_IOConsole.h"
 #include "entity_alive.h"

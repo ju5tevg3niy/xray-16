@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "pch.hpp"
 #include "FontManager.h"
 #include "xrEngine/GameFont.h"

@@ -1,3 +1,4 @@
+#include <vector>
 #include "StdAfx.h"
 #include "UIStatsPlayerInfo.h"
 #include "xrUICore/Static/UIStatic.h"

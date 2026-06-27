@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
+#include <string>
 #include "StdAfx.h"
 #include "login_manager.h"
 #include "account_manager.h"

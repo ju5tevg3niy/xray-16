@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : xrServer_Objects_Abstract.h
 //  Created     : 19.09.2002

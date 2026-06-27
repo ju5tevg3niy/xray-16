@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
 #pragma once
 
 #include "xrCore/Math/rotation.hpp" // SRotation

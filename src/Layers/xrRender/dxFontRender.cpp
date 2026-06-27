@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 #include "stdafx.h"
 
 #include "dxFontRender.h"

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // File:		UIMessagesWindow.h
 // Description:	Window with MP chat and Game Log ( with PDA messages in single and Kill Messages in MP)
 // Created:		22.04.2005

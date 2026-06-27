@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <string>
 #pragma once
 
 /*

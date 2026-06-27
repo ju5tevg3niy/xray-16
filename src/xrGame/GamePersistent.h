@@ -1,3 +1,4 @@
+#include <cstddef>
 #ifndef GamePersistentH
 #define GamePersistentH
 #pragma once

@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #pragma once
 #ifndef D_TRI_COLLIDER_COMMON
 #define D_TRI_COLLIDER_COMMON

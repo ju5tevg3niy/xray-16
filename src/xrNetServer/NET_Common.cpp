@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
 #include "stdafx.h"
 
 #include "NET_Common.h"

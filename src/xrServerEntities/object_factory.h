@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: object_factory.h
 //	Created 	: 27.05.2004

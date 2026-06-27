@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "pch_script.h"
 #include "UIItemInfo.h"
 #include "xrUICore/Static/UIStatic.h"

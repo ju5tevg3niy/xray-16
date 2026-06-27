@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : script_game_object_script.cpp
 //  Created     : 25.09.2003

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "ActorBackpack.h"
 #include "Actor.h"

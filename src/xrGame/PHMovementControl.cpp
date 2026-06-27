@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Noncopyable.hpp"
+#include <vector>
 #include "StdAfx.h"
 
 #include "PHMovementControl.h"

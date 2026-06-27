@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "IGame_Level.h"
 #include "IGame_Persistent.h"

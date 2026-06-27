@@ -1,3 +1,4 @@
+#include <string>
 #pragma once
 #include "xrCore/Text/xr_rtoken.hpp"
 

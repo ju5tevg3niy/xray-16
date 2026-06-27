@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 #include "control_combase.h"

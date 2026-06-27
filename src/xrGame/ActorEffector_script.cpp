@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "pch_script.h"
 #include "ai_space.h"
 #include "xrScriptEngine/script_engine.hpp"

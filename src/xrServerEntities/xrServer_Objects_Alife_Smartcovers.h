@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : xrServer_Objects_ALife_Smartcovers.h
 //  Created     : 17.12.2008

@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "game_cl_teamdeathmatch.h"
 #include "xrMessages.h"

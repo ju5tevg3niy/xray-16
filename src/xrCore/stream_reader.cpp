@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/Platform.hpp"
 #include "stdafx.h"
 #include "stream_reader.h"
 #include "xrCore/Text/string_funcs_inline.hpp"

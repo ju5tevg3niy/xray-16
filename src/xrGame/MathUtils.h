@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
 #ifndef MATH_UTILS_H
 #define MATH_UTILS_H
 

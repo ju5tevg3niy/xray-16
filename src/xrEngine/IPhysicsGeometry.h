@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #pragma once
 #ifndef __IPHYSICS_GEOMETRY_H__
 #define __IPHYSICS_GEOMETRY_H__

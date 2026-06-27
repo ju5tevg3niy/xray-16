@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "UIDialogWnd.h"
 #include "xrUICore/Static/UIStatic.h"

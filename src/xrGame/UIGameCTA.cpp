@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #include "StdAfx.h"
 #include "UIGameCTA.h"
 

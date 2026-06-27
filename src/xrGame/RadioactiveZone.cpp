@@ -1,3 +1,4 @@
+#include <vector>
 #include "StdAfx.h"
 #include "RadioactiveZone.h"
 #include "Level.h"

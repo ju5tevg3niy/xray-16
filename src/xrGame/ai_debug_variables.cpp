@@ -1,3 +1,4 @@
+#include <string>
 #include "StdAfx.h"
 
 namespace ai_dbg

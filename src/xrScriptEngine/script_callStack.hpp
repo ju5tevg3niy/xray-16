@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include <vector>
 #pragma once
 
 #include "xrScriptEngine.hpp"

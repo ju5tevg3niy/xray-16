@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <string>
 #include "pch.hpp"
 #include "UIOptionsItem.h"
 #include "UIOptionsManager.h"

@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include <string>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_smart_terrain_task.cpp
 //	Created 	: 20.09.2005

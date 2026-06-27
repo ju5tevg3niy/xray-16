@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_update_manager.h
 //	Created 	: 25.12.2002

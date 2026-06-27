@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <cstddef>
 #pragma once
 
 #include "xrCore/Math/vector3.hpp"

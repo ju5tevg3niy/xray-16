@@ -1,3 +1,5 @@
+#include <vector>
+#include <string>
 // File:		UILines.h
 // Description:	Multilines Text Control
 // Created:		11.03.2005

@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #ifdef DEBUG
 #include "xrCore/xrCore.h"

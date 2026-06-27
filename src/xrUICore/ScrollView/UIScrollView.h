@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "xrUICore/ScrollBar/UIScrollBar.h"
 #include "xrUICore/Windows/UIWindow.h"

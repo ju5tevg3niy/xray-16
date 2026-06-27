@@ -1,3 +1,6 @@
+#include <cstddef>
+#include <vector>
+#include <string>
 #include "stdafx.h"
 #include "dx113DFluidManager.h"
 #include "dx113DFluidBlenders.h"

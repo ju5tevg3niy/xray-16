@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
+#include <vector>
 // Explosive.cpp: интерфейс для взврывающихся объектов
 //
 //////////////////////////////////////////////////////////////////////

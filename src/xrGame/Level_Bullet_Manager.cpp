@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
+#include <string>
 #include <tracy/Tracy.hpp>
 
 // Level_Bullet_Manager.cpp:	для обеспечения полета пули по траектории

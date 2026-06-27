@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 #define _RANK_COUNT 5

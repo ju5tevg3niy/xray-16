@@ -1,3 +1,5 @@
+#include <vector>
+#include <string>
 #include "StdAfx.h"
 #include "imotion_position.h"
 #include "xrPhysics/PhysicsShell.h"

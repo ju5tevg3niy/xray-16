@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 // PHDynamicData.cpp: implementation of the PHDynamicData class.
 //
 //////////////////////////////////////////////////////////////////////

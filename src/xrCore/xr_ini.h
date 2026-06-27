@@ -1,3 +1,5 @@
+#include "Common/types_paths.hpp"
+#include <string>
 #pragma once
 #include <vector>
 #include "Common/types.hpp"

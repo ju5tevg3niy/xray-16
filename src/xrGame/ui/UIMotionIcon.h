@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #pragma once
 #include "xrUICore/ProgressBar/UIProgressBar.h"
 #include "xrUICore/ProgressBar/UIProgressShape.h"

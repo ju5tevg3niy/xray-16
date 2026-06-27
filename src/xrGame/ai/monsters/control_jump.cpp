@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "control_jump.h"
 #include "basemonster/base_monster.h"

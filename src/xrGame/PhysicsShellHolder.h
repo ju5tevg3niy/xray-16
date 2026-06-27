@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <string>
 #pragma once
 
 #include "GameObject.h"

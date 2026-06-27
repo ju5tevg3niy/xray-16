@@ -1,3 +1,6 @@
+#include "Common/Platform.hpp"
+#include <vector>
+#include <string>
 #pragma once
 
 std::vector<std::string> BuildStackTrace(u16 maxFramesCount = 512);

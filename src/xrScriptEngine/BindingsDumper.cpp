@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <string>
 #include <tracy/Tracy.hpp>
 
 #include "pch.hpp"

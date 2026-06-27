@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 
 #ifndef CHARACTER_PHYSICS_SUPPORT
 #define CHARACTER_PHYSICS_SUPPORT

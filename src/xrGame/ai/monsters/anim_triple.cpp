@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "anim_triple.h"
 #include "control_manager.h"

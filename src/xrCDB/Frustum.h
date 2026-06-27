@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/Platform.hpp"
+#include <cstddef>
 // Frustum.h: interface for the CFrustum class.
 //
 //////////////////////////////////////////////////////////////////////

@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "ai_monster_bones.h"
 #include "Include/xrRender/Kinematics.h"

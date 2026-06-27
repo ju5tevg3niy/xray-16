@@ -1,3 +1,6 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "control_animation_base.h"
 #include "control_direction_base.h"

@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 #pragma once
 #include "xrCore/xrCore.h"
 #include "xrCore/Animation/Envelope.hpp"

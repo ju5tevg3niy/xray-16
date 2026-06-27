@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/Platform.hpp"
 #include "pch.hpp"
 #include "script_debugger.hpp"
 #include "script_lua_helper.hpp"

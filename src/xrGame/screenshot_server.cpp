@@ -1,3 +1,5 @@
+#include "Common/Platform.hpp"
+#include <string>
 #include "StdAfx.h"
 #include "screenshot_server.h"
 #include "xrMessages.h"

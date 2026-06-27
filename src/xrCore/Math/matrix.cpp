@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #include "matrix.hpp"
 #include <cfloat>
 #include <cmath>

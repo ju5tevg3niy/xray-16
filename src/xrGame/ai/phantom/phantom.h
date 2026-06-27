@@ -1,3 +1,4 @@
+#include "xrCore/Math/matrix.hpp"
 #pragma once
 #include "Entity.h"
 #include "Include/xrRender/KinematicsAnimated.h"

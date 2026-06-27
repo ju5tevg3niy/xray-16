@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <string>
 #include "StdAfx.h"
 
 #include "UIServerInfo.h"

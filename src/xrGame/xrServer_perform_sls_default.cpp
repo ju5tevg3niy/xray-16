@@ -1,3 +1,4 @@
+#include "Common/types_paths.hpp"
 #include "StdAfx.h"
 #include "xrServer.h"
 #include "xrMessages.h"

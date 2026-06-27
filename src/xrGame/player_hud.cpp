@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types_paths.hpp"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "player_hud.h"
 #include "HudItem.h"

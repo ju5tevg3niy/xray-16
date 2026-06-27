@@ -1,3 +1,4 @@
+#include <vector>
 
 #ifndef __DCTRILISTCOLLIDER_INCLUDED__
 #define __DCTRILISTCOLLIDER_INCLUDED__

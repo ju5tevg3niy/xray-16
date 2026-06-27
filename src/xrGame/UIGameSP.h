@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "UIGameCustom.h"
 #include "ui/UIDialogWnd.h"

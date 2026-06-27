@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <vector>
 #pragma once
 
 #include "SoundRender_Environment.h"

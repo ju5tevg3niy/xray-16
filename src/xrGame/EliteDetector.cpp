@@ -1,3 +1,6 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
+#include <vector>
 #include "StdAfx.h"
 #include "EliteDetector.h"
 #include "player_hud.h"

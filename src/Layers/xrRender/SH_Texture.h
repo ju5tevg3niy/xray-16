@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #include <imgui.h>
 #include "Common/Platform.hpp"

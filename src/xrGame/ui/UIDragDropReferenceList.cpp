@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UIDragDropReferenceList.h"
 #include "UICellItem.h"

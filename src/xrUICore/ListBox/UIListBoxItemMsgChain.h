@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef UILISTBOXITEMMSGCHAIN_H_INCLUDED
 #define UILISTBOXITEMMSGCHAIN_H_INCLUDED
 

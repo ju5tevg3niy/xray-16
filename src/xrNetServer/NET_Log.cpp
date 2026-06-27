@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #include "stdafx.h"
 #include "NET_Log.h"
 #include "xrCore/Threading/Lock.hpp"

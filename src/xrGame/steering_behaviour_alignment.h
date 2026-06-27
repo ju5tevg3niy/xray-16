@@ -1,3 +1,4 @@
+#include "Common/Noncopyable.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: steering_behaviour_alignment.h
 //	Created 	: 07.11.2007

@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : alife_simulator_script.cpp
 //  Created     : 25.12.2002

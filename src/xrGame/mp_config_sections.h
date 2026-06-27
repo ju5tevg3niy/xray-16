@@ -1,3 +1,4 @@
+#include <vector>
 #ifndef MP_CONFIG_SECTIONS_INCLUDED
 #define MP_CONFIG_SECTIONS_INCLUDED
 

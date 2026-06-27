@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 #include "alife_abstract_registry.h"
 

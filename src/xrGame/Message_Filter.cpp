@@ -1,3 +1,4 @@
+#include "Common/types_paths.hpp"
 #include "StdAfx.h"
 #include "Message_Filter.h"
 #include "NET_Queue.h"

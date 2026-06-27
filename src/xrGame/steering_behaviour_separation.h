@@ -1,3 +1,4 @@
+#include "Common/Noncopyable.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: steering_behaviour_separation.h
 //	Created 	: 07.11.2007

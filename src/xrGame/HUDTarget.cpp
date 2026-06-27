@@ -1,3 +1,4 @@
+#include "Common/Platform.hpp"
 #include "StdAfx.h"
 #include "HUDTarget.h"
 #include "xrMaterialSystem/GameMtlLib.h"

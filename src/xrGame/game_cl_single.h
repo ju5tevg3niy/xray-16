@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "game_cl_base.h"
 

@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: UIFactionWarWnd.cpp
 //	Created 	: 26.12.2007

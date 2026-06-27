@@ -1,3 +1,4 @@
+#include <cstddef>
 #ifndef FILETRANSFER
 #define FILETRANSFER
 #include "xrCore/Containers/AssociativeVector.hpp"

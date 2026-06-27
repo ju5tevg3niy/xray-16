@@ -1,3 +1,8 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include "Common/Platform.hpp"
+#include <vector>
+#include <string>
 #include "stdafx.h"
 
 #include "StackTrace.h"

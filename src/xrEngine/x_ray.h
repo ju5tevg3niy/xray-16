@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <atomic>
 #pragma once
 
 #include <mutex>

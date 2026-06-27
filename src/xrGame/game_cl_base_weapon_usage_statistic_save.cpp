@@ -1,3 +1,4 @@
+#include "Common/Platform.hpp"
 #include "StdAfx.h"
 #include "game_cl_base.h"
 #include "Level.h"

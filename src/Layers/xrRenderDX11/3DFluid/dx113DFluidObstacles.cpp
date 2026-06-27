@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include <vector>
 #include "stdafx.h"
 #include "dx113DFluidObstacles.h"
 #include "xrEngine/xr_object.h"

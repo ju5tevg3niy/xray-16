@@ -1,3 +1,4 @@
+#include <cstddef>
 #ifndef TELE_WHIRLWIND
 #define TELE_WHIRLWIND
 #include "ai/monsters/telekinesis.h"

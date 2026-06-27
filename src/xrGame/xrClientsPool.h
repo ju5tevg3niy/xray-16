@@ -1,3 +1,4 @@
+#include <vector>
 #ifndef XRCLIENTS_POOL_H_INCLUDED
 #define XRCLIENTS_POOL_H_INCLUDED
 

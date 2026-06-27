@@ -1,3 +1,4 @@
+#include "Common/Platform.hpp"
 #include "stdafx.h"
 
 #include "noise.h"

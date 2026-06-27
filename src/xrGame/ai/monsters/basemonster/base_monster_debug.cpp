@@ -1,3 +1,7 @@
+#include <cstddef>
+#include "Common/types.hpp"
+#include <vector>
+#include <string>
 #include "pch_script.h"
 #include "base_monster.h"
 #include "Level.h"

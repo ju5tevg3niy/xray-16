@@ -1,3 +1,4 @@
+#include <cstddef>
 #include "stdafx.h"
 #include "Image.hpp"
 

@@ -1,3 +1,4 @@
+#include <string>
 #include "StdAfx.h"
 #include "phvalide.h"
 #include "MathUtils.h"

@@ -1,3 +1,5 @@
+#include "xrCore/Math/matrix.hpp"
+#include "Common/types.hpp"
 #include "pch_script.h"
 #include "Actor_Flags.h"
 #include "HUDManager.h"

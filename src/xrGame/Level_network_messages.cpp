@@ -1,3 +1,4 @@
+#include <cstddef>
 #include <tracy/Tracy.hpp>
 
 #include "StdAfx.h"

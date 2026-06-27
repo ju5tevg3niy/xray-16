@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include <vector>
 #include "pch.hpp"
 #include "UIComboBox.h"
 #include "XML/UITextureMaster.h"

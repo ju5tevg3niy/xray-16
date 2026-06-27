@@ -1,3 +1,5 @@
+#include <cstddef>
+#include "Common/types.hpp"
 #include "pch.hpp"
 
 #include "UIFrameWindow.h"

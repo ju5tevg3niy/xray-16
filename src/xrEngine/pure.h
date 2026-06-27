@@ -1,3 +1,5 @@
+#include "Common/Platform.hpp"
+#include <cstddef>
 #pragma once
 
 #include <vector>
