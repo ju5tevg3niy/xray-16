@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
 #include <vector>
 #pragma once
 #include "ai/monsters/state.h"

@@ -1,3 +1,7 @@
+#include "Common/types.hpp"
+#include "xrCore/xr_shortcut.h"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include <string>
 #pragma once
 #include "xrCore/Text/xr_rtoken.hpp"

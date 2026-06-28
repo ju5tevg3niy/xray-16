@@ -1,3 +1,4 @@
+#include "xrCore/Threading/ThreadUtil.hpp"
 #include "TaskManager.hpp"
 #include <SDL_events.h>
 #include <algorithm>

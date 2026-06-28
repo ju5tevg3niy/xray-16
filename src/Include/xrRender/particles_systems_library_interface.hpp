@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: particles_systems_library_interface.hpp
 //	Created 	: 26.01.2008

@@ -1,3 +1,7 @@
+#include "xrCore/log.h"
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include <cstddef>
 #include <string>
 #include "pch.hpp"

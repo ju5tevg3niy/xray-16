@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #ifndef SCREENSHOT_SERVER
 #define SCREENSHOT_SERVER
 #include "file_transfer.h"

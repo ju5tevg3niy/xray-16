@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #ifndef FIRST_BULLET_CONTROLLER
 #define FIRST_BULLET_CONTROLLER
 

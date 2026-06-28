@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include <cstddef>
 #include <vector>
 #include <tracy/Tracy.hpp>

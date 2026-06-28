@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_animation_global.cpp
 //	Created 	: 25.02.2003

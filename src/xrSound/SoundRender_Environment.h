@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include <vector>
 #pragma once

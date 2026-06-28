@@ -1,3 +1,9 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "StdAfx.h"
 #include "filetransfer_node.h"

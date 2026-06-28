@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_monster_patrol_path_manager.cpp
 //	Created 	: 01.11.2005

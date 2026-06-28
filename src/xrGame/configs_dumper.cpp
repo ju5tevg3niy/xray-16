@@ -1,3 +1,8 @@
+#include "xrCore/Threading/ThreadUtil.hpp"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "Common/Platform.hpp"
 #include "StdAfx.h"

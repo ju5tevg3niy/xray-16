@@ -1,3 +1,6 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 #include "Common/Platform.hpp"
 #include "stdafx.h"
 #pragma hdrstop

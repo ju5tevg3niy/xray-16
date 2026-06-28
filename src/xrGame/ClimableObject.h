@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "PhysicsShellHolder.h"
 #include "xrPhysics/IClimableObject.h"

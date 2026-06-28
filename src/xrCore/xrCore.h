@@ -1,29 +1,6 @@
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"
 #pragma once
-#include "xrCore/Math/matrix.hpp"
-#include "xrsharedmem.h"
-#include "xrstring.h"
-#include "xr_resource.h"
-#include "Compression/rt_compressor.h"
-#include "xr_shared.h"
-#include "string_concatenations.h"
-#include "xrCore/Math/flags.hpp"
-#include "xr_shortcut.h"
-#include "FS.h"
-#include "log.h"
-#include "Text/xr_trims.hpp"
-#include "xr_ini.h"
-#ifdef NO_FS_SCAN
-#include "ELocatorAPI.h"
-#else
-#include "LocatorAPI.h"
-#endif
-#include "FileSystem.h"
-#include "FTimer.h"
-#include "Utils/fastdelegate.hpp"
-#include "net_utils.h"
-#include "xrCore/Threading/ThreadUtil.hpp"
 
 // ***** The Core definition *****
 class xrCore

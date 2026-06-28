@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include <string>
 #include "StdAfx.h"
 #include "UIMPChangeMapAdm.h"

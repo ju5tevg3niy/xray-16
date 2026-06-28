@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: sight_manager.h

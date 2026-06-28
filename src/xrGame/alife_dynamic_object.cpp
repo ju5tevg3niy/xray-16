@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_dynamic_object.cpp

@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 // EffectorZoomInertion.cpp: инерция(покачивания) оружия в режиме
 //							 приближения
 //////////////////////////////////////////////////////////////////////

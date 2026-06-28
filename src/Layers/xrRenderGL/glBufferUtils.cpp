@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <cstddef>
 #include "stdafx.h"
 #include "Layers/xrRender/BufferUtils.h"

@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
 #include "xrDebug.h"
 #include <SDL_assert.h>
 #include <SDL_error.h>

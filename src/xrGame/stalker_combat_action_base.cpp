@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_combat_action_base.cpp
 //	Created 	: 25.03.2004

@@ -1,3 +1,4 @@
+#include "xrCore/FTimer.h"
 #include "Common/types.hpp"
 #include <vector>
 #include <string>

@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "first_bullet_controller.h"
 #include "Level.h"

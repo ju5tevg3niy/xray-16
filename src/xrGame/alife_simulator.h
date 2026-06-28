@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_simulator.h
 //	Created 	: 25.12.2002

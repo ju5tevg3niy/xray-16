@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #pragma once
 #include <chrono>
 #include <vector>

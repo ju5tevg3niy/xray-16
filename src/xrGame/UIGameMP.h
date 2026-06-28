@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #ifndef UIGAMEMP_H
 #define UIGAMEMP_H
 

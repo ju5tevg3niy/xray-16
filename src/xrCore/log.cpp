@@ -1,3 +1,7 @@
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
 #include "xrCore/Math/matrix.hpp"
 #include "log.h"
 #include <chrono>

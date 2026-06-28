@@ -1,3 +1,8 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: script_binder_object.cpp
 //	Created 	: 29.03.2004

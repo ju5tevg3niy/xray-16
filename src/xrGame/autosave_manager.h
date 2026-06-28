@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: autosave_manager.h
 //	Created 	: 04.11.2004

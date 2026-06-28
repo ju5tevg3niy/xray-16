@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "WeaponShotgun.h"
 #include "Entity.h"

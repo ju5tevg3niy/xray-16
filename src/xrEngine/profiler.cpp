@@ -1,3 +1,5 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: profiler.cpp

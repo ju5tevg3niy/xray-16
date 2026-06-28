@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "actor_statistic_mgr.h"
 #include "alife_registry_wrappers.h"

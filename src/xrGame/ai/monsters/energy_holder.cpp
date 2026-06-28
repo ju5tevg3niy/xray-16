@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include "StdAfx.h"
 #include "energy_holder.h"
 #include "GameObject.h"

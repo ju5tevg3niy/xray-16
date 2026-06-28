@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
 #include "xrCore/Math/matrix.hpp"
 #include "Common/types.hpp"
 #include "StdAfx.h"

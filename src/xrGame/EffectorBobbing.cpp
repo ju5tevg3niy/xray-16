@@ -1,3 +1,6 @@
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "EffectorBobbing.h"

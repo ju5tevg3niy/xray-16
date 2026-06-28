@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "ElevatorState.h"
 #include "IClimableObject.h"

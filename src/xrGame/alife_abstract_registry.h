@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_abstract_registry.h
 //	Created 	: 30.06.2004

@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
 #include <vector>
 #ifndef __XR_CONTEXTMENU_H__
 #define __XR_CONTEXTMENU_H__

@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "Level.h"
 #include "NET_Queue.h"

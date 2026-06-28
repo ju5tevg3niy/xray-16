@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: object_interfaces.h
 //	Created 	: 05.01.2003

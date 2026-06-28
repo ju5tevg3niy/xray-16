@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #ifndef _INCDEF_NETCOMMON_H_
 #define _INCDEF_NETCOMMON_H_

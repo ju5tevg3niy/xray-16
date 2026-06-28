@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: game_level_cross_table_inline.h
 //	Created 	: 20.02.2003

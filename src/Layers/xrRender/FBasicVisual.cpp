@@ -1,3 +1,7 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 // dxRender_Visual.cpp: implementation of the dxRender_Visual class.
 //
 //////////////////////////////////////////////////////////////////////

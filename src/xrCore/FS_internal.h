@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
 #pragma once
 #include <cerrno>
 #include <cstddef>

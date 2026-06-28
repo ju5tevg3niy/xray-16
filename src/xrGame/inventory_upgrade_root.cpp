@@ -1,3 +1,6 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: inventory_upgrade_root.cpp
 //	Created 	: 19.10.2007

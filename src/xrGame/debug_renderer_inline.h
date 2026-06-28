@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: debug_renderer_inline.h

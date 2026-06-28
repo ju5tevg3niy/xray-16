@@ -1,3 +1,6 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #pragma once
 #include "xrUICore/Static/UIStatic.h"

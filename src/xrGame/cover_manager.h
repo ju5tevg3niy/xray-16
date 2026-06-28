@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: cover_manager.h

@@ -1,3 +1,4 @@
+#include "xrCore/net_utils.h"
 #include "xrCore/Math/matrix.hpp"
 #pragma once
 

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "WeaponRevolver.h"
 #include "ParticlesObject.h"

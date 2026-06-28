@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "controller.h"
 #include "controller_state_manager.h"

@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: visual_memory_manager.h
 //	Created 	: 02.10.2001

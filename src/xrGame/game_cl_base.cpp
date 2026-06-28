@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
 #include "Common/types.hpp"
 #include "pch_script.h"
 #include "game_cl_base.h"

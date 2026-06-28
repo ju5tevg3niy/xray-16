@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////////
 //	Module		:	cta_game_artefact.h
 //	Created		:	19.12.2007

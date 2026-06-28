@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <vector>
 #ifndef _MENDER_INPUT_OUTPUT_H_
 #define _MENDER_INPUT_OUTPUT_H_

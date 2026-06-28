@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include <vector>
 #include "stdafx.h"

@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
 #pragma once
 #include "xrCore/Utils/fastdelegate.hpp"
 #include "xrCore/Crypto/xr_dsa_signer.h"

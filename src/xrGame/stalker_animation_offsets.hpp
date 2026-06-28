@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_animation_offsets.hpp
 //	Created 	: 19.12.2007

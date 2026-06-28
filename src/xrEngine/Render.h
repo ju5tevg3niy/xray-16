@@ -1,3 +1,7 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/log.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
 #include "xrCore/Math/matrix.hpp"
 #include "Common/types.hpp"
 #pragma once

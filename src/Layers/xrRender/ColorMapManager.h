@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #pragma once
 
 namespace xray::render::RENDER_NAMESPACE

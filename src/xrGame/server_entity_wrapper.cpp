@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : server_entity_wrapper.cpp
 //  Created     : 16.10.2004

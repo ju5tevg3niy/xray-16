@@ -1,3 +1,8 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include <tracy/Tracy.hpp>
 

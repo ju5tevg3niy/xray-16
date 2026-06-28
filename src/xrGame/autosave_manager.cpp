@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include "Common/types_paths.hpp"
 #include "Common/Platform.hpp"
 ////////////////////////////////////////////////////////////////////////////

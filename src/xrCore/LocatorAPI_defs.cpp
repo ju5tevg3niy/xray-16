@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/string_concatenations.h"
 #include <cstring>
 #include <ctime>
 #include <string>

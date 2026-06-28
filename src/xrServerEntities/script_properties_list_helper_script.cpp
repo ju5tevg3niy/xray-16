@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: properties_list_helper_script.cpp

@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/xrstring.h"
 #ifndef ANTICHEAT_DUMPABLE_OBJECT
 #define ANTICHEAT_DUMPABLE_OBJECT
 

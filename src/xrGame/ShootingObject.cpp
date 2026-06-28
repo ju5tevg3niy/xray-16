@@ -1,3 +1,7 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 //////////////////////////////////////////////////////////////////////
 // ShootingObject.cpp:  интерфейс для семейства стреляющих объектов

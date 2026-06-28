@@ -1,3 +1,6 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
 #include "Common/types.hpp"
 #include "StdAfx.h"
 #include "wallmark_manager.h"

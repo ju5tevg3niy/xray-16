@@ -1,3 +1,6 @@
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
 #pragma once
 
 #include "PHSynchronize.h"

@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: smart_cover_transition.cpp

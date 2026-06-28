@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #pragma once
 
 #include "UIGameMP.h"

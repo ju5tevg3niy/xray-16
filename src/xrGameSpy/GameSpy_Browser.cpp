@@ -1,3 +1,6 @@
+#include "xrCore/Threading/ThreadUtil.hpp"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include <string>
 #include "stdafx.h"
 #include "GameSpy_Browser.h"

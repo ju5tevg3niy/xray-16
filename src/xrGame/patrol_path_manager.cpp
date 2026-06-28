@@ -1,3 +1,7 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: patrol_path_manager.cpp
 //	Created 	: 03.12.2003

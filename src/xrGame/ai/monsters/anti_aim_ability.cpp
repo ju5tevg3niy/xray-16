@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/Text/xr_trims.hpp"
 #include "Common/types.hpp"
 #include "StdAfx.h"
 #include "anti_aim_ability.h"

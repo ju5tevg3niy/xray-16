@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #pragma once
 #include "WeaponMagazined.h"
 #include "WeaponShotgun.h"

@@ -1,3 +1,9 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 #include <string>
 #pragma once

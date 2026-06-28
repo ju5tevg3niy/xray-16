@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "controller_state_attack_hide.h"

@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #pragma once
 #include "xrCore/Math/fbox.hpp"

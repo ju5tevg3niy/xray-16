@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_torso_animation.cpp

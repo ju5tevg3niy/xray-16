@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/FS.h"
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////

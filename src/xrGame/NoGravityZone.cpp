@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "NoGravityZone.h"
 #include "xrPhysics/PhysicsShell.h"

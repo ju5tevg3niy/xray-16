@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "control_run_attack.h"
 #include "basemonster/base_monster.h"

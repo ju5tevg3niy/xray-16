@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 // Hiding until enemy get out from its sight

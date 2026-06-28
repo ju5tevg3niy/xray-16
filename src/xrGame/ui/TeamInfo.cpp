@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include <string>
 #include "StdAfx.h"
 #include "TeamInfo.h"

@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 #include "StdAfx.h"
 #include "dTriColliderCommon.h"
 #include "xrPhysics/dcylinder/dCylinder.h"

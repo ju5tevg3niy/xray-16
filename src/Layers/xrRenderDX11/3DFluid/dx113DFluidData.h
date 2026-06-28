@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
 #include "xrCore/Math/matrix.hpp"
 #include <vector>
 #include <string>

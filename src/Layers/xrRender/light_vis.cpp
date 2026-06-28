@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "Layers/xrRender/light.h"
 #include "xrCDB/Intersect.hpp"

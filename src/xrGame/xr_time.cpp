@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "xr_time.h"
 #include "ui/UIInventoryUtilities.h"

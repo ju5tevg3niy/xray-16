@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 // CL	== client 2 server message

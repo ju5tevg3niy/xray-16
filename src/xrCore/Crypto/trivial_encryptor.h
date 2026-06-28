@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 class trivial_encryptor

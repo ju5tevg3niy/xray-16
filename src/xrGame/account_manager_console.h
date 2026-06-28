@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #ifndef ACCOUNT_MANAGER_CONSOLE
 #define ACCOUNT_MANAGER_CONSOLE
 

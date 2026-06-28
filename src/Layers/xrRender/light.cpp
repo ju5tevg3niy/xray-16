@@ -1,3 +1,6 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include "xrCore/Math/matrix.hpp"
 #include <tracy/Tracy.hpp>
 

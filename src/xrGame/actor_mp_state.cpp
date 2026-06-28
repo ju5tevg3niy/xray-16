@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "actor_mp_state.h"
 

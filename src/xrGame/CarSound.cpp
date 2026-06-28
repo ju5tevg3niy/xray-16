@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
 #include "StdAfx.h"
 #ifdef DEBUG
 #include "PHDebug.h"

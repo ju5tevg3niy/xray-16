@@ -1,3 +1,5 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "Common/types.hpp"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: space_restriction_composition.cpp

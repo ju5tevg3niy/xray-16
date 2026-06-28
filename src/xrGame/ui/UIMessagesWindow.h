@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 // File:		UIMessagesWindow.h
 // Description:	Window with MP chat and Game Log ( with PDA messages in single and Kill Messages in MP)

@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 //////////////////////////////////////////////////////////////////////
 // inventory_owner_info.h:	для работы с сюжетной информацией
 //

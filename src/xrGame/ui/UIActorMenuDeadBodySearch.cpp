@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UIActorMenu.h"
 #include "UIWeightBar.h"

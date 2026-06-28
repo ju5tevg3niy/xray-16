@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #pragma once
 #include <map>
 #include "xrstring.h"

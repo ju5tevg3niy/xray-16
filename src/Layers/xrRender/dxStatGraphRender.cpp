@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "stdafx.h"
 #include "dxStatGraphRender.h"

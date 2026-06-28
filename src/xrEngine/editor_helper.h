@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #include "Common/Noncopyable.hpp"
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"

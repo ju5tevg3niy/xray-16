@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: xrServer_script_macroses.cpp
 //	Created 	: 24.06.2004

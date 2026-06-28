@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 // DummyObject.h: interface for the CHangingLamp class.
 //
 //////////////////////////////////////////////////////////////////////

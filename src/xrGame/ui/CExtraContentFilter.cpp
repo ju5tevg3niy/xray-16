@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 #include "StdAfx.h"
 #include "CExtraContentFilter.h"

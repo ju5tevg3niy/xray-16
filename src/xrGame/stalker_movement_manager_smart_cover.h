@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_movement_manager_smart_cover.h

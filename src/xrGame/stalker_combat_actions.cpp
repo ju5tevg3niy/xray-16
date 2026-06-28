@@ -1,3 +1,5 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_combat_actions.cpp
 //	Created 	: 25.03.2004

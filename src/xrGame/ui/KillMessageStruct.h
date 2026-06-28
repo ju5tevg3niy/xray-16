@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 // File:		KillMessageStruct.h
 // Description:	storage for HUD message about player death
 // Created:		10.03.2005

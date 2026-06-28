@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : alife_simulator_base.h
 //  Created     : 25.12.2002

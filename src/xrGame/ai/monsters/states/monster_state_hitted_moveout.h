@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "detail_path_manager.h"

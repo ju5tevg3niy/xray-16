@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: path_manager_params_nearest_vertex.h
 //	Created 	: 21.03.2002

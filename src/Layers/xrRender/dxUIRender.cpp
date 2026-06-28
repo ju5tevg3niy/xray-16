@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "Common/types_paths.hpp"
 #include "stdafx.h"

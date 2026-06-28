@@ -1,3 +1,8 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UIActorMenu.h"

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : vertex_allocator_fixed_inline.h
 //  Created     : 21.03.2002

@@ -1,3 +1,7 @@
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 #ifndef PH_DESTROYABLE
 #define PH_DESTROYABLE

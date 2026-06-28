@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "StdAfx.h"
 #include "UIGameAHunt.h"
 

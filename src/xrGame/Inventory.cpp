@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "pch_script.h"
 #include "Inventory.h"
 #include "Actor.h"

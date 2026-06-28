@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Compression/rt_compressor.h"
 #include <cstddef>
 #include "stdafx.h"
 #pragma hdrstop

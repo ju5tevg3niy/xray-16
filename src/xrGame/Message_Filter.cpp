@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "Common/types_paths.hpp"
 #include "StdAfx.h"
 #include "Message_Filter.h"

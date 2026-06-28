@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "FS.h"
 #include <cstdarg>

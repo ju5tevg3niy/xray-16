@@ -1,3 +1,7 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include <vector>
 #include "pch_script.h"
 #include "UIInventoryUtilities.h"

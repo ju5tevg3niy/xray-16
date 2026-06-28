@@ -1,3 +1,5 @@
+#include "xrCore/FTimer.h"
+#include "Common/types.hpp"
 #include <cstddef>
 #include <vector>
 // xrXRC.h: interface for the xrXRC class.

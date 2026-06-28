@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include <vector>
 // WallmarksEngine.h: interface for the CWallmarksEngine class.

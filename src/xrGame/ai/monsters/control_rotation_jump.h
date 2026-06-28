@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 #pragma once
 #include "control_combase.h"
 #include "Include/xrRender/KinematicsAnimated.h"

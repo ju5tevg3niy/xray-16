@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "base_monster.h"
 #include "xrAICore/Navigation/ai_object_location.h"

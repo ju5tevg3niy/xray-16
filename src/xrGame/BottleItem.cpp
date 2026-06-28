@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 ///////////////////////////////////////////////////////////////
 // BottleItem.cpp
 // BottleItem - бутылка с напитком, которую можно разбить

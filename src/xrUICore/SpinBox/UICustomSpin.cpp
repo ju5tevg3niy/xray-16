@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // file:		UIustomSpin.cpp
 // description:	base class for CSpinNum & CSpinText
 // created:		15.06.2005

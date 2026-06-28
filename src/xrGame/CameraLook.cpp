@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "xrCore/Math/matrix.hpp"
 #include <cstddef>
 #include "Common/types.hpp"

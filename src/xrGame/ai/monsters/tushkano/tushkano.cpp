@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "tushkano.h"
 #include "tushkano_state_manager.h"

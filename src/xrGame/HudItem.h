@@ -1,3 +1,8 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 #include "Common/types.hpp"
 #pragma once

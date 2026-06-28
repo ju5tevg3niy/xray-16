@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "pch.hpp"
 #include "UIListBoxItemMsgChain.h"
 

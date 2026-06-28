@@ -1,3 +1,11 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/Compression/rt_compressor.h"
+#include "xrCore/xrstring.h"
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////

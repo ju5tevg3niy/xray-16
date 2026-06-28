@@ -1,3 +1,9 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include "xrCore/Math/matrix.hpp"
 #include "Common/types_paths.hpp"
 #include <vector>

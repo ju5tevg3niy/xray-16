@@ -1,3 +1,7 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
 #include "Common/types.hpp"
 #include <tracy/Tracy.hpp>
 

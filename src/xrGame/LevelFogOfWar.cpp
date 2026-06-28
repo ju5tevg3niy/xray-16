@@ -1,3 +1,8 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 // LevelFogOfWar.cpp:  для карты уровня в одиночном режиме игры
 //
 //////////////////////////////////////////////////////////////////////

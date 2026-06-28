@@ -1,3 +1,6 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "MathUtils.h"

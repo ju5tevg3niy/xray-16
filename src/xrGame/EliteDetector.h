@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "CustomDetector.h"
 #include "Level.h"

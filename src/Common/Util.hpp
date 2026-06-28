@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #pragma once
 
 #define IMPLEMENT_ENUM_FLAG_OPERATORS(TEnum, TBaseType)\

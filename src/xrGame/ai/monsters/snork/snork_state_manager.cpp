@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "snork.h"
 #include "snork_state_manager.h"

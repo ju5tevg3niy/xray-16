@@ -1,3 +1,6 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_registry_container_composition.h
 //	Created 	: 01.07.2004

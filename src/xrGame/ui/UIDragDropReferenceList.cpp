@@ -1,3 +1,6 @@
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "Common/types.hpp"
 #include "StdAfx.h"

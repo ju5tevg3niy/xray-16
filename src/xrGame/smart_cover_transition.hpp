@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: smart_cover_transition.hpp

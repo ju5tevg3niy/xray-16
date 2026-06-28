@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: script_rtoken_list.h

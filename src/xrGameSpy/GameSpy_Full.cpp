@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "stdafx.h"
 #include "GameSpy_Full.h"
 #include "GameSpy_Available.h"

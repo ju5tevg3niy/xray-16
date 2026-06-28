@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef _EFFECTOR_BOBBING_H
 #define _EFFECTOR_BOBBING_H
 #pragma once

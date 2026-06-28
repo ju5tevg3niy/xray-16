@@ -1,3 +1,4 @@
+#include "xrCore/Utils/cpu.hpp"
 #include "Common/types.hpp"
 #include "Lock.hpp"
 #include <atomic>

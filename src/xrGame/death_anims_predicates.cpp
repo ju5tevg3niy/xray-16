@@ -1,3 +1,6 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 
 #include "death_anims.h"

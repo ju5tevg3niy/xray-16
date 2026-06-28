@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "bloodsucker.h"
 #include "bloodsucker_state_manager.h"

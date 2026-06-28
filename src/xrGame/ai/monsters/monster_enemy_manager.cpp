@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <cstddef>
 #include "StdAfx.h"
 #include "monster_enemy_manager.h"

@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include "stdafx.h"
 #include "SoundRender.h"
 #include "SoundRender_Core.h"

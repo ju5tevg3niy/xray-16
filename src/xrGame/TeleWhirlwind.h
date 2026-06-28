@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #ifndef TELE_WHIRLWIND
 #define TELE_WHIRLWIND

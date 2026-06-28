@@ -1,3 +1,7 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xr_resource.h"
 #include "Common/types_paths.hpp"
 #include <vector>
 #include "stdafx.h"

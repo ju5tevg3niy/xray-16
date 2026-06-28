@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
 #include "StdAfx.h"
 #include "UIGameTDM.h"
 

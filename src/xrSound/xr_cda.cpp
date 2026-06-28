@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "xr_cda.h"
 

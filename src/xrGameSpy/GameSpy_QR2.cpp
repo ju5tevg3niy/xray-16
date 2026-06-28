@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "GameSpy_QR2.h"
 #include "GameSpy_Keys.h"

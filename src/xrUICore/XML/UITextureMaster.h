@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 // file:		UITextureMaster.h
 // description:	holds info about shared textures. able to initialize external

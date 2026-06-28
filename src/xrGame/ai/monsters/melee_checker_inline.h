@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 IC void CMeleeChecker::load(LPCSTR section)

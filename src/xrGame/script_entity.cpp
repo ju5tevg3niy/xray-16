@@ -1,3 +1,6 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////

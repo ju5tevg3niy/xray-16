@@ -1,3 +1,10 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/log.h"
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include <string>
 #include "stdafx.h"

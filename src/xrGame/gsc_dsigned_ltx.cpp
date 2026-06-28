@@ -1,3 +1,8 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "gsc_dsigned_ltx.h"
 #include "xrCore/xr_ini.h"

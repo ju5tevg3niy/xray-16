@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "ai/monsters/monster_state_manager.h"
 

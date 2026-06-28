@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "stdafx.h"
 #include "GameSpy_HTTP.h"
 

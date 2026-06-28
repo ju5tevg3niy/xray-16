@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/xrsharedmem.h"
 #include "xrCore/Math/matrix.hpp"
 // SkeletonX.h: interface for the CSkeletonX class.
 //

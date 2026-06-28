@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include <cstddef>
 #include "Common/types_paths.hpp"
 #pragma once

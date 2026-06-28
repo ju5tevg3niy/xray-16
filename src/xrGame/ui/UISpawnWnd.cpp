@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UISpawnWnd.h"
 #include "UIXmlInit.h"

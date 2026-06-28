@@ -1,3 +1,4 @@
+#include "xrCore/string_concatenations.h"
 #include "Common/types.hpp"
 #include "StdAfx.h"
 #include "control_animation_base.h"

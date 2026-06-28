@@ -1,3 +1,6 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include <cstddef>
 #include "Common/Platform.hpp"
 #include "pch.hpp"

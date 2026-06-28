@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "Common/types.hpp"
 //////////////////////////////////////////////////////////////////////
 // UIPdaMsgListItem.h: элемент окна списка в основном

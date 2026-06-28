@@ -1,3 +1,4 @@
+#include "xrCore/xr_ini.h"
 #include "Common/types.hpp"
 // hit_immunity.cpp:	класс для тех объектов, которые поддерживают
 //						коэффициенты иммунитета для разных типов хитов

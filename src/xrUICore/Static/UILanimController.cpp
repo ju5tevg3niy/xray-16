@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "pch.hpp"
 #include "UILanimController.h"
 #include "xrEngine/LightAnimLibrary.h"

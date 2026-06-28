@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include <vector>
 #include "pch_script.h"
 #include "InventoryBox.h"

@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : alife_simulator_base_inline.h
 //  Created     : 25.12.2002

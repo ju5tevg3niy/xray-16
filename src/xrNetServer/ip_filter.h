@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <vector>
 #pragma once
 #ifndef NET_SERVER_IP_FILTER

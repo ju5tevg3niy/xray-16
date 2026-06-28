@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: action_planner_action.h
 //	Created 	: 28.01.2004

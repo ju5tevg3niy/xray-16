@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "UINewsItemWnd.h"
 #include "UIXmlInit.h"

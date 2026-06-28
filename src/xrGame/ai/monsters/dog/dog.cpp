@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "dog.h"
 #include "dog_state_manager.h"

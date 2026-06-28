@@ -1,3 +1,8 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "xrCore/string_concatenations.h"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: action_planner_inline.h

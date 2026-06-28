@@ -1,3 +1,6 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: damage_manager.cpp
 //	Created 	: 02.10.2001

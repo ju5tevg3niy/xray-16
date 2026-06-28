@@ -1,3 +1,7 @@
+#include "xrCore/log.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 #include <cstddef>
 #include "Common/types_paths.hpp"
 #include "StdAfx.h"

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "dx113DFluidGrid.h"
 #include "Layers/xrRender/BufferUtils.h"

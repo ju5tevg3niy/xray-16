@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include "xrCore/xr_resource.h"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 #include <cstddef>
 #include <vector>

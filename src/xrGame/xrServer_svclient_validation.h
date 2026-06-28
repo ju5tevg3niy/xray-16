@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef XRSERVER_SVCLIENT_VALIDATION
 #define XRSERVER_SVCLIENT_VALIDATION
 

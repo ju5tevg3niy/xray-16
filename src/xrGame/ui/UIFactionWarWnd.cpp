@@ -1,3 +1,5 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////

@@ -1,3 +1,5 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_danger_in_direction_actions.cpp
 //	Created 	: 31.05.2005

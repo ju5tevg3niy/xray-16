@@ -1,3 +1,6 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "account_manager.h"
 #include "xrGameSpy/GameSpy_GP.h"

@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ///////////////////////////////////////////////////////////////
 // InfoDocument.h
 // InfoDocument - документ, содержащий сюжетную информацию

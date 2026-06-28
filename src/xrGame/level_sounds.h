@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 //---------------------------------------------------------------------------
 #ifndef LevelSoundsH

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // EffectorShot.h: interface for the CCameraShotEffector class.
 //
 //////////////////////////////////////////////////////////////////////

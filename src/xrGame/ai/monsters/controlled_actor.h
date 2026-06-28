@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "actor_input_handler.h"
 

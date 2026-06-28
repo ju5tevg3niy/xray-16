@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 #include <vector>
 
 #ifndef __DCTRILISTCOLLIDER_INCLUDED__

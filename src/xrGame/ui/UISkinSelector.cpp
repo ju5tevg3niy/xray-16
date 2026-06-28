@@ -1,3 +1,6 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include <vector>
 #include "StdAfx.h"
 #include "UISkinSelector.h"

@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include <vector>
 #include "pch_script.h"

@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
 #include "Common/types_paths.hpp"
 #pragma once
 

@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/FS.h"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_object.cpp

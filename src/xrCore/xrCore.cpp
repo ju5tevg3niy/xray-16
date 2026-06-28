@@ -1,3 +1,9 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/Compression/rt_compressor.h"
 #include <cstddef>
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"

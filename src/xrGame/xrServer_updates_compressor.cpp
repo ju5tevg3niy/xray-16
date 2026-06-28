@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 #include "Common/types_paths.hpp"
 #include "StdAfx.h"
 #include "Level.h"

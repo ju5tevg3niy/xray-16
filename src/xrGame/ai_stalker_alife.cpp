@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: ai_stalker_alife.cpp

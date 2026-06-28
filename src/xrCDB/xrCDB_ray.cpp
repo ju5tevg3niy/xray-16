@@ -1,3 +1,5 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "Common/types.hpp"
 #include <cfloat>
 #include <tracy/Tracy.hpp>
 #include "Common/Platform.hpp"

@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: base_monster_feel.cpp
 //	Created 	: 26.05.2003

@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 // WeaponFire.cpp: implementation of the CWeapon class.
 // function responsible for firing with CWeapon
 //////////////////////////////////////////////////////////////////////

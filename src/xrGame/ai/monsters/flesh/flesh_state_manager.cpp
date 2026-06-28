@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "ai/monsters/flesh/flesh.h"
 #include "ai/monsters/flesh/flesh_state_manager.h"

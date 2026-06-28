@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include <vector>
 // XR_IOConsole.h: interface for the CConsole class.

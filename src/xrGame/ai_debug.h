@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : ai_debug.h
 //  Created     : 02.10.2001

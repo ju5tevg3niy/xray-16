@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include "pch_script.h"
 #include "trade.h"
 #include "Actor.h"

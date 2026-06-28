@@ -1,3 +1,6 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: trade_parameters_inline.h

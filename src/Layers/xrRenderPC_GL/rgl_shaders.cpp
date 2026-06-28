@@ -1,3 +1,7 @@
+#include "xrCore/log.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "xrCore/string_concatenations.h"
 #include "Common/Platform.hpp"
 #include <cstddef>
 #include "Common/types_paths.hpp"

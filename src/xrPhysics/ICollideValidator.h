@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 typedef u32 CGID;

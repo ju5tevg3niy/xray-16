@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 #pragma once
 #include "Common/Noncopyable.hpp"
 #include "xrCore/Utils/fastdelegate.hpp"

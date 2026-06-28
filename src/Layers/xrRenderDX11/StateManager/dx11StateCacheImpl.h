@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "Layers/xrRenderDX11/dx11StateUtils.h"
 #include "xrCore/Utils/crc32.hpp"

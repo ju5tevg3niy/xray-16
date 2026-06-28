@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #pragma once
 #include "actor_statistic_defs.h"
 

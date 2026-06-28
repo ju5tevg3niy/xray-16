@@ -1,3 +1,4 @@
+#include "xrCore/string_concatenations.h"
 #include "ThreadUtil.hpp"
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"

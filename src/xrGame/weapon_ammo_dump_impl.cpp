@@ -1,3 +1,6 @@
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "WeaponAmmo.h"
 

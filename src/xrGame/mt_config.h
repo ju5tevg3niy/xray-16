@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: mt_config.h
 //	Created 	: 22.02.2005

@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////

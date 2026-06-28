@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #pragma once
 #include "Include/xrRender/KinematicsAnimated.h"

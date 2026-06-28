@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 #include <cstddef>
 #include "Common/types.hpp"

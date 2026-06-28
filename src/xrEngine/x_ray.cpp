@@ -1,3 +1,7 @@
+#include "xrCore/Threading/ThreadUtil.hpp"
+#include "xrCore/log.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xr_ini.h"
 #include <cstddef>
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"

@@ -1,3 +1,8 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: inventory_upgrade_manager.cpp
 //	Created 	: 19.10.2007

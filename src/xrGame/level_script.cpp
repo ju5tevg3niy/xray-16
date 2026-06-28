@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////

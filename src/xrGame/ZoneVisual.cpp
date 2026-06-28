@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "CustomZone.h"
 #include "Include/xrRender/KinematicsAnimated.h"

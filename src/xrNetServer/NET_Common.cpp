@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include "Common/Platform.hpp"
 #include "stdafx.h"

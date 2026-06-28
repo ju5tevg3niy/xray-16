@@ -1,3 +1,6 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "pch_script.h"
 #include "UIGameTutorial.h"
 #include "xrUICore/Static/UIStatic.h"

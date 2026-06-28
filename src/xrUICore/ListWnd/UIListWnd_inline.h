@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 //=============================================================================
 //  Filename:   UIListWnd_inline.h
 //	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua

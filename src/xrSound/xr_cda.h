@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef __XR_CDAUDIO_H__
 #define __XR_CDAUDIO_H__
 

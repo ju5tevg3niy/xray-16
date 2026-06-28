@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "control_direction_base.h"
 #include "basemonster/base_monster.h"

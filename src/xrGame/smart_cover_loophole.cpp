@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: smart_cover_loophole.cpp
 //	Created 	: 16.08.2007

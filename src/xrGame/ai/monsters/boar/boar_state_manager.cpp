@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "boar.h"
 #include "boar_state_manager.h"

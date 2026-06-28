@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "pch_script.h"
 #include "ai/monsters/rats/ai_rat.h"
 #include "ai/ai_monsters_misc.h"

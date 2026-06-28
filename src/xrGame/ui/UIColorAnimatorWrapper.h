@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 //=============================================================================
 //  Filename:   UIColorAnimatorWrapper.h
 //	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua

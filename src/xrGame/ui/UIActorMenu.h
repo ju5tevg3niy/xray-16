@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "Common/types.hpp"
 #include <vector>
 #pragma once

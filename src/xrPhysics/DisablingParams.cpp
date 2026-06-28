@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "DisablingParams.h"
 

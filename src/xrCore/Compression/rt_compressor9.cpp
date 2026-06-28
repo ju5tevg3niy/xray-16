@@ -1,3 +1,8 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/Compression/rt_compressor.h"
 #include "Common/types_paths.hpp"
 #include "stdafx.h"
 #pragma hdrstop

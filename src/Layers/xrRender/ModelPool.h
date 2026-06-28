@@ -1,3 +1,8 @@
+#include "xrCore/log.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 #include <vector>
 // ModelPool.h: interface for the CModelPool class.

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "pch.hpp"
 #include "UIBtnHint.h"
 #include "Static/UIStatic.h"

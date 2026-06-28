@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "StdAfx.h"
 #include "control_movement.h"
 #include "basemonster/base_monster.h"

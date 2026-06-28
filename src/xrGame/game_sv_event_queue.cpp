@@ -1,3 +1,7 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "game_sv_event_queue.h"
 #include "xrCore/Threading/Lock.hpp"

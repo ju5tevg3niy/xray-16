@@ -1,3 +1,6 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "Common/types_paths.hpp"
 #include <vector>

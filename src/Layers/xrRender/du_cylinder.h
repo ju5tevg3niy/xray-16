@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #define DU_CYLINDER_NUMVERTEX 26

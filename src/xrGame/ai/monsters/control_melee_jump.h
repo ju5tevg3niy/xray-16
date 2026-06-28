@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "control_combase.h"
 #include "Include/xrRender/KinematicsAnimated.h"

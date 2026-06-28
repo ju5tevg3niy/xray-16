@@ -1,3 +1,5 @@
+#include "xrCore/FTimer.h"
+#include "Common/types.hpp"
 #include <vector>
 #pragma once
 

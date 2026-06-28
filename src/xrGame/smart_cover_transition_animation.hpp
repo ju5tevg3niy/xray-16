@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: smart_cover_transition_animation.hpp
 //	Created 	: 20.12.2007

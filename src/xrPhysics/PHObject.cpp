@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 
 #include "xrEngine/IGame_Persistent.h"

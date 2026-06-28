@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "Common/types.hpp"
 #include <vector>

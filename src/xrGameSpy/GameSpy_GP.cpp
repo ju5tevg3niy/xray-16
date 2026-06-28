@@ -1,3 +1,6 @@
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include "stdafx.h"
 #include "GameSpy_GP.h"
 

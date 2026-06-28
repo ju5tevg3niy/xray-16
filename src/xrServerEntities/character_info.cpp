@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "xrCore/xrstring.h"
 //////////////////////////////////////////////////////////////////////////
 // character_info.cpp			игровая информация для персонажей в игре
 //

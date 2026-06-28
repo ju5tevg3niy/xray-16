@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //  Created     : 19.06.2018

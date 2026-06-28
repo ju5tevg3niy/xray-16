@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/Compression/rt_compressor.h"
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////

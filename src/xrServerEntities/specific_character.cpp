@@ -1,3 +1,6 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include <string>
 #include "StdAfx.h"

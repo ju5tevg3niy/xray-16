@@ -1,3 +1,4 @@
+#include "xrCore/xr_ini.h"
 #include <vector>
 // MusicStream.h: interface for the CMusicStream class.
 //

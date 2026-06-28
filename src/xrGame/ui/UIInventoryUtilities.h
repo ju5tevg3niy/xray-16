@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #pragma once
 #include "inventory_item.h"
 #include "character_info_defs.h"

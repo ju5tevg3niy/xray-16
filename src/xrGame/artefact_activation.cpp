@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////////
 //	Module		:	artefact_activation.cpp

@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #ifndef DEMO_INFO_LOADER
 #define DEMO_INFO_LOADER
 

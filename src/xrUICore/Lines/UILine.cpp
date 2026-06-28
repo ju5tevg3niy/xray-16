@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <string>
 // File:		UILine.cpp
 // Description:	Single text line

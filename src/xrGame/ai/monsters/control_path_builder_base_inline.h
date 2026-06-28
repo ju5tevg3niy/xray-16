@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 IC void CControlPathBuilderBase::set_cover_params(float min, float max, float dev, float radius)

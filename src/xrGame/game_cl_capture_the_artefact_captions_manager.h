@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef GAME_CL_CTA_CAPTIONS_MANAGER
 #define GAME_CL_CTA_CAPTIONS_MANAGER
 

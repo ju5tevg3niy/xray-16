@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: UIWarState.cpp
 //	Created 	: 15.04.2008

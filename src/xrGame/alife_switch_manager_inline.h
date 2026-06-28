@@ -1,3 +1,5 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_switch_manager_inline.h
 //	Created 	: 25.12.2002

@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include <string>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: debug_text_tree.cpp

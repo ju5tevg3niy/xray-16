@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #define DU_BOX_NUMVERTEX 8

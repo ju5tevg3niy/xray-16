@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "ai/monsters/states/state_custom_action.h"

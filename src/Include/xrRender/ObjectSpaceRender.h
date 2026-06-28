@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <cstddef>
 #pragma once
 #ifndef ObjectSpaceRender_included

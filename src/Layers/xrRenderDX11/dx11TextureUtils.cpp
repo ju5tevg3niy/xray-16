@@ -1,3 +1,4 @@
+#include "xrCore/LocatorAPI.h"
 #include "stdafx.h"
 #include "dx11TextureUtils.h"
 

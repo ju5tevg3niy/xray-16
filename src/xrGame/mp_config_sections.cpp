@@ -1,3 +1,7 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include "StdAfx.h"
 #include "mp_config_sections.h"

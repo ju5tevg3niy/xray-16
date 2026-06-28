@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "lzo_compressor.h"
 #include "lzo/lzo1x.h"

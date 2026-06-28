@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "ai_monster_bones.h"

@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
 #include "pch.hpp"
 #include "UIPropertiesBox.h"
 #include "ListBox/UIListBoxItem.h"

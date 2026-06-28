@@ -1,3 +1,6 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////

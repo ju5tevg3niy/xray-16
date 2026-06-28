@@ -1,3 +1,7 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 #include "StdAfx.h"
 #include "UIMpItemsStoreWnd.h"

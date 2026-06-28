@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "dxLensFlareRender.h"
 #include "xrEngine/xr_efflensflare.h"

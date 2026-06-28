@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "game_sv_capture_the_artefact.h"
 #include "xrServer.h"

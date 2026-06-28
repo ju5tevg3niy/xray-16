@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include <vector>
 protected:
 using MESSAGEMENUS = std::vector<cl_MessageMenu>;

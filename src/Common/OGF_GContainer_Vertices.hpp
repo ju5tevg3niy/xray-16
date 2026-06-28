@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 inline u32 u8_vec4(Fvector N, u8 A = 0)

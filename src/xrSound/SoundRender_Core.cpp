@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/Math/flags.hpp"
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"
 #include "Common/Platform.hpp"

@@ -1,3 +1,6 @@
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include "Common/Platform.hpp"
 #pragma once
 #include "xrCore/xrCore.h"

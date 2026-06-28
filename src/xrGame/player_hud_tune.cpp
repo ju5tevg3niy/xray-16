@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "player_hud.h"
 #include "Level.h"

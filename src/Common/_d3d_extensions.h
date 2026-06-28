@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #ifndef _D3D_EXT_internal
 #define _D3D_EXT_internal

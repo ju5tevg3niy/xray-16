@@ -1,3 +1,7 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 #include "Common/Platform.hpp"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////

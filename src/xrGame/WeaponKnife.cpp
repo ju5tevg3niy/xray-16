@@ -1,3 +1,6 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 #include "Common/types.hpp"
 #include <array>

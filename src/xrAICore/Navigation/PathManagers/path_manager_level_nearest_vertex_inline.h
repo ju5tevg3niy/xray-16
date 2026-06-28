@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: path_manager_level_nearest_vertex_inline.h

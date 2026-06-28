@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 // Level_Bullet_Manager.h:  для обеспечения полета пули по траектории
 //							все пули и осколки передаются сюда

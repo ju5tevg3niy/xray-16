@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include <cstddef>
 #pragma once
 #include "xrCore/xrCore.h"

@@ -1,3 +1,5 @@
+#include "xrCore/FTimer.h"
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include <vector>
 // CDemoPlay.h: interface for the CDemoPlay class.

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "fracture.h"
 #include "fracture_state_manager.h"

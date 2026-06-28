@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "melee_checker.h"
 #include "basemonster/base_monster.h"

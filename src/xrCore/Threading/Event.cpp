@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "Event.hpp"
 #include <cstddef>
 #include "Common/Platform.hpp"

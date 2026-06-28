@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 //////////////////////////////////////////////////////////////////////
 // CustomRocket.cpp:	ракета, которой стреляет RocketLauncher

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef UISequenceVideoItem_included
 #define UISequenceVideoItem_included
 #pragma once

@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include <string>
 #include "StdAfx.h"
 #include "UIXmlInit.h"

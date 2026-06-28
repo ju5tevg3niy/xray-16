@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "DemoPlay_Control.h"
 #include "Level.h"

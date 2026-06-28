@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #include <vector>
 #pragma once
 #include "xrCore/Utils/intrusive_ptr.hpp"

@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "Common/Platform.hpp"
 #include "StdAfx.h"
 #include "UICDkey.h"

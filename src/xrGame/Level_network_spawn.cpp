@@ -1,3 +1,9 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include <tracy/Tracy.hpp>
 
 #include "pch_script.h"

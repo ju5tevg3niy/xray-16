@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 #include "Common/Platform.hpp"
 // Blender.cpp: implementation of the IBlender class.
 //

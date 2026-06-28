@@ -1,3 +1,8 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 #include <cstddef>
 #include "Common/types_paths.hpp"

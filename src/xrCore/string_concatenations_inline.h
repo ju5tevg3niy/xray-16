@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #pragma once
 #include <cstring>

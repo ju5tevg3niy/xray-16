@@ -1,3 +1,6 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_combat_manager.h
 //	Created 	: 12.08.2003

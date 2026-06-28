@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "stdafx.h"
 
 #include "Layers/xrRender/du_sphere.h"

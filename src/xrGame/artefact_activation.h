@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////////
 //	Module		:	artefact_activation.h
 //	Created		:	19.12.2007

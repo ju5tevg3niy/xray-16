@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "chimera_state_hunting_move_to_cover.h"

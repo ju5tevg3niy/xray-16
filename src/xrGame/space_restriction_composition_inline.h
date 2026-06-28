@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: space_restriction_composition_inline.h
 //	Created 	: 17.08.2004

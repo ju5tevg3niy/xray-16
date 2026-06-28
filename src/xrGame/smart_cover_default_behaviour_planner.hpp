@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: smart_cover_default_behaviour_planner.hpp
 //	Created 	: 15.11.2007

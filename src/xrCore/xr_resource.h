@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "Common/Platform.hpp"
 #include <atomic>
 #pragma once

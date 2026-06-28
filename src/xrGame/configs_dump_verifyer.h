@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
 #ifndef CONFIGS_DUMP_VERIFYER
 #define CONFIGS_DUMP_VERIFYER
 

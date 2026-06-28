@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "ai/monsters/ai_monster_squad.h"

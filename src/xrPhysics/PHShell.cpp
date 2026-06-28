@@ -1,3 +1,8 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 #include "Common/Platform.hpp"
 /////////////////////////////////////////////////////////////////////////////////////////////////////

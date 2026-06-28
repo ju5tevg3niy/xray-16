@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "Common/Platform.hpp"
 #include "stdafx.h"

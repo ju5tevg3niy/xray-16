@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include <string>
 #include "StdAfx.h"
 #include "phvalide.h"

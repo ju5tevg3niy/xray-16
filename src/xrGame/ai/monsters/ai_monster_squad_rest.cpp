@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "ai_monster_squad.h"
 #include "Entity.h"

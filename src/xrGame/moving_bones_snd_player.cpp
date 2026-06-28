@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
 #include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 

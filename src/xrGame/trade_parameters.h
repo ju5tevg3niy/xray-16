@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: trade_parameters.h
 //	Created 	: 13.01.2006

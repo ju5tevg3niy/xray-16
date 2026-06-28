@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "dx11StateManager.h"
 #include "Layers/xrRenderDX11/dx11StateUtils.h"

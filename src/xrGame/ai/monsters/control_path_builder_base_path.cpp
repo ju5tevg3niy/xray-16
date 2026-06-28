@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "ai/monsters/control_path_builder_base.h"
 #include "cover_point.h"

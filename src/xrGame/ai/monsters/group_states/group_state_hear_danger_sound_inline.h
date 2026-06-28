@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "ai/monsters/states/state_move_to_point.h"
 #include "ai/monsters/states/monster_state_home_point_danger.h"

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "ai/monsters/states/monster_state_rest_sleep.h"
 #include "ai/monsters/states/state_move_to_restrictor.h"

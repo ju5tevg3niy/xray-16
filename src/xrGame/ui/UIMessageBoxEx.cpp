@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "xrUICore/MessageBox/UIMessageBox.h"
 #include "UIMessageBoxEx.h"

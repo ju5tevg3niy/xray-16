@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "ai/monsters/pseudogigant/pseudo_gigant.h"
 #include "ai/monsters/pseudogigant/pseudo_gigant_step_effector.h"

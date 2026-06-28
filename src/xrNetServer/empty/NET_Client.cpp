@@ -1,3 +1,8 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/Threading/ThreadUtil.hpp"
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "xrCore/Math/flags.hpp"
 #include "Common/types.hpp"
 #include <string>
 #include "NET_Client.h"

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "ai/monsters/snork/snork.h"
 #include "ai/monsters/snork/snork_jump.h"

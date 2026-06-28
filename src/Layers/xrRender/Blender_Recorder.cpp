@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 // Blender_Recorder.cpp: implementation of the CBlender_Compile class.
 //

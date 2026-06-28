@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "UIXmlInit.h"
 #include "xrUICore/Buttons/UI3tButton.h"

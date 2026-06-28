@@ -1,3 +1,4 @@
+#include "xrCore/LocatorAPI.h"
 #include <cstddef>
 #include <vector>
 #include "lzhuf.hpp"

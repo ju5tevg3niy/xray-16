@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
 #include <cstddef>
 #include "pch.hpp"
 #include "UIButton.h"

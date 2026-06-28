@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include <cstddef>
 #include <tracy/Tracy.hpp>
 #include <array>

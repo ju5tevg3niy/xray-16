@@ -1,3 +1,5 @@
+#include "xrCore/FTimer.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: safe_map_iterator.h
 //	Created 	: 15.01.2003

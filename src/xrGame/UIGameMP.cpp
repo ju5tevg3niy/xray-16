@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UIGameMP.h"
 #include "ui/UIDemoPlayControl.h"

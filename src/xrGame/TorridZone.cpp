@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "TorridZone.h"
 #include "xrEngine/ObjectAnimator.h"

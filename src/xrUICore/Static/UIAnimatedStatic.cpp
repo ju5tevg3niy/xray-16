@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 //=============================================================================
 //  Filename:   UIAnimatedStatic.cpp
 //	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua

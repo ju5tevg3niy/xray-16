@@ -1,3 +1,8 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 #include <atomic>
 #include <vector>
 #pragma once

@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "Common/types.hpp"
 #ifndef UISERVER_INFO_INCLUDED
 #define UISERVER_INFO_INCLUDED

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <vector>
 // Portal.cpp: implementation of the CPortal class.
 //

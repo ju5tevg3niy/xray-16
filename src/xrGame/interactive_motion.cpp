@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "StdAfx.h"
 
 #include "interactive_motion.h"

@@ -1,3 +1,4 @@
+#include "xrCore/net_utils.h"
 #include "pch_script.h"
 
 #include "game_base.h"

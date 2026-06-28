@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include "Common/types_paths.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_storage_manager.h

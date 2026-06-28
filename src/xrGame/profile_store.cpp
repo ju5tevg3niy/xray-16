@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "StdAfx.h"
 #include "profile_store.h"
 #include "MainMenu.h"

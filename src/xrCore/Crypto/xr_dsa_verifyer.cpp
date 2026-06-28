@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "stdafx.h"
 #include "xr_dsa_verifyer.h"
 

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <string>
 #include "stdafx.h"
 #include "xrEngine/xr_object.h"

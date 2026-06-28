@@ -1,3 +1,6 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
 #include <cstddef>
 #include "Common/types.hpp"
 #include <vector>

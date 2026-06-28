@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "controller/controller.h"
 

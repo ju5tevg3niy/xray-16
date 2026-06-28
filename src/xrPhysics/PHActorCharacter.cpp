@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "PHActorCharacter.h"
 #include "ExtendedGeom.h"

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "state_move_to_point.h"

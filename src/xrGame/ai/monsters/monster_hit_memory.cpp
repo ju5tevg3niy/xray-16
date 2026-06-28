@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "monster_hit_memory.h"
 #include "basemonster/base_monster.h"

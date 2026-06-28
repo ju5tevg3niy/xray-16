@@ -1,3 +1,4 @@
+#include "xrCore/Math/flags.hpp"
 #include "Common/types.hpp"
 // CameraBase.h: interface for the CCameraBase class.
 //

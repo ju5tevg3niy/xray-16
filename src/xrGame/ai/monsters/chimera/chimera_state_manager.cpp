@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "chimera.h"
 #include "chimera_state_manager.h"

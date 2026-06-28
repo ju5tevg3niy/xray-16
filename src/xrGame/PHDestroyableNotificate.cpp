@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "PHDestroyableNotificate.h"
 #include "alife_space.h"

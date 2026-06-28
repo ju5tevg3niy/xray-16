@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <vector>
 #include "stdafx.h"
 #include "xrStripify.h"

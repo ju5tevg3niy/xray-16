@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "ai/monsters/monster_velocity_space.h"

@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 // EffectorShot.cpp: implementation of the CCameraShotEffector class.
 //
 //////////////////////////////////////////////////////////////////////

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <cstddef>
 #include <string>
 // File:		UILines.cpp

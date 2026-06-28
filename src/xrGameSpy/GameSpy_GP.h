@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #pragma once
 #include "xrGameSpy/xrGameSpy.h"
 

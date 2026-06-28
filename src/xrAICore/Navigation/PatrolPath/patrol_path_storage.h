@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: patrol_path_storage.h
 //	Created 	: 15.06.2004

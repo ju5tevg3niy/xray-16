@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #pragma once
 #include "xr_dsa.h"
 #include "xr_sha.h"

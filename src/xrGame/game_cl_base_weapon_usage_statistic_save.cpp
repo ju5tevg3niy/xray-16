@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include "Common/Platform.hpp"
 #include "StdAfx.h"
 #include "game_cl_base.h"

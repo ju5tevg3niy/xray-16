@@ -1,3 +1,10 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////

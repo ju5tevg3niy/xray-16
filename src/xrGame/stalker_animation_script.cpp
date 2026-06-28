@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "xrCore/Math/matrix.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_animation_script.cpp

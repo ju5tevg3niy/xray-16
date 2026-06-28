@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef CONFIGS_COMMON_INCLUDED
 #define CONFIGS_COMMON_INCLUDED
 

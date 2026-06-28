@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #pragma once
 #include "inventory_item_object.h"
 #include "xrEngine/Feel_Touch.h"

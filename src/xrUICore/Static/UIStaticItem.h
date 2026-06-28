@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "xrUICore/ui_defs.h"

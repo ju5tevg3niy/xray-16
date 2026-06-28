@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include <vector>
 #include "pch_script.h"
 #include "PhraseDialog.h"

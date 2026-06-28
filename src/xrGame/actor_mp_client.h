@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #ifndef ACTOR_MP_CLIENT_H
 #define ACTOR_MP_CLIENT_H
 

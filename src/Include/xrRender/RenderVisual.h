@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #ifndef RenderVisual_included
 #define RenderVisual_included
 #pragma once

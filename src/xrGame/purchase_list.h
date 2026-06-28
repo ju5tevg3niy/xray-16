@@ -1,3 +1,6 @@
+#include "xrCore/xr_ini.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: purchase_list.h
 //	Created 	: 12.01.2006

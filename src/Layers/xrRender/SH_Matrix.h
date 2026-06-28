@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
 #pragma once
 
 #include "Common/Platform.hpp"

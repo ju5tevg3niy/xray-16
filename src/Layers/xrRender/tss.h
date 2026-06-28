@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "Common/Platform.hpp"
 #pragma once
 

@@ -1,3 +1,6 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_movement_manager_obstacles_path.cpp
 //	Created 	: 18.04.2007

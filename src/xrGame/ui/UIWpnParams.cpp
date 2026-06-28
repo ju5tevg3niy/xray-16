@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "pch_script.h"
 #include "UIWpnParams.h"
 #include "UIXmlInit.h"

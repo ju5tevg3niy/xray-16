@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "Common/Platform.hpp"
 #include "stdafx.h"
 #include "Text_Console.h"

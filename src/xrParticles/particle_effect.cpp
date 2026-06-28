@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "stdafx.h"
 
 #include "particle_effect.h"

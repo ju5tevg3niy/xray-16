@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "stdafx.h"
 
 #if 0 // kept for historical reasons

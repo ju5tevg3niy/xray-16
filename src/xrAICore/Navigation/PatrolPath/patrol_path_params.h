@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: patrol_path_params.h
 //	Created 	: 30.09.2003

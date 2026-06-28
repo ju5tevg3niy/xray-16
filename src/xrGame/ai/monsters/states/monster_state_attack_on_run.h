@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef MONSTER_STATE_ATTACK_ON_RUN_H
 #define MONSTER_STATE_ATTACK_ON_RUN_H
 

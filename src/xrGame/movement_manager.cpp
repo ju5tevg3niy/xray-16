@@ -1,3 +1,7 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: movement_manager.cpp

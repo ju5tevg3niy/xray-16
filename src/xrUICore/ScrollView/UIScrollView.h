@@ -1,3 +1,5 @@
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #pragma once
 #include "xrUICore/ScrollBar/UIScrollBar.h"

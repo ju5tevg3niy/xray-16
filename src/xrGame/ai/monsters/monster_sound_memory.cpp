@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <vector>
 #include "StdAfx.h"
 #include "monster_sound_memory.h"

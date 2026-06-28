@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "game_sv_teamdeathmatch.h"
 #include "xrServer.h"

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef CHIMERA_ATTACK_STATE_H_INCLUDED
 #define CHIMERA_ATTACK_STATE_H_INCLUDED
 

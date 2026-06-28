@@ -1,4 +1,5 @@
 #include <cstddef>
+#include "Common/types.hpp"
 #pragma once
 
 extern void rtc_initialize();

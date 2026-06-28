@@ -1,3 +1,6 @@
+#include "xrCore/FS.h"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"

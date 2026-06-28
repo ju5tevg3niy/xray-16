@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "StdAfx.h"
 #include "Level.h"

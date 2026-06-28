@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 enum KILL_TYPE : u32

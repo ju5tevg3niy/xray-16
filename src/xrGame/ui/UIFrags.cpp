@@ -1,3 +1,4 @@
+#include "xrCore/string_concatenations.h"
 #include "StdAfx.h"
 
 #include "UIFrags.h"

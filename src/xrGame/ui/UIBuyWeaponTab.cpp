@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UIBuyWeaponTab.h"
 #include "xrUICore/TabControl/UITabButton.h"

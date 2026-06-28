@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "Common/types_paths.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: script_sound.cpp

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "alife_simulator.h"
 #include "alife_object_registry.h"

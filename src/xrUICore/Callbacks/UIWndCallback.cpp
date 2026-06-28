@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "pch.hpp"
 #include "UIWndCallback.h"
 #include "Windows/UIWindow.h"

@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "Common/Platform.hpp"
 #include "stdafx.h"

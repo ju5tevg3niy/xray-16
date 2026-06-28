@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include "pch.hpp"
 #include "UIDoubleProgressBar.h"
 #include "XML/UIXmlInitBase.h"

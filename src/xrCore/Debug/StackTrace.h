@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "Common/Platform.hpp"
 #include <vector>
 #include <string>

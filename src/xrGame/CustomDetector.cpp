@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "CustomDetector.h"
 #include "ui/ArtefactDetectorUI.h"

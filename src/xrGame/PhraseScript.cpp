@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "pch_script.h"
 #include "PhraseScript.h"
 #include "xrScriptEngine/script_engine.hpp"

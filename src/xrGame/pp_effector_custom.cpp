@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "pp_effector_custom.h"
 #include "Actor.h"

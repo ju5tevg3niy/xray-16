@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include <vector>
 #ifndef ANTI_AIM_ABILITY_H_INCLUDED

@@ -1,3 +1,5 @@
+#include "xrCore/FTimer.h"
+#include "Common/types.hpp"
 #pragma once
 
 class AnselCamera : public CCameraBase

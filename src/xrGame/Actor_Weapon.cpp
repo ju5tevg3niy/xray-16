@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 // Actor_Weapon.cpp:	 для работы с оружием
 //////////////////////////////////////////////////////////////////////
 

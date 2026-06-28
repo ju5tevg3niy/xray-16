@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "pseudo_gigant.h"
 #include "pseudogigant_state_manager.h"

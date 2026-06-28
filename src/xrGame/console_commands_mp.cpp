@@ -1,3 +1,8 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/log.h"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "Common/types.hpp"
 #include <vector>

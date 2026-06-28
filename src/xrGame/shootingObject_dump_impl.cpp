@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "ShootingObject.h"
 #include "GameObject.h"

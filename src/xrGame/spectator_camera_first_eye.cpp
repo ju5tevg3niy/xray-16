@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "spectator_camera_first_eye.h"
 #include "xrEngine/xr_level_controller.h"

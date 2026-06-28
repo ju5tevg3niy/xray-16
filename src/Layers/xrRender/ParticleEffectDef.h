@@ -1,3 +1,9 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 #include "Common/types.hpp"
 #include <string>

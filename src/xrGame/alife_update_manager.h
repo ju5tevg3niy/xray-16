@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_update_manager.h
 //	Created 	: 25.12.2002

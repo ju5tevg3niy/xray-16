@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 bool ReadRegistry_StrValue(LPCSTR rKeyName, char* value);

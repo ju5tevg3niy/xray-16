@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 ///////////////////////////////////////////////////////////////
 // AI_PhraseDialogManager.cpp

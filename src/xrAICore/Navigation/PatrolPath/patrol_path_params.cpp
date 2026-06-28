@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: patrol_path_params.cpp
 //	Created 	: 30.09.2003

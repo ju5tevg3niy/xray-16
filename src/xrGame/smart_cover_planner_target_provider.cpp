@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: smart_cover_planner_target_provider.cpp
 //	Created 	: 18.09.2007

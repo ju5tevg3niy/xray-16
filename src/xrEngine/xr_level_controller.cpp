@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
 #include <cstddef>
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"

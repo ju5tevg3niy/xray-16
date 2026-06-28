@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // exxZERO Time Stamp AddIn. Document modified at : Thursday, March 07, 2002 14:12:50 , by user : Oles , from computer :
 // OLES
 #include "StdAfx.h"

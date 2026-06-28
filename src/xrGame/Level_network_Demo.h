@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 private:
 BOOL m_DemoPlay = false;
 BOOL m_DemoPlayStarted = false;

@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 
 //	Module 		: moving_objects_dynamic.cpp
 //	Created 	: 27.03.2007

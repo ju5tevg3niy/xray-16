@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "xrCore/Compression/compression_ppmd_stream.h"

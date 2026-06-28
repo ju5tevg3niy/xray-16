@@ -1,3 +1,6 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 //=============================================================================
 //  Filename:   UIGameLog.h
 //	Created by Vitaly 'Mad Max' Maximov, mad-max@gsc-game.kiev.ua

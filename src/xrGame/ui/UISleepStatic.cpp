@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "UISleepStatic.h"
 #include "Actor_Flags.h"

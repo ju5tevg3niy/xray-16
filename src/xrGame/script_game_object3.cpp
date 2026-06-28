@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "xrCore/Math/flags.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "Common/types.hpp"
 #include <vector>

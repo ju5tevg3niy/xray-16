@@ -1,3 +1,7 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: space_restriction_holder.cpp
 //	Created 	: 17.08.2004

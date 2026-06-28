@@ -1,3 +1,4 @@
+#include "xrCore/LocatorAPI.h"
 #include "crc32.hpp"
 #include <array>
 #include "Common/FSMacros.hpp"

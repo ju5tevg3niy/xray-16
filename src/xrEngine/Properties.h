@@ -1,3 +1,5 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
 #include <cstddef>
 #include "Common/types.hpp"
 #ifndef xrPROPERTIES_H

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "ai_space.h"
 #include "xrAICore/Navigation/level_graph.h"

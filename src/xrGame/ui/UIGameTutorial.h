@@ -1,3 +1,5 @@
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "Common/types.hpp"
 #include <vector>

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "monster_state_hitted_hide.h"

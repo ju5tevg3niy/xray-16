@@ -1,3 +1,9 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include <vector>
 #include "StdAfx.h"
 #include "game_sv_teamdeathmatch.h"

@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #ifndef UI_TEAM_HEADER
 #define UI_TEAM_HEADER

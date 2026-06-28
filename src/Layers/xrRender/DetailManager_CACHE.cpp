@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <tracy/Tracy.hpp>
 
 #include "stdafx.h"

@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #pragma once
 #include <cmath>
 #include "Common/Platform.hpp"

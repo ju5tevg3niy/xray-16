@@ -1,3 +1,9 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: smart_cover_animation_selector.cpp

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 // DynamicHeightMap.cpp: implementation of the CDynamicHeightMap class.
 //
 //////////////////////////////////////////////////////////////////////

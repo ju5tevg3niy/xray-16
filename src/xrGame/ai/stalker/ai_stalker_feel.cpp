@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: ai_stalker_feel.cpp
 //	Created 	: 25.02.2003

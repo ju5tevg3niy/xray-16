@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: script_flags_script.cpp
 //	Created 	: 19.07.2004

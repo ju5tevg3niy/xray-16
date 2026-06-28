@@ -1,3 +1,5 @@
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"
 #include "stdafx.h"

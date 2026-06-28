@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "actor_mp_client.h"
 

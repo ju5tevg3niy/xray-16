@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include <vector>
 #include "StdAfx.h"
 #include "control_path_builder.h"

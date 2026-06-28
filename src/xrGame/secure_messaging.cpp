@@ -1,3 +1,6 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "secure_messaging.h"
 

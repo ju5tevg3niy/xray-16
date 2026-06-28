@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include "stdafx.h"
 #pragma hdrstop
 

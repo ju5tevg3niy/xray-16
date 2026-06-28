@@ -1,3 +1,4 @@
+#include "xrCore/log.h"
 #include "pch.hpp"
 #include "script_lua_helper.hpp"
 #include "script_debugger.hpp"

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #include "bloodsucker_vampire_execute.h"

@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include <string>
 // Actor.cpp: implementation of the CSpectator class.

@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #ifndef UIPANELSCLASSFACTORY
 #define UIPANELSCLASSFACTORY
 

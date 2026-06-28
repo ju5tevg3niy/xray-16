@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 const u32 MAX_PARTS = 4;

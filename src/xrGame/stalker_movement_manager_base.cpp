@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include "Common/Noncopyable.hpp"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////

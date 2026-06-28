@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 #ifndef DEMOINFO_H
 #define DEMOINFO_H

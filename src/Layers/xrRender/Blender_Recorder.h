@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 // Blender_Recorder.h: interface for the CBlender_Recorder class.
 //

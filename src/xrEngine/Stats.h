@@ -1,3 +1,5 @@
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 // Stats.h: interface for the CStats class.
 //
 //////////////////////////////////////////////////////////////////////

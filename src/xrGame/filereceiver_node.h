@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "Common/Noncopyable.hpp"
 #include <cstddef>
 #pragma once

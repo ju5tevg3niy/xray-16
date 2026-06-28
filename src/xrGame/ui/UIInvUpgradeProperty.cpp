@@ -1,3 +1,7 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: UIInvUpgradeProperty.cpp
 //	Created 	: 22.11.2007

@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #pragma once
 #include "xrScriptEngine/script_callback_ex.h"
 

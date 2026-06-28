@@ -1,3 +1,6 @@
+#include "xrCore/FTimer.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #pragma once
 #ifndef __SPECTATOR_H__
 #define __SPECTATOR_H__

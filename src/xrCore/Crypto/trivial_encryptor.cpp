@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "stdafx.h"
 #include "trivial_encryptor.h"
 #include "Math/Random32.hpp"

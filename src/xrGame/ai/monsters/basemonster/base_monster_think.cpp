@@ -1,3 +1,4 @@
+#include "xrCore/LocatorAPI.h"
 #include "StdAfx.h"
 #include "base_monster.h"
 #include "ai/monsters/ai_monster_squad.h"

@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "pseudodog.h"
 #include "pseudodog_state_manager.h"

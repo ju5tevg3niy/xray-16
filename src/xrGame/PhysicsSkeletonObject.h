@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #ifndef PHYSICS_SKELETON_OBJECT_H
 #define PHYSICS_SKELETON_OBJECT_H
 #include "PhysicsShellHolder.h"

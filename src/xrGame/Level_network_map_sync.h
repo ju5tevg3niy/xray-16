@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #ifndef LEVEL_NETWORK_MAP_SYNC_H
 #define LEVEL_NETWORK_MAP_SYNC_H
 

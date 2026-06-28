@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xr_resource.h"
 #include <vector>
 #pragma once
 

@@ -1,3 +1,6 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/xrstring.h"
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #pragma once

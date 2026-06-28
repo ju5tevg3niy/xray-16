@@ -1,3 +1,6 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #ifndef DEMOPLAY_CONTROL
 #define DEMOPLAY_CONTROL
 

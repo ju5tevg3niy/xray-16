@@ -1,3 +1,6 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #pragma once
 
 class CTeamInfo

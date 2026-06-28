@@ -1,3 +1,8 @@
+#include "xrCore/log.h"
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include <cstddef>
 #include "FileSystem.h"
 #include <cstring>

@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 #include "StdAfx.h"
 #include "controller_psy_hit.h"
 #include "ai/monsters/basemonster/base_monster.h"

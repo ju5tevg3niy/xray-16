@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 //////////////////////////////////////////////////////////////////////////
 // relation_registry.h: реестр для хранения данных об отношении персонажа к

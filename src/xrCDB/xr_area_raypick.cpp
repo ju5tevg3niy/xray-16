@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 #include <tracy/Tracy.hpp>
 
 #include "stdafx.h"

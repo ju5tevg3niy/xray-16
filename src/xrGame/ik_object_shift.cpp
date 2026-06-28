@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "StdAfx.h"
 #include "ik_object_shift.h"

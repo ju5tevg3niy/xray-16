@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #ifndef PH_SKELETON_H
 #define PH_SKELETON_H
 

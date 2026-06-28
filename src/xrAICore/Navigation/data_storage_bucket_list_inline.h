@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //  Module      : data_storage_bucket_list_inline.h
 //  Created     : 21.03.2002

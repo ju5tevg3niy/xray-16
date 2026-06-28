@@ -1,3 +1,6 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
 #include <tracy/Tracy.hpp>
 
 #include "stdafx.h"

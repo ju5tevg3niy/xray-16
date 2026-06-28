@@ -1,3 +1,8 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 #include "StdAfx.h"
 #include "game_cl_deathmatch.h"
 #include "Level.h"

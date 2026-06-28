@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/string_concatenations.h"
 #include <cstddef>
 #include "pch_script.h"
 #include "relation_registry.h"

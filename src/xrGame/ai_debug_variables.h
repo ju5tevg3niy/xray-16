@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #ifndef AI_DEBUG_VARIABLES_H_INCLUDED
 #define AI_DEBUG_VARIABLES_H_INCLUDED
 

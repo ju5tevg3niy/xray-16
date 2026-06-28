@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/string_concatenations.h"
 #include "Common/types.hpp"
 #include "StdAfx.h"
 #include "monster_aura.h"

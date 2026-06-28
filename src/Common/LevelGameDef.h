@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 
 #define RPOINT_CHOOSE_NAME "$rpoint"

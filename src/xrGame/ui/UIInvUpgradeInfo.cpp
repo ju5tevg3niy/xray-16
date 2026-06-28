@@ -1,3 +1,4 @@
+#include "xrCore/string_concatenations.h"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: UIInvUpgradeInfo.cpp

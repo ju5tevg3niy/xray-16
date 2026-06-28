@@ -1,3 +1,6 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/log.h"
+#include "Common/types.hpp"
 #include <tracy/Tracy.hpp>
 
 #include "stdafx.h"

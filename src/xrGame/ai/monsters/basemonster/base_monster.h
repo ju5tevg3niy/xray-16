@@ -1,3 +1,10 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/FS.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
+#include "xrCore/xrsharedmem.h"
 #include "Common/types.hpp"
 #pragma once
 

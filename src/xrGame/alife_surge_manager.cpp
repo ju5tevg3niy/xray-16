@@ -1,3 +1,5 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/log.h"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_surge_manager.cpp

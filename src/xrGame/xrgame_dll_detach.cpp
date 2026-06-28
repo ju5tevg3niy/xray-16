@@ -1,3 +1,4 @@
+#include "xrCore/xrstring.h"
 #include <vector>
 #include <tracy/Tracy.hpp>
 

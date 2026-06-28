@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <cstddef>
 #include "Common/types_paths.hpp"
 #include "stdafx.h"

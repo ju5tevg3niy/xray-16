@@ -1,3 +1,8 @@
+#include "xrCore/Threading/ThreadUtil.hpp"
+#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
 #include <cstddef>
 #include "Common/types.hpp"
 #include <tracy/Tracy.hpp>

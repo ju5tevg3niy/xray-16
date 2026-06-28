@@ -1,3 +1,6 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: profiler_inline.h
 //	Created 	: 23.07.2004

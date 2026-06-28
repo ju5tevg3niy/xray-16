@@ -1,3 +1,5 @@
+#include "xrCore/xr_ini.h"
+#include "xrCore/Text/xr_trims.hpp"
 #include "Common/types.hpp"
 #pragma once
 #include "xrPhysics/IPHCapture.h"

@@ -1,3 +1,6 @@
+#include "xrCore/Text/xr_trims.hpp"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: inventory_upgrade_property.cpp
 //	Created 	: 22.11.2007

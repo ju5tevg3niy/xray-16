@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 #include "pch.hpp"
 #include "UIOptionsManager.h"
 #include "UIOptionsItem.h"

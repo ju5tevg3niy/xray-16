@@ -1,3 +1,8 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 #include <tracy/Tracy.hpp>
 
 #include "StdAfx.h"

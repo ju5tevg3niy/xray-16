@@ -1,3 +1,4 @@
+#include "xrCore/Math/flags.hpp"
 #include "Common/types.hpp"
 #include <vector>
 #pragma once

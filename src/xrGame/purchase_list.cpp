@@ -1,3 +1,7 @@
+#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/xr_ini.h"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: purchase_list.cpp

@@ -1,3 +1,5 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
 ///////////////////////////////////////////////////////////////
 // InfoDocument.cpp
 // InfoDocument - документ, содержащий сюжетную информацию

@@ -1,3 +1,12 @@
+#include "xrCore/FTimer.h"
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/log.h"
+#include "xrCore/FS.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/Compression/rt_compressor.h"
+#include "xrCore/xrstring.h"
 #include <string>
 #include "LocatorAPI.h"
 #include <SDL_filesystem.h>

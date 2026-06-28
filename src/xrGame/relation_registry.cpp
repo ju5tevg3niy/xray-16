@@ -1,3 +1,7 @@
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
+#include "xrCore/xrstring.h"
 //////////////////////////////////////////////////////////////////////////
 // relation_registry.cpp:	реестр для хранения данных об отношении персонажа к
 //							другим персонажам

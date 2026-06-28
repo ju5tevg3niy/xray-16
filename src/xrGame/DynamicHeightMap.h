@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #include <vector>
 // DynamicHeightMap.h: interface for the CDynamicHeightMap class.
 //

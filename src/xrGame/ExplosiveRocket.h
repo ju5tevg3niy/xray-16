@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/FS.h"
+#include "Common/types.hpp"
 //////////////////////////////////////////////////////////////////////
 // ExplosiveRocket.h:	ракета, которой стреляет RocketLauncher
 //						взрывается при столкновении

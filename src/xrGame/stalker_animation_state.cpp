@@ -1,3 +1,4 @@
+#include "xrCore/string_concatenations.h"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_animation_state.cpp
 //	Created 	: 25.02.2003

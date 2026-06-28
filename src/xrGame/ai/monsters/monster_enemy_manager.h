@@ -1,3 +1,5 @@
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
 #include <cstddef>
 #pragma once
 #include "ai_monster_defs.h"

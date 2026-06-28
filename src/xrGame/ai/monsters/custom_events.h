@@ -1,3 +1,4 @@
+#include "Common/types.hpp"
 #pragma once
 #include "monster_event_manager_defs.h"
 

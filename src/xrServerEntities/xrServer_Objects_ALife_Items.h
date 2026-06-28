@@ -1,3 +1,7 @@
+#include "xrCore/net_utils.h"
+#include "Common/types.hpp"
+#include "xrCore/Math/flags.hpp"
+#include "xrCore/xrstring.h"
 #include <vector>
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: xrServer_Objects_ALife_Items.h
