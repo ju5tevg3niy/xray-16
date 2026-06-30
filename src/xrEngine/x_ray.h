@@ -1,3 +1,4 @@
+#include <thread>
 #include "Common/types.hpp"
 #include <atomic>
 #pragma once
