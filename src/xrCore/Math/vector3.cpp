@@ -1,11 +1,11 @@
-#include "vector3.hpp"
+#include "xrCore/Math/vector3.hpp"
 #include <cmath>
 #include <limits>
 #include "Common/types_limits.hpp"
-#include "constants.hpp"
-#include "math_funcs.hpp"
-#include "math_funcs_inline.hpp"
-#include "random.hpp"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/math_funcs.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/random.hpp"
 #include "xrCore/xrDebug_macros.h"
 
 template <typename T>

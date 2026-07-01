@@ -1,7 +1,8 @@
-#include "Common/types.hpp"
-#include <cstddef>
 #pragma once
 #include <array>
+#include <cstddef>
+#include "Common/types.hpp"
+#include "xrCore/Utils/fastdelegate.hpp"
 
 namespace crypto
 {

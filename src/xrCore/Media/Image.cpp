@@ -1,9 +1,10 @@
-#include "Common/types.hpp"
+#include "xrCore/Media/Image.hpp"
 #include <cstddef>
-#include "stdafx.h"
-#include "Image.hpp"
-
 #include <cstdio>
+#include "Common/types.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 
 using namespace XRay::Media;
 

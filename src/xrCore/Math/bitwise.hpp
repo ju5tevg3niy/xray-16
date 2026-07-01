@@ -2,7 +2,7 @@
 #include <cmath>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "constants.hpp"
+#include "xrCore/Math/constants.hpp"
 
 // float values defines
 #define fdSGN 0x080000000    // mask for sign bit

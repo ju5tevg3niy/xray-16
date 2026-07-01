@@ -8,7 +8,7 @@
 #include <utility>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrMemory.h"
+#include "xrCore/xrMemory.h"
 
 #pragma pack(push, 4)
 struct str_value

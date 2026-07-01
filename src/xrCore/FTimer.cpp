@@ -1,5 +1,4 @@
 #include "xrCore/FTimer.h"
-#include "FTimer.h"
 #include <algorithm>
 #include <vector>
 

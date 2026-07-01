@@ -1,10 +1,9 @@
-#include "Common/types.hpp"
 #include "xrCore/Compression/rt_compressor.h"
+#include <lzo/lzo1x.h>
+#include <lzo/lzoconf.h>
 #include <cstddef>
-#include "stdafx.h"
-#pragma hdrstop
-
-#include "lzo/lzo1x.h"
+#include "Common/types.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 #define HEAP_ALLOC(var, size) lzo_align_t __LZO_MMODEL var[((size) + (sizeof(lzo_align_t) - 1)) / sizeof(lzo_align_t)]
 

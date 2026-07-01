@@ -1,5 +1,4 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/string_concatenations.h"
+#include "xrCore/LocatorAPI_defs.h"
 #include <cstring>
 #include <ctime>
 #include <string>
@@ -7,18 +6,14 @@
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
-#include "LocatorAPI.h"
-#include "Text/string_funcs_inline.hpp"
-#include "string_concatenations.h"
-#include "xrDebug_macros.h"
-#include "xrMemory.h"
-#pragma hdrstop
-
-#include "LocatorAPI_defs.h"
-
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 #if defined(XR_PLATFORM_WINDOWS)
-#include <io.h>
 #include <direct.h>
+#include <io.h>
 #include <sys/stat.h>
 #endif
 #include <fcntl.h>

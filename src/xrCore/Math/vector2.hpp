@@ -2,8 +2,8 @@
 #include <algorithm>
 #include <cstddef>
 #include "Common/Platform.hpp"
-#include "constants.hpp"
-#include "math_funcs_inline.hpp"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
 
 template <class T>
 struct _vector2 {

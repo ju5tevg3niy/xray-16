@@ -1,7 +1,7 @@
-#include "Common/types.hpp"
-#include "Event.hpp"
+#include "xrCore/Threading/Event.hpp"
 #include <cstddef>
 #include "Common/Platform.hpp"
+#include "Common/types.hpp"
 
 Event::Event(std::nullptr_t) noexcept {
   handle = nullptr;

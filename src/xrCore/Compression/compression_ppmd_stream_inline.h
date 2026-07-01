@@ -1,5 +1,9 @@
-#include "Common/types.hpp"
 #pragma once
+#include <cstdio>
+#include "Common/types.hpp"
+#include "xrCore/Compression/compression_ppmd_stream.h"
+#include "xrCore/xrDebug.h"
+#include "xrCore/xrDebug_macros.h"
 
 namespace compression
 {

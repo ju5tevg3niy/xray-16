@@ -1,5 +1,5 @@
 #pragma once
-#include "vector3.hpp"
+#include "xrCore/Math/vector3.hpp"
 
 inline Fvector cr_fvector3(float f) {
   Fvector res = {f, f, f};

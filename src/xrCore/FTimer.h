@@ -1,13 +1,12 @@
-#include "xrCore/log.h"
 #pragma once
 #include <chrono>
 #include <vector>
 #include "Common/Noncopyable.hpp"
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "Threading/ScopeLock.hpp"
-#include "log.h"
 #include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Threading/ScopeLock.hpp"
+#include "xrCore/log.h"
 #include "xrCore/xrDebug_macros.h"
 
 class CTimer_paused;

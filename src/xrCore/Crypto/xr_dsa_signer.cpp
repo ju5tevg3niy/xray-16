@@ -1,9 +1,11 @@
-#include "xrCore/LocatorAPI.h"
-#include "Common/types.hpp"
-#include "xrCore/xrstring.h"
-#include "stdafx.h"
-#include "xr_dsa_signer.h"
+#include "xrCore/Crypto/xr_dsa_signer.h"
 #include <ctime>
+#include "Common/types.hpp"
+#include "xrCore/Crypto/xr_dsa.h"
+#include "xrCore/Crypto/xr_sha.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/xrstring.h"
 
 xr_dsa_signer::xr_dsa_signer(u8 const p_number[crypto::xr_dsa::public_key_length],
     u8 const q_number[crypto::xr_dsa::private_key_length], u8 const g_number[crypto::xr_dsa::public_key_length])

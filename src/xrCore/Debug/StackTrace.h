@@ -1,8 +1,8 @@
-#include "Common/types.hpp"
-#include "Common/Platform.hpp"
-#include <vector>
-#include <string>
 #pragma once
+#include <string>
+#include <vector>
+#include "Common/Platform.hpp"  // IWYU pragma: keep
+#include "Common/types.hpp"
 
 std::vector<std::string> BuildStackTrace(u16 maxFramesCount = 512);
 

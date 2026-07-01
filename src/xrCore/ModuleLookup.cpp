@@ -1,18 +1,14 @@
-#include "xrCore/log.h"
-#include "Common/types.hpp"
-#include "Common/Platform.hpp"
+#include "xrCore/ModuleLookup.hpp"
 #include <string>
 #include <tracy/Tracy.hpp>
-
-#include "stdafx.h"
-
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/log.h"
 #if defined(XR_PLATFORM_LINUX) || defined(XR_PLATFORM_BSD)
 #include <dlfcn.h>
 #else
 #include <SDL_loadso.h>
 #endif
-
-#include "ModuleLookup.hpp"
 
 namespace XRay
 {

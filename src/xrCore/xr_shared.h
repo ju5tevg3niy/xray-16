@@ -1,7 +1,6 @@
-#include "xrCore/xrstring.h"
 #pragma once
 #include <map>
-#include "xrstring.h"
+#include "xrCore/xrstring.h"
 
 class shared_value
 {

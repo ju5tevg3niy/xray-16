@@ -1,11 +1,9 @@
-#include "xrCore/log.h"
-#include "xrCore/Math/matrix.hpp"
 #pragma once
 #include <cstddef>
 #include "Common/Platform.hpp"
-#include "math_funcs_inline.hpp"
-#include "matrix.hpp"
-#include "vector3.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/vector3.hpp"
 #include "xrCore/xrMemory.h"
 
 struct Fmatrix33 {

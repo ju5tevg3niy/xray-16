@@ -1,9 +1,9 @@
-#include "xrCore/Utils/cpu.hpp"
-#include "Common/types.hpp"
-#include "Lock.hpp"
+#include "xrCore/Threading/Lock.hpp"
 #include <atomic>
 #include <mutex>
 #include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/Utils/cpu.hpp"
 #include "xrCore/xrMemory.h"
 
 struct LockImpl {

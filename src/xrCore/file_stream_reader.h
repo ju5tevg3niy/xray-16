@@ -2,7 +2,7 @@
 #include <cstddef>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "stream_reader.h"
+#include "xrCore/stream_reader.h"
 
 class CFileStreamReader : public CStreamReader
 {

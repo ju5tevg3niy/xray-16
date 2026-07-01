@@ -1,12 +1,11 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "xrCore/Math/flags.hpp"
-#include "xrCore/xrstring.h"
-#include "Common/types.hpp"
 #pragma once
 #include <vector>
+#include "Common/types.hpp"
 #include "xrCore/Animation/Bone.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/Math/flags.hpp"
 #include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/xrstring.h"
 
 // refs
 class CEnvelope;

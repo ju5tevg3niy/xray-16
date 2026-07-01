@@ -1,15 +1,19 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "Common/types.hpp"
-#include "xrCore/Math/matrix.hpp"
-#include <cstddef>
 #pragma once
+#include <cstddef>
 #include <vector>
-#include "xrCore/Math/obb.hpp"
-#include "xrCore/Math/sphere.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/FixedVector.h"
 #include "xrCore/Math/cylinder.hpp"
 #include "xrCore/Math/flags.hpp"
-#include "xrCore/FixedVector.h"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/obb.hpp"
+#include "xrCore/Math/sphere.hpp"
+#include "xrCore/Math/vector2.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 #include "xrCore/xrstring.h"
 
 // refs

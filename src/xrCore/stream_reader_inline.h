@@ -3,9 +3,9 @@
 #include <cstdint>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrDebug_macros.h"
-#include "stream_reader.h"
-#include "xrMemory.h"
+#include "xrCore/stream_reader.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 #if defined(XR_PLATFORM_POSIX)
 #include <sys/mman.h>
 #endif

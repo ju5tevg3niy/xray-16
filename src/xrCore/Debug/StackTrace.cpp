@@ -1,14 +1,11 @@
-#include "xrCore/log.h"
+#include "xrCore/Debug/StackTrace.h"
 #include <cstddef>
-#include "Common/types.hpp"
-#include "Common/Platform.hpp"
-#include <vector>
 #include <string>
-#include "stdafx.h"
-
-#include "StackTrace.h"
-
-#include "Threading/ScopeLock.hpp"
+#include <vector>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/Threading/ScopeLock.hpp"
+#include "xrCore/log.h"
 
 #ifdef XR_PLATFORM_WINDOWS
 #   include <DbgHelp.h>

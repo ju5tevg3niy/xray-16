@@ -2,8 +2,8 @@
 #include <cstddef>
 #include <iterator>
 #include <thread>
-#include "Task.hpp"
-#include "TaskManager.hpp"
+#include "xrCore/Threading/Task.hpp"
+#include "xrCore/Threading/TaskManager.hpp"
 #include "xrCore/xrDebug_macros.h"
 
 /*

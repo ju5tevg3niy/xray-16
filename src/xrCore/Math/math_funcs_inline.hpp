@@ -2,8 +2,8 @@
 #include <cmath>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "bitwise.hpp"
-#include "constants.hpp"
+#include "xrCore/Math/bitwise.hpp"
+#include "xrCore/Math/constants.hpp"
 
 inline float _abs(float x) noexcept {
   return fabsf(x);

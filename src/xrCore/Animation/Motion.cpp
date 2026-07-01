@@ -1,14 +1,21 @@
-#include "xrCore/log.h"
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "Common/types.hpp"
-#include "xrCore/xrstring.h"
+#include "xrCore/Animation/Motion.hpp"
 #include <cstddef>
+#include <utility>
 #include <vector>
-#include "xrCore/Utils/destructor.hpp"
-#include "stdafx.h"
-#include "Motion.hpp"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/Animation/Bone.hpp"
 #include "xrCore/Animation/Envelope.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Math/bitwise.hpp"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Utils/destructor.hpp"
+#include "xrCore/log.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xrstring.h"
 
 #define EOBJ_OMOTION 0x1100
 #define EOBJ_SMOTION 0x1200

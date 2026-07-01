@@ -1,7 +1,6 @@
-#include "xrCore/LocatorAPI.h"
 #pragma once
-#include <set>
 #include <ctime>
+#include <set>
 #include <string>
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"

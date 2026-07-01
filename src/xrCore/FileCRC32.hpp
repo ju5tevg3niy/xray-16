@@ -1,4 +1,3 @@
-#include "xrCore/LocatorAPI.h"
 #pragma once
 #include "Common/types.hpp"
 #include "xrCore/FS.h"

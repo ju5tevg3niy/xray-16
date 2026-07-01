@@ -1,14 +1,19 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/log.h"
-#include "xrCore/FS.h"
-#include "Common/types.hpp"
-#include "xrCore/xrstring.h"
 #include <cstddef>
-#include "Common/types_paths.hpp"
+#include <cstdlib>
+#include <cstring>
 #include <vector>
-#include "stdafx.h"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/LocatorAPI.h"
 #include "xrCore/Threading/Lock.hpp"
 #include "xrCore/Utils/crc32.hpp"
+#include "xrCore/log.h"
+#include "xrCore/xrCore.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/xrstring.h"
 
 struct auth_options
 {

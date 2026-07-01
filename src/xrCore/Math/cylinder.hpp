@@ -1,7 +1,7 @@
 #pragma once
 #include "Common/types.hpp"
-#include "math_funcs_inline.hpp"
-#include "vector3.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/vector3.hpp"
 
 struct Fcylinder {
   Fvector3 m_center;

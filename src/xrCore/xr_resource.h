@@ -1,9 +1,8 @@
+#pragma once
+#include <atomic>
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "xrCore/xrstring.h"
-#include "Common/Platform.hpp"
-#include <atomic>
-#pragma once
-#include "xrstring.h"
 
 // resource itself, the base class for all derived resources
 struct xr_resource

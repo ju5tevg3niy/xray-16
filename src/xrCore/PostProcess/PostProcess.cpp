@@ -1,9 +1,17 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "Common/types_paths.hpp"
+#include "xrCore/PostProcess/PostProcess.hpp"
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "stdafx.h"
-#include "PostProcess.hpp"
+#include "Common/types_paths.hpp"
+#include "xrCore/Animation/Envelope.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/PostProcess/PPInfo.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/xrDebug.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xrstring.h"
 
 // postprocess value LOAD method implementation
 void CPostProcessValue::load(IReader& pReader) { m_Value.Load_2(pReader); }

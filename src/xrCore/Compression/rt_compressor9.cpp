@@ -1,13 +1,14 @@
+#include <lzo/lzo1x.h>
+#include <lzo/lzoconf.h>
+#include "Common/FSMacros.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "xrCore/Compression/rt_compressor.h"
+#include "xrCore/FS.h"
 #include "xrCore/LocatorAPI.h"
 #include "xrCore/log.h"
-#include "xrCore/FS.h"
-#include "Common/types.hpp"
-#include "xrCore/Compression/rt_compressor.h"
-#include "Common/types_paths.hpp"
-#include "stdafx.h"
-#pragma hdrstop
-
-#include "lzo/lzo1x.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 
 //==============================================================================
 

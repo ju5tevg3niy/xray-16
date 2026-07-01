@@ -2,7 +2,7 @@
 #include <cstddef>
 #include <vector>
 #include "Common/Platform.hpp"
-#include "xrDebug_macros.h"
+#include "xrCore/xrDebug_macros.h"
 
 template <class T, size_t granularity>
 class poolSS

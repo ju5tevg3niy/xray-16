@@ -1,4 +1,4 @@
-#include "dump_string.hpp"
+#include "xrCore/Utils/dump_string.hpp"
 #include <string>
 #include "xrCore/Math/fbox.hpp"
 #include "xrCore/Math/matrix.hpp"

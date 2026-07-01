@@ -1,7 +1,7 @@
-#include "sphere.hpp"
+#include "xrCore/Math/sphere.hpp"
 #include <list>
-#include "math_funcs_inline.hpp"
-#include "vector3.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/vector3.hpp"
 
 class Miniball;
 class Basis;

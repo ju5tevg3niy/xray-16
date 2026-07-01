@@ -1,9 +1,9 @@
-#include "xrCore/FileSystem.h"
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "Common/types.hpp"
-#include "xrCore/xrstring.h"
 #pragma once
+#include <ctime>
+#include "Common/types.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/xrstring.h"
 
 // BOOL ValidateIndices (u32 vCount, u32 iCount, u16* pIndices);
 

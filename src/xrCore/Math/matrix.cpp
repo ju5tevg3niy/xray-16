@@ -1,11 +1,10 @@
 #include "xrCore/Math/matrix.hpp"
-#include "matrix.hpp"
 #include <cfloat>
 #include <cmath>
-#include "Common/types_limits.hpp"
-#include "math_funcs_inline.hpp"
-#include "quaternion.hpp"
-#include "vector3.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/quaternion.hpp"
+#include "xrCore/Math/vector3.hpp"
 #include "xrCore/xrDebug_macros.h"
 
 Fmatrix& Fmatrix::rotation(const Fquaternion& Q) {

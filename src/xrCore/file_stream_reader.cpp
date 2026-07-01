@@ -1,9 +1,11 @@
+#include "xrCore/file_stream_reader.h"
+#include <sys/stat.h>
+#include <unistd.h>
 #include <cstddef>
-#include "Common/types.hpp"
 #include "Common/Platform.hpp"
-#include "stdafx.h"
-#include "file_stream_reader.h"
-
+#include "Common/types.hpp"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 #if defined(XR_PLATFORM_POSIX)
 #include <fcntl.h>
 #endif

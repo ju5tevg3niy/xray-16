@@ -1,4 +1,3 @@
-#include "xrCore/LocatorAPI.h"
 #pragma once
 #include <cstddef>
 #include <vector>

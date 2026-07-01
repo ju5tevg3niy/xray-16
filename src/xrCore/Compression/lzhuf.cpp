@@ -1,13 +1,10 @@
-#include "xrCore/LocatorAPI.h"
+#include "xrCore/Compression/lzhuf.hpp"
 #include <cstddef>
-#include <vector>
-#include "lzhuf.hpp"
 #include <cstdio>
 #include <cstring>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrMemory.h"
-
+#include "xrCore/xrMemory.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #include <io.h>
 #endif

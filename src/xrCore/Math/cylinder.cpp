@@ -1,7 +1,7 @@
-#include "cylinder.hpp"
+#include "xrCore/Math/cylinder.hpp"
 #include <limits>
-#include "math_funcs_inline.hpp"
-#include "vector3.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/vector3.hpp"
 #include "xrCore/log.h"
 #include "xrCore/xrDebug_macros.h"
 

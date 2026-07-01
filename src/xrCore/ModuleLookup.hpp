@@ -1,5 +1,5 @@
-#include "Common/types.hpp"
 #pragma once
+#include "Common/types.hpp"
 #include "xrCommon/xr_smart_pointers.h"
 
 namespace XRay

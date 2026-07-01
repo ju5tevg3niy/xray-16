@@ -1,40 +1,38 @@
-#include "xrCore/Utils/cpu.hpp"
+#include "xrCore/xrCore.h"
+#include <SDL_filesystem.h>
+#include <SDL_log.h>
+#include <SDL_stdinc.h>
+#include <cstddef>
+#include <cstdio>
+#include <cstring>
+#include <tracy/Tracy.hpp>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCommon/xr_smart_pointers.h"
+#include "xrCore/Compression/compression_ppmd_stream.h"
+#include "xrCore/Compression/rt_compressor.h"
 #include "xrCore/FileSystem.h"
 #include "xrCore/LocatorAPI.h"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/Threading/TaskManager.hpp"
+#include "xrCore/Utils/cpu.hpp"
 #include "xrCore/log.h"
 #include "xrCore/string_concatenations.h"
-#include "xrCore/Compression/rt_compressor.h"
-#include <cstddef>
-#include "Common/types_paths.hpp"
-#include "Common/types.hpp"
-#include "Common/Platform.hpp"
-#include <tracy/Tracy.hpp>
-
-// xrCore.cpp : Defines the entry point for the DLL application.
-//
-#include "stdafx.h"
-
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xrsharedmem.h"
+#include "xrCore/xrstring.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #include <mmsystem.h>
 #include <objbase.h>
 #pragma comment(lib, "winmm.lib")
 #elif defined(XR_PLATFORM_POSIX)
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <pwd.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <unistd.h>
 #endif
-#include "xrCore.h"
-#include "xrCore/Text/string_funcs_inline.hpp"
-#include "Threading/TaskManager.hpp"
 
-#include <SDL.h>
-
-#include "xrMemory.h"
-#include "xrsharedmem.h"
-#include "xrstring.h"
-
-#include "Compression/compression_ppmd_stream.h"
 extern compression::ppmd::stream* trained_model;
 
 xrCore Core;

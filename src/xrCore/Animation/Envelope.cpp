@@ -1,10 +1,15 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
+#include "xrCore/Animation/Envelope.hpp"
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <utility>
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "stdafx.h"
-#pragma hdrstop
-
-#include "Envelope.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 
 CEnvelope::~CEnvelope() { Clear(); }
 CEnvelope::CEnvelope(CEnvelope* source)

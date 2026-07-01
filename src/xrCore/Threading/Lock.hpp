@@ -1,6 +1,6 @@
-#include "Common/types.hpp"
 #pragma once
 #include <atomic>
+#include "Common/types.hpp"
 
 #ifdef CONFIG_PROFILE_LOCKS
 #include "xrCore/Text/string_macro_utils.hpp"

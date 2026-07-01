@@ -1,4 +1,3 @@
-#include <cstddef>
 /*
 www.sourceforge.net/projects/tinyxml
 Original code (2.0 and earlier )copyright (c) 2000-2002 Lee Thomason (www.grinninglizard.com)
@@ -22,12 +21,14 @@ must not be misrepresented as being the original software.
 3. This notice may not be removed or altered from any source
 distribution.
 */
-#include "stdafx.h"
 
 #include <ctype.h>
 #include <stddef.h>
-
+#include <cassert>
+#include <cstddef>
+#include <cstring>
 #include "tinyxml.h"
+#include "xrCore/xrMemory.h"
 
 //#define DEBUG_PARSER
 #if defined(DEBUG_PARSER)

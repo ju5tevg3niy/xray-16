@@ -1,6 +1,7 @@
+#include "xrCore/PostProcess/PPInfo.hpp"
 #include "Common/types.hpp"
-#include "stdafx.h"
-#include "PPInfo.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 SPPInfo& SPPInfo::add(const SPPInfo& ppi)
 {

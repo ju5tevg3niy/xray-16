@@ -1,9 +1,8 @@
+#include "xrCore/Math/math_funcs_inline.hpp"
 #include "xrCore/Math/matrix.hpp"
-#include "stdafx.h"
-#pragma hdrstop
-
 #include "xrCore/Animation/Bone.hpp"
-#include "xrCore/Animation/Envelope.hpp"
+#include "xrCore/Math/sphere.hpp"
+#include "xrCore/Math/vector3.hpp"
 
 void SJointIKData::clamp_by_limits(Fvector& dest_xyz)
 {

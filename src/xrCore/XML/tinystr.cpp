@@ -1,4 +1,3 @@
-#include <cstddef>
 /*
 www.sourceforge.net/projects/tinyxml
 Original file by Yves Berquin.
@@ -26,9 +25,9 @@ distribution.
 /*
  * THIS FILE WAS ALTERED BY Tyge Lшvset, 7. April 2005.
  */
-#include "stdafx.h"
 
 #ifndef TIXML_USE_STL
+#include <cstring>
 #include "tinystr.h"
 
 // Error value for find primitive

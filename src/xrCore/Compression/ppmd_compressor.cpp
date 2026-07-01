@@ -1,7 +1,11 @@
-#include "Common/types.hpp"
-#include "stdafx.h"
 #include "ppmd_compressor.h"
-#include "PPMd.h"
+#include <cstdlib>
+#include "Common/types.hpp"
+#include "xrCommon/xr_smart_pointers.h"
+#include "xrCore/Compression/PPMd.h"
+#include "xrCore/Compression/PPMdType.h"
+#include "xrCore/Threading/Lock.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 const u32 suballocator_size = 32;
 const u32 order_model = 8;

@@ -1,6 +1,6 @@
-#include "Common/types_paths.hpp"
-#include "Common/types.hpp"
 #pragma once
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
 
 // ***** The Core definition *****
 class xrCore

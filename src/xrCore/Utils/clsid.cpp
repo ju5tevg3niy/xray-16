@@ -1,4 +1,4 @@
-#include "clsid.hpp"
+#include "xrCore/Utils/clsid.hpp"
 #include <cstddef>
 #include <cstring>
 #include "Common/Platform.hpp"

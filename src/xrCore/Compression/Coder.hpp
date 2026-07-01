@@ -1,5 +1,6 @@
-#include "Common/types.hpp"
 #pragma once
+#include "Common/types.hpp"
+#include "xrCore/Compression/PPMdType.h"
 
 /****************************************************************************
  *  This file is part of PPMd project                                       *

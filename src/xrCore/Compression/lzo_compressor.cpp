@@ -1,7 +1,7 @@
+#include "xrCore/Compression/lzo_compressor.h"
+#include <lzo/lzoconf.h>
+#include <lzo/lzo1x.h>
 #include "Common/types.hpp"
-#include "stdafx.h"
-#include "lzo_compressor.h"
-#include "lzo/lzo1x.h"
 
 int lzo_compress_dict(
     const void* input, u32 inputSize, void* output, u32& outputSize, void* workMem, const void* dict, u32 dictSize)
@@ -18,4 +18,5 @@ int lzo_decompress_dict(
 }
 
 int lzo_initialize() { return lzo_init(); }
+
 u32 lzo_get_workmem_size() { return LZO1X_999_MEM_COMPRESS; }

@@ -1,7 +1,4 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/log.h"
-#include "xrCore/string_concatenations.h"
-#include "xrDebug.h"
+#include "xrCore/xrDebug.h"
 #include <SDL_assert.h>
 #include <SDL_error.h>
 #include <SDL_messagebox.h>
@@ -20,17 +17,17 @@
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
-#include "Debug/StackTrace.h"
-#include "Text/string_funcs_inline.hpp"
-#include "Threading/ScopeLock.hpp"
-#include "log.h"
-#include "os_clipboard.h"
-#include "xrCore.h"
-#include "xrDebug_macros.h"
-#include "xrMemory.h"
-#include "xrsharedmem.h"
-#include "xrstring.h"
-
+#include "xrCore/Debug/StackTrace.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/Threading/ScopeLock.hpp"
+#include "xrCore/log.h"
+#include "xrCore/os_clipboard.h"
+#include "xrCore/xrCore.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xrsharedmem.h"
+#include "xrCore/xrstring.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #   include <dbghelp.h>
 #   include <direct.h>

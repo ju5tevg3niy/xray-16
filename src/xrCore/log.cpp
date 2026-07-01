@@ -1,9 +1,4 @@
-#include "xrCore/FileSystem.h"
-#include "xrCore/LocatorAPI.h"
 #include "xrCore/log.h"
-#include "xrCore/string_concatenations.h"
-#include "xrCore/Math/matrix.hpp"
-#include "log.h"
 #include <chrono>
 #include <cstdarg>
 #include <cstdio>
@@ -15,19 +10,19 @@
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
-#include "FS.h"
-#include "FileSystem.h"
-#include "LocatorAPI.h"
-#include "Math/matrix.hpp"
-#include "Math/vector3.hpp"
-#include "Text/string_funcs_inline.hpp"
-#include "Threading/Lock.hpp"
-#include "Threading/ScopeLock.hpp"
-#include "resource.h"
-#include "string_concatenations.h"
-#include "xrCore.h"
-#include "xrDebug.h"
-#include "xrstring.h"
+#include "xrCore/FS.h"
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/Threading/Lock.hpp"
+#include "xrCore/Threading/ScopeLock.hpp"
+#include "xrCore/resource.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrCore.h"
+#include "xrCore/xrDebug.h"
+#include "xrCore/xrstring.h"
 
 bool LogExecCB = true;
 string_path log_file_name{};

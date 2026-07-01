@@ -1,17 +1,14 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "xrCore/xrstring.h"
 #pragma once
 #include <cstring>
 #include <string>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "Math/vector3.hpp"
-#include "Math/vector4.hpp"
-#include "client_id.h"
 #include "xrCore/Math/matrix.hpp"
-#include "xrDebug_macros.h"
-#include "xrstring.h"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/vector4.hpp"
+#include "xrCore/client_id.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrstring.h"
 
 #pragma pack(push, 1)
 

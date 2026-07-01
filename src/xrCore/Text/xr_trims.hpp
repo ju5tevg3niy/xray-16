@@ -2,8 +2,8 @@
 #include <string>
 #include <vector>
 #include "Common/types.hpp"
+#include "xrCore/Text/xr_token.hpp"
 #include "xrCore/xrstring.h"
-#include "xr_token.hpp"
 
 int _GetItemCount(pcstr, char separator = ',');
 

@@ -1,10 +1,6 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/log.h"
 #include "xrCore/FS.h"
-#include "xrCore/xrstring.h"
-#include <cstddef>
-#include "FS.h"
 #include <cstdarg>
+#include <cstddef>
 #include <cstdio>
 #include <cstring>
 #include <string>
@@ -12,24 +8,24 @@
 #include "Common/FSMacros.hpp"
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "FS_impl.h"
-#include "FS_internal.h"
-#include "LocatorAPI.h"
-#include "Math/vector3.hpp"
-#include "Compression/lzhuf.hpp"
-#include "stdafx.h"
-#include "xrDebug.h"
-#include "xrDebug_macros.h"
-#include "xrMemory.h"
-#include "xrstring.h"
+#include "xrCore/Compression/lzhuf.hpp"
+#include "xrCore/FS_impl.h"
+#include "xrCore/FS_internal.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/log.h"
+#include "xrCore/xrDebug.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xrstring.h"
 #if defined(XR_PLATFORM_WINDOWS)
-#include <io.h>
 #include <direct.h>
+#include <io.h>
 #elif defined(XR_PLATFORM_POSIX)
 #include <sys/mman.h>
 #endif
-#include <sys/stat.h>
 #include <fcntl.h>
+#include <sys/stat.h>
 
 #ifdef FS_DEBUG
 u32 g_file_mapped_memory = 0;

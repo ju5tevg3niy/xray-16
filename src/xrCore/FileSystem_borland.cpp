@@ -1,23 +1,20 @@
+#include <string>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "FileSystem.h"
 #include "xrCore/FileSystem.h"
 #include "xrCore/LocatorAPI.h"
 #include "xrCore/log.h"
-#include "Common/types_paths.hpp"
-#include "Common/types.hpp"
-#include "Common/Platform.hpp"
-#include <string>
+#ifdef XR_PLATFORM_WINDOWS
+#include <Shlobj.h>
+#include <fcntl.h>
+#include <io.h>
+#include <sys\stat.h>
+
 //----------------------------------------------------
 // file: FileSystem.cpp
 //----------------------------------------------------
-#include "stdafx.h"
-#pragma hdrstop
-
-#include "FileSystem.h"
-#ifdef XR_PLATFORM_WINDOWS
-#include <io.h>
-#include <fcntl.h>
-#include <sys\stat.h>
-
-#include <Shlobj.h>
 
 int CALLBACK BrowseCallbackProc(HWND hWnd, UINT uMsg, LPARAM lParam, LPARAM lpData)
 {

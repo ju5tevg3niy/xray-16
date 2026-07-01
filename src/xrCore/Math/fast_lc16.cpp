@@ -1,4 +1,4 @@
-#include "fast_lc16.hpp"
+#include "xrCore/Math/fast_lc16.hpp"
 #include <random>
 
 static std::random_device s_random_device;

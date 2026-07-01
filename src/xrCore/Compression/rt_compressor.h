@@ -1,6 +1,6 @@
+#pragma once
 #include <cstddef>
 #include "Common/types.hpp"
-#pragma once
 
 extern void rtc_initialize();
 extern size_t rtc_compress(void* dst, size_t dst_len, const void* src, size_t src_len);

@@ -1,6 +1,5 @@
+#include "xrCore/Crypto/xr_sha.h"
 #include "Common/types.hpp"
-#include "stdafx.h"
-#include "xr_sha.h"
 
 #ifdef USE_OPENSSL
 #   include <openssl/sha.h>

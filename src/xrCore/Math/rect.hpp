@@ -1,7 +1,7 @@
 #pragma once
 #include "Common/Platform.hpp"
 #include "Common/types_limits.hpp"
-#include "vector2.hpp"
+#include "xrCore/Math/vector2.hpp"
 
 template <class T>
 struct _rect {

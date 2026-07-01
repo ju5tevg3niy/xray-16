@@ -1,7 +1,5 @@
-#include "xrCore/LocatorAPI.h"
-#include "Common/types.hpp"
 #pragma once
-#include "xrCore/xrCore.h"
+#include "Common/types.hpp"
 #include "xrCore/FS.h"
 
 namespace XRay

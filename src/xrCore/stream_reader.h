@@ -1,15 +1,12 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "xrCore/xrstring.h"
-#include <string>
 #pragma once
 #include <cstddef>
 #include <cstdint>
 #include "Common/Noncopyable.hpp"
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "FS.h"
-#include "xrstring.h"
+#include "xrCore/FS.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xrstring.h"
 
 class CStreamReader : public IReaderBase<CStreamReader>, Noncopyable
 {

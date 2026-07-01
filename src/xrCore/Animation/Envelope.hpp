@@ -1,8 +1,10 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "Common/types.hpp"
-#include <vector>
 #pragma once
+#include <vector>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/xrMemory.h"
 
 // refs
 class IWriter;

@@ -1,22 +1,18 @@
-#include "xrCore/FileSystem.h"
-#include "xrCore/LocatorAPI.h"
 #include "xrCore/xr_ini.h"
-#include "xrCore/Text/xr_trims.hpp"
-#include "xrCore/log.h"
-#include "xrCore/FS.h"
-#include "xrCore/string_concatenations.h"
-#include "xrCore/xrstring.h"
 #include <cstddef>
-#include "Common/types_paths.hpp"
-#include "Common/types.hpp"
-#include "Common/Platform.hpp"
 #include <string>
 #include <tracy/Tracy.hpp>
-
-#include "stdafx.h"
-
-#include "FileSystem.h"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
 #include "xrCore/Text/xr_token.hpp"
+#include "xrCore/Text/xr_trims.hpp"
+#include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrstring.h"
 
 CInifile const* pSettings = nullptr;
 CInifile const* pSettingsAuth = nullptr;

@@ -1,4 +1,4 @@
-#include "os_clipboard.h"
+#include "xrCore/os_clipboard.h"
 #include <SDL_clipboard.h>
 #include <SDL_error.h>
 #include <SDL_stdinc.h>

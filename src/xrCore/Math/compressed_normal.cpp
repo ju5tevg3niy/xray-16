@@ -1,9 +1,9 @@
-#include "compressed_normal.hpp"
+#include "xrCore/Math/compressed_normal.hpp"
 #include <tracy/Tracy.hpp>
 #include "Common/types.hpp"
-#include "bitwise.hpp"
-#include "math_funcs_inline.hpp"
-#include "vector3.hpp"
+#include "xrCore/Math/bitwise.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/vector3.hpp"
 #include "xrCore/xrDebug_macros.h"
 
 // upper 3 bits

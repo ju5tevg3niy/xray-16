@@ -1,8 +1,8 @@
-#include "xrCore/string_concatenations.h"
-#include "ThreadUtil.hpp"
+#include "xrCore/Threading/ThreadUtil.hpp"
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "xrCore/log.h"
+#include "xrCore/string_concatenations.h"
 
 #if defined(XR_PLATFORM_POSIX)
 #include <pthread.h>

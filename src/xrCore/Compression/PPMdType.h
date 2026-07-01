@@ -1,7 +1,7 @@
-#include "Common/types.hpp"
-#include "Common/Platform.hpp"
 #pragma once
 #include <stdio.h>
+#include "Common/Platform.hpp"  // IWYU pragma: keep
+#include "Common/types.hpp"
 
 /****************************************************************************
  *  This file is part of PPMd project                                       *
@@ -30,7 +30,6 @@ defined(_UNKNOWN_ENVIRONMENT_) != \
 #if defined(_WIN32_ENVIRONMENT_)
 #include <windows.h>
 #else /* _DOS32_ENVIRONMENT_ || _POSIX_ENVIRONMENT_ || _UNKNOWN_ENVIRONMENT_ */
-#include "stdafx.h"
 //typedef int BOOL;
 //#define FALSE 0
 //#define TRUE 1

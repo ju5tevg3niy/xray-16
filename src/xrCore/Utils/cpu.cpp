@@ -1,5 +1,4 @@
 #include "xrCore/Utils/cpu.hpp"
-#include "cpu.hpp"
 #include <SDL_cpuinfo.h>
 #include <SDL_timer.h>
 #include <SDL_version.h>

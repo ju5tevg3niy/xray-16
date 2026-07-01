@@ -1,19 +1,19 @@
 #include "xrCore/net_utils.h"
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "xrCore/xrstring.h"
-#include "xrCore/Math/matrix.hpp"
 #include <cstddef>
-#include "Common/types.hpp"
-#include <string>
 #include <cstring>
-
-#include "stdafx.h"
-#pragma hdrstop
-
-#include "net_utils.h"
-#include "xrCore/Math/math_funcs.hpp"
+#include <string>
+#include "Common/types.hpp"
+#include "xrCore/Math/bitwise.hpp"
 #include "xrCore/Math/compressed_normal.hpp"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/math_funcs.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/vector4.hpp"
+#include "xrCore/client_id.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xrstring.h"
 
 // ---NET_Packet
 

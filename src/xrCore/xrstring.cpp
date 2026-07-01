@@ -1,7 +1,4 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/log.h"
 #include "xrCore/xrstring.h"
-#include "xrstring.h"
 #include <SDL.h>
 #include <cstddef>
 #include <cstdio>
@@ -9,13 +6,15 @@
 #include <utility>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "FS.h"
-#include "Threading/Lock.hpp"
-#include "log.h"
+#include "xrCore/FS.h"
+#include "xrCore/LocatorAPI.h"
 #include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/Threading/Lock.hpp"
 #include "xrCore/Utils/crc32.hpp"
-#include "xrDebug_macros.h"
-#include "xrMemory.h"
+#include "xrCore/log.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xrstring.h"
 
 str_container* g_pStringContainer = nullptr;
 

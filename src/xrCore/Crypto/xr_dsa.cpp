@@ -1,9 +1,8 @@
-#include "xrCore/log.h"
-#include "Common/types.hpp"
-#include "xrCore/xrstring.h"
+#include "xrCore/Crypto/xr_dsa.h"
 #include <cstddef>
-#include "stdafx.h"
-#include "xr_dsa.h"
+#include "Common/types.hpp"
+#include "xrCore/log.h"
+#include "xrCore/xrstring.h"
 
 #ifdef USE_OPENSSL
 #   include <openssl/dsa.h>

@@ -1,13 +1,12 @@
-#include "xrCore/xrstring.h"
-#include <cstddef>
 #pragma once
+#include <cstddef>
 #include <cstring>
 #include <string>
 #include <tuple>
 #include <utility>
 #include "Common/types.hpp"
-#include "xrDebug_macros.h"
-#include "xrstring.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrstring.h"
 
 namespace xray
 {

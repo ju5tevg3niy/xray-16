@@ -1,7 +1,6 @@
-#include "xrCore/LocatorAPI.h"
 #pragma once
-#include <string>
 #include <cstddef>
+#include <string>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"

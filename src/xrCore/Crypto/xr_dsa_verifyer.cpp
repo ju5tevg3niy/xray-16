@@ -1,8 +1,11 @@
-#include "xrCore/LocatorAPI.h"
+#include "xrCore/Crypto/xr_dsa_verifyer.h"
+#include <optional>
 #include "Common/types.hpp"
+#include "xrCore/Crypto/xr_dsa.h"
+#include "xrCore/Crypto/xr_sha.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xrMemory.h"
 #include "xrCore/xrstring.h"
-#include "stdafx.h"
-#include "xr_dsa_verifyer.h"
 
 xr_dsa_verifyer::xr_dsa_verifyer(u8 const p_number[crypto::xr_dsa::public_key_length],
     u8 const q_number[crypto::xr_dsa::private_key_length], u8 const g_number[crypto::xr_dsa::public_key_length],

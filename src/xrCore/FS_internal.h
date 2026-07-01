@@ -1,23 +1,20 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/log.h"
-#include "xrCore/FS.h"
 #pragma once
 #include <cerrno>
 #include <cstddef>
 #include <cstdio>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "FS.h"
-#include "log.h"
-#include "xrDebug_macros.h"
-#include "xrMemory.h"
+#include "xrCore/FS.h"
+#include "xrCore/log.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #include <io.h>
 #endif
 #include <fcntl.h>
 #if defined(XR_PLATFORM_WINDOWS)
-#include <sys\stat.h>
 #include <share.h>
+#include <sys\stat.h>
 #endif
 
 #if defined(XR_PLATFORM_BSD)

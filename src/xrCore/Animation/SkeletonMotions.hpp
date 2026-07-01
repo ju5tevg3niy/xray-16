@@ -1,15 +1,19 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "xrCore/xrstring.h"
-#include "xrCore/xrsharedmem.h"
+#pragma once
+#include <map>
+#include <utility>
+#include <vector>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include <vector>
-#pragma once
-#include "Bone.hpp"
-#include "SkeletonMotionDefs.hpp"
+#include "xrCore/Animation/Bone.hpp"
+#include "xrCore/Animation/SkeletonMotionDefs.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/Math/bitwise.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
 #include "xrCore/Math/quaternion.hpp"
 #include "xrCore/Math/vector3.hpp"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrsharedmem.h"
+#include "xrCore/xrstring.h"
 
 // fwd. decl.
 class CKinematicsAnimated;

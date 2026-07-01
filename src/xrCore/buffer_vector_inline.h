@@ -1,4 +1,3 @@
-#include <cstddef>
 #pragma once
 #include "xrCore/buffer_vector.h"
 #include "xrCore/xrDebug_macros.h"

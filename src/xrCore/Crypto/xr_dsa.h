@@ -1,6 +1,6 @@
+#pragma once
 #include "Common/types.hpp"
 #include "xrCore/xrstring.h"
-#pragma once
 
 struct evp_pkey_st;
 struct evp_pkey_ctx_st;

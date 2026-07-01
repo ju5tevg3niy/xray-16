@@ -1,19 +1,27 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/xr_ini.h"
-#include "xrCore/log.h"
-#include "xrCore/FS.h"
-#include "xrCore/xrstring.h"
+#include "xrCore/Animation/SkeletonMotions.hpp"
+#include <cfloat>
 #include <cstddef>
-#include "Common/types_paths.hpp"
-#include "Common/types.hpp"
-#include <vector>
 #include <string>
-#include "stdafx.h"
-#include "SkeletonMotions.hpp"
-#include "FMesh.hpp"
-#include "Motion.hpp"
+#include <utility>
+#include <vector>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "Common/types_paths.hpp"
 #include "Include/xrRender/Kinematics.h"
+#include "xrCore/Animation/Bone.hpp"
+#include "xrCore/Animation/Motion.hpp"
+#include "xrCore/Animation/SkeletonMotionDefs.hpp"
+#include "xrCore/FMesh.hpp"
+#include "xrCore/FS.h"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/Text/string_funcs_inline.hpp"
 #include "xrCore/Utils/crc32.hpp"
+#include "xrCore/log.h"
+#include "xrCore/xrDebug.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xr_ini.h"
+#include "xrCore/xrstring.h"
 
 motions_container* g_pMotionsContainer = nullptr;
 

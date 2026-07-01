@@ -1,6 +1,6 @@
 #pragma once
-#include "ParallelFor.hpp"
-#include "Task.hpp"
+#include "xrCore/Threading/ParallelFor.hpp"
+#include "xrCore/Threading/Task.hpp"
 
 /*
     Copyright (c) 2014-2021 OpenXRay

@@ -1,6 +1,6 @@
 #pragma once
 #include "Common/types.hpp"
-#include "vector3.hpp"
+#include "xrCore/Math/vector3.hpp"
 
 // A Unit Vector to 16-bit word conversion algorithm
 // based on work of Rafael Baptista (rafael@oroboro.com)

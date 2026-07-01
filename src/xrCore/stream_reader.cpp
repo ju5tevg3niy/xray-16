@@ -1,12 +1,13 @@
-#include "xrCore/LocatorAPI.h"
-#include "Common/types.hpp"
-#include "xrCore/xrstring.h"
+#include "xrCore/stream_reader.h"
+#include <algorithm>
 #include <cstddef>
+#include <cstring>
 #include "Common/Platform.hpp"
-#include "stdafx.h"
-#include "stream_reader.h"
-#include "xrCore/Text/string_funcs_inline.hpp"
-
+#include "Common/types.hpp"
+#include "xrCore/LocatorAPI.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xrstring.h"
 #if defined(XR_PLATFORM_POSIX)
 #include <sys/mman.h>
 #endif
@@ -141,7 +142,6 @@ CStreamReader* CStreamReader::open_chunk(const size_t& chunk_id)
     return (result);
 }
 
-#include "FS_impl.h"
 u32 CStreamReader::find_chunk(u32 ID, bool* bCompressed) { return inherited::find_chunk(ID, bCompressed); }
 void CStreamReader::r_stringZ(shared_str& dest)
 {

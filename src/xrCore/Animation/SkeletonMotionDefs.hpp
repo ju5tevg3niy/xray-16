@@ -1,5 +1,6 @@
-#include "Common/types.hpp"
 #pragma once
+#include "Common/types.hpp"
+#include "xrCore/Math/constants.hpp"
 
 const u32 MAX_PARTS = 4;
 

@@ -1,5 +1,5 @@
-#include "Common/types.hpp"
 #pragma once
+#include "Common/types.hpp"
 
 /****************************************************************************
  *  This file is part of PPMd project                                       *

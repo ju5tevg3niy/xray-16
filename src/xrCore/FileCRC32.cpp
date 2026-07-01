@@ -1,13 +1,16 @@
-#include "Common/types_paths.hpp"
+#include "xrCore/FileCRC32.hpp"
+#include <cstring>
 #include <string>
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/string_concatenations.h"
-#include "xrCore/Utils/crc32.hpp"
+#include "Common/types_paths.hpp"
 #include "xrCore/FS.h"
 #include "xrCore/FileSystem.h"
+#include "xrCore/LocatorAPI.h"
 #include "xrCore/Text/xr_trims.hpp"
-#include "FileCRC32.hpp"
+#include "xrCore/Utils/crc32.hpp"
+#include "xrCore/string_concatenations.h"
+#include "xrCore/xrDebug_macros.h"
 
 void getFileCrc32(IReader* F, pcstr filePath, u32& outCrc, bool parseIncludes)
 {

@@ -1,7 +1,11 @@
-#include "xrCore/xrstring.h"
-#include "Common/types.hpp"
 #pragma once
-#include "xrCore/xrCore.h"
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/Math/bitwise.hpp"
+#include "xrCore/Math/color.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/xrstring.h"
 
 struct SPPInfo
 {

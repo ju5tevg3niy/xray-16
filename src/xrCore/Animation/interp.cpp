@@ -1,4 +1,3 @@
-#include "xrCore/LocatorAPI.h"
 //======================================================================
 // interp.c
 //
@@ -11,10 +10,11 @@
 // This code shows how to evaluate envelopes in standalone programs.
 //======================================================================
 
-#include "stdafx.h"
-#pragma hdrstop
-
-#include "Envelope.hpp"
+#include <cmath>
+#include <cstddef>
+#include "xrCore/Animation/Envelope.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 //======================================================================
 // range()

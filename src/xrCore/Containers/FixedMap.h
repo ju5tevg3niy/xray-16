@@ -1,9 +1,9 @@
 #pragma once
 #include <cstddef>
-#include <type_traits>
-#include <vector>
 #include <memory>
 #include <tracy/Tracy.hpp>
+#include <type_traits>
+#include <vector>
 #include "Common/types.hpp"
 #include "xrCore/xrDebug_macros.h"
 #include "xrCore/xrMemory.h"

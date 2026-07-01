@@ -1,11 +1,11 @@
-#include <cstddef>
 #pragma once
 #include <algorithm>
+#include <cstddef>
 #include <functional>
 #include <utility>
 #include <vector>
-#include "xrCore/xrCore.h"
-#include "AssociativeVectorComparer.hpp"
+#include "xrCore/Containers/AssociativeVectorComparer.hpp"
+#include "Common/Platform.hpp"
 
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: AssociativeVector.h

@@ -67,7 +67,6 @@ target_sources(
     PostProcess/PostProcess.cpp
     PostProcess/PPInfo.cpp
     string_concatenations.cpp
-    xr_shared.cpp
     xrsharedmem.cpp
     xrstring.cpp
     XML/XMLDocument.cpp
@@ -83,7 +82,7 @@ target_include_directories(
     "${CMAKE_SOURCE_DIR}/Externals/tracy/public"
 
     PRIVATE
-    "${CMAKE_CURRENT_SOURCE_DIR}"
+    #"${CMAKE_CURRENT_SOURCE_DIR}"
     "${CMAKE_SOURCE_DIR}/src"
     "${CMAKE_SOURCE_DIR}/Externals"
 )

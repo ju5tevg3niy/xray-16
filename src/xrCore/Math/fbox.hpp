@@ -1,12 +1,11 @@
-#include "xrCore/Math/matrix.hpp"
 #pragma once
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_limits.hpp"
-#include "bitwise.hpp"
-#include "math_funcs_inline.hpp"
-#include "matrix.hpp"
-#include "vector3.hpp"
+#include "xrCore/Math/bitwise.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/vector3.hpp"
 
 struct Fbox3 {
  public:

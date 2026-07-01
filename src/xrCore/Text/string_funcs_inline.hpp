@@ -1,10 +1,10 @@
-#include <cstddef>
-#include <string>
 #pragma once
 #include <cstdarg>
+#include <cstddef>
 #include <cstdint>
 #include <cstdio>
 #include <cstring>
+#include <string>
 #include <string_view>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"

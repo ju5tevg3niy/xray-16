@@ -1,7 +1,8 @@
+#include "xrCore/Crypto/trivial_encryptor.h"
+#include <utility>
 #include "Common/types.hpp"
-#include "stdafx.h"
-#include "trivial_encryptor.h"
-#include "Math/Random32.hpp"
+#include "xrCore/Math/Random32.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 trivial_encryptor g_trivial_encryptor;
 

@@ -1,14 +1,14 @@
-#include <cstddef>
 #pragma once
 #include <SDL_video.h>
+#include <cstddef>
 #include <cstdio>
 #include <string>
 #include <vector>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Common/types_paths.hpp"
-#include "Text/string_funcs_inline.hpp"
-#include "Threading/Lock.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/Threading/Lock.hpp"
 
 enum class AssertionResult : int
 {

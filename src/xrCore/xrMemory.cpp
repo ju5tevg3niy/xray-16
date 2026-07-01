@@ -1,27 +1,27 @@
-#include "xrMemory.h"
+#include "xrCore/xrMemory.h"
 #include <SDL.h>
 #include <cstddef>
 #include <cstdlib>
+#include <cstring>
 #include <new>
-#include "Common/Platform.hpp"
+#include "Common/Platform.hpp"  // IWYU pragma: keep
 #include "Common/types.hpp"
-#include "Text/string_funcs_inline.hpp"
-#include "xrDebug_macros.h"
-#include "xrsharedmem.h"
-#include "xrstring.h"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrsharedmem.h"
+#include "xrCore/xrstring.h"
 #if defined(XR_PLATFORM_WINDOWS)
 #include <Psapi.h>
 #elif defined(XR_PLATFORM_LINUX)
+#include <sys/resource.h>
 #include <sys/sysinfo.h>
 #include <sys/time.h>
-#include <sys/resource.h>
 #elif defined(XR_PLATFORM_BSD)
-#include <sys/time.h>
 #include <sys/resource.h>
+#include <sys/time.h>
 #elif defined(XR_PLATFORM_HAIKU)
 #include <OS.h>
-#include <sys/time.h>
 #include <sys/resource.h>
+#include <sys/time.h>
 #endif
 
 // Additional bytes of memory to hide memory problems on Release

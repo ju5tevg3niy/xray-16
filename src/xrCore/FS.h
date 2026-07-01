@@ -1,4 +1,3 @@
-#include "xrCore/xrstring.h"
 #pragma once
 #include <cstdarg>
 #include <cstddef>
@@ -8,17 +7,17 @@
 #include <string>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "Math/bitwise.hpp"
-#include "Math/color.hpp"
-#include "Math/compressed_normal.hpp"
-#include "Math/constants.hpp"
-#include "Math/math_funcs.hpp"
-#include "Math/vector2.hpp"
-#include "Math/vector3.hpp"
-#include "Math/vector4.hpp"
-#include "xrDebug_macros.h"
-#include "xrMemory.h"
-#include "xrstring.h"
+#include "xrCore/Math/bitwise.hpp"
+#include "xrCore/Math/color.hpp"
+#include "xrCore/Math/compressed_normal.hpp"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/math_funcs.hpp"
+#include "xrCore/Math/vector2.hpp"
+#include "xrCore/Math/vector3.hpp"
+#include "xrCore/Math/vector4.hpp"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
+#include "xrCore/xrstring.h"
 
 #define CFS_CompressMark (1ul << 31ul)
 #define CFS_HeaderChunkID (666)

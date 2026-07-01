@@ -1,7 +1,3 @@
-#include <cstddef>
-#include <string>
-#pragma once
-
 /*
 www.sourceforge.net/projects/tinyxml
 Original file by Yves Berquin.
@@ -45,6 +41,9 @@ distribution.
 
 #include <assert.h>
 #include <string.h>
+#include <cstddef>
+#include "xrCore/xrMemory.h"
+#include "xrCore/xrstring.h"
 
 /*	The support for explicit isn't that universal, and it isn't really
     required - it is used to check that the TiXmlString class isn't incorrectly

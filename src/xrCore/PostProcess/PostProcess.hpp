@@ -1,12 +1,12 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
-#include "xrCore/xrstring.h"
-#include <cstddef>
-#include "Common/types.hpp"
 #pragma once
-#include "xrCore/xrCore.h"
+#include <cstddef>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
 #include "xrCore/Animation/Envelope.hpp"
+#include "xrCore/FS.h"
 #include "xrCore/PostProcess/PPInfo.hpp"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrstring.h"
 
 #define POSTPROCESS_PARAMS_COUNT 11
 //.#define POSTPROCESS_FILE_VERSION 0x0001

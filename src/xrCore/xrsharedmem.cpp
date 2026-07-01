@@ -1,12 +1,12 @@
-#include "xrsharedmem.h"
+#include "xrCore/xrsharedmem.h"
 #include <algorithm>
 #include <cstddef>
 #include <cstdio>
 #include <cstring>
 #include "Common/types.hpp"
-#include "Threading/ScopeLock.hpp"
-#include "xrDebug_macros.h"
-#include "xrMemory.h"
+#include "xrCore/Threading/ScopeLock.hpp"
+#include "xrCore/xrDebug_macros.h"
+#include "xrCore/xrMemory.h"
 
 using namespace std;
 

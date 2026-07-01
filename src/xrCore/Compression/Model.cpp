@@ -1,16 +1,18 @@
-#include "xrCore/LocatorAPI.h"
+#include <string.h>
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
+#include "xrCore/Compression/Coder.hpp"
+#include "xrCore/Compression/PPMd.h"
+#include "xrCore/Compression/PPMdType.h"
+#include "xrCore/Compression/SubAlloc.hpp"
+#include "xrCore/Compression/compression_ppmd_stream.h"
+
 /****************************************************************************
  *  This file is part of PPMd project                                       *
  *  Written and distributed to public domain by Dmitry Shkarin 1997,        *
  *  1999-2001                                                               *
  *  Contents: PPMII model description and encoding/decoding routines        *
  ****************************************************************************/
-#include <string.h>
-#include "PPMd.h"
-#pragma hdrstop
-#include "Coder.hpp"
-#include "SubAlloc.hpp"
 
 using namespace ppmd;
 

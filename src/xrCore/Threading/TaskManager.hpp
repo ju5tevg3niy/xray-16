@@ -5,9 +5,9 @@
 #include <thread>
 #include <vector>
 #include "Common/Platform.hpp"
-#include "Event.hpp"
-#include "Task.hpp"
 #include "xrCommon/xr_smart_pointers.h"
+#include "xrCore/Threading/Event.hpp"
+#include "xrCore/Threading/Task.hpp"
 
 /*
     Copyright (c) 2014-2021 OpenXRay

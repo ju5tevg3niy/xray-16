@@ -1,5 +1,4 @@
-#include "xrCore/Threading/ThreadUtil.hpp"
-#include "TaskManager.hpp"
+#include "xrCore/Threading/TaskManager.hpp"
 #include <SDL_events.h>
 #include <algorithm>
 #include <atomic>
@@ -10,10 +9,10 @@
 #include <tracy/Tracy.hpp>
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "Task.hpp"
-#include "ThreadUtil.hpp"
 #include "xrCommon/xr_smart_pointers.h"
 #include "xrCore/Math/fast_lc16.hpp"
+#include "xrCore/Threading/Task.hpp"
+#include "xrCore/Threading/ThreadUtil.hpp"
 #include "xrCore/xrDebug.h"
 #include "xrCore/xrDebug_macros.h"
 

@@ -1,4 +1,4 @@
-#include "xr_token.hpp"
+#include "xrCore/Text/xr_token.hpp"
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 

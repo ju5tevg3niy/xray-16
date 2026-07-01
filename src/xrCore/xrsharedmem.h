@@ -1,5 +1,5 @@
-#include <cstddef>
 #pragma once
+#include <cstddef>
 #include <cstring>
 #include <vector>
 #include "Common/Noncopyable.hpp"

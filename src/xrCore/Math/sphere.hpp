@@ -1,9 +1,9 @@
 #pragma once
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "constants.hpp"
-#include "math_funcs_inline.hpp"
-#include "vector3.hpp"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/vector3.hpp"
 #include "xrCore/xrDebug_macros.h"
 
 struct Fsphere {

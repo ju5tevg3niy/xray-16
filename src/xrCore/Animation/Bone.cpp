@@ -1,12 +1,13 @@
-#include "xrCore/LocatorAPI.h"
-#include "xrCore/FS.h"
+#include "xrCore/Animation/Bone.hpp"
+#include <algorithm>
+#include <utility>
+#include "Common/Platform.hpp"
 #include "Common/types.hpp"
-#include "xrCore/Math/matrix.hpp"
-#include "stdafx.h"
-
-#include "Bone.hpp"
-#include "xrCore/xrDebug_macros.h"
+#include "xrCore/FS.h"
 #include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/matrix.hpp"
+#include "xrCore/Math/obb.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 #define BONE_VERSION 0x0002
 //------------------------------------------------------------------------------

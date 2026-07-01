@@ -1,13 +1,13 @@
+#pragma once
+#include <atomic>
+#include <cstddef>
+#include <vector>
+#include "Common/Platform.hpp"
+#include "Common/types.hpp"
+#include "xrCore/FS.h"
 #include "xrCore/FTimer.h"
 #include "xrCore/LocatorAPI.h"
 #include "xrCore/log.h"
-#include "xrCore/FS.h"
-#include "Common/types.hpp"
-#include <atomic>
-#include <vector>
-#pragma once
-#include <cstddef>
-#include "Common/Platform.hpp"
 
 // 1: default
 // 1.5: check next chunk first heuristics

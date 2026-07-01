@@ -1,8 +1,8 @@
 #pragma once
 #include "Common/Platform.hpp"
-#include "constants.hpp"
-#include "math_funcs_inline.hpp"
-#include "vector2.hpp"
+#include "xrCore/Math/constants.hpp"
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Math/vector2.hpp"
 
 class Fplane2 {
  public:
