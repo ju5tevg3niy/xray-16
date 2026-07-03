@@ -1,6 +1,6 @@
 #pragma once
-#include "xrCore/log.h"
 #include <cstddef>
+#include "xrCore/log.h"
 #include "xrCore/xrCore.h"
 
 //--------------------------------------------------------------------------------------
@@ -39,11 +39,15 @@ const CHAR* WINAPI DXGetErrorStringA(_In_ HRESULT hr);
 #define DXGetErrorString DXGetErrorStringA
 #endif
 //--------------------------------------------------------------------------------------
-// DXGetErrorDescription has to be modified to return a copy in a buffer rather than
-// the original static string.
+// DXGetErrorDescription has to be modified to return a copy in a buffer rather
+// than the original static string.
 //--------------------------------------------------------------------------------------
-void WINAPI DXGetErrorDescriptionW(_In_ HRESULT hr, _Out_cap_(count) WCHAR* desc, _In_ size_t count);
-void WINAPI DXGetErrorDescriptionA(_In_ HRESULT hr, _Out_cap_(count) CHAR* desc, _In_ size_t count);
+void WINAPI DXGetErrorDescriptionW(_In_ HRESULT hr,
+                                   _Out_cap_(count) WCHAR* desc,
+                                   _In_ size_t count);
+void WINAPI DXGetErrorDescriptionA(_In_ HRESULT hr,
+                                   _Out_cap_(count) CHAR* desc,
+                                   _In_ size_t count);
 #ifdef UNICODE
 #define DXGetErrorDescription DXGetErrorDescriptionW
 #else
@@ -56,18 +60,26 @@ void WINAPI DXGetErrorDescriptionA(_In_ HRESULT hr, _Out_cap_(count) CHAR* desc,
 //
 //  Args:  WCHAR* strFile   The current file, typically passed in using the
 //                         __FILEW__ macro.
-//         DWORD dwLine    The current line number, typically passed in using the
+//         DWORD dwLine    The current line number, typically passed in using
+//         the
 //                         __LINE__ macro.
 //         HRESULT hr      An HRESULT that will be traced to the debug stream.
-//         CHAR* strMsg    A string that will be traced to the debug stream (may be NULL)
-//         BOOL bPopMsgBox If TRUE, then a message box will popup also containing the passed info.
+//         CHAR* strMsg    A string that will be traced to the debug stream (may
+//         be NULL) BOOL bPopMsgBox If TRUE, then a message box will popup also
+//         containing the passed info.
 //
 //  Return: The hr that was passed in.
 //--------------------------------------------------------------------------------------
-HRESULT WINAPI DXTraceW(_In_z_ const WCHAR* strFile, _In_ DWORD dwLine, _In_ HRESULT hr,
-    _In_opt_ const WCHAR* strMsg, _In_ bool bPopMsgBox);
-HRESULT WINAPI DXTraceA(
-    _In_z_ const CHAR* strFile, _In_ DWORD dwLine, _In_ HRESULT hr, _In_opt_ const CHAR* strMsg, _In_ bool bPopMsgBox);
+HRESULT WINAPI DXTraceW(_In_z_ const WCHAR* strFile,
+                        _In_ DWORD dwLine,
+                        _In_ HRESULT hr,
+                        _In_opt_ const WCHAR* strMsg,
+                        _In_ bool bPopMsgBox);
+HRESULT WINAPI DXTraceA(_In_z_ const CHAR* strFile,
+                        _In_ DWORD dwLine,
+                        _In_ HRESULT hr,
+                        _In_opt_ const CHAR* strMsg,
+                        _In_ bool bPopMsgBox);
 #ifdef UNICODE
 #define DXTrace DXTraceW
 #else
@@ -82,11 +94,13 @@ HRESULT WINAPI DXTraceA(
 #ifdef UNICODE
 #define DXTRACE_MSG(str) DXTrace(__FILEW__, (DWORD)__LINE__, 0, str, false)
 #define DXTRACE_ERR(str, hr) DXTrace(__FILEW__, (DWORD)__LINE__, hr, str, false)
-#define DXTRACE_ERR_MSGBOX(str, hr) DXTrace(__FILEW__, (DWORD)__LINE__, hr, str, true)
+#define DXTRACE_ERR_MSGBOX(str, hr) \
+  DXTrace(__FILEW__, (DWORD)__LINE__, hr, str, true)
 #else
 #define DXTRACE_MSG(str) DXTrace(__FILE__, (DWORD)__LINE__, 0, str, false)
 #define DXTRACE_ERR(str, hr) DXTrace(__FILE__, (DWORD)__LINE__, hr, str, false)
-#define DXTRACE_ERR_MSGBOX(str, hr) DXTrace(__FILE__, (DWORD)__LINE__, hr, str, true)
+#define DXTRACE_ERR_MSGBOX(str, hr) \
+  DXTrace(__FILE__, (DWORD)__LINE__, hr, str, true)
 #endif
 #else
 #define DXTRACE_MSG(str) (0L)
@@ -96,4 +110,4 @@ HRESULT WINAPI DXTraceA(
 
 #ifdef __cplusplus
 }
-#endif //__cplusplus
+#endif  //__cplusplus

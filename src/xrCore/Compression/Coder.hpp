@@ -58,36 +58,28 @@ public:
  }
 };
 *****************************************************************************/
-namespace ppmd
-{
-enum
-{
-    TOP = 1 << 24,
-    BOT = 1 << 15
-};
+namespace ppmd {
+enum { TOP = 1 << 24, BOT = 1 << 15 };
 
-struct SUBRANGE
-{
-    u32 low, high, scale;
+struct SUBRANGE {
+  u32 low, high, scale;
 };
 
 static SUBRANGE SubRange = {0, 0, 0};
 static u32 low = 0, code = 0, range = 0;
 
-inline void rcEncNormalize(_PPMD_FILE* stream)
-{
-    while ((low ^ (low + range)) < TOP || (range < BOT && ((range = -low & (BOT - 1)), 1)))
-    {
-        _PPMD_E_PUTC(low >> 24, stream);
-        range <<= 8;
-        low <<= 8;
-    }
+inline void rcEncNormalize(_PPMD_FILE* stream) {
+  while ((low ^ (low + range)) < TOP ||
+         (range < BOT && ((range = -low & (BOT - 1)), 1))) {
+    _PPMD_E_PUTC(low >> 24, stream);
+    range <<= 8;
+    low <<= 8;
+  }
 }
 
-static inline void rcInitEncoder()
-{
-    low = 0;
-    range = u32(-1);
+static inline void rcInitEncoder() {
+  low = 0;
+  range = u32(-1);
 }
 /*
 #define RC_ENC_NORMALIZE(stream) {                                          \
@@ -98,36 +90,31 @@ static inline void rcInitEncoder()
     }                                                                       \
 }
 */
-static inline void rcEncodeSymbol()
-{
-    low += SubRange.low * (range /= SubRange.scale);
-    range *= SubRange.high - SubRange.low;
+static inline void rcEncodeSymbol() {
+  low += SubRange.low * (range /= SubRange.scale);
+  range *= SubRange.high - SubRange.low;
 }
 
-static inline void rcFlushEncoder(_PPMD_FILE* stream)
-{
-    for (u32 i = 0; i < 4; i++)
-    {
-        _PPMD_E_PUTC(low >> 24, stream);
-        low <<= 8;
-    }
+static inline void rcFlushEncoder(_PPMD_FILE* stream) {
+  for (u32 i = 0; i < 4; i++) {
+    _PPMD_E_PUTC(low >> 24, stream);
+    low <<= 8;
+  }
 }
-static inline void rcInitDecoder(_PPMD_FILE* stream)
-{
-    low = code = 0;
-    range = u32(-1);
-    for (u32 i = 0; i < 4; i++)
-        code = (code << 8) | _PPMD_D_GETC(stream);
+static inline void rcInitDecoder(_PPMD_FILE* stream) {
+  low = code = 0;
+  range = u32(-1);
+  for (u32 i = 0; i < 4; i++)
+    code = (code << 8) | _PPMD_D_GETC(stream);
 }
 
-inline void rcDecNormalize(_PPMD_FILE* stream)
-{
-    while ((low ^ (low + range)) < TOP || (range < BOT && ((range = -low & (BOT - 1)), 1)))
-    {
-        code = (code << 8) | _PPMD_D_GETC(stream);
-        range <<= 8;
-        low <<= 8;
-    }
+inline void rcDecNormalize(_PPMD_FILE* stream) {
+  while ((low ^ (low + range)) < TOP ||
+         (range < BOT && ((range = -low & (BOT - 1)), 1))) {
+    code = (code << 8) | _PPMD_D_GETC(stream);
+    range <<= 8;
+    low <<= 8;
+  }
 }
 
 /*
@@ -140,20 +127,26 @@ inline void rcDecNormalize(_PPMD_FILE* stream)
 }
 */
 
-static inline u32 rcGetCurrentCount() { return (code - low) / (range /= SubRange.scale); }
-static inline void rcRemoveSubrange()
-{
-    low += range * SubRange.low;
-    range *= SubRange.high - SubRange.low;
+static inline u32 rcGetCurrentCount() {
+  return (code - low) / (range /= SubRange.scale);
+}
+static inline void rcRemoveSubrange() {
+  low += range * SubRange.low;
+  range *= SubRange.high - SubRange.low;
 }
 
-static inline u32 rcBinStart(u32 f0, u32 Shift) { return f0 * (range >>= Shift); }
-static inline u32 rcBinDecode(u32 tmp) { return (code - low >= tmp); }
-static inline void rcBinCorrect0(u32 tmp) { range = tmp; }
-static inline void rcBinCorrect1(u32 tmp, u32 f1)
-{
-    low += tmp;
-    range *= f1;
+static inline u32 rcBinStart(u32 f0, u32 Shift) {
+  return f0 * (range >>= Shift);
+}
+static inline u32 rcBinDecode(u32 tmp) {
+  return (code - low >= tmp);
+}
+static inline void rcBinCorrect0(u32 tmp) {
+  range = tmp;
+}
+static inline void rcBinCorrect1(u32 tmp, u32 f1) {
+  low += tmp;
+  range *= f1;
 }
 
-} // namespace ppmd
+}  // namespace ppmd

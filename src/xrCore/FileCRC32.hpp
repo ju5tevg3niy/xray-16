@@ -3,7 +3,13 @@
 #include "xrCore/FS.h"
 
 // sets the value of outCrc
-void getFileCrc32(IReader* F, pcstr filePath, u32& outCrc, bool parseIncludes = true);
+void getFileCrc32(IReader* F,
+                  pcstr filePath,
+                  u32& outCrc,
+                  bool parseIncludes = true);
 
 // just adds to outCrc
-void addFileCrc32(IReader* F, pcstr filePath, u32& outCrc, bool parseIncludes = true);
+void addFileCrc32(IReader* F,
+                  pcstr filePath,
+                  u32& outCrc,
+                  bool parseIncludes = true);

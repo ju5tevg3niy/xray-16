@@ -13,30 +13,30 @@
 
 #if defined(XR_PLATFORM_WINDOWS)
 #define _WIN32_ENVIRONMENT_
-//#define _DOS32_ENVIRONMENT_
-//#define _POSIX_ENVIRONMENT_
-//#define _UNKNOWN_ENVIRONMENT_
-#if defined(_WIN32_ENVIRONMENT_) + defined(_DOS32_ENVIRONMENT_) + defined(_POSIX_ENVIRONMENT_) + \
-defined(_UNKNOWN_ENVIRONMENT_) != \
-    \
-\
-1
+// #define _DOS32_ENVIRONMENT_
+// #define _POSIX_ENVIRONMENT_
+// #define _UNKNOWN_ENVIRONMENT_
+#if defined(_WIN32_ENVIRONMENT_) + defined(_DOS32_ENVIRONMENT_) +        \
+        defined(_POSIX_ENVIRONMENT_) + defined(_UNKNOWN_ENVIRONMENT_) != \
+                                                                         \
+    1
 #error Only one environment must be defined
 #endif /* defined(_WIN32_ENVIRONMENT_)+defined(_DOS32_ENVIRONMENT_)+defined(_POSIX_ENVIRONMENT_)+defined(_UNKNOWN_ENVIRONMENT_) \
           \                                                                                                                     \
-          \ \                                                                                                                              \
+          \ \                                                                                                                   \
           != 1 */
 #endif
 #if defined(_WIN32_ENVIRONMENT_)
 #include <windows.h>
-#else /* _DOS32_ENVIRONMENT_ || _POSIX_ENVIRONMENT_ || _UNKNOWN_ENVIRONMENT_ */
-//typedef int BOOL;
-//#define FALSE 0
-//#define TRUE 1
-//typedef unsigned char BYTE;
-//typedef unsigned short WORD;
-//typedef unsigned long DWORD;
-//typedef unsigned int UINT;
+#else  /* _DOS32_ENVIRONMENT_ || _POSIX_ENVIRONMENT_ || _UNKNOWN_ENVIRONMENT_ \
+        */
+// typedef int BOOL;
+// #define FALSE 0
+// #define TRUE 1
+// typedef unsigned char BYTE;
+// typedef unsigned short WORD;
+// typedef unsigned long DWORD;
+// typedef unsigned int UINT;
 #endif /* defined(_WIN32_ENVIRONMENT_)  */
 
 const u32 PPMdSignature = 0x84ACAF8F, Variant = 'I';
@@ -63,7 +63,7 @@ const int MAX_O = 16; /* maximum allowed model order  */
 #define VERIFY(a)
 #define VERIFY2(a, b)
 #define VERIFY_is_defined_in_ppmdtype_h
-#endif // VERIFY
+#endif  // VERIFY
 typedef unsigned char u8;
 typedef unsigned int u32;
 #include "compression_ppmd_stream.h"
@@ -72,7 +72,7 @@ typedef unsigned int u32;
 #undef VERIFY
 #undef VERIFY2
 #undef VERIFY_is_defined_in_ppmdtype_h
-#endif // VERIFY_is_defined_in_ppmdtype_h
+#endif  // VERIFY_is_defined_in_ppmdtype_h
 
 #include "compression_ppmd_stream.h"
 typedef compression::ppmd::stream _PPMD_FILE;

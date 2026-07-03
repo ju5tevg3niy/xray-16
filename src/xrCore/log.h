@@ -24,17 +24,16 @@ void Log(pcstr msg, const Fmatrix& dop);
 
 void LogWinErr(pcstr msg, long err_code);
 
-struct LogCallback
-{
-    typedef void (*Func)(void* context, const char* s);
-    Func Log;
-    void* Context;
+struct LogCallback {
+  typedef void (*Func)(void* context, const char* s);
+  Func Log;
+  void* Context;
 
-    LogCallback() : Log(nullptr), Context(nullptr) {}
-    LogCallback(std::nullptr_t) : Log(nullptr), Context(nullptr) {}
-    LogCallback(Func log, void* ctx) : Log(log), Context(ctx) {}
-    void operator()(const char* s) { Log(Context, s); }
-    operator bool() const { return !!Log; }
+  LogCallback() : Log(nullptr), Context(nullptr) {}
+  LogCallback(std::nullptr_t) : Log(nullptr), Context(nullptr) {}
+  LogCallback(Func log, void* ctx) : Log(log), Context(ctx) {}
+  void operator()(const char* s) { Log(Context, s); }
+  operator bool() const { return !!Log; }
 };
 
 LogCallback SetLogCB(const LogCallback& cb);

@@ -10,107 +10,99 @@
 #include <SDL_loadso.h>
 #endif
 
-namespace XRay
-{
-ModuleHandle::ModuleHandle(const bool dontUnload) : handle(nullptr), dontUnload(dontUnload) {}
+namespace XRay {
+ModuleHandle::ModuleHandle(const bool dontUnload)
+    : handle(nullptr), dontUnload(dontUnload) {}
 
-ModuleHandle::ModuleHandle(pcstr moduleName, bool dontUnload /*= false*/) : handle(nullptr), dontUnload(dontUnload)
-{
-    this->Open(moduleName);
+ModuleHandle::ModuleHandle(pcstr moduleName, bool dontUnload /*= false*/)
+    : handle(nullptr), dontUnload(dontUnload) {
+  this->Open(moduleName);
 }
 
-ModuleHandle::~ModuleHandle()
-{
+ModuleHandle::~ModuleHandle() {
+  Close();
+}
+
+void* ModuleHandle::Open(pcstr moduleName) {
+  ZoneScoped;
+
+  if (IsLoaded())
     Close();
-}
 
-void* ModuleHandle::Open(pcstr moduleName)
-{
-    ZoneScoped;
+  Log("Loading module:", moduleName);
 
-    if (IsLoaded())
-        Close();
-
-    Log("Loading module:", moduleName);
-
-    std::string buf(moduleName);
+  std::string buf(moduleName);
 #ifdef XR_PLATFORM_WINDOWS
-    buf += ".dll";
+  buf += ".dll";
 #elif defined(XR_PLATFORM_APPLE)
-    buf += ".dylib";
-#elif defined(XR_PLATFORM_POSIX) // assume .so for POSIX platforms
-    buf += ".so";
+  buf += ".dylib";
+#elif defined(XR_PLATFORM_POSIX)  // assume .so for POSIX platforms
+  buf += ".so";
 #else
 #error add your platform-specific extension here
 #endif
 
-    pcstr error = nullptr;
+  pcstr error = nullptr;
 #if defined(XR_PLATFORM_LINUX) || defined(XR_PLATFORM_BSD)
-    // For platforms that use rpath we have to call dlopen() from our own module
-    handle = dlopen(buf.c_str(), RTLD_NOW);
-    if (!handle)
-        error = dlerror();
+  // For platforms that use rpath we have to call dlopen() from our own module
+  handle = dlopen(buf.c_str(), RTLD_NOW);
+  if (!handle)
+    error = dlerror();
 #else
-    handle = SDL_LoadObject(buf.c_str());
-    if (!handle)
-        error = SDL_GetError();
+  handle = SDL_LoadObject(buf.c_str());
+  if (!handle)
+    error = SDL_GetError();
 #endif
 
-    if (!handle)
-    {
-        Log("! Failed to load module:", moduleName);
-        if (error)
-            Log("!", error);
-    }
+  if (!handle) {
+    Log("! Failed to load module:", moduleName);
+    if (error)
+      Log("!", error);
+  }
 
-    return handle;
+  return handle;
 }
 
-void ModuleHandle::Close()
-{
-    ZoneScoped;
+void ModuleHandle::Close() {
+  ZoneScoped;
 
-    if (dontUnload || !handle)
-        return;
+  if (dontUnload || !handle)
+    return;
 
 #if defined(XR_PLATFORM_LINUX) || defined(XR_PLATFORM_BSD)
-    dlclose(handle);
+  dlclose(handle);
 #else
-    SDL_UnloadObject(handle);
+  SDL_UnloadObject(handle);
 #endif
-    handle = nullptr;
+  handle = nullptr;
 }
 
-bool ModuleHandle::IsLoaded() const
-{
-    return handle != nullptr;
+bool ModuleHandle::IsLoaded() const {
+  return handle != nullptr;
 }
 
-void* ModuleHandle::operator()() const
-{
-    return handle;
+void* ModuleHandle::operator()() const {
+  return handle;
 }
 
-void* ModuleHandle::GetProcAddress(pcstr procName) const
-{
-    pcstr error = nullptr;
+void* ModuleHandle::GetProcAddress(pcstr procName) const {
+  pcstr error = nullptr;
 #if defined(XR_PLATFORM_LINUX) || defined(XR_PLATFORM_BSD)
-    const auto proc = dlsym(handle, procName);
-    if (!proc)
-        error = dlerror();
+  const auto proc = dlsym(handle, procName);
+  if (!proc)
+    error = dlerror();
 #else
-    const auto proc = SDL_LoadFunction(handle, procName);
-    if (!proc)
-        error = SDL_GetError();
+  const auto proc = SDL_LoadFunction(handle, procName);
+  if (!proc)
+    error = SDL_GetError();
 #endif
 
-    if (!proc)
-    {
-        Log("! Failed to load function from module:", procName);
-        if (error)
-            Log("!", error);
-    }
+  if (!proc) {
+    Log("! Failed to load function from module:", procName);
+    if (error)
+      Log("!", error);
+  }
 
-    return proc;
+  return proc;
 }
-} // namespace XRay
+}  // namespace XRay

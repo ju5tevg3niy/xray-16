@@ -10,126 +10,148 @@
 #include "xrCore/Text/string_funcs_inline.hpp"
 #include "xrCore/Threading/Lock.hpp"
 
-enum class AssertionResult : int
-{
-    undefined = -1,
-    ignore,
-    tryAgain,
-    abort,
-    ok
+enum class AssertionResult : int {
+  undefined = -1,
+  ignore,
+  tryAgain,
+  abort,
+  ok
 };
 
-class ErrorLocation
-{
-public:
-    const char* File = nullptr;
-    int Line = -1;
-    const char* Function = nullptr;
+class ErrorLocation {
+ public:
+  const char* File = nullptr;
+  int Line = -1;
+  const char* Function = nullptr;
 
-    ErrorLocation(const char* file, int line, const char* function)
-    {
-        File = file;
-        Line = line;
-        Function = function;
-    }
+  ErrorLocation(const char* file, int line, const char* function) {
+    File = file;
+    Line = line;
+    Function = function;
+  }
 
-    ErrorLocation(const ErrorLocation& rhs) : ErrorLocation(rhs.File, rhs.Line, rhs.Function) { }
+  ErrorLocation(const ErrorLocation& rhs)
+      : ErrorLocation(rhs.File, rhs.Line, rhs.Function) {}
 
-    ErrorLocation& operator=(const ErrorLocation& rhs)
-    {
-        File = rhs.File;
-        Line = rhs.Line;
-        Function = rhs.Function;
-        return *this;
-    }
+  ErrorLocation& operator=(const ErrorLocation& rhs) {
+    File = rhs.File;
+    Line = rhs.Line;
+    Function = rhs.Function;
+    return *this;
+  }
 };
 
-class XR_NOVTABLE IWindowHandler
-{
-public:
-    virtual ~IWindowHandler() = 0;
-    virtual void* GetApplicationWindowHandle() const = 0;
-    virtual SDL_Window* GetApplicationWindow() = 0;
-    virtual void OnErrorDialog(bool beforeDialog) = 0;
-    virtual void OnFatalError() = 0;
+class XR_NOVTABLE IWindowHandler {
+ public:
+  virtual ~IWindowHandler() = 0;
+  virtual void* GetApplicationWindowHandle() const = 0;
+  virtual SDL_Window* GetApplicationWindow() = 0;
+  virtual void OnErrorDialog(bool beforeDialog) = 0;
+  virtual void OnFatalError() = 0;
 };
 
 inline IWindowHandler::~IWindowHandler() = default;
 
-class XR_NOVTABLE IUserConfigHandler
-{
-public:
-    virtual ~IUserConfigHandler() = 0;
-    virtual pcstr GetUserConfigFileName() = 0;
+class XR_NOVTABLE IUserConfigHandler {
+ public:
+  virtual ~IUserConfigHandler() = 0;
+  virtual pcstr GetUserConfigFileName() = 0;
 };
 
 inline IUserConfigHandler::~IUserConfigHandler() = default;
 
-class xrDebug
-{
-public:
-    using OutOfMemoryCallbackFunc = void(*)();
-    using UnhandledExceptionFilter = LONG(WINAPI*)(EXCEPTION_POINTERS* exPtrs);
+class xrDebug {
+ public:
+  using OutOfMemoryCallbackFunc = void (*)();
+  using UnhandledExceptionFilter = LONG(WINAPI*)(EXCEPTION_POINTERS* exPtrs);
 
-private:
-    static IWindowHandler* windowHandler;
-    static IUserConfigHandler* userConfigHandler;
-    static UnhandledExceptionFilter PrevFilter;
-    static OutOfMemoryCallbackFunc OutOfMemoryCallback;
-    static string_path BugReportFile;
-    static bool ErrorAfterDialog;
-    static bool ShowErrorMessage;
+ private:
+  static IWindowHandler* windowHandler;
+  static IUserConfigHandler* userConfigHandler;
+  static UnhandledExceptionFilter PrevFilter;
+  static OutOfMemoryCallbackFunc OutOfMemoryCallback;
+  static string_path BugReportFile;
+  static bool ErrorAfterDialog;
+  static bool ShowErrorMessage;
 
-public:
-    xrDebug() = delete;
-    static void Initialize(pcstr commandLine);
-    static void Finalize();
-    static void OnThreadSpawn();
-    static void OnThreadExit();
-    static void OnFilesystemInitialized();
+ public:
+  xrDebug() = delete;
+  static void Initialize(pcstr commandLine);
+  static void Finalize();
+  static void OnThreadSpawn();
+  static void OnThreadExit();
+  static void OnFilesystemInitialized();
 
-    static bool DebuggerIsPresent();
-    static bool ProcessingFailure() { return failLock.IsLocked(); }
+  static bool DebuggerIsPresent();
+  static bool ProcessingFailure() { return failLock.IsLocked(); }
 
-    static IWindowHandler* GetWindowHandler() { return windowHandler; }
-    static void SetWindowHandler(IWindowHandler* handler) { windowHandler = handler; }
-    static IUserConfigHandler* GetUserConfigHandler() { return userConfigHandler; }
-    static void SetUserConfigHandler(IUserConfigHandler* handler) { userConfigHandler = handler; }
-    static OutOfMemoryCallbackFunc GetOutOfMemoryCallback() { return OutOfMemoryCallback; }
-    static void SetOutOfMemoryCallback(OutOfMemoryCallbackFunc cb) { OutOfMemoryCallback = cb; }
-    static bool WouldShowErrorMessage() { return ShowErrorMessage; }
-    static pcstr ErrorToString(long code);
-    static void SetBugReportFile(const char* fileName);
-    static void GatherInfo(char* assertionInfo, size_t bufferSize, const ErrorLocation& loc, const char* expr,
-                           const char* desc, const char* arg1 = nullptr, const char* arg2 = nullptr);
-    static void Fatal(const ErrorLocation& loc, const char* format, ...);
-    static AssertionResult Fail(bool& ignoreAlways, const ErrorLocation& loc, const char* expr, long hresult,
-                     const char* arg1 = nullptr, const char* arg2 = nullptr);
-    static AssertionResult Fail(bool& ignoreAlways, const ErrorLocation& loc, const char* expr,
-                     const char* desc = "assertion failed", const char* arg1 = nullptr, const char* arg2 = nullptr);
-    static AssertionResult Fail(bool& ignoreAlways, const ErrorLocation& loc, const char* expr, const std::string& desc,
-                     const char* arg1 = nullptr, const char* arg2 = nullptr);
-    [[noreturn]]
-    static void DoExit(const std::string& message);
+  static IWindowHandler* GetWindowHandler() { return windowHandler; }
+  static void SetWindowHandler(IWindowHandler* handler) {
+    windowHandler = handler;
+  }
+  static IUserConfigHandler* GetUserConfigHandler() {
+    return userConfigHandler;
+  }
+  static void SetUserConfigHandler(IUserConfigHandler* handler) {
+    userConfigHandler = handler;
+  }
+  static OutOfMemoryCallbackFunc GetOutOfMemoryCallback() {
+    return OutOfMemoryCallback;
+  }
+  static void SetOutOfMemoryCallback(OutOfMemoryCallbackFunc cb) {
+    OutOfMemoryCallback = cb;
+  }
+  static bool WouldShowErrorMessage() { return ShowErrorMessage; }
+  static pcstr ErrorToString(long code);
+  static void SetBugReportFile(const char* fileName);
+  static void GatherInfo(char* assertionInfo,
+                         size_t bufferSize,
+                         const ErrorLocation& loc,
+                         const char* expr,
+                         const char* desc,
+                         const char* arg1 = nullptr,
+                         const char* arg2 = nullptr);
+  static void Fatal(const ErrorLocation& loc, const char* format, ...);
+  static AssertionResult Fail(bool& ignoreAlways,
+                              const ErrorLocation& loc,
+                              const char* expr,
+                              long hresult,
+                              const char* arg1 = nullptr,
+                              const char* arg2 = nullptr);
+  static AssertionResult Fail(bool& ignoreAlways,
+                              const ErrorLocation& loc,
+                              const char* expr,
+                              const char* desc = "assertion failed",
+                              const char* arg1 = nullptr,
+                              const char* arg2 = nullptr);
+  static AssertionResult Fail(bool& ignoreAlways,
+                              const ErrorLocation& loc,
+                              const char* expr,
+                              const std::string& desc,
+                              const char* arg1 = nullptr,
+                              const char* arg2 = nullptr);
+  [[noreturn]]
+  static void DoExit(const std::string& message);
 
-    static AssertionResult ShowMessage(pcstr title, pcstr message, bool simpleMode = true);
+  static AssertionResult ShowMessage(pcstr title,
+                                     pcstr message,
+                                     bool simpleMode = true);
 
-    static void LogStackTrace(const char* header);
+  static void LogStackTrace(const char* header);
 
-private:
-    static Lock failLock;
+ private:
+  static Lock failLock;
 
-    static void FormatLastError(char* buffer, const size_t& bufferSize);
-    static void SetupExceptionHandler();
-    static LONG WINAPI UnhandledFilter(EXCEPTION_POINTERS* exPtrs);
-    static void WINAPI PreErrorHandler(INT_PTR);
+  static void FormatLastError(char* buffer, const size_t& bufferSize);
+  static void SetupExceptionHandler();
+  static LONG WINAPI UnhandledFilter(EXCEPTION_POINTERS* exPtrs);
+  static void WINAPI PreErrorHandler(INT_PTR);
 };
 
 // for debug purposes only
-template<typename... Args>
-std::string make_string(cpcstr format, Args... args)
-{
-    string4096 log;
-    xr_sprintf(log, std::size(log), format, std::forward<Args>(args)...);
-    return log;
+template <typename... Args>
+std::string make_string(cpcstr format, Args... args) {
+  string4096 log;
+  xr_sprintf(log, std::size(log), format, std::forward<Args>(args)...);
+  return log;
 }
