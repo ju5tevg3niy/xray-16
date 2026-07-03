@@ -1,5 +1,5 @@
-#include "Common/types.hpp"
 #pragma once
+#include "Common/types.hpp"
 #include "xrGameSpy/xrGameSpy.h"
 
 class CGameSpy_Available;

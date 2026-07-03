@@ -438,3 +438,4 @@ public:
     CVirtualFileRW(pcstr cFileName);
     ~CVirtualFileRW() override;
 };
+

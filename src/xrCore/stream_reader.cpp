@@ -8,6 +8,7 @@
 #include "xrCore/xrDebug_macros.h"
 #include "xrCore/xrMemory.h"
 #include "xrCore/xrstring.h"
+#include "xrCore/FS_impl.h"
 #if defined(XR_PLATFORM_POSIX)
 #include <sys/mman.h>
 #endif

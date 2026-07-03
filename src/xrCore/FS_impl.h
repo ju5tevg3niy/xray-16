@@ -8,6 +8,7 @@
 #include "xrCore/FTimer.h"
 #include "xrCore/LocatorAPI.h"
 #include "xrCore/log.h"
+#include "xrCore/xrDebug_macros.h"
 
 // 1: default
 // 1.5: check next chunk first heuristics

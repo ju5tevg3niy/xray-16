@@ -2,7 +2,7 @@
 #include <cstddef>
 #include <string>
 #include <tracy/Tracy.hpp>
-
+#include "xrCore/FS.h"
 #include "pch.hpp"
 #include "BindingsDumper.hpp"
 #include <regex>

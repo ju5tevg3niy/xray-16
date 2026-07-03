@@ -1,7 +1,10 @@
+#pragma once
 #include <cstddef>
 #include <vector>
-#pragma once
+#include "xrCore/Threading/Lock.hpp"
+#include "xrCore/Utils/fastdelegate.hpp"
 #include "xrGameSpy/xrGameSpy.h"
+#include "xrCommon/xr_smart_pointers.h"
 
 enum class GSUpdateStatus;
 class CGameSpy_Browser;

@@ -1,8 +1,18 @@
+#pragma once
+#include "xrCore/FS.h"
 #include "xrCore/log.h"
 #include "xrCore/Math/flags.hpp"
 #include "xrCore/xrstring.h"
 #include <cstddef>
+#include <unordered_map>
 #include "Common/types.hpp"
+#include "xrCore/Containers/AssociativeVector.hpp"
+#include "xrCore/Threading/Lock.hpp"
+#include "xrScriptEngine/xrScriptEngine.hpp"
+#include "xrScriptEngine/ScriptExporter.hpp"
+#include "xrScriptEngine/script_space_forward.hpp"
+#include "xrScriptEngine/Functor.hpp"
+
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: script_engine.h
 //	Created 	: 01.04.2004
@@ -10,18 +20,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : XRay Script Engine
 ////////////////////////////////////////////////////////////////////////////
-
-#pragma once
-
-#include <unordered_map>
-
-#include "xrCore/Containers/AssociativeVector.hpp"
-#include "xrCore/Threading/Lock.hpp"
-
-#include "xrScriptEngine.hpp"
-#include "ScriptExporter.hpp"
-#include "script_space_forward.hpp"
-#include "Functor.hpp"
 
 #ifndef MASTER_GOLD
 #define USE_DEBUGGER

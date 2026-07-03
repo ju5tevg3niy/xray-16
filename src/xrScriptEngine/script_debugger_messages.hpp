@@ -1,6 +1,7 @@
 #pragma once
 
 #include "xrScriptEngine.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
 
 struct StackTrace
 {

@@ -3,10 +3,13 @@
 #include "Logger.h"
 
 #include "Common/Common.hpp"
+#include "xrCore/Text/string_funcs_inline.hpp"
+#include "xrCore/log.h"
 #include "xrCore/xrCore.h"
 
 #include <fstream>
 #include <ctime>
+#include <tuple>
 
 static int SetLog(lua_State* L)
 {

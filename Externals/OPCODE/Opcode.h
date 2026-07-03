@@ -20,6 +20,8 @@
 #ifndef __OPCODE_H__
 #define __OPCODE_H__
 
+#include "Common/Platform.hpp"
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Preprocessor
 //#define OPCODE_API
@@ -40,11 +42,15 @@
 #include <assert.h>
 #include <float.h>
 
+#include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/xrMemory.h"
+#include "xrCore/FS.h"
+#include "xrCore/log.h"
+
 #ifndef ASSERT
 #define ASSERT assert
 #endif
 
-#define Log
 #define SetIceError false
 #define EC_OUTOFMEMORY "Out of memory"
 #define Alignment

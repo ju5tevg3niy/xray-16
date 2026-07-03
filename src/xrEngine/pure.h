@@ -1,8 +1,10 @@
-#include "Common/Platform.hpp"
-#include <cstddef>
 #pragma once
-
+#include "Common/Platform.hpp"
+#include <algorithm>
+#include <cstddef>
+#include <limits>
 #include <vector>
+#include "xrCore/xrDebug_macros.h"
 
 // messages
 constexpr int REG_PRIORITY_LOW = 0x11111111;

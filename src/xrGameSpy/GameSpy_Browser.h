@@ -1,8 +1,9 @@
+#pragma once
+#include "Common/Platform.hpp"
+#include "xrCore/Utils/fastdelegate.hpp"
 #include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include <vector>
-#pragma once
-
 #include "xrGameSpy/xrGameSpy.h"
 #include "xrCore/Threading/Lock.hpp"
 #include "xrCore/Text/string_funcs_inline.hpp"

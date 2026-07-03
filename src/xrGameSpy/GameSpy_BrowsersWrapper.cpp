@@ -3,7 +3,9 @@
 
 #include "stdafx.h"
 #include "GameSpy_BrowsersWrapper.h"
+#include "xrCommon/xr_smart_pointers.h"
 #include "xrCore/Threading/ScopeLock.hpp"
+#include "xrCore/xrDebug_macros.h"
 
 CGSUpdateStatusAccumulator::CGSUpdateStatusAccumulator(GSUpdateStatus s) { Register(s); }
 

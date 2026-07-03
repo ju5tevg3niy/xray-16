@@ -1,8 +1,7 @@
+#pragma once
 #include "Common/types.hpp"
 #include "Common/Platform.hpp"
 #include <vector>
-#pragma once
-
 #include "xrCore/xrstring.h"
 #include "xrCore/FTimer.h"
 

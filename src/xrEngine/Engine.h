@@ -1,6 +1,6 @@
-#include "Common/types.hpp"
 #pragma once
-
+#include <array>
+#include "Common/types.hpp"
 #include "pure.h"
 #include "EngineAPI.h"
 #include "EventAPI.h"

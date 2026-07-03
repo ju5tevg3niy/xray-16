@@ -12,6 +12,8 @@
 #include <GameSpy/sake/sake.h>
 #include <GameSpy/sc/sc.h>
 
+#include "Common/Platform.hpp" // IWYU pragma: keep
+
 #ifdef XRAY_STATIC_BUILD
 #   define XRGAMESPY_API
 #else
