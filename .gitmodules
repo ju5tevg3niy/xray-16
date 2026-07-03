@@ -22,9 +22,6 @@
 	path = Externals/imgui
 	url = https://github.com/ocornut/imgui.git
 	branch = docking
-[submodule "Externals/xrLuaFix"]
-	path = Externals/xrLuaFix
-	url = https://github.com/OpenXRay/xrLuaFix.git
 [submodule "Externals/sse2rvv"]
 	path = Externals/sse2rvv
 	url = https://github.com/pattonkan/sse2rvv.git
