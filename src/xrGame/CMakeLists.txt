@@ -1,113 +1,57 @@
 add_library(xrGame)
 
-target_sources(xrGame PRIVATE
-    abstract_location_selector.h
-    abstract_location_selector_inline.h
-    abstract_path_manager.h
-    abstract_path_manager_inline.h
+target_sources(
+    xrGame
+    PRIVATE
     account_manager_console.cpp
-    account_manager_console.h
     account_manager.cpp
-    account_manager.h
     account_manager_script.cpp
-    action_base.h
-    action_base_inline.h
     action_base_script.cpp
-    action_management_config.h
-    action_planner_action.h
-    action_planner_action_inline.h
     action_planner_action_script.cpp
-    action_planner_action_script.h
-    action_planner_action_script_inline.h
-    action_planner.h
-    action_planner_inline.h
     action_planner_script.cpp
-    action_planner_script.h
-    action_planner_script_inline.h
-    action_script_base.h
-    action_script_base_inline.h
     ActivatingCharCollisionDelay.cpp
-    ActivatingCharCollisionDelay.h
     ActorAnimation.cpp
-    ActorAnimation.h
-    actor_anim_defs.h
     ActorCameras.cpp
     actor_communication.cpp
     ActorCondition.cpp
-    ActorCondition.h
     ActorCondition_script.cpp
     Actor.cpp
-    actor_defs.h
     ActorEffector.cpp
-    ActorEffector.h
     ActorEffector_script.cpp
     Actor_Events.cpp
     Actor_Feel.cpp
-    Actor_Flags.h
     ActorFollowers.cpp
-    ActorFollowers.h
-    Actor.h
     ActorHelmet.cpp
-    ActorHelmet.h
     ActorBackpack.cpp
-    ActorBackpack.h
     ActorInput.cpp
     actor_input_handler.cpp
-    actor_input_handler.h
     actor_memory.cpp
-    actor_memory.h
     ActorMountedWeapon.cpp
     Actor_Movement.cpp
     actor_mp_client.cpp
     actor_mp_client_export.cpp
-    actor_mp_client.h
     actor_mp_client_import.cpp
     actor_mp_server.cpp
     actor_mp_server_export.cpp
-    actor_mp_server.h
     actor_mp_server_import.cpp
     actor_mp_state.cpp
-    actor_mp_state.h
-    actor_mp_state_inline.h
     Actor_Network.cpp
     actor_script.cpp
     Actor_Sleep.cpp
-    actor_statistic_defs.h
     actor_statistic_mgr.cpp
-    actor_statistic_mgr.h
     ActorVehicle.cpp
     Actor_Weapon.cpp
     AdvancedDetector.cpp
-    AdvancedDetector.h
     agent_corpse_manager.cpp
-    agent_corpse_manager.h
-    agent_corpse_manager_inline.h
     agent_enemy_manager.cpp
-    agent_enemy_manager.h
-    agent_enemy_manager_inline.h
     agent_explosive_manager.cpp
-    agent_explosive_manager.h
-    agent_explosive_manager_inline.h
     agent_location_manager.cpp
-    agent_location_manager.h
-    agent_location_manager_inline.h
     agent_manager_actions.cpp
-    agent_manager_actions.h
     agent_manager.cpp
-    agent_manager.h
-    agent_manager_inline.h
     agent_manager_planner.cpp
-    agent_manager_planner.h
     agent_manager_properties.cpp
-    agent_manager_properties.h
-    agent_manager_properties_inline.h
-    agent_manager_space.h
     agent_member_manager.cpp
-    agent_member_manager.h
-    agent_member_manager_inline.h
     agent_memory_manager.cpp
-    agent_memory_manager.h
-    agent_memory_manager_inline.h
     ai_crow_script.cpp
     ai_debug.h
     ai_debug_variables.cpp
@@ -2478,7 +2422,8 @@ target_include_directories(xrGame
     "${CMAKE_SOURCE_DIR}/sdk/include"
 )
 
-target_link_libraries(xrGame
+target_link_libraries(
+    xrGame
     PRIVATE
     xrCore
     xrEngine
@@ -2495,7 +2440,8 @@ target_link_libraries(xrGame
     xrNetServer
 )
 
-target_compile_definitions(xrGame
+target_compile_definitions(
+    xrGame
     PUBLIC
     DECLARE_SPECIALIZATION
     PURE_DYNAMIC_CAST
@@ -2503,23 +2449,3 @@ target_compile_definitions(xrGame
     PRIVATE
     XRGAME_EXPORTS
 )
-
-# E2K hack: MCST lcc compiler does not support object files greater than 4Gb due to a bug in EDG frontend
-if (CMAKE_CXX_COMPILER_ID MATCHES "LCC")
-    target_compile_options(xrGame
-        PRIVATE
-        -g0
-    )
-    message("Debug information generation is disabled for xrGame, because MCST lcc compiler does not support object files greater than 4 GB (EDG frontend bug).")
-endif()
-
-set_target_properties(xrGame PROPERTIES
-    PREFIX ""
-    UNITY_BUILD_BATCH_SIZE 50
-)
-
-if (BUILD_SHARED_LIBS)
-    install(TARGETS xrGame LIBRARY
-        DESTINATION "${CMAKE_INSTALL_LIBDIR}"
-    )
-endif()

@@ -32,21 +32,6 @@
     constexpr size_t xr_reserved_tail = 0;
 #endif
 
-#define xr_internal_malloc(size) malloc(size + xr_reserved_tail)
-#define xr_internal_malloc_aligned(size, alignment) malloc(size + xr_reserved_tail)
-#define xr_internal_malloc_nothrow(size) malloc(size + xr_reserved_tail)
-#define xr_internal_malloc_nothrow_aligned(size, alignment) malloc(size + xr_reserved_tail)
-#define xr_internal_small_alloc(size) malloc(size + xr_reserved_tail)
-#define xr_internal_small_free(ptr) free(ptr)
-
-#define xr_internal_realloc(ptr, size) realloc(ptr, size + xr_reserved_tail)
-#define xr_internal_realloc_aligned(ptr, size, alignment) realloc(ptr, size + xr_reserved_tail)
-
-#define xr_internal_free(ptr) free(ptr)
-#define xr_internal_free_size(ptr, size) free(ptr)
-#define xr_internal_free_aligned(ptr, alignment) free(ptr)
-#define xr_internal_free_size_aligned(ptr, size, alignment) free(ptr)
-
 xrMemory Memory;
 
 void xrMemory::mem_compact()
@@ -76,71 +61,52 @@ void xrMemory::mem_compact()
 
 void* xrMemory::mem_alloc(size_t size)
 {
-    const auto result = xr_internal_malloc(size);
-    //TracyAlloc(result, size);
-    return result;
+    return malloc(size + xr_reserved_tail);
 }
 
 void* xrMemory::mem_alloc(size_t size, size_t alignment)
 {
-    const auto result = xr_internal_malloc_aligned(size, alignment);
-    //TracyAlloc(result, size);
-    return result;
+  return malloc(size + xr_reserved_tail);
 }
 
 void* xrMemory::mem_alloc(size_t size, const std::nothrow_t&) noexcept
 {
-    const auto result = xr_internal_malloc_nothrow(size);
-    //TracyAlloc(result, size);
-    return result;
+  return malloc(size + xr_reserved_tail);
 }
 
 void* xrMemory::mem_alloc(size_t size, size_t alignment, const std::nothrow_t&) noexcept
 {
-    const auto result = xr_internal_malloc_nothrow_aligned(size, alignment);
-    //TracyAlloc(result, size);
-    return result;
+  return malloc(size + xr_reserved_tail);
 }
 
 void* xrMemory::small_alloc(size_t size) noexcept
 {
-    const auto result = xr_internal_small_alloc(size);
-    //TracyAllocN(result, size, "small alloc");
-    return result;
+  return malloc(size + xr_reserved_tail);
 }
 
 void xrMemory::small_free(void* ptr) noexcept
 {
-    //TracyFree(ptr);
-    xr_internal_small_free(ptr);
+  free(ptr);
 }
 
 void* xrMemory::mem_realloc(void* ptr, size_t size)
 {
-    //TracyFree(ptr);
-    const auto result = xr_internal_realloc(ptr, size);
-    //TracyAllocN(result, size, "realloc");
-    return result;
+  return realloc(ptr, size + xr_reserved_tail);
 }
 
 void* xrMemory::mem_realloc(void* ptr, size_t size, size_t alignment)
 {
-    //TracyFree(ptr);
-    const auto result = xr_internal_realloc_aligned(ptr, size, alignment);
-    //TracyAllocN(result, size, "realloc");
-    return result;
+  return realloc(ptr, size + xr_reserved_tail);
 }
 
 void xrMemory::mem_free(void* ptr)
 {
-    //TracyFree(ptr);
-    xr_internal_free(ptr);
+  free(ptr);
 }
 
 void xrMemory::mem_free(void* ptr, size_t alignment)
 {
-    //TracyFree(ptr);
-    xr_internal_free_aligned(ptr, alignment);
+  free(ptr);
 }
 
 pstr xr_strdup(pcstr string)

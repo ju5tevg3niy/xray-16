@@ -3,15 +3,53 @@ add_library(xrCore)
 target_sources(
     xrCore
     PRIVATE
+    Animation/Bone.cpp
+    Animation/BoneEditor.cpp
+    Animation/Envelope.cpp
+    Animation/interp.cpp
+    Animation/Motion.cpp
+    Animation/SkeletonMotions.cpp
     Compression/lzhuf.cpp
+    Compression/lzo_compressor.cpp
+    Compression/Model.cpp
+    Compression/ppmd_compressor.cpp
+    Compression/rt_compressor.cpp
+    Compression/rt_compressor9.cpp
+    Crypto/trivial_encryptor.cpp
+    Crypto/xr_dsa.cpp
+    Crypto/xr_dsa_signer.cpp
+    Crypto/xr_dsa_verifyer.cpp
+    Crypto/xr_sha.cpp
+    Debug/StackTrace.cpp
+    file_stream_reader.cpp
+    FileCRC32.cpp
+    FileSystem.cpp
+    FileSystem_borland.cpp
+    FMesh.cpp
+    FS.cpp
+    FTimer.cpp
+    LocatorAPI.cpp
+    LocatorAPI_auth.cpp
+    LocatorAPI_defs.cpp
+    log.cpp
     Math/compressed_normal.cpp
     Math/cylinder.cpp
+    Math/fast_lc16.cpp
     Math/math_funcs.cpp
     Math/matrix.cpp
     Math/quaternion.cpp
     Math/sphere.cpp
     Math/vector3.cpp
     Math/vector3_ext.cpp
+    Media/Image.cpp
+    Media/ImageJPEG.cpp
+    ModuleLookup.cpp
+    net_utils.cpp
+    os_clipboard.cpp
+    PostProcess/PostProcess.cpp
+    PostProcess/PPInfo.cpp
+    stream_reader.cpp
+    string_concatenations.cpp
     Text/string_conversion.cpp
     Text/xr_token.cpp
     Text/xr_trims.cpp
@@ -25,55 +63,17 @@ target_sources(
     Utils/crc32.cpp
     Utils/dump_string.cpp
     Utils/timestamp.cpp
-    Animation/Bone.cpp
-    Animation/BoneEditor.cpp
-    Animation/Envelope.cpp
-    Animation/interp.cpp
-    Animation/Motion.cpp
-    Animation/SkeletonMotions.cpp
-    Compression/lzo_compressor.cpp
-    Compression/rt_compressor9.cpp
-    Compression/rt_compressor.cpp
-    Compression/ppmd_compressor.cpp
-    Compression/Model.cpp
-    Crypto/trivial_encryptor.cpp
-    Crypto/xr_dsa.cpp
-    Crypto/xr_dsa_signer.cpp
-    Crypto/xr_dsa_verifyer.cpp
-    Crypto/xr_sha.cpp
-    xrDebug.cpp
-    Debug/StackTrace.cpp
-    FMesh.cpp
-    FileCRC32.cpp
-    FileSystem.cpp
-    FileSystem_borland.cpp
-    FS.cpp
-    LocatorAPI.cpp
-    LocatorAPI_auth.cpp
-    LocatorAPI_defs.cpp
-    log.cpp
-    NET_utils.cpp
-    xr_ini.cpp
-    file_stream_reader.cpp
-    stream_reader.cpp
-    FTimer.cpp
-    ModuleLookup.cpp
-    xrCore.cpp
-    Math/fast_lc16.cpp
-    Media/Image.cpp
-    Media/ImageJPEG.cpp
-    xrMemory.cpp
-    os_clipboard.cpp
-    PostProcess/PostProcess.cpp
-    PostProcess/PPInfo.cpp
-    string_concatenations.cpp
-    xrsharedmem.cpp
-    xrstring.cpp
-    XML/XMLDocument.cpp
     XML/tinystr.cpp
     XML/tinyxml.cpp
     XML/tinyxmlerror.cpp
     XML/tinyxmlparser.cpp
+    XML/XMLDocument.cpp
+    xr_ini.cpp
+    xrCore.cpp
+    xrDebug.cpp
+    xrMemory.cpp
+    xrsharedmem.cpp
+    xrstring.cpp
 )
 
 target_include_directories(

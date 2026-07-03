@@ -27,11 +27,13 @@
 bool LogExecCB = true;
 string_path log_file_name{};
 bool no_log = true;
+
 #ifdef CONFIG_PROFILE_LOCKS
 Lock logCS(MUTEX_PROFILE_ID(log));
 #else // CONFIG_PROFILE_LOCKS
 Lock logCS;
 #endif // CONFIG_PROFILE_LOCKS
+
 std::vector<std::string> LogFile;
 LogCallback LogCB = nullptr;
 

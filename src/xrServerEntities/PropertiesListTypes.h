@@ -61,7 +61,7 @@ class PropItem;
 using PropItemVec = std::vector<PropItem*>;
 
 //------------------------------------------------------------------------------
-#include "xrCore/ChooseTypes.H"
+#include "xrCore/choose_types.hpp"
 //------------------------------------------------------------------------------
 typedef fastdelegate::FastDelegate2<PropValue*, std::string&> TOnDrawTextEvent;
 typedef fastdelegate::FastDelegate1<PropItem*> TOnClick;
