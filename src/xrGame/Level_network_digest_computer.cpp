@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "StdAfx.h"
 #include "Level.h"
 #include <GameSpy/md5.h>

@@ -1,5 +1,5 @@
 #include "xrCore/FTimer.h"
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "xrCore/LocatorAPI.h"
 #include "xrCore/xr_ini.h"
 #include "xrCore/log.h"

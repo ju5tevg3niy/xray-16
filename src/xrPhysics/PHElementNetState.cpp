@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "StdAfx.h"
 #include "PhysicsShell.h"
 #include "PHInterpolation.h"

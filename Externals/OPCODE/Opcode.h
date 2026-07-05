@@ -43,6 +43,7 @@
 #include <float.h>
 
 #include "xrCore/Math/math_funcs_inline.hpp"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 #include "xrCore/xrMemory.h"
 #include "xrCore/FS.h"
 #include "xrCore/log.h"

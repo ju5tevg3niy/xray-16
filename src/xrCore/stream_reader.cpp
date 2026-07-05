@@ -6,6 +6,7 @@
 #include "Common/types.hpp"
 #include "xrCore/FS_impl.h"
 #include "xrCore/LocatorAPI.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 #include "xrCore/xrDebug_macros.h"
 #include "xrCore/xrMemory.h"
 #include "xrCore/xrstring.h"

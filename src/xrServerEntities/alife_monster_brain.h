@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_monster_brain.h
 //	Created 	: 06.10.2005

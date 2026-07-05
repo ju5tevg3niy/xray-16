@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "xrCore/log.h"
 #include "Common/types.hpp"
 #include "xrCore/Math/matrix.hpp"

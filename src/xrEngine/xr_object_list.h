@@ -1,5 +1,5 @@
 #include "xrCore/FTimer.h"
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "xrCore/xrstring.h"
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"

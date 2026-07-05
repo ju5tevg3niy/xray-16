@@ -8,6 +8,7 @@
 #include "Common/types.hpp"
 #include "xrCore/FS.h"
 #include "xrCore/LocatorAPI.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 #include "xrCore/Text/string_funcs_inline.hpp"
 #include "xrCore/Threading/Lock.hpp"
 #include "xrCore/Utils/crc32.hpp"

@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "Common/types.hpp"
 #ifndef FILETRANSFER_COMMON
 #define FILETRANSFER_COMMON

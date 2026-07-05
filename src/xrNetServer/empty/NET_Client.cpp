@@ -1,6 +1,6 @@
 #include "xrCore/FTimer.h"
 #include "xrCore/Threading/ThreadUtil.hpp"
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "xrCore/log.h"
 #include "xrCore/Math/flags.hpp"
 #include "Common/types.hpp"

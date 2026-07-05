@@ -2,7 +2,7 @@
 #include "Common/types_paths.hpp"
 #pragma once
 #include "xrCore/Utils/fastdelegate.hpp"
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "xrCore/Containers/AssociativeVector.hpp"
 
 #define FILTERS_COUNT 32

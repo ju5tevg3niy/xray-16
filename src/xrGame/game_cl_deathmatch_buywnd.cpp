@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "xrCore/Text/xr_trims.hpp"
 #include "Common/types.hpp"
 #include "xrCore/string_concatenations.h"

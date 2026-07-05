@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "Common/types.hpp"
 #ifndef ACTOR_MP_SERVER_H
 #define ACTOR_MP_SERVER_H

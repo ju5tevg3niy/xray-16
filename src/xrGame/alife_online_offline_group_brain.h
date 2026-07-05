@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: alife_online_offline_group_brain.h
 //	Created 	: 25.10.2005

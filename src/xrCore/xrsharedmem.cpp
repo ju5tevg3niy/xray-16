@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <cstring>
 #include "Common/types.hpp"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 #include "xrCore/Threading/ScopeLock.hpp"
 #include "xrCore/xrDebug_macros.h"
 #include "xrCore/xrMemory.h"

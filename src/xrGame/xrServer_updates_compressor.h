@@ -1,5 +1,5 @@
 #include "xrCore/FTimer.h"
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "Common/types.hpp"
 #include "xrCore/Math/flags.hpp"
 #include "Common/Noncopyable.hpp"

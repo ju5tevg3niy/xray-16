@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "xrCore/FileSystem.h"
 #include "xrCore/LocatorAPI.h"
 #include "xrCore/log.h"

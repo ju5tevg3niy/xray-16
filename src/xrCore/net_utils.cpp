@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include <cstddef>
 #include <cstring>
 #include <string>
@@ -10,9 +10,9 @@
 #include "xrCore/Math/matrix.hpp"
 #include "xrCore/Math/vector3.hpp"
 #include "xrCore/Math/vector4.hpp"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 #include "xrCore/client_id.h"
 #include "xrCore/xrDebug_macros.h"
-#include "xrCore/xrMemory.h"
 #include "xrCore/xrstring.h"
 
 // ---NET_Packet
@@ -43,9 +43,11 @@ void NET_Packet::w_float_q8(float a, float min, float max) {
 void NET_Packet::w_angle16(float a) {
   w_float_q16(angle_normalize(a), 0, PI_MUL_2);
 }
+
 void NET_Packet::w_angle8(float a) {
   w_float_q8(angle_normalize(a), 0, PI_MUL_2);
 }
+
 void NET_Packet::w_dir(const Fvector& D) {
   w_u16(pvCompress(D));
 }

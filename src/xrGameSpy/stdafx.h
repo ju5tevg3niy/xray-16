@@ -28,3 +28,4 @@
 #undef setsockopt
 
 #include "xrCore/xrCore.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"

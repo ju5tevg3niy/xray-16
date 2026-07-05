@@ -6,7 +6,7 @@
 #include "Common/types_limits.hpp"
 #include "xrCore/Math/fbox.hpp"
 #include "xrCore/xrDebug_macros.h"
-#include "xrCore/xrMemory.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 
 constexpr cpcstr LEVEL_GRAPH_NAME = "level.ai";
 

@@ -3,6 +3,7 @@
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "xrCore/xrDebug_macros.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 
 // deprecated
 template <class T, size_t dim>

@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "Common/types.hpp"
 ////////////////////////////////////////////////////////////////////////////
 //	Module 		: stalker_kill_wounded_actions.cpp

@@ -6,7 +6,7 @@
 #include "Common/types.hpp"
 #include "xrCore/client_id.h"
 #include "xrCore/Utils/fastdelegate.hpp"
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 
 class Lock;
 

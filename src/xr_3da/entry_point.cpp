@@ -10,6 +10,7 @@
 #include "Common/Platform.hpp"
 #include "Common/types.hpp"
 #include "Include/xrRender/xrRender.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 #include "xrCore/xrCore.h"
 #include "xrCore/xrDebug_macros.h"
 #include "xrCore/xrMemory.h"

@@ -1,8 +1,9 @@
-#include "Common/Platform.hpp"
 #pragma once
+#include "Common/Platform.hpp"
 
 #include "Common/Common.hpp"
 #include "xrCore/xrCore.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 
 #if defined(XR_PLATFORM_WINDOWS)
 #include <DPlay/dplay8.h>

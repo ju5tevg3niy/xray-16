@@ -13,6 +13,7 @@
 #include "xrCore/FS_internal.h"
 #include "xrCore/LocatorAPI.h"
 #include "xrCore/Math/vector3.hpp"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 #include "xrCore/log.h"
 #include "xrCore/xrDebug.h"
 #include "xrCore/xrDebug_macros.h"

@@ -1,4 +1,4 @@
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "xrCore/LocatorAPI.h"
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"

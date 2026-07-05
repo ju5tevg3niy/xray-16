@@ -2,7 +2,7 @@
 #pragma once
 #ifndef _INCDEF_NETCOMMON_H_
 #define _INCDEF_NETCOMMON_H_
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "xrNetServer/NET_Shared.h"
 
 // fwd. decl.

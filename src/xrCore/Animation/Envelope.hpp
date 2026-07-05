@@ -4,7 +4,7 @@
 #include "Common/types.hpp"
 #include "xrCore/FS.h"
 #include "xrCore/Math/math_funcs_inline.hpp"
-#include "xrCore/xrMemory.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 
 // refs
 class IWriter;

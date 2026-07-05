@@ -61,10 +61,6 @@ class small_buffer final {
   }
 };
 
-#define ZeroMemory(dst, size) memset(dst, 0, size)
-#define CopyMemory(dst, src, size) memcpy(dst, src, size)
-#define FillMemory(dst, size, val) memset(dst, val, size)
-
 // Global C++ new/delete overrides.
 [[nodiscard]] void* operator new(size_t size);
 [[nodiscard]] void* operator new[](size_t size);

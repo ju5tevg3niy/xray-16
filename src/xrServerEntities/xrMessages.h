@@ -1,5 +1,5 @@
-#include "Common/types.hpp"
 #pragma once
+#include "Common/types.hpp"
 
 // CL	== client 2 server message
 // SV	== server 2 client message

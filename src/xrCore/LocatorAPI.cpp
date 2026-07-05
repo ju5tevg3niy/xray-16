@@ -25,6 +25,7 @@
 #include "xrCore/FTimer.h"
 #include "xrCore/FileSystem.h"
 #include "xrCore/LocatorAPI_defs.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 #include "xrCore/Text/string_funcs_inline.hpp"
 #include "xrCore/Text/xr_trims.hpp"
 #include "xrCore/Threading/Lock.hpp"

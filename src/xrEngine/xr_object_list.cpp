@@ -12,7 +12,7 @@
 #include "xr_object_list.h"
 
 #include "xr_object.h"
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 
 #include "CustomHUD.h"
 #include "GameFont.h"

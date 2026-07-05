@@ -6,6 +6,7 @@
 #include <new>
 #include "Common/Platform.hpp"  // IWYU pragma: keep
 #include "Common/types.hpp"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 #include "xrCore/xrDebug_macros.h"
 #include "xrCore/xrsharedmem.h"
 #include "xrCore/xrstring.h"

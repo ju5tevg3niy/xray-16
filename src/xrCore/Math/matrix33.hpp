@@ -4,7 +4,7 @@
 #include "xrCore/Math/math_funcs_inline.hpp"
 #include "xrCore/Math/matrix.hpp"
 #include "xrCore/Math/vector3.hpp"
-#include "xrCore/xrMemory.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 
 struct Fmatrix33 {
  public:
@@ -27,6 +27,7 @@ struct Fmatrix33 {
     };
     float m[3][3];  // Array
   };
+
   // Class members
   IC SelfRef set_rapid(const Fmatrix& a) {
     m[0][0] = a.m[0][0];
@@ -40,10 +41,12 @@ struct Fmatrix33 {
     m[2][2] = a.m[2][2];
     return *this;
   }
+
   IC SelfRef set(SelfCRef a) {
     CopyMemory(this, &a, 9 * sizeof(float));
     return *this;
   }
+
   IC SelfRef set(const Fmatrix& a) {
     _11 = a._11;
     _12 = a._12;
@@ -56,6 +59,7 @@ struct Fmatrix33 {
     _33 = a._33;
     return *this;
   }
+
   IC SelfRef identity(void) {
     _11 = 1.f;
     _12 = 0.f;
@@ -82,6 +86,7 @@ struct Fmatrix33 {
     _33 = matSource._33;
     return *this;
   }
+
   IC SelfRef transpose(const Fmatrix& matSource)  // faster version of transpose
   {
     _11 = matSource._11;
@@ -95,6 +100,7 @@ struct Fmatrix33 {
     _33 = matSource._33;
     return *this;
   }
+
   IC SelfRef transpose(void)  // self transpose - slower
   {
     Fmatrix33 a;
@@ -361,6 +367,7 @@ struct Fmatrix33 {
     m[2][1] = v.x;
     return *this;
   }
+
   IC SelfCRef sMxVpV(Fvector& R,
                      float s1,
                      const Fvector& V1,
@@ -370,34 +377,40 @@ struct Fmatrix33 {
     R.z = s1 * (m[2][0] * V1.x + m[2][1] * V1.y + m[2][2] * V1.z) + V2.z;
     return *this;
   }
+
   IC void MTxV(Fvector& R, const Fvector& V1) const {
     R.x = (m[0][0] * V1.x + m[1][0] * V1.y + m[2][0] * V1.z);
     R.y = (m[0][1] * V1.x + m[1][1] * V1.y + m[2][1] * V1.z);
     R.z = (m[0][2] * V1.x + m[1][2] * V1.y + m[2][2] * V1.z);
   }
+
   IC void MTxVpV(Fvector& R, const Fvector& V1, const Fvector& V2) const {
     R.x = (m[0][0] * V1.x + m[1][0] * V1.y + m[2][0] * V1.z + V2.x);
     R.y = (m[0][1] * V1.x + m[1][1] * V1.y + m[2][1] * V1.z + V2.y);
     R.z = (m[0][2] * V1.x + m[1][2] * V1.y + m[2][2] * V1.z + V2.z);
   }
+
   IC SelfCRef MTxVmV(Fvector& R, const Fvector& V1, const Fvector& V2) const {
     R.x = (m[0][0] * V1.x + m[1][0] * V1.y + m[2][0] * V1.z - V2.x);
     R.y = (m[0][1] * V1.x + m[1][1] * V1.y + m[2][1] * V1.z - V2.y);
     R.z = (m[0][2] * V1.x + m[1][2] * V1.y + m[2][2] * V1.z - V2.z);
     return *this;
   }
+
   IC SelfCRef sMTxV(Fvector& R, float s1, const Fvector& V1) const {
     R.x = s1 * (m[0][0] * V1.x + m[1][0] * V1.y + m[2][0] * V1.z);
     R.y = s1 * (m[0][1] * V1.x + m[1][1] * V1.y + m[2][1] * V1.z);
     R.z = s1 * (m[0][2] * V1.x + m[1][2] * V1.y + m[2][2] * V1.z);
     return *this;
   }
+
   IC SelfCRef MxV(Fvector& R, const Fvector& V1) const {
     R.x = (m[0][0] * V1.x + m[0][1] * V1.y + m[0][2] * V1.z);
     R.y = (m[1][0] * V1.x + m[1][1] * V1.y + m[1][2] * V1.z);
     R.z = (m[2][0] * V1.x + m[2][1] * V1.y + m[2][2] * V1.z);
     return *this;
   }
+
   IC void transform_dir(Fvector3& dest,
                         const Fvector3& v) const  // preferred to use
   {
@@ -405,11 +418,13 @@ struct Fmatrix33 {
     dest.y = v.x * _12 + v.y * _22;
     dest.z = v.x * _13 + v.y * _23;
   }
+
   IC void transform_dir(Fvector3& v) const {
     Fvector3 res;
     transform_dir(res, v);
     v.set(res);
   }
+
   IC SelfCRef MxVpV(Fvector& R, const Fvector& V1, const Fvector& V2) const {
     R.x = (m[0][0] * V1.x + m[0][1] * V1.y + m[0][2] * V1.z + V2.x);
     R.y = (m[1][0] * V1.x + m[1][1] * V1.y + m[1][2] * V1.z + V2.y);

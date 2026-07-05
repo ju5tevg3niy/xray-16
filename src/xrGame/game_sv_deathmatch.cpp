@@ -1,5 +1,5 @@
 #include "xrCore/Utils/cpu.hpp"
-#include "xrCore/net_utils.h"
+#include "xrCore/net_utils.hpp"
 #include "xrCore/xr_ini.h"
 #include "xrCore/Text/xr_trims.hpp"
 #include "xrCore/log.h"

@@ -13,7 +13,7 @@
 #include "NET_Common.h"
 #include "NET_Server.h"
 #include <functional>
-//#include "xrCore/net_utils.h"
+//#include "xrCore/net_utils.hpp"
 #include <dplay/dplay8.h>
 #include "NET_Messages.h"
 #include "NET_Log.h"

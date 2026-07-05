@@ -4,7 +4,7 @@
 #include "xrCore/Crypto/xr_dsa.h"
 #include "xrCore/Crypto/xr_sha.h"
 #include "xrCore/LocatorAPI.h"
-#include "xrCore/xrMemory.h"
+#include "xrCore/Memory/memory_funcs_inline.hpp"
 #include "xrCore/xrstring.h"
 
 xr_dsa_verifyer::xr_dsa_verifyer(
