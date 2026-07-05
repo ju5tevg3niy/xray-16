@@ -27,3 +27,4 @@ doc/doxygen/html/*
 !.clangd
 !.clang-format
 !.clang-tidy
+cmake-build*/
