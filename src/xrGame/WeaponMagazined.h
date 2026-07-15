@@ -1,11 +1,10 @@
+#pragma once
 #include "xrCore/net_utils.hpp"
 #include "xrCore/LocatorAPI.h"
 #include "xrCore/FS.h"
 #include "xrCore/xrstring.h"
 #include "Common/types.hpp"
 #include <vector>
-#pragma once
-
 #include "Weapon.h"
 #include "HudSound.h"
 #include "ai_sounds.h"

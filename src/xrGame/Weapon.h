@@ -1,3 +1,4 @@
+#pragma once
 #include "xrCore/net_utils.hpp"
 #include "xrCore/LocatorAPI.h"
 #include "xrCore/xr_ini.h"
@@ -6,12 +7,9 @@
 #include "xrCore/xrstring.h"
 #include "xrCore/Math/matrix.hpp"
 #include <vector>
-#pragma once
-
 #include "xrPhysics/PhysicsShell.h"
 #include "WeaponAmmo.h"
 #include "PHShellCreator.h"
-
 #include "ShootingObject.h"
 #include "hud_item_object.h"
 #include "Actor_Flags.h"

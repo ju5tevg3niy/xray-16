@@ -1,12 +1,16 @@
 #include "xrCore/Threading/ThreadUtil.hpp"
 #include "xrCore/log.h"
 #include "xrCore/LocatorAPI.h"
+#include "xrCore/xrDebug_macros.h"
 #include "xrCore/xr_ini.h"
 #include <cstddef>
 #include "Common/types_paths.hpp"
 #include "Common/types.hpp"
 #include "Common/Platform.hpp"
+#include <cstring>
 #include <tracy/Tracy.hpp>
+#include <SDL.h>
+#include <SDL_error.h>
 
 //-----------------------------------------------------------------------------
 // File: x_ray.cpp
@@ -223,12 +227,22 @@ CApplication::CApplication(pcstr commandLine, GameModule* game, const std::array
         GEnv.isDedicatedServer = true;
 
     xrDebug::Initialize(commandLine);
+
     {
         ZoneScopedN("SDL_Init");
+
         u32 flags = SDL_INIT_VIDEO;
+
         if (!strstr(commandLine, "-no_gamepad"))
             flags |= SDL_INIT_GAMECONTROLLER;
-        R_ASSERT3(SDL_Init(flags) == 0, "Unable to initialize SDL", SDL_GetError());
+
+        int sdl_init_result = SDL_Init(flags);
+
+        R_ASSERT3(
+            sdl_init_result == 0,
+            "Unable to initialize SDL",
+            SDL_GetError()
+        );
     }
 
 #ifdef XR_PLATFORM_WINDOWS
@@ -244,6 +258,7 @@ CApplication::CApplication(pcstr commandLine, GameModule* game, const std::array
     }
 
     SDL_StopTextInput(); // It's enabled by default for some reason, we don't want it
+
     const auto& inputTask = TaskManager::AddTask([]
     {
         const bool captureInput = !strstr(Core.Params, "-i");

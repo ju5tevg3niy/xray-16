@@ -1,12 +1,13 @@
+#pragma once
+#include <SDL_surface.h>
+#include <SDL_video.h>
+#include <array>
+#include <atomic>
+#include <mutex>
 #include <thread>
 #include "Common/types.hpp"
-#include <atomic>
-#pragma once
-
-#include <mutex>
-#include <array>
-
 #include "xrEngine/Engine.h"
+#include "xrEngine/EngineAPI.h"
 
 struct SDL_Window;
 struct SDL_Surface;
@@ -42,7 +43,6 @@ private:
     void UpdateDiscordStatus();
 
 public:
-    // Other
     CApplication(pcstr commandLine, GameModule* game, const std::array<RendererModule*, 2>& modules);
     ~CApplication();
 
