@@ -25,3 +25,6 @@
 [submodule "Externals/sse2rvv"]
 	path = Externals/sse2rvv
 	url = https://github.com/pattonkan/sse2rvv.git
+[submodule "subprojects/tracy"]
+	path = subprojects/tracy
+	url = https://github.com/wolfpld/tracy.git
