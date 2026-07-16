@@ -28,3 +28,4 @@ doc/doxygen/html/*
 !.clang-format
 !.clang-tidy
 cmake-build*/
+meson-build*/
